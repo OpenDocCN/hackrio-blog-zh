@@ -1,0 +1,367 @@
+<html>
+<head>
+<title>Top 40 C++ Interview Questions and Answers in 2023 [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年前40名C++面试问答[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/cpp-interview-questions#0001-01-01">https://hackr.io/blog/cpp-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>C++今天仍然和它在80年代中期出现时一样重要。命令式面向对象编程语言作为通用编程语言被广泛使用。因此，一些工作要求应聘者对C++有深刻的理解。</p>
+<p>我们整理了一份最重要的C++面试问题和答案的列表，以帮助你准备面试。我们把问题分成了基础、中级和高级。</p>
+<h2 id="top-c-interview-questions-and-answers"><strong>顶级C++面试问答</strong></h2>
+<h3 id="basic-c-level-interview-questions"><strong>基础C++级面试试题</strong></h3>
+<h4 id="toc-1-what-is-c"><strong> 1。什么是C++？</strong></h4>
+<p>C++是一种计算机编程语言，它是C的超集，具有额外的特性。</p>
+<h4 id="toc-2-does-c-make-use-of-oops"><strong> 2。C++使用OOPS吗？</strong></h4>
+<p>是的，确实如此。面向对象的编程系统是一个范例，它包括数据绑定、多态和继承等概念。</p>
+
+<h4 id="toc-3-what-is-a-class"><strong> 3。什么是课？</strong></h4>
+<p>类是用户定义的数据类型，是OOP的核心。它反映了不同的实体、属性和动作。</p>
+<h4 id="toc-4-what-is-an-object"><strong> 4。什么是对象？</strong></h4>
+<p>对象是类的一个实例。一个对象可以有字段、方法和构造函数。</p>
+<h4 id="toc-5-what-is-encapsulation"><strong> 5。什么是封装？</strong></h4>
+<p>封装是将类中的数据和函数绑定在一起的过程。出于安全原因，它用于阻止对数据的直接访问。一个类的函数就是为了这个目的而应用的。</p>
+<h4 id="toc-6-what-is-abstraction"><strong> 6。什么是抽象？</strong></h4>
+<p>C++中的抽象是隐藏内部实现，只显示所需的细节。</p>
+<p>例如，当你通过电子邮件发送一条重要消息时，在那个时候，只使用书写和点击发送选项。这个结果只是显示的成功消息，用于确认您的电子邮件已经发送。但是，通过电子邮件传输数据的过程不会显示出来，因为这对您没有任何用处。</p>
+<h4 id="toc-7-what-is-inheritance"><strong> 7。什么是继承？</strong></h4>
+<p>C++允许类从其他类继承一些常用的状态和行为。这个过程被称为继承。</p>
+
+<h4 id="toc-8-what-is-the-access-specifier-and-what-are-the-types"><strong> 8。什么是访问说明符，有哪些类型？</strong></h4>
+<p>访问说明符决定了如何在类的作用域之外访问类成员，即函数和变量。</p>
+<p><img src="../Images/12c367c33455753f46f8325016f3fae1.png" alt="" data-original-src="https://hackr.io/blog/media/what-is-the-access-specifier-and-what-are-the-types-min.png"/></p>
+<p>C++中有三种类型的访问说明符:</p>
+<ul>
+<li><strong> Private: </strong>这样的类成员不能在声明它们的类之外被访问，只能在同一个类中被访问。甚至子类也不能访问其父类的私有成员。</li>
+</ul>
+<ul>
+<li><strong> Protected: </strong>除了声明子类的类之外，子类还可以访问其父类的受保护成员。</li>
+</ul>
+<ul>
+<li><strong> Public: </strong>声明为Public的类成员可以在整个程序中被访问。</li>
+</ul>
+<h4 id="toc-9-what-is-a-namespace"><strong> 9。什么是名称空间？</strong></h4>
+<p>名称空间用于解决标识符的名称冲突，这是通过将它们放在不同的名称空间下实现的。</p>
+<h4 id="toc-10-what-is-a-class-template">10。什么是类模板？</h4>
+<p>类模板是赋予泛型类的名称。关键字template用于定义类模板。</p>
+<h4 id="toc-11-what-is-the-function-of-the-keyword-volatile"><strong> 11。关键词“Volatile”的作用是什么？</strong></h4>
+<p>“Volatile”是一个函数，它有助于声明特定变量是易变的，从而指导编译器从外部更改变量——这样，就可以避免编译器对变量引用的优化。</p>
+<h4 id="toc-12-what-is-a-storage-class"><strong> 12。什么是存储类？</strong></h4>
+<p>C++中的存储类特别类似于符号的范围，包括变量、函数等。C++中的一些存储类名包括可变、自动、静态、外部、注册等。</p>
+<h4 id="toc-13-what-is-an-inline-function-is-it-possible-to-ignore-inlining">13。什么是内联函数？有可能忽略内联吗？</h4>
+<p>为了减少函数调用开销，C++提供了内联函数。顾名思义，内联函数在被调用时是以行的形式展开的。</p>
+<p>一旦调用了内联函数，在内联函数调用的特定点上插入或替换相同的整个代码。替换是由C++编译器在编译时完成的。小的内联函数可能会提高程序效率。</p>
+<p>典型内联函数的语法是:</p>
+<pre class="language-cpp"><code>Inline return-type function-name(parameters)
+{
+// Function code goes here
+}
+</code></pre>
+<p>由于内联是一个请求，而不是命令，编译器可以忽略它。</p>
+<h4 id="toc-14-can-we-have-a-recursive-inline-function-in-c"><strong> 14。C++中可以有递归内联函数吗？</strong></h4>
+<p>即使在C++中可以从内部调用内联函数，编译器也可能不会生成内联代码。这是因为编译器不会在编译时确定递归的深度。</p>
+<p>尽管如此，具有良好优化器的编译器能够内联递归调用，直到在编译时确定了某个深度，并在编译时插入非递归调用，以应对实际深度超过运行时间的情况。</p>
+<h4 id="toc-15-what-is-the-this-pointer">15。什么是“这”指针？</h4>
+<p>“this”指针是一个常量指针，它保存当前对象的内存地址。它作为隐藏参数传递给所有非静态成员函数调用。它可以作为所有非静态函数体内的局部变量。</p>
+<p>由于静态成员函数甚至可以在没有任何对象的情况下被调用，也就是说，没有类名，因此“this”指针对它们是不可用的。</p>
+<h4 id="toc-16-what-are-the-most-important-differences-between-c-and-c">16。C和C++最重要的区别是什么？</h4>
+<ul>
+<li>C++支持引用，而C不支持。</li>
+<li>像友元函数、函数重载、继承、模板和虚函数这样的特性是C++所固有的。这些都是C编程语言所没有的。</li>
+<li>在C #中，异常处理是按照传统的if-else风格进行的。另一方面，C++在语言层面上提供了对异常处理的支持。</li>
+<li>C中主要使用的输入输出分别是scanf()和printf()。在C++中，cin是标准输入流，而cout是标准输出流。</li>
+<li>虽然C是一种<a href="https://hackr.io/blog/procedural-programming">过程化编程语言</a>，但C++同时支持过程化和面向对象的编程方法。</li>
+</ul>
+<h4 id="toc-17-why-do-we-need-the-friend-class-and-function"><strong> 17。为什么我们需要友元类和函数？</strong></h4>
+<p>有时，需要允许一个特定的类访问一个类的私有或受保护的成员。解决方案是一个友元类，它可以访问声明为友元的类的受保护成员和私有成员。</p>
+<p>与friend类类似，friend函数能够访问私有和受保护的类成员。友元函数可以是全局函数，也可以是某个类的方法。</p>
+<p>关于友元类和友元函数的一些要点:</p>
+<ul>
+<li>友谊不是遗传的。</li>
+<li>友谊不是相互的，也就是说，如果一个名为friend的类是另一个名为NotAFriend的类的朋友，那么它不会自动成为Friend类的朋友。</li>
+<li>在一个程序中，友元类和友元函数的总数应该是有限的，因为过多的友元类和友元函数可能会导致独立类封装概念的贬值，而封装是面向对象编程的一个固有的和可取的特性。</li>
+</ul>
+<h4 id="toc-18-what-is-operator-overloading">18。什么是运算符重载？</h4>
+<p>操作重载是指运算符根据传递的参数有不同的实现。这是一种多态性。</p>
+<h4 id="toc-19-what-is-polymorphism"><strong> 19。什么是多态性？</strong></h4>
+<p><strong><img src="../Images/104cff08bd75169aa9d0f6598782ccf3.png" alt="" data-original-src="https://hackr.io/blog/media/what-is-polymorphism-min-1.png"/>T2】</strong></p>
+<p>多态性是变量、函数或对象采取多种形式的能力。</p>
+
+<h4 id="toc-20-explain-vtable-and-vptr">20。解释vTable和vptr。</h4>
+<p>vTable是一个包含函数指针的表。每个班都有一张桌子。vptr是指向vTable的指针。每个对象都有一个vptr。为了维护和使用vptr和vTable，C++编译器在两个地方添加了额外的代码:</p>
+<ol>
+<li>在每个构造函数中——这段代码设置vptr:</li>
+<ol>
+<li aria-level="2">正在创建的对象的</li>
+<li aria-level="2">指向类的vTable</li>
+</ol>
+<li>带有多态函数调用的代码——在进行多态调用的每个位置，编译器都会插入代码，以便首先使用基类指针或引用查找vptr。一旦成功提取vptr，就可以访问派生类的vTable。使用vTable访问和调用派生类函数show()的地址。</li>
+</ol>
+<h4 id="toc-21-how-is-function-overloading-different-from-operator-overloading"><strong> 21。函数重载和运算符重载有什么不同？</strong></h4>
+<p>函数重载允许两个或多个不同类型和参数数量的函数具有相同的名称。另一方面，运算符重载允许为用户定义的类型重新定义运算符的工作方式。</p>
+<h4 id="toc-22-is-it-possible-for-a-c-program-to-be-compiled-without-the-main-function"><strong> 22。一个C++程序没有main()函数可以编译吗？</strong></h4>
+<p>是的，这是可能的。但是，由于main()函数对于程序的执行是必不可少的，所以程序在编译后会停止，不会执行。</p>
+<h4 id="toc-23-what-is-a-destructor"><strong> 23。什么是析构函数？</strong></h4>
+<p>析构函数是类的成员函数。它具有与类名相同的名称，并且也以波浪符号为前缀。每当一个对象失去它的作用域时，它可以被自动执行。析构函数不能重载，它只有一种不带参数的形式。</p>
+<h4 id="toc-24-what-is-the-default-constructor"><strong> 24。默认的构造函数是什么？</strong></h4>
+<p>编译器为每个类提供了一个构造函数，以防提供者不提供相同的构造函数。这是程序员没有给构造函数提供具体参数的时候——这被称为默认构造函数。下面的示例显示了默认构造函数的代码。</p>
+
+<pre class="language-cpp"><code>// Cpp program to illustrate the
+// concept of Constructors
+#include &lt;iostream&gt;
+using namespace std;
+class construct {
+public:
+   int a, b;
+   // Default Constructor
+   construct()
+   {
+       a = 10;
+       b = 20;
+   }
+};
+int main()
+{
+   // Default constructor called automatically
+   // when the object is created
+   construct c;
+   cout &lt;&lt; "a: " &lt;&lt; c.a &lt;&lt; endl
+        &lt;&lt; "b: " &lt;&lt; c.b;
+   return 1;
+}
+</code></pre>
+<h4 id="toc-25-can-we-provide-one-default-constructor-for-our-class"><strong> 25。我们能为我们的类提供一个默认的构造函数吗？</strong></h4>
+<p>不，我们不能为我们的类提供一个默认的构造函数。当类类型中的一个变量被设置为null时，这意味着它从未被初始化，结果将为零。</p>
+<h4 id="toc-26-what-is-the-main-difference-between-the-keyword-struct-and-class"><strong> 26。关键字struct和class的主要区别是什么？</strong></h4>
+<p>默认情况下，关键字struct用于类似公共成员，而关键字class默认情况下用于类似私有成员。</p>
+<h4 id="toc-27-what-is-the-output-of-the-following-program"><strong> 27。以下程序的输出是什么？</strong></h4>
+<pre class="language-cpp"><code>#include &lt;iostream&gt;
+using namespace std;
+int main() 
+{
+ int numbers[5], sum = 0;
+ cout &lt;&lt; "Enter 5 numbers: ";
+ for (int i = 0; i &lt; 5; ++i) 
+ {
+ cin &gt;&gt; numbers[i];
+ sum += numbers[i];
+ }
+ cout &lt;&lt; "Sum = " &lt;&lt; sum &lt;&lt; endl; 
+ return 0;
+}
+</code></pre>
+<p>该计划将要求用户输入5个数字，然后提出他们的总和。举个例子，</p>
+<p>输入5个数字:22</p>
+<p>25</p>
+<p>32</p>
+<p>46</p>
+<p>66</p>
+<p>总和= 191</p>
+<h4 id="toc-28-explain-virtual-functions-and-runtime-polymorphism-in-c-with-an-example"><strong> 28。用一个例子解释C++中的虚函数和运行时多态性。</strong></h4>
+<p>任何带有虚拟关键字的函数都表现出虚函数的行为。与根据所使用的指针或引用的类型调用的普通函数不同，虚函数是根据所指向或引用的对象的类型来调用的。</p>
+
+<p>简单地说，虚函数在运行时解析，而不是更早。虚函数的使用也可以理解为利用<a href="https://www.quora.com/What-exactly-is-the-runtime-polymorphism-in-C++" target="_blank" rel="noopener">运行时多态性</a>的概念编写C++程序。用C++编写虚函数的基本要素是:</p>
+
+<ul>
+<li>基类</li>
+<li>派生类</li>
+<li>在基类和派生类中具有相同名称的函数</li>
+<li>基类类型的指针或引用，分别指向或引用派生类的对象</li>
+</ul>
+<p>演示虚函数(或运行时多态性)使用的一个例子是:</p>
+<pre class="language-cpp"><code>#include &lt;iostream&gt;
+ using namespace std;
+ class Base { 
+ public: 
+ virtual void show() { cout&lt;&lt;" In Base \n"; } 
+ };
+ class Derived: public Base { 
+ public: 
+ void show() { cout&lt;&lt;"In Derived \n"; } 
+ }; 
+ 
+ int main(void) { 
+ Base *bp = new Derived; 
+ bp-&gt;show(); // &lt;- Runtime Polymorphism in Action
+ return 0;
+}</code></pre>
+<p>在前面提到的程序中，bp是一个Base类型的指针。对bp-&gt;show()的调用调用了派生类的show()函数。这是因为bp指向派生类的一个对象。</p>
+<h4 id="toc-29-what-differences-separate-structure-from-a-class-in-c"><strong> 29。在C++中，结构和类的区别是什么？</strong></h4>
+<p>在C++中，类和结构有两个重要的区别。这些是:</p>
+<ol>
+<li>当从类或其他结构派生结构时，基类或结构的默认访问说明符是公共的。相反，当派生一个类时，默认的访问说明符是私有的。</li>
+<li>默认情况下，结构的成员是公共的，而类的成员是私有的</li>
+</ol>
+<h4 id="toc-30-what-is-a-static-member">三十岁。什么是静态成员？</h4>
+<p>由static关键字表示，一个静态成员在程序生存期内只被分配一次静态存储区中的存储空间。关于静态成员的一些重要事实是:</p>
+<ul>
+<li>任何静态成员函数都不能是虚拟的</li>
+<li>静态成员函数没有“this”指针</li>
+<li>const、const volatile和volatile声明不适用于静态成员函数</li>
+</ul>
+<h4 id="toc-31-what-is-the-reference-variable">31。参考变量是什么？</h4>
+<p>C++中的引用变量是赋予现有变量的名称。在C++中，变量名和引用变量point共享相同的内存位置，这有助于使用引用变量更新原始变量。该代码可以在下面的示例中显示。</p>
+<pre class="language-cpp"><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+ int x = 10;
+ // ref is a reference to x.
+ int&amp; ref = x;
+ // Value of x is now changed to 20
+ ref = 20;
+ cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt; endl ;
+ // Value of x is now changed to 30
+ x = 30;
+ cout &lt;&lt; "ref = " &lt;&lt; ref &lt;&lt; endl ;
+ return 0;
+}</code></pre>
+<h3 id="advanced-c-interview-questions"><strong>高级C++面试问题</strong></h3>
+<h4 id="toc-32-explain-the-copy-constructor">32。解释复制构造函数。</h4>
+<p>在C++中，使用同一类的另一个对象初始化一个对象的成员函数称为复制构造函数。它们也可以成为私有的。在以下四种情况下，都可能调用复制构造函数:</p>
+<ol>
+<li>编译器生成一个临时对象</li>
+<li>一个对象是基于同一类的另一个对象构造的</li>
+<li>类的对象由值返回</li>
+<li>该类的对象作为参数通过值传递(即传递给函数)</li>
+</ol>
+<p>复制构造函数的一般函数原型是:</p>
+<p>class name(const class name &amp; old _ obj)：</p>
+<p>Point(int x1，int y1){ x = x1；y = y1}</p>
+<p>Point(const Point &amp; p2){ x = p2 . x；y = p2.y}</p>
+
+<h4 id="toc-33-take-a-look-at-the-following-two-code-examples-for-printing-a-vector-is-there-any-advantage-of-using-one-over-the-other">33。看看下面两个打印向量的代码示例。用一个比用另一个有什么优势吗？</h4>
+<pre class="language-cpp"><code>Sample Code 1:
+vector vec;
+/* ... .. ... */
+for (auto itr = vec.begin(); itr != vec.end(); itr++) {
+ itr-&gt;print();
+}
+Sample Code 2:
+vector vec;
+/* ... .. ... */
+for (auto itr = vec.begin(); itr != vec.end(); ++itr) {
+ itr-&gt;print();
+}</code></pre>
+<p>尽管这两个代码会生成相同的输出，但示例代码2是一个更具性能的选项。这是因为后增量“itr++”运算符比前增量“++”运算符开销更大。</p>
+
+<p>后递增运算符在递增元素并返回副本之前生成元素的副本。此外，大多数编译器会通过将示例代码1隐式转换为示例代码2来自动优化它。</p>
+<h4 id="toc-34-write-a-program-that-stores-and-displays-the-gpa-grade-point-average-of-a-certain-number-of-students-and-you-need-to-store-and-display-it-using-c">34。写一个程序，存储并显示一定数量学生的GPA(平均绩点)，需要用C++存储并显示。</h4>
+<pre class="language-cpp"><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+ int num;
+ cout &lt;&lt; "Enter the total number of students: ";
+ cin &gt;&gt; num;
+ float* ptr;
+ ptr = new float[num];
+ cout &lt;&lt; "Enter the GPA of students." &lt;&lt; endl;
+ for (int i = 0; i &lt; num; ++i)
+ {
+ cout &lt;&lt; "Student" &lt;&lt; i + 1 &lt;&lt; ": ";
+ cin &gt;&gt; *(ptr + i);
+ }
+ cout &lt;&lt; "\nDisplaying GPA of students." &lt;&lt; endl;
+ for (int i = 0; i &lt; num; ++i) {
+ cout &lt;&lt; "Student" &lt;&lt; i + 1 &lt;&lt; " :" &lt;&lt; *(ptr + i) &lt;&lt; endl;
+ }
+ delete [] ptr;
+return 0;
+
+}</code></pre>
+<h4 id="toc-35-what-is-a-mutable-storage-class-specifier-how-can-they-be-used">35。什么是可变存储类说明符？如何使用它们？</h4>
+<p>可变存储类说明符仅适用于该类的非静态和非常数成员变量。它用于通过声明常量类对象的成员来改变它。这可以通过使用存储类说明符来完成。</p>
+<h4 id="toc-36-what-are-the-differences-between-a-shallow-copy-and-a-deep-copy">36。浅抄和深抄有什么区别？</h4>
+<p>浅层拷贝和深层拷贝的区别在于:</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>浅抄</strong></p>
+</td>
+<td>
+<p><strong>深度复制</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>允许从一个对象到另一个对象逐位进行内存转储</p>
+</td>
+<td>
+<p>允许复制字段，这是通过从一个对象到另一个对象的字段完成的。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>反映对原始对象中的新/复制对象所做的更改。</p>
+</td>
+<td>
+<p>不反映对原始对象中的新/复制对象所做的更改。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-37-what-is-an-abstract-class">37。什么是抽象类？</h4>
+<p>C++中的抽象类被称为基类，它至少有一个纯虚函数。在这样的函数中，一个人不能实例化一个抽象类。这样，在类声明中声明虚成员函数时，通过使用等于零的纯说明符来定义纯虚函数。示例中的代码示例如下所示。</p>
+<pre class="language-cpp"><code>// An abstract class
+class Test
+{
+// Data members of class
+public:
+// Pure Virtual Function
+virtual void show() = 0;
+/* Other members */
+};</code></pre>
+<h4 id="toc-38-what-are-the-functions-of-the-scope-resolution-operator">38。范围解析操作符的作用是什么？</h4>
+<p>范围解析运算符的功能包括。</p>
+<ol>
+<li>它有助于解析各种全局变量的范围。</li>
+<li>当在类外定义函数时，它有助于将函数与类相关联。</li>
+</ol>
+<p>范围解析运算符的代码可以显示如下。</p>
+<pre class="language-cpp"><code>#include &lt;iostream&gt;
+using namespace std;
+int my_var = 0;
+int main(void) {
+int my_var = 0;
+::my_var = 1; // set global my_var to 1
+my_var = 2; // setlocal my_var to 2
+cout &lt;&lt; ::my_var &lt;&lt; ", " &lt;&lt; my_var;
+return 0;
+}</code></pre>
+<h4 id="toc-39-what-is-a-token">39。什么是代币？</h4>
+<p>令牌是C++程序中各种函数的名称。标记的例子包括关键字、符号、字符串、标识符、常数等。以下示例解释了这些问题:</p>
+<pre class="language-cpp"><code>asm      bool    catch      class
+const_cast   delete dynamic_cast   explicit
+export   false   friend         inline
+mutable  namespace   new operator
+private  protected   public reinterpret_cast
+static_cast  template this       throw
+true     try     typeid     typename
+using    virtual wchar_t</code></pre>
+<h4 id="toc-40-what-is-the-diamond-problem-that-occurs-with-multiple-inheritance-in-c">40。C++中多重继承出现的“钻石问题”是什么？</h4>
+<p>C++中的菱形问题代表了编程语言无法使用多重和分层继承来支持混合继承。</p>
+<p>假设我们有一所大学，有一些教员和一些研究生。在这个场景中，一个简单的继承方案可能让不同类型的人扮演不同的角色。但是，它们都继承自同一个Person类。</p>
+<p>Person类定义了一个抽象的getRole()方法，该方法将被它的子类覆盖，以便返回正确的角色类型。到目前为止，事情很简单。然而，如果我们希望模拟助教或助教的角色，事情就会变得更复杂。</p>
+<p>助教既是学生又是教员。该问题生成一个类似菱形的继承图，因此得名，菱形问题。</p>
+<p>助教应该继承哪个getRole()实现？研究生还是教员？一个可能的答案是让助教类覆盖getRole()方法并返回一个新定义的角色，比如TA。</p>
+<p>然而，这样的回答也是不完整的，因为它掩盖了助教既是教师又是研究生的事实。</p>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>本文还涵盖了一些C++编码面试问题和一些基于理论的问题。潜在的问题清单是巨大的，但是上面的清单是一个好的开始。不要忘记</p>
+<p>对于每一次面试，你也应该对数据结构和算法有所了解。这个<a href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https://www.udemy.com/course/datastructurescncpp/" target="_blank" rel="noopener">掌握数据结构&amp;算法使用C和C++ </a>会有帮助。</p>
+<h2 id="frequently-asked-questions"><strong>常见问题解答</strong></h2>
+<h4 id="toc-1-what-are-good-c-interview-questions"><strong> 1。有哪些好的C++面试问题？</strong></h4>
+<p>所有的基础理论，编程概念，以及一些基于代码的问题，都可以认为是好的C++面试问题。你真的应该把重点放在C++技术面试问题上。</p>
+<h4 id="toc-2-how-do-i-prepare-for-c"><strong> 2。我该如何准备C++？</strong></h4>
+<p>你可以通过关注C++面试问题来为C++面试做准备，无论是有经验的还是初学者。不要忘了C++编码题。</p>
+<h4 id="toc-3-who-invented-c"><strong> 3。谁发明了C++？</strong></h4>
+<p>Bjarne Stroustrop在1979年开始致力于为C语言添加类。这将成为C++，它在1985年首次出现。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

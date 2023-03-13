@@ -1,0 +1,393 @@
+<html>
+<head>
+<title>Top 50 JSP Interview Questions and Answers [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>前50名JSP面试问题和答案[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/jsp-interview-questions#0001-01-01">https://hackr.io/blog/jsp-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<h2 id="what-is-jsp">JSP是什么？</h2>
+<p>JSP代表JavaServer Pages。JSP是创建动态网页的Java服务器端技术。JSP是Servlet技术的扩展，帮助开发人员使用类似HTML的语法创建动态页面。</p>
+<p>用户也在servlets中创建用户视图，但是代码变得难看而且容易出错。此外，由于网页上的大部分元素是静态的，因此JSP页面适用于网页。JSP页面中的业务逻辑应该避免，并且只能用于查看目的。</p>
+<h2 id="jsp-interview-questions-and-answers">JSP面试问答</h2>
+<p>现在让我们看看流行的JSP面试问题和答案。</p>
+<h4 id="question-what-are-the-benefits-of-jsp"><strong>问题:JSP有什么好处？</strong></h4>
+<p><strong>答:</strong>应该避免使用JSP脚本元素在JSP页面中编写Java代码，而应该使用JSTL标签、JSP动作元素或自定义标签来实现相同的功能。</p>
+
+<p>JSP的另一个好处是大多数容器支持JSP页面的热部署。在JSP页面中进行更改，并用部署目录中更新的JSP页面替换旧页面，然后容器加载新的JSP页面。我们不需要编译我们的项目代码或重启服务器，不像在servlet代码中进行更改时，我们需要再次构建完整的项目并进行部署。尽管大多数容器仍然为应用程序提供热部署支持，但这比JSP页面要多。</p>
+<h4 id="question-explain-the-lifecycle-phases-of-jsp"><strong>问题:解释JSP的生命周期阶段</strong></h4>
+<p><strong>答案:</strong></p>
+<p><img src="../Images/031a363e044ef3d11530320c64f186d5.png" alt="Life cycle of JSP" data-original-src="https://hackr.io/blog/uploads/images/life-cycle-of-jsp.png"/></p>
+<p>典型的JSP页面代码看起来像HTML，一点也不像java类。JSP容器负责翻译JSP页面并创建在web应用程序中使用的servlet类。以下是JSP生命周期的各个阶段:</p>
+<ol>
+<li><strong>翻译:</strong>对JSP代码进行检查和解析，生成servlet源代码。例如，在Tomcat中，生成的servlet类文件位于名为Tomcat/work/Catalina/localhost/web app/org/Apache/JSP的目录中。如果home.jsp是JSP页面名，那么通常生成的servlet类名是home_jsp，home_jsp.java是文件名。</li>
+<li><strong>编译:</strong>在这个阶段，JSP容器编译JSP类源代码，产生一个类文件。</li>
+<li><strong> ClassLoading: </strong>在这个阶段，容器将类加载到内存中。</li>
+<li><strong>实例化:</strong>容器调用生成的类的无参数构造函数，将其加载到内存中并实例化。</li>
+<li><strong>初始化:</strong>JSP类对象的init方法由容器调用，servlet config用部署描述符中配置的init参数初始化。在这个阶段之后，JSP就可以处理客户机请求了。通常，JSP的初始化转换发生在第一个JSP请求到来时。尽管如此，我们可以配置它在部署时加载和初始化，就像servlets使用load-on-startup元素一样。</li>
+<li><strong>请求处理:</strong>这是处理客户端请求时JSP页面最长的生命周期。处理是多线程的，类似于servlets，并且为每个应用程序产生一个新线程。创建Servlet请求和ServletResponse对象，并调用JSP服务方法。</li>
+<li><strong> Destroy: </strong>这是JSP生命周期的最后一个阶段，从内存中卸载JSP类。通常，当取消部署应用程序或关闭服务器时会发生这种情况。</li>
+</ol>
+<h4 id="question-discuss-jsp-lifecycle"><strong>问题:讨论JSP生命周期</strong></h4>
+<p><strong>回答:</strong> JSP生命周期由以下方法组成:</p>
+<ol>
+<li><strong> jspInit(): </strong>这是一个在JspPage中声明的方法，由JSP容器实现来实现。该方法在JSP生命周期中被调用一次，用部署描述符中配置的配置参数初始化它。我们可以使用JSP声明脚本元素来覆盖这个方法，以初始化我们想要在JSP页面中使用的任何资源。</li>
+<li><strong>_ JSP service():</strong>JSP容器为每个客户端请求调用JSP方法，绕过请求和响应对象。请注意，方法名称以下划线开头，以区别于其他生命周期方法，因为此方法不能被覆盖。默认情况下，所有JSP代码都放在方法内部并被替换。我们不应该试图用JSP声明脚本元素来替换它。该方法是在HttpJspPage接口中定义的。</li>
+<li><strong> jspDestroy(): </strong>当JSP从内存中卸载时，容器调用这个方法，比如关闭应用程序或box。该方法在JSP生命周期中只被调用一次，并且该方法被覆盖以释放在JSP init方法中创建的资源。</li>
+</ol>
+<h4 id="question-is-it-possible-to-override-the-jsp-lifecycle-methods-if-yes-which-of-the-methods-can-be-overridden">问题:可以覆盖JSP生命周期方法吗？如果是，哪些方法可以被覆盖？</h4>
+<p><strong>回答:</strong>是的，我们可以覆盖JSP生命周期方法。通过使用JSP声明脚本元素，可以覆盖jspInit()和jspDestroy()等方法。我们覆盖jspInit()方法来创建我们希望在JSP服务方法中使用的公共资源，并覆盖jspDestroy()方法来释放公共资源。</p>
+
+<h4 id="question-mention-the-literals-used-in-jsp"><strong>问题:提及JSP中使用的文字</strong></h4>
+<p><strong>答案:</strong> JSP使用以下文字；</p>
+<ul>
+<li>空</li>
+<li>布尔代数学体系的</li>
+<li>线</li>
+<li>整数</li>
+<li>浮动</li>
+</ul>
+
+<p><strong>答:</strong>JSP Bean开发使用如下三个标签:</p>
+<ul>
+<li>jsp:useBean</li>
+<li>jsp:setProperty</li>
+<li>jsp:getProperty</li>
+</ul>
+
+<p><strong>回答:</strong>JSP页面提供了两种类型的注释，我们可以使用:</p>
+<ul>
+<li><strong> HTML注释:</strong>我们可以像&lt;一样使用HTML注释！- HTML注释- &gt;既然JSP页面像HTML。这些注释也被发送到客户端，并且可以在HTML源代码中看到。所以我们必须避免使用HTML注释调试注释或代码级注释。</li>
+<li><strong> JSP注释:</strong>像&lt; % - JSP注释- % &gt;这样的Scriptlets用于编写JSP注释。这些注释不会发送给客户机，而是出现在生成的servlet源代码中。我们应该对任何代码级别或调试信息注释使用JSP注释。</li>
+</ul>
+<h4 id="question-describe-the-scripting-elements-in-jsp"><strong>问题:描述JSP中的脚本元素</strong></h4>
+<p><strong>答案:</strong></p>
+<p>Expression、Scriptlets和Declaration是JSP页面中的脚本元素，使用它们可以在JSP页面中添加java代码。</p>
+<p>在scriptlet标记内编写的任何代码都进入_jspService()方法。scriptlet标签以开始。比如说；</p>
+<pre>&lt;%<br/>Date dt = new Date( );<br/>System.out.println("Current Date=" +dt);<br/>%&gt;</pre>
+<p>有一种通过JSP表达式使用out.print()方法在JSP页面中打印动态数据的快捷方式。JSP表达式以开头。</p>
+<pre>&lt;% out.print("John"); %&gt; can be written using JSP Expression as &lt;%= "John" %&gt;</pre>
+<p>请注意，中的任何内容都作为参数发送给out.print()方法。另外，注意scriptlets可以包含多个java语句，并且总是以分号(；)，但表达式不以分号结尾。</p>
+<p>servlet类的成员变量和方法的声明是使用JSP声明进行的。JSP声明分别以“”开始和结束。</p>
+<p>例如，我们在JSP中在类级别创建一个int变量作为。</p>
+
+<p><strong>回答:</strong>JSP注释叫隐藏注释，而HTML注释叫输出注释。如果用户查看页面的源代码，JSP注释将不会显示，而HTML注释将会显示。</p>
+<h4 id="question-why-the-use-of-scripting-elements-in-jsp-discouraged"><strong>问题:为什么不鼓励在JSP中使用脚本元素？</strong></h4>
+<p><strong>回答:</strong> JSP页面是用于视图目的的，所有的业务逻辑应该在servlet或者模型类中。我们应该通过属性将参数传递给JSP页面，然后使用它们在JSP页面中创建HTML响应。</p>
+<p>JSP页面的大部分都包含HTML代码，为了帮助web设计人员理解JSP页面并快速开发它们，JSP技术提供了action元素、JSP标准标记库、JSP EL和自定义标记，我们使用它们而不是脚本元素来弥合JSP HTML和JSP java部分之间的差距。</p>
+
+<p><strong>答:</strong>根据JSTL函数将它们分为五种类型:</p>
+<ol>
+<li><strong>核心标签:</strong>提供对迭代、条件逻辑、捕捉异常、URL、转发或重定向响应等的支持。</li>
+<li><strong>格式化和本地化标签:</strong>通过资源包和语言环境提供日期、数字和i18n支持的格式化。</li>
+<li><strong> SQL标签:</strong>提供与Oracle、MySql等关系数据库的交互支持。</li>
+<li><strong> XML标签:</strong>用于处理XML文档，比如解析XML、转换XML数据和XPath表达式求值。</li>
+<li><strong> JSTL函数标签:</strong> JSTL标签提供了几个我们可以用来执行标准操作的函数；其中大多数用于字符串操作，如字符串连接、拆分字符串等。</li>
+</ol>
+<h4 id="question-what-is-jsp-custom-tag-and-what-are-the-components-of-a-jsp-custom-tag"><strong>问题:什么是JSP自定义标签，一个JSP自定义标签有哪些组成部分？</strong></h4>
+<p><strong>回答:</strong> Action标签、JSP EL、JSTL标签有时候不够用，可能会诱惑我们用Java写代码来执行JSP页面上的一些操作。幸运的是，JSP是可扩展的，我们可以创建定制的标签来提供特定的服务。</p>
+<p>我们可以使用以下组件创建JSP自定义标记:</p>
+<ul>
+<li>JSP自定义标记处理程序</li>
+<li>正在创建标签库描述符(TLD)文件</li>
+<li>TLD的部署描述符配置</li>
+</ul>
+<p>我们可以使用taglib指令在JSP页面中添加自定义标记库，然后使用它。</p>
+<h4 id="question-what-are-jsp-implicit-objects"><strong>问题:什么是JSP隐式对象？</strong></h4>
+<p><strong>回答:</strong>web容器在将JSP页面翻译成Servlet源码帮助开发者时创建的对象是JSP隐式对象。我们在服务方法中的scriptlets中直接使用这些对象。然而，它们不能在JSP声明中使用，因为代码将在类级别上。</p>
+<p>我们有九个隐式对象，可以直接在JSP页面上使用。其中七个在_jspService()方法的开始被声明为局部变量，而其中两个是我们可以使用的_jspService()方法参数的一部分。</p>
+<ol>
+<li>在外</li>
+<li>请求</li>
+<li>反应</li>
+<li>配置</li>
+<li>应用</li>
+<li>会议</li>
+<li>页面上下文</li>
+<li>页，面，张，版</li>
+<li>例外</li>
+</ol>
+<h4 id="question-we-can-use-jsp-implicit-objects-in-a-method-defined-in-the-jsp-declaration-true-or-false-justify"><strong>问题:我们可以在JSP声明中定义的方法中使用JSP隐式对象吗？真的还是假的？对齐</strong></h4>
+<p><strong>回答:</strong>假！因为这些对象对于服务方法是本地的，而且这些JSP隐式对象是由JSP容器添加的。它还将JSP页面翻译成servlet源代码。JSP声明代码在服务方法之外，它用于创建类级别的变量和方法。因此不能使用JSP隐式对象。</p>
+<h4 id="question-how-to-include-static-files-in-a-jsp"><strong>问题:如何在JSP中包含静态文件？</strong></h4>
+<p><strong>答:</strong>静态页面可以使用include指令包含在JSP中。在翻译阶段，以这种方式执行一次包含。必须为文件属性提供相对URL。虽然可以包含静态资源，但这不是首选，因为每个请求都需要包含静态资源。</p>
+<h4 id="question-explain-client-side-and-server-side-validation">问题:解释客户端和服务器端的验证。</h4>
+<p><strong>答:</strong>验证在浏览器内的客户端使用JavaScript和HTML进行。客户端验证的主要优点是它不需要网络连接，因为它发生在客户端的机器上，因此可以提供接近即时的反馈。有一些客户端约束需要应用于HTML无法处理的输入。使用JavaScript验证表单。我们在表单中添加了一个事件监听器，这样我们就可以在表单提交之前执行一些JavaScript。信用卡信息是JavaScript客户端验证的一个典型例子。</p>
+<p>我们相信服务器端验证会对所有输入正确无误地执行。在向用户显示任何成功或错误消息之前，客户端应该等待服务器的响应，因为服务器在收到HTTP请求之前无法执行验证。在验证失败的情况下，需要额外的网络行程来重新发送表单，以便由客户端用正确的数据填写表单。</p>
+<h4 id="question-explain-jsp-declaration"><strong>问题:解释JSP声明</strong></h4>
+<p><strong>答:</strong>声明字段和方法是使用JSP声明标签完成的。代码包在&lt;里面%！% &gt;标记，并放在自动生成的servlet的service()方法之外。因此，它不会在每次请求时都获取内存。</p>
+<p>语法:</p>
+<pre>&lt;%! field or method %&gt; <br/>Example<br/>&lt;html&gt;<br/>&lt;body&gt;<br/>&lt;%! int val=50; %&gt;<br/>&lt;%= "Value of the variable is:"+val %&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;</pre>
+<h4 id="question-distinguish-between-jsp-scriptlet-and-jsp-declaration"><strong>问题:区分JSP Scriptlet和JSP声明。</strong></h4>
+<p><strong>答案:</strong></p>
+
+<table>
+<tbody>
+<tr>
+<td><strong> JSP脚本程序</strong></td>
+<td><strong> JSP声明</strong></td>
+</tr>
+<tr>
+<td>它只能声明变量，不能声明方法。</td>
+<td>它可以声明方法和变量。</td>
+</tr>
+<tr>
+<td>它被放在_jspService()方法中。</td>
+<td>它被放在_jspService()方法之外。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-what-are-the-advantages-of-jsp-over-asp"><strong>问题:JSP比ASP有什么优势？</strong></h4>
+<p><strong>答案:</strong></p>
+<ul>
+<li>它功能强大且易于使用，因为代码的动态部分是用Java编写的，而不是Visual Basic或微软特有的语言。</li>
+<li>它可以移植到非微软的Web服务器和其他操作系统。</li>
+</ul>
+<h4 id="question-define-the-jsp-custom-tag-and-its-components"><strong>问题:定义JSP自定义标签及其组件。</strong></h4>
+<p><strong>答案:</strong>自定义标签是用户自定义的标签；我们可以用我们的功能定义我们的标签，并在JSP页面中使用这些标签。</p>
+<p>它具有以下优点:</p>
+<ul>
+<li>它消除了对scriptlet标记的需要。</li>
+<li>从JSP页面中分离业务逻辑</li>
+<li>JSP页面的可重用性。</li>
+</ul>
+<p>它由以下组件组成:</p>
+<ol>
+<li>自定义标记处理程序类。</li>
+<li>创建一个TLD(标签库描述符)文件。</li>
+<li>TLD的部署描述符配置</li>
+</ol>
+<p>我们可以使用taglib指令在JSP页面中添加自定义标记库，然后使用它。</p>
+<p><strong>问题:JavaScript可以和JSP页面一起使用吗？</strong></p>
+<p><strong>回答:</strong>是的，我们可以，尽管JSP是一种服务器端技术，但它是用来生成客户端响应的，我们可以像任何其他HTML页面一样添加javascript或CSS代码。</p>
+<h4 id="question-how-to-configure-init-params-for-jsp"><strong>问题:如何为JSP配置init params？</strong></h4>
+<p><strong>回答:</strong>我们可以为JSP配置类似于web.xml文件中servlet的init params还有必要用servlet和servlet映射元素配置JSP init参数。与servlet唯一不同的是jsp-file元素，在这里我们需要提供jsp页面的位置。</p>
+<h4 id="question-distinguish-between-including-directive-and-include-action-in-jsp"><strong>问题:区分JSP中的包含指令和包含动作</strong></h4>
+<p><strong>答案:</strong></p>
+<table>
+<tbody>
+<tr>
+<td><strong>包含指令</strong></td>
+<td><strong>包含动作</strong></td>
+</tr>
+<tr>
+<td>它在翻译时被处理。</td>
+<td>它在运行时被处理。</td>
+</tr>
+<tr>
+<td>它使用相对或绝对路径</td>
+<td>它使用相对路径。</td>
+</tr>
+<tr>
+<td>不能传递其他参数。</td>
+<td>可以传递其他参数。</td>
+</tr>
+<tr>
+<td>它只包含资源的内容，不会处理动态资源。</td>
+<td>它处理动态资源，结果将被添加到调用JSP中</td>
+</tr>
+<tr>
+<td>不允许将任何请求或响应对象传递给包含文件或jsp的调用JSP，反之亦然。</td>
+<td>允许将任何请求或响应对象传递给包含文件或jsp调用JSP，反之亦然。</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>答:</strong>标签提供了有用的功能，比如包含资源、使用Java Bean、转发请求以及生成动态XML元素。Action元素以jsp:开头，可以直接在JSP页面中使用，无需导入任何标记库或任何其他配置更改。JSP标签是:</p>
+
+<table>
+<tbody>
+<tr>
+<td><strong> JSP标签</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr>
+<td>jsp:转发</td>
+<td>将响应和请求转发给另一个资源。</td>
+</tr>
+<tr>
+<td>jsp:包含</td>
+<td>包括另一个资源</td>
+</tr>
+<tr>
+<td>JSP:bean的使用</td>
+<td>定位或创建bean对象</td>
+</tr>
+<tr>
+<td>jsp:setProperty</td>
+<td>属性的值是在bean对象中设置的</td>
+</tr>
+<tr>
+<td>jsp:getProperty</td>
+<td>打印bean的属性值</td>
+</tr>
+<tr>
+<td>jsp:插件</td>
+<td>像applet一样嵌入另一个组件</td>
+</tr>
+<tr>
+<td>jsp:我的钱</td>
+<td>设置参数值。它用于forward和includes mostly。</td>
+</tr>
+<tr>
+<td>jsp:回退</td>
+<td>可以用来打印消息，如果插件正在工作。它用在jsp: plugin中。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-what-is-jsp-expression-language-el"><strong>问题:什么是JSP表达式语言(EL)？</strong></h4>
+<p><strong>回答:</strong> JSP EL简化了存储在Java bean组件和其他对象(如请求、应用程序和会话)中的数据的可访问性。</p>
+
+<p>语法:</p>
+<pre>$</pre>
+<h4 id="question-how-to-use-jsp-el-to-get-the-http-method-name"><strong>问题:如何使用JSP EL获取HTTP方法名？</strong></h4>
+<p><strong>答案:</strong> pageContext JSP EL隐式对象用于获取请求对象引用，点运算符用于获取JSP页面中的HTTP方法名。</p>
+<p>下面是相同的代码片段:</p>
+<pre>$</pre>
+<h4 id="question-can-a-jsp-extend-another-java-class-if-yes-how">问题:一个JSP可以扩展另一个java类吗？如果是，如何实现？</h4>
+<p><strong>回答:</strong>是的，JSP可以用这个扩展另一个JSP</p>
+<pre>&lt;%@ include page extends="classname" %&gt;</pre>
+<p>这是正确的，因为当JSP转换为servlet时，它实现了javax . servlet . JSP . httpjspage接口，所以JspPage扩展了另一个java类。</p>
+<h4 id="question-how-does-jsp-communicate-with-java-files"><strong>问题:JSP如何与Java文件通信？</strong></h4>
+<p><strong>答案:</strong>进口标签</p>
+<pre>&lt;%@ page import="market.stock.*” %&gt;</pre>
+<p>像这样，我们将所有的java文件导入到jsp中，并将它们作为一个常规类使用。另一种方式是servlet可以将java类的实例发送给jsp，并且可以从请求对象中检索该对象并在页面上使用它。</p>
+<h4 id="question-which-directive-is-used-in-the-jsp-custom-tag">问题:JSP自定义标记中使用了哪个指令？</h4>
+<p><strong>答案:</strong> JSP taglib指令。</p>
+
+<p><strong>答案:</strong></p>
+<ol>
+<li>jsp:useBean</li>
+<li>jsp:setProperty</li>
+<li>jsp:getProperty</li>
+</ol>
+
+<h4 id="answer">回答:</h4>
+<pre>&lt;%-- Comment --%&gt;</pre>
+<h4 id="question-is-jsp-technology-extensible-how"><strong>问题:JSP技术可扩展吗？怎么会？</strong></h4>
+<p><strong>回答:</strong>是的，JSP技术可以通过开发封装在标签库中的标签或自定义动作来进行扩展。</p>
+
+<h4 id="question-how-can-a-thread-safe-jsp-page-be-implemented"><strong>问题:如何实现线程安全的JSP页面？</strong></h4>
+<p><strong>回答:</strong>通过让JSP实现SingleThreadModel接口，我们可以使它们线程安全。这可以通过在JSP页面中添加指令<strong>&lt;% @ page is thread safe = " false " %&gt;</strong>来实现。</p>
+
+<h4 id="question-define-jsp-expressions"><strong>问题:定义JSP表达式</strong></h4>
+<p><strong>答案:</strong>JSP表达式元素内部包含的脚本语言表达式首先被求值，然后被转换成字符串，再被插入到JSP文件中表达式出现的地方。</p>
+<p>根据Java语言规范，expression元素可以包含任何有效的表达式，但分号不能用于结束表达式。</p>
+<p>语法:</p>
+<pre>&lt;% expression %&gt;</pre>
+<h4 id="question-define-the-jsp-directive"><strong>问题:定义JSP指令？</strong></h4>
+<p><strong>答:</strong>servlet类的整体结构受一个JSP指令的影响。它具有以下形式:</p>
+<pre>&lt;%@ directive attribute = "value" %&gt;</pre>
+
+<p><strong>答案:</strong></p>
+<table>
+<tbody>
+<tr>
+<td><strong>指令标签</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr>
+<td/>
+<td>定义页面相关属性。</td>
+</tr>
+<tr>
+<td/>
+<td>文件包含在翻译阶段。</td>
+</tr>
+<tr>
+<td/>
+<td>声明页面中使用的包含自定义操作的标记库。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-define-jsp-literals"><strong>问题:定义JSP文字</strong></h4>
+<p><strong>答:</strong>文字被定义为作为代码的一部分写入的值，如文本字符串或数字。</p>
+<p>jsp字面意思是:</p>
+<table>
+<tbody>
+<tr>
+<td><strong> JSP文字</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr>
+<td>布尔代数学体系的</td>
+<td>对还是错</td>
+</tr>
+<tr>
+<td>线</td>
+<td>用单引号和双引号；"被转义为\，" '被转义为\，',而\被转义为\\。</td>
+</tr>
+<tr>
+<td>整数</td>
+<td>就像在Java里</td>
+</tr>
+<tr>
+<td>浮点</td>
+<td>就像在Java里</td>
+</tr>
+<tr>
+<td>空</td>
+<td>空</td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-how-are-jsp-runtime-exceptions-handled"><strong>问题:JSP运行时异常是如何处理的？</strong></h4>
+<p><strong>答:</strong>异常定义为运行时抛出的异常，处理运行时错误的进程称为异常处理。</p>
+<p>在JSP中，异常以两种方式处理:</p>
+<ol>
+<li>通过Page指令的errorPage和isErrorPage属性</li>
+<li>web.xml文件中的By <error-page>元素</error-page></li>
+</ol>
+<h4 id="question-what-is-the-page-directive"><strong>问题:什么是页面指令？</strong></h4>
+<p><strong>答:</strong>页面指令向容器提供与当前JSP页面相关的指令。页面指令可以在JSP页面的任何地方编码。</p>
+<h4 id="question-why-does-the-jspservice-method-starts-with-an-while-other-life-cycle-methods-do-not"><strong>问题:为什么_jspService()方法以' _ '开头，而其他生命周期方法没有？</strong></h4>
+<p><strong>答:</strong> jspInit() jspDestroy()和_jspService()是主要的JSP生命周期方法，默认情况下，JSP页面中写入的任何内容都将由容器放入_jspService()方法中，如果再次尝试覆盖此方法，JSP编译器将会给出一个错误，但我们可以覆盖其他两个生命周期方法，因为在JSP中实现了这两个方法，所以使此差异容器使用_ in jspService()方法，并表明该方法不能被覆盖。</p>
+<h4 id="question-how-is-jsp-used-in-the-mvc-model"><strong>问题:JSP在MVC模式中是如何使用的？</strong></h4>
+<p><strong>答案:</strong> JSP用于模型视图控制器模式(MVC)中的展现；这意味着它扮演了视图的角色。控制器调用模型和业务类，它们依次获取数据，然后这些数据被呈现给JSP以呈现给客户机。</p>
+<h4 id="question-can-the-jspinit-jspservice-and-jspdestroy-methods-be-overridden"><strong>问题:jspInit()、_jspService()和jspDestroy()方法可以被覆盖吗？</strong></h4>
+<p><strong>答:</strong>我们不能覆盖<span> _jspService()方法，但是jspinit()和jspDestroy()方法可以被覆盖。</span></p>
+<h4 id="question-when-to-use-application-scope"><strong>问题:什么时候使用应用范围？</strong></h4>
+<p><strong>答:</strong>当我们想让数据对整个应用程序可用时，就使用它。</p>
+<h4 id="question-differentiate-between-javabeans-and-taglib-directives"><strong>问题:区分JavaBeans和taglib指令</strong></h4>
+<p><strong>回答:</strong> JavaBeans和taglib是为了复用性而引入的。以下是它们之间的主要区别</p>
+<ul>
+<li>JavaBeans适合存储信息和状态，而Taglibs适合生成表示元素。</li>
+<li>使用定制标签实现动作，使用JavaBeans呈现信息。</li>
+</ul>
+<h4 id="question-how-is-information-is-passed-from-jsp-to-included-jsp"><strong>问题:信息是如何从JSP传递到被包含的JSP的？</strong></h4>
+<p><strong>答案:</strong>使用</p>
+<pre>&lt;%jsp:param&gt;</pre>
+<h4 id="question-define-the-auto-refresh-feature"><strong>问题:定义自动刷新功能</strong></h4>
+<p><strong>答案:</strong>想象一个网页，显示现场游戏比分或股市状况或货币兑换比率。对于所有此类页面，需要使用浏览器的刷新或重新加载按钮定期刷新网页。</p>
+<p>JSP通过提供一种机制使这项工作变得简单，在这种机制下，网页可以在给定的时间间隔后自动刷新。</p>
+<h4 id="question-how-is-the-auto-refresh-implemented-in-jsp"><strong>问题:JSP中的自动刷新是如何实现的？</strong></h4>
+<p><strong>答:</strong>刷新网页最简单的方法就是使用响应对象的方法<strong>setin header()</strong>。下面是这个方法的签名</p>
+<pre>public void setIntHeader(String header, int header value)</pre>
+<p>该方法将标头“Refresh”与一个整数值一起发送回浏览器，该整数值指示时间间隔(以秒为单位)。</p>
+
+<p><strong>答:</strong>JSTL SQL标记库提供了用于与Oracle、MySQL或Microsoft SQL Server等关系数据库(RDBMSs)交互的标记。</p>
+<p>下面是在JSP中包含JSTL SQL库的语法</p>
+<pre>&lt;%@ taglib prefix = "sql" uri = "http://java.sun.com/jsp/jstl/sql" %&gt;</pre>
+<h4 id="question-what-type-of-errors-can-a-jsp-code-encounter">问题:JSP代码会遇到什么类型的错误？</h4>
+<p><strong>答案:</strong></p>
+<ul>
+<li><strong>检查异常:</strong>异常是用户错误或程序员无法预见的问题。例如，如果要打开一个文件，但找不到该文件，则会发生异常。这些例外很难被忽略。</li>
+<li>运行时异常:发生的异常可能已经被程序员避免了。编译时会忽略运行时异常。</li>
+<li>错误:这些不被认为是例外，而是超出用户或程序员控制的问题。代码中的错误会被忽略，因为您很少能对错误做任何事情。例如，如果发生堆栈溢出，就会出现错误。它们在编译时也会被忽略。</li>
+</ul>
+<h4 id="question-how-to-disable-scripting"><strong>问题:如何禁用脚本？</strong></h4>
+<p><strong>答:</strong>我们可以通过将部署描述符的scripting-invalid元素设置为true来禁用脚本。它是jsp-property-group的子元素。它的有效值为true和false。禁用脚本的语法是:</p>
+<pre>&lt;jsp-property-group&gt;<br/>&lt;url-pattern&gt;*.jsp&lt;/url-pattern&gt;<br/>&lt;scripting-invalid&gt;true&lt;/scripting-invalid&gt;<br/>&lt;/jsp-property-group&gt;</pre>
+<h2 id="conclusion">结论</h2>
+<p>准备面试可能会很有压力，所以我们在这里向你展示最受欢迎的JSP面试问题，让你在JSP面试中脱颖而出。你还有什么问题要分享吗？或者有什么破解这个面试的小技巧？</p>
+<p>面向初学者的JSP、Servlets和JDBC:构建一个数据库应用是准备JSP面试时一些很受欢迎的Udemy课程。</p>
+<p>求一本JSP面试问题书？参考这个磨砺你的JSP技能:【Java面试1000强问题:包括Spring、Hibernate、微服务、GIT、Maven、JSP、AWS、云计算:(最新2018版)。</p>
+<p>请在下面的评论中告诉我们！！</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

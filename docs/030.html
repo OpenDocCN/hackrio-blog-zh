@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>What Is Programming? | Ultimate Guide To Programming</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>什么是编程？编程终极指南</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/what-is-programming#0001-01-01">https://hackr.io/blog/what-is-programming#0001-01-01</a></blockquote><div><div class="content">
+										<p>你是否听说过计算机编程这个术语，并发现自己在问类似“编程是什么意思”和“编程是用来做什么的”这样的问题？</p>
+<p>在本文中，我们将提供解释编程的终极指南，帮助您回答什么是编程这个问题？</p>
+<p>我们还将讲述计算机编程和编码之间的区别，解释什么是编程语言，编程的好处，以及一些帮助初学者入门的有用提示。</p>
+<h2 id="what-is-programming"><strong>什么是编程？</strong></h2>
+<p>让我们从一个简单的编程定义开始。编程包括指导计算机执行任务。这可能是一个简单的任务，如显示两个数字的总和，或者解决复杂的问题，如自动驾驶汽车的操作。</p>
+
+<p>定义了编程之后，让我们考虑一下它在现代世界中的位置。嗯，可以肯定地说，编程与我们的日常生活以比我们可能知道的更多的方式交织在一起。</p>
+<p>几乎在各行各业，从商业、娱乐、交通、医疗保健、农业、体育、政治等等，都可以看到使用编程来使生活更加方便。</p>
+<h3 id="the-first-computer-programmer"><strong>第一个计算机程序员</strong></h3>
+<p>19世纪英国数学家<a href="https://opensource.com/article/18/10/first-computer-programmer-ada-lovelace"><span/></a><span>被认为是第一个拥有计算伯努利数算法的计算机程序创造者。</span></p>
+<p>他们和查尔斯·巴贝奇一起开发了被认为是第一台计算机。这是一个被称为分析引擎的原始机械设备，洛夫莱斯为这个设备编写了她的算法。</p>
+<p>从那时起，编程已经发展成为科技行业内外一个影响深远的领域。</p>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/FCMxA3m_Imc" frameborder="0" allowfullscreen="allowfullscreen">视频</iframe></p>
+
+<h2 id="what-are-programming-languages"><strong>什么是编程语言？</strong></h2>
+<p>你可能想知道程序员(人类)是如何向计算机传递指令的。这是用编程语言完成的。</p>
+<p>像英语和西班牙语这样的人类语言有一套语法来指导短语和句子的构成。编程语言也有一种语法，指导程序员如何编写代码背后的逻辑。</p>
+<p>当我们提到编程语言时，我们通常可以将它们分为四个不同的类别。</p>
+<h3 id="toc-1-machine-language"><strong> 1。机器语言</strong></h3>
+<p><span>听过这么一句话，</span> <em> <span>电脑只懂1和0</span></em><span>’？这是机器语言(或机器代码)。它是计算机CPU用来直接执行的一组二进制数字(1和0)。</span></p>
+<p>电脑有晶体管，这是一种有两种选择的微型电子开关，开(1秒)或关(0秒)。计算机的CPU可以读取这些开/关电信号的组合，并产生所需的输出。一般来说，机器代码被称为低级语言。</p>
+<p><span>为了好玩，这里有一个单词的机器代码的例子</span> <em> <span>【你好】</span> </em> <span>。</span></p>
+<p><strong>机器代码示例:</strong></p>
+<pre class="language-bash"><code>01001000  01100101  01101100  01101100  01101111</code></pre>
+<h3 id="toc-2-assembly-language-asm"><strong> 2。汇编语言(ASM) </strong></h3>
+<p>引入这些是因为机器代码可能会很乏味，而且容易出错。因此，代码不是使用二进制数字，而是用包含符号和字符的命令编写。</p>
+<p><span>由于计算机只能执行0和1(机器码)，程序员必须使用一个</span> <em> <span>汇编程序</span> </em> <span>到</span> <em> <span>将</span> </em> <span>汇编语言翻译成机器码后才能执行。</span></p>
+<p>尽管如此，这还是对人类不友好，并且需要深入了解计算机内存和CPU进程才能理解它。和机器码一样，汇编语言也可以称为低级语言。</p>
+<p><span>我们还包括了一个汇编语言的例子，使用</span> <em> <span> x86汇编语言</span> </em> <span>将单词</span> <em> <span>【你好】</span> </em> <span>打印到屏幕上。</span></p>
+<p><strong>汇编语言示例:</strong></p>
+<pre class="language-c"><code>org  0x100       
+
+mov  dx, msg     
+mov  ah, 9       
+int  0x21        
+
+mov  ah, 0x4c    
+int  0x21        
+
+msg  db 'Hello', 0x0d, 0x0a, '$'</code></pre>
+<h3 id="toc-3-mid-level-language"><strong> 3。中级语言</strong></h3>
+<p><span>当你远离低级语言时，你往往会遇到大多数人听到</span> <em> <span>编程语言</span> </em> <span>这个名词时想到的</span> <em> <span>更高级的</span> </em> <span>语言。</span></p>
+<p>虽然把这些都捆绑在一起是没问题的，但把这些现代语言分成两个子类会有所帮助，从中级语言开始。</p>
+<p>这些允许你用更人性化的语法编写，同时保留对计算机系统的 <em> <span>抽象层</span> </em> <span>的访问。你仍然可以直接控制底层硬件，让中级语言成为低级和高级语言之间的</span> <em> <span>桥梁</span> </em> <span>。</span></p>
+<p><span> <a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomplete-python-bootcamp%2F" target="_blank" rel="noopener">完整的Python训练营从零到Python中的英雄</a> </span></p>
+<p>中级语言使用 <em> <span>编译器</span> </em> <span>将其语法翻译成机器代码，让计算机执行代码。</span></p>
+<p>中级语言的一些常见例子包括C、Pascal和Cobol。为了保持我们查看实际代码的习惯，我们添加了一小段C代码，将单词 <em> <span>【你好】</span> </em> <span>输出到屏幕上。</span></p>
+<p><strong>中级语言示例:</strong></p>
+<pre class="language-cpp"><code>#include &lt;stdio.h&gt;
+int main() {
+  printf("Hello");
+  return 0;
+}</code></pre>
+<h3 id="toc-4-high-level-language"><strong> 4。高级语言</strong></h3>
+<p><span>很像中级语言，当你听到术语</span> <em> <span>编程语言</span> </em> <span>时，这些往往就是所指的东西。大多数计算机程序员在日常活动和工作中使用它们。</span></p>
+<p>高级语言使用称为编译器的特殊翻译器翻译成机器代码，让计算机执行代码逻辑。</p>
+<p>这些语言具有对人类友好的语法，包括通用编程语言，如Python、JavaScript和PHP。您也可以将特定领域的语言(如SQL和HTML)算作高级语言。</p>
+<p><span>我们包含了一个JavaScript代码片段，将单词</span> <em> <span>【你好】</span> </em> <span>输出到控制台屏幕。</span></p>
+<p><strong>高级语言示例:</strong></p>
+<pre class="language-javascript"><code>console.log("Hello")</code></pre>
+<p><strong>试图选择一种编程语言？查看我们关于</strong> <a href="https://hackr.io/blog/best-programming-languages-to-learn"> <strong>的文章，学习</strong> </a>的最佳编程语言</p>
+<h2 id="what-s-the-difference-between-coding-programming"><strong>编码&amp;编程有什么区别？</strong></h2>
+<p>你会经常听到“编码”和“编程”这两个术语可以互换使用，但是有些区别还是值得注意的。</p>
+
+<ul>
+<li aria-level="1">编码: <span>编程的核心要素，包括翻译程序的逻辑，以便计算机能够理解和执行。这包括编写组成程序的代码行，因此它更关注使用编程语言的语法与计算机进行通信。</span></li>
+<li aria-level="1">编程: <span>这不仅仅包括写代码。它通常包括软件创建的其他方面，如识别程序需求、将需求转化为代码、调试、测试、创建文档等等。</span></li>
+</ul>
+<p><span><img src="../Images/b012841987e6abb4e3e7d4511b8e49e6.png" alt="Difference Between Coding and Programming" data-original-src="https://cdn.hackr.io/uploads/posts/attachments/1674049950BcutD4a8G5.png"/>T2】</span></p>
+<p>编码和编程之间的关系可以通过考虑写一部小说所涉及的内容得到最好的描述。</p>
+<p><em> <span>编码</span> </em> <span>类似于写构成小说的句子和段落，而</span> <em> <span>编程</span> </em> <span>涉及创造更广泛的元素，如情节、设定、人物发展、叙事等。</span></p>
+<h2 id="what-are-the-benefits-of-programming"><strong>编程有什么好处？</strong></h2>
+<p>你可能会想，好吧，这很酷， <em> <span>但我为什么要这么麻烦呢？</span> </em> <span>技术无处不在，计算机编程的好处怎么强调都不为过。</span></p>
+<p><span>例如，您正在阅读这篇文章，因为您的设备被编程为在您执行</span> <em> <span>正确的</span> </em> <span>点击时向您显示。让我们来看看你应该关心编程的一些理由。</span></p>
+<ul>
+<li aria-level="1">更快地工作: <span>计算机的速度惊人地快，通过编程，我们可以利用它们的能力来解决复杂的问题，而这些问题可能会花费我们一辈子的时间。一个例子是即时消息应用程序的力量。</span></li>
+<li aria-level="1"><strong>便利:</strong> <span>在我们的现代世界中，大多数便捷的做事方式都是由于编程。例如，由于编程，你可以在舒适的家中，订购一些食物，并在几分钟内送达。</span></li>
+<li aria-level="1">24/7工作: <span>电脑可以24/7工作而不会感到疲惫或厌烦！因此，你可以为计算机编写程序来处理平凡而重复的任务，让你有更多的时间花在需要创造性思维的任务上。</span></li>
+<li aria-level="1"><strong>职业机会:</strong> <span>学会编程就有很多职业前景。大多数企业都有网站，需要程序员来创建和维护这些网站。其他前景包括移动应用开发、游戏开发、数据科学、人工智能等。</span></li>
+<li aria-level="1"><strong>逻辑&amp;解题技巧:</strong> <span>编程的核心是解题。创建计算机程序挑战你思考问题，考虑解决方案，并找到最有效的方案，帮助你提高分析技能。因此，无论您使用结构化编程、面向对象编程还是其他方法，您都将解决问题。</span></li>
+<li aria-level="1"><strong>尽情构建酷炫的东西:</strong> <span>你可以创建自己的游戏或应用程序！想象一下，创建自己的应用程序，放在AppStore或Play Store上，获得成千上万次下载！听起来很刺激，对吧？学会编程就有可能。</span></li>
+</ul>
+<p>准备好制造酷炫的东西了吗？查看游戏的最佳编程语言<a href="https://hackr.io/blog/best-programming-language-for-games"><strong/></a></p>
+<h2 id="how-to-learn-programming"><strong>如何学习编程</strong></h2>
+<p>如果你对学习编程感兴趣，这里有一些建议和步骤可以帮助你确保顺利的学习之旅。</p>
+<ul>
+<li aria-level="1"><strong>想清楚你的理由:</strong> <span>决定你为什么要学编程。你可能想转行做游戏开发或者软件开发，建立一个激情项目，或者把学习作为一种爱好。你学习的理由将帮助你选择最佳的方式来开始这个激动人心的旅程。</span></li>
+<li aria-level="1"><strong>选择一种编程语言:</strong> <span>很多初学者都会犯一下子学习多种语言的错误，但最好挑一种开始，以后再学另一种。</span></li>
+<li aria-level="1"><strong>选择学习资源:</strong> <span>学习选项包括</span> <a href="https://hackr.io/blog/top-programming-courses"> <span>参加在线课程</span> </a> <span>、</span> <a href="https://hackr.io/blog/best-programming-books"> <span>看书</span> </a> <span>、加入新兵训练营，或者这些的任意组合。确定你喜欢的学习方式，选择最适合你的方式。</span></li>
+<li aria-level="1"><strong>建项目:</strong> <span>尽快开始建项目！这将有助于巩固你将通过在线课程、书籍或教程学到的概念。制造东西，在过程中打破它，然后想办法解决问题。很好玩！</span></li>
+<li aria-level="1">加入一个社区: <span>学习如何编码可能很难。但是当你加入一个志趣相投的学习者团体时，就没那么可怕了。充分利用比你更有经验的程序员的帮助。</span></li>
+</ul>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>如果你读到这里，你已经知道了这个问题的答案，什么是编程？</p>
+<p>随着编程的解释，我们可以在讨论不同类型的编程语言之前讨论编码和编程的区别，包括低级(机器码&amp;汇编语言)和高级(中级&amp;高级)语言。</p>
+<p>我们还深入研究了编程的诸多好处，包括一些提示和建议，供你在准备学习编程时参考。</p>
+
+<p><span>毫无疑问，计算机编程是一个巨大的课题，有很多东西需要学习和发现！希望这篇文章已经激起了你的兴趣，同时帮助你用简单的语言学习什么是编程。</span></p>
+
+<p>当然，我们希望你现在已经准备好了，并对探索更多感到兴奋。</p>
+<p><strong>兴奋的开始编程？查看我们在</strong>上的文章</p>
+<p><strong> <a class="btn btn-primary btn-call-to-action " href="https://hackr.io/blog/how-to-learn-programming" target="_blank" rel="noopener">如何学习编程</a> </strong></p>
+<h2 id="frequently-asked-questions"><strong>常见问题解答</strong></h2>
+<h4 id="toc-1-what-is-the-main-purpose-of-programming"><strong> 1。编程的主要目的是什么？</strong></h4>
+<p>这是为了最大限度地发挥计算机的能力。编程使我们能够快速、廉价、高效地用计算机解决问题。</p>
+<h4 id="toc-2-what-software-is-used-for-programming"><strong> 2。编程用什么软件？</strong></h4>
+<p>编程需要我们使用各种软件，其中一些最重要的是IDE(集成开发环境)或代码编辑器，如Visual Studio Code或Atom，以及版本控制系统，如Git。</p>
+<h4 id="toc-3-what-is-the-difference-between-coding-and-programming"><strong> 3。编码和编程有什么区别？</strong></h4>
+<p>编码是指我们使用编程语言的语法来编写计算机程序。编程需要额外的过程，如识别程序需求、调试、测试等。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

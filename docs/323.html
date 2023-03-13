@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>Types of CSS [Inline, Internal and External CSS]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>CSS的类型[内联、内部和外部CSS]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/types-of-css#0001-01-01">https://hackr.io/blog/types-of-css#0001-01-01</a></blockquote><div><div class="content">
+										<p>级联样式表或CSS是一种标记语言，它决定网页或网站向访问者显示的方式。它有助于操纵各种网站元素的颜色、字体和布局。</p>
+<p>CSS还允许在网站上添加动画或效果，如动画背景和点击按钮效果。如果没有CSS，网站将呈现为普通的HTML网页，这显然没有吸引力。</p>
+<h2 id="toc-3-types-of-css-styles"><strong> 3种CSS样式</strong></h2>
+<p>有一些不同的方法来实现CSS代码。这些被称为CSS样式。有三种类型的CSS样式可用；内联CSS、外部CSS和内部CSS。</p>
+<p><img src="../Images/be1b986bb568404e236364ee9304bdfa.png" alt="Types of CSS" data-original-src="https://hackr.io/blog/media/types-of-css.png"/></p>
+
+<p>虽然每种CSS样式都服务于相同的目标，即样式化HTML代码，但是它们是如何完成的却各不相同。我们将在下一节探讨每种CSS样式:</p>
+<h3 id="toc-1-internal-css"><strong> 1。内部CSS </strong></h3>
+<p>也称为嵌入式CSS，内部CSS是指将CSS代码添加到与我们希望添加CSS样式的网页相关的HTML文档中的做法。</p>
+<p>要添加内部CSS，需要在HTML文件的部分添加<style>标记。内部CSS对于设计单个网页的样式非常有用。&lt;/root&gt;</style></p>
+<h4 id="how-to-use-internal-css"><strong>如何使用内部CSS </strong></h4>
+<ul>
+<li>步骤#01 -打开HTML文件并转到标签。</li>
+<li>步骤#02 -在此添加<style type="text/css">。&lt;/root&gt;</style></li>
+<li>步骤#03 -现在，从下面一行开始添加CSS代码。</li>
+<li>步骤#04 -使用关闭<style>标签。&lt;/root&gt;</style></li>
+<li>步骤#05 -保存HTML文件以使更改生效。</li>
+</ul>
+<h4 id="pros">赞成的意见</h4>
+<ul>
+<li>不需要上传多个文件，因为CSS代码被添加到对应于网页的同一个HTML文件中。</li>
+<li>可以使用类和ID选择器。</li>
+</ul>
+<h4 id="cons">骗局</h4>
+<ul>
+<li>向HTML文件添加CSS代码会导致页面大小增加，从而降低加载速度。</li>
+<li>将它用于多个网页是无效的，因为需要为每个网页添加相同的CSS规则。</li>
+</ul>
+<p>看看这个全面的<a href="https://hackr.io/blog/css-cheat-sheet"> CSS备忘单</a>！</p>
+<h3 id="toc-2-external-css"><strong> 2。外部CSS </strong></h3>
+<p>为了符合外部CSS样式，网页需要链接到包含CSS代码的外部文件。外部CSS是开发大型网站时超级有效的CSS样式化方法。</p>
+<p>一个人可以创造外在的。css文件使用一些文本编辑器，如记事本和快速CSS编辑器。这里，CSS代码驻留在一个文档中，而不是包含相关网页的HTML代码的文档中，因此得名。</p>
+
+<p>一个利用外部CSS的网站的所有小的和大的改变都可以仅仅通过编辑单个外部CSS来完成。css文件。</p>
+<h4 id="how-to-use-external-css"><strong>如何使用外部CSS </strong></h4>
+<ul>
+<li>步骤#01 -打开一个文本编辑器，创建一个新文件。在此添加您希望应用于HTML网页的CSS代码。</li>
+<li>步骤#02 -将文件另存为。css文件并退出。</li>
+<li>步骤#03 -打开你想要应用CSS代码的HTML文档。</li>
+<li>步骤#04 -导航到HTML文件中的部分，并在<title>标签后插入一个对外部CSS文件的引用。</title></li>
+<li>步骤#05 -保存HTML文件。</li>
+</ul>
+<h4 id="pros-1">赞成的意见</h4>
+<ul>
+<li>一个外部CSS文件可以用来设计几个网页的样式。</li>
+<li>利用外部CSS的HTML文件具有更清晰的结构和更小的尺寸。</li>
+</ul>
+<h4 id="cons-1">骗局</h4>
+<ul>
+<li>链接或上传多个外部CSS文件可能会降低网站的下载速度并影响其性能。</li>
+<li>在完全加载之前，需要外部CSS文件的网页可能无法准确呈现。</li>
+</ul>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcss-the-complete-guide-incl-flexbox-grid-sass%2F" target="_blank" rel="noopener">CSS-2023年完整指南(包括Flexbox，Grid &amp; Sass) </a></p>
+<h3 id="toc-3-inline-css"><strong> 3。内嵌CSS </strong></h3>
+<p>与内部和外部CSS样式不同，内联CSS样式用于样式化特定的HTML元素，而不是整个HTML代码。为了实现内联CSS，需要将style属性添加到每个需要样式化的HTML标签中。这里不用选择器。</p>
+<p>仅仅使用内联CSS来维护一个网站是不切实际的。这是因为按照内联CSS样式，每个HTML标签都必须单独设计。因此，不推荐使用它。</p>
+<p>然而，内联CSS在一些特定的场景中非常有用。例如，在以下情况下:</p>
+<ul>
+<li>CSS样式必须只应用于一个元素，或者</li>
+<li>当无法访问CSS文件时。</li>
+</ul>
+<p>这种类型的CSS样式主要用于预览/测试更改，以及对网页/网站应用快速修复。</p>
+<h4 id="how-to-use-inline-css"><strong>如何使用内联CSS </strong></h4>
+<ul>
+<li>步骤#01 -打开需要添加内嵌CSS的HTML文件。</li>
+<li>步骤#02 -现在，导航到你想要插入内联CSS的元素。</li>
+<li>步骤#03 -将style="code "添加到您希望使用内联CSS的标签中。在这里，code是您需要添加的CSS代码。例如，如果我们希望将内联CSS添加到<h1>标签，它看起来会像这样:<pre>&lt;h1 style="code"&gt;</pre></h1></li>
+</ul>
+<h4 id="pros-2">赞成的意见</h4>
+<ul>
+<li>允许即时插入CSS代码到任何HTML文件。</li>
+<li>不需要创建和上传单独的文件来添加CSS代码。</li>
+</ul>
+<h4 id="cons-2">骗局</h4>
+<ul>
+<li>向每一个HTML元素添加CSS代码都是浪费时间。</li>
+<li>几个元素的样式会影响页面大小和下载速度。</li>
+<li>太多的内联CSS会导致混乱的HTML结构。</li>
+</ul>
+<h2 id="what-if-i-use-all-the-3-css-styles-in-a-single-web-page">如果我在一个网页中使用所有3种CSS样式会怎样？</h2>
+<p>在一个网页中可以使用三种CSS样式中的每一种。然而，将导致的结果是内联CSS样式将覆盖其他两个CSS样式，即内联CSS代码将生效，而不是其他两个。三种CSS样式的优先级遵循以下特定顺序:</p>
+<p>内联CSS &gt;内部CSS &gt;外部CSS</p>
+<p>正如您可以使用的，当内部和外部CSS样式用于网页时，内部CSS样式将覆盖外部CSS样式。</p>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>至此，你将对3种类型的CSS非常熟悉，即外部、内部和内联。每一种都有自己的优缺点。</p>
+<p>所以，一定要做研究，选择一种CSS风格的方法，完全符合你的网站/网页的要求。祝你好运！</p>
+<p>想加强你的CSS游戏？看看这些<a href="https://hackr.io/tutorials/learn-css">最好的CSS教程</a>。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

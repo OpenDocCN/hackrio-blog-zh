@@ -1,0 +1,178 @@
+<html>
+<head>
+<title>What is MapReduce</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>什么是MapReduce</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/what-is-mapreduce#0001-01-01">https://hackr.io/blog/what-is-mapreduce#0001-01-01</a></blockquote><div><div class="content">
+										<h2 id="what-is-mapreduce-introduction">什么是MapReduce？-导言</h2>
+<p>MapReduce经常被混淆为一个工具——实际上是一个为并行处理而设计的编程模型或框架。随着大数据的出现，有必要在最短的时间内处理大量数据，同时给出准确的结果。MapReduce可以快速汇总、分类和分析复杂的数据集。</p>
+<h2 id="why-mapreduce">为什么选择MapReduce</h2>
+<h3 id="toc-1-the-traditional-way-of-doing-things"><strong> 1。传统的做事方式</strong></h3>
+<p>以前，有集中的服务器来存储和处理所有的数据。这种机制有一个问题——服务器总是超载，有时会崩溃，因为来自不同来源的数据将被集中到中央系统进行处理。</p>
+<p><img src="../Images/a8eee0e5a5eab824033b722c8f9150b3.png" alt="Central Repository" data-original-src="https://hackr.io/blog/uploads/images/central-repository.png"/></p>
+<h3 id="toc-2-mapreduce-way-of-processing"><strong> 2。MapReduce的处理方式</strong></h3>
+<p>MapReduce是Google开发的一种算法，用来解决这个问题。现在，它被广泛用于Apache Hadoop框架，这是处理大数据最流行的框架之一。在这种方法中，不是将数据发送到中央服务器进行处理，而是在本地数据源本身进行处理和计算，然后将结果进行汇总和简化以生成最终输出。顺序始终是“映射”，然后是“减少”首先执行映射，一旦100%完成，就执行Reduce。我们稍后将通过详细的图表来讨论这一点，但在此之前，请将以下功能放在手边</p>
+
+<h2 id="features-of-mapreduce">MapReduce的功能</h2>
+<ul>
+<li>用Java写的；独立于语言</li>
+<li>大规模分布式并行处理</li>
+<li>本地处理，内置冗余和容错</li>
+<li>Map在减少聚合的同时执行过滤和排序</li>
+<li>适用于基于Linux的操作系统</li>
+<li>默认情况下随Hadoop框架提供</li>
+<li>本地处理而不是集中处理</li>
+<li>高度可扩展</li>
+</ul>
+<h2 id="mapreduce-patterns">MapReduce模式</h2>
+<p>MapReduce有很多设计模式和算法。在网上的许多文章中，您一定已经看到了基本的计数、求和以及排序算法。还有其他算法，如校对、匹配、解析、验证(基于某些条件)。更复杂的模式包括处理<a href="https://highlyscalable.wordpress.com/2012/02/01/mapreduce-patterns/" target="_blank" rel="noopener">图或迭代消息传递</a>，计算唯一(不同)值，数据组织(用于进一步处理)，交叉相关，关系模式如选择、投影、交集、并集、差集、聚合和连接也可以在MapReduce术语中实现。</p>
+<h2 id="how-mapreduce-works">MapReduce的工作原理</h2>
+<p>现在到了激动人心的部分，我们将详细了解Map和Reduce的整个工作过程。</p>
+<p>MapReduce算法中有3个按顺序执行的步骤</p>
+<ol>
+<li>地图</li>
+<li>洗牌</li>
+<li>减少</li>
+</ol>
+<h3 id="toc-1-map-function">1.地图功能</h3>
+<p>map函数获取输入数据集(大数据集)并将其分割成较小的数据集。然后并行处理每个数据集，并完成所需的计算。map函数将输入转换成一组键值对。</p>
+<p>正如我们在图中看到的，输入数据集存在于HDFS (Hadoop分布式文件系统)中。从那里，它被分割成更小的数据集，在其上并行执行子任务。然后，数据被映射为键值对，这是这一步的输出。</p>
+<h3 id="toc-2-shuffle">2.洗牌</h3>
+<p>数据洗牌包括合并和排序。Shuffle也称为组合功能。这个阶段的输入是上一步中获得的键-值对。</p>
+
+<p>第一步是合并，将具有相同键的值进行合并，从而返回一个键-值对，其中值是一个列表，而不是单个值(key，List[values])</p>
+<p>然后根据关键字以正确的顺序对结果进行排序。</p>
+<pre>(Key, Value)<br/>(Key, Value)<br/>(Key, Value)<br/>(Key, Value)<br/>(Key, List[values]<br/>(Key, List[values]<br/>(Key, List[values]<br/>(Key, List[values]<br/>(Key, Value)<br/>(Key, Value)</pre>
+<p>这是Reduce函数的输入。</p>
+<h3 id="toc-3-reduce">3.减少</h3>
+<p>reduce函数对输入执行一些聚合操作，并返回一个合并的输出，同样作为一个键值对。</p>
+<p><img src="../Images/dbcec0b7f104e9c8ef15ac0f6a22d120.png" alt="Reduce" data-original-src="https://hackr.io/blog/uploads/images/reduce.png"/></p>
+<p>请注意，最终输出也是键值对，而不是列表，而是聚合列表。例如，如果您必须计算单词“the”、“MapReduce”或“Key”在本文中的使用次数，您可以选择整篇文章并将其存储为输入文件。输入文件将由MapReduce库选择并执行。假设这是输入文本，</p>
+<p>MapReduce是大数据的未来；MapReduce处理键值对。“键是整个框架中最重要的部分，因为MapReduce中的所有处理都基于键的值和唯一性，”</p>
+<p>输出将是这样的——</p>
+<p>MapReduce = 3<br/><span>Key = 3<br/></span><span/></p>
+<p>在其他词中，像未来，大，数据，大多数，其值将是1。您可能已经猜到，单词是这里的关键，计数是值。</p>
+<p>怎么会？</p>
+<p>整个句子将被分成3个子任务或输入，并被并行处理，所以我们说，</p>
+<p>Input 1 = 'MapReduce是大数据的未来；MapReduce处理键值对。键是整个框架中最重要的部分</p>
+<p>和</p>
+<p>Input 2 =因为MapReduce中的所有处理都基于键的值和唯一性。</p>
+<p>在映射的第一步，我们会得到这样的东西，</p>
+<table>
+<tbody>
+<tr>
+<td>MapReduce = 1</td>
+</tr>
+<tr>
+<td>= 1</td>
+</tr>
+<tr>
+<td>MapReduce = 1</td>
+</tr>
+<tr>
+<td>Key = 1</td>
+</tr>
+<tr>
+<td>Key = 1</td>
+</tr>
+<tr>
+<td>= 1</td>
+</tr>
+<tr>
+<td>= 1</td>
+</tr>
+</tbody>
+</table>
+<p>在其他价值观中。</p>
+<p>同样，我们将从输入2获得这些值</p>
+<table>
+<tbody>
+<tr>
+<td>= 1</td>
+</tr>
+<tr>
+<td>MapReduce = 1</td>
+</tr>
+<tr>
+<td>= 1</td>
+</tr>
+<tr>
+<td>= 1</td>
+</tr>
+<tr>
+<td>Key = 1</td>
+</tr>
+</tbody>
+</table>
+<p>在其他结果中。</p>
+<p>下一步是合并和排序这些结果。记住，这一步给出一个值列表作为输出。</p>
+<p>下一步是Reduce，它执行聚合，在本例中是sum。我们得到了上面看到的最终输出，</p>
+<p><img src="../Images/b67192a3cef4dc0c07159d9cb2bfb5ea.png" alt="Key MayReduce" data-original-src="https://hackr.io/blog/uploads/images/key-mapreduce.png"/></p>
+<table>
+<tbody>
+<tr>
+<td>MapReduce = 3</td>
+</tr>
+<tr>
+<td>Key = 3</td>
+</tr>
+<tr>
+<td>= 6</td>
+</tr>
+</tbody>
+</table>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Ftaming-big-data-with-mapreduce-and-hadoop%2F" target="_blank" rel="noopener">用MapReduce和Hadoop驯服大数据——动手！</a></p>
+<h2 id="advantages-of-mapreduce">MapReduce的优势</h2>
+<p>我们已经看到，MapReduce处理数据的方法更快，因为它是并行处理的。以下是使用MapReduce的更多优势</p>
+<ul>
+<li>跨多个服务器在分布式环境中存储数据的能力使其具有可伸缩性。如果添加越来越多的服务器，系统的效率会进一步提高。</li>
+<li>无论数据源和数据类型如何，结构化和非结构化数据都可以快速处理，从而提供了传统关系数据库系统所不具备的灵活性。</li>
+<li>分析大量业务数据的经济高效的解决方案，因为为并行处理部署的服务器很便宜。</li>
+<li>数据冗余和容错性很高，因为即使一个节点出现故障，数据也可以从其他节点恢复，并且永远不会丢失。该模型还可以非常快速地识别和纠正故障。</li>
+<li>简单易学。由于是用Java写的，所以很容易学习和应用。开发人员可以轻松地使用该模型为特定的业务目的编写自己的实现。该软件包提供了许多示例，如单词计数器，数独求解器，多文件单词计数器，万亿排序，词义，单词中位数。</li>
+<li>内置的安全功能仅提供对组织关键数据的授权访问。</li>
+</ul>
+<h2 id="constraints-in-mapreduce">MapReduce中的约束</h2>
+<p>与其将某些情况归类为MapReduce的缺点，我们宁愿说MapReduce在某些情况下可能不是最好的解决方案。对于任何编程模型都是如此。MapReduce的一些不足之处——</p>
+<ul>
+<li>实时数据处理——虽然MR模型可以处理存储在某处的大量数据，但它不能处理流数据。</li>
+<li><a href="https://www.instructables.com/id/Graphing-With-Processing/" target="_blank" rel="noopener">加工图形</a></li>
+<li>如果您必须一次又一次地处理数据，那么这个模型可能不是一个很好的选择</li>
+<li>如果您可以在独立系统上获得相同的结果，并且没有多线程，则不需要安装多个服务器或进行并行处理。</li>
+</ul>
+<h2 id="some-real-world-examples">一些真实世界的例子</h2>
+<p>我们已经看到了如何使用MapReduce来获得文件中每个单词的计数。让我们来看一些更实际的问题，看看MapReduce如何让分析变得简单。</p>
+
+<ul>
+<li>识别潜在的转化点击——假设你想设计一个系统来识别所有点击中可以转化的点击数量。从出版商或广告网络(如谷歌)收到的大量数据中，一些点击可能是欺诈性的或不计费的。从这个庞大的数据集(假设有5000万次点击)，我们需要获取相关信息，例如，IP地址、日期、城市。使用MapReduce，我们可以通过将这个庞大的数据集分成更小的子集来创建数据摘要。一旦我们得到了概要子集，我们就可以对它们进行排序和合并。这将生成最终的单个摘要集。在这个集合中，我们可以应用所需的规则和其他分析来找到转换点击。</li>
+<li>推荐引擎——推荐引擎的概念现在很流行。亚马逊、Flipkart等在线购物巨头会向用户推荐“相似”产品或用户可能喜欢的产品。网飞提供电影推荐。</li>
+</ul>
+<p><strong>如何？</strong></p>
+<p>一种方法是通过电影评级。MapReduce函数首先映射用户、电影和评级，并创建键值对。例如，(movie)，其中movie name是键，值可以是一个包含用户名及其各自分级的元组。然后通过相关性(相互关系)找到两部电影的相似性；例如，相同类型的电影或找到看过两部电影并分享其评级的用户可以给我们关于两部电影有多密切相关的信息。</p>
+<ul>
+<li>存储和处理病人的健康记录:病人的健康记录可以使用MapReduce编程模型进行数字化存储。数据可以使用Hadoop或Hive存储在云上。以同样的方式，可以处理大量的大数据集，包括临床、生物识别和生物医学数据，并获得有希望的分析结果。MapReduce有助于加快生物医学数据挖掘过程。</li>
+<li>根据潜在的长期客户的活动识别他们:根据客户的详细信息和他们的交易详细信息，MapReduce框架可以确定用户交易的频率和他在交易上花费的总时间。这些信息将被混洗和排序，然后遍历每个客户的交易，以了解他们的访问次数和他们迄今为止的总消费金额。这将给出一个长期客户的公平的想法，公司可以发送优惠和促销，以保持客户满意。</li>
+<li>建立发送目标内容的用户配置文件–使用MapReduce建立用户配置文件非常容易。排序、连接、关联等算法用于根据用户的兴趣对其进行分析和分组，以便将相关内容发送给特定的一组用户。</li>
+<li>数据跟踪和物流–许多公司使用Hadoop来存储运输车辆的传感器数据。从这些数据中获得的情报使公司能够在燃料成本、劳动力和其他物流方面节省大量资金。HDFS可以存储地理数据和多个数据点。然后，数据被划分为子集，并使用各种MapReduce算法，可以计算出司机的风险因素、里程计算、跟踪和交付的实时估计等指标。上述每个指标将是一个单独的MapReduce作业。</li>
+</ul>
+<h2 id="some-more-examples">更多的例子</h2>
+<p>上面我们看到的是MapReduce的一些最常见的应用。MapReduce用于更多的场景。该算法广泛用于使用HDFS作为存储的数据挖掘和机器学习算法。随着<a href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html" target="_blank" rel="noopener">纱线</a>的引入，加工转移到纱线；仓库仍然在HDFS那里。MapReduce的更多应用有</p>
+<ul>
+<li>分析和索引文本信息</li>
+<li>对博客文章进行爬网以供以后处理</li>
+<li>从大数据集进行人脸和图像识别</li>
+<li>处理日志分析</li>
+<li>统计分析和报告生成</li>
+</ul>
+<h2 id="conclusion">结论</h2>
+<p>通过这篇文章，我们了解了MapReduce的基础知识，以及它对于大数据处理是如何有用的。他们的发行包中提供了许多示例，开发人员可以编写自己的算法来满足他们的业务需求。MapReduce是一个有用的框架。在Hackr，我们有一些关于Hadoop和MapReduce的最好的教程。一定要看看它们，如果你觉得这篇文章有用或者想要更多的信息添加到文章中，也请告诉我们。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

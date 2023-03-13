@@ -1,0 +1,279 @@
+<html>
+<head>
+<title>Download Google Dorks Cheat Sheet PDF for Quick References</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>下载谷歌呆子小抄PDF快速参考</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/google-dorks-cheat-sheet#0001-01-01">https://hackr.io/blog/google-dorks-cheat-sheet#0001-01-01</a></blockquote><div><div class="content">
+										<p>想知道如何找到谷歌搜索引擎结果中没有显示的信息吗？</p>
+<p>许多搜索引擎使用一种算法对可能危害用户安全的信息进行分类。但总有后门可以绕过算法——在谷歌的例子中，就是谷歌多金。</p>
+<p>Google Dorks是一个搜索字符串，它利用高级搜索运算符来查找特定网站上不容易找到的信息。</p>
+<p>如果你面临一个类似的问题，找不到想要的信息，想使用Google Dorking，这个备忘单就是为你准备的。我们策划了这个Google Dorks备忘单来帮助你理解不同的Google Dorking命令是如何工作的。</p>
+
+<p><strong> <a href="https://drive.google.com/file/d/1EdbKbdP3Tfkj1zBQ4NICLwnvzcM-bX9g/view?usp=sharing" target="_blank" rel="noopener">点击这里</a> </strong>下载Hackr.io的Google Dorks小抄PDF。</p>
+<h2 id="google-dorks-cheat-sheet"><strong>谷歌呆子小抄</strong></h2>
+<p>在这个Google Dorking备忘单中，我们将带您通过不同的命令来实现Google Dorking。但首先，让我们简单介绍一下Google Dorking。</p>
+<h3 id="what-is-a-google-dork">什么是谷歌呆子？</h3>
+<p>道德壁垒保护着互联网上的重要信息。但是，有时候，访问这些信息是必要的，你需要跨越这个障碍。这就是Google Dorking的用武之地，它可以帮助你获取隐藏的信息。</p>
+<p>Google Dorking，也称为<a href="https://en.wikipedia.org/wiki/Google_hacking" target="_blank" rel="noopener"> Google hacking </a>，是一种能够通过提供使用高级搜索运算符的搜索字符串来返回难以通过简单搜索查询定位的信息的方法。</p>
+<p>首先，有道德的黑客使用这种方法来查询搜索引擎并找到关键信息。这个谷歌黑客备忘单将帮助你执行谷歌多金命令和访问隐藏信息。</p>
+<h2 id="google-dorking-commands"><strong>谷歌多金指令</strong></h2>
+<h3 id="cache-command"><strong>缓存命令</strong></h3>
+<p>缓存是加速页面搜索过程的元数据。谷歌在其缓存中存储了一些数据，比如网站的当前和以前版本。这个缓存保存了许多开发人员可以使用的有用信息。一些开发人员使用缓存来存储用于测试目的的信息，这些信息可以随着网站的新变化而改变。</p>
+
+<p>您可以对任何随机网站使用以下语法来检查数据。根据Google的更新，结果可能会有所不同。</p>
+<pre><span>cache:website address</span></pre>
+<p>一旦您运行该命令，您可能会发现与此相关的多个结果。您还可以在我们的搜索结果中使用关键字，如“xyz”，如下面的查询所示。</p>
+<pre>cache:https://xyz.nu.edu.pk/Login XYZ</pre>
+<p>一旦您得到输出，您可以看到关键字将被突出显示。</p>
+<h3 id="intext-and-allintext-command"><strong>文本和所有文本命令</strong></h3>
+<p>要从网页中查找特定文本，您可以通过两种方式使用intext命令。首先，您可以在结果中提供一个关键词。第二，可以寻找多个关键词。</p>
+<p>可以对单个关键字使用以下语法。</p>
+<pre><em>Intext:usernames</em></pre>
+<p><img src="../Images/a4288263d049aa7374ab4312b9b9dc95.png" alt="" data-original-src="https://hackr.io/blog/media/intext-and-allintext-command-min.png"/></p>
+<p>如果你想使用多个关键字，那么你可以使用allintext。所有的关键字之间都用一个空格隔开。</p>
+<p>谷歌将考虑所有的关键字，并在结果中提供所有的页面。因此，用户只能得到特定的结果。所以，确保你使用正确的关键字，否则你会错过重要的信息。</p>
+<p>假设您想要查找带有关键字“username”和“password”的页面，您可以使用下面的查询。</p>
+<pre><em>allintext:”username” “password”</em></pre>
+<p><img src="../Images/18e2175862adbe87407dd34bebbb82f2.png" alt="" data-original-src="https://hackr.io/blog/media/allintext-username-password-min.png"/></p>
+<p>你会得到所有带有上述关键词的页面。</p>
+<h3 id="filetype-command"><strong>文件类型命令</strong></h3>
+<p>这是最重要的Dorking选项之一，因为它从几个文件中过滤出最重要的文件。例如，您可以应用过滤器来检索PDF文件。如果您是一名开发人员，您可以使用日志文件，通过应用正确的过滤器，让它们可以轻松地保持跟踪。</p>
+<p>要访问简单的日志文件，请使用以下语法:</p>
+<pre><em>filetype:log </em></pre>
+<p><img src="../Images/a61388837f19de6177fae7d1b0568858.png" alt="" data-original-src="https://hackr.io/blog/media/filetype-command-min.png"/></p>
+<p>您将获得所有类型的日志文件，但您仍然需要从成千上万的日志中找到正确的一个。因此，要缩小文件搜索的范围，您可以使用以下语法更具体地指定文件的类型:</p>
+<pre><em>allintext:username filetype:log</em></pre>
+<p><img src="../Images/9fd01aeec524a2a4100f566bc60a6f4c.png" alt="" data-original-src="https://hackr.io/blog/media/allintext-username-filetype-log-min.png"/></p>
+<p>您将会得到其中提到的用户名的具体结果——您需要做的只是提供正确的关键字。</p>
+<h4 id="intitle-command"><strong>标题命令</strong></h4>
+<p>有时，您希望根据HTML页面标题过滤掉文档。主要关键字存在于HTML页面的标题中，代表整个页面。所以，我们可以使用这个命令来查找所需的信息。</p>
+<p>假设您正在查找包含IP Camera信息的文档。您必须编写一个查询，根据您选择的关键字过滤出页面。</p>
+<p>您可以使用以下语法:</p>
+<pre><em>intitle:”ip camera”</em></pre>
+<p><img src="../Images/cdf138e568b144abac6c2659e5d55580.png" alt="" data-original-src="https://hackr.io/blog/media/intitle-command-min.png"/></p>
+<p>您还可以在这个查询中使用多个关键字来获得更具体的结果，用双引号将每个关键字隔开。</p>
+<p>首先，Google将检索所有页面，然后对检索到的结果集应用过滤器。它将丢弃没有正确关键字的页面。</p>
+<p>为此，您可以使用以下语法:</p>
+<pre><em>allintitle:”ip camera” “dvr”</em></pre>
+<p><img src="../Images/7597d5d92c942a4370eb78acd57b6767.png" alt="" data-original-src="https://hackr.io/blog/media/allintitle-ip-camera-dvr-min.png"/></p>
+<p>你可以看到所有包含这两个关键词的页面。</p>
+
+<h3 id="inurl-command"><strong> inurl命令</strong></h3>
+<p>此命令的工作方式类似于intitle命令；但是，inurl命令会根据url文本过滤掉文档。这些关键字可以在HTML页面上找到，URL代表整个页面。您可以使用此命令过滤掉文档。</p>
+<p>假设您想要包含IP摄像机相关信息的文档。您可以简单地使用下面的查询告诉google，并根据该关键字过滤掉所有页面。您也可以提供多个关键字以获得更精确的结果。</p>
+<p>语法:</p>
+<pre><em>allinurl:tesla lambo</em></pre>
+<p><img src="../Images/975385ad6f1c0c05b8176f4c18771854.png" alt="" data-original-src="https://hackr.io/blog/media/inurl-command-min.png"/></p>
+<h3 id="site-command"><strong>现场命令</strong></h3>
+<p>站点命令将帮助您查找特定的实体。首先，你可以尝试关键词，这些关键词会给你提供广泛的信息，这些信息可能符合你的需要，也可能不符合。然后，您可以使用具有特定过滤器的其他命令来缩小搜索范围。</p>
+<p>假设你想买一辆车，并从2023年开始寻找各种选择。你会看到一长串选项。现在，你可以应用一些关键词来缩小搜索范围，收集有助于你买车的具体信息。在这里，您可以使用site命令只搜索特定的网站。</p>
+<p>例如:</p>
+<p>地点:<a href="https://global.honda/" target="_blank" rel="noopener">https://global.honda/</a></p>
+<p><img src="../Images/fbba71ef6e5aa9e395dadb304b036034.png" alt="" data-original-src="https://hackr.io/blog/media/site-command-min.png"/></p>
+<p>你也可以对其他汽车做同样的事情。</p>
+
+<h3 id="ext-command"><strong>外部命令</strong></h3>
+<p>如果要搜索特定类型的文档，可以使用ext命令。</p>
+
+<p>假设你想写一篇关于某个特定主题的文章，但是你不能不研究这个主题就马上开始。大多数研究文章都是PDF格式的。您可以在dork命令中指定文件的类型。</p>
+<p>这里，ext代表分机。该命令的工作方式类似于filetype命令。现在使用ext命令，您可以将搜索范围缩小到pdf文件。</p>
+<p>您可以使用以下语法:</p>
+<pre>site:https://www.ford.com/ ext:pdf</pre>
+<p><img src="../Images/898f40b1b27f5d74307e4ec259ea8aee.png" alt="" data-original-src="https://hackr.io/blog/media/ext-command-min.png"/></p>
+<h3 id="inposttitle"><strong>条目标题</strong></h3>
+<p>当您想要在博客中搜索某个术语时，可以使用此命令。它对博客搜索很有用。</p>
+<p>例如:</p>
+<pre><em>inposttitle:weight loss goals</em></pre>
+<p><img src="../Images/f4e7d443f178bdeb9fe8df6940a03ebb.png" alt="" data-original-src="https://hackr.io/blog/media/inposttitle-min.png"/></p>
+<h3 id="allintitle"><strong>所有标题</strong></h3>
+<p>假设你开了一个博客，想研究你所在领域的其他博客。这个命令将帮助你寻找其他类似的高质量博客。</p>
+<p>例如:</p>
+<pre>allintitle:how to write content for seo</pre>
+<p><img src="../Images/1dda8c9da537c28911d67c26c6d22d95.png" alt="" data-original-src="https://hackr.io/blog/media/allintitle-min.png"/></p>
+
+<h3 id="allinanchor"><strong>所有锚</strong></h3>
+<p>您可以使用此命令对链接回页面的锚文本中所有术语都在“金融锚”之后的页面进行研究。</p>
+
+<p>例如:</p>
+<pre><em>allinanchor:"how to draw anime"</em></pre>
+<p><img src="../Images/9baa565a4e8cc02922d4a7e668803322.png" alt="" data-original-src="https://hackr.io/blog/media/allinanchor-min.png"/></p>
+<h3 id="inanchor"><strong>金融家</strong></h3>
+<p>您可以使用此命令查找带有包含指定锚文本的入站链接的页面。</p>
+<p>例如:</p>
+<pre><em>inanchor:"digital painting"</em></pre>
+<p><img src="../Images/941bce21cb4c1e5cf5900a3ec2c0484d.png" alt="" data-original-src="https://hackr.io/blog/media/inanchor-min.png"/></p>
+<h3 id="around"><strong>左右</strong></h3>
+<p>寻找超窄的结果？此命令将为您提供页面上出现两个或更多术语的结果。</p>
+<p>例如:</p>
+<pre><em>digital drawing AROUND(2) tools</em></pre>
+<p><img src="../Images/c35c110ebef9999ffaed516adcfea003.png" alt="" data-original-src="https://hackr.io/blog/media/around-min.png"/></p>
+<h3 id="atcommand"><strong>@命令</strong></h3>
+<p>如果您希望您的搜索只针对社交媒体，请使用此命令。它将只在指定的社交媒体平台上显示您的搜索结果。</p>
+<p>例如:</p>
+<pre><em>mangoes @facebook</em></pre>
+<p><img src="../Images/f5ddcf8e68340402e41fe33226166c85.png" alt="" data-original-src="https://hackr.io/blog/media/atcommand-min.png"/></p>
+<h3 id="quotes"><strong>行情</strong></h3>
+<p>如果您在短语周围使用引号，您将能够搜索准确的短语。搜索引擎结果将消除不必要的网页。</p>
+<p>例如:</p>
+<p>"搜索词1 "</p>
+
+<p>在某些情况下，您可能需要多个网站具有相似内容的特定数据。您可以使用这个Google Dorking命令提供确切的域名:</p>
+<pre>“Related:domainname.com”</pre>
+<h3 id="info"><strong>信息</strong></h3>
+<p>您可以使用此命令查找与特定域名相关的信息。它可以让你决定一些事情，比如带有域名文本的页面，相似的站内页面，以及网站的缓存。</p>
+<p>例如:</p>
+<pre>"Info:domainname.com"</pre>
+<h3 id="weather"><strong>天气</strong></h3>
+<p>对气象学很好奇？使用此命令获取气象翼设备传输。</p>
+<pre>intitle:"Weather Wing WS-2"</pre>
+<p>您将看到全球范围内连接的几个设备共享天气详细信息，如风向、温度、湿度等。</p>
+<p><img src="../Images/e55fdce5bef43285cc31e17894758a15.png" alt="" data-original-src="https://hackr.io/blog/media/weather-min.png"/></p>
+<h3 id="zoom-videos"><strong>缩放视频</strong></h3>
+<p>寻找特定的缩放会议？您可以使用此命令找到它，但请记住，Zoom已经设置了一些限制，使其更难找到/中断Zoom会议。但是，只要一个URL被共享，你仍然可以找到一个缩放会议。</p>
+<p>唯一的缺点是谷歌索引网站的速度。当一个站点被编入索引时，缩放会议可能已经结束了。</p>
+<pre><em>inurl:zoom.us/j and intext:scheduled for</em></pre>
+<p><img src="../Images/ae46b44d8557ca6e2ecffa62219414b4.png" alt="" data-original-src="https://hackr.io/blog/media/zoom-videos-min.png"/></p>
+<h3 id="sql-dumps"><strong> SQL转储</strong></h3>
+<p>如果配置不当，您的数据库就会暴露无遗。您还可以在可通过域访问的服务器上找到这些SQL转储。有时，如果在web服务器上存储备份时没有适当的备份机制，站点上会出现这种与数据库相关的转储。要查找压缩的SQL文件，请使用以下命令。</p>
+<pre><em>"index of" "database.sql.zip"</em></pre>
+<p><img src="../Images/60bebaf8e4dc055930d917c2d18d4f0c.png" alt="" data-original-src="https://hackr.io/blog/media/sql-dumps-min.png"/></p>
+<h3 id="wordpress-admin">WordPress Admin </h3>
+<p>你可以很容易地使用dork找到WordPress管理登录页面，如下所示。</p>
+<pre><em>intitle:"Index of" wp-admin</em></pre>
+<p><img src="../Images/9177a7b581f62dc5719a123df3f1a683.png" alt="" data-original-src="https://hackr.io/blog/media/wordpress-admin-min.png"/></p>
+<h3 id="apache2"><strong>阿帕奇2 </strong></h3>
+<p>您可以使用以下Google Dorking命令找到Apache2网页:</p>
+<pre><em>intitle:"Apache2 Ubuntu Default Page: It works"</em></pre>
+<p><img src="../Images/2eebb6ddeb308f6a75a34b53cd085bbb.png" alt="" data-original-src="https://hackr.io/blog/media/apache2-min-1.png"/></p>
+<h3 id="phpmyadmin"><strong> phpMyAdmin </strong></h3>
+<p>这个工具是危害数据的另一种方法，因为phpMyAdmin用于通过web管理MySQL。要使用的谷歌呆子是:</p>
+<pre><em>"Index of" inurl:phpmyadmin</em></pre>
+<p><img src="../Images/6af9c16ec7345a7d25b32b82821a8f29.png" alt="" data-original-src="https://hackr.io/blog/media/phpmyadmin-min.png"/></p>
+<h3 id="jira-kibana"><strong> JIRA/Kibana </strong></h3>
+<p>您可以使用Google Dorks来查找托管重要企业数据的web应用程序(通过JIRA或Kibana)。</p>
+<pre><em>inurl:Dashboard.jspa intext:"Atlassian Jira Project Management Software"</em></pre>
+<p><img src="../Images/768af37b31eea2a35009927d1113ed58.png" alt="" data-original-src="https://hackr.io/blog/media/jira-kibana-min.png"/></p>
+<pre><em>inurl:app/kibana intext:Loading Kibana</em></pre>
+<h4 id=""><strong><img src="../Images/a63b7f18c9ef89c9ae8f677ad68a903a.png" alt="" data-original-src="https://hackr.io/blog/media/inurl-app-kibana-intext-loading-kibana-min.png"/>T2】</strong></h4>
+<h3 id="cpanel-password-reset"><strong> cPanel密码重置</strong></h3>
+<p>您可以重置cPanel的密码来控制它:</p>
+<pre><em>inurl:_cpanel/forgotpwd</em></pre>
+<p><img src="../Images/86498737f6a58296f6c667676b698e62.png" alt="" data-original-src="https://hackr.io/blog/media/cpanel-password-reset-min.png"/></p>
+<h3 id="finding-ftp-servers"><strong>寻找FTP服务器</strong></h3>
+<p>如果您想要访问FTP服务器，您可能需要混合查询来获得想要的输出。您可以使用以下语法:</p>
+<pre><em>intitle:”index of” inurl:ftp</em></pre>
+<p><img src="../Images/1bfe203e127b8eb41744d6c351a65e1a.png" alt="" data-original-src="https://hackr.io/blog/media/finding-ftp-servers-min.png"/></p>
+<p>因此，您将获得与FTP服务器相关的所有索引页面并显示目录。</p>
+<p>得到结果后，您可以查看不同的可用URL以获取更多信息，如下所示。</p>
+<p><img src="../Images/d0d73013b4ec0d4613639b1d2769e114.png" alt="" data-original-src="https://hackr.io/blog/media/once-you-get-the-results-you-can-check-min.png"/><br/>T2】</p>
+<h3 id="accessing-online-cameras"><strong>访问在线摄像头</strong></h3>
+<p>请记住，信息访问有时仅限于网络安全团队，尽管我们演练了这个谷歌呆子小抄。您可以使用dork命令来访问摄像机的记录。有些人将这些信息公之于众，这会危及他们的安全。</p>
+<p><a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.3827154&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fgoogle-cloud-certification-associate-cloud-engineer%2F" target="_blank" rel="noopener"> GCP协理云工程师-谷歌云认证</a></p>
+<p>以下是访问摄像机详细信息的语法。</p>
+<pre><em>Intitle:”webcamXP 5”’</em></pre>
+<p><img src="../Images/d324519e3253de335a9a97a65b768aa4.png" alt="" data-original-src="https://hackr.io/blog/media/accessing-online-cameras.png"/></p>
+<h2 id="operators"><strong>操作员</strong></h2>
+<p>要缩小和过滤结果，您可以使用运算符进行更好的搜索。以下是一些您可能会感兴趣的运算符。</p>
+<h3 id="search-term"><strong>搜索词</strong></h3>
+<p>您可以使用此运算符使您的搜索更加具体，这样关键字就不会与其他内容混淆。例如，如果您专门寻找“意大利食品”，那么您可以使用以下语法。</p>
+<pre>“Italian foods”</pre>
+<h3 id="or"><strong>或</strong></h3>
+<p>使用该运算符，您可以提供多个关键字。如果网页包含这些关键字中的任何一个，您就会得到结果。您可以使用“|”分隔关键字比如说。</p>
+<pre>site:facebook.com | site:twitter.com</pre>
+<h4 id="and"><strong>和</strong></h4>
+<p>该操作符将包含包含所有关键字的所有页面。关键字由“&amp;”符号分隔。您可以使用以下语法。</p>
+<pre>site:facebook.com &amp; site:twitter.com</pre>
+<h3 id="operators-combinaison">运算子组合</h3>
+<p>不仅如此，您还可以结合使用“or”和“and”运算符来优化过滤器。比如说-</p>
+<pre>(site:facebook.com | site:twitter.com) &amp; intext:"login"<br/><br/>(site:facebook.com | site:twitter.com) (intext:"login")</pre>
+<h3 id="include-results"><strong>包含结果</strong></h3>
+<p>根据提供的关键字的出现次数获得结果。比如说-</p>
+<pre>-site:facebook.com +site:facebook.*</pre>
+<h3 id="exclude-results"><strong>排除结果</strong></h3>
+<p>您也可以从网页中排除结果。比如说-</p>
+<pre>site:facebook.* -site:facebook.com</pre>
+<h3 id="synonyms"><strong>同义字</strong></h3>
+<p>如果您想要搜索所提供的关键字的同义词，那么您可以在该关键字前使用“~”符号。然后，谷歌会给你提供合适的结果。例如，如果您想要搜索关键字“set”及其同义词，如配置、收集、更改等。，您可以使用以下内容:</p>
+<pre>~set</pre>
+<h3 id="glob-pattern"><strong>球形图案</strong></h3>
+<p>当您不确定那里有什么时，可以使用glob模式(*)，并告诉Google进行相应的搜索。比如“</p>
+<pre>site:*.com</pre>
+<h2 id="search-parameters"><strong>搜索参数</strong></h2>
+<p>以下是各种搜索参数:</p>
+<ul>
+<li><strong> q- </strong>它的值就是搜索项。</li>
+<li><strong>过滤器</strong> -其值可以是1或0。如果其值设置为0，它将显示所有潜在的重复结果。</li>
+<li><strong> as_epq- </strong>它的值可以是搜索短语。你可以用它来搜索一个精确的短语。没有必要将搜索短语用引号括起来。</li>
+<li><strong> as_ft- </strong>其值可以排除(e)也可以包含(I)。</li>
+<li><strong> as_filetype- </strong>可以是文件扩展名。您可以包含或排除由as_ft指示的文件类型。</li>
+<li><strong> as_occt- </strong>它的值可以是- any(任意位置)、title(页面标题)、body(页面文本)、url(页面url)、links(页面链接)。您可以在指定的位置找到关键字。</li>
+<li><strong> as_dt- </strong>其值可以排除(e)也可以包含(I)。您可以使用它来排除或包含as_sltesearch指示的站点或域。</li>
+<li><strong> as_sltesearch- </strong>其值可以是站点或域。您可以包含或排除由as_dt指示的文件类型。</li>
+<li><strong> as_qdr- </strong>其值可以是m3(三个月)、m6(六个月)、y(过去一年)。您可以搜索指定时间段内包含的页面。</li>
+</ul>
+<h2 id="how-to-prevent-google-dorks"><strong>如何防范谷歌呆瓜</strong></h2>
+<p>你可以使用以下任何方法来避免落入谷歌呆子的控制之下。以下是防止Google dork的措施:</p>
+<ul>
+<li>您必须加密敏感的个人信息，如用户名、密码、支付细节等。</li>
+<li>此外，通过运行查询来检查您的网站，以检查您是否有任何暴露的敏感数据。如果您发现任何暴露的信息，只需在谷歌搜索控制台的帮助下将它们从搜索结果中删除即可。</li>
+</ul>
+<p>使用根级网站目录中的robots.txt文档保护敏感内容。它会阻止谷歌索引你的网站。</p>
+<pre>User-agent: * <br/><br/>Disallow: / </pre>
+<p>您还可以阻止特定目录从web爬网中排除。如果您有一个/admin区域，并且需要保护它，只需将以下代码放入其中:</p>
+<pre>User-agent: * <br/><br/>Disallow: /admin/ </pre>
+<p>限制对特定文件的访问:</p>
+<pre>User-agent: * <br/><br/>Disallow: /privatearea/file.html </pre>
+<p>限制对包含“？”的动态URL的访问符号:</p>
+<pre>User-agent: * <br/><br/>Disallow: /*? </pre>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>如今，Google Dorks是查找难以获得的数据的最便捷方式之一。您必须找到正确的搜索词，并了解搜索引擎如何从大量数据中找出有价值的信息。尽管市场上有几种工具，但谷歌搜索运营商有自己的一席之地。</p>
+<p>我们已经在这个Google Dorks备忘单中介绍了常用的命令和操作符，以帮助您执行Google Dorking。这个Google fu小抄适合所有人，从初学者到有经验的专业人士。</p>
+<p>下次你需要专门或特定的研究，参考这个方便的谷歌呆子小抄。有兴趣了解更多关于道德黑客的知识吗？</p>
+<p><a href="https://imp.i384100.net/x9DjoA" target="_blank" rel="noopener"><img src="../Images/1b66980f64eacda2a2bb3e0520970dcf.png" alt="" data-original-src="https://hackr.io/blog/media/coursera-cybersecurity-course.png"/>T2】</a></p>
+<h2 id="frequently-asked-questions"><strong>常见问题解答</strong></h2>
+<h4 id="toc-1-is-it-legal-to-use-google-dorks"><strong> 1。使用谷歌呆子合法吗？</strong></h4>
+<p>谷歌黑客或俗称谷歌多金。它是一种黑客技术，利用谷歌搜索和其他谷歌应用程序等技术，找到网站使用的配置和计算机代码中的漏洞。</p>
+<p>然而，它是一种非法活动，导致网络恐怖主义和网络盗窃等活动。</p>
+<h4 id="toc-2-what-are-some-google-hacks"><strong> 2。什么是谷歌黑客？</strong></h4>
+<p>这里有一些谷歌的技巧供你尝试:</p>
+<ul>
+<li>使用“@”符号在社交媒体网站中搜索信息。为此，您需要提供社交媒体名称。例如，输入@google:username在google中搜索用户名。</li>
+<li>要获得与hashtags相关的信息，您需要在搜索词前使用#号。例如，输入#HelloDelhi。</li>
+<li>要搜索未知单词，请使用星号(*)来替换一个或多个单词。比如大亚就要搬到*。</li>
+<li>您可以使用关键字map和位置名称来检索基于地图的结果。例如，输入地图:德里。</li>
+</ul>
+<h4 id="toc-3-what-are-google-dork-operators"><strong> 3。什么是谷歌呆子运营商？</strong></h4>
+<p>以下是谷歌呆子运营商:</p>
+<ul>
+<li>缓存:提供任何网站的缓存版本，例如cache:google.com</li>
+<li>all text:获取特定网页中包含的特定文本，例如all text:hacking tricks。</li>
+<li>allinurl:提供包含所有指定字符的url，例如:allinurl:pingpong</li>
+<li>文件类型:要获取与文件扩展名相关的信息，例如，查找特定的pdf文件，请使用-电子邮件安全文件类型:pdf</li>
+<li>intitle:将提供与标题中的关键字相关的信息，例如，intitle:dorking tools。</li>
+<li>金融锚:提供任何链接上使用的准确锚文本的信息，例如金融锚:“黑客工具”</li>
+<li>站点:显示所提到的域和子域的所有索引URL，例如site:dorking.com</li>
+<li>+:连接单词，适用于检测具有多个特定键的页面，例如dorking + tools</li>
+</ul>
+<h4 id="toc-4-how-does-google-dorking-work"><strong> 4。Google Dorking是如何工作的？</strong></h4>
+<p>Google Dorking是一种搜索技术，使黑客能够获得企业和个人不打算公开的信息。利用这种技术，黑客能够识别易受攻击的系统，并能够恢复用户名、密码、电子邮件地址，甚至信用卡详细信息。</p>
+<h4 id="toc-5-how-do-you-do-the-google-gravity-trick"><strong> 5。你是怎么做到谷歌重力魔术的？</strong></h4>
+<p>按照以下步骤来做谷歌重力魔术:</p>
+<ul>
+<li>打开电脑上的浏览器。</li>
+<li>打开Google.com。</li>
+<li>键入Google Gravity(不要点击搜索)。</li>
+<li>点击我感到幸运。</li>
+<li>等待谷歌重力页面加载。</li>
+<li>移动鼠标光标。</li>
+<li>你会看到一切都倒下了。</li>
+</ul>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

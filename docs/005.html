@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>What is Django? Advantages and Disadvantages of using Django</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>姜戈是什么？使用Django的优点和缺点</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/what-is-django-advantages-and-disadvantages-of-using-django#0001-01-01">https://hackr.io/blog/what-is-django-advantages-and-disadvantages-of-using-django#0001-01-01</a></blockquote><div><div class="content">
+										<p><span> Python是世界上最著名的编程语言之一，也是2017年GitHub项目中使用第二多的语言。因此，如果你对Python和web开发感兴趣，你很可能听说过<a href="https://www.djangoproject.com/" target="_blank" rel="noopener"> Django </a>。如今，web框架的名气越来越大，这使得学习一个新的框架和选择使用哪个框架变得非常困惑。</span> <span>今天，我们来了解一下Django，以便能够理解这项令人惊叹的技术。</span></p>
+<h2 id="what-is-django">什么是Django？</h2>
+<p>Django是一个用于构建网络应用的MVT网络框架。它将自己定义为一个“包含电池”的web框架，具有健壮性和简单性，可以帮助web开发人员编写干净、高效和强大的代码。它是世界上最著名的web框架之一，也是使用最多的框架之一。Instagram、Youtube、Google甚至NASA的网站都使用它。因此，让我们进一步分解它，以了解更多信息。</p>
+<h2 id="the-structure"><strong>结构</strong></h2>
+<p><img class="alignnone wp-image-559" src="../Images/87c05fb48866c64147303c0bc912e2df.png" alt="django-project-structure" data-original-src="https://hackr.io/blog/uploads/images/1570190908t7dXDO8kCV.jpg"/></p>
+<p>Django遵循代表模型-视图-模板的MVT架构。MVT是著名的MVC结构的Django变体，这就是为什么你会觉得它与其他框架的工作方式非常相似。当Django服务器收到请求时，URL路由器会将请求映射到适当的视图。然后，视图通过模型获取数据，填充模板，并将其发送回用户。</p>
+
+<h2 id="django-s-models">姜戈的模特们</h2>
+<p><img class="alignnone wp-image-558" src="../Images/21a6830ff5dc754cf9f9c88961569dfa.png" alt="" data-original-src="https://hackr.io/blog/uploads/images/1570190908RwOitW9ZBh.jpg"/></p>
+<h3 id="what-is-django-used-for">Django是做什么用的？</h3>
+<p>詹戈的模型利用了强大的ORM层，简化了对数据库和数据的处理，加速了开发过程。<br/> </p>
+<p>如果没有对象关系映射，开发人员将不得不自己创建表，并定义查询或过程，这有时会转化为大量的SQL，而这些SQL往往很复杂且难以跟踪。<br/> </p>
+<p>ORM层允许你用简单的python代码编写所有的表定义，它负责将这些表定义翻译成合适的查询语言，同时也方便了CRUD操作。<br/>事实上，开发人员不需要完全了解复杂的SQL，也不需要知道它能翻译成什么，但是，值得注意的是，理解SQL能让你写出更好更快的查询，也能让你的网站更安全。<br/>T3】</p>
+<p>与其他框架不同，这些模型都放在一个文件中，通常是models.py，这可能会让大型项目感到拥挤。<br/> </p>
+<p>Django支持许多数据库系统。SQLite非常适合测试和开发，因为它可以开箱即用，无需安装其他软件。对于生产，你可以选择<a href="https://hackr.io/blog/postgresql-vs-mysql"> MYSQL或PostgreSQL </a>，如果你正在寻找一个NoSQL数据库，你可以使用MongoDB和Django，这里有一个关于这个主题的进一步的<strong> <a href="https://code.djangoproject.com/wiki/NoSqlSupport" target="_blank" rel="noopener">阅读</a> </strong>。</p>
+
+<p><span> <a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpython-django-the-practical-guide%2F" target="_blank" rel="noopener"> Python Django -实用指南</a> </span></p>
+<h2 id="django-s-templates"><strong> Django的模板</strong></h2>
+<p>模板层用于将数据与用户实际呈现和查看的方式分离开来。模板层类似于MVC的视图层。如果你熟悉其他语言中的模板，在Django中也是一样的；您使用类似HTML的语法，该语法随后被编译成HTML，并注入所有相应的数据。当然，如果您想生成XML文档或JSON文件等，除了HTML，还有其他格式的模板...</p>
+<p><img class="alignnone wp-image-557" src="../Images/4b1d4b831b373d74649dc97bfce4b592.png" alt="" data-original-src="https://hackr.io/blog/uploads/images/1570190908gXUNMatQvX.jpg"/></p>
+<p>DRY是Django的核心模板设计原则之一，它是一种代表“不要重复自己”的设计模式。听起来确实如此，这意味着你不应该，至少在大多数情况下，通过复制和粘贴代码。相反，举例来说，你的模板应该被分成可重用的组件，比如侧边导航栏、主导航栏、页面页眉、页面页脚等等。这最大限度地减少了重复，有助于编写高效、简洁的代码。</p>
+<p>Django与众不同的一点是它对安全的重视程度。这确实影响了模板的编写。</p>
+<p>例如，在Rails中，你可以在视图中编写ruby代码——不是说这是你应该做的事情——你还可以给变量赋值。</p>
+<p>在Django中，完全不是这样，你不能在模板中运行python代码，也不能给变量赋值。简而言之，Django禁止在模板层执行代码，只允许访问显示逻辑，这是一个简单但对许多web漏洞非常有效的解决方案。</p>
+<p><span> <a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpython-django-the-practical-guide%2F" target="_blank" rel="noopener"> Python Django -实用指南</a> </span></p>
+<h2 id="django-s-views"><strong>姜戈的观点</strong></h2>
+<p>Django中的视图是业务逻辑层。它负责处理用户的请求并发回有效的响应。它从模型中获取数据，让每个模板访问要显示的特定数据，或者它可以预先对数据执行一些处理。如今，Django的视图可以是处理请求并返回响应的函数，也可以是功能更多的类，类似于Laravel和Rails控制器。</p>
+<h2 id="the-url-router"><strong>URL路由器</strong></h2>
+<p>Django中的URL路由器比其他框架更复杂，比如Rails或Laravel。它的问题是它使用了正则表达式，这对初学者来说不容易使用。然而，URL路由器本身的结构一点也不复杂，它只是一种你一开始可能不习惯的语法。</p>
+<h2 id="advantages-of-django">Django的优势</h2>
+<h3 id="toc-1-batteries-included"><span> <strong> 1。</strong>内含电池</span></h3>
+<p>Django自诩为一个包含电池的框架。这意味着它有很多现成的东西，你可能会用，也可能不会用，这取决于你的应用。您不需要编写自己的代码(功能)，只需要导入您想要使用的包。</p>
+<p>这是Django参与的配置范例的一部分，它允许您利用由世界级专业人员实现的解决方案。Django电池涵盖广泛的主题，包括:</p>
+<ul>
+<li>使用<em>认证包</em>进行认证</li>
+<li>与<em>管理包</em>的管理接口</li>
+<li>使用<em>会话包</em>进行会话管理</li>
+<li>使用<em>消息包</em>管理临时或基于会话的消息</li>
+<li>使用<em>站点地图包</em>生成Google站点地图XML</li>
+<li>带有<em> Postgres软件包</em>的Postgres特殊功能</li>
+<li>用内容类型<em>框架</em>钩住内容的“类型”</li>
+</ul>
+<p><strong> <a href="https://djangopackages.org/" target="_blank" rel="noopener">查看所有Django电池/包</a> </strong></p>
+<h3 id="toc-2-python"><strong> 2。Python </strong></h3>
+<p>由于Django使用python，它利用了Python的一些名气和功能来为自己谋利。对于初学者来说，Python可以说是最容易(如果不是最容易的话)学习的编程语言之一，它在世界各地的计算机科学入门课程中也很受欢迎。2017年Stackoverflow开发者调查显示，Python现在比<a href="https://hackr.io/blog/python-vs-php" target="_blank" rel="noopener"> PHP和Python </a>更普遍，工作报酬比<a href="https://hackr.io/blog/c-sharp-vs-cpp" target="_blank" rel="noopener"> C#和C++ </a>更高。</p>
+
+<p>Django的社区是最棒的地方之一，他们乐于助人，积极致力于使框架更加初学者友好，并在增加新功能的同时稳定框架。Django的文档非常全面，作为一个独立的教程非常有用，它将帮助您了解各种特性，因此您可以将它作为主要的信息来源。</p>
+<h3 id="toc-4-scalable"><strong> 4。可扩展</strong></h3>
+<p>大多数开发人员在考虑选择未来的框架计划时。这就是为什么选择一个可伸缩的框架对很多人来说是非常重要的，Django就是这样。它允许您针对可伸缩性采取许多不同的措施，例如为数据库、媒体和应用程序本身运行单独的服务器，甚至使用集群或负载平衡将应用程序分布在多个服务器上。</p>
+<h3 id="toc-5-built-in-admin"><strong> 5。内置管理员</strong></h3>
+<p>Django团队在创建框架时考虑得相当周到，他们将用户和客户满意度放在了心上。仅仅为了能够用基本的CRUD操作管理数据而在后端创建自己的管理界面是很不合理的。这就是为什么Django提供了一个开箱即用的管理界面，根据开发人员现在可以开发的文档，它既专业又通用。</p>
+<h2 id="disadvantages-of-django"><strong>姜戈的缺点</strong></h2>
+<p>虽然Django是一个令人惊叹的框架，但是有一些缺点对你来说可能是问题，也可能不是问题。首先，用正则表达式指定URL不是一件容易的事情，至少对初学者来说是这样。对于小项目来说，它也显得有些臃肿，有些人发现它被大项目占据了，因为模型都包含在一个文件中。默认情况下，模板错误会无声无息地失败，因此如果您不知道这一点，您可能会浪费大量时间来找出应用程序的问题所在，或者更糟糕的是，您可能甚至不知道您的应用程序有问题。这也是一个非常固执己见的框架，给人一种铁板一块的感觉。有一种流行的、被建议的做事方式，你应该遵循它。</p>
+<h2 id="how-to-learn-django"><strong>如何学习Django </strong></h2>
+<p><span>首先，你要从Python开始，了解web应用的自然流程。可以在Hackr.io. </span>上找到编程社区最好推荐的 <strong> <a href="https://hackr.io/tutorials/learn-django?ref=blog" target="_blank" rel="noopener"> Django教程</a> </strong> <span/></p>
+<p>你可以选择最受欢迎的教程，也可以根据你的学习方式选择教程:视频教程或书籍；适合初学者或高级学习者。你可以从CS50关于<a href="https://squareboat.com/services/web-development" target="_blank" rel="noopener"> web开发</a>的讲座开始，你也会得到关于Python以及如何使用它的简介。</p>
+<p>为了掌握Python，Bill Weinman的Lynda课程是一门大师课，你也可以在Udemy上查看Python和Django的课程。Django的官方文档也是一个很好的起点，正如我们之前所说，它提供了全面的教程，而不仅仅是API用法。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

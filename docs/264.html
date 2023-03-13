@@ -1,0 +1,241 @@
+<html>
+<head>
+<title>Top 50 R Interview Questions and Answers in 2023 [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年前50 R面试问答[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/r-interview-questions#0001-01-01">https://hackr.io/blog/r-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>r编程语言用于<strong>统计分析</strong>，图形表示和报告。r在GNU通用公共许可证(GNU GPL)下免费提供。GNU GPL允许最终用户自由运行、共享和使用软件。r编程语言用于回归分析、预测建模、概率估计、数据挖掘领域，进一步帮助进行<a href="https://hackr.io/blog/what-is-data-analysis-methods-techniques-tools">数据分析</a>。这篇文章将让你用下面列出的最好的<strong>面试问题和答案为即将到来的面试做准备。</strong></p>
+<h2 id="top-r-interview-questions-and-answers">前R名面试问答</h2>
+<p>R编程语言的特点:</p>
+<ol>
+<li>r是用来处理大量数据和存储的设施。</li>
+<li>在处理数据的统计分析和图形表示时，r非常方便。</li>
+<li>r提供了大量的操作符来执行数组、列表、向量和度量的计算。</li>
+</ol>
+<p>这里有一个面试问题列表，可以帮助你准备面试，并在数据科学领域找到一份工作。</p>
+<h4 id="question-what-is-the-data-structure-in-r-which-helps-in-statistical-analysis-and-graphical-representation"><strong>问题:</strong>R中的数据结构是什么，有助于统计分析和图形化表示？</h4>
+<p><strong>答案:</strong>以下是R中的数据结构，应用广泛:</p>
+
+<ol>
+<li>排列</li>
+<li>[数]矩阵</li>
+<li>矢量</li>
+<li>数据帧</li>
+<li>目录</li>
+<li>桌子</li>
+</ol>
+<h4 id="question-how-to-print-something-in-r-practice-of-r-basic-syntax"><strong>问题:</strong>如何用R打印东西？&lt;练习R基本语法&gt;</h4>
+<p><strong>回答:</strong>写东西，R用<strong>打印</strong>命令。</p>
+<pre>&gt;string_variable_name &lt;- “R is an analytical language”<br/>&gt;print(string_variable_name)</pre>
+<h4 id="question-what-is-class-function-r"><strong>问题:</strong>什么是class()函数R？</h4>
+<p><strong>答:</strong>R中的这个函数是一个字符向量，给出了对象继承的类的名字。</p>
+<p><strong>举例:</strong></p>
+<pre>&gt;x &lt;- 1:10<br/>&gt;class(x)<br/>[1] “integer”</pre>
+<h4 id="question-what-is-a-vector"><strong>问题:</strong>什么是矢量？</h4>
+<p><strong>答案:</strong>向量是同一主类型的数据元素序列。向量中的成员称为分量。</p>
+<p>举例。</p>
+<pre>&gt;vector_example &lt;- c(2,3,4,5)<br/>&gt; print(vector_example)<br/>[1] 2,3,4,5<br/>&gt;print (length(vector_example)<br/>[1] 4</pre>
+<h4 id="question-how-to-perform-arithmetic-operations-on-vectors-show-with-some-example"><strong>问题:</strong>如何对向量进行算术运算？用一些例子来说明</h4>
+<p><strong>回答:</strong>R中使用了很多算术运算符，记住，R是一个组件一个组件地使用运算符。我们用一些标准运算符来看一下。</p>
+
+<pre>&gt;x &lt;- c(1,2,3,4)<br/>&gt; y &lt;- c(4,5,6,7)<br/>&gt; x+y<br/>[1] 5 7 9 11<br/>&gt; x-y<br/>[1] -3 -3 -3 -3<br/>&gt; z &lt;- (4,4,4,4,4,4,4)<br/>&gt; x+z<br/>[1] 5 6 7 8 5 6 7</pre>
+<p>当我们有两个长度不等的向量，并且我们需要对两个向量都进行操作时，那么较短的向量会被反复使用来匹配两个向量的长度。</p>
+<h4 id="question-define-index-in-vector"><strong>问题:</strong>在Vector中定义索引。</h4>
+<p><strong>答:</strong>向量中的Index用来给出向量那个位置的元素。少数<a href="https://hackr.io/blog/best-programming-languages-to-learn">编程语言</a>从0开始索引，其他的从1开始。r从1开始计算索引。在输入索引号时有许多可能性，即</p>
+<p><strong> 1。正值和范围内指数</strong></p>
+<pre>&gt; x&lt;- (1,3,4,5)<br/>&gt; x[2]<br/>[1] “3”</pre>
+<p><strong> 2。超出范围</strong></p>
+<pre>&gt;x &lt;- (2,3,4,5)<br/>&gt; x[110]<br/>[1] NA</pre>
+<p><strong> 3。负索引-删除此元素并回复所有剩余的数字。</strong></p>
+<pre>&gt; x &lt;- (3,4,5,6,7)<br/>&gt; x[-3]<br/>[1] “3” “4” “6” “7”</pre>
+<p><strong> 4。数值范围</strong></p>
+<pre>&gt;x &lt;- (3,4,5,6,7,8)<br/>&gt; x[2:5]<br/>[1] “4” “5” “6” “7”</pre>
+<p><strong> 5。重复索引</strong></p>
+<pre>&gt;x &lt;- (3,4,5,6,7)<br/>&gt;s[c(2,1,2,3)]<br/>[1] “4” “3” “4” “5”</pre>
+<p><strong> 6。逻辑索引</strong></p>
+<p>如果我们要选择一组特定的索引号，那么就应该使用逻辑运算符即TRUE和FALSE</p>
+<pre>&gt; x &lt;- (2,3,4,5,6)<br/>&gt; s[c(TRUE, FALSE, FALSE, TRUE, TRUE)<br/>[1] “2” “5” “6”</pre>
+<h4 id="question-what-is-a-list"><strong>问题:</strong>什么是列表？</h4>
+<p><strong>答案:</strong>一个列表，顾名思义就是几个向量集合在一起。假设你有一个数字向量，一个字符向量，一个布尔向量和一些数字。我们想把它合二为一，显然不会有相同的数据类型。所以我们需要创建一个列表。</p>
+<pre>&gt; n = c(2,3,5)<br/>&gt; s = c (“a”, “b”, “c”, “d”, “e”)<br/>&gt; b= c(TRUE, FALSE, TRUE, FALSE, FALSE)<br/>&gt; x = list (n, s, b, 3)<br/>&gt; print(x)<br/>[[1]]<br/>[1] 2 3 5<br/>[[2]]<br/>[1] “a” “b” “c” “d” “e”<br/>[[3]]<br/>[1] TRUE FALSE TRUE FALSE FALSE<br/>[[4]]<br/>[1] 3</pre>
+<h4 id="question-what-is-matrices"><strong>问题:</strong>什么是矩阵？</h4>
+<p><strong>答案:</strong>矩阵是二维矩形数据集。它可以使用矩阵函数的向量输入来创建。</p>
+<p>举例。</p>
+<pre># Matrix creation<br/>&gt; M = matrix(c(1,2,3,4,5,6), nrow=2, ncol=3, by-row =TRUE)<br/>print(M)<br/>[1] [2] [3]<br/>[1] 1 2 3<br/>[1] 4 5 6<br/>Where<br/>nrow = number of rows in the matrix<br/>ncol = number of columns in the matrix<br/>byrow = TRUE/FALSE will get value first by row or column.</pre>
+<h4 id="question-what-is-an-array"><strong>问题:</strong>什么是数组？</h4>
+<p><strong>答案:</strong>数组是矩阵的超集。一方面，矩阵可以是二维的，但是阵列可以是任意维数的。</p>
+<p>举例。</p>
+<pre>&gt; a&lt;- array(c(“car”, “bike”), dim (3,3,2))<br/>&gt; print (a)<br/>, , 1<br/>[,1] [,2] [,3]<br/>[1,] “car” “bike” “car”<br/>[2,] “bike” “car” “bike”<br/>[3,] “car” “bike” “car”<br/>, , 2<br/>[,1] [,2] [,3]<br/>[1,] “bike” “car” “bike”<br/>[2,] “car” “bike” “car”<br/>[3,] “bike” “car” “bike”<br/>&gt;my_array &lt;- array(1:24, dim = c(3,4,2))<br/>&lt; my_array<br/>, , 1<br/>[,1] [,2] [,3] [,4]<br/>[1,] 1 4 7 10<br/>[2,] 2 5 8 11<br/>[3,] 3 6 9 12<br/>, , 2<br/>[,1] [,2] [,3] [,4]<br/>[1,] 13 16 19 22<br/>[2,] 14 17 20 23<br/>[3,] 15 18 21 24</pre>
+<h4 id="question-what-is-the-factor"><strong>问题:</strong>因子是什么？</h4>
+<p><strong>答:</strong>因素是使用矢量创建的r对象。R中的因子存储为一个整数值向量，并带有一组相应的字符值，以便在显示因子时使用。因子函数用于创建因子。factor唯一需要的参数是一个向量值，它将作为因子值的向量返回。它存储向量以及向量标签中元素的不同值。</p>
+<p>因子是使用factor()函数创建的。nlevels函数给出了级别的计数。</p>
+<p>举例。</p>
+<pre>#First let’s create a vector<br/>&gt;vector_example &lt;- c(‘a’, ‘b’, ‘c’, ‘a’, ‘a’)<br/>#Now create a factor object<br/>&gt;factor_example &lt;- factor(vector_example)<br/>&gt;print(factor_example)<br/>[1] a b c a a<br/>&gt;print(nlevels(factor_example))<br/>[1] 3</pre>
+<p>nlevels给出了向量中不同值的数量。</p>
+<h4 id="question-what-is-the-difference-between-matrix-and-an-array"><strong>问题:</strong>矩阵和数组有什么区别？</h4>
+<p><strong>答:</strong>矩阵只能有二维，而数组可以有任意多个维度。借助于数据、行数、列数以及元素是按行还是按列放置来定义矩阵。</p>
+<p>在array中，需要给出数组的维数。数组可以有任意多个维度，每个维度都是一个矩阵。例如，3x3x2数组表示两个矩阵，每个矩阵的维数为3x3。</p>
+<h4 id="question-what-is-a-data-frame"><strong>问题:</strong>什么是数据帧？</h4>
+<p><strong>答案:</strong><strong/>数据帧是一列等长的向量。它可以由任何特定类型的向量组成，并可以将其合并为一个向量。因此，一个数据帧可以有一个逻辑向量和一个数值向量。唯一的条件是所有的向量应该有相同的长度。</p>
+<p>举例。</p>
+<pre>#This is how the data frame is created<br/>&gt; student_profile &lt;- data.frame(<br/>Name &lt;-c(“Ray”, “Green”, “Justin”)<br/>Age &lt;- c(22,23,24)<br/>Class &lt;- c(6,7,8)<br/>)<br/>print(stuent_profile)</pre>
+<p>上面的代码将创建三列，列名分别为name、age和class。</p>
+<h4 id="question-what-is-the-difference-between-a-matrix-and-a-data-frame"><strong>问题:</strong>矩阵和数据框有什么区别？</h4>
+<p><strong>答案:</strong>一个数据帧可以包含不同输入的向量，一个矩阵不能。我们可以有一个由字符、整数甚至其他数据组成的数据框架，但是你不能用矩阵来实现，因为矩阵必须是相同的类型。</p>
+<p>因此，数据帧可以有不同的字符、数字和逻辑向量。</p>
+<p>但是，对于矩阵，我们只需要一种数据类型。</p>
+
+<h4 id="question-how-to-read-input-from-the-user-in-r"><strong>问题:</strong>如何在R中读取用户的输入？</h4>
+<p><strong>答案:</strong></p>
+<pre>Readinteger &lt;- function()<br/>{<br/>n &lt;- readline(prompt = “Enter an integer: “)<br/>return(as.integer(n))<br/>}<br/>print(readinteger())</pre>
+<p>Readline允许用户在r中输入一行字符串。</p>
+<p>提示参数打印在用户的屏幕上。</p>
+<h4 id="question-write-a-function-to-get-the-square-of-a-number"><strong>问题:</strong>写一个函数求一个数的平方</h4>
+<p><strong>答案:</strong></p>
+<pre>Square &lt;- function(x) {<br/>return(x^2)<br/>}<br/>print(Square(4))</pre>
+<h4 id="question-write-a-countdown-function-in-r"><strong>问题:</strong>用R写一个倒计时函数？</h4>
+<p><strong>答案:</strong></p>
+<pre>timer &lt;- function(time)<br/>{<br/>print(time)<br/>while(time!-0)<br/>{<br/>Sys.sleep(!)<br/>Time &lt;- time -1<br/>print(time)<br/>}<br/>}<br/>countdown(5)<br/>[1] 5<br/>[2] 4<br/>[3] 3<br/>[2] 2<br/>[1] 1</pre>
+<h4 id="question-how-to-use-mode-function-in-r"><strong>问题:</strong>如何在R中使用mode函数？</h4>
+<p><strong>答案:</strong>众数是一组数据中出现次数最多的值。与平均值和中值不同，该模式可以包含数字和字符数据。</p>
+<p>r没有标准的内置函数来计算模式。所以我们创建一个用户函数来计算r中一个数据集的模，这个函数把向量作为输入，把模值作为输出。</p>
+<p>举例。</p>
+<pre>#Create the function<br/>getmode &lt;- function(v){<br/>uniqv &lt;- unique(v)<br/>uniqv[which.max(tabulate(match(v,uniqv)))]<br/>}<br/>#Create the vector with numbers.<br/>v &lt;- c(2,1,2,3,1,2,3,4,1,5,5,3,2,3)<br/>#Calculate the mode using the user function<br/>result &lt;- getmode(v)<br/>print(result)<br/>[1] 2<br/>#Create the vector with characters<br/>charv &lt;- c(“o”, “it”, “the”, “it”, “it”)<br/>#Calculate the mode using the user function.<br/>result &lt;- getmode(charv)<br/>print(result)<br/>[1] “it”</pre>
+<h4 id="question-what-does-an-enlist-function-does"><strong>问题:</strong>enlist函数是做什么的？</h4>
+<p><strong>回答:</strong>它把一个列表转换成一个向量</p>
+<h4 id="question-what-is-the-apply-function-in-r"><strong>问题:</strong>R中的apply函数是什么？</h4>
+<p><strong>回答:</strong> apply()，它的族是r中使用最多的函数之一，当我们要对矩阵的行或列应用一个函数时，我们就使用apply。</p>
+
+<p>示例:</p>
+
+<pre>M&lt;- matrix(seq(1,16),4,4)<br/>apply (M,1,min)<br/>[1] 1 2 3 4</pre>
+<h4 id="question-what-is-the-lapply-function-in-r"><strong>问题:</strong>R中的lapply()函数是什么？</h4>
+<p><strong>答:</strong>当我们想对每个应用一个函数时，就使用lapply()函数</p>
+<h4 id="question-differentiate-between-lapply-and-sapply"><strong>问题:</strong>区分lapply和sapply</h4>
+<p><strong>回答:</strong>如果程序员希望输出是数据帧或者向量，那么就使用sapply函数，反之如果程序员希望输出是列表，那么就使用lapply。</p>
+<h4 id="question-how-to-install-a-new-package-in-r"><strong>问题:</strong>如何在R中安装新的包？</h4>
+<p><strong>回答:</strong>我们需要知道包的名字</p>
+<p>语法:</p>
+<pre>install.packages(“name_of_package”)</pre>
+<h4 id="question-what-is-the-function-of-merge-function"><strong>问题:</strong>merge()函数的作用是什么？</h4>
+<p><strong>答案:</strong>我们可以利用merge函数()合并两个数据帧。发生合并时，数据框必须具有相同的列名。</p>
+<p>举例。</p>
+<pre>df1 &lt;- data.frame(id &lt;- c(1:6), name &lt;-c(rep(“Amit”,3), rep(“Sumit”,3))<br/>df2 &lt; - data.frame(id &lt;- c(7,8,9), name &lt;- c(rep(“Nitin”,2),rep(“Paplu”,1))<br/>*outer join<br/>merge(x=df1, y= df2, by =”id”, all TRUE)</pre>
+<p>all = TRUE将提供外部连接，因此新的数据集将包含id上合并的两个数据框的所有值。</p>
+<h4 id="question-what-is-data-cleaning"><strong>问题:</strong>什么是数据清洗？</h4>
+<p><strong>回答:</strong> <a href="https://hackr.io/blog/what-is-data-wrangling#step-3-data-cleaning-in-data-wrangling">数据清理</a>是分析中的一个过程，涉及删除或修改数据库中不正确、不完整、格式不正确或重复的数据。</p>
+<h4 id="question-what-is-data-reshaping"><strong>问题:</strong>什么是数据重塑？</h4>
+<p><strong>回答:</strong>有时候，我们需要特定格式的数据。最初，我们从一个特定的。数据帧中的csv文件或txt文件。但是，大多数时候我们还需要一个不同于初始数据集的数据集，此外我们还需要添加列或列的位置。因此，所有这些都是数据整形，您可以根据需要给出初始数据框的形状。</p>
+<h4 id="question-write-a-function-to-add-two-numbers-in-r"><strong>问题:</strong>写一个函数把R中的两个数相加</h4>
+<p><strong>答案:</strong></p>
+
+<pre>add &lt;- function(a,b)<br/>{<br/>c &lt;- a+b<br/>print(c)<br/>}</pre>
+<h4 id="question-how-can-r-be-closed-from-the-command-line"><strong>问题:</strong>如何从命令行关闭R？</h4>
+<p><strong>回答:</strong>使用函数q()</p>
+
+<h4 id="question-how-to-read-the-csv-input-file-in-r"><strong>问题:</strong>如何读取R中的csv_input文件？</h4>
+<p><strong>答案:</strong></p>
+<pre>data &lt;- read.csv(“csv_input.csv”)</pre>
+<h4 id="question-explain-the-use-of-the-scan-function-in-r"><strong>问题:</strong>解释一下r中scan函数的用法。</h4>
+<p><strong>答:</strong>scan()函数用于读取各种类型的数据或数据对象，例如数据向量。可以定制该命令来读取特定数据。该命令等待来自数据的输入，然后返回在提示符下输入的值。</p>
+<h4 id="question-what-are-the-different-file-formats-using-in-the-r-programming-language"><strong>问题:</strong>R编程语言中使用的不同文件格式有哪些？</h4>
+<p><strong>答案:</strong></p>
+<ol>
+<li>。RDA文件格式:这些是用于在R中附加和加载文件的R对象。</li>
+<li>。Rfiles:这些文件是由转储函数在R编辑器中创建的。</li>
+<li>。txt文件。txt文件用于存储数据集。r使用theread.table()和write.table()函数。</li>
+<li>。csv文件:逗号分隔值文件是常见的数据文件。</li>
+</ol>
+<h4 id="question-what-is-the-function-od-summary-function"><strong>问题:</strong>函数od summary()函数是什么？</h4>
+<p><strong>答:</strong> summary()是一个重要的命令，帮助我们得到数据的统计汇总。它包含所有统计数据，如平均值、中值、最小值、最大值、第一个四分位数和第三个四分位数。</p>
+<h4 id="question-how-can-you-add-datasets-in-r"><strong>问题:</strong>如何在R中添加数据集？</h4>
+<p><strong>答:</strong> rbind()函数可以用来添加R语言的数据集，前提是数据集中的列应该相同。</p>
+<h4 id="question-what-are-the-factor-variables-in-the-r-language"><strong>问题:</strong>R语言中的因子变量有哪些？</h4>
+<p><strong>答:</strong>因子变量是保存字符串或数值的分类变量。因子变量用于各种类型的图形中，特别是用于统计建模，其中正确的自由度数量被分配给它们。</p>
+<h4 id="question-what-is-the-use-of-the-seq-function-in-r"><strong>问题:</strong>R中的seq()函数有什么用？</h4>
+<p><strong>答:</strong>R中的seq()函数是用来给用户提供一个数列的。如果我们需要一个特定步长的数字序列，比如4，8，12，16，那么我们需要提供另一个属性“by =？”这将提供步骤。</p>
+<p>举例。</p>
+<pre>&gt; print(seq(5,11, by = 2))<br/><br/>[1] 5,7,9,11</pre>
+<h4 id="question-define-repeat-loop"><strong>问题:</strong>定义重复循环</h4>
+<p><strong>答案:</strong> Repeat循环多次执行一个序列的语句。它没有把条件放在我们放关键字repeat的同一个地方。</p>
+<p>举例。</p>
+<pre>&gt;name &lt;-c(“Parry”,”John”)<br/>&gt;temp &lt;-5<br/>&gt; repeat {<br/>print(name)<br/>temp &lt;- temp +2<br/>if(temp &gt;11){<br/>Break<br/>}<br/>}</pre>
+<p>这将返回名称向量四次。首先，它打印名称，并将温度提高到7，以此类推。</p>
+<h4 id="question-how-can-one-perform-decision-making-in-r"><strong>问题:</strong>如何在R中进行决策？</h4>
+<p><strong>答:</strong>R中的决策执行方式和其他语言中的一样。三个主要决策陈述包括:</p>
+<ol>
+<li>如果语句</li>
+<li>If.else语句</li>
+<li>交换语句</li>
+</ol>
+<h4 id="question-there-exist-two-vectors-a-3-4-5-and-b-1-2-then-what-will-be-the-output-for-c-a-b"><strong>问题:</strong>存在两个向量，a &lt; - (3，4，5)和b &lt; - (1，2)，那么c &lt; - a * b的输出会是什么？</h4>
+<p><strong>答案:</strong> c &lt; - (3，8，5)</p>
+<h4 id="question-what-are-the-binary-functions-in-r-on-which-binary-operators-can-be-applied"><strong>问题:</strong>R中有哪些可以应用二元运算符的二元函数？</h4>
+<p><strong>答案:</strong>标量，矩阵，向量</p>
+<h4 id="question-what-are-the-main-characteristics-of-a-data-frame"><strong>问题:</strong>一个数据帧的主要特征是什么？</h4>
+<p><strong>答案:</strong>以下是主要特点:</p>
+<ol>
+<li>行名应该是唯一的。</li>
+<li>列名不应为空</li>
+<li>数据框中存储的数据仅支持三种类型，即数字、因子和字符。</li>
+<li>每列应该有相同数量的数据项。这是数据框的主要规则之一。</li>
+</ol>
+<h4 id="question-explain-the-use-of-string-function-in-r"><strong>问题:</strong>解释字符串函数在R中的用法</h4>
+<p><strong>答案:</strong>R中的str()函数用于获取一个数据帧的结构以及前几个观察值。假设一个数据帧有四个变量，每个变量有三个值。那么这个函数的输出将是这样的:</p>
+<pre>‘data.frame’: 3 obs. And 4 variable<br/>$name: chr “Nitin” “Kamal” “Xtramous”<br/>$age : int 16 18 20<br/>$class: int 6 8 10</pre>
+<h4 id="question-what-is-the-difference-between-seq-4-and-seq-along-4"><strong>问题:</strong>seq(4)和seq_along(4)有什么区别</h4>
+<p><strong>答案:</strong> seq(4)产生一个从1到4的向量(c(1，2，3，4))，而seq_along(4)产生一个长度为(4)的向量，即1(c(1))。</p>
+<h4 id="question-how-to-read-a-csv-file-in-r"><strong>问题:</strong>如何在R中读取一个. csv文件？</h4>
+<p><strong>答案:</strong> read.csv()函数用于从当前工作目录中读取一个csv(逗号分隔值)。</p>
+<p>举例。</p>
+<pre>data_store&lt;- read.csv(“abc.csv”)<br/>print(data_store)</pre>
+<h4 id="question-get-all-the-data-of-the-person-having-a-maximum-salary"><strong>问题:</strong>获取有最高工资的人的所有数据。</h4>
+<p><strong>答案:</strong></p>
+<pre>max_salary_person &lt;- subset(data,<br/>salary == max(salary))<br/>print(max_salary_person)</pre>
+<h4 id="question-how-to-get-outer-join-left-join-right-join-inner-join-and-cross-join"><strong>问题:</strong>如何获得外连接、左连接、右连接、内连接、交叉连接？</h4>
+<p><strong>答案:</strong></p>
+<pre>outer join - merge (x= df1, y=df2, by= “id”, all= TRUE)<br/>left join - merge (x= df1, y= df2, by = “id”, all.x = TRUE)<br/>right join - merge (x= df1, y= df2, by = “id”, all.y = TRUE)<br/>inner join - merge (x= df1, y= df2, by = “id”)<br/>cross join - merge (x= df1, y= df2, by = NULL)</pre>
+<h4 id="question-what-do-you-mean-by-casting-what-is-the-use-of-cast-function"><strong>问题:</strong>选角是什么意思？cast()函数有什么用？</h4>
+<p><strong>答案:</strong>用于熔化后得到骨料()。所以，现在我们有了按某种顺序排列的数据，如果我们想要聚合具有相似company_name和age的列，那么我们应该使用cast()函数。</p>
+<p>举例。</p>
+<pre>Casted_data_set &lt;- cast(new_data_set, company_name+age ~ variable, sum)</pre>
+<p>该函数给出了相同公司和年龄的总工资和子女数。</p>
+<h4 id="question-what-is-the-use-of-sample-function-in-r-programming"><strong>问题:</strong>样本函数在R编程中有什么用？</h4>
+<p><strong>答案:</strong> Sample()函数可以用来从庞大的数据集中选择一个大小为‘n’的随机样本。</p>
+<h4 id="question-what-is-the-use-of-subset-function-in-r-programming"><strong>问题:</strong>子集函数在R编程中有什么用？</h4>
+<p><strong>答案:</strong> Subset()函数用于从给定的数据集中选择变量和观测值。</p>
+<h4 id="question-what-is-the-function-of-the-rnorm-function-explain-with-syntax"><strong>问题:</strong>rn ORM()函数的作用是什么？用语法解释。</h4>
+<p><strong>答案:</strong> rnorm函数根据传递给函数的均值和标准差自变量生成“n”个正态随机数。</p>
+<p><strong>语法:</strong></p>
+<pre>rnorm(n, mean = , sd= )</pre>
+<h4 id="question-how-to-make-a-scatterplot-in-r"><strong>问题:</strong>如何在R中制作散点图？</h4>
+<p><strong>答:</strong>散点图是一种显示许多点绘制在笛卡尔平面上的图形。每个点包含两个值，分别位于x轴和y轴上。简单散点图是使用plot()函数绘制的。</p>
+<p>散点图的语法是:</p>
+<pre>plot(x,y,main,xlab,ylab,xlim,ylim,axes)</pre>
+<p>在哪里</p>
+<p>x是其值是水平坐标的数据集</p>
+<p>y是数据集，其值是纵坐标</p>
+<p>主要是图中的平铺</p>
+<p>xlab和ylab是水平和垂直轴上的标签</p>
+<p>xlim和ylim是绘图中使用的x和y值的极限</p>
+<p>轴表示两个轴是否都应该在图上。</p>
+<pre>plot(x = input$wt,y = input$mpg,<br/>xlab = “Weight”,<br/>ylab = “Mileage”,<br/>xlim = c(2.5,5)<br/>ylim = c(15,30)<br/>main = “Weight vs Mileage”<br/>)</pre>
+<h4 id="question-what-is-the-sink-function-in-r"><strong>问题:</strong>R中的sink函数是什么？</h4>
+<p><strong>答案:</strong>sink()函数定义了输出的方向。</p>
+<pre>#direct output to a file<br/>sink(“myfile”, append = FALSE, split = FALSE)<br/>#return output to the terminal sink()</pre>
+<p>append选项控制输出是覆盖文件还是添加文件。分割选项决定了输出是否也作为输出文件发送到屏幕。</p>
+<h1>摘要</h1>
+<p><span>我们为您提供了热门的R <a href="https://hackr.io/blog/programming-interview-questions">编程面试问题</a>，供您准备<a href="https://hackr.io/blog/data-science-interview-questions">数据科学面试</a>。这R个面试问题是最好的一套面试问题。我们也建议你在参加面试前练习编码，有一个你参与过的虚拟项目总是一个优势。你在面试中还遇到过其他问题吗？或者你想和R社区分享的其他技巧？</span></p>
+<p>我强烈建议遵循这些非常有用的面试问题。来自Udemy <strong> : </strong> <a href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https://www.udemy.com/course/data-science-career-guide-interview-preparation/" target="_blank" rel="nofollow noopener">数据科学面试指南</a>。</p>
+<p><a href="https://hackr.io/blog/data-science-interview-questions">数据科学问题</a>钉在R面试里。考虑从书中准备同样的:<a href="https://geni.us/VWWYnL" target="_blank" rel="nofollow noopener">破解你的下一本数据科学面试书</a></p>
+<p><span>下面评论！</span></p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Make OTP view on iOS</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>在iOS上创建OTP视图</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/make-otp-view-on-ios#0001-01-01">https://hackr.io/blog/make-otp-view-on-ios#0001-01-01</a></blockquote><div><div class="content">
+										<p>几乎每个应用程序现在都使用电话号码来登录/注册。所以现在你想在你的app里加入OTP验证。看起来很简单，对吧？</p>
+<p><img class="aligncenter size-full wp-image-4614" src="../Images/cd7ce6ff0a137963baec305606907f8f.png" alt="OTP View" data-original-src="https://hackr.io/blog/uploads/images/1570190917SZZQcFlHL9.jpg"/></p>
+<p>只需添加5个UITextFields，添加处理程序，管理下一个响应者，管理退格/删除按钮，管理颜色变化，显示键盘，隐藏键盘，连接所有字符串。毕竟，这种改变设计来匹配你的应用程序的外观下划线，菱形，圆形，圆形，然后显示或隐藏代码。</p>
+<p>很简单，不是吗？</p>
+
+<p>好的，别担心，我会让它变得简单。有一个分离舱可以让这一切消失，并自己处理一切。您所要做的就是创建一个视图并获取OTP字符串。就是这样。</p>
+<p>1.创建新的Xcode项目。文件&gt;新建&gt;项目<br/> <img class="aligncenter wp-image-4615 size-full" title="new Xcode project" src="../Images/5d0b2f77c5fb9c62c9b3bc02d761d949.png" alt="new Xcode project" data-original-src="https://hackr.io/blog/uploads/images/1570190917FRNc7QGUK9.jpg"/></p>
+<p>2.选择名称，选择团队，将语言更改为Swift，将用户界面更改为Storyboard，完成项目<br/> <img class="aligncenter size-full wp-image-4616" src="../Images/a5c01e9d527e5f38af2ab6cc87ad4e2c.png" alt="" data-original-src="https://hackr.io/blog/uploads/images/1570190917wX0cpedjYy.jpg"/>的初始化</p>
+<p>3.添加CocoaPods。CocoaPods是Swift和Objective-C Cocoa项目的依赖管理器。它允许您在项目中安装库，也称为Pods</p>
+<p>" sudo gem安装cocoapods "</p>
+<p>您必须使用sudo来安装CocoaPods，但是安装之后您就不需要使用sudo了。</p>
+
+<p>4.运行命令“pod init ”,然后运行“pod install”</p>
+<p>Pod init将为您的项目创建一个Pod文件，Pod install将在您的项目中安装Pod。<br/> <img class="aligncenter size-full wp-image-4617" src="../Images/ce101893804368c655e071155517f4e4.png" alt="" data-original-src="https://hackr.io/blog/uploads/images/15701909171p02r7O7lT.jpg"/></p>
+<p>5.安装完Pod后，打开Finder，你会看到一个新文件ProjectName.xcworkspace。现在关闭。xcodeproj文件并打开。xcworkspace文件。<br/> <img class="aligncenter size-full wp-image-4618" src="../Images/b9299008b53a3c160a25ad4b83b5a684.png" alt="" data-original-src="https://hackr.io/blog/uploads/images/15701909175zh6kq9Bpp.jpg"/></p>
+<p>6.在Project中，打开Podfile，Pods &gt; podfile并添加此pod <a href="https://github.com/Root-vb/OTPFieldView" target="_blank"> OTPFieldView </a></p>
+<p>7.在项目名称的# Pods下添加Pod 'OTPFieldView' <br/> <img class="aligncenter size-full wp-image-4619" src="../Images/3656bb2ea4bd096271d556de8564f8a0.png" alt="" data-original-src="https://hackr.io/blog/uploads/images/1570190917ZBrN1nAkFQ.jpg"/></p>
+<p>8.然后运行“pod更新”。Pod更新将命令cocapods安装/刷新pod文件中列出的所有pod</p>
+<p>9.现在您已经成功安装了OTPFieldView。<br/> <img class="aligncenter size-full wp-image-4620" src="../Images/bbb2d7c3a2ec1ac07867b49740f34672.png" alt="" data-original-src="https://hackr.io/blog/uploads/images/15701909170TJxrsLjbe.jpg"/></p>
+<p>10.现在来制作OTP视图。拖动并添加UIView，并将其类和模块更改为OTPTextField。此外，添加它的高度和宽度约束。</p>
+<p>11.在ViewController中，导入OTPFieldView并将UI元素链接到ViewController。<br/> <img class="aligncenter size-full wp-image-4623" src="../Images/12ffde5b52bcd29198d354adfc93c1e6.png" alt="" data-original-src="https://hackr.io/blog/uploads/images/1570190917f7YyrEFrkj.jpg"/></p>
+<p>12.添加以下代码来定制该字段，您可以根据需要对其进行定制。<a href="https://github.com/Root-vb/OTPFieldView" target="_blank">查看此处</a> <br/> <img class="aligncenter size-full wp-image-4622" src="../Images/7735415fb338ced16847533c015d190f.png" alt="" data-original-src="https://hackr.io/blog/uploads/images/1570190917yzsMivFoPW.jpg"/></p>
+<p>13.最后，添加委托和委托方法<br/> <img class="aligncenter size-full wp-image-4621" src="../Images/58d2713fa1f1675c5979661b3a020b91.png" alt="" data-original-src="https://hackr.io/blog/uploads/images/1570190917o0LzHRopxp.jpg"/></p>
+<p><strong> hasEnteredAllOTP(): </strong>当所有文本字段已满时，返回true。</p>
+<p><strong>shouldbucefirstresponderforotp():</strong>自动显示键盘。</p>
+<p><strong> enteredOTP(): </strong>获取输入的pin。</p>
+<p>你的观点已经准备好了。现在，您可以使用OTP轻松地进行电话验证。</p>
+<p>你喜欢你读到的东西吗？请在评论中告诉我你的想法！</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

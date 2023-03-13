@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>What is MongoDB? Introduction, Applications, Advantages and Examples</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>什么是MongoDB？简介、应用、优势和示例</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/what-is-mongodb-applications-advantages-examples#0001-01-01">https://hackr.io/blog/what-is-mongodb-applications-advantages-examples#0001-01-01</a></blockquote><div><div class="content">
+										<h2 id="what-is-mongodb-overview-history">什么是MongoDB？概述和历史</h2>
+<p>MongoDB是一个强大的、高度可伸缩的、基于NoSQL的免费开源数据库。MongoDB最初是在大约9年前的2009年2月11日发布的，从那时起，它已经成为领先的NoSQL数据库。公司<a href="https://www.mongodb.com" target="_blank" rel="noopener"> MongoDB Inc. </a>(美国纽约)维护和管理MongoDB的开发。他们还提供了MongoDB的商业版本，其中也包括支持。在Github上可以找到MongoDB的源代码。</p>
+<p>多年来，MongoDB已经成为一个高度可伸缩的数据库的流行选择，它目前被用作许多知名组织的后端数据存储，如IBM、Twitter、Zendesk、Forbes、脸书、Google和其他许多组织。MongoDB也吸引了开源社区的目光，许多开发人员都在从事各种基于MongoDB的开源项目。你可以在这里下载MongoDB <a href="https://www.mongodb.com/download-center" target="_blank" rel="noopener">，在这里</a>找到MongoDB文档<a href="https://docs.mongodb.com/" target="_blank" rel="noopener">。</a></p>
+<h2 id="applications-of-mongodb">MongoDB的应用</h2>
+<p>MongoDB作为主数据存储被广泛用于各种web应用程序。最流行的web开发栈之一，MEAN栈采用MongoDB作为数据存储(MEAN代表MongoDB、ExpressJS、AngularJS和NodeJS)。</p>
+<h2 id="when-and-how-to-use-mongodb">什么时候如何使用MongoDB？</h2>
+<p>MongoDB是一个基于文档的数据存储，这意味着它以一种非结构化的格式存储信息，而不是像MySQL或PostgreSQL那样的结构化表。这实质上意味着存储在MongoDB中的数据是“无模式的”。因此，MongoDB提供了快速和可伸缩的数据存储服务，这使得它成为性能关键型应用程序的热门选择。此外，MongoDB是用C++编写的，这使得它比许多其他数据库更快。</p>
+
+<p>MongoDB不应该用在需要表连接的应用程序中，因为它不支持连接(比如在SQL中)。这是因为存储在MongoDB中的数据不是结构化的，因此，执行连接是一个非常耗时的过程，可能会导致性能下降。</p>
+<p>让我们考虑一个学生模型的简单例子，其中学生可以选修各种大学课程。下面是一个简单的基于MongoDB的学生模型的样子:</p>
+<p>使用MongoDB的优势</p>
+<h2 id="advantages-of-using-mongodb">从上面的例子中可以看出，在MongoDB中，我们不是像在SQL中那样将学生和课程存储在单独的数据库表中，而是将它们一起存储在一个“文档”中。这加快了数据检索过程。大多数大规模应用程序(如脸书)都需要这种微小的性能提升，因为有数十亿用户在使用该应用程序，因此，即使是微小的性能提升也可能产生巨大的整体影响。这是使用MongoDB最重要的优势之一。</h2>
+<p>其他优势包括:</p>
+<p><strong>集群化:</strong> MongoDB允许跨集群中的节点进行数据分片，以确保数据库服务器中没有单点故障。</p>
+<ul>
+<li>对二级索引的支持: MongoDB不仅支持一级索引，还支持二级索引，这在许多应用程序中都很重要。</li>
+<li><strong>缓存:</strong> MongoDB缓存大量数据，以便更快地检索查询结果。</li>
+<li><strong>伟大的特性集</strong>:MongoDB上有各种各样的特性(即席查询、索引、复制、负载平衡、文件存储、聚合、服务器端JavaScript执行、封顶集合等。)这使它成为一个非常用户友好的数据库。</li>
+<li>什么时候不用MongoDB？</li>
+</ul>
+<h2 id="when-not-to-use-mongodb">MongoDB是一个NoSQL数据库，因此它不是ACID兼容的(原子性、一致性、隔离性、持久性)。因此，在要求遵守ACID的应用程序中(例如，要求数据库级事务的应用程序)，不能使用MongoDB。例如，在为银行设计核心银行系统时，可能不希望使用MongoDB。</h2>
+<p>此外，与许多数据库不同，MongoDB不提供存储过程。</p>
+
+<p>MongoDB性能</p>
+<h2 id="mongodb-performance">数据库的确切性能因许多因素而异。例如:</h2>
+<p><strong>用例:</strong>一些应用程序要求数据结构化。在这种情况下，最好使用基于SQL的数据库。在其他应用程序中，组织数据几乎是不可能的。MongoDB在这里效果最好。</p>
+<ul>
+<li><strong>存储:</strong>自然，性能(每秒读写次数)将在很大程度上取决于底层存储机制。例如，固态硬盘肯定比普通硬盘更快，因此，固态硬盘的性能更好。</li>
+<li><strong> RAM: </strong>数据库性能在很大程度上取决于缓存，可以缓存的信息量取决于数据库可用的RAM。</li>
+<li><strong>集群化:</strong> MongoDB可以用来轻松搭建一个高可用性、高性能的数据库集群。这在基于SQL的数据库中通常是困难的。</li>
+<li>MongoDB在要求数据非结构化的应用程序中表现出色。例如，各种MapReduce应用程序、大数据系统、社交网络应用程序、新闻论坛等。在这种用例中，跨表组织数据是很困难的。即使可以跨表构建数据，也不总是可取的，因为在需要数据库连接的查询中，会对数据库的性能产生巨大影响。</li>
+</ul>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmongodb-the-complete-developers-guide%2F" target="_blank" rel="noopener">MongoDB-2023年完整开发者指南</a></p>
+<p>如何学习使用MongoDB？</p>
+<h2 id="how-to-learn-using-mongodb">学习MongoDB的最好方法是实际开发一个使用MongoDB作为后端数据库的web应用程序。数据库通常与web应用程序结合使用(而不是独立使用)，因此建议您尝试以下简单的web应用程序思想:</h2>
+<p>一个社交网站，用户可以分享帖子，喜欢彼此的帖子，并对彼此的帖子发表评论。</p>
+<ul>
+<li>基于问答的论坛，支持多个主题。</li>
+<li>您可以使用自己选择的任何web应用程序框架。一些推荐的方法是:</li>
+</ul>
+<p>Django: Django是一个基于Python的web应用程序框架，可以无缝地与MongoDB一起用作后端数据库。这里有一个同样的教程。</p>
+<ul>
+<li>NodeJS: Node是一个基于JavaScript的web应用程序框架，它和MongoDB一起在MEAN stack中被广泛使用。<a href="http://meanjs.org/" target="_blank" rel="noopener">在这里结账的意思是</a>。</li>
+<li>摘要</li>
+</ul>
+<h2 id="summary">总结一下，这里我们分享了一个关于什么是MongoDB的简介？MongoDB是一个快速可靠的数据库，在设计需要存储非结构化数据的可伸缩web应用程序时，它是推荐的数据库之一。如果您正在设计一个需要高可用性、集群、高性能的应用程序，那么您必须考虑使用MongoDB作为应用程序的后端数据库。你可以在这里查看编程社区推荐的最好的MongoDB教程<a href="https://hackr.io/tutorials/learn-mongodb" target="_blank" rel="noopener"/>。</h2>
+<p><strong>人也在读:</strong></p>
+<p><strong>People are also reading:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

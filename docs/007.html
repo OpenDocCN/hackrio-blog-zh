@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Django Vs Laravel: Which framework to choose?</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Django Vs Laravel:选择哪个框架？</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/django-vs-laravel#0001-01-01">https://hackr.io/blog/django-vs-laravel#0001-01-01</a></blockquote><div><div class="content">
+										<p>尽管移动开发越来越流行，需求也越来越大，但是web开发已经得到了极大的关注，技术也在快速发展。Javascript的迅速流行带来了很多东西，特别是随着新的开发概念的兴起，如渐进式Web应用程序、加速移动页面和单页面应用程序。然而，事情开始变得越来越复杂，尤其是对于刚刚起步的年轻开发人员。</p>
+<p>可供选择的技术数量之多，它们提供的不同功能，每种技术的差异，以及web开发中没有圣杯，也没有适合所有人的解决方案的事实，所有这些都使得开始学习之旅变得非常可怕。</p>
+<p>这就是为什么我们将试图揭开这个过程的神秘面纱，并在这里阐明这些不同的技术。web开发世界中两个常见的技术是Django和Laravel，它们是后端开发框架。</p>
+<p>但是让我们慢下来，讨论一下什么是框架。</p>
+
+<h2 id="frameworks">结构</h2>
+<p>框架是软件的抽象。抽象是缺乏复杂性和细节的核心概念。我们实际上在日常生活中处理抽象概念，而不仅仅是在软件中。例如，如果你想驾驶你的汽车，你不需要了解发动机的热力学和内部的能量循环，甚至不需要了解汽车的复杂力学，你只需要简单地控制方向盘。</p>
+<p>在软件中使用这种抽象的好处是，它帮助年轻的开发人员快速进入游戏，并根据自己的需要使用专业开发人员创建的通用工具，因此他们不必在他们可能拥有的每个功能上重新发明轮子。</p>
+<p>两个著名的软件抽象是库和框架。库是一组产生特定功能的方法/对象，你可以按照你认为合适的方式来使用，没有一种方法可以使用它。另一方面，框架是更严格的结构，是应用程序的骨架。</p>
+<p>框架可以帮助您跳过开发底层基础设施的麻烦，直接进入应用程序的业务逻辑，从而得到更整洁、更专业的应用程序。</p>
+<p>web开发中基本上有两类框架:</p>
+<h3 id="front-end-frameworks">前端框架</h3>
+<p>前端框架解决客户端开发问题，主要关注CSS或JavaScript。现在的<a href="https://hackr.io/blog/best-javascript-frameworks"> JavaScript框架</a>比如Vue。JS和Angular是开发web应用的规范。</p>
+
+<h3 id="back-end-frameworks">后端框架</h3>
+<p>后端框架负责服务器端的逻辑实现。发生在引擎盖下的魔法将你的网站凝聚在一起。如何处理数据，存储数据，如何管理响应等等。我们需要理解后端框架的一些核心功能。</p>
+<p>路由:当你的服务器收到一个请求时，它会让某个资源或某个动作来处理它。如果你访问我的网站/产品，那么产品控制者应该用适当的资源回应，等等。</p>
+<p>模板化:假设你不使用Angular和Vue之类的客户端框架。JS然后你创建视图并用数据填充它们。视图基本上是用户在浏览器上看到的页面，模板化允许您根据控制器传递的数据动态地用数据填充页面。</p>
+<p>请注意，还有许多其他的设计结构，每种结构都有自己处理视图及其数据的方式。</p>
+<p>ORM: ORM代表对象关系映射，它是模型和数据库之间的一层，充当虚拟对象数据库。</p>
+<p>还有其他功能，如安全性、缓存、搭建和创建资源等等。</p>
+<h2 id="django">姜戈</h2>
+<p>Django是一个用python构建的MVT或模型视图模板框架。这是一个免费的开源框架，鼓励快速开发，并帮助开发人员编写高效简洁的代码。这是一个非常强大的框架，被世界上一些最伟大的企业用作他们的后端基础设施。这些公司包括Pinterest、Udemy、NASA和Instagram。</p>
+<h2 id="laravel">拉勒韦尔</h2>
+<p>Laravel是用PHP构建的MVC或模型-视图-控制器框架，PHP是最著名的web语言之一。这也是9GAG，UNION，丰田名人堂使用的强大框架。</p>
+<h2 id="django-vs-laravel-comparison">Django vs Laravel比较</h2>
+<p>让我们比较一下Django和Laravel的各种参数:</p>
+<h3 id="toc-1-code">1.密码</h3>
+<p>让我们看看用两种语言编写的一些基本路由代码。乍一看，您可以注意到Laravel的代码相当直观。另一方面，Django的代码看起来相当复杂，这是因为它在路由过程中使用了正则表达式，这不是最容易使用的，尤其是对于初学者。</p>
+<p>例如:用两种语言对路由声明进行分页:</p>
+<p>Php:</p>
+<pre lang="php">&lt;? php Route:get('/', function() { return view('posts.index'); }); Route:get('/posts/create', function() { return view('posts.create'); }); ?&gt;
+</pre>
+<p>Python:</p>
+<pre lang="python">urlptterns = [
+ #ex: /polls/
+ path('', view.index, name='index'),
+
+ #ex: /polls/5/
+ path('', view.detail, name='detail'),
+ #ex: /polls/5/results/
+]
+</pre>
+
+<p>Django和Laravel社区都非常活跃，积极响应。这两个社区在Github上都有大量的贡献者，提交也非常频繁。如果您曾经在这些框架中的某个点上陷入困境，那么社区中的某个人肯定会把您带出来。</p>
+<h3 id="toc-3-learning-curve">3.学习曲线</h3>
+<p>学习曲线有点神秘，因为它取决于个人。如果你对Python的语法相当熟悉，那么Django应该很容易掌握。它应该是开发人员友好的，不需要很长时间就能学会。如果你对Django感兴趣，这里有编程社区推荐的最好的<a href="https://hackr.io/tutorials/learn-django?ref=blog" target="_blank" rel="noopener"> Django教程</a>。</p>
+<p>据说Laravel的学习曲线很陡，但是有了Laracasts这样的工具和良好的文档，学习框架和掌握PHP语言应该一点也不困难。如果你对Laravel感兴趣，这里有编程社区推荐的最好的<a href="https://hackr.io/tutorials/learn-laravel?ref=blog" target="_blank" rel="noopener"> Laravel教程</a>。</p>
+<h3 id="toc-4-performance">4.表演</h3>
+<p>Laravel和Django在2018年针对JSON序列化进行了面对面的测试，因为python是一种非常快速的语言，所以它以压倒性的差异获胜。Django每秒执行69k JSON响应，而Laravel每秒仅执行8k响应。在速度上，Laravel比不上Django，很遗憾。</p>
+<p><a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.2409312&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Ffullstack-django-and-python-bootcamp-with-real-life-projects%2F" target="_blank" rel="noopener">使用真实项目的Fullstack Django和Python boot camp</a></p>
+<h3 id="toc-5-security">5.安全性</h3>
+<p>网络世界是一个充满敌意的环境，攻击和漏洞无时无刻不在被利用，这就是为什么框架需要针对不同的攻击采取措施，无论是SQL注入还是跨站点脚本。Django非常重视安全性，帮助开发人员避免web开发中的常见错误，并实现一些安全最佳措施。虽然Laravel也涵盖了安全性的基础知识，但它没有达到Django的安全级别。这就是为什么，例如，美国宇航局使用Django作为他们的网站。</p>
+<h3 id="toc-6-api">6.应用程序接口</h3>
+<p>您可能对后端框架必须提供的所有功能都不感兴趣，而更愿意用RESTful API构建一个客户端丰富的应用程序。Laravel的美妙之处在于它内置了对API构建的支持，因为默认情况下查询会返回JSON。Django没有这个内置特性，你必须使用一个库来解决它并实现同样的特性。</p>
+<h2 id="to-wrap-up">总结一下:</h2>
+<table>
+<tbody>
+<tr>
+<td>技术</td>
+<td>姜戈</td>
+<td>拉勒韦尔</td>
+</tr>
+<tr>
+<td>技术类型</td>
+<td>用python构建的MVT框架</td>
+<td>用PHP构建的MVC框架</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>高度安全的企业级应用</td>
+<td>实现基本的安全功能</td>
+</tr>
+<tr>
+<td>GitHub Stars</td>
+<td>43,384</td>
+<td>34,292</td>
+</tr>
+<tr>
+<td>学习曲线</td>
+<td>很容易学会</td>
+<td>陡峭的学习曲线</td>
+</tr>
+<tr>
+<td>表演</td>
+<td>相当快</td>
+<td>相对缓慢</td>
+</tr>
+<tr>
+<td>网站数量</td>
+<td>205,106</td>
+<td>121,173</td>
+</tr>
+<tr>
+<td>前端支持</td>
+<td>用Django绑定前端JS框架相当复杂</td>
+<td>支持Vue。JS开箱即用</td>
+</tr>
+</tbody>
+</table>
+<p>请记住，这些框架支持大型网站，所以没有错误的选择。这完全取决于你的软件需求和你的设计。另外，<a href="https://hackr.io/blog/web-development-frameworks" target="_blank" rel="noopener">后端框架</a>在本质上非常相似，所以如果你想使用另一个框架，从一个框架转换到另一个框架并不困难。</p>
+<p>无论您选择哪种框架，这里都有编程社区推荐的最佳教程和课程:</p>
+
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

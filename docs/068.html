@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Numpy Matrix Multiplication - NumPy v1.17 Manual [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Numpy矩阵乘法- NumPy v1.17手册[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/numpy-matrix-multiplication#0001-01-01">https://hackr.io/blog/numpy-matrix-multiplication#0001-01-01</a></blockquote><div><div class="content">
+										<p>NumPy，也被称为数字Python，由<a href="https://en.wikipedia.org/wiki/Travis_Oliphant" target="_blank" rel="noopener"> Travis Oliphant </a>创建，通过将Numarray的特性混合到一个数字包中来完成。NumPy在过去充当了Matlab(用于技术计算)的“替代品”；怎么会？将<strong> NumPy </strong>与<strong> SciPy </strong>(被称为科学Python)和<strong>Mat plotlib</strong>(绘图库)等包结合起来，被视为Matlab的Python替代品，因此被视为更现代、更有组织的编程语言。由于NumPy是开源的，对于编程爱好者和有经验的开发者来说，这是一个额外的优势。</p>
+<h2 id="what-is-a-numpy-array"><strong>什么是NumPy数组？</strong></h2>
+<p>NumPy数组类似于Python列表。NumPy库提供了一个数据结构数组，与Python列表相比，它有一些优点，比如读写项目的速度更快、更紧凑、更方便、更高效。</p>
+<p>众所周知，NumPy提供了对一些重要工具和技术的访问，这些工具和技术可以用来解决主要属于科学和工程所提供的复杂性的问题的数学模型。例如，其中一个工具是高性能多维数组对象——一种健壮的数据结构，最适合用于数组和矩阵的高效计算。为了操作和运行，这些阵列中的最佳阵列需要解决高级数学函数的可信度。</p>
+<p>下面列出了几类必需的阵列操作:</p>
+
+<p><strong>数组属性:</strong>确定数组的大小、形状、数据类型和内存消耗</p>
+<ol>
+<li>数组上的数学和其他逻辑运算。</li>
+<li><strong>数组的整形:</strong>改变提供的数组的形状。</li>
+<li>形状操作的例程和傅立叶变换。</li>
+<li>线性代数运算。</li>
+<li><strong>阵列切片:</strong>在给定的较大阵列内设置较小的子阵列。</li>
+<li><strong>数组的拆分与连接:</strong>将一个数组拆分成多个，将多个数组合并成一个数组。</li>
+<li><strong>数组索引:</strong>设置单个数组元素的值。</li>
+</ol>
+<h3 id="how-to-install-numpy"><strong>如何安装NumPy: </strong></h3>
+<p>PC通过以下简单步骤轻松安装NumPy:</p>
+<h4 id="with-python-wheels"><strong>带蟒蛇轮:</strong></h4>
+<ol>
+<li>你的系统需要Python，这里是<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">链接</a>。</li>
+<li>如果使用的是Windows，请将Python添加到PATH环境变量中。</li>
+<li>安装一个包管理器，比如<strong> pip </strong>(这样做是为了确保可以使用Python的开源库。</li>
+<li><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy" target="_blank" rel="noopener">下载</a> (NumPy Wheel)并导航至存储它的文件夹(在您的PC上)。</li>
+</ol>
+<h4 id="with-python-distribution"><strong>用Python发布:</strong></h4>
+<p>您也可以下载Anaconda Python发行版，因为这对初学者来说更容易。从<a href="https://www.anaconda.com/distribution/" target="_blank" rel="noopener">这里</a>下载。</p>
+<h4 id="numpy-multiplication-matrix"><strong> NumPy乘法矩阵</strong></h4>
+<p>要将两个矩阵相乘，请使用dot()方法。下面介绍numpy.dot( a，b，out=None)</p>
+<p>numpy.dot的几个规格:</p>
+<ul>
+<li>如果a和b都是1-D(一维)数组-两个向量的内积(没有复共轭)</li>
+<li>如果a和b都是2-D(二维)阵列-矩阵乘法</li>
+<li>如果a或b是0-D(也称为标量)-使用numpy.multiply(a，b)或a * b进行乘法运算。</li>
+<li>如果a是一个N维数组，b是a和b的最后一个轴上的1维数组和积。</li>
+<li>如果a是一个N-D数组，b是一个M-D数组，只要a的最后一个轴和b的倒数第二个轴上的M&gt;=2 -和积:</li>
+</ul>
+<p>还有，<strong> dot(a，b)[i，j，k，m] = sum(a[i，j，:] * b[k，:，m]) </strong></p>
+
+<p>以下代码用于生成一个Numpy乘法矩阵；*用于数组乘法。</p>
+<p><img class="aligncenter wp-image-2407 size-full" src="../Images/6c5e30c9058b6dc509ffb566cbc7a03e.png" alt="Python Matrix Multiplication" data-original-src="https://hackr.io/blog/uploads/images/15701909133gkq1h5FGB.jpg"/></p>
+<h2 id="summary"><strong>总结</strong></h2>
+<p>这是关于numpy矩阵乘法的完整摘要。作为Python列表的一个很好的替代品，NumPy数组很快，也更容易操作。用户有机会使用NumPy跨整个阵列执行计算，并对他们的程序感兴趣。</p>
+<p><a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.3585196&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpython-for-data-science-and-machine-learning-bootcamp-d%2F" target="_blank" rel="noopener">用于数据科学和机器学习的Python训练营</a></p>
+<p>因为NumPy数组比链表占用更少的内存，所以它为数学运算提供了更好的数据处理方式。分析社区青睐NumPy数组是有原因的，试一试吧。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

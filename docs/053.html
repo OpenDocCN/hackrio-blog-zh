@@ -1,0 +1,631 @@
+<html>
+<head>
+<title>Top 53+ PHP Interview Questions and Answers in 2023 [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年Top 53+ PHP面试问答[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/php-interview-questions#0001-01-01">https://hackr.io/blog/php-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>超文本预处理器(PHP)是一种用于web开发的流行脚本语言。这种开源语言创建于1994年，现在由PHP团队管理。这种语言可以在各种平台上运行，比如Windows、Linux和MacOSX，并且与当今使用的大多数服务器兼容，比如Apache和IIS。</p>
+<p>如果你渴望成为一名PHP开发人员，你需要彻底了解它。在这里，我们收集了一些PHP面试的常见问题和答案来帮助你。我们将这些问题分为初级、中级和高级PHP面试问题。</p>
+<h2 id="php-interview-questions-and-answers"><strong> PHP面试问答</strong></h2>
+<h3 id="basic-php-questions"><strong>基本PHP问题</strong></h3>
+<h4 id="toc-1-what-is-php"><strong> 1。PHP是什么？</strong></h4>
+<p>PHP是一种通用脚本语言，大部分用C和C++实现，常用于web开发。它是一种高性能语言，因为代码在执行前不需要编译。它也是免费和开源的，可以很容易地学会。PHP也很划算，因为大多数虚拟主机服务器默认支持它。</p>
+<p>示例代码:</p>
+
+<pre class="language-php"><code>&lt;?PHP
+
+echo'Good morning';
+
+?&gt;</code></pre>
+<p><em>阅读<a href="https://hackr.io/blog/what-is-php">本帖</a>了解什么是PHP？</em></p>
+<h4 id="toc-2-what-are-the-features-of-php7-4"><strong> 2。PHP7.4有什么特点？</strong></h4>
+<p>PHP7.4中的一些新特性是:</p>
+<ul>
+<li>预加载以进一步提高性能。</li>
+<li>数组扩展运算符。</li>
+<li>单行箭头功能(短闭包)用于更清晰的代码。</li>
+<li>类中的类型化属性。</li>
+<li>使用下划线格式化数值。</li>
+<li>使用FFI进行扩展开发。</li>
+<li>一种更好的方差。</li>
+</ul>
+<h4 id="toc-3-explain-the-difference-between-message-and-message"><strong> 3。解释$message和$$message的区别？</strong></h4>
+<p>$message是一个常规变量，它有固定的名称和固定的值，而$$message是一个引用变量，它存储关于变量的数据。$$message的值可以随着变量值的变化而动态变化。</p>
+<h4 id="toc-4-what-are-magic-constants"><strong> 4。什么是幻常数？</strong></h4>
+<p>魔术常量以双下划线开始和结束，是预定义的常量，根据上下文和用法改变它们的值。PHP中有9个神奇的常数:</p>
+<pre class="language-php"><code>__LINE__, __FILE__, __DIR__, __FUNCTION__, __CLASS__, __TRAIT__, __METHOD__, __NAMESPACE__, ClassName::class</code></pre>
+<h4 id="toc-5-what-are-the-various-data-types-in-php"><strong> 5。PHP中的各种数据类型有哪些？</strong></h4>
+<p>中PHP的不同数据类型有:</p>
+<ul>
+<li><strong>字符串:</strong>字符序列，例如“Hackr.io”</li>
+<li><strong> Float: </strong>浮点(十进制)数，例如23.456</li>
+<li><strong>整数:</strong>整数，如12</li>
+<li><strong>布尔:</strong>代表两种状态——真、假。</li>
+<li><strong>对象:</strong>将不同数据类型的值存储到单个实体中，例如apple = new Fruit()；</li>
+<li><strong>数组:</strong>存储多个相同类型的值，如数组(“红”、“黄”、“蓝”)</li>
+<li><strong> NULL: </strong>没有给变量赋值时，可以给变量赋值NULL。例如，$ msg = NULL</li>
+</ul>
+<h4 id="toc-6-what-is-the-isset-function"><strong> 6。isset()函数是什么？</strong></h4>
+<p>函数的作用是:检查特定的变量是否被设置，以及是否有一个非NULL的值。如果变量未设置，则该函数返回Boolean–false；如果变量已设置，则返回true。该函数可以检查多个值:isset(var1，var2，var3…)</p>
+
+<h4 id="toc-7-what-are-the-various-php-array-functions">7 .<strong>。PHP的各种数组函数有哪些？</strong></h4>
+<p>有许多数组函数，它们都是PHP核心的一部分:</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>数组函数</strong></p>
+</td>
+<td>
+<p><strong>描述</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>数组()</strong></p>
+</td>
+<td>
+<p>创建一个数组。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong> array_diff() </strong></p>
+</td>
+<td>
+<p>比较数组并返回值的差异。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong> array_keys() </strong></p>
+</td>
+<td>
+<p>返回数组的所有键。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong> array_reverse() </strong></p>
+</td>
+<td>
+<p>反转数组。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong> array_search() </strong></p>
+</td>
+<td>
+<p>搜索一个值并返回相应的键。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong> array_slice() </strong></p>
+</td>
+<td>
+<p>返回数组的特定部分。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong> array_sum() </strong></p>
+</td>
+<td>
+<p>对数组中的所有值求和。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong> count() </strong></p>
+</td>
+<td>
+<p>数组中元素的数量。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>在<a href="https://www.php.net/manual/en/ref.array.php" target="_blank" rel="noopener"> PHP手册页</a>上找到更多函数。</p>
+<h4 id="toc-8-explain-the-difference-between-indexed-and-associative-array"><strong> 8。解释索引数组和关联数组的区别。</strong></h4>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>索引数组</strong></p>
+</td>
+<td>
+<p><strong>关联数组</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>有数字键或索引</p>
+</td>
+<td>
+<p>每个键都有它的价值</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>索引从0开始，自动分配</p>
+</td>
+<td>
+<p>键是手动分配的，也可以是字符串</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>示例:</p>
+<pre class="language-php"><code>$fruits = array(“orange”, “apple”, banana);</code></pre>
+<p>在这里，橘子是$水果[0]，苹果是$水果[1]，香蕉是$水果[2]</p>
+</td>
+<td>
+<p>示例:</p>
+<pre class="language-php"><code>$empdetails = array(“Sam”=&gt;1200, “Mike”=&gt;1201, “Mac”=&gt;1202);</code></pre>
+<p>在这里，单个值可以作为，</p>
+<pre class="language-php"><code>$empdetails[“Sam”] = “1200”;</code></pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-9-what-are-the-various-php-string-functions"><strong> 9。PHP的各种字符串函数有哪些？</strong></h4>
+<p>PHP允许许多字符串操作。一些流行的字符串函数有:</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>功能</strong></p>
+</td>
+<td>
+<p><strong>描述</strong></p>
+</td>
+<td>
+<p><strong>示例用法</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>回声()</p>
+</td>
+<td>
+<p>输出一个或多个字符串</p>
+</td>
+<td><pre class="language-php"><code>echo"Welcome to hackr.io"</code></pre></td>
+</tr>
+<tr>
+<td>
+<p>爆炸()</p>
+</td>
+<td>
+<p>将字符串分成数组</p>
+</td>
+<td>
+<pre class="language-php"><code>$mystr = “welcome to hackr.io”</code></pre>
+<pre class="language-php"><code>explode(“ ”, $mystr)</code></pre>
+<p>会呈现[0] =“欢迎”等等</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ltrim()</p>
+</td>
+<td>
+<p>从字符串左侧移除多余的字符或空格</p>
+</td>
+<td><pre class="language-php"><code>ltrim($mystr, "…. hello")</code></pre></td>
+</tr>
+<tr>
+<td>
+<p>parse_str()</p>
+</td>
+<td>
+<p>将查询字符串解析为变量</p>
+</td>
+<td><pre class="language-php"><code>parse_str("empId=1234&amp;name=Sam");</code></pre></td>
+</tr>
+<tr>
+<td>
+<p>str_replace()</p>
+</td>
+<td>
+<p>替换字符串中的指定字符</p>
+</td>
+<td><pre class="language-php"><code>str_replace("mysite","hackr.io","Welcome to mysite");</code></pre></td>
+</tr>
+<tr>
+<td>
+<p>str_split()</p>
+</td>
+<td>
+<p>将字符串拆分成字符数组</p>
+</td>
+<td><pre class="language-php"><code>str_split("welcome")</code></pre></td>
+</tr>
+<tr>
+<td>
+<p>字符串字数()</p>
+</td>
+<td>
+<p>字符串的字数</p>
+</td>
+<td>
+<pre class="language-php"><code>str_word_count("my name is sam");</code></pre>
+<p>结果= 4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>斯特伦()</p>
+</td>
+<td>
+<p>计算字符串的长度</p>
+</td>
+<td>
+<pre class="language-php"><code>strlen("welcome");</code></pre>
+<p>结果= 7</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>strncmp()</p>
+</td>
+<td>
+<p>比较字符串的前几个字符</p>
+</td>
+<td>
+<pre class="language-php"><code>strncmp("welcome to mysite","welcome to hackr.io", 11);</code></pre>
+<p>如果前11个字符相同，结果= 0</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>更多字符串函数，请参考<a href="https://www.php.net/manual/en/ref.strings.php" target="_blank" rel="noopener"> PHP手册的字符串函数。</a></p>
+<h4 id="toc-10-what-is-the-difference-between-require-and-include">10。require和include的区别是什么？</h4>
+<p>require和include都是构造，可以不带括号调用:include myfile.php</p>
+<p>但是，如果没有找到要包含的文件，include将发出警告，脚本将继续运行。Require将给出一个致命错误，脚本将立即停止。如果文件对脚本至关重要，那么应该使用require。</p>
+<h4 id="toc-11-what-are-some-of-the-most-popular-php-based-content-management-systems-cms"><strong> 11。最流行的基于PHP的内容管理系统(CMS)有哪些？</strong></h4>
+<p>现在有太多基于PHP的内容管理系统在使用。Drupal、Joomla和WordPress是其中最受欢迎的。</p>
+
+<h4 id="toc-12-how-do-you-upload-files-in-php"><strong> 12。用PHP怎么上传文件？</strong></h4>
+<p>首先，PHP应该允许文件上传；这可以通过使指令file_uploads = On来实现</p>
+<p>然后，您可以将操作方法添加为“post”，编码类型为“multipart/form-data”</p>
+<pre class="language-php"><code>&lt;formaction="myupload.php"method="post"enctype="multipart/form-data"&gt;</code></pre>
+<p>myupload.php文件包含特定于要上传的文件类型(如图像或文档)的代码，以及目标路径、大小和其他参数等详细信息。</p>
+<p>然后，您可以编写HTML代码，通过将输入类型指定为“file”来上传您想要的文件。</p>
+<h4 id="toc-13-how-do-you-create-a-database-connection-and-query-in-php">13。如何用PHP创建数据库连接和查询？</h4>
+<p>要创建数据库连接:</p>
+<pre class="language-php"><code>$connection = new mysqli($servername, $username, $password);</code></pre>
+<p>其中$servername，$username，$password应该由开发人员预先定义。</p>
+<p>检查<strong>连接是否成功:</strong></p>
+<pre class="language-php"><code>if ($conn-&gt;connect_error) {
+
+die("Connection error: " . $conn-&gt;connect_error);
+
+}</code></pre>
+<p>创建数据库查询:</p>
+<pre class="language-php"><code>$sql = "CREATE DATABASE PRODUCT";
+
+if ($conn-&gt;query($sql) === TRUE) {
+
+echo"Database successfully created";
+
+} else {
+
+echo"Error while creating database: " . $conn-&gt;error;
+
+}</code></pre>
+<h4 id="toc-14-what-are-cookies-how-do-you-create-cookies-in-php"><strong> 14。什么是饼干？如何用PHP创建cookies？</strong></h4>
+<p>Cookies在浏览器上存储有关用户的数据。它用于识别用户，并在用户请求特定页面时嵌入到用户的计算机中。我们可以使用setcookie()函数在PHP中创建cookie:</p>
+<pre class="language-php"><code>setcookie(name, value, expire, path, domain, secure, httponly);</code></pre>
+<p>这里name是必需的，所有其他参数都是可选的。</p>
+<p>示例:</p>
+<pre class="language-php"><code>setcookie(“instrument_selected”, “guitar”)</code></pre>
+<h4 id="toc-15-explain-the-importance-of-the-parser">15。解释解析器的重要性。</h4>
+<p>PHP解析器是一种将源代码转换成计算机能够理解的软件。这意味着我们以代码形式给出的任何指令集都会被解析器转换成机器可读的格式。可以用PHP使用token_get_all函数解析PHP代码。</p>
+<h4 id="toc-16-explain-the-constant-function-and-its-purposes">16。解释constant()函数及其用途。</h4>
+<p>constant函数用于检索常量的值。它接受常量的名称作为输入:</p>
+<pre class="language-php"><code>constant(string $name)</code></pre>
+<p>如果可用，该函数返回一个常数值；否则，它返回null。</p>
+<h4 id="toc-17-can-you-provide-an-example-of-a-php-web-application-architecture"><strong> 17。你能提供一个PHP Web应用程序架构的例子吗？</strong></h4>
+<h4 id=""><strong><img src="../Images/8272a102bfa235a6e56acb86253cbf36.png" alt="" data-original-src="https://hackr.io/blog/media/can-you-provide-an-example-of-a-php-web-application-architecture-min.png"/>T2】</strong></h4>
+<h4 id="toc-18-define-the-use-of-htaccess-and-php-ini-files-in-php">18。定义的使用。php中的htaccess和php.ini文件？</h4>
+<p>它们都是用来修改PHP设置的。</p>
+<ul>
+<li><strong>。htaccess</strong>–一个特殊的文件，可以用来改变或管理网站的行为。将所有用户定向到一个页面和将域的页面重定向到https或www是该文件的两个最重要的用途。因为。htaccess要工作，PHP需要作为Apache模块安装。</li>
+<li>这个特殊的文件允许对默认的php设置进行修改。可以编辑默认的php.ini文件，也可以创建一个新文件，添加相关内容，然后保存为php.ini文件。为了让php.ini工作，php需要作为CGI运行。</li>
+</ul>
+<h4 id="toc-19-draw-a-comparison-between-compile-time-exception-and-the-runtime-exception-what-are-they-called"><strong> 19。比较编译时异常和运行时异常。它们叫什么？</strong></h4>
+<p>检查异常是在编译时发生的异常。因为不可能忽略这种类型的异常，所以需要谨慎处理。另一方面，未检查的异常是在运行时发生的异常。如果未处理已检查的异常，它将成为未检查的异常。</p>
+<h4 id="toc-20-explain-path-traversal">20。解释路径遍历。</h4>
+<p>路径遍历是读取web应用程序文件的一种攻击形式。'../'被称为点-点序列。它是一个跨平台的符号，可以在目录中上升。为了操作web应用程序文件，路径遍历使用了点-点-斜线序列。</p>
+<p>攻击者可以使用web服务器或应用程序根目录之外的路径遍历来泄露受攻击文件的内容。这通常是为了获取访问令牌、秘密密码和文件中存储的其他敏感信息。</p>
+<p>路径遍历也称为目录遍历。它使攻击者能够利用受攻击的web文件中存在的漏洞。</p>
+
+<h4 id="toc-21-explain-the-difference-between-get-and-post-requests"><strong> 21。解释GET和POST请求的区别。</strong></h4>
+<p>任何PHP开发人员都需要对HTTP协议有足够的了解。GET和POST的区别是HTTP协议学习过程中不可或缺的一部分。这两个请求的主要区别如下:</p>
+<ul>
+<li>GET允许将提交的数据显示为URL的一部分。使用POST时情况就不一样了，因为在此期间，数据是在请求中编码的。</li>
+<li>GET处理的最大字符数限制为2048。对邮政没有这种限制。</li>
+<li>GET只支持ASCII数据。另一方面，POST允许ASCII、二进制数据以及其他形式的数据。</li>
+<li>通常，GET用于检索数据，而POST用于插入和更新数据。</li>
+</ul>
+<h4 id="toc-22-explain-the-mail-function-and-its-syntax"><strong> 22。解释邮件功能及其语法。</strong></h4>
+<p>为了直接从脚本或网站发送电子邮件，PHP中使用了mail()函数。它总共有5个参数。邮件函数的一般语法是:</p>
+<pre class="language-php"><code>mail (to, subject, message, headers, parameters);</code></pre>
+<ul>
+<li>收件人表示电子邮件的收件人</li>
+<li>主题表示电子邮件的主题</li>
+<li>该消息是要在邮件中发送的实际消息(每行使用/n分隔，最大字符限制为70个字符。)</li>
+<li>邮件头表示邮件的附加信息，如抄送和密件抄送(可选)</li>
+<li>参数表示发送邮件程序中包含的一些附加参数(可选)</li>
+</ul>
+<h3 id="advanced-php-questions"><strong>高级PHP问题</strong></h3>
+<h4 id="toc-23-what-is-memcache-and-memcached-is-it-possible-to-share-a-single-instance-of-a-memcache-between-several-php-projects"><strong> 23。什么是Memcache和Memcached？有可能在几个PHP项目之间共享一个Memcache实例吗？</strong></h4>
+<p>Memcached是一个有效的缓存守护进程，专门为减少动态web应用程序中的数据库负载而设计。Memcache模块为Memcached提供了一个方便的面向过程和面向对象的接口。</p>
+<p>Memcache是一个内存存储空间，可以在一台或多台服务器上运行Memcache。因此，在多个项目之间共享一个Memcache实例是可能的。</p>
+<p>可以将客户端配置为与一组不同的实例对话。因此，在同一台主机上运行两个不同的Memcache进程也是允许的。尽管运行在同一个主机上，这两个进程保持独立，除非有一个数据分区。</p>
+<h4 id="toc-24-how-can-you-update-memcached-when-changes-are-made"><strong> 24。当发生变化时，如何更新Memcached？</strong></h4>
+<p>当PHP代码发生变化时，有两种方法可以更新Memcached:</p>
+<ol>
+<li><strong>主动清理缓存:</strong>这意味着在进行插入或更新时清理缓存</li>
+<li><strong>重置缓存:</strong>插入或更新完成后，重置值。</li>
+</ol>
+<h4 id="toc-25-how-is-the-comparison-of-objects-done-in-php"><strong> 25。PHP中对象的比较是怎么做的？</strong></h4>
+<p>运算符“==”用于检查两个对象是否使用相同的类进行实例化，是否具有相同的属性和相等的值。为了测试两个对象是否引用同一个类的同一个实例，使用了标识运算符“===”。</p>
+<h4 id="toc-26-how-is-typecasting-achieved-in-php"><strong> 26。PHP中如何实现类型转换？</strong></h4>
+<p>输出类型的名称需要在要转换的变量前的括号中指定。一些例子是:</p>
+<ul>
+<li><strong>(数组):</strong>强制转换为数组</li>
+<li><strong>(布尔)，(布尔):</strong>转换为布尔</li>
+<li><strong> (double)，(float)，(real): </strong>强制转换为float</li>
+<li><strong> (int)，(integer): </strong>转换为整数</li>
+<li><strong>(对象):</strong>转换为对象</li>
+<li><strong>(字符串):</strong>转换为字符串</li>
+</ul>
+<h4 id="toc-27-how-would-you-connect-to-a-mysql-database-from-a-php-script"><strong> 27。如何从PHP脚本连接到MySQL数据库？</strong></h4>
+<p>要连接到某个MySQL数据库，需要使用mysqli_connect()函数。它的使用方式如下:</p>
+<pre class="language-php"><code>&lt;!--?php $database = mysqli_connect("HOST", "USER_NAME", "PASSWORD");
+
+mysqli_select_db($database,"DATABASE_NAME"); ?--&gt;</code></pre>
+<h4 id="toc-28-what-are-constructors-and-destructors-provide-an-example"><strong> 28。什么是构造函数和析构函数？举个例子。</strong></h4>
+<p>PHP中的构造函数和析构函数是特殊类型的函数，它们分别在PHP类对象被创建和销毁时被自动调用。</p>
+
+<p>构造函数用于初始化类的私有变量，而析构函数释放由类创建或使用的资源。</p>
+
+<p>下面是一个代码示例，演示了构造函数和析构函数的概念:</p>
+<pre class="language-php"><code>&lt;?php
+
+classConDeConExample {
+
+private $name;
+
+private $link;
+
+publicfunction__construct($name) {
+
+$this-&gt;name = $name;
+
+ } # Constructor
+
+publicfunctionsetLink(Foo $link){
+
+$this-&gt;link = $link;
+
+ }
+
+publicfunction__destruct() {
+
+echo'Destroying: ', $this-&gt;name, PHP_EOL;
+
+ } # Destructor
+
+}
+
+?&gt;</code></pre>
+<h4 id="toc-29-what-are-some-common-error-types-in-php"><strong> 29。PHP中常见的错误类型有哪些？</strong></h4>
+<p>PHP支持三种类型的错误:</p>
+<ul>
+<li><strong>注意:</strong>不严重的错误。这些发生在脚本执行期间。访问未定义的变量是通知的一个实例。</li>
+<li><strong>警告:</strong>优先级高于通知的错误。与通知一样，包含警告的脚本的执行不会中断。通知的一个例子包括一个不存在的文件。</li>
+<li><strong>致命错误:</strong>一旦遇到这种错误，脚本执行就会终止。访问不存在的对象的属性会产生致命错误。</li>
+</ul>
+<h4 id="toc-30-what-are-the-most-important-advantages-of-using-php-7-over-php-5">三十岁。使用PHP 7比PHP 5最重要的优势是什么？</h4>
+<ul>
+<li><strong>对64位整数的支持:</strong>尽管PHP 7内置了对原生64位整数和大文件的支持，但PHP 5并不支持这两种整数。</li>
+<li><strong>性能:</strong> PHP 7的性能远远优于PHP 5。PHP 7使用PHP-NG (NG代表下一代)，而PHP 5依赖于Zend II。</li>
+<li>PHP 5最重要的缺点之一是它不允许定义函数的返回类型。PHP 7消除了这一限制，它允许开发人员定义代码中任何函数返回的值的类型。</li>
+<li><strong>错误处理:</strong>在PHP 5中管理致命错误极其困难。另一方面，PHP 7带有一个新的异常对象引擎。它有助于管理几个主要的严重错误，这些错误现在被异常所取代。</li>
+<li><strong>匿名类:</strong>这些只执行一次，以增加执行时间。这在PHP 5中是没有的。</li>
+<li><strong>Group use declaration:</strong>PHP 7允许将所有从同一个名称空间导入的类、常量和函数分组到一个一次性语句中。这就是所谓的组使用声明。该特性在PHP 5中不可用。</li>
+<li><strong>新运算符:</strong>PHP 7引入了几个新运算符，包括'&lt; = &gt;'和'？?'前者被称为三向比较运算符，后者被称为零合并运算符。</li>
+</ul>
+<h4 id="toc-31-what-are-the-various-ways-of-handling-the-result-set-of-mysql-in-php">31。PHP中对Mysql的结果集的各种处理方式有哪些？</h4>
+<p>PHP中有四种处理Mysql结果集的方法:</p>
+<ul>
+<li>mysqli _ fetch _ array</li>
+<li>mysqli_fetch_assoc</li>
+<li>mysqli _ fetch _ object</li>
+<li>mysqli_fetch_row</li>
+</ul>
+<h4 id="toc-32-what-are-traits-in-php">32。PHP中有哪些特质？</h4>
+<p>traits机制允许在不支持多重继承的PHP类语言中创建可重用的代码。一个特征不能自己被实例化。</p>
+<h4 id="toc-33-what-is-a-session-in-php-write-a-code-example-to-demonstrate-the-removal-of-session-data">33。PHP中的会话是什么？编写一个代码示例来演示会话数据的移除。</h4>
+<p>根据惟一的会话ID存储单个用户的数据的最简单方法是使用PHP会话。它用于维护服务器上的状态以及跨多个页面共享数据。之所以需要这么做，是因为<a href="https://stackoverflow.com/questions/13200152/why-is-it-said-that-http-is-a-stateless-protocol" target="_blank" rel="noopener"> HTTP是一种无状态协议</a>。</p>
+<p>通常，使用会话cookies将会话id发送到浏览器。该ID用于检索现有会话数据。如果服务器上没有会话ID，那么PHP会创建一个新的会话，然后生成一个新的会话ID。</p>
+<p>下面是演示如何删除会话数据的程序:</p>
+<pre class="language-php"><code>&lt;?php
+
+session_start();
+
+$_SESSION['user_info'] = ['user_id' =&gt;1,
+
+'first_name' =&gt;
+
+'Hacker', 'last_name' =&gt;
+
+'.io', 'status' =&gt;
+
+'active'];
+
+if (isset($_SESSION['user_info']))
+
+{
+
+echo"logged In";
+
+}
+
+unset($_SESSION['user_info']['first_name']);
+
+session_destroy(); // Removal of entire session data
+
+?&gt;</code></pre>
+<h4 id="toc-34-what-would-you-say-is-the-best-hashing-method-for-passwords">34。您认为密码的最佳哈希方法是什么？</h4>
+<p>与其使用典型的哈希算法，包括md5、sha1和sha256，不如使用crypt()或hash()。crypt()提供了对几种散列算法的本地支持，而hash()提供了对更多算法的支持。</p>
+<h4 id="toc-35-why-is-it-not-possible-for-javascript-and-php-to-interact-directly-do-you-know-any-workarounds">35。为什么JavaScript和PHP不能直接交互？你知道任何解决方法吗？</h4>
+<p>JS和PHP之间不可能直接交互，因为前者是客户端语言，后者是服务器端语言。两种主流编程语言之间的间接交互可以通过交换变量来实现。</p>
+<p>由于两个原因，这种变量交换是可能的:</p>
+
+<ol>
+<li>PHP可以生成由浏览器执行的JavaScript代码。</li>
+<li>可以通过URL将特定的变量传回PHP。PHP总是在JavaScript之前执行，所以JS变量必须通过表单或URL传递。为了传递变量，使用GET和POST。类似地，为了检索传递的变量，使用了$_GET和$_POST。</li>
+</ol>
+<h4 id="toc-36-write-code-in-php-to-calculate-the-total-number-of-days-between-two-dates">36。用PHP写代码计算两个日期之间的总天数？</h4>
+<pre class="language-php"><code>&lt;?Php
+
+$date1 = ‘2019-01-11’; # Date 1
+
+$date2 = ‘2019-01-09’; # Date 2
+
+$days = (strtotime($date1)-strtotime($date2))/(60*60*24);
+
+echo $days;
+
+?&gt;</code></pre>
+<p><strong>输出:</strong></p>
+
+<p>一</p>
+<h4 id="toc-37-what-are-some-of-the-popular-php-frameworks">37。有哪些流行的PHP开发框架？</h4>
+<p>有各种各样的PHP框架可用。三个最流行的PHP框架是:</p>
+<ul>
+<li>CodeIgniter: 简单而强大，CodeIgniter是一个极其轻量级的PHP框架，安装过程简单，配置要求极低。完整的框架只有2 MB，其中包括文档。由于它带有许多用于开发强大的、可重用的组件的内置模块，CodeIgniter是开发动态网站的理想选择。流行的PHP框架也在专用和共享主机平台上提供了流畅的工作体验。</li>
+<li>虽然没有其他一些流行的PHP框架古老，但Laravel可能是最流行的PHP框架。PHP框架于2011年推出，其广受欢迎可以归功于它为处理复杂的web应用程序提供额外的速度和安全性的能力。Laravel还通过降低重复性任务的复杂性简化了开发过程，包括身份验证、路由、会话和排队。</li>
+<li>Symfony自2005年发布以来就被PHP开发人员使用，它是一个流行的PHP框架，经受住了时间的考验。一个扩展的PHP框架，Symfony，是唯一一个完全遵循PHP和web标准的PHP框架。流行的CMS如Drupal、OroCRM和PHPBB都使用Symfony组件。</li>
+</ul>
+<p>如果你有兴趣学习Codeigniter、Laravel或Symfony，那么Hackr有编程社区推荐的最佳教程和课程:</p>
+
+<h4 id="toc-38-draw-a-comparison-between-server-side-and-client-side-programming-languages">38。对服务器端和客户端编程语言进行比较。</h4>
+<p>服务器端编程语言用于构建在服务器上运行并生成网页内容的程序。服务器端编程语言的例子包括C++、Java、PHP、Python和Ruby。服务器端编程语言有助于:</p>
+<ul>
+<li>访问和/或写入服务器上的文件</li>
+<li>与其他服务器交互</li>
+<li>处理用户输入</li>
+<li>查询和处理数据库</li>
+<li>构建web应用程序</li>
+</ul>
+<p>与服务器端编程语言相反，客户端编程语言有助于开发在客户机(通常是浏览器)上运行的程序，并涉及显示输出和/或附加处理，如读写cookies。</p>
+<p>CSS、HTML、JavaScript和VBScript是流行的客户端编程语言。客户端编程语言允许:</p>
+<ul>
+<li>开发交互式网页。</li>
+<li>与临时存储和/或本地存储交互。</li>
+<li>向服务器发出数据和/或其他请求。</li>
+<li>提供服务器和最终用户之间的接口。</li>
+</ul>
+<h4 id="toc-39-what-are-the-differences-between-the-echo-and-print-statements-in-php">39。PHP中的echo和print语句有什么区别？</h4>
+<p>在PHP中有两种获取输出的语句——echo和print。两者之间的区别是:</p>
+<ul>
+<li>虽然很少使用，但是echo能够接受多个参数。相反，print语句只能接受一个参数。</li>
+<li>Echo没有返回值，而print的返回值为1。因此，后者是表达式中使用的首选选项。</li>
+<li>通常，echo语句比print语句更受欢迎，因为它的速度稍快一些。</li>
+</ul>
+<h4 id="toc-40-how-do-static-websites-differ-from-dynamic-websites">40。静态网站和动态网站有什么区别？</h4>
+<p>网站有两种类型:静态和动态。不同之处在于:</p>
+<ul>
+<li>静态网站的主要优势在于灵活性，而动态网站的主要优势在于CMS的形式。</li>
+<li><strong>更改/修改:</strong>只有当文件被更新和发布，即被发送到网络服务器时，静态网站的内容才会被更改。另一方面，动态网站包含“服务器端”代码，允许服务器在网页加载时生成独特的内容。</li>
+<li><strong>内容:</strong>对于一个静态网站，每次页面重新加载时，内容保持不变。相反，属于动态网站的内容会定期更新</li>
+<li><strong>响应:</strong>静态网站为每个请求发送相同的响应，而动态网站可能为不同的请求生成不同的HTML。</li>
+<li><strong>技术:</strong>只有HTML用于构建静态网站，而动态网站是使用多种技术开发的，如ASP.Net、JSP、Servlet、PHP等。</li>
+</ul>
+<h4 id="toc-41-what-is-the-use-of-the-imagetypes-function">41。imagetypes()函数有什么用？</h4>
+<p>imagetypes()函数给出了当前版本的GD-PHP支持的图像格式和类型。</p>
+<h4 id="toc-42-what-is-the-difference-between-passing-the-variable-by-value-and-passing-the-variable-by-reference-in-php"><strong> 42。PHP中‘按值传递变量’和‘按引用传递变量’有什么区别？</strong></h4>
+<p>通过值传递变量意味着变量的值直接传递给被调用的函数。然后，它使用存储在变量中的值。对函数的任何更改都不会影响源变量。</p>
+<p>通过引用传递变量意味着将存储值的变量的地址传递给被调用的函数。它使用存储在传递的地址中的值。对函数的任何更改都会影响源变量。</p>
+<h4 id="toc-43-what-do-you-understand-by-typecasting-and-type-juggling"><strong> 43。你对类型转换和类型杂耍的理解是什么？</strong></h4>
+<p>当用户显式转换变量的数据类型时，这就是所谓的类型转换。PHP编程语言不支持变量声明中的显式类型定义。因此，变量的数据类型由变量使用的上下文决定。</p>
+<p>例如，如果将一个字符串值赋给一个$var变量，那么它会自动转换成一个字符串。同样，如果一个整数值被赋给$var，那么它就变成一个整数。这叫做类型杂耍。</p>
+<h4 id="toc-44-how-do-you-fetch-data-from-a-mysql-database-using-php"><strong> 44。如何使用PHP从MySQL数据库中获取数据？</strong></h4>
+<p>首先，您需要首先建立与您希望使用的MySQL数据库的连接。为此，您可以使用mysqli_connect()函数。</p>
+<p>假设您需要访问的数据库存储在名为localhost的服务器上，其名称为instanceDB。它还使用user_name作为用户名，pass_word作为密码。</p>
+<p>为了建立到instanceDB的连接，您需要使用下面的PHP代码:</p>
+<pre class="language-php"><code>&lt;?php
+
+$servername = “localhost”;
+
+$username = “user_name”;
+
+$password = “pass_word”;
+
+$dbname = “instanceDB”;
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if (!$conn) { // For checking connection to the database
+
+die(“Connection failed: ” . mysqli_connect_error());
+
+}</code></pre>
+<p>接下来，您需要使用SELECT语句从一个或多个表中获取数据。一般语法是:</p>
+<pre class="language-php"><code>SELECT column_name from table_name</code></pre>
+<p>假设我们有一个名为instancetable的表，在instanceDB中有column_1、column_2和column_3。要获取数据，我们需要添加以下PHP代码:</p>
+<pre class="language-php"><code>$sql = “SELECT column_1, column_2, column_3 from instancetable”;
+
+$result = $conn-&gt;query($sql);</code></pre>
+<h4 id="toc-45-how-do-you-display-text-with-php-script"><strong> 45。如何用PHP脚本显示文本？</strong></h4>
+<p>echo语句或print语句都可以用于显示PHP脚本中的文本。通常，前者比后者更受欢迎，因为后者速度稍快。</p>
+<h4 id="toc-46-what-are-parameterized-functions"><strong> 46。什么是参数化函数？</strong></h4>
+<p>带参数的函数被称为PHP参数化函数。在一个函数中传递任意多的参数是可能的。这些参数在函数名后面的括号中指定，在PHP参数化函数中充当变量。</p>
+<h4 id="toc-47-what-is-the-difference-between-mysqli-connect-and-mysqli-pconnect-functions"><strong> 47。mysqli_connect()和mysqli_pconnect()函数有什么区别？</strong></h4>
+<p>mysqli_connect()和mysqli_pconnect()都是PHP中用于连接MySQL数据库的函数。但是，后者确保与数据库建立持久连接。这意味着连接不会在PHP脚本结束时关闭。</p>
+<h4 id="toc-48-what-is-session"><strong> 48。什么是$_SESSION？</strong></h4>
+<p>$_SESSION[]在PHP中被称为关联数组。它用于存储在会话的整个生命周期中可以访问的会话变量。</p>
+<h4 id="toc-49-what-is-the-difference-between-substr-and-strstr-functions">49。substr()和strstr()函数有什么区别？</h4>
+<p>函数的作用是:返回字符串的一部分。它有助于在PHP中一部分一部分地拆分字符串。这个函数通常在所有编程语言中都可用，语法几乎相同。</p>
+<p>常规语法:</p>
+<pre class="language-php"><code>substr(string, start, length);</code></pre>
+<p>函数的作用是:在PHP中，在一个字符串中搜索另一个字符串。与substr()函数不同，strstr()函数区分大小写。</p>
+<p>常规语法:</p>
+<pre class="language-php"><code>strstr(string, search, before_string);</code></pre>
+<h4 id="toc-50-what-is-the-use-of-the-request-variable">50。$_REQUEST变量有什么用？</h4>
+<p>$_REQUEST是一个关联数组，默认情况下，它包含$_COOKIE、$_GET、$_POST超全局变量的内容。</p>
+<p>因为$_REQUEST数组中的变量是通过COOKIE、GET和POST输入机制提供给PHP脚本的，所以它可能被远程用户修改。$_REQUEST数组中列出的变量及其顺序是在PHP variables_order配置指令中定义的。</p>
+<h4 id="toc-51-what-are-the-major-differences-between-for-and-foreach-loop">51。for和foreach循环的主要区别是什么？</h4>
+<p>以下是for和for each循环之间的区别:</p>
+<ul>
+<li>for-each循环通常用于动态数组。</li>
+<li>for循环有一个计数器，因此需要额外的内存。for-each循环没有计数器，因此不需要额外的内存。</li>
+<li>使用for循环时，需要确定循环的执行次数。但是，在使用for each循环时，您不必这样做。</li>
+</ul>
+<h4 id="toc-52-is-it-possible-to-submit-a-form-with-a-dedicated-button"><strong> 52。有没有可能提交一个有专用按钮的表单？</strong></h4>
+<p>是的，可以通过使用document.form.submit()方法提交带有专用按钮的表单。代码应该是这样的:</p>
+<pre class="language-php"><code>&lt;inputtype=buttonvalue=“SUBMIT”onClick=“document.form.submit()”&gt;</code></pre>
+<h4 id="toc-53-is-it-possible-to-extend-a-final-defined-class">53。有可能扩展一个最终定义的类吗？</h4>
+<p>不，扩展一个最终定义的类是不可能的。final关键字防止类扩展。当与方法一起使用时，final关键字防止它重写。</p>
+<h4 id="toc-54-is-it-possible-to-extend-the-execution-time-of-a-php-script">54。有没有可能延长一个PHP脚本的执行时间？</h4>
+<p>是的，延长PHP脚本的执行时间是可能的。我们有set_time_limit(int seconds)函数。您需要以秒为单位指定希望延长PHP脚本执行时间的持续时间。默认时间为30秒。</p>
+<h2 id="summary"><strong>总结</strong></h2>
+<p>这是我们列出的PHP开发人员面试问题。当然，你还可以学习更多的东西，但这是一个好的开始。你也可以看看我们的<a href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https://www.udemy.com/course/php-interview-questions-with-solutions-part-1/" target="_blank" rel="noopener"> PHP面试问题及解答第一部分</a>来获取更多的学习资料。</p>
+<p>如果你想了解更多，你应该看看这些PHP教程。练习也很重要！我们还推荐一本准备PHP面试的好书，就是《现代PHP: <a href="https://geni.us/sF31" target="_blank" rel="noopener">现代PHP:新特性和好实践第1版</a>。</p>
+<p>祝你PHP面试好运！</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

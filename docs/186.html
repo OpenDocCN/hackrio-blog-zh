@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>Programming Paradigms: A must know for all Programmers</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>编程范例:所有程序员都必须知道的</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/programming-paradigms#0001-01-01">https://hackr.io/blog/programming-paradigms#0001-01-01</a></blockquote><div><div class="content">
+										<p>范式是一种思想或模型的流派，它具有独特的特征、框架、模式和风格，可以帮助您解决特定的问题。范式被用于心理学、社会学、词源学、计算机科学等各个领域。在计算机科学领域，新的编程语言从现有语言中产生，并以新的方式添加、删除和组合功能。这些语言可以遵循特定的范例，也可以是许多范例的组合。你知道有256种编程语言吗？很明显，它们中的每一个都是随着各种编程范例的融合而从另一个发展而来的。</p>
+<p>编程语言是工具，并不是所有的工具都适合所有的工作。有些任务在功能上更容易解决。有些显然适合面向对象的编程。当您使用约束求解或模式匹配时，其他问题会变得更简单。</p>
+<h2 id="programming-paradigms">编程范例</h2>
+<p>让我们来一次4种不同编程范例的旋风之旅——<strong>过程化、面向对象、函数式和逻辑式</strong>。本文将让您更好地理解各种编程范例。</p>
+<h3 id="toc-1-procedural-programming"><strong> 1。程序编程</strong></h3>
+<p><a href="https://hackr.io/blog/procedural-programming">程序化编程</a>也可以称为命令式编程。它是一种基于过程调用概念的编程范式，其中语句被构造成过程(也称为子例程或函数)。它们是一系列指令，告诉计算机一步一步地做什么，过程编程语言被称为自顶向下语言。大多数早期的编程语言都是过程化的。</p>
+
+<p>Fortran C和Cobol的例子。下面是一个COBOL代码示例。</p>
+<pre>IDENTIFICATION DIVISION.
+PROGRAM-ID. HELLO.
+PROCEDURE DIVISION.
+ DISPLAY ‘Hello World!’.
+ STOP RUN.
+</pre>
+<h4 id="features-of-procedural-code"><strong>程序代码的特征</strong></h4>
+<ul>
+<li>过程式编程非常适合通用编程</li>
+<li>编译器和解释器的编码简单，易于实现</li>
+<li>大量关于经过测试的算法的书籍和在线课程材料，使其更容易学习。</li>
+<li>源代码是可移植的</li>
+<li>代码可以在程序的不同部分重用，而不需要复制它</li>
+<li>由于采用了自顶向下的方法，因此可以很容易地跟踪程序流程。</li>
+</ul>
+<h3 id="toc-2-logical-programming"><strong> 2。逻辑编程</strong></h3>
+<p>逻辑编程是一种<a href="https://www.computerhope.com/jargon/p/programming.htm" target="_blank" rel="noopener">计算机编程</a>范式，它以数理逻辑为基础，其中程序语句表达关于系统内问题的事实和规则。规则被写成有头有体的逻辑子句。他们也遵循声明性的而不是命令性的方法。然而，这意味着什么呢？</p>
+<p>为了理解如何在逻辑编程中解决问题，您需要了解构建模块——事实和规则</p>
+<p>让我们理解命令式编程和声明式编程的区别。</p>
+<p>想象一下，你走进你最喜欢的咖啡馆，想点些咖啡。</p>
+<p><strong>命令式方法将是:</strong></p>
+
+<ul>
+<li>进入咖啡店</li>
+<li>排队等着咖啡师问你要点什么</li>
+<li>命令</li>
+<li>是的，请带走</li>
+<li>支付</li>
+<li>出示您的积分卡来赢取积分</li>
+<li>请点菜，然后走开</li>
+</ul>
+<p><strong>声明式方法:</strong></p>
+<ul>
+<li>请给我一大杯拿铁带走</li>
+</ul>
+<p>因此，你不是提供一步一步的指令(命令式)，而是告诉系统你需要什么，让它尝试提出一个解决方案(声明式)。</p>
+<p>Prolog遵循逻辑范式，可能是逻辑编程家族中最著名的语言。</p>
+<p>Prolog在定理证明、专家系统、自然语言处理和人工智能领域(特别是IBM的Watson2)都有巨大的影响力</p>
+<p>Prolog和SQL一样，有两个主要方面，一个是表达数据，另一个是查询数据。逻辑编程的基本结构、术语和语句都是从逻辑中继承来的。有三个基本陈述:</p>
+<ul>
+<li><strong>事实</strong>是关于问题领域的基本断言(例如，“苏格拉底是一个人”)</li>
+<li><strong>规则</strong>是对领域中事实的推断(例如，“所有人都会死。”)</li>
+<li><strong>查询</strong>是关于该领域的问题(例如，“苏格拉底会死吗？”)</li>
+</ul>
+<h4 id="features-of-logical-programming"><strong>逻辑编程的特点</strong></h4>
+<ul>
+<li>逻辑编程可以用来以一种不依赖于<br/>实现的方式表达知识，使程序更加灵活、压缩和可理解。</li>
+<li>它使知识与使用分离，即机器架构可以改变<br/>而无需改变程序或其底层代码。</li>
+<li>它可以以自然的方式改变和扩展，以支持特殊形式的知识，例如作为高阶知识的元级的<br/>。</li>
+<li>依靠推理和精确的<br/>表达手段，可用于非计算学科。</li>
+</ul>
+<p><span> <a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.2776760&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2F100-days-of-code%2F" target="_blank" rel="noopener"> 100天代码:2023年</a> </span>完整Python Pro Bootcamp</p>
+<h3 id="toc-3-functional-programming"><strong> 3。功能编程</strong></h3>
+<p>函数式编程是一种编程范式，在这种范式中，你有一种构建计算机程序的结构和元素的风格。在这里，您将计算视为对数学函数的评估，并避免改变状态和可变数据。</p>
+<p>函数式编程只包含纯函数。那么，你所理解的纯函数是什么？</p>
+<p>纯函数是那些将参数列表作为输入，输出为返回值的函数。现在你可能觉得所有的函数都是纯的，因为任何函数都接受值并返回值。</p>
+<p>例如，如果一个函数依赖于全局变量或类成员的数据，那么它就不是纯的。在这种情况下，该函数的返回值并不完全依赖于作为输入接收的参数列表，也可能有副作用。那么，你对副作用这个术语的理解是什么？副作用是在被调用的<strong>函数</strong>之外可以观察到的应用程序状态的变化，而不是它的返回值。例如:修改任何外部变量或对象属性，如全局变量或父函数作用域链中的变量。</p>
+<h4 id="features-of-functional-paradigm"><strong>功能范式的特征</strong></h4>
+<ul>
+<li><strong>纯函数</strong>–如上图，如果输入是一个数组，那么输出将是一个新的数组，输入数组不会被修改。所以在纯函数的情况下，输出只取决于输入。</li>
+</ul>
+<p>这是Scala语言中的一个函数，它接受值并返回它们的和。</p>
+<pre>scala&gt; def add(a:Int,b:Int) = a + b
+add: (a: Int, b: Int)Int
+</pre>
+<p>add函数没有引起副作用。它没有改变所提供的输入值，而是使用了另一个纯函数，即+运算符，并返回值的总和作为调用的结果。add函数是一个纯函数。</p>
+<ul>
+<li><strong>递归- </strong>递归函数是在执行过程中调用自身的函数。这使得该函数能够重复几次，在每次迭代结束时输出结果。下面是一个递归函数的例子。</li>
+</ul>
+<pre>Function Count (integer N)
+ if (N &lt;= 0) return "Must be a Positive Integer";
+ if (N &gt; 9) return "Counting Completed";
+else return Count (N+1);
+ end function
+</pre>
+<p>上面的Count()函数使用递归从1到9之间的任意数字计数到数字10。例如，Count(1)将返回2，3，4，5，6，7，8，9，10。Count(7)将返回8，9，10。</p>
+<p>你会注意到递归函数在计算机科学中很常见，因为它们允许你用最少的代码编写高效的程序。缺点是，如果编写不当，它们会导致无限循环和其他意外结果。例如，在上面的示例中，如果数字是0或小于或大于9，则函数终止。如果函数中没有包含适当的情况来停止执行，递归将永远重复，导致程序崩溃，或者更糟，挂起整个计算机系统。</p>
+<ul>
+<li>如果一个表达式可以在不改变程序行为的情况下被相应的值替换，那么这个表达式被称为是引用透明的。因此，计算一个引用透明的函数对于固定参数给出了相同的值。在<a href="https://hackr.io/blog/functional-programming">函数式编程</a>中，只考虑引用透明的函数。它们更容易阅读和理解。</li>
+</ul>
+<pre>int add(int a, int b)
+ {
+ return a + b
+ }
+int mult(int a, int b) 
+ {
+ return a * b;
+ }
+int x = add(2, mult(3, 4));
+</pre>
+<p>在这个例子中，<em> mult </em>方法是引用透明的，因为对它的任何调用都可以用相应的返回值替换。这可以通过将mult(3，4)替换为12:</p>
+<pre>int x = add(2, 12)
+</pre>
+<p>同样，add(2，12)可以替换为相应的返回值14:</p>
+<pre>int x = 14;
+</pre>
+<ul>
+<li><strong>函数是一级的，也可以是更高级的- </strong>当一种编程语言<strong>中的函数被像其他变量一样对待时，该语言被称为</strong>具有一级函数。例如，在这种语言中，函数<strong>可以</strong>作为参数传递给其他<strong>函数</strong>，<strong>可以</strong>由另一个函数返回，<strong>可以</strong>作为值赋给变量。高阶<strong> f </strong>函数是以至少一个一级函数为参数的函数。</li>
+<li><strong>变量是不可变的- </strong>在函数式编程中，你不能在变量被初始化后修改它。你可以创建新的变量，这有助于在程序运行时维护状态。</li>
+</ul>
+<p>字符串是不可变的对象。</p>
+<pre>var name = “Susie”
+var uppd = name.toUpperCase()
+</pre>
+<p>*name将具有值–Susie<br/>* uppd将具有值–Susie</p>
+<p>Lisp是仅次于Fortran的第二古老的高级编程语言，但仍在使用。Lisp是一种函数式编程语言；也就是说，函数在Lisp中是一级对象。然而，它不是像Haskell这样的纯函数式语言，因为Lisp中的操作会有副作用。Lisp在人工智能领域一直流行到今天。</p>
+<p>支持函数式编程的编程语言:Haskell，JavaScript，Scala，Erlang，Lisp，ML，Clojure，OCaml，Common Lisp，Racket。</p>
+<p><strong>示例Lisp代码:</strong></p>
+<ul>
+<li>计算一个数(n)的阶乘</li>
+</ul>
+<pre>(defun factorial (n)
+(if (&lt;= n 1)
+1
+(* n (factorial (-n 1)))))
+</pre>
+<ul>
+<li>使用普通Lisp循环宏的迭代版本</li>
+</ul>
+<pre>(defun factorial (n)
+(loop for I from 1 to n
+for fac=1 then (* fac i)
+finally (return fac)))
+</pre>
+
+<pre>(defun –reverse (list)
+(let ((return –value ‘()))
+(dolist (e list) (push e return-value))
+return-value))
+</pre>
+<h3 id="toc-4-object-oriented-programming-oo"><strong> 4。面向对象编程(OO): </strong></h3>
+<p>在这个框架中，所有现实世界的实体都由<em>类</em>表示。<em>对象</em>是类的实例，所以每个对象都封装了一个<em>状态</em>和<em>行为</em>。<em>状态</em>意味着对象的字段和属性，而<em>行为</em>是你对对象的状态所做的事情，它们是方法。对象通过传递消息来相互交互。</p>
+<h4 id="features-of-oo"><strong>面向对象的特性:</strong></h4>
+<ul>
+<li>封装-这是面向对象编程的一个基本特征。在这里，您隐藏了类中不必要的细节，并提供了一个简单明了的工作界面。它描述了在一个单元中捆绑数据和处理数据的方法。这个概念也经常被用来从外部隐藏一个对象的内部表示或状态</li>
+<li><strong>继承- </strong>继承是面向对象编程(OOP)语言的核心概念之一。它是一种机制，在这种机制中，您可以从共享一组属性和方法的类的层次结构中的另一个类派生出一个类。它解释了类层次结构如何开发代码可读性和对功能重用的支持。</li>
+<li><strong>数据抽象- </strong>数据抽象是将特定的数据体简化为整体的简化表示。数据抽象通常是数据库设计的第一步。</li>
+<li><strong>多态性- </strong>多态性是一个面向对象的编程概念，指的是变量、函数或对象采用多种形式的能力。</li>
+</ul>
+<p>实现了面向对象范式的编程语言有:Ruby、Java、C++、Python、Simula(第一种面向对象语言)</p>
+<p>一个类的例子:</p>
+<pre>Class Account
+{
+ int account_number;
+ int account_balance;
+ public void showdata()
+ {
+ system.out.println(“Account Number”+account_number)
+ system.outprintln(“Account Balance”+ account_balance)
+ }
+}
+</pre>
+<p>这里有一个名为:Account的类</p>
+<p>属性为:account_number，account_balance <br/>方法/动作为:showdata()</p>
+
+<p>在浏览完编程范例之后，本文肯定会帮助您理解编程语言发展的细微差别，并且每个范例都为编程语言的培育和发展做出了贡献，这符合编程界的最大利益。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

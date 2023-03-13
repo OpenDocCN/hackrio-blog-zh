@@ -1,0 +1,870 @@
+<html>
+<head>
+<title>Download Python Cheat Sheet PDF for Quick Reference [2023]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>下载Python备忘单PDF快速参考[2023]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/python-cheat-sheet#0001-01-01">https://hackr.io/blog/python-cheat-sheet#0001-01-01</a></blockquote><div><div class="content">
+										<p>Python是一种广泛用于数据研究和软件开发的高级编程语言。有几十个模块和库可供选择，Python是一种有利可图且易于使用的语言。曾经做过python项目，渴望Python命令备忘单来帮助你吗？你来对地方了。</p>
+<p>Guido Van Rossum 在1991年发布Python 0.9.0时开发了Python。目前，Python的最新版本是Python 3.9。</p>
+<p>如果你是初学者，Python可能会让人感到害怕。但是只要有一点支持，我们将向您展示它实际上是一种有益且简单的语言。今天，我们将展示一个Python备忘单，它将帮助你轻松使用Python。最终，您将成为使用这种编程语言的专家，包括Python语法。</p>
+<p>如果您对Python有一个基本的了解，并且在开发Python应用程序时想要一个简单的参考，那么这个Python 3备忘单就是为您准备的。</p>
+
+<p>请继续阅读，我们将带您了解各种Python命令或函数、操作符、数据类型、数据结构等等。</p>
+<p>让我们从Python基础备忘单开始吧！</p>
+<h2 id="the-zen-of-python"><strong>Python之禅</strong></h2>
+<p>在我们进入Python语法备忘单之前，先看看Tim Peters对Python原理的诗意描述:</p>
+<pre class="language-python"><code>&gt;&gt;&gt; import this
+The Zen of Python, by Tim Peters
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!</code></pre>
+<h2 id="python-basics-cheat-sheet"><strong> Python基础知识备忘单</strong></h2>
+<p><a href="https://drive.google.com/file/d/1EeV3EHWMqUliLq8Ub0hjMBzNCnW-oZLb/view?usp=sharing" target="_blank" rel="noopener">点击此处</a>下载Python备忘单PDF。</p>
+<h3 id="toc-1-math-operators"><strong> 1。数学运算符</strong></h3>
+<p>在Python中，可以使用算术运算符执行加、减、乘、除等数学运算。您还可以访问几个库，这些库可以帮助您解决更高级的算术问题。下面是一些运算符及其功能的快速列表:</p>
+<p>**</p>
+
+<p>1.找到<strong>个指数</strong></p>
+<p>%</p>
+<p>2.求<strong>余数</strong>。</p>
+<p>//</p>
+<p>3.执行<strong>整数除法</strong>。</p>
+<p>/</p>
+<p>4.执行<strong>除法</strong>运算。</p>
+<p>*</p>
+<p>5.执行<strong>乘法</strong>运算。</p>
+<p>-</p>
+<p>6.执行<strong>减法</strong>操作。</p>
+<p>+</p>
+<p>7.执行<strong>加法</strong>操作。</p>
+<h4 id="examples"><strong>例题</strong></h4>
+<pre class="language-python"><code>&gt;&gt;&gt; 3 * 8 + 6 + 0
+30
+&gt;&gt;&gt; (2 + 3) * 6
+30
+&gt;&gt;&gt; 5 ** 6
+15625</code></pre>
+<p>推荐Python课程</p>
+<h3 id="recommend-python-course"><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomplete-python-bootcamp%2F" target="_blank" rel="noopener">用Python完成从零到英雄的Python boot camp</a></h3>
+<p> </p>
+<p><strong> 2。数据类型</strong></p>
+<p>数据类型是一种通知编译器哪些数据(整数、字符、浮点等)的机制。)应该被存储以及结果要分配多少内存。</p>
+<p>以下是Python的数据类型:</p>
+<p>数字(浮点、复数或浮点)</p>
+<ol>
+<li>序列(字符串、列表、元组等。)</li>
+<li>布尔型(真或假)</li>
+<li>一组</li>
+<li>词典</li>
+<li><strong> 3。变量</strong></li>
+</ol>
+<pre class="language-python"><code>&gt;&gt;&gt; a = 5.5 # float datatype
+&gt;&gt;&gt; a
+5.5
+&gt;&gt;&gt; a = 5 # int datatype
+&gt;&gt;&gt; a
+5
+&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6] # list datatype
+&gt;&gt;&gt; a
+[1, 2, 3, 4, 5, 6]
+&gt;&gt;&gt; a = 'hello' # string datatype
+&gt;&gt;&gt; a
+'hello'
+&gt;&gt;&gt; a = {1, 2, 3} # set datatype
+&gt;&gt;&gt; a
+{1, 2, 3}
+&gt;&gt;&gt; a = True # boolean datatype
+&gt;&gt;&gt; a
+True
+&gt;&gt;&gt; a = {1: 2} # dictionary datatype
+&gt;&gt;&gt; a
+{1: 2}</code></pre>
+<h3 id="toc-3-variables">变量是任何编程语言中保存数据的内存区域。这个区域通常存在于RAM内部的给定地址。变量可以包含任何值，包括数字、文本和真/假值。因此，如果您希望在程序中的任何地方使用该值，您可以简单地使用具有该值的变量。</h3>
+<p>值得注意的是，因为Python不是一种高度类型化的语言，所以您不必根据变量包含的值来指定变量的类型。在Python中，存储在变量中的数据类型将在运行时隐式解码，并由存储在该变量中的数据类型决定。</p>
+<p>一个好的编程实践是给自己和他人留下注释，不管编程语言是什么。虽然python比<a href="https://hackr.io/blog/how-to-learn-java"> Java </a>、c++和其他语言更容易理解，但是留下注释来澄清文件的用途只是礼貌的做法。</p>
+<pre class="language-python"><code>&gt;&gt;&gt; a = 'This is a string variable'
+&gt;&gt;&gt; a
+'This is a string variable'</code></pre>
+<pre class="language-python"><code>&gt;&gt;&gt; a = 5
+&gt;&gt;&gt; a
+5</code></pre>
+
+<p><strong> 5。打印输出</strong></p>
+
+<pre class="language-python"><code># This is an inline comment</code></pre>
+
+<pre class="language-python"><code>"""
+This is a
+multiline comment
+"""</code></pre>
+<h3 id="toc-5-printing-output"><strong> print </strong>()方法向屏幕或另一个标准输出设备发送消息。该消息可以是一个字符串或另一个对象，在屏幕上显示之前将被转换为字符串。</h3>
+<p><strong> 6。输入()</strong></p>
+<pre class="language-python"><code>&gt;&gt;&gt; print('How are you?')
+How are you?
+&gt;&gt;&gt; x = 10
+&gt;&gt;&gt; print('Hello world!', x)
+Hello world! 10</code></pre>
+<h3 id="toc-6-input">当调用<strong>输入</strong>()函数时，程序执行暂停，直到用户提供输入。</h3>
+<p><strong> 7。Len()函数</strong></p>
+<pre class="language-python"><code>The input() Function
+&gt;&gt;&gt; print('How are you?')
+&gt;&gt;&gt; myStatus = input()
+&gt;&gt;&gt; print('Nice to meet you, {}'.format(myStatus))
+How are you?
+Al
+Nice to meet you, Al</code></pre>
+<h3 id="toc-7-len-function">函数的作用是:返回列表、字符串、集合等顺序或随机数据结构中的元素个数。</h3>
+<p><strong> 8。类型转换功能</strong></p>
+<pre class="language-python"><code>&gt;&gt;&gt; len('Computer')
+8</code></pre>
+<h3 id="toc-8-typecasting-functions">以下是如何将整数转换为浮点或字符串:</h3>
+<p>下面是如何将浮点数转换成整数:</p>
+
+<pre class="language-python"><code>&gt;&gt;&gt; str(14)
+'14'
+&gt;&gt;&gt; print('He is {} years old'.format(str(14)))
+He is 14 years old.
+&gt;&gt;&gt; str(-4.89)
+'-4.89'</code></pre>
+<p><strong>流量控制</strong></p>
+<pre class="language-python"><code>&gt;&gt;&gt; int(6.7)
+6
+&gt;&gt;&gt; int(6.6) + 1
+7</code></pre>
+<h2 id="flow-control"><strong> 1。比较运算符</strong></h2>
+<h3 id="toc-1-comparison-operators">==</h3>
+<p>等于</p>
+<p>！=</p>
+<p>不等于</p>
+<p>&lt;</p>
+<p>不到</p>
+<p>&gt;</p>
+<p>大于</p>
+<p>&lt;=</p>
+<p>小于或等于</p>
+
+<p>&gt;=</p>
+
+<p>大于或等于</p>
+<p><strong> 2。布尔评估</strong></p>
+<pre class="language-python"><code>&gt;&gt;&gt; 71 == 70
+False
+&gt;&gt;&gt; 40 == 34
+False
+&gt;&gt;&gt; 'man' == 'man'
+True
+&gt;&gt;&gt; 'man' == 'Man'
+False
+&gt;&gt;&gt; 'bat' != 'butterfly'
+True
+&gt;&gt;&gt; 50 == 50.0
+True
+&gt;&gt;&gt; 1 == '1'
+False</code></pre>
+<h3 id="toc-2-boolean-evaluation"><strong> 3。布尔运算符</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; True == True
+True
+&gt;&gt;&gt; True != False
+True
+&gt;&gt;&gt; True is True
+True
+&gt;&gt;&gt; True is not False
+True
+&gt;&gt;&gt; if a is True:
+&gt;&gt;&gt; pass
+&gt;&gt;&gt; if a is not False:
+&gt;&gt;&gt; pass
+&gt;&gt;&gt; if a:
+&gt;&gt;&gt; pass
+&gt;&gt;&gt; if a is False:
+&gt;&gt;&gt; pass
+&gt;&gt;&gt; if a is not True:
+&gt;&gt;&gt; pass
+&gt;&gt;&gt; if not a:
+&gt;&gt;&gt; pass</code></pre>
+<h3 id="toc-3-boolean-operators">布尔运算符有三种:<strong>与</strong>、<strong>或</strong>、<strong>非</strong>。</h3>
+<p>下面是“<strong>和</strong>运算符的真值表:</p>
+<p>千真万确</p>
+<p>真假假</p>
+<p>假与真假</p>
+<p>假假假</p>
+<p>下面是“<strong>而非</strong>”运算符的真值表</p>
+<p>是非</p>
+<p>不正确不正确</p>
+
+<p>最后，这里是“<strong>或</strong>操作符的真值表</p>
+
+<p>真实还是真实</p>
+<p>真或假真</p>
+<p>假的还是真的</p>
+<p>假还是假假</p>
+<p><strong> 4。混合布尔和比较运算符</strong></p>
+<h3 id="toc-4-mixing-boolean-and-comparison-operators">除了比较运算符，您还可以在表达式中使用几个布尔运算符:</h3>
+<pre class="language-python"><code>&gt;&gt;&gt; (43&lt; 57) and (3 &lt; 9)
+True
+&gt;&gt;&gt; (14 &lt; 15) and (92&lt; 61)
+False
+&gt;&gt;&gt; (1 == 3) or (4 == 4)
+True</code></pre>
+<p><strong> 5。If-Else语句</strong></p>
+<pre class="language-python"><code>&gt;&gt;&gt; 2 + 2 == 4 and not 2 + 2 == 6 and 2 * 2 == 2 + 2
+True</code></pre>
+<h3 id="toc-5-if-else-statements"><strong>输出</strong></h3>
+<pre class="language-python"><code>name = 'Peter'
+if name == 'Peter':
+ print('Hello, Peter')</code></pre>
+<p>你好，彼得</p>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>name = 'Mike'
+if name == 'Peter':
+ print('Hello, Peter.')
+else:
+ print('Hello, anonymous')</code></pre>
+<p>你好，无名氏</p>
+<p><strong> 6。组合If和Else (elif语句)</strong></p>
+<h3 id="toc-6-combining-if-and-else-elif-statement"><strong>输出</strong></h3>
+<pre class="language-python"><code>name = 'Mike'
+age = 5
+if name == 'Peter':
+ print('Hi, Peter.')
+elif age &lt; 10:
+ print('Your age is less than 10')
+name = 'Mike'
+age = 30
+if name == 'Peter':
+ print('Hello, Peter.')
+elif age &lt; 10:
+ print('Your age is less than 12')
+else:
+ print('Your age is more than 10')</code></pre>
+<p>你的年龄不到10岁</p>
+<p>你的年龄超过10岁了</p>
+<p>7 .<strong>。While循环语句</strong></p>
+<h3 id="toc-7-while-loop-statements">While循环语句用于将代码块运行指定的次数:</h3>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>var = 0
+while var &lt; 10:
+ print('Hello, world.')
+ var = var + 1</code></pre>
+<p>你好，世界。</p>
+<p>你好，世界。</p>
+<p>你好，世界。</p>
+<p>你好，世界。</p>
+<p>你好，世界。</p>
+<p>你好，世界。</p>
+<p>你好，世界。</p>
+<p>你好，世界。</p>
+<p>你好，世界。</p>
+<p>你好，世界。</p>
+<p><strong> 8。中断语句</strong></p>
+<h3 id="toc-8-break-statement">如果执行到达一个<strong> break </strong>语句，迭代停止，控制退出循环。</h3>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>var = 1
+while True:
+ print('This block of code is running...')
+ if var == 10:
+ break
+ var += 1
+print('Loop exited')</code></pre>
+<p>这段代码正在运行...</p>
+<p>这段代码正在运行...</p>
+<p>这段代码正在运行...</p>
+<p>这段代码正在运行...</p>
+<p>这段代码正在运行...</p>
+<p>这段代码正在运行...</p>
+<p>这段代码正在运行...</p>
+<p>这段代码正在运行...</p>
+<p>这段代码正在运行...</p>
+<p>这段代码正在运行...</p>
+<p>循环已退出</p>
+<p><strong> 9。继续语句</strong></p>
+<h3 id="toc-9-continue-statement">一旦程序遇到<strong> continue </strong>语句，控制从循环的开始重新开始。</h3>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>var = 0
+while var &lt;= 10:
+ var += 1
+ if var == 5:
+ continue
+ print('This block of code is running for number... ', var)
+print('Loop exited')</code></pre>
+<p>这段代码是为数字而运行的...一</p>
+<p>这段代码是为数字而运行的...2</p>
+<p>这段代码是为数字而运行的...3</p>
+<p>这段代码是为数字而运行的...四</p>
+<p>这段代码是为数字而运行的...6</p>
+<p>这段代码是为数字而运行的...七</p>
+<p>这段代码是为数字而运行的...8</p>
+<p>这段代码是为数字而运行的...9</p>
+<p>这段代码是为数字而运行的...10</p>
+<p>这段代码是为数字而运行的...11</p>
+<p>循环已退出</p>
+<p>10。For循环</p>
+<h3 id="toc-10-for-loop">循环的<strong>由序列控制，例如迭代器、列表或其他集合类型。对序列中的每个项目运行循环体，当序列结束时循环结束。</strong></h3>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>for var in range(1, 10):
+ print("Loop running...")
+print('Loop exited')</code></pre>
+<p>循环运行...</p>
+<p>循环运行...</p>
+<p>循环运行...</p>
+<p>循环运行...</p>
+<p>循环运行...</p>
+<p>循环运行...</p>
+<p>循环运行...</p>
+<p>循环运行...</p>
+<p>循环运行...</p>
+<p>循环已退出</p>
+<p><strong> 11。范围功能</strong></p>
+<h3 id="toc-11-range-function">程序员使用Python的<strong>范围</strong>()运行指定次数的迭代。它采用以下参数:</h3>
+<p><strong> Start </strong>:整数序列应该以的数字。</p>
+<p><strong> Stop </strong>:返回整数序列之前的整数。stop–1是整数范围的结尾。stop–1是整数范围的结尾。</p>
+<p><strong>步骤</strong>:决定序列中每个整数之间增量的整数值。</p>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>for var in range(1, 20, 2):
+ print("Loop running with step size of 2...")
+print('Loop exited')</code></pre>
+<p>步长为2的循环运行...</p>
+<p>步长为2的循环运行...</p>
+<p>步长为2的循环运行...</p>
+<p>步长为2的循环运行...</p>
+<p>步长为2的循环运行...</p>
+<p>步长为2的循环运行...</p>
+<p>步长为2的循环运行...</p>
+<p>步长为2的循环运行...</p>
+<p>步长为2的循环运行...</p>
+<p>步长为2的循环运行...</p>
+<p>循环已退出</p>
+<p>For-If- Else语句组合</p>
+<p>For-if-else语句允许您在循环中提供条件语句，包括if、else和elif。</p>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>for var in range(1, 11):
+ if(var%2==0):
+ print("This is even integer")
+ else:
+ print("This is odd integer")
+print('Loop exited')</code></pre>
+<p>这是奇数</p>
+<p>这是偶数</p>
+<p>这是奇数</p>
+<p>这是偶数</p>
+<p>这是奇数</p>
+<p>这是偶数</p>
+<p>这是奇数</p>
+<p>这是偶数</p>
+<p>这是奇数</p>
+<p>这是偶数</p>
+<p>循环已退出</p>
+<p><strong>Python中的模块</strong></p>
+<h2 id="modules-in-python">我们可以通过使用python的<strong> import </strong>语句从其他python模块导入文件/函数来导入其他Python模块代码。<strong> import </strong>语句是触发导入机制最常用的方法，但不是导入的唯一手段。</h2>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>import random
+for i in range(5):
+ print("Random integer is", random.randint(1, 30))</code></pre>
+<p>随机整数是8</p>
+<p>随机整数是10</p>
+<p>随机整数是11</p>
+<p>随机整数是3</p>
+<p>随机整数是8</p>
+<p>我们也可以使用来自语句的<strong>来导入模块的指定方法</strong></p>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>from collections import Counter
+List = [1, 2, 3, 4, 5, 5, 1]
+Cnt = Counter(List)
+print(Cnt)</code></pre>
+<p>计数器({1: 2，5: 2，2: 1，3: 1，4: 1})</p>
+<p><strong>功能</strong></p>
+<h2 id="function">函数是一个可重用的、有序的代码块，它执行一个单一的、相互关联的活动。函数为你的程序提供了更多的模块性，并允许你重用大量的代码。Python还包括几个内置函数，比如print()，但是您也可以构建自己的函数。</h2>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>def checkParity(num):
+ if(num % 2 == 0):
+ print("Number is even")
+ else:
+ print("Number is odd")
+num = 5
+checkParity(num)</code></pre>
+<p>号码是奇数</p>
+<p>下面是一个返回某些内容的函数:</p>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>def checkParity(num):
+ if(num % 2 == 0):
+ return "Number is even"
+ else:
+ return "Number is odd"
+num = 4
+parity = checkParity(num)
+print(parity)</code></pre>
+<p>数字是偶数</p>
+<p><strong>异常处理</strong></p>
+<h2 id="exception-handling">在<a href="https://hackr.io/blog/best-programming-languages-to-learn">编程语言</a>中，异常是发生错误阻止代码继续运行的情况。例如，如果你用零除任何东西，就会出现运行时异常，程序就会崩溃。然而，你可以在程序中写如果出现这种情况该怎么做，这就是所谓的<em>异常处理</em>。在Python中，主要代码写在<strong> try </strong>块中。除了块之外，异常在<strong>内处理。无论是否发生异常，始终执行<strong> finally </strong>块。</strong></h2>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>def divideBy(num):
+ try:
+ print(10 / num)
+ except:
+ print("Cannot divide by 0")
+ finally:
+ print("Division finished")
+num = 0
+divideBy(num)</code></pre>
+<p>不能被0除</p>
+<p>除法完成</p>
+<p><strong>Python中的列表</strong></p>
+<h2 id="lists-in-python">列表是Python中不同种类元素的序列。它类似于一个数组，除了它可以保存来自几个来源的数据。可变列表的值可以改变。我们可以使用索引来解析列表中的每个值或访问列表元素。</h2>
+<p>我们也可以对列表使用负索引:</p>
+<pre class="language-python"><code>&gt;&gt;&gt; list = ['truck', 'car', 'submarine', 'jet']
+&gt;&gt;&gt; list
+['truck', 'car', 'submarine', 'jet']
+&gt;&gt;&gt; list = ['truck', 'car', 'submarine', 'jet']
+&gt;&gt;&gt; list[0]
+'truck'
+&gt;&gt;&gt; list[1]
+'car'
+&gt;&gt;&gt; list[2]
+'submarine'
+&gt;&gt;&gt; list[3]
+'jet'</code></pre>
+<p><strong>修改列表中元素的值</strong></p>
+<pre class="language-python"><code>&gt;&gt;&gt; list = ['truck', 'car', 'submarine', 'jet']
+&gt;&gt;&gt; list[-2]
+'submarine'
+&gt;&gt;&gt; list[-3]
+'car'
+&gt;&gt;&gt; 'The {} is larger than a {}.'.format(list[-2], list[-3])
+'The submarine is larger than a car.'</code></pre>
+<h3 id="modifying-a-value-of-an-element-in-a-list"><strong>列表串联和列表复制</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; list = ['truck', 'car', 'submarine', 'jet']
+&gt;&gt;&gt; list[1] = 'bike'
+&gt;&gt;&gt; list
+['cat', 'bike', 'rat', 'elephant']
+&gt;&gt;&gt; list[2] = list[1]
+&gt;&gt;&gt; list
+['cat', 'bike', 'bike', 'elephant']
+&gt;&gt;&gt; list[-1] = 54321
+&gt;&gt;&gt; list
+['cat', 'bike', 'bike', 54321]</code></pre>
+<h3 id="list-concatenation-and-list-replication"><strong>从列表中删除值</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; [4, 5, 6] + ['P', 'Q', 'R']
+[4, 5, 6, 'P', 'Q', 'R']
+&gt;&gt;&gt; ['A', 'B', 'C'] * 4
+['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C']
+&gt;&gt;&gt; list = [1, 2, 3]
+&gt;&gt;&gt; list = list + ['X', 'Y', 'Z']
+&gt;&gt;&gt; list
+[1, 2, 3, 'X', 'Y', 'Z']</code></pre>
+<h3 id="removing-values-from-lists"><strong>使用带有遍历列表的for循环</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; list = ['truck', 'car', 'submarine', 'jet']
+&gt;&gt;&gt; del list[2]
+&gt;&gt;&gt; list
+['truck', 'car', 'jet']
+&gt;&gt;&gt; del list[2]
+&gt;&gt;&gt; list
+['truck', 'car']</code></pre>
+<h3 id="using-for-loops-with-lists-for-traversal"><strong>用Zip() </strong>遍历多个列表</h3>
+<pre class="language-python"><code>&gt;&gt;&gt; products = ['bag', 'rubber', 'knife', 'cooker']
+&gt;&gt;&gt; for i, product in enumerate(products):
+&gt;&gt;&gt; print('Index {} in products is: {}'.format(str(i), product))
+Index 0 in products is: bag
+Index 1 in products is: rubber
+Index 2 in products is: knife
+Index 3 in products is: cooker</code></pre>
+<h3 id="iterating-through-multiple-lists-with-zip"><strong>In和Not in运算符</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; name = ['David', 'Mike', 'Tommy']
+&gt;&gt;&gt; age = [10, 31, 54]
+&gt;&gt;&gt; for n, a in zip(name, age):
+&gt;&gt;&gt; print('{} is {} years old'.format(n, a))
+David is 10 years old
+Mike is 31 years old
+Tommy is 54 years old</code></pre>
+<h3 id="the-in-and-not-in-operators"><strong>使用Index()方法在列表中查找值</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; 'pen' in ['cap', 'owl', 'pen', 'rubber']
+True
+&gt;&gt;&gt; list = ['cap', 'owl', 'pen', 'rubber']
+&gt;&gt;&gt; 'truck' in list
+False
+&gt;&gt;&gt; 'pen' not in list
+False
+&gt;&gt;&gt; 'train' not in list
+True</code></pre>
+<h3 id="finding-a-value-in-a-list-with-the-index-method"><strong>用Append()和Insert()方法向列表添加值</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; list = ['notebook', 'pen', 'eraser', 'sharpener']
+&gt;&gt;&gt; list.index('pen')
+1</code></pre>
+<h3 id="adding-values-to-lists-with-the-append-and-insert-methods"><strong> append() </strong></h3>
+<h4 id="append"><strong>插入()</strong></h4>
+<pre class="language-python"><code>&gt;&gt;&gt; list = ['car', 'truck', 'bike']
+&gt;&gt;&gt; list.append('bicycle')
+&gt;&gt;&gt; list
+['car', 'truck', 'bike', 'bicycle']</code></pre>
+<h4 id="insert"><strong>使用Remove()从列表中移除值</strong></h4>
+<pre class="language-python"><code>&gt;&gt;&gt; list = ['car', 'truck', 'bike']
+&gt;&gt;&gt; list.insert(1, 'bicycle')
+&gt;&gt;&gt; list
+['car', 'bicycle', 'truck', 'bike']</code></pre>
+<h3 id="removing-values-from-lists-with-remove">如果一个值在列表中出现多次，则只会删除该值的第一个实例。</h3>
+<pre class="language-python"><code>&gt;&gt;&gt; list = ['car', 'bike', 'submarine', 'jet']
+&gt;&gt;&gt; list.remove('bike')
+&gt;&gt;&gt; list
+['car', 'submarine', 'jet']</code></pre>
+<p><strong>用Sort()方法对列表中的值进行排序</strong></p>
+<h3 id="sorting-the-values-in-a-list-with-the-sort-method"><strong>字典和结构化数据</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; list = [2, 3, 1]
+&gt;&gt;&gt; list.sort()
+&gt;&gt;&gt; list
+[1, 2, 3]</code></pre>
+<h2 id="dictionaries-and-structuring-data">Python字典是没有任何特定顺序的元素的集合。字典有一个键:值对，而其他复合数据类型只是将值作为一个元素。</h2>
+<p><strong>key()、Values()和Items()方法</strong></p>
+<h3 id="the-keys-values-and-items-methods">遍历键和值:</h3>
+
+<pre class="language-python"><code>&gt;&gt;&gt; book = {'color': 'red', 'price': 160}
+&gt;&gt;&gt; for v in book.values():
+&gt;&gt;&gt; print(v)
+red
+160</code></pre>
+
+<pre class="language-python"><code>&gt;&gt;&gt; for k in book.keys():
+&gt;&gt;&gt; print(k)
+color
+price</code></pre>
+<ul>
+<li>for循环可以分别使用<strong> keys </strong>()、<strong> values </strong>()、和<strong> items </strong>()方法来遍历字典中的键、值或键值对。</li>
+</ul>
+<pre class="language-python"><code>&gt;&gt;&gt; for i in book.items():
+&gt;&gt;&gt; print(i)
+('color', 'red')
+('price', 160)</code></pre>
+<p><strong>Get()方法</strong></p>
+<h3 id="the-get-method"><strong> Get </strong>()接受两个参数:一个键和一个默认值(如果没有找到键的话)。</h3>
+<p><strong>检查字典中是否存在关键字</strong></p>
+<pre class="language-python"><code>&gt;&gt;&gt; items = {'chairs': 5, 'tables': 2}
+&gt;&gt;&gt; 'There are {} tables.'.format(str(items.get('tables', 0)))
+'There are 2 tables.'
+&gt;&gt;&gt; 'There are {} computers.'.format(str(items.get('computers', 0)))
+'There are 0 computers.'</code></pre>
+<h3 id="check-key-s-presence-in-dictionary"><strong>设置</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; 'color' in book
+True</code></pre>
+<h2 id="sets">集合是唯一元素的无序集合。Python集合类似于数学集合，允许所有与集合相关的操作，包括并、交和差。</h2>
+<p><strong>创建集合</strong></p>
+<h3 id="creating-a-set">您可以使用花括号{}和内置函数<strong> set </strong>():</h3>
+<p>如果您使用花括号{}来创建一个空集，您将得到一个作为<strong>字典</strong>的数据结构。</p>
+<pre class="language-python"><code>&gt;&gt;&gt; s = {2, 4, 6}
+&gt;&gt;&gt; s = set([2, 4, 6])</code></pre>
+<p>所有重复的值都会被集合自动删除:</p>
+<pre class="language-python"><code>&gt;&gt;&gt; s = {}
+&gt;&gt;&gt; type(s)
+&lt;class 'dict'&gt;</code></pre>
+<p><strong>添加到集合中</strong></p>
+<pre class="language-python"><code>&gt;&gt;&gt; s = {1, 2, 3, 2, 3, 4, 4, 5}
+&gt;&gt;&gt; s
+{1, 2, 3, 4, 5}</code></pre>
+<h3 id="adding-to-the-set"><strong>从器械包中移除</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; a = {1, 2, 3, 4, 5}
+&gt;&gt;&gt; a.add(6)
+&gt;&gt;&gt; a
+{1, 2, 3, 4, 5, 6}
+&gt;&gt;&gt; set = {0, 1, 2, 3, 4}
+&gt;&gt;&gt; set.update([2, 3, 4, 5, 6])
+&gt;&gt;&gt; set
+{0, 1, 2, 3, 4, 5, 6} </code></pre>
+<h3 id="removing-from-a-set"><strong>移除</strong>()和<strong>丢弃</strong>()方法从集合中移除一个元素；然而，如果该值不存在，<strong> remove </strong>()将抛出一个键错误。</h3>
+<p>也可以用<strong>丢弃</strong>():</p>
+<pre class="language-python"><code>&gt;&gt;&gt; set = {1, 2, 3, 4}
+&gt;&gt;&gt; set.remove(4)
+&gt;&gt;&gt; set
+{1, 2, 3}
+&gt;&gt;&gt; set.remove(3)
+Traceback (most recent call last):
+ File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+KeyError: 3</code></pre>
+<p><strong>多个集合的并集</strong></p>
+<pre class="language-python"><code>&gt;&gt;&gt; s = {1, 2, 3, 4}
+&gt;&gt;&gt; s.discard(4)
+&gt;&gt;&gt; s
+{1, 2, 3}
+&gt;&gt;&gt; s.discard(4)</code></pre>
+<h3 id="union-of-multiple-sets"><strong>多个集合的交集</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; s1 = {1, 2, 3, 4}
+&gt;&gt;&gt; s2 = {3, 4, 5, 6}
+&gt;&gt;&gt; s1.union(s2)
+{1, 2, 3, 4, 5, 6}</code></pre>
+<h3 id="intersection-of-multiple-sets"><strong>两组差异</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; s1 = {1, 2, 3, 4}
+&gt;&gt;&gt; s2 = {2, 3, 4}
+&gt;&gt;&gt; s3 = {3, 4, 5}
+&gt;&gt;&gt; s1.intersection(s2, s3)
+{3, 4}</code></pre>
+<h3 id="difference-of-two-sets"><strong>两组对称差</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; s1 = {1, 2, 3}
+&gt;&gt;&gt; s2 = {2, 3, 4}
+&gt;&gt;&gt; s1.difference(s2)
+{1}
+&gt;&gt;&gt; s2.difference(s1)
+{4}</code></pre>
+<h3 id="symmetric-difference-of-two-sets">在处理迭代器时，itertools模块提供了一组快速且节省内存的工具(比如列表或字典)。</h3>
+<pre class="language-python"><code>&gt;&gt;&gt; s1 = {1, 2, 3}
+&gt;&gt;&gt; s2 = {2, 3, 4}
+&gt;&gt;&gt; s1.symmetric_difference(s2)
+{1, 4}</code></pre>
+
+<p><strong> Accumulate() </strong></p>
+<h3 id="accumulate">使用accumulate()将函数的结果作为迭代器返回:</h3>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>import itertools
+import operator
+data = [1, 2, 3, 4, 5]
+result = itertools.accumulate(data, operator.mul)
+for each in result:
+ print(each)</code></pre>
+<p>一</p>
+<pre class="language-python"><code>1
+2
+6
+24
+120</code></pre>
+<p>2</p>
+<p>6</p>
+<p>24</p>
+<p>120</p>
+<p><strong> operator.mul() </strong>取两个数并相乘:</p>
+<p>我们也可以使用方法<em>而不用</em>任何迭代器:</p>
+<pre class="language-python"><code>operator.mul(3, 5)
+15
+operator.mul(4, 3)
+12
+operator.mul(6, 3)
+18
+operator.mul(2, 5)
+10</code></pre>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>import itertools
+data = [1, 2, 3, 4, 5, 6, 7]
+result = itertools.accumulate(data)
+for each in result:
+ print(each)</code></pre>
+<p>一</p>
+<pre class="language-python"><code>1
+3
+6
+10
+15
+21
+28</code></pre>
+<p>3</p>
+<p>6</p>
+<p>10</p>
+<p>15</p>
+<p>21</p>
+<p>28</p>
+<p><strong>组合()</strong></p>
+<h3 id="combinations"><strong>输出</strong></h3>
+<pre class="language-python"><code>import itertools
+shapes = [1, 2, 3, 4, 5]
+combinations = itertools.combinations(shapes, 2)
+for combination in combinations:
+ print(combination)</code></pre>
+<p>(1, 2)</p>
+<pre class="language-python"><code>(1, 2)
+(1, 3)
+(1, 4)
+(1, 5)
+(2, 3)
+(2, 4)
+(2, 5)
+(3, 4)
+(3, 5)
+(4, 5)</code></pre>
+<p>(1, 3)</p>
+<p>(1, 4)</p>
+<p>(1, 5)</p>
+<p>(2, 3)</p>
+<p>(2, 4)</p>
+<p>(2, 5)</p>
+<p>(3, 4)</p>
+<p>(3, 5)</p>
+<p>(4, 5)</p>
+<p><strong>Combinations _ with _ Replacement()</strong></p>
+<h3 id="combinations-with-replacement"><strong>输出</strong></h3>
+<pre class="language-python"><code>import itertools
+shapes = [1, 2, 3, 4, 5]
+combinations = itertools.combinations_with_replacement(shapes, 2)
+for combination in combinations:
+ print(combination)</code></pre>
+<p>(1, 1)</p>
+<pre class="language-python"><code>(1, 1)
+(1, 2)
+(1, 3)
+(1, 4)
+(1, 5)
+(2, 2)
+(2, 3)
+(2, 4)
+(2, 5)
+(3, 3)
+(3, 4)
+(3, 5)
+(4, 4)
+(4, 5)
+(5, 5)</code></pre>
+<p>(1, 2)</p>
+<p>(1, 3)</p>
+<p>(1, 4)</p>
+<p>(1, 5)</p>
+<p>(2, 2)</p>
+<p>(2, 3)</p>
+<p>(2, 4)</p>
+<p>(2, 5)</p>
+<p>(3, 3)</p>
+<p>(3, 4)</p>
+<p>(3, 5)</p>
+<p>(4, 4)</p>
+<p>(4, 5)</p>
+<p>(5, 5)</p>
+<p><strong> Count() </strong></p>
+<h3 id="count">计数采用初始点和步长:</h3>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>import itertools
+for i in itertools.count(1, 3):
+ print(i)
+ if i &gt;= 15:
+ break</code></pre>
+<p>一</p>
+<pre class="language-python"><code>1
+4
+7
+10
+13
+16</code></pre>
+<p>四</p>
+<p>七</p>
+<p>10</p>
+<p>13</p>
+<p>16</p>
+<p><strong>周期()</strong></p>
+<h3 id="cycle">下面是itertools.cycle(iterable):</h3>
+<p><strong>输出</strong></p>
+<pre class="language-python"><code>import itertools
+arr = [1, 2, 3, 4, 5]
+c = 0
+for itr in itertools.cycle(arr):
+ if(c &gt; 20):
+ break
+ print(itr)
+ c += 1</code></pre>
+<p>一</p>
+<pre class="language-python"><code>1
+2
+3
+4
+5
+1
+2
+3
+4
+5
+1
+2
+3
+4
+5
+1
+2
+3
+4
+5
+1</code></pre>
+<p>2</p>
+<p>3</p>
+<p>四</p>
+<p>5</p>
+<p>一</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>1</p>
+<p><strong>理解</strong></p>
+<h2 id="comprehensions"><strong>字典理解</strong></h2>
+<h3 id="dictionary-comprehension"><strong>列表理解</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; dict = {1: 2, 3: 4, 5: 6}
+&gt;&gt;&gt; {value: key for key, value in dict.items()}
+{2: 1, 4: 3, 6: 5}</code></pre>
+<h3 id="list-comprehension"><strong>设定理解</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; a= [i for i in range(1, 20)]
+&gt;&gt;&gt; a
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]</code></pre>
+<h3 id="set-comprehension"><strong>λ函数</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+&gt;&gt;&gt; a = [i+1 for i in a]
+&gt;&gt;&gt; a
+[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]</code></pre>
+<h2 id="lambda-functions">Lambda函数是Python的一行函数:</h2>
+<p><strong>字符串格式化</strong></p>
+<pre class="language-python"><code>&gt;&gt;&gt; add = lambda a, b: a + b
+&gt;&gt;&gt; add(1, 2)
+3</code></pre>
+<h2 id="string-formatting"><strong>使用%运算符</strong></h2>
+<h3 id="using-operator"><strong>。格式()</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; a = 4
+&gt;&gt;&gt; 'Value is %x' % a
+'Value is 4'</code></pre>
+<h3 id="format"><strong>格式化字符串文字(F字符串)</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; a = 4
+&gt;&gt;&gt; 'Value is {}'.format(a)
+'Value is 4'</code></pre>
+<h3 id="formatted-string-literals-f-strings"><strong>三元条件运算符</strong></h3>
+<pre class="language-python"><code>&gt;&gt;&gt; a = 4
+&gt;&gt;&gt; f'Value is {a}'
+'Value is 4'</code></pre>
+<h2 id="ternary-conditional-operator">我们可以使用三元条件运算符在单行中编写条件运算符<strong> if </strong>和<strong> else </strong>:</h2>
+<p><strong>结论</strong></p>
+<pre class="language-python"><code>&gt;&gt;&gt; a = 5
+&gt;&gt;&gt; print('Number is even' if a % 2 ==0 else 'Number is odd')
+Number is odd
+&gt;&gt;&gt;</code></pre>
+<h2 id="conclusion">把这个Python备忘单看作是关于Python的快速问题的一站式商店。如您所见，Python拥有创建端到端程序和应用程序所需的所有功能和数据结构。</h2>
+<p>为了便于参考，请下载下面的Python备忘单PDF:</p>
+<p><a class="btn btn-primary btn-call-to-action " href="https://drive.google.com/file/d/1EeV3EHWMqUliLq8Ub0hjMBzNCnW-oZLb/view?usp=sharing" target="_blank" rel="noopener">备忘单</a></p>
+<p>准备好让您的Python实践更上一层楼了吗？查看我们为初学者准备的又酷又简单的Python项目列表。</p>
+<p>编码快乐！</p>
+<p><strong>常见问题解答</strong></p>
+<h2 id="frequently-asked-questions"><strong> 1。有Python备忘单吗？</strong></h2>
+<h4 id="toc-1-is-there-a-python-cheat-sheet">这个Python备忘单为您提供了用Python开发应用程序所需的一切。您也可以<a href="https://drive.google.com/file/d/1EeV3EHWMqUliLq8Ub0hjMBzNCnW-oZLb/view?usp=sharing">下载我们的Python备忘单PDF以方便参考。</a></h4>
+<p><strong> 2。什么是Python命令？</strong></p>
+<h4 id="toc-2-what-are-python-commands">Python命令是在使用时执行特定任务的函数。Python命令的一些例子是len、round、string、loop、type、find copy等。</h4>
+<p><strong>人也在读:</strong></p>
+<p><strong>People are also reading:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

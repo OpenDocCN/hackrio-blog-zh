@@ -1,0 +1,766 @@
+<html>
+<head>
+<title>Download Kubectl Cheat Sheet PDF for Quick References</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>下载Kubectl备忘单PDF以快速参考</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/kubectl-cheat-sheet#0001-01-01">https://hackr.io/blog/kubectl-cheat-sheet#0001-01-01</a></blockquote><div><div class="content">
+										<p>Kubernetesis是最著名的容器编排平台之一。作为一个开源平台，Kubernetes为容器化的应用程序自动化了广泛的管理、部署和扩展任务。</p>
+<p>Kubernetes集群是一组称为节点的控制面板和工作机，它们在您每次部署Kubernetes时形成一个集群。如果您想命令您的Kubernetes集群执行任务，您可以使用命令行kubectl。它使用Kubernetes API与Kubernetes集群的控制面板进行通信。有了它，您几乎可以在Kubernetes集群上执行任何操作，而不需要直接调用API。</p>
+<p>拥有Kubernetes知识的程序员需求量很大，因为许多公司和组织都采用Kubernetes来高效地开发应用程序。</p>
+<p>准备好使用kubectl充分利用Kubernetes命令了吗？我们整理了这个kubectl cheat sheet，其中充满了关于管理Kubernetes集群、kubectl日志、kubectl list pods等等的见解。</p>
+
+<p>有了这个kubectl和Kubernetes命令备忘单，您将能够处理任何应用程序项目。</p>
+<p>我们开始吧！</p>
+<h2 id="download-kubectl-cheat-sheet-pdf"><strong>下载Kubectl备忘单PDF </strong></h2>
+<p>我们将讨论所有重要的Kubernetes命令，以便与集群控制面板进行通信。您可以随意使用这个kubectl/kubernetes备忘单。这是准备面试的绝佳资源，也是轻松完成应用项目的简单参考。</p>
+<p>这里有一个kubectl备忘单pdf的链接，您可以随时随地下载并离线访问。</p>
+<h3 id="h-qah77ugqeax5"><strong>立方自动完成</strong></h3>
+
+<p>要在当前shell中设置bash中的autocomplete，必须使用以下命令安装bash完成包。</p>
+<pre class="language-bash"><code>source &lt;(kubectl completion bash)</code></pre>
+<p>要将自动完成功能永久添加到bash shell中，请运行以下命令。</p>
+
+<pre class="language-bash"><code>echo "source &lt;(kubectl completion bash)" &gt;&gt; ~/.bashrc</code></pre>
+<p>您可以使用Kubectl的简称，如下所示。</p>
+<pre class="language-bash"><code>alias k=kubectl
+complete -F __start_kubectl k</code></pre>
+<h4 id="zsh"><strong> ZSH </strong></h4>
+<p>要在当前shell中设置zsh中的autocomplete，您需要运行以下命令。</p>
+<pre class="language-bash"><code>source &lt;(kubectl completion zsh)</code></pre>
+<p>您也可以运行以下命令使其永久化。</p>
+<pre class="language-bash"><code>echo "[[ $commands[kubectl] ]] &amp;&amp; source &lt;(kubectl completion zsh)" &gt;&gt; ~/.zshrc</code></pre>
+<h3 id="kubectl-context-and-configuration"><strong> Kubectl上下文和配置</strong></h3>
+<p>下一组命令将包括显示、上下文和用户信息。</p>
+<p>使用以下命令显示合并的kubeconfig设置:</p>
+<pre class="language-bash"><code>kubectl config view</code></pre>
+<p>同时使用几个kubeconfig文件，并使用以下命令查看合并的配置:</p>
+<pre class="language-bash"><code>KUBECONFIG=~/.kube/config:~/.kube/kubconfig2
+kubectl config view​</code></pre>
+<pre class="language-bash"><code>kubectl config view -o jsonpath='{.users[?(@.name == "e2e")].user.password}'</code></pre>
+<p>使用以下命令获取e2e用户的密码:</p>
+<p>运行以下命令显示第一个用户:</p>
+<pre class="language-bash"><code>kubectl config view -o jsonpath='{.users[].name}'</code></pre>
+<p>使用以下命令显示用户的完整列表:</p>
+<pre class="language-bash"><code>kubectl config view -o jsonpath='{.users[*].name}'</code></pre>
+<p>显示上下文列表:</p>
+<pre class="language-bash"><code>kubectl config get-contexts</code></pre>
+<p>显示当前上下文:</p>
+<pre class="language-bash"><code>kubectl config current-context</code></pre>
+<p>将默认上下文设置为my-cluster-name:</p>
+<pre class="language-bash"><code>kubectl config use-context my-cluster-name</code></pre>
+<p>向支持基本身份验证的kubeconf添加新用户:</p>
+<pre class="language-bash"><code>kubectl config set-credentials kubeuser/foo.kubernetes.com --username=kubeuser --password=kubepassword</code></pre>
+<p>为该上下文中的所有后续kubectl命令永久保存名称空间:</p>
+<pre class="language-bash"><code>kubectl config set-context --current --namespace=ggckad-s2</code></pre>
+<p>使用特定用户名和名称空间设置上下文:</p>
+<pre class="language-bash"><code>kubectl config set-context gce --user=cluster-admin --namespace=foo \
+ &amp;&amp; kubectl config use-context gce​</code></pre>
+<pre class="language-bash"><code>kubectl config unset users.foo</code></pre>
+<p>删除名为foo的用户:</p>
+<p>用短别名设置或显示上下文/名称空间:</p>
+<pre class="language-bash"><code>alias kx='f() { [ "$1" ] &amp;&amp; kubectl config use-context $1 || kubectl config current-context ; } ; f'
+alias kn='f() { [ "$1" ] &amp;&amp; kubectl config set-context --current --namespace $1 || kubectl config view --minify | grep namespace | cut -d" " -f6 ; } ; f'</code></pre>
+<p>“apply”通过定义Kubernetes资源的文件帮助管理应用程序。通过运行kubectl apply，可以很容易地在集群中创建和更新资源。这是管理生产应用程序的常用方法之一。Kubectl应用</p>
+<h3 id="h-cc7ich2fzmj1"><strong>创建对象</strong></h3>
+<p>Kubernetes中的对象是代表集群状态的持久实体。</p>
+<p>具体来说，他们可以描述:</p>
+<ul>
+<li>运行的容器化应用程序(以及在哪些节点上运行)</li>
+<li>这些应用程序的可用资源</li>
+<li>关于应用程序行为的策略，如升级和重启策略</li>
+</ul>
+<p>Kubernetes对象是“意图的记录”在您创建对象之后，Kubernetes系统将不断地工作以确保对象存在。通过创建一个对象，您可以向Kubernetes系统讲述集群的工作负载将会是什么样子(理想状态)。</p>
+<p>如果您想使用Kubernetes对象(创建、修改或删除)，您需要使用Kubernetes API。kubectl命令行界面(CLI)使您更容易进行必要的Kubernetes API调用。有兴趣直接使用Kubernetes API吗？试用其中一个客户端库。</p>
+<p>您可以在YAML或JSON中定义Kubernetes清单文件。这个清单文件带有扩展名。yaml，。yml，还有。json等。</p>
+<p>以下是允许您解决清单文件的命令。“应用”用于根据您的配置文件推送所需的更改。</p>
+<p>创建资源:</p>
+<pre class="language-bash"><code>kubectl apply -f ./my-manifest.yaml  </code></pre>
+<p>从多个文件创建:</p>
+
+<pre class="language-bash"><code>kubectl apply -f ./my1.yaml -f ./my2.yaml</code></pre>
+<p>在目录中的所有清单文件中创建资源:</p>
+<pre class="language-bash"><code>kubectl apply -f ./dir</code></pre>
+<p>**创建命令将有助于从文件或标准输入设备生成新资源。</p>
+<p>从url创建资源:</p>
+<pre class="language-bash"><code>kubectl apply -f https://git.io/vPieo</code></pre>
+<p>使用以下命令启动Nginx的单个实例:</p>
+<pre class="language-bash"><code>kubectl create deployment nginx --image=nginx</code></pre>
+<p>创建打印“Hello World:”的作业</p>
+<pre class="language-bash"><code>kubectl create job hello --image=busybox:1.28 -- echo "Hello World"</code></pre>
+<p>创建一个每分钟打印“Hello World”的CronJob:</p>
+<pre class="language-bash"><code>kubectl create cronjob hello --image=busybox:1.28   --schedule="*/1 * * * *" -- echo "Hello World"​</code></pre>
+<pre class="language-bash"><code>kubectl explain pods</code></pre>
+<p>检索pod清单的文档:</p>
+<p>从标准输入创建多个YAML对象:</p>
+<pre class="language-bash"><code>cat &lt;&lt;EOF | kubectl apply -f -
+apiVersion: v1
+kind: Pod
+metadata:
+ name: busybox-sleep
+spec:
+ containers:
+ - name: busybox
+   image: busybox:1.28
+   args:
+   - sleep
+   - "1000000"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: busybox-sleep-less
+spec:
+ containers:
+ - name: busybox
+   image: busybox:1.28
+   args:
+   - sleep
+   - "1000"
+EOF
+
+Create a secret</code></pre>
+<p>有几把钥匙:</p>
+<pre class="language-bash"><code>cat &lt;&lt;EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+ name: mysecret
+type: Opaque
+data:
+ password: $(echo -n "s33msi4" | base64 -w0)
+ username: $(echo -n "jane" | base64 -w0)
+EOF</code></pre>
+<h3 id="master-kubernetes-with-this-course">Kubernetes大师与本课程！</h3>
+<h3 id=""><a href="https://www.pntra.com/t/TUJGR0lLR0JHRklKSkdCR0ZISk1N?url=https%3A%2F%2Fwww.codecademy.com%2Flearn%2Flearn-kotlin" target="_blank" rel="noopener"><img src="../Images/809b66a56551a06a0bddc1baba0edef2.png" alt="learn kotlin" data-original-src="https://hackr.io/blog/media/learn-kotlin.png"/>T2】</a></h3>
+<h3 id="viewing-and-finding-resources"><strong>查看和查找资源</strong></h3>
+<p>在Kubernetes中，我们可以将资源定义为Kubernetes API中的端点。它负责存储特定种类的API对象的集合。例如，名为内置pod的资源是pod对象的集合。</p>
+
+<p>我们可以使用定制资源来扩展Kubernetes API。在Kubernetes的默认安装中，定制资源不必总是可用的。此外，自定义资源使我们有可能创建各种核心Kubernetes功能，这使Kubernetes在本质上更加模块化。</p>
+
+<p>动态注册使得定制资源在运行的集群中出现或消失成为可能。此外，集群管理员有权更新自定义资源，而无需考虑集群本身。与内置资源一样，用户也可以在安装时创建和访问自定义资源的对象。</p>
+<h4 id="get-commands-with-basic-outputs"><strong>“获取”命令和基本输出</strong></h4>
+<p>这些命令将帮助您从各种来源获取集群数据:</p>
+<ul>
+<li>kubectl get services: #用于显示名称空间中的所有服务</li>
+<li>kubectl get pods-all-namespaces:#用于显示所有名称空间中的所有pods</li>
+<li>kubectl get pods -owide:#用于显示当前名称空间中的所有pods，以及更多详细信息</li>
+<li>kubectl get deployment my-dep:#用于显示特定的部署</li>
+<li>kubectl get pods:#用于显示名称空间中的所有pods</li>
+<li>Kubrick得到了我的下-o YAML:# to get a pod YAML</li>
+</ul>
+<h4 id="describe-commands-to-display-the-verbose-output"><strong>“描述”命令显示详细输出</strong></h4>
+<pre class="language-bash"><code>kubectl describe nodes my-node
+kubectl describe pods my-pod</code></pre>
+<h4 id="list-services-sorted-by-name-commands-for-listing-period-trees-and-more"><strong>列出按名称排序的服务:列表命令、周期树等</strong></h4>
+<pre class="language-bash"><code>kubectl get services --sort-by=.metadata.name</code></pre>
+<p>按重新启动计数排序的列表窗格:</p>
+<pre class="language-bash"><code>kubectl get pods --sort-by='.status.containerStatuses[0].restartCount'</code></pre>
+<p>列出按容量排序的持久卷:</p>
+<p>ku bectl get PV-sort-by = . spec . capacity . storage</p>
+<p>获取标签为app=cassandra的所有pod的版本标签:</p>
+<pre class="language-bash"><code>kubectl get pods --selector=app=cassandra -o \
+ jsonpath='{.items[*].metadata.labels.version}'</code></pre>
+<p>获取带点的键的值，例如“ca.crt:”</p>
+<pre class="language-bash"><code>kubectl get configmap myconfig \
+ -o jsonpath='{.data.ca\.crt}'</code></pre>
+<p>对于这个命令，使用一个选择器来排除标签号为' node-role.kubernetes.io/master '的结果查看所有工作节点:</p>
+<pre class="language-bash"><code>kubectl get node --selector='!node-role.kubernetes.io/master'</code></pre>
+<p>获取命名空间中所有正在运行的窗格:</p>
+<pre class="language-bash"><code>kubectl get pods --field-selector=status.phase=Running</code></pre>
+<p>获取所有节点的ExternalIPs:</p>
+
+<pre class="language-bash"><code>kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'</code></pre>
+<p>这个命令对于对于jsonpath来说过于复杂的转换非常有用，可以在这里找到<a href="https://stedolan.github.io/jq/" target="_blank" rel="noopener"/>。列出属于特定RC“jq:”的pod的pod名称</p>
+
+<pre class="language-bash"><code>sel=${$(kubectl get rc my-rc --output=json | jq -j '.spec.selector | to_entries | .[] | "\(.key)=\(.value),"')%?}
+echo $(kubectl get pods --selector=$sel --output=jsonpath={.items..metadata.name})​</code></pre>
+<pre class="language-bash"><code>kubectl get pods --show-labels</code></pre>
+<p>显示所有窗格标签:</p>
+<p>检查哪些节点就绪:</p>
+<pre class="language-bash"><code>JSONPATH='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}{@.type}={@.status};{end}{end}' \
+&amp;&amp; kubectl get nodes -o jsonpath="$JSONPATH" | grep "Ready=True"​</code></pre>
+<pre class="language-bash"><code>kubectl get secret my-secret -o go-template='{{range $k,$v := .data}}{{"### "}}{{$k}}{{"\n"}}{{$v|base64decode}}{{"\n\n"}}{{end}}'</code></pre>
+<p>列出pod当前使用的所有机密；无需外部工具即可获得输出的解码机密；</p>
+<pre class="language-bash"><code>kubectl get pods -o json | jq '.items[].spec.containers[].env[]?.valueFrom.secretKeyRef.name' | grep -v null | sort | uniq</code></pre>
+<p>该命令在清理停止的容器时很有用，同时避免删除initContainers。列出所有pod的initContainer的所有containerIDs:</p>
+<pre class="language-bash"><code>kubectl get pods --all-namespaces -o jsonpath='{range .items[*].status.initContainerStatuses[*]}{.containerID}{"\n"}{end}' | cut -d/ -f3​</code></pre>
+<pre class="language-xml"><code>kubectl get events --sort-by=.metadata.creationTimestamp</code></pre>
+<p>列出按时间戳排序的事件:</p>
+<p>比较当前和未来的集群状态:</p>
+<pre class="language-bash"><code>kubectl diff -f ./my-manifest.yaml</code></pre>
+<p>为节点返回的所有键创建一个句点分隔的树:</p>
+<p>当在复杂的嵌套JSON结构中定位一个键时，这个命令很有帮助。</p>
+<pre class="language-bash"><code>kubectl get nodes -o json | jq -c 'paths|join(".")'</code></pre>
+<p>创建一个以句点分隔的树，包含为pod等返回的所有键。：</p>
+<pre class="language-bash"><code>kubectl get pods -o json | jq -c 'paths|join(".")'</code></pre>
+<p>为所有窗格创建一个包络:</p>
+<p>该命令假设您有一个用于窗格的默认容器、默认名称空间，并且支持“env”命令。在所有pod上运行任何支持的命令时，而不仅仅是“env ”,这是很有帮助的</p>
+<pre class="language-bash"><code>for pod in $(kubectl get po --output=jsonpath={.items..metadata.name}); do echo $pod &amp;&amp; kubectl exec -it $pod -- env; done</code></pre>
+<h3 id="updating-resources"><strong>更新资源</strong></h3>
+<ul>
+<li>滚动“前端”部署的更新“www”容器，更新映像:</li>
+</ul>
+<pre class="language-bash"><code>kubectl set image deployment/frontend www=image:v2            </code></pre>
+<ul>
+<li>检查部署的历史记录，包括版本:</li>
+</ul>
+<pre class="language-bash"><code>kubectl rollout history deployment/frontend      </code></pre>
+<ul>
+<li>回滚到以前的部署:</li>
+</ul>
+<pre class="language-bash"><code>kubectl rollout undo deployment/frontend</code></pre>
+<ul>
+<li>回滚到特定版本:</li>
+</ul>
+<pre class="language-bash"><code>kubectl rollout undo deployment/frontend --to-revision=2  </code></pre>
+<ul>
+<li>观察“前端”部署的滚动更新状态，直到完成:</li>
+</ul>
+<pre class="language-bash"><code>kubectl rollout status -w deployment/frontend  </code></pre>
+<ul>
+<li>滚动重启“前端”部署:</li>
+</ul>
+<pre class="language-bash"><code>kubectl rollout restart deployment/frontend                      </code></pre>
+<ul>
+<li>强制替换、删除然后重新创建资源:</li>
+</ul>
+<p>该命令可能会导致服务中断。</p>
+<pre class="language-bash"><code>kubectl replace --force -f ./pod.json</code></pre>
+<ul>
+<li>为复制的nginx创建一个服务，它服务于端口80并连接到端口8000上的容器:</li>
+</ul>
+<pre class="language-bash"><code>kubectl expose rc nginx --port=80 --target-port=8000</code></pre>
+<ul>
+<li>将单容器pod的映像版本(标签)更新为v4:</li>
+</ul>
+<pre class="language-bash"><code>kubectl get pod mypod -o yaml | sed 's/\(image: myimage\):.*$/\1:v4/' | kubectl replace -f -</code></pre>
+
+<pre class="language-bash"><code>kubectl label pods my-pod new-label=awesome  </code></pre>
+
+<pre class="language-bash"><code>kubectl annotate pods my-pod icon-url=http://goo.gl/XXBTWq</code></pre>
+<ul>
+<li>自动缩放名为“foo:”的部署</li>
+</ul>
+<pre class="language-bash"><code>kubectl autoscale deployment foo --min=2 --max=10</code></pre>
+<h3 id="h-ecqonpxfygu0"><strong>修补资源</strong></h3>
+<p>这些命令将根据需要修补资源。</p>
+
+<pre class="language-bash"><code>kubectl patch node k8s-node-1 -p '{"spec":{"unschedulable":true}}'</code></pre>
+<ul>
+<li>更新容器的图像:</li>
+</ul>
+<p>请记住，spec.containers[*]。名称是必需的，因为它是一个合并键</p>
+<pre class="language-bash"><code>kubectl patch pod valid-pod -p '{"spec":{"containers":[{"name":"kubernetes-serve-hostname","image":"new image"}]}}'</code></pre>
+<ul>
+<li>使用带有位置数组的json补丁更新容器的映像:</li>
+</ul>
+<pre class="language-bash"><code>kubectl patch pod valid-pod --type='json' -p='[{"op": "replace", "path": "/spec/containers/0/image", "value":"new image"}]'</code></pre>
+<ul>
+<li>使用带有位置数组的json补丁进行部署:</li>
+</ul>
+<pre class="language-bash"><code>kubectl patch deployment valid-deployment  --type json   -p='[{"op": "remove", "path": "/spec/template/spec/containers/0/livenessProbe"}]'</code></pre>
+<ul>
+<li>向位置数组添加新元素:</li>
+</ul>
+<pre class="language-bash"><code>kubectl patch sa default --type='json' -p='[{"op": "add", "path": "/secrets/1", "value": {"name": "whatever" } }]'</code></pre>
+<h3 id="h-rckvluwjklj9"><strong>编辑资源</strong></h3>
+<p>这些命令将根据需要编辑资源。</p>
+<ul>
+<li>编辑名为“docker-registry:”的服务</li>
+</ul>
+<pre class="language-bash"><code>kubectl edit svc/docker-registry  </code></pre>
+<ul>
+<li>使用替代编辑器:</li>
+</ul>
+<pre class="language-bash"><code>KUBE_EDITOR="nano" kubectl edit svc/docker-registry</code></pre>
+<h3 id="h-vj1vvffo18g6"><strong>缩放资源</strong></h3>
+<p>这些命令将根据需要扩展资源。</p>
+<ul>
+<li>将名为“foo”的Scalereplicaset设置为3:</li>
+</ul>
+<pre class="language-bash"><code>kubectl scale --replicas=3 rs/foo  </code></pre>
+<ul>
+<li>将“foo.yaml”中指定的资源缩放到3:</li>
+</ul>
+<pre class="language-bash"><code>kubectl scale --replicas=3 -f foo.yaml    </code></pre>
+<ul>
+<li>将mysql扩展到3(当名为mysql的部署的当前大小为2时):</li>
+</ul>
+<pre class="language-bash"><code>kubectl scale --current-replicas=2 --replicas=3 deployment/mysql</code></pre>
+<ul>
+<li>扩展多个复制控制器:</li>
+</ul>
+<pre class="language-bash"><code>kubectl scale --replicas=5 rc/foo rc/bar rc/baz                  </code></pre>
+<h3 id="h-cd2825xk7q9b"><strong>删除资源</strong></h3>
+<p>以下命令用于根据需要删除资源。</p>
+<ul>
+<li>使用pod.json中指定的类型和名称删除pod:</li>
+</ul>
+<pre class="language-bash"><code>kubectl delete -f ./pod.json                                    </code></pre>
+<ul>
+<li>删除没有宽限期的apod:</li>
+</ul>
+<pre class="language-bash"><code>kubectl delete pod unwanted -now</code></pre>
+<ul>
+<li>删除具有相同名称“baz”和“foo:”的pod和服务</li>
+</ul>
+<pre class="language-bash"><code>kubectl delete pod, service baz foo  </code></pre>
+<ul>
+<li>删除标签名称为myLabel的pods和服务:</li>
+</ul>
+<pre class="language-bash"><code>kubectl delete pods, services -l name=myLabel    </code></pre>
+<ul>
+<li>删除命名空间my-ns中的所有pod和服务:</li>
+</ul>
+<pre class="language-bash"><code>kubectl -n my-ns delete pod, svc --all      </code></pre>
+<ul>
+<li>删除与awk模式1或模式2匹配的所有pod:</li>
+</ul>
+<pre class="language-bash"><code>kubectl get pods  -n mynamespace --no-headers=true | awk '/pattern1|pattern2/{print $1}' | xargs  kubectl delete -n mynamespace pod</code></pre>
+<h3 id="h-sssh2ycxw83a"><strong>与跑步舱互动</strong></h3>
+<p>下一组命令将向您展示如何与正在运行的窗格进行交互:</p>
+
+<pre class="language-bash"><code>kubectl logs my-pod      </code></pre>
+<ul>
+<li>Dumppod日志，标签名称=myLabel(标准输出):</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs -l name=myLabel            </code></pre>
+<ul>
+<li>容器以前实例化的Dumppod日志(stdout ):</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs my-pod --previous            </code></pre>
+<ul>
+<li>Dumppod容器日志(标准输出，多容器情况):</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs my-pod -c my-container    </code></pre>
+<ul>
+<li>Dumppod日志，标签名称=myLabel(标准输出):</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs -l name=myLabel -c my-container    </code></pre>
+<ul>
+<li>容器先前实例化的Dumppod容器日志(标准输出，多容器情况):</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs my-pod -c my-container --previous    </code></pre>
+
+<pre class="language-bash"><code>kubectl logs -f my-pod              </code></pre>
+<ul>
+<li>Streampod容器日志(标准输出，多容器情况):</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs -f my-pod -c my-container    </code></pre>
+<ul>
+<li>流标签为name=myLabel (stdout)的所有pod日志:</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs -f -l name=myLabel --all-containers  </code></pre>
+<ul>
+<li>将apod作为交互式shell运行:</li>
+</ul>
+<pre class="language-bash"><code>kubectl run -i --tty busybox --image=busybox:1.28 -- sh  </code></pre>
+<ul>
+<li>在mynamespace的命名空间中启动nginx pod的单个实例:</li>
+</ul>
+<pre class="language-bash"><code>kubectl run nginx --image=nginx -n mynamespace  </code></pre>
+<ul>
+<li>运行apod nginx并将其规范写入名为pod.yaml的文件:</li>
+</ul>
+<pre class="language-bash"><code>kubectl run nginx --image=nginx                    
+--dry-run=client -o yaml &gt; pod.yaml</code></pre>
+<p>将pod连接到运行容器:</p>
+<pre class="language-bash"><code>kubectl attach my-pod -i                            </code></pre>
+<ul>
+<li>在本地机器上的端口5000上监听，并转发到my-pod上的端口6000:</li>
+</ul>
+<pre class="language-bash"><code>kubectl port-forward my-pod 5000:6000              </code></pre>
+<ul>
+<li>在现有pod中运行命令(1个容器案例):</li>
+</ul>
+<pre class="language-bash"><code>kubectl exec my-pod -- ls /                        </code></pre>
+<ul>
+<li>访问交互式外壳以运行pod (1个集装箱箱)</li>
+</ul>
+<pre class="language-bash"><code>kubectl exec --stdin --tty my-pod -- /bin/sh        </code></pre>
+<ul>
+<li>在现有pod中运行命令(多容器情况):</li>
+</ul>
+<pre class="language-bash"><code>kubectl exec my-pod -c my-container -- ls /        </code></pre>
+<ul>
+<li>显示给定窗格及其容器的度量:</li>
+</ul>
+<pre class="language-bash"><code>kubectl top pod POD_NAME --containers              </code></pre>
+<ul>
+<li>显示给定pod的指标，并按“cpu”或“内存:”对其排序</li>
+</ul>
+<pre class="language-bash"><code>kubectl top pod POD_NAME --sort-by=cpu              </code></pre>
+<h3 id="h-6pb3koc2c6kn"><strong>复制文件和目录</strong></h3>
+<p>这些命令帮助您复制文件和目录:</p>
+<ul>
+<li>将/tmp/foo_dir本地目录复制到当前名称空间的远程pod中的/tmp/bar_dir:</li>
+</ul>
+<pre class="language-bash"><code>kubectl cp /tmp/foo_dir my-pod:/tmp/bar_dir            </code></pre>
+<ul>
+<li>将/tmp/foo本地文件复制到特定容器的远程pod中的/tmp/bar:</li>
+</ul>
+<pre class="language-bash"><code>kubectl cp /tmp/foo my-pod:/tmp/bar -c my-container  </code></pre>
+<ul>
+<li>将/tmp/foo本地文件复制到名称空间my-namespace中的远程pod中的/tmp/bar:</li>
+</ul>
+<pre class="language-bash"><code>kubectl cp /tmp/foo my-namespace/my-pod:/tmp/bar      </code></pre>
+<ul>
+<li>将/tmp/foo从远程pod复制到本地的/tmp/bar:</li>
+</ul>
+<pre class="language-bash"><code>kubectl cp my-namespace/my-pod:/tmp/foo /tmp/bar      </code></pre>
+<h3 id="h-hc3ony70blum"><strong>与部署和服务交互</strong></h3>
+<p>下一组命令帮助您与部署和服务进行交互(转储、监听、查看、运行)。</p>
+<ul>
+<li>部署的转储容器日志(单容器情况):</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs deploy/my-deployment                        </code></pre>
+<ul>
+<li>部署的转储容器日志(多容器情况):</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs deploy/my-deployment -c my-container        </code></pre>
+<ul>
+<li>在本地端口5000上侦听，并转发到服务后端的端口5000</li>
+</ul>
+<pre class="language-bash"><code>kubectl port-forward svc/my-service 5000                  </code></pre>
+<ul>
+<li>监听本地端口5000，并转发到服务目标端口，名称为<my-service-port>:</my-service-port></li>
+</ul>
+<pre class="language-bash"><code>kubectl port-forward svc/my-service 5000:my-service-port  </code></pre>
+<ul>
+<li>在本地端口5000上侦听并转发到由<my-deployment>创建的Pod上的端口6000:</my-deployment></li>
+</ul>
+<pre class="language-bash"><code>kubectl port-forward deploy/my-deployment 5000:6000      </code></pre>
+<ul>
+<li>在部署中的第一个pod和第一个容器中运行命令(单容器或多容器情况):</li>
+</ul>
+<pre class="language-bash"><code>kubectl exec deploy/my-deployment -- ls                  </code></pre>
+<h3 id="h-ud6t8k6hhdga"><strong>与节点和集群交互</strong></h3>
+<p>了解如何使用下一组命令与节点和集群进行交互。</p>
+<ul>
+<li>将my-node标记为不可调度:</li>
+</ul>
+<pre class="language-bash"><code>kubectl cordon my-node                                                </code></pre>
+<ul>
+<li>排空my-node以准备维护:</li>
+</ul>
+<pre class="language-bash"><code>kubectl drain my-node                                                </code></pre>
+<ul>
+<li>将我的节点标记为可调度:</li>
+</ul>
+<pre class="language-bash"><code>kubectl uncordon my-node                                              </code></pre>
+<ul>
+<li>给定节点的显示度量:</li>
+</ul>
+<pre class="language-bash"><code>kubectl top node my-node                                              </code></pre>
+<ul>
+<li>显示主服务器和服务的地址:</li>
+</ul>
+<pre class="language-bash"><code>kubectl cluster-info                                                  </code></pre>
+<ul>
+<li>将当前集群状态转储到标准输出:</li>
+</ul>
+<pre class="language-bash"><code>kubectl cluster-info dump                                            </code></pre>
+<ul>
+<li>将当前群集状态转储到/path/to/cluster-state:</li>
+</ul>
+<pre class="language-bash"><code>kubectl cluster-info dump --output-directory=/path/to/cluster-state  </code></pre>
+<ul>
+<li>按照指定替换值(如果已经存在带有该键和效果的污点):</li>
+</ul>
+<pre class="language-bash"><code>kubectl taint nodes foo dedicated=special-user:NoSchedule</code></pre>
+<h3 id="h-fuz2cva1m8f2"><strong>集群管理</strong></h3>
+<p>这些命令帮助您管理集群，从列出API资源到显示相关信息:</p>
+<ul>
+<li>显示群集中主服务器和服务的端点信息:</li>
+</ul>
+<pre class="language-bash"><code>kubectl cluster-info</code></pre>
+<ul>
+<li>显示在客户机和服务器上运行的Kubernetes版本:</li>
+</ul>
+<pre class="language-bash"><code>kubectl version</code></pre>
+<ul>
+<li>检索集群配置</li>
+</ul>
+<pre class="language-bash"><code>kubectl config view</code></pre>
+<ul>
+<li>列出可用的API资源:</li>
+</ul>
+<pre class="language-bash"><code>kubectl api-resources</code></pre>
+<ul>
+<li>列出可用的API版本</li>
+</ul>
+<pre class="language-bash"><code>kubectl api-versions</code></pre>
+
+<pre class="language-bash"><code>kubectl get all --all-namespaces</code></pre>
+<h3 id="h-fo3anlb7d6ci"><strong>达蒙塞特</strong></h3>
+<p>一个<a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/" target="_blank" rel="noopener"> DaemonSet </a>确保节点运行pod副本。节点和单元被添加到集群中。类似地，一旦节点被移除，pod就经历垃圾收集。当您删除DaemonSet时，由它创建的所有窗格也会被删除。</p>
+<p>每个节点的一些典型DaemonSet用法:</p>
+<ul>
+<li>运行集群存储</li>
+<li>运行日志收集</li>
+<li>运行节点监控</li>
+</ul>
+<p>对于简单的情况，一个守护进程集可以覆盖所有节点和每种守护进程类型。更复杂的设置可能对一种类型的守护进程使用多个守护进程集，但是对不同的硬件类型使用不同的标志、内存和CPU请求。</p>
+<pre class="language-bash"><code>Shortcode = ds</code></pre>
+<ul>
+<li>列出一个或多个数据集:</li>
+</ul>
+<pre class="language-bash"><code>kubectl get daemonset​</code></pre>
+<ul>
+<li>编辑和更新一个或多个DaemonSet的定义:</li>
+</ul>
+<pre class="language-bash"><code>kubectl edit daemonset &lt;daemonset_name&gt;</code></pre>
+
+<pre class="language-bash"><code>kubectl delete daemonset &lt;daemonset_name&gt;</code></pre>
+
+<pre class="language-bash"><code>kubectl create daemonset &lt;daemonset_name&gt;</code></pre>
+<ul>
+<li>管理DaemonSet的首次展示:</li>
+</ul>
+<pre class="language-bash"><code>kubectl rollout daemonset</code></pre>
+<ul>
+<li>显示命名空间内DaemonSets的详细状态:</li>
+</ul>
+<pre class="language-bash"><code>kubectl describe ds &lt;daemonset_name&gt; -n &lt;namespace_name&gt;</code></pre>
+<h3 id="h-mxbq7van9hpb"><strong>部署</strong></h3>
+<p>部署运行多个应用程序副本，并自动替换任何失败或无响应的实例。部署由Kubernetes部署控制器管理。此外，部署确保用户请求通过应用程序的一个或多个实例得到服务。</p>
+<pre class="language-bash"><code>Shortcode = deploy</code></pre>
+<ul>
+<li>列出一个或多个部署:</li>
+</ul>
+<pre class="language-bash"><code>kubectl get deployment</code></pre>
+<ul>
+<li>显示一个或多个部署的详细状态:</li>
+</ul>
+<pre class="language-bash"><code>kubectl describe deployment &lt;deployment_name&gt;</code></pre>
+<ul>
+<li>编辑和更新一个或多个服务器部署的定义:</li>
+</ul>
+<pre class="language-bash"><code>kubectl edit deployment &lt;deployment_name&gt;</code></pre>
+
+<pre class="language-bash"><code>kubectl create deployment &lt;deployment_name&gt;</code></pre>
+
+<pre class="language-bash"><code>kubectl delete deployment &lt;deployment_name&gt;</code></pre>
+<ul>
+<li>检查部署的首次展示状态:</li>
+</ul>
+<pre class="language-bash"><code>kubectl rollout status deployment &lt;deployment_name&gt;</code></pre>
+<h3 id="h-8o4u9cw3vjk3"><strong>事件</strong></h3>
+<p>Kubernetes事件是框架中的一个对象，它是在响应其他资源(如节点、窗格或容器)的变化时自动生成的。</p>
+<p>状态变化是这个问题的核心。例如，pod生命周期的各个阶段(如从挂起到运行的转换，或者成功或失败的状态)可能会触发Kubernetes事件。重新分配和调度也是如此。</p>
+<pre class="language-bash"><code>Shortcode = ev</code></pre>
+<ul>
+<li>列出所有系统资源的所有最近事件:</li>
+</ul>
+<pre class="language-bash"><code>kubectl get events</code></pre>
+
+<pre class="language-bash"><code>kubectl get events --field-selector type=Warning</code></pre>
+<ul>
+<li>列出所有事件(不包括Pod事件):</li>
+</ul>
+<pre class="language-bash"><code>kubectl get events --field-selector involvedObject.kind!=Pod</code></pre>
+<ul>
+<li>提取具有特定名称的单个节点的所有事件:</li>
+</ul>
+<pre class="language-bash"><code>kubectl get events --field-selector involvedObject.kind=Node, involvedObject.name=&lt;node_name&gt;</code></pre>
+<ul>
+<li>从事件列表中过滤出正常事件:</li>
+</ul>
+<pre class="language-bash"><code>kubectl get events --field-selector type!=Normal</code></pre>
+<h3 id="logs"><strong>日志</strong></h3>
+<p>系统组件日志记录群集中发生的事件，这对调试很有用。要查看这些事件的所需详细信息，您可以配置日志详细程度。</p>
+<p>日志有两种类型，即细粒度和粗粒度。粗粒度日志表示组件中的错误。另一方面，细粒度的日志表示事件的逐步跟踪。</p>
+
+<pre class="language-bash"><code>kubectl logs &lt;pod_name&gt;</code></pre>
+<ul>
+<li>打印pod最后一小时的日志:</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs --since=1h &lt;pod_name&gt;</code></pre>
+<ul>
+<li>检索最近20行日志:</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs --tail=20 &lt;pod_name&gt;</code></pre>
+<ul>
+<li>从服务中检索日志，并可以选择哪个容器:</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs -f &lt;service_name&gt; [-c &lt;$container&gt;]</code></pre>
+<ul>
+<li>打印pod的日志并跟踪新日志:</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs -f &lt;pod_name&gt;</code></pre>
+<ul>
+<li>打印pod中容器的日志:</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs -c &lt;container_name&gt; &lt;pod_name&gt;</code></pre>
+<ul>
+<li>将pod的日志输出保存到名为“pod.log:”的文件中</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs &lt;pod_name&gt; pod.log</code></pre>
+<ul>
+<li>检查日志中以前出现故障的pod:</li>
+</ul>
+<pre class="language-bash"><code>kubectl logs --previous &lt;pod_name&gt;</code></pre>
+<h3 id="h-d7xcdg70xb8j"><strong>名称空间</strong></h3>
+<p>在Kubernetes中，名称空间提供了一种在单个集群中隔离资源组的机制。资源名称在一个命名空间内必须是唯一的，但在跨命名空间时不能是唯一的。基于命名空间的作用域仅适用于命名空间对象(例如，部署、服务等)。)而不是群集范围的对象(例如，存储类、节点、持久卷等)。).</p>
+<pre class="language-bash"><code>Shortcode = ns</code></pre>
+<ul>
+<li>创建一个名称空间<name>:</name></li>
+</ul>
+<pre class="language-bash"><code>kubectl create namespace &lt;namespace_name&gt;</code></pre>
+<ul>
+<li>列出一个或多个名称空间:</li>
+</ul>
+<pre class="language-bash"><code>kubectl get namespace &lt;namespace_name&gt;</code></pre>
+<ul>
+<li>显示一个或多个命名空间的详细状态:</li>
+</ul>
+<pre class="language-bash"><code>kubectl describe namespace &lt;namespace_name&gt;</code></pre>
+
+<pre class="language-bash"><code>kubectl delete namespace &lt;namespace_name&gt;</code></pre>
+<ul>
+<li>编辑和更新名称空间定义:</li>
+</ul>
+<pre class="language-bash"><code>kubectl edit namespace &lt;namespace_name&gt;</code></pre>
+<ul>
+<li>显示命名空间的资源(CPU/内存/存储)使用情况:</li>
+</ul>
+<pre class="language-bash"><code>kubectl top namespace &lt;namespace_name&gt;</code></pre>
+<h3 id="h-9weicmslcosh"><strong>复制控制器</strong></h3>
+<p>复制控制器是Kubernetes的一个关键特性，负责:</p>
+<ul>
+<li>管理pod生命周期</li>
+<li>确保指定数量的pod副本在任一时间点都在运行</li>
+<li>增加或减少指定的窗格数量</li>
+</ul>
+<pre class="language-bash"><code>Shortcode = rc</code></pre>
+<ul>
+<li>列出所有复制控制器:</li>
+</ul>
+<pre class="language-bash"><code>kubectl get rc</code></pre>
+<ul>
+<li>按名称空间列出复制控制器:</li>
+</ul>
+<pre class="language-bash"><code>kubectl get rc --namespace="&lt;namespace_name&gt;"</code></pre>
+<h3 id="h-5crx8gj34eps"><strong>复制集</strong></h3>
+<p>副本集确保您有一组稳定的副本集在运行。您可以使用一个来确认相同的pod是否可用。</p>
+<pre class="language-bash"><code>Shortcode = rs</code></pre>
+
+<pre class="language-bash"><code>kubectl get replicasets</code></pre>
+<ul>
+<li>显示一个或多个副本集的详细状态:</li>
+</ul>
+<pre class="language-bash"><code>kubectl describe replicasets &lt;replicaset_name&gt;</code></pre>
+
+<pre class="language-bash"><code>kubectl scale --replicas=[x]</code></pre>
+<h3 id="h-15zgusiqcd0f"><strong>秘密</strong></h3>
+<p>机密是包含少量敏感数据(如密码、令牌或密钥)的对象。这些信息或者存储在Pod规范中，或者存储在容器映像中。如果你使用一个秘密，你不需要在你的应用程序代码中包含机密数据。</p>
+
+<pre class="language-bash"><code>kubectl create secret</code></pre>
+
+<pre class="language-bash"><code>kubectl get secrets</code></pre>
+<ul>
+<li>列出所有需要的关于秘密的细节:</li>
+</ul>
+<pre class="language-bash"><code>kubectl describe secrets</code></pre>
+
+<pre class="language-bash"><code>kubectl delete secret &lt;secret_name&gt;</code></pre>
+<h3 id="h-qfnh0g1qgmjd"><strong>服务</strong></h3>
+<p>服务是将运行在一组pod上的应用程序公开为网络服务的一种直接方式。</p>
+<p>如果您想使用任何不熟悉的servicediscovery机制，那么在使用Kubernetes开发应用程序时，没有必要对其进行更改。这是因为Kubernetes为每个pod分配了一个唯一的IP地址，一个DNS可以管理多个pod上的所有负载。</p>
+<pre class="language-bash"><code>Shortcode = svc</code></pre>
+<ul>
+<li>列出一项或多项服务:</li>
+</ul>
+<pre class="language-bash"><code>kubectl get services</code></pre>
+<ul>
+<li>显示服务的详细状态:</li>
+</ul>
+<pre class="language-bash"><code>kubectl describe services</code></pre>
+<ul>
+<li>将复制控制器、服务、部署或pod作为新的Kubernetes服务公开:</li>
+</ul>
+<pre class="language-bash"><code>kubectl expose deployment [deployment_name]</code></pre>
+<ul>
+<li>编辑和更新一个或多个服务的定义:</li>
+</ul>
+<pre class="language-bash"><code>kubectl edit services</code></pre>
+<h3 id="h-ulbg9ha9kv52"><strong>服务账户</strong></h3>
+<p>服务帐户为在pod中运行的进程提供身份。下面是对服务帐户的有用介绍。</p>
+<pre class="language-bash"><code>Shortcode = sa</code></pre>
+
+<pre class="language-bash"><code>kubectl get serviceaccounts</code></pre>
+<ul>
+<li>显示一个或多个服务帐户的详细状态:</li>
+</ul>
+<pre class="language-bash"><code>kubectl describe serviceaccounts</code></pre>
+<ul>
+<li>替换服务帐户:</li>
+</ul>
+<pre class="language-bash"><code>kubectl replace serviceaccount</code></pre>
+<ul>
+<li>删除服务帐户:</li>
+</ul>
+<pre class="language-bash"><code>kubectl delete serviceaccount &lt;service_account_name&gt;</code></pre>
+<h3 id="h-oa4yh5fcwsmj"><strong>状态设置</strong></h3>
+<p>StatefulSets代表一组pod，它们具有唯一的、持久的身份和稳定的主机名，GKE维护这些身份和主机名，而不管它们被安排在哪里。与statefullset相关联的持久性磁盘存储器负责存储给定StatefulSet pod的状态信息和其他弹性数据。</p>
+<pre class="language-bash"><code>Shortcode = sts</code></pre>
+
+<pre class="language-bash"><code>kubectl get statefulset</code></pre>
+<ul>
+<li>仅删除状态集(非窗格):</li>
+</ul>
+<pre class="language-bash"><code>kubectl delete statefulset/[stateful_set_name] --cascade=false</code></pre>
+<p><strong><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcertified-kubernetes-administrator-with-practice-tests%2F" target="_blank" rel="noopener">Kubernetes认证管理员(CKA)</a></strong></p>
+<h2 id="h-udt7wy4wmnic"><strong>结论</strong></h2>
+<p>如果您想进入Kubernetes的世界，并在管理容器方面有很高的熟练程度，这个kubectl备忘单将帮助您实现目标。</p>
+<p>不要忘记下载我们的kubectl cheat sheet，这样您就可以随时轻松访问这些命令。</p>
+<p><a href="https://drive.google.com/file/d/1Z-kX_8o4ix0RPS9yah_gl4L9He6kKApZ/view?usp=sharing" target="_blank" rel="noopener">点击此处</a>下载我们的免费kubectl备忘单PDF。</p>
+<p>即将有一个工作面试？准备好我们关于<a href="https://hackr.io/blog/kubernetes-interview-questions"> Kubernetes面试问题</a>的文章！</p>
+<h2 id="frequently-asked-questions"><strong>常见问题解答</strong></h2>
+<h4 id="h-w4gqk0m5vof4"><strong> 1。我如何在Kubernetes中获得Pod详细信息？</strong></h4>
+<p>列出名称空间中的所有kubectl pods</p>
+<pre class="language-bash"><code>kubectl get pods</code></pre>
+<h4 id="h-v6upti7jfpay"><strong> 2。如何使用kubectl命令？</strong></h4>
+<p>下面是kubectl的基本语法:</p>
+<pre class="language-bash"><code>kubectl [command] [TYPE] [NAME] [flags]</code></pre>
+<p>命令部分描述了您想要执行的操作，例如创建、描述、获取、应用和删除。</p>
+<ul>
+<li>创建从文件或标准输入设备生成新资源</li>
+<li>描述检索有关资源或资源组的详细信息</li>
+<li>get从各种来源获取集群数据</li>
+<li>删除根据需要删除资源</li>
+<li>应用基于您的配置文件推送更改</li>
+</ul>
+<p>the描述kubectl所针对的资源类型，例如pods、服务、daemonsets、部署、复制集、statefulsets、Kubernetes作业和cron作业等</p>
+<p>name是一个区分大小写的字段，指定相关资源的名称。Flagshelp表示对某个资源的特殊选择或请求。</p>
+<h4 id="h-bgzlx7ghd8gv"><strong> 3。我能在库比特指挥吗？</strong></h4>
+<p>是的，你可以用kubectl命令。可以使用kubectl的auth can-i子命令查询API授权层。该命令确定使用kubectl的用户当前是否可以使用SelfSubjectAccessReview API执行给定的操作。</p>
+<h4 id="h-675ldq3i68nv"><strong> 4。我如何获得kubectl的Pod状态？</strong></h4>
+<p>您可以运行以下命令来获取pod状态:</p>
+<pre class="language-bash"><code>kubectl get pods -n kube-system some-appdeployment -o jsonpath="Name: {.metadata.name} Status: {.status.phase}"</code></pre>
+<h4 id="toc-5-how-do-i-run-a-kubectl-command-in-a-shell-script"><strong> 5。如何在Shell脚本中运行kubectl命令？</strong></h4>
+<p>您可以使用以下方法之一执行shell命令:</p>
+<p>在kubectl exec中打开一个bash命令shell，您可以在其中执行命令:</p>
+<pre class="language-bash"><code>kubectl exec -it pod-name -- /bin/bash</code></pre>
+<ul>
+<li>获取suitecrm-0 pod的外壳:</li>
+</ul>
+<pre class="language-bash"><code>kubectl exec -it suitecrm-0 -- /bin/bash</code></pre>
+<ul>
+<li>使用kubectl exec直接执行命令:</li>
+</ul>
+<pre class="language-bash"><code>kubectl exec -it pod-name -- /bin/bash -c "command(s)"</code></pre>
+<ul>
+<li>列出suitecrm-0 pod的根目录:</li>
+</ul>
+<pre class="language-bash"><code>kubectl exec -it suitecrm-0 -- /bin/bash -c "ls /"</code></pre>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

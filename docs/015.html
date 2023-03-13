@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>MariaDB vs MySQL: Everything You Need to Know [2023]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>MariaDB vs MySQL:你需要知道的一切[2023]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/mariadb-vs-mysql#0001-01-01">https://hackr.io/blog/mariadb-vs-mysql#0001-01-01</a></blockquote><div><div class="content">
+										<p>开发人员可以选择不止一种数据库。MySQL是世界上使用最广泛的数据库之一，但绝不是唯一的。MySQL是用C/C++开发的，是免费和开源的，因此已经取得了很大的进步</p>
+<p>然而，在甲骨文<a href="https://www.oracle.com/corporate/pressrelease/oracle-buys-sun-042009.html#:~:text=Oracle%20Corporation%20(NASDAQ%3A%20ORCL),of%20Sun's%20cash%20and%20debt." target="_blank" rel="noopener">收购太阳微系统</a>的过程中，一些从事MySQL开发的高级工程师觉得MySQL和甲骨文的商业数据库——甲骨文数据库服务器之间存在利益冲突。</p>
+<p>因此，这些工程师创建了MySQL代码库的一个分支，并开始了他们自己的组织。MariaDB就是这样诞生的。</p>
+<p>今天，这两个数据库都非常受欢迎，被开发人员社区广泛使用。MySQL在关系数据库中排名第二，总体排名第二(Oracle数据库第一)。MariaDB在关系数据库中排名第九，总体排名第十四。</p>
+
+<p>在本文中，我们将看看MariaDB和MySQL的异同。</p>
+<h2 id="differences-between-mariadb-and-mysql"><strong>Maria db和MySQL的区别</strong></h2>
+<table>
+<tbody>
+<tr>
+<td><strong>马里亚布</strong></td>
+<td><strong> MySQL </strong>的实现</td>
+</tr>
+<tr>
+<td>更快的性能</td>
+<td>相对较慢的性能</td>
+</tr>
+<tr>
+<td>开源</td>
+<td>技术上开源，但主要由Oracle管理</td>
+</tr>
+<tr>
+<td>更大的连接池</td>
+<td>小得多的连接池</td>
+</tr>
+<tr>
+<td>12个存储引擎</td>
+<td>更少的存储引擎</td>
+</tr>
+<tr>
+<td>适用于大数据</td>
+<td>不适用于大数据</td>
+</tr>
+<tr>
+<td>支持数据屏蔽</td>
+<td>不支持数据屏蔽</td>
+</tr>
+<tr>
+<td>支持动态列</td>
+<td>不支持动态列</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-is-mariadb"><strong>什么是MariaDB？</strong></h2>
+<p><img title="" src="../Images/2f87e940fde593b0b3dfe503d48a7f6c.png" alt="What is MariaDB" data-original-src="https://hackr.io/blog/media/what-is-mariadb-min.png"/></p>
+<p>MariaDB是MySQL关系数据库管理系统(RDBMS)的开源分支。开发人员，包括一些最初为MySQL工作的人，在2009年对甲骨文收购MySQL感到担忧后，创建了fork。作为MySQL的一个分支，MariaDB非常兼容前者。</p>
+<p>它支持与MySQL相同的特性，但也有更多的特性，我们将在下面看到。一些最重要的特性是新的存储引擎、JSON API支持和并行数据复制。</p>
+<h2 id="what-is-mysql"><strong>什么是MySQL？</strong></h2>
+<p><img title="" src="../Images/7728f1605372d1d79fc8c430bdb4b4df.png" alt="What is MySQL" data-original-src="https://hackr.io/blog/media/what-is-mysql-min.png"/></p>
+<p>MySQL是一个RDBMS，它允许您在表中存储数据并操作它们。它由Michael Widenius于1996年首次发布，他现在是MariaDB的首席开发人员。</p>
+
+<p>MySQL是世界上最流行的RDBMS，被一些最大的技术公司和平台所使用。这包括脸书、YouTube和Twitter。</p>
+<p>在WordPress网站上可以找到MySQL有多受欢迎的更具体的例子。数据库系统让用户存储博客文章、用户和插件信息。</p>
+<h2 id="mariadb-vs-mysql"><strong> MariaDB vs MySQL </strong></h2>
+<h3 id="performance-comparison"><strong>性能对比</strong></h3>
+<p>与MySQL相比，MariaDB有几项旨在提高性能的优化。一般来说，当谈到MySQL与MariaDB的性能时，后者显然更好，正如我们将在下面看到的那样。</p>
+<h4 id="database-views"><strong>数据库视图</strong></h4>
+<p>在数据库“视图”方面有巨大的性能优化。“视图”本质上是虚拟数据库表，可以像数据库的常规表一样进行查询。</p>
+<p>在MySQL中，当查询一个视图时，所有连接到该视图的表都会被查询，而不管查询可能不需要其中的一些表。这在MariaDB中已经过优化，查询只针对那些需要的表。</p>
+<h4 id="columnstore"><strong>列存储</strong></h4>
+<p>MariaDB以“ColumnStore”的形式提供了另一个强大的性能改进，这是一个分布式数据架构，允许极大地扩展MariaDB。它可以线性扩展，在数据库集群中的各种服务器上存储数Pb的数据。</p>
+<h4 id="better-performance-in-flash-storage"><strong>闪存存储性能更佳</strong></h4>
+<p>MariaDB还提供了一个MyRocks存储引擎，将RocksDB数据库添加到其中。RocksDB是一种数据库，通过提供更高级别的数据压缩，旨在提高闪存存储的性能。</p>
+<h4 id="segmented-key-cache"><strong>分段密钥缓存</strong></h4>
+<p>MariaDB以分段键缓存的形式引入了另一项性能改进。在典型的缓存中，不同的线程竞争获取缓存条目的锁。这些锁被称为互斥锁。当多个线程竞争一个互斥体时，只有其中一个能够得到它，而其他线程必须等待锁被释放后才能执行操作。这会导致这些线程的执行延迟，从而降低数据库性能。</p>
+<p>在分段键缓存的情况下，线程不需要锁定整个页面，但它可以只锁定页面所属的特定段。这有助于多线程并行工作，从而提高应用程序的并行性，从而提高数据库的性能。</p>
+<h3 id="virtual-columns"><strong>虚拟列</strong></h3>
+<p>MariaDB的另一个有趣的特性是它支持虚拟列。这些列能够在数据库级别执行计算。当许多应用程序访问同一列时，这非常有用，因此不需要在每个应用程序中编写计算。这个特性在MySQL中不可用。</p>
+<h3 id="parallel-execution-of-queries"><strong>查询的并行执行</strong></h3>
+<p>MariaDB v10.0和更高版本允许并行执行多个查询。其思想是，来自主服务器的一些查询可以在从服务器中复制，因此可以并行执行。查询执行中的这种并行性无疑为MariaDB提供了超越MySQL的优势。</p>
+<h3 id="thread-pooling"><strong>线程池</strong></h3>
+<p>MariaDB还引入了一个叫做“线程池”的新概念。以前，当需要到数据库的多个连接时，对于每个连接，一个线程被打开，导致基于“每个连接一个线程”的架构。</p>
+<p>有了“线程池”，就有了新连接可以获取并查询数据库的开放线程池。这样，不需要为每个新的连接请求打开一个新的线程，从而导致更快的查询结果。这个特性在MySQL的企业版中有，但在社区版中没有。</p>
+<h3 id="storage-engines"><strong>存储引擎</strong></h3>
+<p>MariaDB提供了几个强大的现成存储引擎，这是MySQL所没有的。比如XtraDB，Aria等。要为MySQL设置这些存储引擎，您需要手动安装它们，这可能不是最方便的过程。</p>
+<h3 id="compatibility"><strong>兼容性</strong></h3>
+<p>MariaDB团队正在确保MariaDB可以在现有的应用程序中无缝地取代MySQL。事实上，对于MySQL的每个版本，他们都发布相同的MariaDB版本号，以表明MariaDB与相应的MySQL版本大体兼容。这开启了无缝切换到MariaDB的可能性，而无需对应用程序代码库进行任何修改。</p>
+<h3 id="open-source-vs-proprietary-database"><strong>开源与专有数据库</strong></h3>
+<p>MySQL是一个大型项目，由世界上最大的组织之一Oracle管理。这有利有弊。好处是，这意味着更好的安全性、软件稳定性和定制的客户支持体验。然而，一个显著的缺点是在如此大的组织中发布新特性需要花费大量时间。</p>
+<p>另一方面，MariaDB是完全开源的，他们接受外部贡献并将其作为新功能和增强功能发布的速度相当快。</p>
+<h2 id="should-you-pick-mariadb-or-mysql">你应该选择MariaDB还是MySQL？</h2>
+<p>MariaDB无疑是相当强大的，它提供了许多极其有用而MySQL不支持的特性。这些特性使得MariaDB成为作为主要后端数据库的有利选择。</p>
+<p>一般来说，已经为Oracle购买了许可证的组织不需要投资MariaDB。然而，对于那些重新开始并想决定使用哪个数据库的人来说，无疑MariaDB是一个更好的选择。</p>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>如您所见，在MariaDB与MySQL的面对面比较中，没有不可辩驳的理由来选择其中之一。MariaDB更适合刚开始的人。那些已经在使用MySQL的人可以坚持下去，不要太担心性能损失。</p>
+<p>更好的是，如果你需要的话，可以很容易地从MySQL转换到MariaDB。两者各有利弊，所以你的决定应该反映你的需求。</p>
+<p><a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.1187016&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert%2F" target="_blank" rel="noopener">终极MySQL训练营:从SQL初学者到专家</a></p>
+<h2 id="frequently-asked-questions"><strong>常见问题解答</strong></h2>
+<h4 id="toc-1-is-mariadb-the-same-as-mysql"><strong> 1。MariaDB和MySQL一样吗？</strong></h4>
+<p>不，Maria和MySQL不一样，虽然它是MySQL的一个分支。如前所述，MySQL和MariaDB之间有几个不同之处。您使用哪一种将取决于您的需求。</p>
+<h4 id="toc-2-is-mariadb-better-than-mysql"><strong> 2。MariaDB比MySQL好吗？</strong></h4>
+<p>不。虽然MariaDB比MySQL有更多的特性，但两者都有优点和缺点，你选择哪一个将取决于你的需求。</p>
+<h4 id="toc-3-is-mariadb-replacing-mysql"><strong> 3。MariaDB正在取代MySQL吗？</strong></h4>
+<p>不，MariaDB不会取代MySQL。然而，它变得越来越流行，给MySQL带来了一些竞争。</p>
+<h4 id="toc-4-what-is-mariadb-used-for"><strong> 4。MariaDB是用来做什么的？</strong></h4>
+<p>MariaDB是一个关系数据库管理系统(RDBMS ),其用途与MySQL相同，包括数据仓库和电子商务。</p>
+
+<h4 id="toc-5-is-mariadb-better-for-wordpress"><strong> 5。MariaDB更适合WordPress吗？</strong></h4>
+<p>MariaDB和MySQL的基准测试表明，MariaDB在WordPress性能方面要好得多。两者都可以为WordPress工作，但显然MariaDB的性能更高。</p>
+<h4 id="toc-6-can-i-install-mysql-and-mariadb-on-the-same-server"><strong> 6。可以在同一个服务器上安装MySQL和MariaDB吗？</strong></h4>
+<p>是的，您可以在同一台服务器上安装MySQL和MariaDB。这里有一个如何做的指南。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

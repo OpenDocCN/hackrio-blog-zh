@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Breadth-First Search Algorithm [BFS] with Examples</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>广度优先搜索算法[BFS]及实例</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/breadth-first-search-algorithm#0001-01-01">https://hackr.io/blog/breadth-first-search-algorithm#0001-01-01</a></blockquote><div><div class="content">
+										<h2 id="what-is-the-graph-algorithm">什么是图算法？</h2>
+<p>图是使用节点(顶点)和边G = <em> (V，E) </em>来表示连通性的抽象方式。图节点从1到n被标记，m条边连接成对的节点。这些边可以是单向的，也可以是双向的。图算法已经公式化并解决了许多问题，例如最短路径、网络流问题、图着色问题等等。图G = <em> (V，E) </em>的表示有两种标准方式，即邻接矩阵和邻接表。一些特别流行的图表类型有:</p>
+<ul>
+<li>树:一个非循环图，</li>
+<li>有向无环图，</li>
+<li>二分图:节点被分成两组，S和T，这样边只存在于S和T之间(S或T内没有边)。</li>
+</ul>
+<p>使用两种流行的遍历算法深度优先搜索和广度优先搜索算法来遍历该图。在本文中，我们将详细研究广度优先搜索算法。</p>
+<h2 id="what-is-the-breadth-first-search-algorithm">什么是广度优先搜索算法？</h2>
+<p>广度优先搜索是一种简单的图遍历算法，用于搜索整个图。考虑一个图G = <em> (V，E) </em>和一个源顶点S，广度优先搜索算法探索图G的边以“发现”从S可达的每个顶点V。该算法负责计算从源S到每个可达顶点V的距离。该算法适用于无向图和有向图。</p>
+<p><strong> <em>最短路径:</em> </strong>它定义为包含最少边数的图G中从源S到顶点V的路径。</p>
+
+<p><img src="../Images/00a3e447d1987b4df85e4ca1a3f6a1cf.png" alt="Archtiecture of BFS" data-original-src="https://hackr.io/blog/media/architecture-of-bfs.png"/></p>
+<h1>该算法</h1>
+<p>广度优先搜索之所以如此命名，是因为它在整个树上均匀地划分已发现和未发现的顶点。该算法在发现k +1距离处的任何更多顶点之前，发现距离s为k的所有顶点。广度优先搜索将每个顶点涂成灰色、白色或黑色，以跟踪所有顶点并区分它们。一个顶点是白色的，直到它在搜索过程中被算法访问，然后变成非白色。灰色和黑色的顶点表示它们已经被发现，但是广度优先搜索给了它们不同的颜色来以广度优先的方式移动。如果(u，v) E和顶点u是黑色的，那么顶点v要么是灰色的，要么是黑色的，这意味着如果一个顶点是黑色的，那么与其相邻的所有顶点都已经被发现了。</p>
+<p>灰色顶点可能有一些相邻的白色顶点。它们代表了未发现顶点和已发现顶点之间的边界。它首先创建仅包含根或源顶点s的树。每当该算法在扫描已经发现的顶点u的邻接表时遇到白色顶点v，则顶点v和边(u，v)被添加到树中。这样，在广度优先树中，u被称为v的前身或父代。BFS树中的祖先和后代的这种关系是相对于根来定义的；如果顶点u在树中从S到v的路径上，那么u是v的祖先，v是u的后代。</p>
+<p>该算法的伪代码如下:</p>
+<pre><em>BFS(G,s)</em><br/><em>1 for each vertex u </em><em> G, V - </em><br/><em>2 </em><em>    </em><em>u.color = WHITE</em><br/><em>3 </em><em>    </em><em>u.d = ∞</em><br/><em>4 </em><em>    </em><em>u.</em><em>?</em><em> = NIL</em><br/><em>5 s.color = GRAY</em><br/><em>6 s.d = 0</em><br/><em>7 s.</em><em>?</em><em>= NIL</em><br/><em>8 Q = ∅</em><br/><em>9 ENQUEUE (Q,s)</em><br/><em>10   while Q = ∅</em><br/><em>11 </em><em>   </em><em>u = DEQUEUE</em><br/><em>12 </em><em>   </em><em>for each v </em><em> G. Adj[u]</em><br/><em>13 </em><em> </em><em>      </em><em>if v.color == WHITE</em><br/><em>14 </em><em> </em><em> </em><em>          </em><em>v.color = GRAY</em><br/><em>15 </em><em> </em><em> </em><em>          </em><em>v.d = u.d + 1</em><br/><em>16 </em><em> </em><em> </em><em>          </em><em>v.</em><em>?</em><em> = u</em><br/><em>17 </em><em> </em><em> </em><em>          </em><em>ENQUEUE (Q, v)</em><br/><em>18 </em><em>  </em><em> </em><em>u.color = BLACK</em></pre>
+<h3 id="example-working-of-breadth-first-search-algorithm">广度优先搜索算法的工作示例</h3>
+<p>无向图上的BFS运算。树的边缘显示为阴影，因为它们是由BFS制作的。u.d的值出现在每个顶点u内。队列Q显示在while循环的每次迭代的开始处。顶点距离显示在队列中顶点的下方。</p>
+<p><img src="../Images/4d59d4db2e0d2fda015d5bfa42349d26.png" data-original-src="https://hackr.io/blog/media/a.png"/><img src="../Images/83a89995a7cee53785b913508907fc94.png" data-original-src="https://hackr.io/blog/media/b-1.png"/><img src="../Images/5938801cd6b4feb04128d8398ee7063b.png" data-original-src="https://hackr.io/blog/media/c-1.png"/><img src="../Images/89c04a1f3e22b70f7e8a3b061d220741.png" data-original-src="https://hackr.io/blog/media/d.png"/><img src="../Images/3c2059b9b2142218d7868e2b0f044eaa.png" data-original-src="https://hackr.io/blog/media/e.png"/><img src="../Images/40f3a7294b0b114f07246c70b7290e85.png" data-original-src="https://hackr.io/blog/media/f.png"/><img src="../Images/eb442b70c01eac7290de770c56e090f5.png" data-original-src="https://hackr.io/blog/media/g.png"/><img src="../Images/bf0e7cfb9747682f51b417eee8d0c26b.png" data-original-src="https://hackr.io/blog/media/h.png"/><img src="../Images/b18df8eca8646ae9cc8941828da1d29d.png" data-original-src="https://hackr.io/blog/media/i.png"/><span>一旦访问了所有节点，该算法就计算出根节点s与其链接节点之间的最短路径。`</span></p>
+
+<h3 id="complexity-analysis-of-bfs">BFS的复杂性分析</h3>
+<p>让我们知道考虑在输入图上分析BFS算法的运行时间<em> G= (V，E) </em>。初始化后，广度优先搜索从不白化顶点，从而确保每个顶点最多入队和出列一次。每个入队和出队操作花费的时间是O(1)，因此用于队列操作的总时间是O(V)。该算法最多扫描一次每个顶点的邻接表，当该顶点出队时。所有邻接表的长度之和等于多少？<strong> ( </strong> E)，扫描邻接表的时间为O(E)。初始化的开销被计算为O(V ),因此BFS算法的总运行时间复杂度为O (V + E)。</p>
+<p>因此，该算法的运行时间与图g的邻接表表示的大小成线性关系。</p>
+<p><strong>建议课程</strong></p>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fadvanced-algorithms-in-java%2F" target="_blank" rel="noopener">Java中的高级算法(图形算法)</a></p>
+<h3 id="why-do-we-need-a-bfs-algorithm">为什么我们需要BFS算法？</h3>
+<p>当在任何数据集中搜索数据时，BFS算法提供了几个可以使用的理由。它为我们提供了相当多的方面，使我们认为它是一个有效的算法。一些受欢迎的方面是:</p>
+<ul>
+<li>这对于分析图中的节点和构造最短路径遍历是有用的。</li>
+<li>该算法以最少的迭代次数遍历给定的图。</li>
+<li>该算法的结构是健壮的。</li>
+<li>BFS算法的结果为我们提供了最高水平的准确性。</li>
+<li>该算法的迭代是无缝的，因此不会陷入无限循环问题。</li>
+</ul>
+<h3 id="rules-of-bfs-algorithm">BFS算法的规则</h3>
+<p>下面列出了使用BFS算法的规则:</p>
+<ul>
+<li>它使用队列数据结构(FIFO)</li>
+<li>图中的任何节点都被标记为开始遍历的根。</li>
+<li>在遍历所有节点时，它会不断删除图中的节点。</li>
+<li>该算法访问相邻的未访问节点，并保持它们插入队列。</li>
+<li>如果没有找到相邻的顶点，它从队列中删除前一个顶点。</li>
+<li>BFS算法不断迭代，直到所有的顶点都被访问或遍历并标记为完成。</li>
+<li>在从任何节点遍历数据的过程中，该算法不会导致任何循环。</li>
+</ul>
+<h3 id="breadth-first-search-algorithm-applications">广度优先搜索算法的应用</h3>
+<p>下面列出了BFS算法实现的一些实际应用:</p>
+<ul>
+<li><strong>无权重图:</strong>使用BFS算法可以在最短的时间内轻松创建图中最短路径和访问所有顶点的最小生成树，并且精度很高。</li>
+<li><strong> P2P网络:</strong>实现该算法是为了更快地找到所需的数据，因为它在对等网络中定位所有最近的和邻近的节点。</li>
+<li><strong>网络爬虫:</strong>算法为搜索引擎和网络爬虫建立多级索引。BFS实现从作为源的网页开始，然后访问作为节点的所有链接。</li>
+<li><strong>导航系统:</strong>可以使用BFS算法从主位置或源位置检测邻近位置。</li>
+<li><strong>网络广播:</strong>使用BFS算法引导并跟踪广播的数据包，以搜索并到达所有寻址的节点。</li>
+</ul>
+<h2 id="summary">摘要</h2>
+<p>这就是简单的图遍历算法，广度优先搜索算法。总之，图的遍历需要算法访问、检查和更新(如果需要)树状结构中所有未访问的节点。众所周知，BFS算法用于分析图中的节点并寻找最短的遍历路径。BFS是一种复杂度为O(V + E)的高效算法，其图遍历在尽可能短的时间内包含较少的迭代次数，不会陷入无限循环。该算法因其稳健的特性而被用于多种现实应用中，如<a href="https://en.wikipedia.org/wiki/Web_crawler">网络爬虫</a>、P2P网络。你有没有注意到任何你认为是BFS算法在背后起作用的应用？请在下面的评论中与我们分享。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

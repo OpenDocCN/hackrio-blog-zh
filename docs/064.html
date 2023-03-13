@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>How to Run a Python Script via a File or the Shell</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何通过文件或外壳运行Python脚本</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/how-to-run-python-script#0001-01-01">https://hackr.io/blog/how-to-run-python-script#0001-01-01</a></blockquote><div><div class="content">
+										<p>Python不仅是领先的编程语言之一，也是处理大数据和数据科学项目的首选。事实上，它是最容易学习的语言之一，这使得高级、解释型、通用编程语言更加有利可图。</p>
+<p>为了在系统上使用Python，用户首先需要安装Python环境。它还将安装Python解释器，负责执行Python代码。可以使用Python解释器直接从终端运行Python代码。</p>
+<h2 id="how-to-run-python-script">如何运行Python脚本？</h2>
+<p>尽管直接从终端使用Python解释器既快速又方便，但这种方法对于实际的程序来说是不切实际的。这是因为每次需要执行代码时，您都需要键入代码。这就是Python脚本派上用场的地方。</p>
+<p>Python脚本就是一个Python程序，一组保存在文本文件中的指令。一旦创建了Python脚本，就可以一遍又一遍地执行它，而不需要重新键入包含的代码。它们还允许编辑。</p>
+
+<p>要运行Python脚本，您需要首先设置Python，并确保您有一个可用的Python解释器。</p>
+<h3 id="the-python-interpreter"><strong>Python解释器</strong></h3>
+<p>Python解释器负责执行Python脚本。它在REPL环境下工作，该环境也被称为交互式顶级shell。</p>
+<p>REPL代表<strong> R </strong>领导命令，<strong> E </strong>评估并执行命令，<strong> P </strong>打印输出，<strong> L </strong>返回并重复整个过程。Python解释器继续执行，直到exit()或quit()命令指示停止。</p>
+<h3 id="how-to-start-the-python-interpreter"><strong>如何启动Python解释器？</strong></h3>
+<p>启动解释器最常见的方式是打开终端，然后从命令行使用解释器。要打开终端:</p>
+<ul>
+<li>在Windows中搜索命令提示符或Powershell</li>
+<li>在Linux/MacOS中搜索终端</li>
+</ul>
+<p>终端打开后，键入python并按enter键启动Python解释器。终端上的&gt;&gt;&gt;表示与Python解释器的交互。如果它不存在，您可能需要在您的系统上重新安装Python。</p>
+<h3 id="recommend-python-course">推荐Python课程</h3>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomplete-python-bootcamp%2F" target="_blank" rel="noopener">用Python完成从零到英雄的Python boot camp</a></p>
+
+<h3 id="running-the-hello-world-python-program"><strong>运行Hello，World！Python程序</strong></h3>
+<p>先说传统的你好，世界！程序。在&gt;&gt;&gt;提示符前面，键入:</p>
+<pre>print (“Hello, World!”)
+Now, hit the enter key. The output will appear as:
+&gt;&gt;&gt; print (“Hello, World!”)
+</pre>
+<p>你好，世界！</p>
+<p><strong>注意</strong> : -在运行Python代码时，Python解释器会考虑缩进。因此，如果您在print关键字之前添加一个额外的空格，您将会得到如下错误:</p>
+<pre>&gt;&gt;&gt; print("Hello, World!") File "", line 1 print("Hello, World!") ^ IndentationError: unexpected indent
+</pre>
+<h3 id="creating-the-hello-world-python-script-using-a-text-editor"><strong>创造你好，世界！使用文本编辑器的Python脚本</strong></h3>
+<p>使用Python解释器足以快速执行一些Python代码。因为更大的项目需要更多的代码行，所以最好创建一个Python脚本，而不是一遍又一遍地输入它。</p>
+<p>要创建Python脚本，只需在您的系统上打开一个文本编辑器，然后添加您希望使用的Python代码。为了演示，我们将添加Hello，World！我们之前运行到新创建的文本文件中的代码，它是:</p>
+<pre>print (“Hello, World!”)
+</pre>
+<p>现在，将文件保存为hello.py。</p>
+<p><strong>注意</strong>:Python脚本不一定需要扩展。这意味着Python解释器将运行包含Python脚本的文件，而不管文件的扩展名是什么。</p>
+<p>为Python脚本文件提供. py扩展名是为了方便起见。它使得包含Python脚本的文件易于识别。</p>
+<h3 id="running-the-hello-world-python-program-using-a-python-script"><strong>运行Hello，World！使用Python脚本的Python程序</strong></h3>
+<p>现在，我们将执行在上一节中创建的Python脚本。首先，启动终端。导航到存储文件的位置。通过将文件名指定为Python解释器的命令行参数，可以轻松执行Python脚本:</p>
+<pre>python hello.py
+</pre>
+<p>输出将是:</p>
+<pre>Hello, World!</pre>
+<p>您可以使用这个过程直接从终端运行任何Python脚本。</p>
+<h3 id="running-the-hello-world-python-script-using-idle"><strong>运行Hello，World！使用空闲的Python脚本</strong></h3>
+<p>从Python的1.5.2b1实现版本开始，Python环境就伴随着一个被称为IDLE的集成开发环境。它是Python打包的可选部分。IDLE是用Python和Tkinter编写的，Tkinter是Python事实上的GUI。</p>
+<p>除了直接从终端运行Python脚本之外，还可以使用IDLE来执行它们。以下是使用IDLE执行Python脚本的分步说明:</p>
+<ul>
+<li>步骤# 01–空转。它将打开一个“Python Shell”窗口，并显示一个&gt;&gt;&gt;提示符</li>
+<li>步骤# 02–单击文件选项卡，然后单击新建窗口。将打开一个新的无标题窗口。在这里，您可以编辑Python脚本</li>
+<li>步骤# 03–输入Python脚本，print ("Hello，World！")，在无标题窗口中</li>
+<li>步骤# 04–现在，转到“运行”选项卡，然后单击“运行模块”选项。或者，您可以按F5键立即执行Python脚本</li>
+<li>步骤# 05–在显示输出之前，会出现一个对话框提示您“必须保存源文件”。可以保存吗？”单击确定继续。</li>
+<li>步骤# 06–在另存为对话框中，指定要保存Python脚本的目录以及Python脚本的名称，然后点击保存按钮</li>
+<li>步骤# 07–现在,“Python Shell”窗口将显示输出(Hello，World！)用于Python脚本</li>
+<li>步骤# 08–您可以编辑Python脚本，并根据需要多次重新运行修改后的代码</li>
+</ul>
+<h3 id="running-the-hello-world-python-script-using-a-python-ide"><strong>运行Hello，World！使用Python IDE的Python脚本</strong></h3>
+<p>ide让程序员的生活变得更加轻松。因为Python是一种流行的编程语言，所以有大量的ide。</p>
+<p>不同的<a href="https://hackr.io/blog/best-python-ide">Python ide</a>有不同的接口。因此，执行Python脚本的过程会有所不同。然而，每一个Python IDE都有一个共同点，那就是方便。</p>
+<p>无论您使用什么Python IDE，创建、运行、编辑和保存Python脚本都非常容易。为了演示，我们将在这里使用Eclipse。</p>
+<p><strong>注意</strong>:尽管Eclipse是<a href="https://hackr.io/blog/best-java-ides">最流行的Java IDE之一</a>，但它也可以作为多种编程语言的IDE。为了使用Eclipse处理Python，您需要安装PyDev插件。</p>
+<h3 id="creating-a-python-script"><strong>创建Python脚本</strong></h3>
+<p>使用Eclipse创建Python脚本有两种方式。您可以选择File-&gt;New-&gt;Pydev Module，或者右键单击项目中的一个文件夹(设置项目时添加到PYTHONPATH中的文件夹),然后选择New-&gt;Pydev Module。</p>
+<p>现在在你面前会有四个字段:</p>
+<ul>
+<li><strong>源文件夹—</strong>存储Python脚本的文件夹。在此输入Python脚本的目标</li>
+<li><strong>包—</strong>是一个可以组织代码的附加工具。请留空</li>
+<li><strong>名称—</strong>在此添加模块的名称。不要添加。py扩展名，因为它将由IDE自动添加</li>
+<li><strong>模板—</strong>保留默认值</li>
+</ul>
+<p>现在，单击Finish按钮，让Eclipse创建一个新的Python模块。</p>
+<h3 id="editing-a-python-script"><strong>编辑Python脚本</strong></h3>
+<p>要编辑脚本，请在项目部分打开它并双击它。使用Eclipse可以同时打开多个Python脚本。</p>
+<p>此外，还可以在多个窗口中打开同一个Python脚本。这允许在一个长Python脚本的几个部分上工作，并且使调试更容易。</p>
+<h3 id="running-the-hello-world-python-script"><strong>运行Hello，World！Python脚本</strong></h3>
+<p>将以下代码添加到新创建的模块中:</p>
+<pre>print (“Hello, World!”)
+</pre>
+<p>现在，右键单击编辑器窗口并选择Run As-&gt;Python Run。控制台上将显示以下输出:</p>
+<p>你好，世界！</p>
+<p><a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.2438804&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomplete-python-scripting-for-automation%2F" target="_blank" rel="noopener">自动化的完整Python脚本</a></p>
+
+<h2 id="summary"><strong>总结</strong></h2>
+<p>有几种方法可以运行Python脚本。当脚本很小或者在探索Python的特性和功能时，直接从终端使用Python解释器是合适的。然而，使用IDE来运行大型复杂的Python脚本是首选。</p>
+<p>为了跟上不断变化的编程领域，您需要不断学习并提高您的编程技能。通过这些<a href="https://hackr.io/blog/best-python-books-for-beginners-and-advanced-programmers">最好的Python书籍</a>，你可以学到很多关于Python脚本和其他与Python编程语言相关的概念。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

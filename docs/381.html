@@ -1,0 +1,380 @@
+<html>
+<head>
+<title>50 Best SQL Server Interview Questions and Answers [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>50个最佳SQL Server面试问题和答案[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/sql-server-interview-questions#0001-01-01">https://hackr.io/blog/sql-server-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p><strong>结构化查询语言</strong>或SQL是用于操作关系数据库的编程语言。一些流行的工具将这种技术与高效的专有应用程序相结合。一个这样的例子是<strong>微软SQL服务器</strong>。</p>
+<p>由于SQL Server广受欢迎，许多SQL工作面试都要求对SQL Server有很好的理解。<a href="https://hackr.io/tutorials/learn-sql-server?ref=blog-post" target="_blank" rel="noopener">学习SQL Server </a>需要对以下方面有深入的了解:</p>
+<ul>
+<li>数据库</li>
+<li>服务器</li>
+<li>数据库管理系统，如MySQL、PostgreSQL和MongoDB，以及</li>
+<li><a href="https://hackr.io/blog/what-is-programming">编程</a></li>
+</ul>
+<h2 id="top-sql-server-interview-questions-and-answers"><strong>SQL Server面试问答</strong></h2>
+<p>在这里，我们整理了一个50个最佳SQL server面试问题的列表，SQL/数据库管理方面的有志之士会发现这些问题非常有帮助。这些问题涵盖了从SQL Server基础到一些高级概念的所有内容。他们在这里:</p>
+<h4 id="question-please-explain-the-two-authentication-modes-in-the-sql-server"><strong>问题:请解释一下SQL Server中的两种认证模式。</strong></h4>
+<p><strong>答:</strong>认证模式用于在Microsoft SQL Server中对用户进行认证。虽然在数据库引擎安装过程中会提示用户输入，但以后可以更改。我们可以在SQL Server中使用以下两种身份验证模式之一:</p>
+
+<ol>
+<li><strong> Windows模式</strong> -启用Windows身份验证，禁用SQL Server身份验证。为了进行鉴定，服务器获取计算机的用户名和密码。Windows模式下禁用SQL Server身份验证。</li>
+<li><strong>混合模式</strong> -启用Windows身份验证和SQL Server身份验证。在这种身份验证模式下，每个数据库都需要唯一的用户名和密码。</li>
+</ol>
+<p>若要在身份验证模式之间切换，请转到SQL Server配置属性-&gt;工具-&gt;安全页面。</p>
+<h4 id="question-explain-how-you-will-create-a-table-in-sql-server">问题:解释一下你将如何在SQL Server中创建一个表？</h4>
+<p><strong>答:</strong>我们可以使用以下代码在SQL Server中创建一个表:</p>
+<p>创建表TableName(列1数据类型，列2数据类型，...，列数据类型)</p>
+<p>例如，下面的代码:</p>
+<pre>create table Dummy<br/>(<br/>Name varchar(20), Address varchar(40), PhoneNo. nvarchar(12)<br/>)</pre>
+<p>将创建一个有3列的虚拟表；姓名、地址和电话号码</p>
+<h4 id="question-can-you-explain-sql-server-profiler"><strong>问题:您能解释一下SQL Server Profiler吗？</strong></h4>
+<p><strong>答:</strong>系统管理员使用SQL Server Profiler工具来监控SQL Server中的事件。它用于:</p>
+
+<ul>
+<li>创建跟踪。</li>
+<li>找出查询中的错误并修复它们。</li>
+<li>启动、停止、暂停和修改跟踪结果。</li>
+<li>将跟踪结果存储在表中。</li>
+<li>运行后观察跟踪结果。</li>
+</ul>
+<p>SQL事件探查器是一个GUI，主要用于捕获和保存文件或表的一个或每个事件的数据，以便进行实时或未来的分析。</p>
+<h4 id="question-do-you-know-what-is-a-recursive-stored-procedure"><strong>问题:你知道什么是递归存储过程吗？</strong></h4>
+<p><strong>回答:</strong> SQL Server提供了一种调用自身的<a href="https://hackr.io/blog/stored-procedures" target="_blank" rel="noopener">存储过程</a>。这称为递归存储过程。在这里，解决方案反复出现。最多可以嵌套32层存储过程。递归存储过程可以直接或间接调用。</p>
+<p>我们可以通过以下两种方式在存储过程中实现递归:</p>
+<ol>
+<li><strong>链式递归:</strong>为了实现链式递归，对相互递归过程进行了扩展。</li>
+<li><strong>相互递归:</strong>间接递归是使用相互递归存储过程实现的。</li>
+</ol>
+<h4 id="question-draw-a-comparison-between-local-and-global-temporary-tables"><strong>问题:画一个局部和全局临时表的比较。</strong></h4>
+<p><strong>回答:</strong>全局临时表对所有用户可见。当创建它们的连接关闭时，它们将被删除。另一方面，本地临时表只有在有连接时才可见。一旦连接关闭，这些就会被删除。</p>
+<h4 id="question-what-are-the-constraints-in-sql-server"><strong>问题:SQL Server中有哪些约束？</strong></h4>
+<p><strong>答:</strong>约束是管理数据库表允许的数据类型的一组规则。Microsoft SQL Server中总共有6个约束:</p>
+<ol>
+<li>支票</li>
+<li>默认</li>
+<li>外键</li>
+<li>不为空</li>
+<li>主关键字</li>
+<li>独一无二的</li>
+</ol>
+<h4 id="question-please-explain-the-check-constraint">问题:请解释检查约束。</h4>
+<p><strong>答案:</strong>检查约束强制完整性。它应用于表中的一列，用于限制可以插入该列的值。应用CHECK约束的列只能有一些特定的值。以下是在SQL Server数据库中应用CHECK约束的示例:</p>
+<pre>CREATE TABLE Dummy<br/>(<br/>S.No. int,<br/>Name varchar(255),<br/>Age int,<br/>CONSTRAINT CHK_Dummy CHECK (Age&gt;17)<br/>);</pre>
+<h4 id="question-is-it-possible-to-link-sql-server-to-other-servers">问题:可以将SQL Server链接到其他服务器吗？</h4>
+<p><strong>答:</strong>是的，可以将SQL Server连接到任何支持OLE-DB provider的数据库服务器。支持OLE-DB访问接口的数据库服务器有:</p>
+<ul>
+<li>IBM Informix</li>
+<li>Microsoft Access</li>
+<li>Oracle数据库</li>
+</ul>
+<h4 id="question-please-explain-the-subquery-and-its-properties">问题:请解释子查询及其属性。</h4>
+<p><strong>答:</strong>可以嵌套在主查询内部的查询，比如Select或Update语句，称为子查询。当允许使用表达式时，可以使用子查询。子查询也称为内部查询。子查询的属性包括:</p>
+<ul>
+<li>它可以选择添加GROUP BY、HAVING和WHERE子句。</li>
+<li>它可以添加到FROM、SELECT和WHERE子句中。</li>
+<li>它必须放在主查询的比较运算符的右侧。</li>
+<li>它应该用括号括起来。这是因为它在主查询之前执行。</li>
+<li>它不应该有ORDER BY子句。</li>
+<li>可以有多个子查询。</li>
+</ul>
+<h4 id="question-can-you-explain-the-types-of-subqueries">问:你能解释一下子查询的类型吗？</h4>
+<p><strong>答:</strong>子查询有三种类型:</p>
+<ol>
+<li><strong>单行子查询</strong> -仅返回单行。</li>
+<li><strong>多行子查询</strong> -返回多行。</li>
+<li><strong>多列子查询</strong> -返回多列。</li>
+</ol>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-complete-sql-bootcamp%2F" target="_blank" rel="noopener">完整的SQL Bootcamp 2023:从零到英雄</a></p>
+<h4 id="question-what-is-the-purpose-of-the-sql-server-agent">问题:SQL Server代理的用途是什么？</h4>
+<p><strong>答:</strong>SQL Server代理的目的是实现与调度引擎一致的任务。这使得作业在预定的日期和时间运行。SQL Server代理是一个后台工具，即它作为Windows服务继续在后台运行。</p>
+<p>因此，SQL server代理在SQL Server管理员完成常见任务的过程中起着重要的作用。因此，它是SQL Server的一个基本组件。</p>
+<h4 id="question-please-explain-scheduled-tasks-in-the-microsoft-sql-server">问题:请解释一下微软SQL Server中的计划任务。</h4>
+<p><strong>答:</strong>对于可以在指定的固定时间间隔运行的自动化流程，我们使用预定的任务或作业。这有助于减少所需的人工干预。用户还可以决定这些计划任务的执行顺序。</p>
+<h4 id="question-explain-how-exceptions-are-handled-in-the-sql-server">问:解释一下SQL Server是如何处理异常的？</h4>
+<p><strong>答:</strong>我们使用TRY - CATCH构造来处理SQL Server中的异常。条件写在TRY块中，异常在CATCH块中被捕获。</p>
+<h4 id="question-what-are-the-functions-in-sql-server"><strong>问题:SQL Server中有哪些功能？</strong></h4>
+<p><strong>答:</strong>SQL Server中的函数是预定义的做某件事的方法。关于SQL Server函数，必须注意以下几点:</p>
+<ul>
+<li>它们每次都被编译。</li>
+<li>它们可以在任何地方使用。</li>
+<li>他们不允许使用try和catch语句。</li>
+<li>它们必须返回一些值或结果。</li>
+<li>它们仅适用于输入参数。</li>
+<li>它们仅适用于SELECT语句。</li>
+</ul>
+<p>SQL Server中有两种类型的函数；内置和用户自定义。SQL Server函数必须返回结果。当我们在SQL Server中使用函数时，它必须指定一个返回值类型。Microsoft SQL Server有一系列内置函数。它们分类如下:</p>
+<ul>
+<li>表值函数</li>
+<li>标量值函数</li>
+<li>聚合函数</li>
+<li>系统功能</li>
+<ul>
+<li>聚合函数</li>
+<li>配置功能</li>
+<li>光标功能</li>
+<li>数据和时间函数</li>
+<li>数学函数</li>
+<li>元数据函数</li>
+<li>其他功能</li>
+<li>层次结构Id函数</li>
+<li>行集函数</li>
+<li>安全功能</li>
+<li>字符串函数</li>
+<li>系统统计功能</li>
+<li>文本和图像功能</li>
+</ul>
+</ul>
+<h4 id="question-what-is-the-use-of-the-floor-function"><strong>问题:地板功能有什么用？</strong></h4>
+<p><strong>答案:</strong>当需要将一个非整数值向上舍入到前一个整数时，使用FLOOR函数。例如，FLOOR (12.8)将返回12。</p>
+<h4 id="question-how-will-you-check-locks-in-a-sql-server-database">问:你将如何检查SQL Server数据库中的锁？</h4>
+<p><strong>回答:</strong>微软SQL Server自带一个名为sp_lock的内置存储过程，用于检查数据库中的锁。</p>
+<h4 id="question-why-do-we-have-the-sign-function-what-does-it-return"><strong>问题:为什么我们有符号功能？它返回什么？</strong></h4>
+<p><strong>答案:</strong>SIGN函数检查一个给定的数是正数、负数还是零。它返回:</p>
+<ul>
+<li>当数字为正数时为+1，</li>
+<li>当数字为负数时为-1，并且</li>
+<li>当数字为零时为0。</li>
+</ul>
+<h4 id="question-please-differentiate-between-union-and-union-all-commands">问:请区分UNION和UNION ALL命令。</h4>
+<p><strong>答:</strong>UNION命令用于从两个表中选择相似的信息。UNION ALL命令做同样的事情，但是选择所有可用的值，并且不消除重复的行。</p>
+<h4 id="question-what-is-the-difference-between-charindex-and-substr-functions"><strong>问题:CHARINDEX和SUBSTR函数有什么区别？</strong></h4>
+<p><strong>答:</strong>SUBSTR函数返回给定字符串的某个特定部分，CHARINDEX函数返回给定字符串中某个字符的字符位置。比如SUBSTRING ('STRING '，1，3)会返回Si，CHARINDEX ('i '，' String '，1)会返回4。</p>
+<h4 id="question-how-is-the-dynamic-sql-different-from-stored-procedures">问题:动态SQL和存储过程有什么不同？</h4>
+<p><strong>回答:</strong>存储过程和动态SQL都是一组语句。虽然存储过程以编译后的形式存储在数据库中，但动态SQL是在运行时动态构造的。它们不会在动态构造后的运行时被存储和执行。</p>
+<h4 id="question-can-you-explain-collation">问题:你能解释一下校对吗？</h4>
+<p><strong>答:</strong> Collation指定数据库表中的排序顺序。它有三种类型:</p>
+<ol>
+<li>二进制的</li>
+<li>区分大小写</li>
+<li>不分大小写</li>
+</ol>
+<h4 id="question-how-can-we-get-the-version-information-of-the-microsoft-sql-server"><strong>问:如何获取微软SQL Server的版本信息？</strong></h4>
+<p><strong>答:</strong>我们在SQL Server中使用以下命令来获取版本信息:</p>
+<pre>Select SERVERPROPERTY('productversion')</pre>
+<h4 id="question-why-do-we-use-the-set-nocount-on-off-statement">问:为什么我们要使用SET NOCOUNT ON/OFF语句？</h4>
+<p><strong>答案:</strong>no count默认设置为OFF。它返回执行命令时受影响的记录总数。当不需要显示受影响的记录数时，可以显式打开它。</p>
+<h4 id="question-can-you-explain-magic-tables-in-the-sql-server"><strong>问题:你能解释一下SQL Server中的魔术表吗？</strong></h4>
+<p><strong>答:</strong> SQL Server在进行删除、插入、更新等<a href="https://hackr.io/blog/sql-commands"> DML操作</a>时，会自动创建临时表。这些被称为魔术桌。触发器使用它们进行数据事务。</p>
+
+<h4 id="question-what-do-you-mean-by-triggers-in-sql-server"><strong>问题:SQL Server中的触发器是什么意思？</strong></h4>
+<p><strong>答案:</strong>在SQL Server中，触发器是类似于存储过程的数据库对象。这些特殊类型的存储过程在各自的数据库中发生特定事件时触发。触发器有三种类型:</p>
+<ol>
+<li><strong> DDL触发器</strong>——触发以Alter、Create和Drop开始的DDL命令事件。</li>
+<li><strong> DML触发器</strong> -触发以删除、插入和更新开始的DML命令事件。</li>
+</ol>
+<p>触发器被绑定到表并自动执行。没有明确调用它们的规定。它们提供数据完整性，用于在修改前和修改后访问和检查数据。</p>
+<h4 id="question-how-do-you-update-a-database-in-sql-server">问题:如何在SQL Server中更新数据库？</h4>
+<p><strong>回答:</strong>我们可以通过使用Update命令来实现。它可以用于添加或删除新列，替换列中的信息等。UPDATE命令的一般语法是:</p>
+<pre>UPDATE TableName SET ColumnName = NewData where Condition</pre>
+<h4 id="question-can-you-explain-relationships-in-sql-server">问题:你能解释一下SQL Server中的关系吗？</h4>
+<p><strong>答:</strong>SQL Server中使用关系来链接不同表的列。这些有三种类型:</p>
+<ol>
+<li><strong>一对一</strong>——一个表中的一个列在另一个表中有一个依赖列。</li>
+<li><strong>一对多/多对一</strong> -一个表中的一个列在另一个表中有多个依赖列(一对多)。一个表中的多个列在另一个表中有一个独立的列(多对一)。</li>
+<li><strong>多对多</strong>——一个表中的多个列在另一个表中有多个依赖列。</li>
+</ol>
+<h4 id="question-please-explain-the-concept-of-database-normalization"><strong>问题:请解释一下数据库规范化的概念。</strong></h4>
+<p><strong>答案:</strong> <a href="https://hackr.io/blog/dbms-normalization">数据库规范化</a>指的是在关系数据库中组织表的过程，以最小化冗余和依赖性。它还提高了表的完整性和性能。</p>
+<p>规范化包括将较大的表分成较小的表，并定义这些表之间的关系。数据库规范化过程遵循以下层次结构:</p>
+<ol>
+<li>第一范式</li>
+<li>2NF(第二范式)</li>
+<li>3NF(第三范式)</li>
+<li>BCNF(博伊斯-科德范式)</li>
+<li>4NF(第四范式)</li>
+<li>5NF(第五范式)</li>
+<li>6NF(第六范式)</li>
+</ol>
+<h4 id="question-please-explain-the-concept-of-an-index-in-the-microsoft-sql-server"><strong>问题:请解释一下微软SQL Server中索引的概念？</strong></h4>
+<p><strong>回答:</strong>当数据庞大时，数据库表不足以高效地处理这些数据。因此，我们对其中的列(或视图)进行索引。从技术上讲，索引是由DBMS创建和维护的数据库对象。</p>
+<p>被索引的列称为索引列。这些是有序的，因此支持快速搜索。一个数据库表可以有多个索引。SQL Server有两种类型的索引:</p>
+<ol>
+<li><strong>聚集索引</strong>——这种类型的索引基于键对数据进行排序和存储。由于行只能按一种顺序排序，因此可以在一个表中只定义一次聚集索引。不允许Image、Text和nText数据作为聚集索引。</li>
+<li><strong>非聚集索引</strong>——这是在数据库表之外创建的索引。在SQL Server中，每个表最多可以有999个非聚集索引，其中每个索引最多可以有1023列。像聚集索引一样，它们不支持图像、文本和nText形式的数据。</li>
+</ol>
+<h4 id="question-can-you-explain-joins-in-sql-server">问:你能解释一下SQL Server中的连接吗？</h4>
+<p><strong>答:</strong>当需要从多个表中检索数据时，我们在数据库操作中使用连接。检索的数据取决于两个因素:</p>
+<ul>
+<li>使用的联接类型，以及</li>
+<li>不同表的列之间的关系。</li>
+</ul>
+<p>SQL Server具有以下类型的联接:</p>
+
+<ol>
+<li>完全连接</li>
+<li>内部联接/自联接/简单联接</li>
+<li>外部连接</li>
+<ol>
+<li>左外部连接</li>
+<li>右外部联接</li>
+<li>完全外部连接</li>
+</ol>
+</ol>
+<h4 id="question-what-do-you-know-about-the-database-engine-in-microsoft-sql-server"><strong>问题:你对微软SQL Server中的数据库引擎了解多少？</strong></h4>
+<p><strong>答案:</strong>SQL Server数据库引擎就像SQL Server代理和其他SQL Server组件一样，是作为数据库服务运行的。操作系统一启动，数据库服务就启动。</p>
+
+<p>默认情况下启动哪些数据库服务是在SQL Server安装过程中定义的。服务提供核心操作系统特性，如事件日志、文件服务和web服务。</p>
+<h4 id="question-please-explain-microsoft-sql-server-analysis-services"><strong>问题:请解释Microsoft SQL Server Analysis Services。</strong></h4>
+<p><strong>回答:</strong>微软SQL Server Analysis Services或SSAS是一款基于web的分析处理和数据挖掘工具。它旨在允许数据库管理员:</p>
+<ul>
+<li>对分布在众多数据库、表格和文件中的数据进行分析。</li>
+<li>为决策者提供对可用信息的方便快捷的访问。</li>
+</ul>
+<p>SSAS通过允许数据库管理员创建、设计和管理包含从各种数据源聚合的数据的多维结构，提供了OLAP。</p>
+<p>内置的SQL Server工具还具有一系列数据挖掘算法，可以从不同的来源挖掘数据。只要一个查询被应用，SSAS就能从不同的数据源提供快速的结果。Analysis Services依赖于客户端-服务器体系结构。</p>
+<ul>
+<li><strong>客户端架构</strong> - SASS采用瘦客户端组件架构。因为所有的计算和查询都只能由服务器来解决，所以每个请求都需要一个服务器到客户端的连接。几个提供商提供SSAS来支持<a href="https://hackr.io/blog/best-programming-languages-to-learn" target="_blank" rel="noopener">各种编程语言</a>。这些提供者之间的通信是使用SOAP包实现的。</li>
+<li>服务器架构——Msmdsrv.exe是SSAS的一个应用。它是作为Windows服务运行的服务器组件。它由许多组件组成，包括一个查询处理器和一个XMLA侦听器。Msmdsrv.exe执行以下操作:</li>
+<ul>
+<li>缓存对象，</li>
+<li>创建聚合，</li>
+<li>处理交易，</li>
+<li>管理元数据，</li>
+<li>管理服务器资源，</li>
+<li>解析从客户端接收的语句，</li>
+<li>处理计算，</li>
+<li>调度查询，以及</li>
+<li>存储维度和单元数据。</li>
+</ul>
+</ul>
+<h4 id="question-what-is-denormalization-in-databases"><strong>问题:什么是数据库中的反规范化？</strong></h4>
+<p><strong>答案:</strong>反规范化是为了优化性能而有意在数据库表中引入冗余数据的过程。这一过程在提高读取性能的同时降低了写入性能。</p>
+<p>注意，非规范化和反规范化的数据库是完全不同的概念。未规范化的数据库是指没有被规范化的数据库。另一方面，反规范化的数据库是先规范化然后反规范化的数据库。</p>
+<h4 id="question-please-explain-the-concept-of-a-standby-server-what-are-its-types">问:请解释一下备用服务器的概念。它有哪些类型？</h4>
+<p><strong>答:</strong>当主数据库服务器离线，并且一个依赖的应用程序持续需要它时，备用数据库服务器会接替它的位置。备用服务器有三种类型:</p>
+<ol>
+<li><strong>热备用</strong>——主服务器和备用服务器都串联运行。在这种情况下，两台服务器包含相同的信息。</li>
+<li><strong>热待机</strong>——这里，备用服务器运行在主服务器的后台。主服务器包含的数据会定期镜像到备用服务器。</li>
+<li><strong>冷备用</strong>——在这个场景中，只有当主服务器出现故障时，备用服务器才会被调用。这种类型的备用服务器用于以下情况:</li>
+<ol>
+<li>数据没有频繁变化，或</li>
+<li>reliant应用程序是非关键的。</li>
+</ol>
+</ol>
+<h4 id="question-what-tcp-ip-port-does-the-microsoft-sql-server-run-in-is-it-possible-to-change-the-same"><strong>问题:微软SQL Server运行在哪个TCP/IP端口？有没有可能变的一样？</strong></h4>
+<p><strong>答案:</strong>SQL Server运行在1433端口。是的，有可能改变它。我们可以通过网络实用程序TCP/IP属性来更改它。</p>
+<h4 id="question-what-is-dbcc-in-sql-server-why-do-we-use-it"><strong>问题:什么是SQL Server中的DBCC？我们为什么要用它？</strong></h4>
+<p><strong>答:</strong> DBCC的意思是<strong>D</strong>ATA<strong>b</strong>ase<strong>C</strong>consistency<strong>C</strong>hecker。这是一个SQL Server命令，用于检查数据库的一致性。它有助于:</p>
+<ul>
+<li>监控和审查数据库和表格的维护，或</li>
+<li>用于验证在数据库或表上执行的操作。</li>
+</ul>
+<p>执行DBCC命令时，数据库引擎会创建数据库快照，并继续保持一致的事务状态。之后，数据库引擎对该存储的数据库快照运行检查，并在完成该命令后删除该快照。以下是使用DBCC命令的一些示例:</p>
+
+<ul>
+<li><strong> DBCC检查分配</strong>——检查并确保数据库中的所有页面都被正确分配。</li>
+<li><strong>DBCC CHECKDB</strong>——确保数据库中的所有表和索引正确链接。</li>
+<li><strong> DBCC检查文件组</strong> -检查所有表文件组的损坏情况。</li>
+</ul>
+<h4 id="question-can-you-explain-log-shipping">问题:你能解释一下日志传送吗？</h4>
+<p><strong>答:</strong>日志传送是指在主数据库服务器上自动备份数据库和事务日志文件，然后在备用服务器上恢复它们的过程。这种技术受到几种流行的数据库服务器的支持，例如:</p>
+
+<ul>
+<li>4D服务器</li>
+<li>Microsoft SQL Server</li>
+<li>关系型数据库</li>
+<li>一种数据库系统</li>
+</ul>
+<p>日志传送的主要目的是提高数据库的可用性。应用日志备份，尤其是在每个辅助数据库上。日志传送包括以下3个步骤:</p>
+<ul>
+<li><strong>步骤1 </strong> -在主服务器实例上备份事务日志文件。</li>
+<li><strong>步骤2</strong>——在辅助服务器实例上复制日志文件。</li>
+<li><strong>步骤3 </strong> -将日志备份文件恢复到辅助服务器实例上。</li>
+</ul>
+<h4 id="question-please-explain-the-different-types-of-replication-in-the-microsoft-sql-server"><strong>问题:请解释Microsoft SQL Server中不同类型的复制。</strong></h4>
+<p><strong>答:</strong>复制是数据库服务器中用于提高数据库可用性的一种技术。在Microsoft SQL Server中有三种类型:</p>
+<ol>
+<li><strong>合并复制</strong>——将不同来源的数据分组到一个单一的集中式数据库中。合并复制通常在服务器到客户端环境中使用，适用于多个订阅服务器在不同时间更新相同数据的情况。</li>
+<li><strong>快照复制</strong> -它以与数据在某个时间点出现时相同的方式分发数据。在数据不经常变化的情况下，这是最合适的复制技术。</li>
+<li><strong>事务复制</strong>——它是将数据从发布者分发到订阅者的过程。通常用于服务器对服务器的环境。非常适合需要将增量更改传播到订阅服务器的情况。</li>
+</ol>
+
+<p><strong>回答:</strong>微软SQL Server是领先的数据库管理系统之一。因此，同样的第三方工具并不少见。以下是一些最受欢迎的:</p>
+<ul>
+<li><strong>Quest Soft的LiteSpeed</strong>-用于准备备份和恢复。</li>
+<li><strong>red gate的SQL Backup 10</strong>——用于自动化SQL Server备份过程。</li>
+<li><strong>Idera的SQL检查</strong>——用于监控服务器活动和内存水平。</li>
+<li><strong>RedGate的SQL Doc 2</strong>-用于记录数据库。</li>
+<li><strong>red gate的SQL提示</strong> -为SQL Server提供智能感知。</li>
+</ul>
+<p>在Microsoft SQL Server中使用第三方工具有几个好处，包括:</p>
+<ul>
+<li>更好的见解和信息。</li>
+<li>增强了事务日志和事务日志备份的可见性。</li>
+<li>备份和恢复环境的企业视图。</li>
+<li>更快的备份和恢复。</li>
+<li>灵活的备份和恢复选项。</li>
+<li>单个数据库对象的恢复。</li>
+<li>节省时间。</li>
+<li>加密安全备份。</li>
+</ul>
+<h4 id="question-what-do-you-understand-by-patches-and-hotfixes-in-the-sql-server"><strong>问题:您对SQL Server中的补丁和修补程序有什么理解？</strong></h4>
+<p><strong>答:</strong>补丁是用来修复系统中某个(些)问题并保证同样安全的程序。修补程序是微软发布的专有补丁。这些旨在解决不同的问题，主要是最近发现的安全缺陷。</p>
+<p>修补程序主动应对错误。这是因为它们被设计成应用于实时系统。修补程序可以是单个文件或多个文件。</p>
+<h4 id="question-please-enumerate-the-most-common-trace-flags-used-in-sql-server"><strong>问题:请列举SQL Server中最常用的跟踪标志。</strong></h4>
+<p><strong>答:</strong>跟踪标志对于SQL Server就像if语句对于编程语言一样。跟踪标志为SQL Server设置特定的特征。SQL Server中最常用的跟踪标志有:</p>
+<ul>
+<li>1118 -强制统一区分配，而不是混合页分配</li>
+<li>1204、1205、1222 -死锁信息</li>
+<li>1807 -网络数据库文件</li>
+<li>4013 -连接的日志记录</li>
+<li>4022 -跳过启动存储过程</li>
+<li>8755 -禁用锁定提示</li>
+</ul>
+<h4 id="question-what-are-the-various-encryption-mechanisms-in-the-sql-server"><strong>问题:SQL Server中的各种加密机制是什么？</strong></h4>
+<p><strong>答:</strong> SQL Server提供了对一系列加密机制的支持，以保护数据。这些是:</p>
+<ul>
+<li>非对称密钥</li>
+<li>证书</li>
+<li>对称密钥</li>
+<li>Transact-SQL函数</li>
+<li>透明数据加密</li>
+</ul>
+<h4 id="question-please-explain-the-filtered-index"><strong>问题:请解释一下过滤后的指数。</strong></h4>
+<p><strong>答案:</strong>用WHERE子句创建的索引称为过滤索引。它用于过滤表中的某些行。这有助于提高索引维护和查询性能，并降低索引存储成本。</p>
+<h4 id="question-can-you-explain-some-services-in-sql-server"><strong>问题:能否解释一下SQL Server中的一些服务？</strong></h4>
+<p><strong>回答:</strong> Microsoft SQL Server提供了一系列服务，可以高效地处理大型数据库。其中一些是:</p>
+<ul>
+<li><strong>数据质量服务</strong> - DQS有助于执行一系列数据质量任务，如校正、丰富和标准化。它为解决数据质量问题提供了以下功能:</li>
+<ul>
+<li>数据清理</li>
+<li>知识库</li>
+<li>相称的</li>
+<li>分析和监控</li>
+<li>参考数据服务</li>
+</ul>
+<li><strong>集成服务</strong>——一个开发高性能数据集成和工作流解决方案的平台，例如<a href="https://hackr.io/blog/star-schema-in-data-warehouse">数据仓库</a>的ETL操作。包括用于构建和调试包的图形工具和向导。</li>
+<li><strong>主数据服务</strong> - MDS应对分析和运营主数据管理的挑战。它提供了一个主数据中心，用于集中维护、管理和组织主数据。MDS建立在SQL Server和WCF(Windows Communication Foundation)API之上。</li>
+<li><strong>Reporting Services</strong>——一个报表平台，包括基于SQL Server Reporting Services多层架构的处理组件。处理组件相互交互以检索数据并提供报告。Reporting services有两个基本组件:</li>
+<ul>
+<li>处理器，以及</li>
+<li>扩展ˌ扩张</li>
+</ul>
+</ul>
+<h4 id="question-please-explain-coalesce-in-microsoft-sql-server">问题:请解释一下微软SQL Server中的COALESCE。</h4>
+<p><strong>答案:</strong>COALESCE函数返回具有多列的参数中的第一个非空表达式。该函数接受所有类型的值，但只返回表达式中的非空值。常规语法:</p>
+<p>COALESCE(表达式1，表达式2，表达式3，.......，表达式n)</p>
+<h4 id="question-do-you-know-which-sql-server-table-holds-the-stored-procedure-scripts">问:你知道哪个SQL Server表保存着存储过程脚本吗？</h4>
+<p><strong>答案:</strong>存储过程脚本存储在Sys。SQL _模块表。但是，存储过程的名称存储在Sys。程序表。</p>
+<h4 id="question-please-explain-commit-and-rollback-commands">问题:请解释提交和回滚命令。</h4>
+<p><strong>答:</strong>伴随提交命令的语句在数据库中变得持久。另一方面，带有ROLLBACK命令的语句被恢复到以前的状态。</p>
+<h4 id="question-how-is-nvarchar-different-from-varchar"><strong>问题:nvarchar和varchar有什么不同？</strong></h4>
+<p><strong>回答:</strong>varchar和nvarchar的数据类型都差不多。两者的区别在于，nvarchar可以存储不同语言的Unicode字符，而varchar不能。此外，与varchar数据类型相比，nvarchar需要更多空间。</p>
+<h4 id="question-can-you-tell-the-difference-between-getdate-and-sysdatetime-functions"><strong>问题:你能说出GETDATE和SYSDATETIME函数的区别吗？</strong></h4>
+<p><strong>答:</strong>两个命令执行相同的操作，即获取当前日期和时间。两者的区别在于，GETDATE给出的时间是毫秒，而SYSDATETIME给出的是纳秒。因此，SYSDATETIME更准确。</p>
+<h4 id="question-do-you-know-where-the-sql-server-stores-usernames-and-passwords">问:你知道SQL Server把用户名和密码存放在哪里吗？</h4>
+<p><strong>答案:</strong>SQL Server中的用户名和密码存储在sys.server_principals和sys.sql_logins中。用户名以普通文本形式存储，而密码以加密形式存储。</p>
+<h2 id="conclusion">结论</h2>
+<p>这就完成了我们的50个最佳SQL Server面试问题列表。这些问题将帮助您为即将到来的基于数据库/SQL的面试做准备，或者根据您的DBMS/SQL Server知识对自己进行自我评估。你可能还想看看<a href="https://hackr.io/blog/best-sql-books"> SQL书籍</a>和<a href="https://hackr.io/blog/best-sql-courses"> SQL课程</a>供你参考。</p>
+<p>你喜欢吗？通过评论让我们知道。万事如意！</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

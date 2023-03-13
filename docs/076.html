@@ -1,0 +1,309 @@
+<html>
+<head>
+<title>Top 40 C# Interview Questions &amp; Answers To Get Hired in 2023</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年40大C#面试问题及答案</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/c-sharp-interview-questions#0001-01-01">https://hackr.io/blog/c-sharp-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>C#于2001年末首次亮相，是一种易于学习的类型安全语言，主要用于面向对象编程。C#还采用了一种面向组件的方法，允许用。NET框架。</p>
+<p>从本质上来说，C#可以与C语言家族联系在一起，但是具有Java和Javascript经验的程序员也会非常熟悉C#的语法。</p>
+<p>C#提供了一系列的特性，包括垃圾收集、<em>可空的</em>类型，以及一个<em>统一类型</em>系统，其中所有类型(包括像<em>int、chars等原语。)</em>继承自<em>对象</em>类。</p>
+<p>本文涵盖了40个C#面试问答，从基础到进阶。因此，无论你是一个渴望成为C#开发人员的新程序员，还是一个准备跳槽的经验丰富的专业人员，你都在正确的地方。</p>
+
+<p><a href="https://drive.google.com/file/d/12HRGZyGMyVsvhbGKR_GBBiOCyLY9I9Mo/view?usp=sharing"> <strong>下载我们的C#面试问答PDF。</strong>T3】</a></p>
+<p><strong>初学C#但想学？查看我们关于作为初学者学习C#的文章</strong><a href="https://hackr.io/blog/how-to-learn-c-as-a-beginner"><strong/></a>。</p>
+<h2 id="basic-c-interview-questions-answers"><strong>基础C#面试问题&amp;答案</strong></h2>
+<h3 id="toc-1-what-is-c"><strong> 1。什么是C#？</strong></h3>
+<p>C#是一种类型安全、面向对象的语言，用于创建。Net应用程序，采用面向组件的方法。</p>
+<p>您可以使用C#创建用于Microsoft Windows的应用程序、基于云的API服务、用于iOs和Android的移动应用程序、用于AI和机器学习(ML)的软件、区块链应用程序和无服务器应用程序。</p>
+<p><em>注意，这是最根本的C#面试问题，一定要知道！</em></p>
+<h3 id="toc-2-list-some-key-c-features"><strong> 2。列出一些关键的C#特性。</strong></h3>
+<p><strong><img src="../Images/61af702f4d8a0fb0049aa45873cb2838.png" alt="C# Features" data-original-src="https://cdn.hackr.io/uploads/posts/attachments/1673013637d2Xf5kc0F3.png"/>T2】</strong></p>
+
+<ul>
+<li><strong>简单的语言:</strong>与C++或C相比，缺少指针或直接内存修改</li>
+<li><strong>类型安全:</strong>确保变量数据类型被正确定义</li>
+<li><strong>面向对象:</strong>定义和使用类/对象</li>
+<li><strong>面向组件:</strong>重用现有组件，无需从头开始编码</li>
+<li>开源:可以在多种操作系统上开发应用，包括Mac和Linux</li>
+<li><strong>互操作性:</strong>可以使用托管和非托管第三方代码进行开发</li>
+<li>结构化编程:可以将程序分解成函数</li>
+<li><strong>丰富的库:</strong>内置函数加速开发</li>
+<li><strong>快:</strong>编译和执行非常快</li>
+</ul>
+<p><em>这是你在睡梦中应该知道的那些简单的C锐面试问题之一！</em></p>
+<h3 id="toc-3-what-are-classes-in-c"><strong> 3。C#中有哪些类？</strong></h3>
+<p>作为一种面向对象的语言，C#大量使用了类。类是一个概念或蓝图，用来定义数据在程序中是如何构造、存储和管理的。</p>
+<p>类有属性和方法，它们被称为类成员。它们可以是私有的，也就是说只有类可以访问它们，或者是公共的，允许程序的其他部分访问它们。</p>
+<h3 id="toc-4-what-are-objects-in-c"><strong> 4。C#中的对象是什么？</strong></h3>
+<p>对象是可以代表现实世界实体特征的类实例(或者假想的！)通过使用类属性和方法。</p>
+<p>例如，如果我们有一个处理书籍的程序，我们可以创建一个有两个属性的<em> Book </em>类，标题和作者。然后我们可以<em>实例化图书<em>类</em>的多个实例</em>来创建具有不同标题和作者的不同图书<em>对象</em>。</p>
+<h3 id="toc-5-summarize-the-different-class-types-in-c"><strong> 5:总结C#中不同的类类型。</strong></h3>
+<p>虽然C#中的所有类都有一个基本类型<em> Object </em>，但是有4种不同的类型。</p>
+<ul>
+<li aria-level="1"><strong>静态类:</strong>不能用<em> New </em>关键字实例化对象，类成员只能用实际的类名访问</li>
+<li aria-level="1">抽象类: Restricted，这意味着它不能直接用于创建对象，所以如果我们想访问它的成员，我们需要通过一个子类来继承它</li>
+<li aria-level="1"><strong>分部类:</strong>允许方法、事件、属性拆分成单独的/多个。cs源文件，它们在编译时被组合成一个类</li>
+<li aria-level="1"><strong>密封类:</strong>防止用户从类中继承，并限制对类成员(如属性或方法)的访问</li>
+</ul>
+<h3 id="toc-6-summarize-the-four-access-modifiers-in-c"><strong> 6:总结C#中的四个访问修饰符。</strong></h3>
+<ol>
+<li aria-level="1"><strong> Private: </strong>只能从类内部访问</li>
+<li aria-level="1"><strong> Public: </strong>可从代码中的任何地方访问</li>
+<li aria-level="1"><strong>内部:</strong>只能在类的当前装配点访问</li>
+<li aria-level="1">受保护:只有类成员和从它继承的类可以访问</li>
+</ol>
+<h3 id="toc-7-summarize-the-four-steps-for-compiling-c-code"><strong> 7:总结编译C#代码的四个步骤。</strong></h3>
+<ol>
+<li aria-level="1">将源代码编译到托管模块中</li>
+<li aria-level="1">将步骤1中新创建的模块与汇编代码结合起来</li>
+<li aria-level="1">加载CLR(公共语言运行库)</li>
+<li aria-level="1">用CLR执行程序集</li>
+</ol>
+<h3 id="toc-8-what-is-the-difference-between-break-continue-in-c"><strong>8:c#中的‘Break’&amp;‘Continue’有什么区别？</strong></h3>
+<ul>
+<li aria-level="1"><strong> Break: </strong>用于循环(for等。)和switch语句，退出迭代/切换并跳过循环或切换块中的任何剩余代码</li>
+</ul>
+<ul>
+<li aria-level="1"><strong> Continue: </strong>仅在循环中使用，跳过循环中任何剩余的代码，并从循环的开始处开始下一次迭代</li>
+</ul>
+<h3 id="toc-9-summarize-the-c-keywords-used-for-error-handling"><strong> 9:总结用于错误处理的C#关键字。</strong></h3>
+<ul>
+<li aria-level="1"><strong> Try </strong>:用于通知处理错误的代码块，后面至少有一个catch</li>
+<li aria-level="1"><strong> Catch: </strong>用于处理try块中代码引发的异常</li>
+<li aria-level="1"><strong>最后:</strong>发出一个代码块的信号，这个代码块几乎总是在所有其他代码执行完之后运行，不管错误是否被处理</li>
+<li aria-level="1"><strong>抛出:</strong>用于<em>在遇到问题时抛出</em>异常，通常需要一个<em> if </em>语句来检查问题</li>
+</ul>
+<h3 id="toc-10-what-are-accessors-in-c">C#中的访问器是什么？</h3>
+<p>C#中的两个访问器是<em> get </em>和<em> set </em>。这些用于<em>检索</em>或<em>为与类或结构中的<em>属性</em>相关的<em>私有字段</em>分配</em>值。</p>
+<ul>
+<li aria-level="1"><strong> Get: </strong>用来<em>检索</em>一个<em>私有字段</em>的值</li>
+<li aria-level="1"><strong> Set: </strong>用于<em>给<em>私有字段</em>赋值</em></li>
+</ul>
+<p><em><img src="../Images/cafdcd65852e1e52af31b16eac6f97a1.png" alt="C# Property" data-original-src="https://cdn.hackr.io/uploads/posts/attachments/1673013691aLuosAMDSc.png"/>T2】</em></p>
+
+<p>这是最基本的C#编程面试问题之一，对于任何潜在的开发人员来说都应该是自动的。</p>
+<p><strong>单行注释(//): </strong></p>
+<pre class="language-csharp"><code>// single line comment example</code></pre>
+<p><strong> XML注释(///): </strong></p>
+<pre class="language-csharp"><code>/// XML comment example</code></pre>
+<p><strong>多行注释(/* */): </strong></p>
+<pre class="language-csharp"><code>/*
+multi-line comment example
+*/</code></pre>
+<h3 id="toc-12-what-are-static-declared-variables-in-c"><strong>12:c#中有哪些静态声明变量？</strong></h3>
+<p>每个C#对象都有特定范围的成员变量。我们可以使用静态声明变量来确保一个类对象的每个实例都有相同的值。这是可能的，因为每个类对象共享该类的静态变量的相同实例。</p>
+<p>静态声明变量这个名字与一个不变的值(<em> static </em> keyword)有关，这个值是强类型的(声明的)，但是通常，这些只是被称为静态变量。</p>
+<h3 id="toc-13-what-are-value-types-reference-types-in-c"><strong> 13:什么是C#中的值类型&amp;引用类型？</strong></h3>
+<p><strong>值类型:</strong>将变量数据值直接存储在其分配的内存空间中</p>
+<p><strong>引用类型:</strong>不直接将变量数据存储在其内存位置，而是存储对另一个保存变量数据值的内存地址的引用，相当于指针</p>
+<p><img src="../Images/f6f8b934817b83d4b597dd3d82c72a79.png" alt="Value Types &amp; Reference Types in C#" data-original-src="https://cdn.hackr.io/uploads/posts/attachments/1673013751sD8CiXwahZ.png"/></p>
+<h3 id="toc-14-what-are-namespaces-in-c">C#中的命名空间是什么？</h3>
+<p>名称空间用于组织代码，并提供一种方法来分离可能使用相同<em>名称</em>的代码。</p>
+<p>的。NET framework使用命名空间来分隔和组织其提供的类的广泛集合，但您也可以使用自定义命名空间来组织自己的代码，并限制项目中方法和类名的范围。</p>
+<p>想要加强面试准备吗？通过查看 <a href="https://hackr.io/blog/csharp-books"> <strong> 10本最佳C#书籍</strong> </a>来刷新关键概念</p>
+
+<h3 id="toc-15-why-would-you-implement-the-using-statement-in-c">为什么要在C#中实现“using”语句？</h3>
+<p>管理并在对象完成处理后自动释放资源。具体来说，通过使用语句实现<em>，我们隐式地确保了<em>。Dispose() </em>方法被调用来自动释放未使用的资源。</em></p>
+<h3 id="toc-16-what-s-the-difference-between-dispose-and-finalize"><strong>16:Dispose()和Finalize()有什么区别？</strong></h3>
+<p>这两种方法有一个相似的目的，即释放未使用的资源。然而，与<em>不同的是。</em>法，处置()<em>。Finalize() </em>不保证对任何未使用和释放的资源进行垃圾收集。</p>
+<h3 id="toc-17-what-s-the-difference-between-boxing-unboxing-in-c"><strong>17:c#中装箱&amp;拆箱有什么区别？</strong></h3>
+<p><em>装箱</em>和<em>拆箱</em>都是C#中转换类型的技术。</p>
+<ul>
+<li aria-level="1"><strong>装箱:</strong>是指一个<em>隐式</em>过程，用于将变量从<em>值类型</em>转换为<em>引用类型</em>数据类型</li>
+<li aria-level="1"><strong> Unboxing: </strong>指的是装箱过程的反义词，意思是它代表一个<em>显式</em>转换过程，在这个过程中，我们将一个<em>引用类型</em>数据类型转换成一个<em>值类型</em>变量</li>
+</ul>
+<h3 id="toc-18-summarize-the-options-to-pass-parameters-with-methods-in-c"><strong> 18:总结C#中用方法传递参数的选项。</strong></h3>
+<ul>
+<li aria-level="1"><strong> Value parameter: </strong>默认选项，传递给方法的参数将导致在内存中存储一个新的副本，对此副本的任何更改都不会反映在原始的Value参数上</li>
+<li aria-level="1"><strong>引用参数:</strong>在方法参数中存储参数的内存地址，因此对参数的任何更改都会反映在内存中的原始参数上</li>
+<li aria-level="1"><strong>输出参数:</strong>当你想一个方法返回多个值时使用</li>
+</ul>
+<h3 id="toc-19-how-do-you-use-nullable-types-in-c">在C#中如何使用可空类型？</h3>
+<p>为了在C#中给<em>值类型</em>赋值一个空值，我们必须使用<em>可空类型</em>。这可以通过<em>可空的</em>关键字或者“？”来实现运算符简写，如下所示。</p>
+<p>不能将<em>可空类型</em>与<em>变量</em> <em>类型</em>变量一起使用，因为这些变量不是显式定义的，而是由分配给变量的值隐式定义的。</p>
+<p>请注意，这是你需要正确理解的C#重要问题之一。</p>
+
+<p><strong>可空类型示例:</strong></p>
+<pre class="language-csharp"><code>Nullable&lt;int&gt; i = null;
+int? i = null;</code></pre>
+<h3 id="toc-20-what-are-c-constructors">什么是C#构造函数？</h3>
+<p>构造函数是一种特殊类型的函数<em>成员</em>，来自一个共享相同类名的类。每当创建一个新的类对象实例时，它们都会被自动调用，这个过程还会调用该类的数据<em>成员</em>。如果类构造函数是参数化的，这可能涉及到将参数传递到类构造函数中。</p>
+<h3 id="toc-21-what-is-a-c-destructor">什么是C#析构函数？</h3>
+<p>这些C#类方法用于在不再需要时销毁类实例。析构函数方法不是在程序中显式调用的，而是。当对象不再可访问(不在范围内)时，NET垃圾回收隐式调用这些方法。</p>
+<p>为了定义一个析构函数，我们使用类名并在它前面加上一个波浪号，如下例所示。</p>
+<p><strong>析构函数代码示例:</strong></p>
+<pre class="language-csharp"><code>class Example {
+
+  ~Example() {
+    Console.WriteLine("Destructor has been called.");
+  }
+}</code></pre>
+<p>总结C#的非泛型集合类型。</p>
+<p>每个非泛型集合都可以用来存储不同的类型，因为它们不是强类型的。</p>
+<ul>
+<li aria-level="1"><strong> ArrayList: </strong>类似于数组，没有特定的大小，可以存储任意数量的元素</li>
+<li aria-level="1"><strong> HashTable: </strong>为每个条目存储键值对，没有特定的大小，可以存储任意数量的元素，key对象必须是不可变的</li>
+<li aria-level="1"><strong>sorted list:</strong><em>ArrayList</em>和<em> HashTable </em>的组合，存储为键值对的数据，按键排序的项，按键或索引访问的项，没有特定的大小，可以存储任意数量的元素</li>
+<li aria-level="1"><strong> Stack: </strong>简单的后进先出(LIFO)结构，没有特定的大小，可以存储任意数量的元素，元素被压入堆栈并从堆栈中弹出</li>
+<li aria-level="1"><strong> Queue: </strong>先进先出(FIFO)结构，没有特定的大小，可以存储任意数量的元素，元素被排入队列和从队列中出列</li>
+</ul>
+<h3 id="toc-23-what-is-a-jagged-array-in-c"><strong>23:c#中什么是交错数组？</strong></h3>
+<p><strong><img src="../Images/5cecec857f86750b0d2e0bcca142e4df.png" alt="Jagged Array in C#" data-original-src="https://cdn.hackr.io/uploads/posts/attachments/1673013800CTPbQi34Xo.png"/>T2】</strong></p>
+<p>交错数组由也是数组的元素组成，但是每个成员数组的大小可以不同。由于这种组合，我们可以将交错数组称为“数组的数组”。</p>
+<h3 id="toc-24-summarize-the-process-of-file-handling-in-c"><strong> 24:总结C#中文件处理的过程</strong></h3>
+<p>文件处理指的是打开、读取、写入和附加文件的过程。两种最常见的文件处理操作是读和写，在每种情况下，文件的数据都被转换成字节流。</p>
+
+<p>当写入文件时，我们使用输出流，当读取文件时，我们使用输入流。我们使用系统。IO命名空间来访问文件处理的静态方法。</p>
+
+<h3 id="toc-25-what-is-an-interface-class-in-c">C#中的接口类是什么？</h3>
+<p>这是一个抽象类，只包含<em>公共抽象</em>方法和属性。</p>
+<p>这些方法和属性只是声明的，没有定义或字段，因为它们是在抽象类接口继承的类中定义的。最佳实践是用“I”命名接口类，以便在视觉上将其识别为接口。</p>
+<h3 id="toc-26-describe-the-c-struct-data-type">描述C#结构的数据类型。</h3>
+<p>该结构是C#中继承自<em>系统的<em>值类型</em>数据类型。值</em>。这些用于存储数据结构和通常少量的数据。结构可以使用参数化的构造函数，它们是用<em> struct </em>关键字声明的。</p>
+<p>你可以使用<em> new </em>关键字来创建一个结构，这将需要传递参数(如果在构造函数中定义的话)，否则你可以创建一个没有<em> new </em>关键字的结构，这将使任何结构成员不被赋值。</p>
+<h3 id="toc-27-what-s-the-difference-between-a-class-and-a-struct"><strong> 27。类和结构之间有什么区别？</strong></h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>结构</strong></p>
+</td>
+<td>
+<p><strong>类</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><em>在堆栈上或内联上分配的值类型</em>(性能更高)</p>
+</td>
+<td>
+<p><em>在堆上分配并被垃圾收集的引用类型</em></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>用于小型数据结构</p>
+</td>
+<td>
+<p>用于复杂的数据结构</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>创建带的<em>或不带</em>的<em>的新关键字</em></p>
+</td>
+<td>
+<p>用新关键字创建<em/></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>不能有析构函数</p>
+</td>
+<td>
+<p>可以有析构函数</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>不能从另一个类或结构继承</p>
+</td>
+<td>
+<p>可以从另一个类继承，或者作为另一个类的基来继承</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>给变量赋值会创建数据的副本，对一个变量<em>的操作不会影响其他变量</em></p>
+</td>
+<td>
+<p>给变量赋值会创建一个对象引用的副本，对一个变量<em>的任何操作都会影响其他变量</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>想成为C#开发者？查看一下</strong> <a href="https://hackr.io/blog/best-csharp-courses"> <strong>最佳C#课程</strong> </a> <strong>来提升你的技能，增强你的简历。</strong></p>
+<h2 id="c-interview-questions-for-experienced-professionals"><strong>针对有经验的专业人士的C#面试问题</strong></h2>
+<h3 id="toc-28-what-s-the-difference-between-managed-unmanaged-code"><strong> 28:托管&amp;非托管代码有什么区别？</strong></h3>
+<p>托管代码是用。NET框架使用C#(或VB.NET)，并直接用公共语言运行时(CLR)执行。在这些情况下，CLR管理对象创建、对象删除和内存管理过程。</p>
+<p><strong>非托管代码</strong>是开发时没有。这意味着代码执行不由CLR处理。非托管代码有时被称为<em>不安全</em>代码，因为CLR不处理它，并且它提供低级访问，如果没有正确编程，可能会导致内存泄漏或其他错误。</p>
+<p><em>注意:这是最常见的C#。Net面试问题，所以一定要知道托管代码和非托管代码的区别。</em></p>
+<h3 id="toc-29-what-is-a-virtual-method-in-c">C#中的虚方法是什么？</h3>
+<p>我们可以在派生类中重新定义的方法，这意味着它可以在基类(原始类)和派生类中有不同的实现。</p>
+<p>当我们想从一个基类扩展一个原始方法的功能时，就会用到它们。我们使用<em> virtual </em>关键字在基类中创建一个虚拟方法，这允许在派生类中重写功能。因此，这是<em>多态性</em>的一个例子。</p>
+
+<p>不能将<em>虚拟</em>关键字用于基类中的静态、抽象或私有方法。</p>
+
+<h3 id="toc-30-what-is-reflection-in-c">C#中的反射是什么？</h3>
+<p>通过使用<em>系统，在运行时描述代码中类型、字段和方法的<em>元数据</em>的过程。反射</em>名称空间。</p>
+<p>这有助于在代码执行后对其进行“逆向工程”,从而允许您观察和检查代码中不同元素的重要元数据。</p>
+<h3 id="toc-31-what-is-serialization-in-c">C#中的序列化是什么？</h3>
+<p>将类对象的数据转换成字节流的转换过程。然后可以通过网络传输或存储在内存、文件或数据库中。</p>
+<p>首先，序列化用于保存对象的状态，允许我们稍后恢复它。为了逆转这个过程，我们需要使用<em>反序列化</em>。我们有各种可用的序列化类型。</p>
+<ul>
+<li><strong>二进制:</strong>将对象转换为二进制字节，用于网络传输或本地存储</li>
+<li>SOAP: 将对象转换成字节流，以便通过各种架构进行网络传输</li>
+<li><strong> XML: </strong>将对象转换为XML格式，用于网络传输或本地存储</li>
+<li><strong> JSON: </strong>将对象转换为JSON字符串，用于应用程序之间的数据交换</li>
+</ul>
+<h3 id="toc-32-summarize-thread-pooling-in-c"><strong> 32:总结C#中的线程池。</strong></h3>
+<p><strong><img src="../Images/f63ca98dda8568084d341ccb31b5feb7.png" alt="Thread Pooling in C#" data-original-src="https://cdn.hackr.io/uploads/posts/attachments/16730138449T78FsiYRj.png"/>T2】</strong></p>
+<p>当我们初始化一个多线程应用程序时，线程池被用来创建一个线程集合，当新任务需要一个线程时，这个集合可以被重用。这消除了为每个新任务创建新线程的需要。</p>
+<p>池中的每个线程都是为特定的任务设计的，它在池中等待，直到该任务类型出现。每当一个线程完成它的任务，它就返回池，等待将来分配给新任务。</p>
+<h3 id="toc-33-can-you-use-this-in-a-c-static-method">你能在C#静态方法中使用“this”吗？</h3>
+<p>不，因为“this”返回对同一类的当前实例的引用，而静态方法不属于任何特定的实例，因为它们可以单独由类名调用。</p>
+<p>一个例外是对于<em>扩展方法，</em>因为我们可以在方法的第一个参数中使用“this”。</p>
+<h3 id="toc-34-what-is-constructor-chaining-in-c">C#中的构造函数链接是什么？</h3>
+<p>这是一种在同一个类中的不同构造函数之间共享初始化代码的方式，或者是通过派生类中的继承从基类共享初始化代码的方式。</p>
+<p>如果我们在同一个类中有多个构造函数，我们可以用<em> :this() </em>关键字将它们链接起来，这允许我们在同一个类中灵活地实现不同的构造函数。</p>
+<p>如果我们想通过继承链接构造函数，我们可以使用<em> :base() </em>关键字，它将子类构造函数映射到父类的构造函数。</p>
+<h3 id="toc-35-summarize-the-thread-lifecycle-in-c"><strong> 35:总结C#中的线程生命周期。</strong></h3>
+<ol>
+<li aria-level="1"><strong>未启动状态(新):</strong><em>线程</em>类的新实例被初始化且未启动</li>
+<li aria-level="1"><strong>可运行状态:</strong><em>Start()</em>方法被调用，线程准备运行</li>
+<li aria-level="1"><strong>运行:</strong>调度程序选择了一个线程来运行</li>
+<li aria-level="1"><strong>不可运行:</strong>有时也称为<em> WaitSleepJoin </em>，当我们调用<em> Wait() </em>或<em> Sleep() </em>时，一个线程进入这种状态，当它在另一个线程上调用<em> Join() </em>时也是如此</li>
+<li aria-level="1"><strong> Dead State: </strong>一个线程已经完成了它的任务，或者已经调用了<em> Abort() </em>方法；这是线程生命周期的最后一个阶段</li>
+</ol>
+<p><img src="../Images/e6db1456fbb9547c54a67a3754f332d7.png" alt="Thread Lifecycle in C#" data-original-src="https://cdn.hackr.io/uploads/posts/attachments/16730138794SzgFsQDyO.png"/></p>
+<h3 id="toc-36-why-are-async-and-await-used-in-c">为什么在C#中使用Async和Await？</h3>
+<p>如果我们有一个程序要求方法独立于主进程运行，我们需要使用异步编程。这允许我们运行进程，并在需要时让它们等待，而不会阻塞程序的其余部分。</p>
+<p>为此，我们使用<em> Async </em>关键字创建一个异步方法，并让<em>等待</em>在不阻塞程序的情况下运行它。</p>
+<h3 id="toc-37-what-is-an-indexer-in-c">C#中的索引器是什么？</h3>
+<p>有时被称为<em>智能数组</em>，索引器被用来创建一个类或结构，其行为就像一个<em>虚拟数组</em>。</p>
+<p>通过这样做，可以使用标准的array []访问器访问类或结构的实例，允许它们像数组的元素一样被索引。</p>
+<h3 id="toc-38-what-s-the-difference-between-ref-and-out-in-c">C#中的' ref '和' out '有什么区别？</h3>
+<p><em> ref </em>和<em> out </em>关键字都允许我们通过<em>引用</em>向方法传递参数。通过这样做，我们可以确保我们在方法或函数体中对参数所做的任何更改都将反映在原始变量中，并保持在方法范围之外。</p>
+<ul>
+<li aria-level="1"><strong> Ref: </strong>在传递给<em> ref </em>之前必须初始化参数，但是在返回给调用方法之前不需要初始化或者赋值参数。这通常用于传递要在函数中修改的参数，并保持这些更改。</li>
+</ul>
+<ul>
+<li aria-level="1"><strong> Out: </strong>您不需要在传递给<em> out </em>之前初始化参数，但是您必须确保它们在返回到调用方法之前被初始化。当您想要设计一个返回多个值的方法时，通常会使用这种方法。</li>
+</ul>
+<p>注意这是一个C#技术面试问题，对于有经验的开发人员来说，你应该能够毫不犹豫地回答。</p>
+<h3 id="toc-39-what-is-a-singleton-in-c">C#中的Singleton是什么？</h3>
+<p>一个<em> singleton </em>是一个特殊类型的类(它也适用于其他语言)，我们用它来确保我们只能创建一个<em>单个</em>类实例。我们还需要确保提供一个<em>全球</em>接入点。</p>
+<p>从逻辑上讲，当使用这种设计模式时，我们不会参数化构造函数，因为我们不会创建具有不同字段的多个类实例。我们还确保构造函数是私有的。</p>
+<h3 id="toc-40-what-are-c-delegates">什么是C#委托？</h3>
+<p>它们是C++函数指针的C#等效物，主要区别在于C#委托是类型安全的。这些是一个<em>引用类型</em>数据类型，可用于处理其他函数，如数据。我们可以将函数作为参数传递，并处理任何相关的回调函数和事件。</p>
+<p>想增加获得C#开发人员工作的机会吗？考虑在你的简历中添加一个 <a href="https://hackr.io/blog/csharp-certification"> <strong>最佳C#认证</strong> </a> <strong>。</strong></p>
+<h2 id="bonus-tips-for-c-interviews"><strong>C #面试的额外提示</strong></h2>
+<ul>
+<li aria-level="1">公司研究:他们是否有一个博客，里面有关于他们的文化、主要公司里程碑、令人兴奋的项目或面试中可能出现的任何其他话题的见解？确保你知道你将为谁工作。</li>
+<li aria-level="1"><strong>澄清关键细节:</strong>如果你对面试的结构、流程、时间或其他任何事情不确定，联系招聘人员或招聘经理，询问你可能有的任何问题。你也可以在像<a href="https://www.glassdoor.com/index.htm"> Glassdoor </a>这样的网站上寻找以前面试和候选人的信息。</li>
+<li aria-level="1">软技能:为所有技术性的事情做好准备是一个很好的起点，但不要被与软技能相关的问题弄得措手不及，包括团队合作、沟通、处理困难情况等。一般来说，你应该期待行为和情景问题来测试你的软技能和一般性格。</li>
+</ul>
+<p><a href="https://hackr.io/blog/c-sharp-cheat-sheet"> <strong>下载我们的C#小抄</strong> </a> <strong>作为你面试准备的补充资源。</strong></p>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>C#是一种类型安全的语言，易于学习，非常适合使用。NET框架。虽然它的根源与C语言家族有关，但熟悉Java和Javascript的程序员会对C#语法感到很舒服。</p>
+<p>无论你是在寻找一个入门级的软件开发职位，还是一个有经验的C#开发人员正在寻找一个新的角色，你都需要刷新你对基本C#概念的记忆。</p>
+<p>本文涵盖了40个C#面试问题和答案，主题从完全初学者到5年或更长时间经验的C#面试问题。任何时候你可以花时间学习这些C#面试问题都是为了确保你做好准备！</p>
+<p>有兴趣成为一名C#开发人员，但又想提高自己的技能？ <a href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomplete-csharp-masterclass%2F" target="_blank" rel="nofollow noopener"> <strong>查看完整C#大师班</strong> </a></p>
+
+									</div>
+
+									</div>    
+</body>
+</html>

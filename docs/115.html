@@ -1,0 +1,516 @@
+<html>
+<head>
+<title>Top 50 PL/SQL Interview Questions and Answers in 2023 [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年50大PL/SQL面试问答[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/pl-sql-interview-questions#0001-01-01">https://hackr.io/blog/pl-sql-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>您是否正在准备PL/SQL面试，如果是，我们将在此列出一系列PL/SQL面试问题。</p>
+<p>PL(过程语言)是SQL(结构化查询语言)的扩展，开发人员可以使用过程、分支和迭代等控制结构、模块和函数编写复杂的数据库交互。它与SQL紧密集成，支持动态和静态SQL。</p>
+<p>在面试的其他问题中，了解SQL和PL/SQL的不同也很重要。与SQL相比，PL/SQL的一些优势包括:</p>
+<ul>
+<li>支持过程化处理、条件语句、循环和其他类似于高级语言的特性。</li>
+<li>多个语句可以以过程的形式一次发送到数据库服务器，从而节省时间和网络流量。</li>
+<li>定制的错误处理是可能的。</li>
+<li>完全便携。</li>
+</ul>
+<p>除了上述优点，PL/SQL还有一些更吸引人的特性，如函数、过程、触发器、游标，这使它成为最通用的关系数据库之一。</p>
+
+<h2 id="introduction"><strong>简介</strong></h2>
+<p>PL/SQL 1.0于1992年发布，Oracle 6作为可选扩展。正是在PL/SQL 2.0中，引入了<a href="https://hackr.io/blog/stored-procedures"> <strong>存储过程</strong> </a>、函数、用户定义的记录类型、表、包以及DBMS_*之类的扩展。最新的PL/SQL版本是11.0，它随Oracle 11g一起发布，并附带了一些高级功能，如本机编译、PL/SQL函数结果高速缓存和分钟相关性跟踪。</p>
+<h2 id="best-pl-sql-interview-questions-answers"><strong>最佳PL/SQL面试问题&amp;答案</strong></h2>
+<p>以下是一些常见的基本和高级pl/sql面试问题和答案，面试官在面试中会问这些问题和答案</p>
+<h4 id="question-what-is-pl-sql"><strong>问题:什么是PL/SQL？</strong></h4>
+<p><strong> A </strong> <strong> nswer: </strong> A <a href="https://hackr.io/blog/procedural-programming">程序语言</a>代码可以分块执行。它是SQL的扩展。</p>
+<h4 id="question-what-are-the-differences-between-pl-sql-and-sql"><strong>问题:PL/SQL和SQL有什么区别？</strong></h4>
+<p><strong>答案:</strong></p>
+<table>
+<tbody>
+<tr>
+<td><strong> SQL </strong></td>
+<td><strong> PL/SQL </strong></td>
+</tr>
+<tr>
+<td>SQL是一种与数据库交互的查询语言。</td>
+<td>它是SQL的扩展，支持过程、函数和更多特性。</td>
+</tr>
+<tr>
+<td>仅支持可以对表执行插入、更新和删除操作的简单查询。</td>
+<td>可以像高级编程语言一样执行复杂的任务，例如while循环、if-else语句等…</td>
+</tr>
+<tr>
+<td>SQL语句一次只能执行一条，因此这是一个非常耗时的过程。</td>
+<td>整个语句块被一次发送到数据库服务器执行，节省了时间，提高了效率。</td>
+</tr>
+<tr>
+<td>不提供错误处理。</td>
+<td>定制的错误处理是可能的。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-what-is-the-basic-structure-of-pl-sql"><strong>问题:PL/SQL的基本结构是什么？</strong></h4>
+<p><strong>答案:</strong></p>
+<pre>[DECLARE]
+--declaration statements (optional)
+BEGIN
+--execution statements
+[EXCEPTION]
+--exception handling statements
+END;
+</pre>
+<h4 id="question-define-cursor-and-its-use"><strong>问题:定义光标及其用途。</strong></h4>
+<p><strong>答案:</strong>游标是一个指针，指向Oracle为处理SQL语句而分配的内存区域。游标用于保存SQL查询返回的记录。有两种类型的游标-隐式和显式。</p>
+
+<h4 id="question-why-do-we-use-database-triggers-give-the-syntax-of-a-trigger">问题:为什么我们要使用数据库触发器？给出触发器的语法。</h4>
+<p><strong>答:</strong>触发器是一个存储过程，在事件发生时自动调用。事件可以是:插入、更新、删除等……语法–</p>
+<pre>create trigger [trigger_name]
+[before | after]
+
+on [table_name]
+[for each row]
+[trigger_body]
+</pre>
+<h4 id="question-how-do-you-compile-pl-sql-code"><strong>问题:如何编译PL/SQL代码？</strong></h4>
+<p><strong>回答:</strong>首先进行语法检查。当开发人员纠正任何语法错误时，Oracle将所有保存数据的变量与存储地址绑定在一起。最后，执行p代码生成过程。</p>
+<h4 id="question-explain-exception-handling-in-pl-sql"><strong>问题:解释PL/SQL中的异常处理。</strong></h4>
+<p><strong>回答:</strong> PL/SQL提供定制的异常处理。当错误发生时，错误处理代码包含在程序本身中。有3种例外情况——</p>
+<ul>
+<li>预定义异常–已经定义的常见错误。示例–未找到数据</li>
+<li>未定义的异常–没有预定义名称的错误。</li>
+<li>用户定义的异常–由用户编写的代码处理。</li>
+</ul>
+<h4 id="question-tell-about-a-few-data-types-in-pl-sql"><strong>问题:说说PL/SQL中的几种数据类型。</strong></h4>
+<p><strong>回答:</strong>数据类型很多——</p>
+<ul>
+<li>标量类型–原始数据类型，如CHAR、DATE、LONG、VARCHAR2等</li>
+<li>复合数据–这些数据由其他数据类型组成，可以很容易地更新。示例、记录、表格等</li>
+<li>引用数据类型，如游标</li>
+<li>大型对象类型–BLOB、CLOB等</li>
+</ul>
+<h4 id="question-what-is-the-difference-between-type-and-rowtype-give-an-example"><strong>问题:%TYPE和%ROWTYPE有什么区别？举个例子。</strong></h4>
+<p><strong>答案:</strong></p>
+<table>
+<tbody>
+<tr>
+<td><strong>%类型</strong></td>
+<td><strong>%行类型</strong></td>
+</tr>
+<tr>
+<td>声明与表列具有相同数据类型的变量的属性。</td>
+<td>声明与表行具有相同结构的记录类型变量的属性。行是包含与表或视图的列具有相同数据类型和<em>名称</em>的字段的记录。</td>
+</tr>
+<tr>
+<td>示例—<pre>DECLARE studentId students.student_id%TYPE; </pre></td>
+<td>示例—<pre>DECLARE stud_rec students.%ROWTYPE;</pre></td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-what-constitutes-a-pl-sql-package">问题:PL/SQL包是由什么组成的？</h4>
+<p><strong>答:</strong>包是将函数、过程、变量等…放在一个地方的模式对象。包装应具有–</p>
+<ul>
+<li>包装规格</li>
+<li>包装体</li>
+</ul>
+<h4 id="question-list-some-schema-objects-that-are-created-using-pl-sql"><strong>问题:列出一些使用PL/SQL创建的模式对象。</strong></h4>
+<p><strong>回答:</strong>数据库链接、触发器、存储过程、函数和包、视图、同义词、外部过程库、序列等…</p>
+<p><strong>查看这里:</strong> <a href="https://hackr.io/blog/sql-commands">基本SQL命令清单</a></p>
+<h4 id="question-what-are-the-various-predefined-exceptions">问:各种预定义的异常是什么？</h4>
+<p><strong>答:</strong>预定义异常是在程序执行过程中发生的内部定义的异常。例如，当select操作没有返回任何行时，PL/SQL会引发NO_DATA_FOUND，如果使用select语句返回了多行，则会生成TOO_MANY_ROWS错误。更多示例:</p>
+<ul>
+<li>COLLECTION_IS_NULL:当集合为空时</li>
+<li>CURSOR_ALREADY_OPEN:当游标已经打开时</li>
+<li>LOGIN_DENIED:当登录不正确或没有权限时</li>
+</ul>
+<p>有关预定义异常的完整列表，请查看Oracle文档。</p>
+<h4 id="question-what-is-the-difference-between-syntax-and-runtime-errors"><strong>问题:语法错误和运行时错误有什么区别？</strong></h4>
+<p><strong>答案:</strong></p>
+<table>
+<tbody>
+<tr>
+<td><strong>语法错误</strong></td>
+<td><strong>运行时错误</strong></td>
+</tr>
+<tr>
+<td>这些是编译器发现的编译时错误。</td>
+<td>这些不会被编译器检测到，并导致程序给出不正确的结果。</td>
+</tr>
+<tr>
+<td>在这些问题解决之前，代码不会构建和运行。</td>
+<td>代码被编译并运行，如果出现错误，程序会中途停止。</td>
+</tr>
+<tr>
+<td>一些例子是缺少分号或括号(；，{})，错误的类别拼写，关键字等。</td>
+<td>例子有空指针异常、将一个数除以零、数组索引越界等。</td>
+</tr>
+<tr>
+<td>int x = 9 String name = null在第一行中，缺少一个分号，编译器会捕捉到它</td>
+<td>字符串名称= nullif(name . equals(" hackr . io "){…}因为name为空，所以在运行时执行代码时会捕获到异常</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<h4 id="question-what-are-the-various-packages-available-for-pl-sql-developers"><strong>问题:PL-SQL开发人员可用的各种包有哪些？</strong></h4>
+<p><strong>回答:</strong>可供PL/SQL开发人员使用的几个包是:</p>
+<table>
+<tbody>
+<tr>
+<td>DBMS_ALERT</td>
+<td>当特定数据库值发生变化时，使用触发器向应用程序发出警报。这些警报是基于事务的异步警报。</td>
+</tr>
+<tr>
+<td>数据库管理系统_输出</td>
+<td>显示PL/SQL块、程序包、子程序和触发器的输出。主要用于显示PL/SQL调试信息。</td>
+</tr>
+<tr>
+<td>数据库管理系统_管道</td>
+<td>不同的会话使用这个包通过命名管道进行通信。过程PACK_MESSAGE和SEND_MESSAGE将消息打包到管道中，然后将其发送到另一个会话。</td>
+</tr>
+<tr>
+<td>HTF和HTP</td>
+<td>允许PL/SQL程序生成HTML标记。</td>
+</tr>
+<tr>
+<td>UTL _文件</td>
+<td>让PL/SQL程序读写操作系统文本文件。</td>
+</tr>
+<tr>
+<td>UTL_HTTP</td>
+<td>允许您的PL/SQL程序生成超文本传输协议(HTTP)标注。这个包有两个入口点，每个入口点接受一个URL(统一资源定位符)字符串，联系指定的站点，并返回请求的数据，这些数据通常是HTML格式的。</td>
+</tr>
+<tr>
+<td>UTL_SMTP</td>
+<td>允许PL/SQL程序通过SMTP发送电子邮件。</td>
+</tr>
+</tbody>
+</table>
+<p>来源:<a href="https://docs.oracle.com/cd/B19306_01/appdev.102/b14261/packages.htm">甲骨文文件</a></p>
+<h4 id="question-explain-character-functions">问题:解释角色功能？</h4>
+<p><strong>答案:</strong>字符函数是操纵字符数据的函数。这些函数通常被称为字符串函数。示例:</p>
+<table>
+<tbody>
+<tr>
+<td>左边的</td>
+<td>返回从字符串左侧开始的字符数。左(值，NoOfChars)。例子</td>
+<td>左(' Hackr '，4)会给出Hack。</td>
+</tr>
+<tr>
+<td>正确</td>
+<td>从右侧返回指定数量的字符。右(值，NoOfChars)。例子</td>
+<td>RIGHT('banker '，2)将返回er。</td>
+</tr>
+<tr>
+<td>子链</td>
+<td>从字符串的任何部分选择数据。SUBSTRING(value，StartPosition，NoOfChars)。例子</td>
+<td>SUBSTRING('hackr.io '，0，4)将返回hackr。</td>
+</tr>
+<tr>
+<td>LTRIM(即时通讯)</td>
+<td>从左侧修剪空白。例子</td>
+<td>LTRIM(' hackr.io ')将返回hackr.io。</td>
+</tr>
+<tr>
+<td>RTRIM</td>
+<td>从右侧修剪空白。例子</td>
+<td>RTRIM('hackr.io ')将返回hackr.io。</td>
+</tr>
+<tr>
+<td>上面的</td>
+<td>将所有字符转换为大写。例子</td>
+<td>UPPER('hackr.io ')返回hackr.io。</td>
+</tr>
+<tr>
+<td>降低</td>
+<td>将所有字符转换成小写。例子</td>
+<td>降低(' HACKR。IO’)返回hackr.io。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-what-is-the-use-of-sysdate-and-user-keywords-explain-with-examples"><strong>问题:SYSDATE和用户关键字有什么用？举例说明。</strong></h4>
+<p><strong>答案:SYSDATE: </strong>返回本地数据库服务器上的当前日期和时间。语法是SYSDATE。如果我们必须提取部分日期，那么我们使用TO_CHAR函数。示例:</p>
+<pre>SELECT SYSDATE FROM dual;<br/>select customer_id, TO_CHAR(SYSDATE, 'yyyy/mm/dd') from customer where customer_id &lt; 200;</pre>
+<p><strong> USER: </strong> USER返回当前会话的user_id。</p>
+<p>示例:</p>
+<pre>select USER from dual;</pre>
+<h4 id="question-what-is-the-difference-between-sga-and-pga">问:SGA和PGA有什么区别？</h4>
+<p><strong>回答:</strong></p>
+<table>
+<tbody>
+<tr>
+<td><strong> SGA </strong></td>
+<td><strong> PGA </strong></td>
+</tr>
+<tr>
+<td>系统全局区域</td>
+<td>程序全局区域</td>
+</tr>
+<tr>
+<td>包含一个Oracle数据库实例的数据和控制信息</td>
+<td>包含专用于单个Oracle进程的数据和控制信息</td>
+</tr>
+<tr>
+<td>组件的共享内存区域</td>
+<td>非共享存储区</td>
+</tr>
+<tr>
+<td>示例:缓存的数据块和SQL区域</td>
+<td>示例:会话内存、SQL工作区</td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-explain-the-uses-of-merge-with-syntax-in-pl-sql">问:解释在PL-SQL中Merge with语法的用法。</h4>
+<p><strong>答:</strong> Merge减少了表扫描的次数，如果需要的话还会执行并行操作。MERGE有条件地将数据从一个表插入或更新到另一个表。举个例子，</p>
+<pre>MERGE INTO orders o<br/> USING customer c<br/> ON (o.cust_id = c.cust_id)<br/> WHEN MATCHED THEN<br/> UPDATE SET o.del_address = c.address<br/> WHEN NOT MATCHED THEN<br/> INSERT (cust_id, address)<br/>VALUES (c.emp_id, c.address);</pre>
+<p>在这个例子中，如果找到了具有匹配条件的记录，则更新相同记录的地址，否则插入新的行。</p>
+<h4 id="question-explain-the-benefits-of-pl-sql-packages"><strong>问题:解释PL-SQL包的好处。</strong></h4>
+<p><strong>回答:</strong>使用PL/SQL包有很多好处:</p>
+<ul>
+<li>更好的代码管理，因为包为子程序提供了一个容器</li>
+<li>实现和规范分离的自顶向下的应用程序设计方法(接口)</li>
+<li>如果子程序有任何改变，不需要改变依赖对象或重新编译整个包</li>
+<li>可以指定可访问性(私有/公共)，从而维护代码的安全性</li>
+<li>数据可以跨整个会话的事务进行维护，而无需存储在数据库中</li>
+<li>在子程序的第一次调用中，加载整个包，因此后续调用不需要磁盘I/O，从而提供更好的性能。</li>
+</ul>
+<h4 id="question-explain-the-difference-between-rollback-and-rollback-to-statements"><strong>问题:解释ROLLBACK和ROLLBACK TO语句的区别？</strong></h4>
+<p><strong>回答:</strong> ROLLBACK命令从事务开始处回滚所有的更改。在ROLLBACK TO中，事务仅回滚(或撤消)到一个称为保存点的点。保存点之前的事务不能撤消，即使给出了命令，事务仍保持活动状态。</p>
+<h4 id="question-explain-the-difference-between-procedure-and-function"><strong>问题:解释过程和函数的区别。</strong></h4>
+<p><strong>答案:</strong></p>
+<table>
+<tbody>
+<tr>
+<td><strong>功能</strong></td>
+<td><strong>程序</strong></td>
+</tr>
+<tr>
+<td>The function is compiled every time
+<p>它被要求执行。</p>
+</td>
+<td>程序是预先编译和保存的。只要被调用，它们就会执行预编译的代码。</td>
+</tr>
+<tr>
+<td>可以从SQL语句中调用。</td>
+<td>不能从SQL语句中调用。</td>
+</tr>
+<tr>
+<td>该函数必须返回值。</td>
+<td>不需要返回任何值。</td>
+</tr>
+<tr>
+<td>通常用于计算目的。</td>
+<td>用于执行复杂的业务逻辑。</td>
+</tr>
+<tr>
+<td>可以使用其他方法返回多个值，否则，只返回一个值。</td>
+<td>可以返回多个值</td>
+</tr>
+<tr>
+<td>返回标量数据类型。</td>
+<td>默认情况下返回一个整数。</td>
+</tr>
+<tr>
+<td>不能从函数中调用存储过程</td>
+<td>该程序可以调用任何函数</td>
+</tr>
+<tr>
+<td>函数可以嵌入到select语句中</td>
+<td>在select语句中，不能调用过程。</td>
+</tr>
+<tr>
+<td>异常处理是不可能的</td>
+<td>Try/catch块可以在过程内部定义</td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-explain-the-difference-between-procedure-and-trigger"><strong>问题:解释过程和触发器的区别。</strong></h4>
+<p><strong>答案:</strong></p>
+<table>
+<tbody>
+<tr>
+<td><strong>程序</strong></td>
+<td><strong>触发</strong></td>
+</tr>
+<tr>
+<td>由用户、触发器或应用程序显式调用</td>
+<td>每当数据库中发生事件时，由DBMS执行。</td>
+</tr>
+<tr>
+<td>可以有参数</td>
+<td>没有参数</td>
+</tr>
+<tr>
+<td>不能处于非活动状态</td>
+<td>可以根据需要启用或禁用</td>
+</tr>
+<tr>
+<td>创建–创建程序</td>
+<td>创建–创建触发器</td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-what-are-the-different-types-of-cursors-in-pl-sql"><strong>问题:PL/SQL中有哪些不同类型的游标？</strong></h4>
+<p><strong>回答:</strong>光标有两种类型——</p>
+
+<ul>
+<li>隐式游标–PL/SQL对返回单行的INSERT、UPDATE、DELETE和SELECT语句应用隐式游标。</li>
+<li>显式游标–由程序员为返回多行的查询创建。语法–</li>
+</ul>
+<pre>CURSOR is
+SELECT statement;
+OPEN ;
+FETCH INTO ;
+CLOSE ;
+</pre>
+<h4 id="question-what-are-the-different-types-of-constraints">问:有哪些不同类型的约束？</h4>
+<p><strong>答案:</strong></p>
+<ul>
+<li>不为空</li>
+<li>独一无二的</li>
+<li>主关键字</li>
+<li>外键</li>
+<li>支票</li>
+</ul>
+<h4 id="question-what-are-the-differences-between-triggers-and-constraints"><strong>问题:触发器和约束有什么区别？</strong></h4>
+<p><strong>答案:</strong></p>
+<table>
+<tbody>
+<tr>
+<td><strong>触发器</strong></td>
+<td><strong>约束条件</strong></td>
+</tr>
+<tr>
+<td>作为单独的对象存储</td>
+<td>表的约束与表定义一起存储</td>
+</tr>
+<tr>
+<td>事件发生时触发触发器；因此，它们在约束后被触发</td>
+<td>Constraints are fired as soon as the
+<p>这张桌子已经用过了。</p>
+</td>
+</tr>
+<tr>
+<td>Perform table to table
+<p>比较，因此更快</p>
+</td>
+<td>执行内存定位来比较表，这是缓慢的，导致低性能。</td>
+</tr>
+<tr>
+<td>触发器适用于整个表</td>
+<td>该约束针对表中的一列</td>
+</tr>
+<tr>
+<td>它们只是自动执行的存储过程，因此不检查数据完整性。</td>
+<td>防止重复和无效的数据条目</td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-explain-the-pl-sql-block-with-an-example"><strong>问题:举例说明PL/SQL块。</strong></h4>
+<p><strong>答案:</strong> PL/SQL块由三个部分组成:声明、可执行和异常处理部分。可执行部分是必需的。有两种类型的块:命名的和匿名的。</p>
+<p>命名块是存储在数据库服务器中并可以重用的函数和过程。匿名块仅供一次性使用，不存储在服务器中。示例:</p>
+<pre><strong>DECLARE</strong><br/><br/> message VARCHAR2(255):= 'Welcome to PL/SQL';<br/> byzero NUMBER;<br/><br/><strong>BEGIN</strong><br/><br/>   DBMS_OUTPUT.put_line (message);<br/>   byzero := 1/0;<br/><br/>   <strong>EXCEPTION</strong><br/><br/>  WHEN ZERO_DIVIDE THEN<br/> DBMS_OUTPUT.PUT_LINE(SQLERRM);<br/>END;</pre>
+<h4 id="question-explain-pl-sql-records"><strong>问题:解释PL/SQL记录。</strong></h4>
+<p><strong>答案:</strong>记录包含一组各种数据类型的数据，这些数据可以作为字段相互关联。PL/SQL中支持的三种记录类型是基于表的记录、基于程序员的记录和基于游标的记录。</p>
+<h4 id="question-explain-the-difference-between-commit-and-savepoint">问题:解释提交和保存点的区别。</h4>
+<p><strong>答案:</strong></p>
+<p>提交–用于使数据库更改永久化。所有保存点被删除，交易结束。一旦提交，事务就不能回滚。</p>
+<p>保存点–用于在事务期间设置点，程序员可以在以后回滚到该点。当有一系列事务可以分成具有保存点的组时，这是很有帮助的。</p>
+<h4 id="question-what-is-the-difference-between-actual-and-formal-parameters"><strong>问题:实参和形参有什么区别？</strong></h4>
+<p><strong>答:</strong>用来调用一个过程的参数称为实参。示例–</p>
+<pre>get_student_details(stud_name, dob); -- here stud_name and dob are actual parameters.
+</pre>
+<p>在主体中使用的过程头中声明的变量称为形参。示例–</p>
+
+<pre>PROCEDURE get_student_details (dob DATE) IS – here stud_name is a formal parameter.
+</pre>
+<h4 id="question-how-is-a-declare-statement-used">问:如何使用DECLARE语句？</h4>
+<p><strong>答:</strong> DECLARE用作独立文件的第一条语句，这些文件由非存储过程、函数或触发器的匿名代码块组成。示例–</p>
+
+<pre>DECLARE
+num1 NUMBER(2);
+num2 NUMBER(3);
+BEGIN
+-- logic goes here
+END;
+</pre>
+<h4 id="question-tell-us-about-sqlcode-and-sqlerrm"><strong>问题:给我们讲讲SQLCODE和SQLERRM。</strong></h4>
+<p><strong>答案:</strong> SQLCODE和SQLERRM用于跟踪程序中没有显式处理的异常。这些是全局定义的变量。SQLCODE返回错误代码，而SQLERRM返回相应的错误消息。</p>
+<h4 id="question-what-is-rollback-how-is-it-different-from-rollback-to-statement"><strong>问题:什么是回滚？与rollback to statement有何不同？</strong></h4>
+<p><strong>答:</strong>回滚会擦除所有数据库更改，包括所有保存点。它结束一个交易。</p>
+<p>“回滚到”将更改回滚到代码中提到的保存点。该事务仍将是活动的。</p>
+<h4 id="question-what-is-in-out-parameter"><strong>问题:什么是IN OUT参数？</strong></h4>
+<p><strong>答:</strong>在OUT参数模式下传递一个值给子程序，返回一个更新后的值。</p>
+<h4 id="question-is-it-possible-to-accept-user-inputs-during-runtime-how">问题:在运行时可以接受用户输入吗？怎么会？</h4>
+<p><strong>回答:</strong>是的，有可能。使用ACCEPT关键字接受用户的输入。示例–</p>
+<p>接受年龄号码提示“输入您的年龄:”</p>
+<h4 id="question-give-a-simple-way-to-run-a-query-faster"><strong>问题:给出一个更快运行查询的简单方法。</strong></h4>
+<p><strong>答案:</strong>通过使用ROWID。它不是物理列，而是行的逻辑地址。它包含块号、文件号和行号，从而减少I/O时间，使查询执行更快。</p>
+<h4 id="question-what-are-some-of-the-pre-defined-exceptions-in-pl-sql">问题:PL/SQL中有哪些预定义的异常？</h4>
+<p><strong>答案:</strong>零除、无数据发现、太多行、无效游标、DUP有效索引等</p>
+<h4 id="question-how-do-you-trace-the-pl-sql-code">问:你如何追踪PL/SQL代码？</h4>
+<p><strong>回答:</strong>您可以通过DBMS_*方法进行跟踪，例如</p>
+<ul>
+<li>数据库管理系统应用信息</li>
+<li>DBMS_TRACE</li>
+<li>数据库管理系统会话和数据库管理系统监视器</li>
+</ul>
+<h4 id="question-how-to-restrict-string-length-in-pl-sql"><strong>问题:如何在PL/SQL中限制字符串长度？</strong></h4>
+<p><strong>答:</strong>用CHAR (NUMBER)获取一个变量的固定长度。示例–CHAR(10)。如果字符串的长度小于指定的数字，它将用空格填充。</p>
+
+<h4 id="question-what-is-the-purpose-of-the-utl-file-package-in-pl-sql"><strong>问题:PL/SQL中UTL _文件包的用途是什么？</strong></h4>
+<p><strong>回答:</strong>通过使用这个包，开发者可以获得从计算机读写文件的代码。为此，开发人员需要DBA用户的访问授权。</p>
+
+<h4 id="question-what-are-dbms-output-and-dbms-debug"><strong>问题:DBMS_OUTPUT和DBMS_DEBUG是什么？</strong></h4>
+<p><strong>回答:</strong>两者都可以用来调试代码。DBMS_OUTPUT将输出打印到控制台，而DBMS_DEBUG将输出打印到日志文件。</p>
+<h4 id="question-list-some-cursor-attributes-in-pl-sql"><strong>问题:列出PL/SQL中的一些游标属性。</strong></h4>
+<p><strong>答案:</strong></p>
+<ul>
+<li>%ISOPEN:检查光标是否打开</li>
+<li>%ROWCOUNT:获取更新、删除或提取的行数。</li>
+<li>%FOUND:检查游标是否提取了任何行，返回Boolean。</li>
+<li>%NOT FOUND:检查游标是否提取了任何行。返回布尔值。</li>
+</ul>
+<h4 id="question-what-is-the-purpose-of-nvl">问:NVL的目的是什么？</h4>
+<p><strong>回答:</strong> NVL让程序员用一个值代替一个空值。示例–</p>
+<pre>NVL (occupation, ‘default’)
+</pre>
+<h4 id="question-on-a-table-how-many-triggers-can-be-applied"><strong>问题:在一个表上，可以应用多少个触发器？</strong></h4>
+<p><strong>回答:</strong> 12是最大数。</p>
+<h4 id="question-how-can-we-achieve-consistency-using-pl-sql">问题:如何使用PL/SQL实现一致性？</h4>
+<p><strong>回答:</strong>我们可以通过设置合适的隔离级别来达到一致性。例如，为了提供读一致性，可以将隔离级别设置为READ COMMITTED。</p>
+<h4 id="question-write-a-simple-procedure-to-select-some-records-from-the-database-using-some-parameters"><strong>问题:</strong> <strong>写一个简单的程序，用一些参数从数据库中选择一些记录。</strong></h4>
+<p><strong>回答:</strong>示例代码——</p>
+<pre><strong>CREATE</strong> <strong>PROCEDURE</strong> get_customer_details @age nvarchar(30), @city nvarchar(10)
+<strong>AS</strong>
+
+<strong>BEGIN</strong>
+SELECT * FROM customers WHERE age = @age AND city = @city;
+<strong>END</strong>;
+</pre>
+<h4 id="question-explain-the-error-ora-03113"><strong>问题:解释错误ORA-03113。</strong></h4>
+<p><strong>回答:</strong>通信通道ORA-03113上的错误文件尾表示客户端和服务器通道之间的连接断开。可能是超时导致连接丢失。您可以通过ping服务器并检查连通性来排除故障。</p>
+<h4 id="question-can-you-use-if-statement-inside-a-select-statement-how">问:你能在SELECT语句中使用IF语句吗？怎么会？</h4>
+<p><strong>回答:</strong>是的，我们可以在版本9及以上版本中使用DECODE关键字来实现。示例–</p>
+<pre>SELECT day_of_week,
+<strong>DECODE</strong> (number, 0, 'Sunday',
+1, 'Monday',
+2, 'Tuesday',
+3, 'Wednesday',
+4, 'Thursday',
+5, 'Friday',
+6, 'Saturday',
+'No match') result FROM weekdays;</pre>
+<h4 id="question-what-is-sys-all-dependencies"><strong>问题:什么是SYS。所有_依赖关系？</strong></h4>
+<p><strong>答案:</strong> SYS。ALL_DEPENDENCIES描述当前用户可访问的包、过程、函数、触发器之间的所有依赖关系。它显示诸如名称、类型、依赖类型、引用所有者等列</p>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>在本文中，我们讨论了一些最重要的pl/sql面试问题，这些问题一定会让你通过最艰难的面试。如果您想深入学习这些概念并获得一些实践经验，请查看我们的PL/SQL教程。</p>
+<p>这些面试问题将帮助您在PL-SQL面试中取得更好的成绩。在本课程中，我们还将介绍一些PL/SQL面试问题:<a href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https://www.udemy.com/course/plsql-interview-questions/" rel="nofollow"> 200+ PL/SQL面试问题</a>。</p>
+<p>另外，这里有一本很棒的<a href="https://geni.us/ZoMyYgB" rel="nofollow"> PL/SQL面试问题</a>书，可以为即将到来的面试做准备。</p>
+<p>如果你有一些其他的问题，我们没有在这个列表中，你想知道这些问题的答案，只需在下面评论。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

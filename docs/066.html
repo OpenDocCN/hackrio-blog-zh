@@ -1,0 +1,214 @@
+<html>
+<head>
+<title>MongoDB vs MySQL: Differences You Need to Know [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>MongoDB vs MySQL:你需要知道的区别[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/mongodb-vs-mysql#0001-01-01">https://hackr.io/blog/mongodb-vs-mysql#0001-01-01</a></blockquote><div><div class="content">
+										<p>关系数据库管理系统(RDBMS)已经流行了几十年，尤其是对于基于web的企业应用程序。分布式和云计算的快速增长，以及用户对数据存储和管理的不断变化的期望，为两个最流行的开源数据库铺平了道路:MySQL和MongoDB。</p>
+<p>在这里，我们将比较MongoDB和MySQL之间的差异，这将有助于您做出审慎的决定，并为您的应用程序选择最合适的数据库。我们从一个快速比较两者的表格开始。</p>
+<h2 id="mysql-vs-mongodb-head-to-head-comparison"><strong> MySQL vs MongoDB:势均力敌的对比</strong></h2>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>参数</strong></p>
+</td>
+<td>
+<p><strong> MongoDB </strong></p>
+</td>
+<td>
+<p><strong> MySQL </strong>的实现</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>由</strong>开发</p>
+</td>
+<td>
+<p>MongoDB公司</p>
+</td>
+<td>
+<p>甲骨文公司</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>模式</strong></p>
+</td>
+<td>
+<p>无模式</p>
+</td>
+<td>
+<p>需要模式定义</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>数据类型</strong></p>
+</td>
+<td>
+<p>结构化和非结构化</p>
+</td>
+<td>
+<p>结构化的</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>数据存储</strong></p>
+</td>
+<td>
+<p>类似JSON的文档</p>
+</td>
+<td>
+<p>表格，即行和列</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>开发人员生产力</strong></p>
+</td>
+<td>
+<p>更快的</p>
+</td>
+<td>
+<p>慢的</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>速度</strong></p>
+</td>
+<td>
+<p>快的</p>
+</td>
+<td>
+<p>慢的</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>分布式架构</strong></p>
+</td>
+<td>
+<p>是</p>
+</td>
+<td>
+<p>不</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong> SQL或NoSQL </strong></p>
+</td>
+<td>
+<p>NoSQL</p>
+</td>
+<td>
+<p>结构化查询语言</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>SQL注入风险</strong></p>
+</td>
+<td>
+<p>降低</p>
+</td>
+<td>
+<p>高等级的；级别较高的；较重要的</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>复制</strong></p>
+</td>
+<td>
+<p>内置复制、分片</p>
+</td>
+<td>
+<p>主从和主复制</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-is-mysql"><strong>什么是MySQL？</strong></h2>
+<p><a href="https://hackr.io/blog/what-is-mysql"> MySQL </a>是一个开源的关系数据库管理系统，它将数据存储在表中，并维护它们之间的关系。</p>
+<p><img src="../Images/a7b90731bae50e69a8cc213e8ec4fe30.png" alt="" data-original-src="https://hackr.io/blog/media/what-is-mysql-min-2.png"/></p>
+
+<p>它使用结构化查询语言(SQL)进行数据库访问，并具有非常强大的语法来创建简单和复杂的查询以检索和结构化数据。</p>
+<p>MySQL中的数据是有组织的，符合特定的格式，这有助于使它成为当今最流行的结构化数据库。</p>
+<p>了解更多关于NoSQL和文档库的信息是值得的。这些是帮助理解MongoDB的先决条件。</p>
+<p>一个<strong> NoSQL </strong>，或者不仅仅是SQL，数据库的主要特征是它不像RDBMS那样以传统的表格格式存储数据。NoSQL数据库处理海量数据，因此它们遵循分布式数据库模型。文档数据库、图形数据库、键值数据库和宽列存储是NoSQL家族中的四个主要分类。</p>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert%2F" target="_blank" rel="noopener">终极MySQL训练营</a></p>
+<p>文档存储将数据作为JSON对象存储在文档中，文档的结构不必预先定义。数据可以嵌套，不需要像在关系数据库中那样连接数据。每个文档都可以比作关系数据库中的一个传统行，JSON对象中的每个属性都可以比作一列。</p>
+
+<h2 id="what-is-mongodb"><strong>什么是MongoDB？</strong></h2>
+<p><a href="https://hackr.io/blog/what-is-mongodb-applications-advantages-examples"> MongoDB </a>是一个非关系的、非结构化的数据库<strong>。</strong>这个面向文档的数据库将您的数据存储在由单个文档组成的集合中。</p>
+<p><img src="../Images/52aa94a9a8572e5a5612094ba2a12ddc.png" alt="" data-original-src="https://hackr.io/blog/media/what-is-mongodb-min.png"/></p>
+<p>在MongoDB中，文档是一个大的JSON对象，没有特定的格式或模式。MongoDB以名为BSON的二进制编码格式表示JSON文档。</p>
+<p>MongoDB 4.0是MongoDB的最新发展，增加了多文档ACID事务、数据转换等特性。MongoDB Stitch——无服务器平台——让你直接从你的前端应用程序中执行任何MongoDB查询。缝合“触发器”让您的应用程序对实时数据变化做出响应。<a href="https://www.mongodb.com/products/mobile" target="_blank" rel="noopener"> MongoDB Mobile </a>还为您的移动和物联网设备带来了文档模型的强大功能。</p>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fnodejs-express-mongodb-bootcamp%2F" target="_blank" rel="noopener"> Node.js，Express，MongoDB &amp;更多:完整训练营2023 </a></p>
+<h2 id="mysql-and-mongodb-similarities"><strong> MySQL和MongoDB的相似之处</strong></h2>
+<ul>
+<li>MySQL和MongoDB都是开源数据库。</li>
+<li>它们建立在通用术语和概念的基础上，如在事务中维护ACID(原子性、一致性、隔离性和持久性)属性；存储、分组、连接和管理数据；并且具有二级索引。</li>
+<li>这两个数据库在所有主要的云平台上提供服务。</li>
+<li>它们都有丰富的查询语言来访问数据。</li>
+</ul>
+<h2 id="mongodb-vs-mysql-differences"><strong> MongoDB vs MySQL:差异</strong></h2>
+<h3 id="toc-1-data-storage-and-structure"><strong> 1。数据存储和结构</strong></h3>
+<p>由于MySQL遵循关系模型，数据存储在表中，您必须根据需求以及必须在表中的字段之间设置的规则来预定义模式。</p>
+<p>在MongoDB中，数据存储为集合中的文档，因此不需要定义文档的结构。如果向文档中添加了新字段，则可以创建该字段，而不会影响集合中的其他文档。这一关键差异对开发人员来说是一个很大的优势，因为代码定义了模式，您不必执行模式迁移。</p>
+<h3 id="toc-2-developer-productivity"><strong> 2。开发人员生产力</strong></h3>
+<p>在MySQL中开发应用程序要慢得多，因为它使用了严格的表结构模型。</p>
+<p>与此同时，在MongoDB中以灵活的JSON文档的形式处理数据将开发周期加快了4到5倍。这些文档自然地映射到面向对象的编程语言，使得开发人员可以很容易地将应用程序中的数据映射到数据库中的数据。</p>
+<h3 id="toc-3-speed"><strong> 3。速度</strong></h3>
+<p>在MySQL数据库中，数据分布在多个表中，导致需要访问多个表来读写数据。</p>
+<p>MongoDB中的文档使应用程序速度更快，因为一个实体的所有数据都存储在一个文档中。这有助于在单一位置读取和写入数据。</p>
+<p>尽管MySQL增加了对JSON的支持，但它并没有带来同样的生产力优势。</p>
+<h3 id="toc-4-atomic-transactions"><strong> 4。原子交易</strong></h3>
+<p>MySQL支持原子事务，也就是说，在一个事务中可以有几个操作。在MongoDB引入对这些事务的支持之前，MySQL在这方面比MongoDB要好。</p>
+<p>MongoDB 4.0增加了对多文档事务的支持，使其成为非结构化领域中一个强大的开源数据库。尽管有一些限制——有些操作在MongoDB中不受支持——但它仍然是开发人员社区的福音。</p>
+<h3 id="toc-5-architecture"><strong> 5。架构</strong></h3>
+<p>MySQL不是建立在分布式系统架构上的。然而，“MySQL Cluster”是MySQL家族中的一个新的分布式数据库。</p>
+<p>MongoDB完全建立在分布式架构上，因此，MongoDB提供了带有自动分片和副本集的数据本地化，以保持“永不停机”的可用性。</p>
+<p>因此，MongoDB数据可以在全球范围内使用，但出于治理和低延迟访问的目的，它被放置在特定地理位置的本地。</p>
+<h3 id="toc-6-native-language-drivers"><strong> 6。本地语言驱动程序</strong></h3>
+<p>尽管MySQL附带了JSON支持，但是开发人员在与JSON数据交互时仍然被多层SQL功能所束缚。如果您是一名开发人员，希望通过适合您的编程语言的API进行交互，这些层是一项开销。</p>
+<p>这就是MongoDB比MySQL定位更好的地方。MongoDB驱动程序和API是开发人员的编程语言所固有的。</p>
+<h2 id="when-should-you-use-mongodb">什么时候应该使用MongoDB？</h2>
+<p>MongoDB有助于提高生产率、性能和可伸缩性。</p>
+<p>以下是展示这些优势的一些使用案例:</p>
+<ul>
+<li>MTV的大本营Viacom Media Networks在脱离MySQL之后，在MongoDB上建立了自己的<a href="https://www.mongodb.com/presentations/mongodb-viacom" target="_blank" rel="noopener">大容量投票、投票和数据收集服务</a>。由于MongoDB灵活的文档数据模型和横向扩展设计，Viacom能够捕获和分析大规模数据。</li>
+<li>Experian Health选择MongoDB而不是MySQL来驱动其产品'<a href="https://www.mongodb.com/press/experian-health-bringing-patient-identification-into-modern-era-with-mongodb" target="_blank" rel="noopener">Universal identificati on Manager</a>'，这是该公司用来唯一识别医疗保健客户的新应用程序。如果开发人员必须使用关系数据库模型，他们将需要执行多达10个SQL连接来正确匹配患者的身份，这将是很麻烦的。使用MongoDB，模式得到了简化，消除了复杂性，并大大减少了查询的数量。它还显著提高了性能。</li>
+</ul>
+<h2 id="when-should-you-use-mysql">什么时候应该使用MySQL？</h2>
+<p>尽管许多组织已经成功地从RDBMS迁移到MongoDB，但是您不能将MongoDB作为围绕关系数据模型和SQL构建的遗留应用程序的替代品。在MySQL上运行稳定健壮的应用程序的组织将继续这样做。拥有精通SQL且不处理大量数据的开发人员社区的组织可能仍然希望满足于MySQL。</p>
+<h2 id="conclusion-which-is-better"><strong>结论:哪个更好？</strong></h2>
+<p>尽管MongoDB比MySQL更快，并且可以处理大量的非结构化数据，但它仍然相对较新。因此，开发人员社区缺乏技能。</p>
+<p>应用程序和数据集的性质决定了数据库的选择。</p>
+<p>简而言之，MongoDB适用于大量数据、数据恢复和速度是决定性因素的情况，而MySQL适用于遗留应用程序。</p>
+<h2 id="frequently-asked-questions"><strong>常见问题解答</strong></h2>
+<h4 id="toc-1-is-mongodb-better-than-mysql"><strong> 1。MongoDB比MySQL好吗？</strong></h4>
+<p>对此没有明确的答案。MongoDB适用于大量数据，而MySQL适用于遗留应用程序。</p>
+
+<h4 id="toc-2-is-mongodb-easier-than-mysql"><strong> 2。MongoDB比MySQL简单吗？</strong></h4>
+<p>对此没有直接的答案。MySQL有更多的社区支持，而MongoDB使创建和升级应用程序变得容易。</p>
+<h4 id="toc-3-is-mongodb-good-for-large-data"><strong> 3。MongoDB适合大数据吗？</strong></h4>
+<p>是的，MongoDB适用于大量数据。这就是为什么一些团队在某些项目中选择它而不是MySQL的原因之一。</p>
+<h4 id="toc-4-does-facebook-use-mongodb"><strong> 4。脸书使用MongoDB吗？</strong></h4>
+<p>不，脸书主要使用MySQL。它还使用InnoDB存储引擎。</p>
+<h4 id="toc-5-which-query-language-does-each-database-use"><strong> 5。每个数据库使用哪种查询语言？</strong></h4>
+<p>MongoDB使用NoSQL查询语言，而MySQL使用SQL。</p>
+<p><strong>人也读书:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

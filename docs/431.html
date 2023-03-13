@@ -1,0 +1,633 @@
+<html>
+<head>
+<title>Laravel Cheat Sheet: Download PDF For Quick Reference [Guide]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Laravel备忘单:下载PDF快速参考[指南]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/laravel-cheat-sheet#0001-01-01">https://hackr.io/blog/laravel-cheat-sheet#0001-01-01</a></blockquote><div><div class="content">
+										<p>想用PHP开发一个响应式网站？Laravel是最好的选择，因为它是全球使用最广泛的PHP web框架之一。</p>
+<p>这篇Laravel备忘单探究了开发web应用程序所需的所有必要概念。对新手和专业人士都有帮助。</p>
+<p>在阅读备忘单之前，我们将首先向您简要介绍Laravel到底是什么以及它的优点。</p>
+<h2 id="what-is-laravel">什么是Laravel？</h2>
+<p>Laravel是一个PHP web框架，为开发高质量的web应用程序提供了一整套有用的工具和资源。它遵循模型-视图-控制器(MVC)架构设计模式。</p>
+
+<p>Laravel框架由Taylor Otwell创建，并获得了MIT的许可。</p>
+<p>它包含了内置特性和各种兼容的包和扩展，使它成为最流行的PHP web框架之一。</p>
+<h2 id="advantages-of-laravel">Laravel的优势</h2>
+<p>以下是使用Laravel框架的一些主要优势。</p>
+<ul class="c22 lst-kix_9t8tv1d69afj-0 start">
+<li class="c10 c24 li-bullet-0">Laravel框架易于使用，简单快捷。由于它是使用最广泛的PHP框架之一，许多有经验的开发人员都熟悉它，并且可能开发过交互式web应用程序。</li>
+</ul>
+<ul class="c22 lst-kix_9t8tv1d69afj-0">
+<li class="c10 c24 li-bullet-0">它提供了先进的安全功能，使开发者能够保护他们的网站免受网络攻击。它使用Bcrypt哈希算法，这意味着它不会在数据库中保存任何密码。</li>
+<li class="c10 c24 li-bullet-0">Laravel支持开箱即用的缓存，这大大提高了网站的性能。此外，开发人员可以毫不费力地执行其他速度优化技术，如数据库索引和内存使用减少。</li>
+<li class="c10 c24 li-bullet-0">这个框架有一个内置的网站，可以有效地处理网站的流量。所以对于流量处理也是有好处的。</li>
+<li class="c10 c24 li-bullet-0">使用Laravel，开发人员可以构建成熟的、响应迅速的电子商务网站或B2B网站。</li>
+<li class="c10 c24 li-bullet-0">Laravel有干净的API，让你的网站和第三方应用集成起来更容易。</li>
+</ul>
+<h2 id="laravel-cheat-sheet">Laravel备忘单</h2>
+<h3 id="routes-in-laravel"><span class="c15">拉勒维尔的路线</span></h3>
+<pre class="language-php"><code>Route::get('func', function(){});
+Route::get('func', 'ControllerName@function');
+Route::controller('func', 'argController');</code></pre>
+<p>RESTful控制器</p>
+<pre class="language-php"><code>Route::resource('posts','PostsController');</code></pre>
+<p>指定要在路线上处理的动作子集</p>
+<pre class="language-php"><code>Route::resource('user', 'UserController',['only' =&gt; ['index', 'show']]);
+Route::resource('project', 'ProjectController',['except' =&gt; ['update', 'destroy']]);</code></pre>
+<p>触发错误</p>
+
+<pre class="language-php"><code>App::abort(404);
+$handler-&gt;missing(...) in ErrorServiceProvider::boot();
+throw new NotFoundHttpException;</code></pre>
+<p>路线参数</p>
+<pre class="language-php"><code>Route::get('func/', function($arg){});
+Route::get('func/', function($arg = 'arg'){});</code></pre>
+<p>HTTP动词</p>
+<pre class="language-php"><code>Route::any('func', function(){});
+Route::post('func', function(){});
+Route::put('func', function(){});
+Route::patch('func', function(){});
+Route::delete('func', function(){});</code></pre>
+<p>平静的行动</p>
+<pre class="language-php"><code>Route::resource('func', 'FuncController');</code></pre>
+<p>为多个动词注册路由</p>
+<pre class="language-php"><code>Route::match(['get', 'post'], '/', function(){});</code></pre>
+<p>安全路线(TBD)</p>
+<pre class="language-php"><code>Route::get('func', array('https', function(){}));</code></pre>
+<p>路线约束</p>
+<pre class="language-php"><code>Route::get('func/', function($arg){})
+-&gt;where('arg', '[0-9]+');
+Route::get('func//', function($arg, $arg2){})
+-&gt;where(array('arg' =&gt; '[0-9]+', 'arg2' =&gt; '[A-Za-z]'))</code></pre>
+<p>设置要跨路线使用的模式</p>
+<pre class="language-php"><code>Route::pattern('arg', '[0-9]+')</code></pre>
+<h3 id="h-jsawksrqsz1" class="c19">HTTP中间件</h3>
+<p>将中间件分配给路由</p>
+<pre class="language-php"><code>Route::get('admin/profile', ['middleware' =&gt; 'auth', function(){}]);</code></pre>
+<p>命名路线</p>
+<pre class="language-php"><code>Route::currentRouteName();
+Route::get('func/arg', array('as' =&gt; 'args', function(){}));
+Route::get('user/profile', [
+ 'as' =&gt; 'profile', 'uses' =&gt; 'UserController@showProfile'
+]);
+$url = route('profile');
+$redirect = redirect()-&gt;route('profile');</code></pre>
+<p>路由前缀</p>
+<pre class="language-php"><code>Route::group(['prefix' =&gt; 'admin'], function()
+{
+ Route::get('users', function(){
+ return 'Matches The "/admin/users" URL';
+ });
+});</code></pre>
+<p>路线名称间距</p>
+<p>此路由组将带有命名空间“arg1\arg2”</p>
+<pre class="language-php"><code>Route::group(array('namespace' =&gt; 'arg1\arg2'), function(){})</code></pre>
+<p>子域路由</p>
+<p>将被传递到闭包</p>
+<pre class="language-php"><code>Route::group(array('domain' =&gt; '.example.com'), function(){});</code></pre>
+<h3 id="h-e9azsqxi2iv5" class="c19">行列</h3>
+<p>消息队列</p>
+<pre class="language-php"><code>$ Queue::push('SendMail', array('message' =&gt; $message));
+$ Queue::push('SendEmail@send', array('message' =&gt; $message));
+$ Queue::push(function($job) use $id {});</code></pre>
+<p>处理队列的前端作业</p>
+<pre class="language-php"><code>$ php artisan queue:work</code></pre>
+<p>开始队列的监听操作</p>
+<pre class="language-php"><code>$ php artisan queue:listen
+$ php artisan queue:listen connection
+$ php artisan queue:listen --timeout=20</code></pre>
+<p>获取失败的作业</p>
+<pre class="language-php"><code>$ php artisan queue:failed</code></pre>
+<p>刷新失败的作业</p>
+<pre class="language-php"><code>$ php artisan queue:flush</code></pre>
+<p>通过指定ID刷新失败的作业</p>
+<pre class="language-php"><code>$ php artisan queue:forget [id]</code></pre>
+<p>向多个接收器发送相同的有效载荷</p>
+<pre class="language-php"><code>$ Queue::bulk(array('SendEmail', 'NotifyUser'), $payload);</code></pre>
+<p>将工作进程作为守护进程启动</p>
+<pre class="language-php"><code>$ php artisan queue:work --daemon</code></pre>
+<h2 id="laravel-redirect">Laravel重定向</h2>
+<p class="c18">将响应重定向到以前的位置</p>
+<pre class="language-php"><code>return Redirect::to('arg1/arg2');
+return Redirect::to('arg1/arg2')-&gt;with('key', 'value');
+return Redirect::to('arg1/arg2')-&gt;withInput(Input::get());
+return Redirect::to('arg1/arg2')-&gt;withInput(Input::except('password'));
+return Redirect::to('arg1/arg2')-&gt;withErrors($validator);</code></pre>
+<p class="c13 c25">已命名路由的重定向响应</p>
+<pre class="language-php"><code>return Redirect::back();</code></pre>
+<p class="c13">重定向对控制器操作的响应</p>
+<pre class="language-php"><code>return Redirect::route('arg');
+return Redirect::route('arg', array('value'));
+return Redirect::route('arg', array('key' =&gt; 'value'));</code></pre>
+<p class="c18">默认路由，如果未定义指定的路由</p>
+
+<pre class="language-php"><code>return Redirect::action('ArgController@index');
+return Redirect::action('ArgController@arg2', array('value'));
+return Redirect::action('ArgController@arg2', array('key' =&gt; 'value'));​</code></pre>
+<pre class="language-php"><code>return Redirect::intended('arg1/arg2');</code></pre>
+<p class="c13">拉勒韦尔高速缓存</p>
+<h3 id="laravel-cache"><span class="c15"> </span></h3>
+<h3 id=""><span class="c15">旅行邮件</span></h3>
+<pre class="language-php"><code>Cache::put('key', 'value', $minutes);
+Cache::add('key', 'value', $minutes);
+Cache::forever('key', 'value');
+Cache::remember('key', $minutes, function(){ return 'value' });
+Cache::rememberForever('key', function(){ return 'value' });
+Cache::forget('key');
+Cache::has('key');
+Cache::get('key');
+Cache::get('key', 'default');
+Cache::get('key', function(){ return 'default'; });
+Cache::tags('my-tag')-&gt;put('key','value', $minutes);
+Cache::tags('my-tag')-&gt;has('key');
+Cache::tags('my-tag')-&gt;get('key');
+Cache::tags('my-tag')-&gt;forget('key');
+Cache::tags('my-tag')-&gt;flush();
+Cache::increment('key');
+Cache::increment('key', $amount);
+Cache::decrement('key');
+Cache::decrement('key', $amount);
+Cache::section('group')-&gt;put('key', $value);
+Cache::section('group')-&gt;get('key');
+Cache::section('group')-&gt;flush();</code></pre>
+<h3 id="laravel-mail">把所有的邮件都写到日志里，而不是发送出去</h3>
+<pre class="language-php"><code>Mail::send('email.view', $data, function($message){});
+Mail::send(array('html.view', 'text.view'), $data, $callback);
+Mail::queue('email.view', $data, function($message){});
+Mail::queueOn('queue-name', 'email.view', $data, $callback);
+Mail::later(5, 'email.view', $data, function($message){});</code></pre>
+<p>拉勒韦尔反应</p>
+<pre class="language-php"><code>Mail::pretend();</code></pre>
+<h3 id="laravel-response">创建响应并修改标题值</h3>
+<pre class="language-php"><code>return Response::make($contents);
+return Response::make($contents, 200);
+return Response::json(array('key' =&gt; 'value'));
+return Response::json(array('key' =&gt; 'value'))
+-&gt;setCallback(Input::get('callback'));
+return Response::download($filepath);
+return Response::download($filepath, $filename, $headers);</code></pre>
+<p>将cookie附加到响应中</p>
+<pre class="language-php"><code>$response = Response::make($contents, 200);
+$response-&gt;header('Content-Type', 'application/json');
+return $response;</code></pre>
+<p>拉勒韦尔日志</p>
+<pre class="language-php"><code>return Response::make($content)
+-&gt;withCookie(Cookie::make('key', 'value'));</code></pre>
+<h3 id="laravel-log">记录器提供了RFC 5424中定义的七个日志记录级别:调试、信息、通知、警告、错误、严重和警报。</h3>
+<p>获取独白实例</p>
+<pre class="language-php"><code>Log::info('info');
+Log::info('info',array('context'=&gt;'additional info'));
+Log::error('error');
+Log::warning('warning');</code></pre>
+<p>添加监听程序</p>
+<pre class="language-php"><code>Log::getMonolog();</code></pre>
+<p>Laravel输入</p>
+<pre class="language-php"><code>Log::listen(function($level, $message, $context) {});</code></pre>
+<h3 id="laravel-input">如果缺少密钥，则为默认值</h3>
+<pre class="language-php"><code>Input::get('key');</code></pre>
+<p>获取输入时仅检索“arg”和“arg1”</p>
+<pre class="language-php"><code>Input::get('key', 'default');
+Input::has('key');
+Input::all();</code></pre>
+<p>获取输入时丢弃“arg”</p>
+<pre class="language-php"><code>Input::only('arg', 'arg1');</code></pre>
+<p>拉勒韦尔环境</p>
+
+<pre class="language-php"><code>Input::except('arg');
+Input::flush();</code></pre>
+<h3 id="laravel-environment">环境是地方性的</h3>
+<pre class="language-php"><code>$environment = app()-&gt;environment();
+$environment = App::environment();
+$environment = $app-&gt;environment();</code></pre>
+<p>环境可以是本地的，也可以是暂存的…</p>
+
+<pre class="language-php"><code>if ($app-&gt;environment('local')){}</code></pre>
+<p>拉威尔刀片式服务器</p>
+<pre class="language-php"><code>if ($app-&gt;environment('local', 'staging')){}</code></pre>
+<h3 id="laravel-blade">在模板中显示节</h3>
+<p>开始一节</p>
+<pre class="language-php"><code>@yield('name')
+@extends('layout.name')</code></pre>
+<p>结束一节</p>
+<pre class="language-php"><code>@section('name')</code></pre>
+<p>结束一节并让步</p>
+<pre class="language-php"><code>@stop</code></pre>
+<p>forelse 4.2功能</p>
+<pre class="language-php"><code>@section('sidearg1')
+@show
+@parent
+@include('view.name')
+@include('view.name', array('key' =&gt; 'value'));
+@lang('messages.name')
+@choice('messages.name', 1);
+@if
+@else
+@elseif
+@endif
+@unless
+@endunless
+@for
+@endfor
+@foreach
+@endforeach
+@while
+@endwhile</code></pre>
+<p>打印内容</p>
+<pre class="language-php"><code>@forelse($users as $user)
+@empty
+@endforelse</code></pre>
+<p>打印转义内容</p>
+<pre class="language-php"><code>{{ $var }}</code></pre>
+<p>打印非转义内容；5.0功能</p>
+<pre class="language-php"><code>{{{ $var }}}</code></pre>
+<p>检查数据是否存在后打印数据</p>
+<pre class="language-php"><code>{!! $var !!}
+{{-- Blade Comment --}}</code></pre>
+<p>用花括号显示原始文本</p>
+
+<pre class="language-php"><code>{{{ $name or 'Default' }}}</code></pre>
+<p>Laravel URL</p>
+
+<pre class="language-php"><code>@{{ This will not be processed by Blade }}</code></pre>
+<h3 id="laravel-url">需要不适当的名称空间</h3>
+<pre class="language-php"><code>URL::full();
+URL::current();
+URL::previous();
+URL::to('arg/arg1', $parameters, $secure);
+URL::action('UserController@item', ['id'=&gt;123]);</code></pre>
+<p>Laravel HTML</p>
+<pre class="language-php"><code>URL::action('Auth\AuthController@logout');
+URL::action('argController@method', $parameters, $absolute);
+URL::route('arg', $parameters, $absolute);
+URL::secure('arg1/arg2', $parameters);
+URL::asset('css/arg.css', $secure);
+URL::secureAsset('css/arg.css');
+URL::isValidUrl('http://example.com');
+URL::getRequest();
+URL::setRequest($request);</code></pre>
+<h3 id="laravel-html">将HTML字符串转换为实体</h3>
+<pre class="language-php"><code>HTML::macro('name', function(){});</code></pre>
+<p>将实体转换为HTML字符</p>
+<pre class="language-php"><code>HTML::entities($value);</code></pre>
+<p>生成指向JavaScript文件的链接</p>
+<pre class="language-php"><code>HTML::decode($value);</code></pre>
+<p>生成指向CSS文件的链接</p>
+<pre class="language-php"><code>HTML::script($url, $attributes);</code></pre>
+<p>生成HTML图像元素</p>
+<pre class="language-php"><code>HTML::style($url, $attributes);</code></pre>
+<p>生成HTML链接</p>
+<pre class="language-php"><code>HTML::image($url, $alt, $attributes);</code></pre>
+<p>生成HTTPS HTML链接</p>
+<pre class="language-php"><code>HTML::link($url, 'title', $attributes, $secure);</code></pre>
+<p>生成指向资产的HTML链接</p>
+<pre class="language-php"><code>HTML::secureLink($url, 'title', $attributes);</code></pre>
+<p>生成指向资产的HTTPS HTML链接</p>
+<pre class="language-php"><code>HTML::linkAsset($url, 'title', $attributes, $secure);</code></pre>
+<p>生成指向命名路由的HTML链接</p>
+<pre class="language-php"><code>HTML::linkSecureAsset($url, 'title', $attributes);</code></pre>
+<p>生成一个指向控制器动作的HTML链接</p>
+<pre class="language-php"><code>HTML::linkRoute($name, 'title', $parameters, $attributes);</code></pre>
+<p>生成指向电子邮件地址的HTML链接</p>
+<pre class="language-php"><code>HTML::linkAction($action, 'title', $parameters, $attributes);</code></pre>
+<p>混淆电子邮件地址，以防止垃圾邮件机器人嗅探它</p>
+<pre class="language-php"><code>HTML::mailto($email, 'title', $attributes);</code></pre>
+<p>生成有序的项目列表</p>
+<pre class="language-php"><code>HTML::email($email);</code></pre>
+<p>生成一个无序的项目列表</p>
+<pre class="language-php"><code>HTML::ol($list, $attributes);</code></pre>
+<p>创建一个列表HTML元素</p>
+<pre class="language-php"><code>HTML::ul($list, $attributes);</code></pre>
+<p>为列表元素创建HTML</p>
+<pre class="language-php"><code>HTML::listing($type, $list, $attributes);</code></pre>
+<p>为嵌套列表属性创建HTML</p>
+<pre class="language-php"><code>HTML::listingElement($key, $type, $value);</code></pre>
+<p>从数组构建HTML属性字符串</p>
+<pre class="language-php"><code>HTML::nestedListing($key, $type, $value);</code></pre>
+<p>构建单个属性元素</p>
+<pre class="language-php"><code>HTML::attributes($attributes);</code></pre>
+<p>混淆字符串以防止垃圾邮件机器人嗅探它</p>
+<pre class="language-php"><code>HTML::attributeElement($key, $value);</code></pre>
+<p>软删除</p>
+<pre class="language-php"><code>HTML::obfuscate($value);</code></pre>
+<h3 id="soft-delete">在结果中包括软删除的模型</h3>
+<pre class="language-php"><code>Model::withTrashed()-&gt;where('users', 2)-&gt;get();</code></pre>
+<p>强制结果集仅包含软删除</p>
+<pre class="language-php"><code>Model::withTrashed()-&gt;where('users', 2)-&gt;restore();
+Model::where('users', 2)-&gt;forceDelete();</code></pre>
+<p><span class="c15">事件</span></p>
+<pre class="language-php"><code>Model::onlyTrashed()-&gt;where('users', 2)-&gt;get();</code></pre>
+<h3 id="events">拉勒维尔加入</h3>
+<pre class="language-php"><code>Model::creating(function($model){});
+Model::created(function($model){});
+Model::updating(function($model){});
+Model::updated(function($model){});
+Model::saving(function($model){});
+Model::saved(function($model){});
+Model::deleting(function($model){});
+Model::deleted(function($model){});
+Model::observe(new argObserver);</code></pre>
+<h3 id="laravel-joins">Join语句</h3>
+<p>左连接语句</p>
+<pre class="language-php"><code>DB::table('users')
+         -&gt;join('contacts', 'users.id', '=', 'contacts.user_id')
+         -&gt;join('orders', 'users.id', '=', 'orders.user_id')
+         -&gt;select('users.id', 'contacts.phone', 'orders.price')
+         -&gt;get();</code></pre>
+<p>拉勒韦尔骨料</p>
+<pre class="language-php"><code>DB::table('users')
+     -&gt;leftJoin('posts', 'users.id', '=', 'posts.user_id')
+     -&gt;get();
+
+select * from users where name = 'Name' or (points &gt; 200 
+and title &lt;&gt; 'Admin')</code></pre>
+<pre class="language-php"><code>DB::table('users')
+         -&gt;where('name', '=', 'John')
+         -&gt;orWhere(function($query)
+         {
+             $query-&gt;where('votes', '&gt;', 100)
+                   -&gt;where('title', '&lt;&gt;', 'Admin');
+         })
+         -&gt;get();</code></pre>
+<h3 id="laravel-aggregates">Laravel原始表达式</h3>
+<pre class="language-php"><code>$users = DB::table('game')-&gt;count();
+$price = DB::table('game')-&gt;max('points');
+$price = DB::table('game')-&gt;min('points');
+$price = DB::table('game')-&gt;avg('points');
+$total = DB::table('game')-&gt;sum('points');</code></pre>
+<h3 id="laravel-raw-expressions">返回行</h3>
+<pre class="language-php"><code>DB::table('name')-&gt;remember(5)-&gt;get();
+DB::table('name')-&gt;remember(5, 'cache-key-name')-&gt;get();
+DB::table('name')-&gt;cacheTags('my-key')-&gt;remember(5)-&gt;get();
+DB::table('name')-&gt;cacheTags(array('my-first-key','my-second-key'))-&gt;remember(5)-&gt;</code></pre>
+<pre class="language-php"><code>$users = DB::table('users')
+                  -&gt;select(DB::raw('count(*) as user_count, status'))
+                  -&gt;where('status', '&lt;&gt;', 1)
+                  -&gt;groupBy('status')
+                  -&gt;get();</code></pre>
+<p>返回受影响的行</p>
+<pre class="language-php"><code>DB::select('SELECT * FROM users WHERE id = ?', array('value'));</code></pre>
+<p>返回无效</p>
+<pre class="language-php"><code>DB::insert('insert into arg set arg1=2');
+DB::update('update arg set arg1=2');
+DB::delete('delete from arg1');</code></pre>
+<p>语句中的原始表达式</p>
+<pre class="language-php"><code>DB::statement('update arg set arg1=2');</code></pre>
+<p>Laravel插入/更新/删除/联合/悲观锁定</p>
+<pre class="language-php"><code>DB::table('name')-&gt;select(DB::raw('count(*) as count, column2'))-&gt;get();</code></pre>
+<h3 id="laravel-inserts-updates-deletes-unions-pessimistic-locking">插入</h3>
+<p>更新</p>
+<pre class="language-php"><code>DB::table('users')-&gt;insert(
+ ['email' =&gt; 'email@host.com', 'votes' =&gt; 0]
+);
+$id = DB::table('users')-&gt;insertGetId(
+ ['email' =&gt; 'email@host.com', 'votes' =&gt; 0]
+);
+DB::table('users')-&gt;insert([
+ ['email' =&gt; 'email@host.com', 'votes' =&gt; 0],
+ ['email' =&gt; 'email@host.com', 'votes' =&gt; 0]
+]);</code></pre>
+<p>删除</p>
+<pre class="language-php"><code>DB::table('users')
+         -&gt;where('id', 1)
+         -&gt;update(['votes' =&gt; 1]);
+DB::table('users')-&gt;increment('votes');
+DB::table('users')-&gt;increment('votes', 5);
+DB::table('users')-&gt;decrement('votes');
+DB::table('users')-&gt;decrement('votes', 5);
+DB::table('users')-&gt;increment('votes', 1, ['name' =&gt; 'Name']);</code></pre>
+<p>联盟</p>
+<pre class="language-php"><code>DB::table('users')-&gt;where('votes', '&lt;', 100)-&gt;delete();
+DB::table('users')-&gt;delete();
+DB::table('users')-&gt;truncate();</code></pre>
+<p>悲观锁定</p>
+<pre class="language-php"><code>$first = DB::table('users')-&gt;whereNull('first_name');
+$users = DB::table('users')-&gt;whereNull('last_name')-&gt;union($first)-&gt;get();</code></pre>
+<p>Laravel验证</p>
+<pre class="language-php"><code>DB::table('users')-&gt;where('votes', '&gt;', 100)-&gt;sharedLock()-&gt;get();
+DB::table('users')-&gt;where('votes', '&gt;', 100)-&gt;lockForUpdate()-&gt;get();</code></pre>
+<h3 id="laravel-validation">拉勒维尔规则</h3>
+<pre class="language-php"><code>Validator::make(
+   array('key' =&gt; 'arg'),
+   array('key' =&gt; 'required|in:arg')
+);
+Validator::extend('arg', function($attribute, $value, $params){});
+Validator::extend('arg', 'argValidator@validate');
+Validator::resolver(function($translator, $data, $rules, $msgs)
+{
+   return new argValidator($translator, $data, $rules, $msgs);
+});</code></pre>
+<p>Laravel配置</p>
+<pre class="language-php"><code>accepted
+active_url
+after:YYYY-MM-DD
+before:YYYY-MM-DD
+alpha
+alpha_dash
+alpha_num
+array
+between:1,10
+confirmed
+date
+date_format:YYYY-MM-DD
+different:fieldname
+digits:value
+digits_between:min,max
+boolean
+email
+exists:table,column
+image
+in:arg,arg1,...
+not_in:arg,arg1,...
+integer
+numeric
+ip
+max:value
+min:value
+mimes:jpeg,png
+regex:[0-9]
+required
+required_if:field,value
+required_with:arg,arg1,...
+required_with_all:arg,arg1,...
+required_without:arg,arg1,...
+required_without_all:arg,arg1,...
+same:field
+size:value
+timezone
+unique:table,column,except,idColumn
+Url</code></pre>
+<h3 id="laravel-config">使用默认值获取</h3>
+<pre class="language-php"><code>Config::get('app.timezone');</code></pre>
+<p>设置配置</p>
+<pre class="language-php"><code>Config::get('app.timezone', 'UTC');</code></pre>
+<p>Laravel DB备忘单</p>
+<pre class="language-php"><code>Config::set('database.default', 'sqlite');</code></pre>
+<h3 id="laravel-db-cheat-sheet">基本数据库使用</h3>
+<p class="c27">运行选择查询</p>
+<pre class="language-php"><code>DB::connection('connection_name');</code></pre>
+<p>运行一般语句</p>
+<pre class="language-php"><code>$results = DB::select('select * from users where id = ?', [1]);
+$results = DB::select('select * from users where id = :id', ['id' =&gt; 1]);</code></pre>
+<p>监听查询事件</p>
+<pre class="language-php"><code>DB::statement('drop table users');</code></pre>
+<p>数据库事务</p>
+<pre class="language-php"><code>DB::listen(function($sql, $bindings, $time){ code_here; });</code></pre>
+<p>Laravel作曲命令</p>
+<pre class="language-php"><code>DB::transaction(function()
+{
+DB::table('users')-&gt;update(['votes' =&gt; 1]);
+DB::table('posts')-&gt;delete();
+});
+DB::beginTransaction();
+DB::rollback();
+DB::commit();</code></pre>
+<h3 id="laravel-composer-command">Laravel消息</h3>
+<pre class="language-php"><code>composer create-project laravel/laravel folder_name
+composer install
+composer update
+composer dump-autoload [--optimize]
+composer self-update
+composer require [options] [--] [vender/packages]...</code></pre>
+<h3 id="laravel-messages">这些可以用在传入的$message实例上</h3>
+<p>这使用内存中的数据作为附件</p>
+<pre class="language-php"><code>Mail::send() or Mail::queue()
+$message-&gt;from('email@xyz.com', 'Name');
+$message-&gt;sender('email@xyz.com', 'Name');
+$message-&gt;returnPath('email@xyz.com');
+$message-&gt;to('email@xyz.com', 'Name');
+$message-&gt;cc('email@xyz.com', 'Name');
+$message-&gt;bcc('email@xyz.com', 'Name');
+$message-&gt;replyTo('email@xyz.com', 'Name');
+$message-&gt;subject('Congratulations');
+$message-&gt;priority(2);
+$message-&gt;attach('arg\arg1.txt', $options);</code></pre>
+<p>在消息中嵌入文件并获取CID</p>
+<pre class="language-php"><code>$message-&gt;attachData('arg1', 'Data Name', $options);</code></pre>
+<p>获取基础Swift报文实例</p>
+<pre class="language-php"><code>$message-&gt;embed('arg\arg1.txt');
+$message-&gt;embedData('arg', 'Data Name', $options);</code></pre>
+<p>Laravel请求</p>
+<pre class="language-php"><code>$message-&gt;getSwiftMessage();</code></pre>
+<h3 id="laravel-request">返回用户的IP</h3>
+<pre class="language-php"><code>url: http://a.com/b/c</code></pre>
+<pre class="language-php"><code>Request::url();</code></pre>
+<pre class="language-php"><code>path: /a/b</code></pre>
+<pre class="language-php"><code>Request::path();</code></pre>
+<pre class="language-php"><code>getRequestUri: /a/b/?c=d</code></pre>
+<pre class="language-php"><code>Request::getRequestUri();</code></pre>
+<p>获取请求的端口方案(如80、443等。)</p>
+<pre class="language-php"><code>Request::getClientIp();</code></pre>
+<pre class="language-php"><code>getUri: http://xyz.com/a/b/?c=d</code></pre>
+<pre class="language-php"><code>Request::getUri();</code></pre>
+<pre class="language-php"><code>getQueryString: c=d</code></pre>
+<pre class="language-php"><code>Request::getQueryString();</code></pre>
+<p>确定当前请求URI是否与模式匹配</p>
+<pre class="language-php"><code>Request::getPort();</code></pre>
+<p>从URI中获取一个片段(基于1的索引)</p>
+<pre class="language-php"><code>Request::is('arg/*');</code></pre>
+<p>从请求中检索标头</p>
+<pre class="language-php"><code>Request::segment(1);</code></pre>
+<p>从请求中检索服务器变量</p>
+<pre class="language-php"><code>Request::header('Content-Type');</code></pre>
+<p>确定请求是否是AJAX调用的结果</p>
+<pre class="language-php"><code>Request::server('PATH_INFO');</code></pre>
+<p>确定该请求是否针对HTTPS</p>
+<pre class="language-php"><code>Request::ajax();</code></pre>
+<p>获取请求方法</p>
+<pre class="language-php"><code>Request::secure();</code></pre>
+<p>检查请求方法是否属于指定的类型</p>
+<pre class="language-php"><code>Request::method();</code></pre>
+<p>获取原始发布数据</p>
+<pre class="language-php"><code>Request::isMethod('post');</code></pre>
+<p>获取请求的响应格式</p>
+<pre class="language-php"><code>Request::instance()-&gt;getContent();</code></pre>
+<p>如果HTTP内容类型标头包含*/json，则为true</p>
+<pre class="language-php"><code>Request::format();</code></pre>
+<p>如果HTTP Accept头是application/json，则为true</p>
+<pre class="language-php"><code>Request::isJson();</code></pre>
+<p>Laravel认证</p>
+<pre class="language-php"><code>Request::wantsJson();</code></pre>
+<h3 id="laravel-auth">Laravel认证</h3>
+<p>确定当前用户是否经过身份验证</p>
+<p>获取当前已验证的用户</p>
+<pre class="language-php"><code>Auth::check();</code></pre>
+<p>获取当前通过身份验证的用户的ID</p>
+<pre class="language-php"><code>Auth::user();</code></pre>
+<p>尝试使用给定的凭据验证用户</p>
+<pre class="language-php"><code>Auth::id();</code></pre>
+<p>通过将true传递给Auth::attempt()来实现“记住我”</p>
+<pre class="language-php"><code>Auth::attempt(array('email' =&gt; $email, 'password' =&gt; $password));</code></pre>
+<p>为单个请求登录</p>
+<pre class="language-php"><code>Auth::attempt($credentials, true);</code></pre>
+<p>让用户登录应用程序</p>
+<pre class="language-php"><code>Auth::once($credentials);</code></pre>
+<p>将给定的用户ID登录到应用程序中</p>
+<pre class="language-php"><code>Auth::login(User::find(1));</code></pre>
+<p>将用户从应用程序中注销</p>
+<pre class="language-php"><code>Auth::loginUsingId(1);</code></pre>
+<p>验证用户的凭据</p>
+<pre class="language-php"><code>Auth::logout();</code></pre>
+<p>尝试使用HTTP基本验证进行验证</p>
+<pre class="language-php"><code>Auth::basic('username');</code></pre>
+<p>执行无状态HTTP基本登录尝试</p>
+<pre class="language-php"><code>Auth::validate($credentials);</code></pre>
+<p>向用户发送密码提醒</p>
+<pre class="language-php"><code>Auth::onceBasic();</code></pre>
+<p>Laravel授权</p>
+<pre class="language-php"><code>Password::remind($credentials, function($message, $user){});</code></pre>
+<p class="c8 c25 c30">定义能力</p>
+<p>传递多个参数</p>
+<pre class="language-php"><code>Gate::define('update-post', 'Class@method');
+Gate::define('update-post', function ($user, $post) {...});</code></pre>
+<p>检查能力</p>
+<pre class="language-php"><code>Gate::define('delete-comment', function ($user, $post, $comment) {});</code></pre>
+<p>指定了要检查的用户</p>
+<pre class="language-php"><code>Gate::denies('update-post', $post);
+Gate::allows('update-post', $post);
+Gate::check('update-post', $post);</code></pre>
+<p>通过用户模型，使用可授权特征</p>
+<pre class="language-php"><code>Gate::forUser($user)-&gt;allows('update-post', $post);</code></pre>
+<p>拦截授权检查</p>
+<pre class="language-php"><code>User::find(1)-&gt;can('update-post', $post);
+User::find(1)-&gt;cannot('update-post', $post);</code></pre>
+<p>检入刀片模板</p>
+<pre class="language-php"><code>Gate::before(function ($user, $ability) {});
+Gate::after(function ($user, $ability) {});</code></pre>
+<p>生成策略</p>
+<pre class="language-php"><code>@can('update-post', $post)
+@endcan
+// with else@can('update-post', $post)
+@else
+@endcan</code></pre>
+<p>“策略”助手功能</p>
+<pre class="language-php"><code>php artisan make:policy PostPolicy</code></pre>
+<p>控制器授权</p>
+<pre class="language-php"><code>policy($post)-&gt;update($user, $post)</code></pre>
+<p>对于$用户</p>
+<pre class="language-php"><code>$this-&gt;authorize('update', $post);</code></pre>
+<p>自动神奇分页</p>
+<pre class="language-php"><code>$this-&gt;authorizeForUser($user, 'update', $post);</code></pre>
+
+<p>仅“下一个”和“上一个”</p>
+<pre class="language-php"><code>Model::paginate(15);
+Model::where('cars', 2)-&gt;paginate(15);</code></pre>
+<p>手动分页器</p>
+<pre class="language-php"><code>Model::where('cars', 2)-&gt;simplePaginate(15);</code></pre>
+<p>打印视图中的页面导航器</p>
+<pre class="language-php"><code>Paginator::make($items, $totalItems, $perPage);</code></pre>
+<p>面向初学者的PHP与Laravel——成为Laravel大师</p>
+<pre class="language-php"><code>$variable-&gt;links();</code></pre>
+<p>结论</p>
+<h2 id="conclusion">以上总结了在开始使用Laravel开发应用程序之前，您应该了解的所有必要的Laravel概念。</h2>
+<p>Laravel框架通过提供快速路由引擎、直观的数据库ORM、实时事件广播、健壮的依赖注入容器和数据库agnistic模式迁移器，能够简化任何web项目中涉及的多项任务。它是一个理想的框架，提供了开发大型web应用程序所需的健壮工具。</p>
+<p><strong>人也在读:</strong></p>
+<p><strong>People are also reading:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

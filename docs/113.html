@@ -1,0 +1,255 @@
+<html>
+<head>
+<title>50 Top Bootstrap Interview Questions and Answers [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>50大自举面试问答[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/bootstrap-interview-questions#0001-01-01">https://hackr.io/blog/bootstrap-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>Bootstrap是最受欢迎的CSS框架选项，用于处理响应迅速、移动优先的前端web开发。此外，它是免费和开源的。</p>
+<p>Bootstrap于2011年推出，拥有构建按钮、表单、导航、排版和其他界面组件所需的所有基于CSS和JS的设计模板。</p>
+<h2 id="top-bootstrap-interview-questions-and-answers">热门自举面试问题和答案</h2>
+<p>有一个很好的机会，一个网站开发工作面试的特点是基于自举的问题。所以，你需要继续做好准备来抓住这个角色。为了帮助你找到原因，以下是一些常见的面试问题及答案:</p>
+<h4 id="question-what-do-you-mean-by-the-bootstrap-grid-system"><strong>问题:</strong> <strong>你说的自举网格系统是什么意思？</strong></h4>
+<p><strong>回答</strong>:Bootstrap Grid系统是一个响应迅速、移动优先的系统，可以根据设备或视窗大小的增加扩展到12列。该系统具有预定义的类，用于简单的布局选项和强大的混合功能，用于有效地生成语义布局。</p>
+
+<h4 id="question-please-explain-normalize-in-bootstrap"><strong>问题:</strong> <strong>请解释Bootstrap中的Normalize。</strong></h4>
+<p><strong>答</strong>:为了建立跨浏览器的一致性，Bootstrap使用了Normalize。它是一个小的CSS文件，能够在HTML元素的默认样式中提供更好的跨浏览器一致性。此外，Normalize.css是一个HTML5就绪和现代的替代<a href="https://stackoverflow.com/questions/11578819/css-reset-what-exactly-does-it-do" target="_blank" rel="noopener"> CSS重置</a>。</p>
+<h4 id="question-can-you-enumerate-the-various-lists-supported-by-bootstrap"><strong>问题:</strong> <strong>能列举出Bootstrap支持的各种列表吗？</strong></h4>
+<p><strong>回答</strong>:下面是Bootstrap支持的三种列表类型:</p>
+<ul>
+<li><strong>定义列表—</strong>这种类型的列表允许每个列表项同时具有&lt; dt &gt;和&lt; dd &gt;元素。&lt; dt &gt;表示定义术语，即被定义的术语或短语。&lt; dd &gt;元素包含了&lt; dt &gt;元素的定义。</li>
+<li><strong>有序列表—</strong>这种类型的列表遵循某种顺序。而且，它是以数字开头的。</li>
+<li><strong>无序列表–</strong>传统上，无序列表使用项目符号，不遵循任何特定的顺序。使用。list-unstyled类允许从无序列表中移除项目符号样式。若要将所有列表项放在一行中。可以使用列表内联类。</li>
+</ul>
+<h4 id="question-what-do-you-mean-by-glyphicons-how-do-you-use-them"><strong>问题:</strong> <strong>你说的象形文字是什么意思？你如何使用它们？</strong></h4>
+<p><strong>答</strong>:图标是图标字体，用于<a href="https://hackr.io/blog/best-web-development-projects">网络项目</a>。虽然雕象半身人不是免费的，通常需要许可，但是他们可以免费用于引导项目。将以下代码添加到您希望使用象形符号的任何地方:</p>
+<pre>&lt;span class = “glyphicon glyphicon-search”&gt;&lt;/span&gt;
+</pre>
+<p><strong>注意</strong> : -为了适当的填充，建议在图标和文本之间留有空间。</p>
+<h4 id="question-could-you-explain-how-to-use-the-dropdown-plugin-in-bootstrap">问题: <strong>你能解释一下如何在Bootstrap中使用下拉插件吗？</strong></h4>
+<p><strong>回答</strong>:在Bootstrap中有三种方式切换下拉插件的隐藏内容:</p>
+<ul>
+<li><strong>带数据属性</strong>–将data-toggle = "dropdown "添加到某个按钮或链接，以切换下拉列表。举个例子，</li>
+</ul>
+<pre>&lt;div class = "dropdown"&gt;
+&lt;a data-toggle = "dropdown" href = "#"&gt;Dropdown trigger&lt;/a&gt;
+&lt;ul class = "dropdown-menu" role = "menu" aria-labelledby = "dLabel"&gt;
+...
+&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+<ul>
+<li><strong>使用JavaScript–</strong>通过JS调用下拉开关的方法如下:</li>
+</ul>
+<pre>$('.dropdown-toggle').dropdown()
+</pre>
+<ul>
+<li>使用data-target属性代替href = " #如果web浏览器没有启用JavaScript，那么最好保持链接完整。为此，data-target属性优于href="#"。举个例子，</li>
+</ul>
+<pre>&lt;div class = "dropdown"&gt;
+&lt;a id = "dLabel" role = "button" data-toggle = "dropdown" data-target = "#" href = "/somepage.html"&gt;
+Dropdown
+&lt;span class = "caret"&gt;&lt;/span&gt;
+&lt;/a&gt;
+&lt;ul class = "dropdown-menu" role = "menu" aria-labelledby = "dLabel"&gt;
+...
+&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+<h4 id="question-please-provide-an-explanation-of-input-groups-in-bootstrap"><strong>问题:</strong> <strong>请解释Bootstrap中的输入组。</strong></h4>
+<p><strong>回答</strong>:输入组只是Bootstrap中的扩展形式控件。使用输入组可以很容易地将按钮或文本附加到基于文本的输入中。向输入字段追加和预先考虑内容允许向用户输入添加公共元素。</p>
+
+<p>您可以通过以下方式将元素追加或前置到. form-control:</p>
+<ul>
+<li>用类将它包装在一个<div>元素中。输入组</div></li>
+<li>对于同一个<div>元素，用。输入组附加类</div></li>
+<li>最后，根据需要将<span>元素放在<input/>元素之前或之后</span></li>
+</ul>
+<h4 id="question-how-will-you-create-a-tabbed-pills-and-vertical-pills-navigation-menu-in-bootstrap"><strong>问题:</strong> <strong>如何在Bootstrap中创建选项卡式、药丸式和垂直药丸式导航菜单？</strong></h4>
+<p><strong>回答</strong>:</p>
+<ol>
+<li><strong>用于创建选项卡式导航菜单</strong><ol>
+<li>从一个基本的无序列表开始。导航基类</li>
+<li>现在，添加。导航标签类</li>
+</ol>
+</li>
+<li><strong>用于创建药丸导航菜单</strong><ol>
+<li>从一个基本的无序列表开始。导航基类</li>
+<li>现在，添加。导航药丸类</li>
+</ol>
+</li>
+<li><strong>用于创建垂直药丸导航菜单</strong><ol>
+<li>使用垂直堆叠药丸。导航堆叠类</li>
+<li>现在，添加。导航和。导航药丸类</li>
+</ol>
+</li>
+</ol>
+<h4 id="question-what-do-you-understand-by-the-bootstrap-navbar-how-will-you-create-one"><strong>问题:</strong> <strong>你对Bootstrap navbar的理解是什么？你将如何创建一个？</strong></h4>
+<p><strong>回答</strong>:navbar是Bootstrap最显著的特性之一，它是一个响应式的“元”组件，充当应用程序或网站的导航标题。一个应用程序或网站中可以有几个导航栏。</p>
+<p>在移动视图中，当可用视区宽度增加时，导航条会折叠并变为水平。导航栏包括基本导航和网站名称的样式。以下是如何在Bootstrap中创建导航栏:</p>
+<ul>
+<li>添加。导航条和。navbar——<nav>标签的默认类</nav></li>
+<li>接下来，向<nav>元素添加role = "navigation "</nav></li>
+<li>现在，补充一下。标题类navbar-header添加到<div>元素中。为了使文本稍微大一点，在navbar-brand类中包含一个<a>元素</a></div></li>
+<li>添加一个无序列表。导航和。用于添加链接到引导导航栏的导航类</li>
+</ul>
+<h4 id="question-can-you-explain-bootstrap-breadcrumb"><strong>问题:</strong> <strong>能解释一下Bootstrap breadcrumb吗？</strong></h4>
+<p><strong>回答</strong>:引导面包屑是显示网站基于层次结构的信息的好方法。简单地说，这是一个带有. breadcrumb类的无序列表。CSS自动为引导面包屑添加分隔符。</p>
+<p>在博客中，面包屑可以显示类别、发布日期或标签。它指示当前页面在导航层次结构中的位置。</p>
+<h4 id="question-how-do-you-create-and-customize-thumbnails-in-bootstrap"><strong>问题:</strong> <strong>如何在Bootstrap中创建和自定义缩略图？</strong></h4>
+<p><strong>答</strong>:使用Bootstrap创建缩略图，添加一个&lt;和一个&gt;标签。图像周围的缩略图类。它将添加四个像素的填充以及一个灰色边框。当悬停时，一个动画辉光勾勒出图像。</p>
+<p>您可以将任何类型的HTML内容(如按钮、标题或段落)添加到缩略图中。这是如何使用Bootstrap自定义缩略图:</p>
+<ul>
+<li>将<a>标签更改为。缩略图类到一个<div>标签</div></a></li>
+<li>在<div>标签中添加您需要的任何内容。您可以使用默认的基于跨度的命名约定来确定规模</div></li>
+</ul>
+<p>注意 : -如果你想将多个图像分组，那么将它们放在一个无序列表中。每个列表项都将浮动到左侧。</p>
+<h4 id="question-please-explain-bootstrap-alerts-also-tell-how-you-will-create-a-bootstrap-dismissal-alert"><strong>问题:</strong> <strong>请解释自举预警。此外，请说明您将如何创建引导消除警报。</strong></h4>
+<p><strong>答</strong>:引导警告用于为用户设计消息，为典型的用户操作提供上下文反馈消息。要创建引导消除警报，请执行以下操作:</p>
+<ul>
+<li>创建一个包装器<div>并添加一个. alert类和4个上下文类之一，即。警报-危险，。警报信息，。警惕-成功，还有。警报-警告，用于添加基本警报</div></li>
+<li>添加可选的。对<div>的警告-解除类</div></li>
+<li>接下来，添加一个关闭按钮</li>
+<li>最后，使用带有data-dissolve = " alert "数据属性的<button>元素</button></li>
+</ul>
+<h4 id="question-can-you-explain-how-to-create-an-alternate-and-a-striped-progress-bar-using-bootstrap">问题: <strong>你能解释一下如何使用Bootstrap创建一个替换和条纹进度条吗？</strong></h4>
+<p><strong>答</strong>:创建各种风格的进度条:</p>
+<ul>
+<li>添加一个带有. progress类的<div/></li>
+<li>在<div>中，添加一个带有. progress bar类和progress bar-*类的空<div>(*可以是危险、信息、成功或警告)</div></div></li>
+<li>最后，添加一个以百分比表示宽度的样式属性。例如，style = "80% "</li>
+</ul>
+<p>创建条纹进度条:</p>
+<ul>
+<li>添加一个带有的<div>。进步和。进度分条类</div></li>
+<li>在<div>中，添加一个带有. progress bar类和progress bar-*类的空<div>，其中*可以是危险、信息、成功或警告中的任何一个</div></div></li>
+<li>现在，添加一个以百分比表示宽度的样式属性，例如style = "70% "</li>
+</ul>
+
+<p><strong>答</strong>:自举媒体对象是用于构建不同类型组件的抽象对象样式，例如博客评论和Tweets，它们以左对齐或右对齐的图像和文本内容为特征。</p>
+<p>自举媒体对象的主要目的是使开发信息块所需的代码变得非常小。为了实现简单的可扩展性、轻量级标记和其他期望的方面，类被应用于一些简单的标记。</p>
+
+<p><strong>回答</strong>:这个。媒体类允许媒体对象(如音频、图像或视频)浮动到内容块的左侧或右侧。为了向无序列表添加文章列表或评论线程，我们使用。有用的类。</p>
+<h4 id="question-do-you-know-what-bootstrap-panels-are-also-explain-how-to-create-a-bootstrap-panel-with-a-heading"><strong>问题:</strong> <strong>你知道什么是自举面板吗？此外，解释如何创建带有标题的引导面板。</strong></h4>
+<p><strong>答</strong> : Bootstrap panel组件是用来把你的DOM组件放到一个盒子里的。要获得基本面板，只需添加。面板和。panel-默认为&lt; div &gt;元素的类。有两种方法可以将面板标题添加到引导面板:</p>
+<ol>
+<li>使用带有. panel-title类的<h1>、<h2>、<h3>、<h4>、<h5>或<h6>标签中的任何一个(添加一个预先设置样式的标题)</h6></h5></h4></h3></h2></h1></li>
+<li>使用。panel-heading类(向面板添加一个标题容器)</li>
+</ol>
+
+<p><strong>回答</strong>:在Bootstrap中使用Scrollspy插件可以让你根据滚动位置来定位页面的某些部分。此后，您可以添加。基于滚动位置的活动类。</p>
+<h4 id="question-please-enumerate-the-various-contextual-classes-available-for-styling-the-panels-in-bootstrap"><strong>问题:</strong> <strong>请列举可用于在Bootstrap中设置面板样式的各种上下文类。</strong></h4>
+<p><strong>答</strong>:Bootstrap中用于设计面板样式(即使面板更有意义)的各种上下文类有:</p>
+<ul>
+<li>。面板-危险</li>
+<li>。面板信息</li>
+<li>。面板-主要</li>
+<li>。面板-成功</li>
+<li>。面板-警告</li>
+</ul>
+<h4 id="question-is-it-possible-to-put-a-table-within-the-bootstrap-panel"><strong>问题:</strong> <strong>可以在自举面板里面放一张桌子吗？</strong></h4>
+<p><strong>回答</strong>:是的，可以在引导面板中放置一个表格。使用。table类来获取同一面板中的无边框表。</p>
+<p><strong>注意</strong> : -如果有一个&lt; div &gt;元素包含。panel-body类，然后我们需要在表格的顶部添加一个额外的边框，以便清晰地定义分隔。如果没有包含上述类的&lt; div &gt;元素，那么组件将从面板标题移动到表中，没有任何问题。</p>
+<h4 id="question-what-do-you-mean-by-bootstrap-well"><strong>问题:</strong> <strong>自举井是什么意思？</strong></h4>
+<p><strong>答</strong>:为了让内容看起来凹陷或者给网页增加一个<a href="https://www.webfx.com/blog/web-design/how-to-create-inset-typography-with-css3/" target="_blank" rel="nofollow noopener">的嵌入效果</a>，我们很好的使用了Bootstrap。实际上，它是&lt;区&gt;的一个容器。</p>
+<p>为了创建一个引导井，只需用一个包含。很好的班级。</p>
+<h4 id="question-why-do-we-use-the-affix-plugin-in-bootstrap"><strong>问题:</strong> <strong>我们为什么要在Bootstrap中使用词缀插件？</strong></h4>
+<p><strong>答</strong>:我们使用Bootstrap中的词缀插件将&lt; div &gt;添加到网页的某个位置。该插件还允许打开和关闭固定的&lt; div &gt;。社交图标是在Bootstrap中使用词缀插件最常见的例子。</p>
+<p><strong>注意</strong> : -贴上的&lt; div &gt;从网页上的特定位置开始滚动。但是，在某个标记之后，它将被锁定在适当的位置，从而停止与网页的其余部分一起滚动。</p>
+<h4 id="question-what-is-the-need-of-bootstrap"><strong>问题:Bootstrap的需求是什么？</strong></h4>
+<p><strong>答:</strong> <span> Bootstrap作为一个前端框架，支持HTML、JS、CSS等各种web应用的开发。</span></p>
+<h4 id="question-what-is-the-benefit-of-bootstrap"><strong>问题:Bootstrap有什么好处？</strong></h4>
+<p><strong>答:</strong> <span>它有助于开发高度响应、快速且易于使用的布局。在开发具有设计模板的移动应用程序时，可以观察到Bootstrap的主要优势。这些模板有助于创建UI，包括警告选项卡、下拉列表、表单等。</span></p>
+
+<h4 id="question-what-are-the-key-components-of-bootstrap-explain"><strong>问题:Bootstrap的关键组件是什么？解释一下？</strong></h4>
+<p><strong>答案:</strong><span>Bootstrap的关键组件包括以下:</span></p>
+<ol>
+<li>脚手架:它支持各种网格系统、风格和背景。</li>
+<li>CSS:它为开发web应用程序提供CSS文件。</li>
+<li><span>定制:支持定制框架的开发。</span></li>
+<li>JS插件:由web设计和应用过程中需要的JS和JQuery插件组成。</li>
+</ol>
+<h4 id="question-what-is-a-bootstrap-container"><strong>问题:什么是引导容器？</strong></h4>
+<p><strong>回答:</strong> <span>一个引导容器由HTML代码组成，放置这些代码可以使它们成为一个高度响应和快速的web应用程序。</span></p>
+<h4 id="question-define-types-of-layout-in-bootstrap-explain"><strong>问题:在Bootstrap中定义布局类型？解释一下？</strong></h4>
+<p><strong>答案:</strong><span>Bootstrap中的布局有固定设计和流动布局两种。流畅的布局有助于创建可根据浏览器大小进行调整的全宽屏幕。另一方面，固定布局不能根据浏览器屏幕调整自身，并且具有940 px的固定布局。</span></p>
+<h4 id="question-can-we-display-code-in-bootstrap-how">问题:我们可以在Bootstrap中显示代码吗？怎么会？</h4>
+<p><strong>回答:</strong> <span>是的，我们可以在Bootstrap中显示代码。可以使用&lt;码&gt;标签和&lt;前&gt;标签等标签显示。&lt;代码&gt;标签可以帮助显示内嵌代码，而&lt;前置&gt;标签可以帮助显示不同行的代码。</span></p>
+<h4 id="question-define-bootstrap-alerts"><strong>问题:定义引导警报？</strong></h4>
+<p><strong>回答:</strong> <span>引导提醒是指通过添加样式来创建提醒消息，并使它们看起来足够吸引人，以抓住查看者的注意力。</span></p>
+<h4 id="question-define-bootstrap-thumbnails"><strong>问题:定义引导缩略图？</strong></h4>
+<p><strong>答:</strong> <span> Bootstrap缩略图有助于在网格系统中使用布局图像、文本、视频和其他功能。这样，我们可以通过图像周围的标签添加几个缩略图。</span></p>
+
+<p><strong>回答:</strong> <span>这将导致创建四个像素的填充，并发展一个灰色的边界。</span></p>
+<h4 id="question-what-are-the-labels-in-bootstrap"><strong>问题:Bootstrap中有哪些标签？</strong></h4>
+<p><strong>答:</strong><span>Bootstrap中的标签用于提供提示、计数和其他有助于标记网页的信息。</span></p>
+<h4 id="question-what-is-the-benefit-of-jumbotron-in-bootstrap"><strong>问题:自举中的超大屏有什么好处？</strong></h4>
+<p><strong>答:</strong><span>Bootstrap中的超大屏幕可以用来增加标题的大小，增加登陆页面的页边距。</span></p>
+<h4 id="question-what-is-normalized-in-bootstrap"><strong>问题:Bootstrap中的规格化是什么？</strong></h4>
+<p><strong>答案:</strong> <span>在Bootstrap中归一化是一个小的CSS文件。它用于创建跨浏览器的一致性。</span></p>
+
+<h4 id="question-define-panels-in-bootstrap">问题:在Bootstrap中定义面板？</h4>
+<p><strong>答:</strong><span>Bootstrap中的面板是不同的组件，可以放入一个盒子中的DOM组件中，目的是使用class.panel作为&lt; div &gt;元素来检索基本面板。</span></p>
+
+<h4 id="question-what-is-a-grid-system-in-bootstrap"><strong>问题:Bootstrap中的网格系统是什么？</strong></h4>
+<p><strong>回答:</strong><span>Bootstrap中的一个网格系统有助于在一个网页上组成多达12列。这样，它有助于将网页内容放在不同的栏中，这些栏可以用作标题或副标题。</span></p>
+<h4 id="question-are-there-grid-classes-in-bootstrap"><strong>问题:Bootstrap中有网格类吗？</strong></h4>
+<p><strong>答案:</strong> <span>是的，Bootstrap中有四个网格类。其中包括xs、sm、md、lg。</span></p>
+<h4 id="question-what-is-the-function-of-the-xs-grid-class"><strong>问题:xs网格类的作用是什么？</strong></h4>
+<p><strong>答案:</strong><span>xs网格类用于手机屏幕，宽度小于786 px。</span></p>
+<h4 id="question-what-is-the-function-of-the-sm-grid-class"><strong>问题:sm网格类的作用是什么？</strong></h4>
+<p><strong>答:</strong><span>sm网格类用于宽平板屏幕，宽度超过786 px。</span></p>
+<h4 id="question-what-is-the-function-of-the-md-grid-class"><strong>问题:md网格类的作用是什么？</strong></h4>
+<p><strong>答:</strong><span>MD网格类用于小型笔记本电脑屏幕，宽度等于或大于992 px。</span></p>
+<h4 id="question-what-is-the-function-of-the-lg-grid-class"><strong>问题:</strong><strong>LG网格类的作用是什么？</strong></h4>
+<p><strong>答案:</strong><span>LG grid类用于笔记本电脑和台式机更大的屏幕，宽度等于甚至大于1200 px。</span></p>
+<h4 id="question-what-is-a-global-style-are-they-used-in-bootstrap"><strong>问题:什么是全球风格？它们用于自举吗？</strong></h4>
+<p><strong>答案:</strong> <span> Global style代表在国际平台上使用和接受的字体大小、行高等特征的标准化版本。它们在引导默认排版的引导中使用。</span></p>
+<h4 id="question-what-is-the-global-style-for-bootstrap-default-typography">问题:引导默认排版的全局样式是什么？</h4>
+<p><strong>答:</strong> <span>引导默认排版的全局样式包括以下默认:</span></p>
+<ol>
+<li><span>14px的字体大小</span></li>
+<li><span>行高1.428。</span></li>
+<li><span>带无衬线后退的Helvetica和Arial字体样式</span></li>
+</ol>
+<p>所有上述的样式、大小和高度都需要在正文和段落中使用。</p>
+<h4 id="question-is-there-any-pre-requisite-for-run-bootstrap-properly">问题:正确运行引导有什么先决条件吗？</h4>
+<p><strong>回答:</strong> <span>是的，JQuery有一个先决条件，需要这个条件才能正常运行Bootstrap。它是Bootstrap中唯一的JavaScript插件。</span></p>
+
+<h4 id="question-is-there-are-a-difference-between-foundation-and-bootstrap">问题:基础和引导有区别吗？</h4>
+<p><strong>答案:</strong> <span>是的，基础和自举是有区别的。该基金会支持SASS处理器，主要用于移动用户界面设计。另一方面，Bootstrap使用较少的预处理程序支持移动和桌面门户的设计。</span></p>
+
+<h4 id="question-are-you-aware-of-the-transition-plugin-in-bootstrap-why-is-it-used">问题:你知道Bootstrap中的过渡插件吗？为什么用？</h4>
+<p><strong>回答:</strong> <span>是的，我知道Boostrap中的过渡插件。这用于提供简单的过渡效果。这些包括在情态上的淡化甚至滑动。</span></p>
+<h4 id="question-what-is-an-affix-plugin-and-how-it-helps-bootstrap">什么是词缀插件，它如何帮助引导程序？</h4>
+<p><strong>答案:</strong> <span>词缀插件在网页上用作社交图标。它允许&lt; div &gt;附加到页面的特定位置。它将从一个位置开始，但是当页面点击时，它会移开并得到一个带有&lt; div &gt;的块。这样，它有助于滚动网页的其余部分。</span></p>
+
+<p><strong>回答:</strong> <span>引导程序中的Scrollspy插件支持自动更新导航插件选项来应用。这有助于使用滚动位置获取网页的部分。可以使用。活动类，可以添加到基于导航条的滚动位置。</span></p>
+<h4 id="question-can-we-create-a-bootstrap-panel-using-heading">问题:我们可以使用heading创建一个引导面板吗？</h4>
+<p><strong>回答:</strong> <span>是的，我们可以使用标题创建一个引导面板。有两种方法可以做到。</span></p>
+<ul>
+<li><strong>第一种方式:</strong> <span>我们可以利用。panel-heading类，目的是在面板中添加标题容器。</span></li>
+<li><strong>第二种方式:</strong> <span>我们可以用标题标签比如&lt; h1 &gt;、&lt; h2 &gt;、&lt; h3 &gt;、&lt; h4 &gt;、&lt; h5 &gt;和&lt; h6 &gt;与。面板标题类。这将有助于根据我们的选择给标题更多的样式。</span></li>
+</ul>
+<h4 id="question-what-is-a-jumbotron-in-bootstrap"><strong>问题:Bootstrap中的超大屏幕是什么？</strong></h4>
+<p><strong>答:</strong><span>Bootstrap中的一个超大屏幕用于增加标题的大小，并为登录页面内容应用边距。它可以使用具有. jumbotron. </span>类的&lt; div &gt;中的容器来创建</p>
+<h4 id="question-define-lead-body-copy-in-bootstrap"><strong>问题:在Bootstrap中定义lead body副本？</strong></h4>
+<p><strong>答:</strong><span>Bootstrap中的一个铅体副本用于给段落添加各种上升。可以使用class="lead "来应用它，它将有助于放大字体大小以及增加高度。</span></p>
+<h4 id="question-do-you-know-how-a-navbar-works-in-the-bootstrap">问题:你知道导航条在引导程序中是如何工作的吗？</h4>
+<p><strong>回答:</strong> <span>是的，Navbar与应用程序或网站的导航标题一起工作。它是一个重要的特性，有助于在web应用程序中创建一个高度响应的元组件。除此之外，Navbar在移动视图中永远不会折叠，并且可以随着可用视区宽度的增加(由于移动电话的倾斜)而变成水平和垂直。</span></p>
+<h2 id="conclusion">结论</h2>
+<p>以上就是Bootstrap面试问答列表的全部内容。我希望它们对你准备即将到来的Bootstrap面试有用。</p>
+<p>寻找更多面试问题时，查看这个伟大的udemy课程:<a href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https://www.udemy.com/course/bootstrap-4-from-scratch-with-5-projects/" rel="nofollow">用5个项目从零开始引导4</a>。</p>
+<p>在面试中，你也可能会被问到一些一般性的<a href="https://hackr.io/blog/programming-interview-questions">编程面试问题</a>。这里有一本很棒的书:<a href="https://geni.us/5NRsc" rel="nofollow">编码面试:189个编程问题及解答</a>。</p>
+<p>希望进一步提高您的引导知识？试试今天社区推荐的这些<a href="https://hackr.io/tutorials/learn-bootstrap?ref=blog-post" target="_blank" rel="noopener">最佳自举教程</a>！</p>
+<p>万事如意！</p>
+<p><strong>人也在读:</strong></p>
+
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

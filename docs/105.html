@@ -1,0 +1,324 @@
+<html>
+<head>
+<title>Top 50 Docker Interview Questions and Answers</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>50大码头工人面试问答</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/docker-interview-questions#0001-01-01">https://hackr.io/blog/docker-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>发布于2013年的<a href="https://hackr.io/tutorials/learn-docker" target="_blank" rel="noopener"> Docker </a>是一款在“容器”中打包、运输和运行应用程序的有用工具。最大的科技公司，包括T2、谷歌、亚马逊和VMware都使用Docker作为他们的首选容器技术。因此，学习Docker可以帮助你在最好的科技公司找到工作。</p>
+<p>我们已经列出了顶级Docker面试问题，分为基本Docker面试问题和高级Docker面试问题。</p>
+<h2 id="top-docker-interview-questions"><strong>顶级码头工人面试问题</strong></h2>
+<h3 id="basic-docker-interview-questions"><strong>基础Docker面试问题</strong></h3>
+<h4 id="toc-1-what-is-the-docker-container"><strong> 1。什么是Docker容器？</strong></h4>
+<p>Docker容器帮助应用程序平稳运行。从本质上说，它是一个软件单元，包含代码及其所有依赖项——系统工具、库、设置——运行应用程序所需的一切。</p>
+<h4 id="toc-2-explain-the-components-of-docker-architecture"><strong> 2。解释Docker架构的组件。</strong></h4>
+<p><strong><img src="../Images/348c4792a7717ae0cb5b9ce11e6b5475.png" alt="components of Docker Architecture" data-original-src="https://cdn.hackr.io/uploads/posts/attachments/1669708476hdMx6Ks29Y.png"/>T2】</strong></p>
+
+<p>Docker架构的组件描述如下:</p>
+<ul>
+<li aria-level="1"><strong> Host: </strong> Docker守护进程、图像和容器属于主机组件</li>
+<li aria-level="1"><strong>客户端:</strong>这允许与Docker主机通信</li>
+<li aria-level="1"><strong>注册表:</strong>这个组件用来存储Docker图片。Docker Hub和Docker Cloud是任何人都可以使用的公共注册中心</li>
+</ul>
+<h4 id="toc-3-explain-the-docker-registry-in-detail"><strong> 3。详细解释Docker注册表。</strong></h4>
+<p>Docker图像存储在Docker注册表中，该注册表充当默认图像存储。这是一个重要的存储区域，因为它保存着容器图像，所以需要定期维护。另一个公共注册表是Docker Cloud。</p>
+<h4 id="toc-4-briefly-explain-the-docker-container-lifecycle"><strong> 4。简要解释Docker容器的生命周期。</strong></h4>
+<p>Docker容器的生命周期包括以下内容:</p>
+<ul>
+<li aria-level="1">创建容器</li>
+<li aria-level="1">运行容器</li>
+<li aria-level="1">暂停容器</li>
+<li aria-level="1">打开集装箱包装</li>
+<li aria-level="1">启动容器</li>
+<li aria-level="1">停止容器</li>
+<li aria-level="1">重新启动容器</li>
+<li aria-level="1">杀死集装箱</li>
+<li aria-level="1">破坏容器</li>
+</ul>
+<h4 id="toc-5-state-some-important-docker-commands"><strong> 5。陈述一些重要的Docker命令。</strong></h4>
+<p>一些重要的Docker命令包括:</p>
+<ul>
+<li aria-level="1"><strong>构建:</strong>为Docker构建一个图像文件</li>
+<li aria-level="1"><strong>创建:</strong>创建一个新的容器</li>
+<li aria-level="1"><strong>杀死:</strong>杀死一个容器</li>
+<li aria-level="1"><strong>Docker:</strong>启动Docker守护进程</li>
+<li aria-level="1"><strong>提交:</strong>从容器变化中创建一个新的图像</li>
+</ul>
+<h4 id="toc-6-what-are-namespaces"><strong> 6。什么是名称空间？</strong></h4>
+<p>Docker名称空间以容器的形式提供了一个隔离的工作空间。一旦容器启动，Docker就会为它们创建名称空间，这提供了一个隔离层。每个容器都有自己唯一的名称空间。</p>
+<h4 id="toc-7-what-is-docker-swarm"><strong> 7。什么是Docker Swarm？</strong></h4>
+<p>Docker Swarm是一个用于集群和调度Docker容器的重要工具。这使得在Docker或单独的VS中创建和维护节点变得很容易。</p>
+
+<h4 id="toc-8-how-do-you-identify-the-status-of-a-docker-container"><strong> 8。如何识别Docker容器的状态？</strong></h4>
+<p>使用以下命令返回每个Docker容器的状态:</p>
+<p>"<strong> docker ps-a. </strong>"</p>
+<p>该命令将返回所有可用Docker容器的列表，以及它们在主机上的状态。从列表中，可以很容易地找到所需的容器来检查其状态。</p>
+<h4 id="toc-9-what-are-docker-images-and-run-commands"><strong> 9。什么是Docker图像和运行命令？</strong></h4>
+<p>Docker映像是一组文件，允许在不同的容器中创建和运行实例。每个实例都是一个独立的进程。</p>
+<p>使用运行可执行应用程序所需的信息创建映像。</p>
+<p>您可以使用Docker run命令创建并初始化一个使用Docker映像的容器实例。如果映像正在运行，它可以链接到任意数量的实例(或容器)。</p>
+<p><img src="../Images/10d725554d7dc8782d2f3f688892b766.png" alt="Docker images and run commands" data-original-src="https://cdn.hackr.io/uploads/posts/attachments/16697085290pn3Ahu3Js.png"/></p>
+<h4 id="toc-10-what-are-docker-s-functionalities-and-applications">10。Docker的功能和应用有哪些？</h4>
+<p>以下是Docker的一些功能和应用:</p>
+<ul>
+<li aria-level="1">基础架构级别的简单配置</li>
+<li aria-level="1">帮助开发人员专注于业务逻辑，因为它减少了开发时间，从而提高了生产率</li>
+<li aria-level="1">增强调试能力</li>
+<li aria-level="1">允许应用程序被隔离</li>
+<li aria-level="1">集装箱化减少了对多台服务器的需求。</li>
+<li aria-level="1">促进操作系统级别的快速部署</li>
+</ul>
+<h4 id="toc-11-what-are-docker-objects"><strong> 11。什么是Docker对象？</strong></h4>
+<p>Docker图像、服务和容器被称为Docker对象。</p>
+<ul>
+<li aria-level="1"><strong>图像</strong>:包含创建Docker容器的指令</li>
+<li aria-level="1"><strong>容器</strong>:一个图像的可运行实例</li>
+<li aria-level="1"><strong>服务</strong>:容器作为一个群体跨不同的Docker守护进程扩展</li>
+</ul>
+<p>其他Docker对象包括网络和卷。</p>
+<h4 id="toc-12-which-is-more-suitable-for-a-docker-container-a-stateless-or-stateful-application"><strong> 12。无状态和有状态应用程序哪个更适合Docker容器？</strong></h4>
+<p>无状态应用程序更适合Docker容器，因为我们可以为我们的应用程序创建一个单一的、可重用的容器，这允许我们将状态配置从应用程序和容器中分离出来。</p>
+<p>通过这样做，我们可以用不同的生产参数等运行同一个容器的多个实例。</p>
+<p>因此，无状态应用程序给了我们在各种场景中使用相同映像的自由，包括各种生产和测试环境。</p>
+<h4 id="toc-13-what-is-dockerfile-used-for">13。Dockerfile是做什么用的？</h4>
+<p>Dockerfile包含一系列构建映像的指令，该映像可用于初始化容器。这个文本文档包括您在命令行中输入的创建图像的每一个命令。</p>
+<h4 id="toc-14-which-networks-are-available-by-default-in-docker"><strong> 14。Docker默认提供哪些网络？</strong></h4>
+<p>默认可用网络包括:</p>
+<ul>
+<li aria-level="1"><strong> Bridge </strong>:如果没有另外指定网络，容器将连接的默认网络</li>
+<li aria-level="1"><strong> None </strong>:连接到没有网络接口的容器专用网络堆栈</li>
+<li aria-level="1"><strong>主机</strong>:连接到主机的网络堆栈</li>
+</ul>
+<h4 id="toc-15-how-is-docker-monitored-in-production">15。Docker在生产中是如何被监控的？</h4>
+<p>在生产环境中运行Docker时，可以使用Docker Stats和Docker Events等工具收集和检查重要的统计数据。</p>
+<p>可以从容器内部调用Docker Stats来返回与容器的CPU和内存使用情况相关的数据。这类似于<a href="https://hackr.io/blog/basic-linux-commands"> Linux top命令</a>，可以用来检查所有正在运行的进程及其当前的计算负载。</p>
+<p>Docker事件代表一个命令列表，可用于分析Docker守护进程正在处理的任何正在进行的活动。这些命令包括附加、提交、重命名、销毁和终止。</p>
+<h4 id="toc-16-shed-some-light-on-docker-s-workflow">16。让我们了解一下Docker的工作流程。</h4>
+<p>以下是Docker工作流程的快速浏览:</p>
+<ul>
+<li aria-level="1">一切都从图像的源代码Dockerfile开始</li>
+<li aria-level="1">一旦被创建，docker文件帮助构建容器的映像，这是docker文件的编译版本</li>
+<li aria-level="1">之后，它通过注册表重新分发，并用于运行容器</li>
+</ul>
+<h4 id="toc-17-what-is-the-difference-between-docker-run-and-docker-create"><strong> 17。Docker run和Docker create有什么区别？</strong></h4>
+<p>如果您使用Docker create，容器将在“停止”状态下创建。这允许您稍后存储和输出容器ID。如果您将“docker run”与—cidfile FILE_NAME一起使用，它将不允许您覆盖该文件。</p>
+<p><span> <a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.2074534&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fdocker-certified-associate%2F" target="_blank" rel="noopener"> Docker认证助理:2023年硕士课程</a> </span></p>
+<h4 id="toc-18-what-is-virtualization">18。什么是虚拟化？</h4>
+<p>最初，虚拟化使大型机系统的逻辑部分能够让几个应用程序同时在一个系统上运行。随着技术的进步，这个术语的含义逐渐演变为代表在单个x86系统上运行多个(也可能是不同的)操作系统(OS)。</p>
+<p>如今，这个术语被广泛用于指在同一硬件上运行多个操作系统的过程。在这个场景中，主<a href="https://hackr.io/blog/best-os-for-programming">操作系统</a>充当管理员，访客必须遵循预定义的引导、加载内核等过程。这确保了更高的安全性，并防止来宾系统获得完全的系统访问权限，这可能会导致数据泄露。</p>
+<p>以下是三种类型的虚拟化:</p>
+<ul>
+<li aria-level="1">半虚拟化</li>
+<li aria-level="1">竞争</li>
+<li aria-level="1">基于容器的虚拟化</li>
+</ul>
+<h4 id="toc-19-what-is-the-difference-between-a-registry-and-a-repository"><strong> 19。注册中心和存储库之间有什么区别？</strong></h4>
+<p>Docker注册表托管和分发图像，Docker Hub是默认注册表。Docker存储库(或repo)允许您存储Docker映像版本的集合。这意味着图像将具有相同的名称，但是它们的标签会有所不同以代表不同的版本。</p>
+<h4 id="toc-20-what-are-docker-images-docker-hub-and-docker-file">20。什么是Docker映像、Docker Hub和Docker文件？</h4>
+<p><strong> Docker图像:</strong>这些多层文件用于创建Docker容器的实例，它们是使用终端命令指令或包含这些指令的预定义Docker文件来构建的。由于在构建序列的每一步都进行缓存，使用映像可以加快Docker构建时间。</p>
+
+<p><strong> Docker hub: </strong>这是Docker提供的一项服务，可以用来寻找Docker图片，并与团队中的其他人分享。与GitHub用于提供分布式文件存储(具有版本控制)的方式相同，Docker hub允许您推和拉图像，访问存储Docker图像的私有repos，并在将这些图像推送到Docker hub之前，从GitHub或BitBucket存储库中自动构建Docker图像。</p>
+<p><strong> Dockerfile: </strong>这是一个文本文档，用于存储Docker映像的构建指令。运行时，Docker执行命令自动生成图像。</p>
+<h4 id="toc-21-how-do-you-check-versions-of-the-docker-client-and-docker-server"><strong> 21。如何检查Docker客户端和Docker服务器的版本？</strong></h4>
+<p>docker version [options]命令允许我们这样做。如果我们省略这些选项，我们将简单地接收关于客户机和服务器的所有相关版本信息。这是命令:</p>
+<pre class="language-docker"><code>$ docker version --format'{{.Server.Version}}'</code></pre>
+<h4 id="toc-22-what-is-the-login-procedure-for-docker-repository"><strong> 22。Docker储存库的登录程序是什么？</strong></h4>
+<p>要登录Docker存储库，请使用:</p>
+<pre class="language-docker"><code>dockerlogin [OPTIONS] [SERVER]</code></pre>
+<p>要登录自托管(本地)注册表，只需添加服务器名称:</p>
+<pre class="language-docker"><code>$ docker login localhost:8080</code></pre>
+<h4 id="toc-23-what-are-some-basic-docker-commands"><strong> 23。有哪些基本的Docker命令？</strong></h4>
+<p>一些基本的Docker命令是:</p>
+<ul>
+<li aria-level="1"><strong> docker push: </strong>将存储库或映像推送到注册中心</li>
+<li aria-level="1"><strong> docker run: </strong>在新容器中运行命令</li>
+<li aria-level="1"><strong> docker pull: </strong>从注册表中提取存储库或映像</li>
+<li aria-level="1"><strong>码头启动:</strong>启动一个或多个集装箱</li>
+<li aria-level="1"><strong>停靠站:</strong>停止一个或多个运行中的集装箱</li>
+<li aria-level="1"><strong> docker搜索:</strong>在Docker hub中搜索图像</li>
+<li aria-level="1"><strong> docker提交:</strong>提交新图像</li>
+</ul>
+<h4 id="toc-24-how-is-a-docker-container-different-from-other-containerization-methods"><strong> 24。码头集装箱与其他集装箱运输方式有何不同？</strong></h4>
+<p>您可以轻松地将Docker容器部署到任何云平台。还可以更快地使用现成的容器化应用程序，以及更轻松地管理和部署应用程序。Docker容器也可以与应用程序共享，而其他容器化方法没有这些方法。</p>
+<h4 id="toc-25-what-platforms-does-docker-run-on"><strong> 25。Docker运行在哪些平台上？</strong></h4>
+<p>Docker运行在Windows (x86-64)和Linux(x86-64、ARM和其他CPU架构)、s390x和ppc64le上。</p>
+<h4 id="toc-26-what-is-the-memory-swap-flag"><strong> 26。什么是内存交换标志？</strong></h4>
+<p>“memory-swap”标志是一个修饰符，它可以与run命令结合使用，以便当容器使用了其所有已配置的物理内存(RAM)时，它可以访问额外的虚拟内存。该命令要求在执行运行命令时预设“内存”标志。</p>
+<p>比如:–memory = " 256m "；–memory-swap = " 512m "；通过这种设置，容器被提供了256MB的物理内存，以及256MB的额外虚拟交换空间(512m-256m)。</p>
+
+<h4 id="toc-27-where-are-docker-volumes-stored"><strong> 27。Docker卷存放在哪里？</strong></h4>
+<p>卷存储在Docker主机文件系统:/var/lib/docker/volumes/中。这是保证Docker中数据持久性的最有效的方法。</p>
+
+<h4 id="toc-28-what-is-cnm"><strong> 28。什么是CNM？</strong></h4>
+<p>CNM，或容器网络模型，正式定义了容器联网的步骤，同时还维护了用于支持多个网络驱动程序的抽象。沙箱、端点和网络是三个组件。</p>
+<h4 id="toc-29-what-are-the-different-kinds-of-mount-types-available-in-docker"><strong> 29。Docker中有哪些不同的挂载类型？</strong></h4>
+<p>这三种类型是:</p>
+<ul>
+<li aria-level="1"><strong>绑定挂载:</strong>这些挂载可以存储在主机系统的任何地方</li>
+<li aria-level="1"><strong>卷挂载:</strong>存储在主机文件系统中，由Docker管理</li>
+<li aria-level="1"><strong> tmpfs挂载:</strong>存储在主机系统的内存中，并且永远无法写入主机的文件系统</li>
+</ul>
+<p><img src="../Images/4b932257fdf6e82f5ba20adf5b4bb6b2.png" alt="mount types available in Docker" data-original-src="https://cdn.hackr.io/uploads/posts/attachments/1669708595kCTwUgvZ8r.png"/></p>
+<h4 id="toc-30-what-are-docker-object-labels">三十岁。什么是Docker对象标签？</h4>
+<p>这是一个存储为字符串的键值对。我们可以使用标签来应用元数据，标签可以用于图像、容器、卷、网络、本地守护进程、群节点和服务。每个对象都应该有一个唯一的标签，这些标签在对象的整个生命周期中都是静态的。</p>
+<h3 id="advanced-docker-interview-questions"><strong>高级码头工人面试问题</strong></h3>
+<h4 id="toc-31-list-the-steps-in-the-deployment-process-for-dockerized-apps-stored-in-a-git-repo">31。列出存储在Git Repo中的Dockerized应用程序的部署过程中的步骤。</h4>
+<p>部署过程可能因生产环境的不同而不同，但基本过程将包括以下内容:</p>
+<ul>
+<li aria-level="1">用Docker Build构建应用程序</li>
+<li aria-level="1">测试图像</li>
+<li aria-level="1">将新图像推送到Docker注册表</li>
+<li aria-level="1">通知远程应用服务器从Docker注册中心获取新的映像，然后运行该映像</li>
+<li aria-level="1">利用HTTP代理进行端口交换</li>
+<li aria-level="1">停止任何旧容器</li>
+</ul>
+<h4 id="toc-32-explain-how-docker-is-different-from-other-container-technologies">32。解释Docker与其他容器技术有何不同。</h4>
+<p>虽然Docker是一种相对较新的容器技术，但它已经成为最受欢迎的技术之一。作为云计算时代的产物，Docker提供了一些旧容器产品所没有的特性。Docker的突出特性之一是能够在任何类型的基础设施上运行，无论是在本地(本地)还是在云中。</p>
+<p>如今，Docker还允许执行更多的应用程序，将这些应用程序处理成包，并将其发送到旧服务器。它还可以作为方便容器的存储库，这些容器也可以由您的其他应用程序共享。最后，这是有据可查的。</p>
+<h4 id="toc-33-will-you-lose-your-data-if-you-were-to-exit-the-docker-container">33。如果退出Docker容器，您会丢失数据吗？</h4>
+<p>退出容器时不会丢失数据，因为数据是写入磁盘的。这一直持续到容器被完全删除。容器的文件系统在暂停后也会保持不变。</p>
+<h4 id="toc-34-can-json-be-used-instead-of-yaml-for-the-compose-file-in-docker-if-yes-how">34。Docker中的compose文件可以用JSON代替YAML吗？如果是，如何实现？</h4>
+<p>是的，可以。为此，请按如下方式指定文件名:</p>
+<p>“坞站-组合-f坞站-组合. json up”</p>
+
+<h4 id="toc-35-what-are-cmd-and-entrypoint-in-a-dockerfile">35。Dockerfile中的CMD和ENTRYPOINT是什么？</h4>
+<p>这两条指令都关注于容器在执行过程中使用的命令和参数。这些指令遵循一定的规则:</p>
+
+<ul>
+<li aria-level="1">Dockerfile应该从CMD或ENTRYPOINT中指定至少一个命令</li>
+<li aria-level="1">ENTRYPOINT提供命令来确定如何执行容器。在命令行(CLI)中使用run命令时，不能覆盖这些参数</li>
+<li aria-level="1">CMD指定启动容器时要执行的默认图像。如果用户为run命令提供了替代参数，则可以在CLI中覆盖传递给此命令的任何参数</li>
+</ul>
+<h4 id="toc-36-explain-the-process-to-run-an-application-inside-a-linux-container-using-docker">36。解释使用Docker在Linux容器中运行应用程序的过程。</h4>
+<p>为了使用Docker在Linux容器中运行应用程序，请遵循以下步骤:</p>
+<ul>
+<li aria-level="1">安装Docker，然后运行它</li>
+<li aria-level="1">从Docker hub获取Fedora 21 (Linux OS)基础映像</li>
+<li aria-level="1">使用Docker基本映像，加载您的应用程序</li>
+<li aria-level="1">使用新图像在交互模式下运行容器</li>
+<li aria-level="1">检查系统容器</li>
+<li aria-level="1">启动或停止Docker容器</li>
+<li aria-level="1">移除图像或容器</li>
+</ul>
+<h4 id="toc-37-what-is-a-hypervisor">37。什么是虚拟机管理程序？</h4>
+<p>虚拟机管理程序是一种管理软件，可用于创建和运行虚拟机(VM)。这使得主机系统能够容纳多个访客虚拟机，并且这些访客虚拟机将共享包括RAM和CPU在内的计算资源。通过向每个虚拟机分配所需的计算资源，可以减少物理硬件需求和维护。</p>
+<p>这两种类型的虚拟机管理程序是:</p>
+<ul>
+<li aria-level="1">类型I(T1):这是一个运行在主机系统上的轻量级操作系统</li>
+<li aria-level="1">类型II :它像现有操作系统中的任何其他软件一样运行</li>
+</ul>
+<h4 id="toc-38-explain-containerization">38。解释集装箱化。</h4>
+<p>Docker容器包含代码、系统工具、库、运行时和应用程序执行所需的设置，应用程序位于Docker引擎层之上。这个概念被称为集装箱化</p>
+<h4 id="toc-39-what-is-the-main-difference-between-containerization-and-virtualization">39。容器化和虚拟化的主要区别是什么？</h4>
+<p>虚拟化允许您在一台物理服务器上运行多个操作系统。操作系统还处理容器化，这发生在单个服务器或虚拟机上。</p>
+<h4 id="toc-40-is-it-possible-for-a-container-to-restart-by-itself">40。容器有可能自己重启吗？</h4>
+<p>是的，这是可能的。但是，Docker提供了一系列行为，可以通过配置来控制这一点:</p>
+<ul>
+<li aria-level="1"><strong> Off: </strong>如果容器出现故障或停止，它将不会重新启动</li>
+<li aria-level="1"><strong> On-failure: </strong>如果容器由于非用户错误而失败，容器将重新启动</li>
+<li aria-level="1"><strong>除非-停止:</strong>如果用户手动停止，容器将重新启动</li>
+<li aria-level="1"><strong> Always: </strong>不管停止的错误或原因是什么，容器总是会重新启动</li>
+</ul>
+<p>命令是:</p>
+<pre class="language-docker"><code>$ docker run -dit — restart [unless-stopped|off|on-failure|always] [CONTAINER]</code></pre>
+<h4 id="toc-41-is-it-possible-for-the-cloud-to-overtake-the-use-of-containerization">41。云有可能取代集装箱化的使用吗？</h4>
+<p>像这样的问题，只能用主观来回答，或者用一种观点来回答。时至今日，许多公司已经开始依赖云计算和容器化的结合来实现高性能的系统设计。</p>
+<h4 id="toc-42-what-are-the-various-possible-states-of-the-docker-container"><strong> 42。Docker容器有哪些可能的状态？</strong></h4>
+<p>Docker容器的不同状态包括:</p>
+<ul>
+<li aria-level="1"><strong>已创建:</strong>容器已创建，但未激活</li>
+<li aria-level="1"><strong>重新启动:</strong>容器正在重新启动过程中</li>
+<li aria-level="1"><strong>运行:</strong>集装箱正在运行</li>
+<li aria-level="1"><strong>暂停:</strong>容器的进程已经暂停</li>
+<li aria-level="1"><strong> Exited: </strong>容器正在运行并完成了它的进程</li>
+<li aria-level="1"><strong> Dead: </strong>容器不起作用或被部分移除，但仍在使用资源。守护程序将在重新启动时尝试删除它</li>
+</ul>
+<h4 id="toc-43-explain-container-orchestration-why-do-we-need-it"><strong> 43。解释容器编排。我们为什么需要它？</strong></h4>
+<p>容器编排通过自动化以下内容，减少了开发人员手动管理容器相关活动的需求:</p>
+<ul>
+<li aria-level="1">供应和部署容器</li>
+<li aria-level="1">网络负载平衡</li>
+<li aria-level="1">当前容器的资源分配</li>
+<li aria-level="1">容器和主机的健康监控</li>
+<li aria-level="1">容器缩放</li>
+<li aria-level="1">如果当前主机变得无响应或缺少计算资源，则通过将容器转移到新主机来预防故障</li>
+</ul>
+<h4 id="toc-44-what-are-some-advanced-docker-commands"><strong> 44。有哪些高级Docker命令？</strong></h4>
+<p>一些高级Docker命令包括:</p>
+<ul>
+<li aria-level="1"><strong> docker -version: </strong>看docker安装的是什么版本。语法:Docker - version</li>
+<li aria-level="1"><strong> docker ps: </strong>列出所有正在运行的docker容器以及容器细节。语法:docker ps</li>
+<li aria-level="1"><strong> docker ps -a: </strong>列出所有容器，包括正在运行、停止或退出的容器，以及相关的详细信息。语法:docker ps -a</li>
+<li aria-level="1"><strong> docker exec: </strong>访问一个容器并在该容器内运行命令。语法:docker exec[选项]</li>
+<li aria-level="1"><strong> docker构建:</strong>从docker文件构建一个图像。语法:docker build [options] path|URL</li>
+<li aria-level="1"><strong> docker rm: </strong>删除具有给定容器id的容器。语法:docker rm &lt; container_id &gt;</li>
+<li aria-level="1"><strong> docker rmi: </strong>删除具有给定图像id的docker图像。语法:对接rmi &lt; image_id &gt;</li>
+<li aria-level="1"><strong> docker信息:</strong>返回系统上安装的docker的详细信息，包括图像数量；正在运行、暂停或停止的容器；服务器版本；体积；运行时；内核版本；和总内存等。语法:docker信息</li>
+<li aria-level="1"><strong> docker cp: </strong>将文件从docker容器复制到本地系统。语法:docker CP&lt;source _ path&gt;T4】dest _ path&gt;</li>
+<li aria-level="1"><strong> docker历史:</strong>显示具有给定图像名称的docker图像的历史。语法:docker history &lt; img_name &gt;</li>
+</ul>
+<h4 id="toc-45-what-are-the-commands-to-control-docker-with-systemd"><strong> 45。用Systemd控制Docker的命令有哪些？</strong></h4>
+<p>Docker守护程序可以使用以下系统启动:</p>
+<pre class="language-docker"><code>$ sudo systemctl start docker
+</code></pre>
+<p>使用systemct1启动服务。如果不可用，请使用service命令:</p>
+<pre class="language-docker"><code>$ sudo service docker start</code></pre>
+<p>要在引导期间启用和禁用守护程序，请使用:</p>
+<pre class="language-docker"><code>$ sudo systemctl enable docker
+
+$ sudo systemctl disable docker</code></pre>
+<p>要修改守护程序选项，请使用:</p>
+<pre class="language-docker"><code>$ sudo systemctl edit docker</code></pre>
+<p>查看与Docker服务相关的日志:</p>
+<pre class="language-docker"><code>$ journalctl -u docker;</code></pre>
+<h4 id="toc-46-what-is-the-process-of-scaling-your-docker-containers"><strong> 46。扩展Docker容器的过程是什么？</strong></h4>
+<p>docker-compose命令可用于通过启动所需数量的附加实例来水平扩展docker容器的数量。实现这一点的语法是:</p>
+<pre class="language-docker"><code>$] docker-compose --file docker-compose-run-srvr.yml scale &lt;service_name&gt;=&lt;n&gt;</code></pre>
+<p>在上面的命令中，我们传递docker-compose-run-Sr ver . yml YAML文件作为服务名，并且我们必须提供一个整数值‘n’，来表示我们需要水平伸缩的额外实例的数量。最后，我们可以通过以下方式检查这些新容器的详细信息:</p>
+<pre class="language-docker"><code>$] docker ps -a</code></pre>
+<h4 id="toc-47-what-are-the-major-actions-in-the-docker-container-life-cycle"><strong> 47。Docker容器生命周期中的主要活动是什么？</strong></h4>
+<p>以下是步骤:</p>
+<ul>
+<li aria-level="1"><strong>创建容器:</strong> docker创建-名称&lt;容器-名称&gt; &lt;图像-名称&gt;</li>
+<li aria-level="1"><strong>运行docker容器:</strong>docker Run-it-d-name&lt;container-name&gt;T4】image-name&gt;bash</li>
+<li aria-level="1"><strong>暂停集装箱</strong>:码头工人暂停&lt;集装箱id/名称&gt;</li>
+<li aria-level="1"><strong>拆箱:</strong>码头工人拆箱&lt;集装箱id/名称&gt;</li>
+<li aria-level="1"><strong>开始集装箱:</strong>码头工人开始&lt;集装箱id/名称&gt;</li>
+<li aria-level="1"><strong>停止集装箱:</strong>码头工人停止&lt;集装箱id/名称&gt;</li>
+<li aria-level="1"><strong>重启集装箱:</strong>码头工人重启&lt;集装箱id/名称&gt;</li>
+<li aria-level="1"><strong>杀死集装箱:</strong>码头工人杀死&lt;集装箱id/名称&gt;</li>
+<li aria-level="1"><strong>销毁集装箱:</strong>码头工人rm &lt;集装箱id/名称&gt;</li>
+</ul>
+<h4 id="toc-48-what-is-the-docker-trusted-registry"><strong> 48。什么是Docker可信注册中心？</strong></h4>
+<p>Docker可信注册表用于存储和管理Docker映像。它在本地和云上都可用。它还可以在CI/CD流程中用于构建、交付和运行应用程序。它容易获得、高效，并且具有内置的访问控制。</p>
+<h4 id="toc-49-what-is-the-purpose-of-docker-host">49。Docker_Host的用途是什么？</h4>
+<p>Docker_host指定用于连接Docker API的URL或Unix套接字路径。默认值是:UNIX://var/run/docker.sock</p>
+<p>要连接到远程主机，请提供TCP连接字符串:TCP://192.0.1.20:3230</p>
+<h4 id="toc-50-is-it-possible-to-run-multiple-copies-of-a-compose-file-on-the-same-host-if-so-how">50。可以在同一台主机上运行一个合成文件的多个副本吗？如果有，如何实现？</h4>
+<p>是的，这可以通过使用docker-compose up命令和一个YAML文件来完成，该文件是为配置应用程序的服务而编写的。</p>
+<p>为此，请完成以下步骤:</p>
+<ul>
+<li aria-level="1">创建一个docker文件来配置一个应用程序环境，从而允许它被复制到任何地方</li>
+<li aria-level="1">创建一个docker-compose.yml (YAML)文件来定义应用程序的服务</li>
+<li aria-level="1">运行docker-compose up命令创建并启动应用程序</li>
+</ul>
+<h4 id="toc-51-what-is-docker-push">51。Docker推送是什么？</h4>
+<p>这允许我们将本地Docker映像或存储库推送到或共享到中央存储库。</p>
+<h2 id="start-preparing-for-your-docker-interview-today"><strong>今天就开始准备你的码头工人面试</strong></h2>
+<p>我们的50大码头工人面试问题列表到此结束。用它们来准备你的面试——别忘了获得一些实际经验。</p>
+<p>如果你想了解更多关于Docker的知识，请查看社区提交和推荐的<a href="https://hackr.io/tutorials/learn-docker?ref=blog-post">最佳Docker教程</a>。你也应该去看看像Udemy的<a href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/">码头工人速成班</a>这样的课程。你赢得码头工人面试的最后一步？</p>
+<p><strong>探究这些</strong> <a href="https://geni.us/MmRP"> <strong>破解编码面试:189道编程题及解答</strong> </a> <strong>。</strong></p>
+<h2 id="frequently-asked-questions"><strong>常见问题解答</strong></h2>
+<h4 id="toc-1-what-are-docker-swarm-interview-questions"><strong> 1。Docker群面试问题是什么？</strong></h4>
+<p>Docker swarm是一个容器编排工具，允许多个容器跨多个主机。以上Docker上的面试问题包含相关问题。</p>
+<h4 id="toc-2-what-is-the-main-use-of-docker"><strong> 2。Docker的主要用途是什么？</strong></h4>
+<p>Docker是一个容器化平台，允许开发人员在容器中构建应用程序。这些是独立的可执行文件，可以在任何操作系统上运行。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

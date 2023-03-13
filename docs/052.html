@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>Binary Search in C Programming - Source code and explanation</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>C程序设计中的二分搜索法-源代码和解释</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/binary-search-in-c#0001-01-01">https://hackr.io/blog/binary-search-in-c#0001-01-01</a></blockquote><div><div class="content">
+										<p>二分搜索法是一种简单的算法，用于查找存储在有序列表中的项目的位置。C程序中的二分搜索法有一些变化，例如在算法的每一步测试相等和小于。</p>
+<p>C语言中的二分搜索法是一个简单程序的例子，可以用来解决复杂的问题。因此，这是一个重要的基础概念，你会在几乎所有关于C编程语言  <span>的</span> <a href="https://hackr.io/blog/10-best-c-cpp-books"> <span>好书中找到。</span></a></p>
+<p><span>在给出C语言中建立二分搜索法的代码之前，我们先来了解一下算法到底是如何工作的。</span></p>
+<h2 id="how-does-it-work">它是如何工作的？</h2>
+<p><span>二进制搜索算法适用于在一个有序数组中搜索一个元素。搜索从比较目标元素和数组的中间元素开始。如果值匹配，则返回元素的位置。</span></p>
+
+<p><span>如果目标元素小于数组的中间元素(考虑到数组遵循升序),则数组的后半部分被丢弃，通过划分前半部分继续搜索。</span></p>
+<p><span>当目标元素大于中间元素时，过程是相同的，只是在这种情况下，数组的前半部分在继续搜索之前被丢弃。重复迭代，直到找到目标元素的匹配。</span></p>
+<h2 id="binary-search-in-c-program"><strong>C程序中的二分搜索法</strong></h2>
+<p>下面的代码用C编程语言实现了二分搜索法。虽然它只能用于排序数组，但与线性搜索相比，它的速度很快。</p>
+<p>如果需求要求在未排序的数组上使用二分搜索法，那么在对其使用二分搜索法算法之前，需要先对其进行排序。为此，您可以使用一些排序技术，如 <a href="https://hackr.io/blog/bubble-sort-in-c"> <span>冒泡排序</span> </a> <span>或</span> <a href="https://hackr.io/blog/merge-sort-in-c"> <span>合并排序</span> </a> <span>。</span></p>
+<p><span>注意:-下面提到的代码假设输入数字遵循升序！</span></p>
+<p>这里是C语言中二分搜索法的代码:</p>
+
+<pre><span>#include </span>
+<span>int main()</span>
+<span>{</span>
+<span>   int c, first, last, middle, n, search, array[100];</span>
+<span>   printf("Enter number of elements:\n");</span>
+<span>   scanf("%d",&amp;n);</span><span> </span>
+<span>   printf("Enter %d integers:\n", n);</span>
+<span>   for (c = 0; c &lt; n; c++)</span>
+<span>      scanf("%d",&amp;array[c]);</span><span> </span>
+<span>   printf("Enter the value to find:\n");</span>
+<span>   scanf("%d", &amp;search);</span>
+<span>   first = 0;</span>
+<span>   last = n - 1;</span>
+<span>   middle = (first+last)/2;</span>
+<span>   while (first &lt;= last) {</span>
+<span>      if (array[middle] &lt; search)</span>
+<span>         first = middle + 1;    </span>
+<span>      else if (array[middle] == search) {</span>
+<span>         printf("%d is present at index %d.\n", search, middle+1);</span>
+<span>         break;</span>
+<span>      }</span>
+<span>      else</span>
+<span>         last = middle - 1;</span>
+<span>      middle = (first + last)/2;</span>
+<span>   }</span>
+<span>   if (first &gt; last)</span>
+<span>      printf("Not found! %d is not present in the list.\n", search);</span>
+<span>   return 0;  </span>
+<span>}</span>
+</pre>
+<p><strong> <em>样本输出:</em> </strong></p>
+<p><span>输入元素数量:</span></p>
+<p><span> 5 </span></p>
+<p><span>输入5个整数:</span></p>
+<p><span>1</span><br/>T3】9<br/><span>22</span><br/><span>24</span><br/><span>46</span></p>
+<p><strong>输入要查找的值:</strong></p>
+<p><span> 24 </span></p>
+<p>24出现在索引4处。</p>
+<h3 id="other-examples-of-implementing-a-binary-search-in-c-program"><strong>在C程序中实现二分搜索法的其他例子</strong></h3>
+<ul>
+<li><span>递归实现二分搜索法</span></li>
+</ul>
+<p><span>注意</span> <span> : </span> <span> - </span> <span>该程序不允许您输入元素，因为列表已经在其中实现。这个程序简单地演示了C语言中二分搜索法程序的工作方式！</span></p>
+<pre><span>#include </span>
+<span>int binarySearch(int arr[], int l, int r, int x) </span>
+<span>{ </span>
+<span>    if (r &gt;= l) { </span>
+<span>        int mid = l + (r - l) / 2; </span>
+<span>        if (arr[mid] == x) </span>
+<span>            return mid; </span>
+<span>        if (arr[mid] &gt; x) </span>
+<span>            return binarySearch(arr, l, mid - 1, x); </span>
+<span>        return binarySearch(arr, mid + 1, r, x); </span>
+<span>    } </span>
+<span>    return -1; </span>
+<span>} </span><span> </span>
+<span>int main(void) </span>
+<span>{ </span>
+<span>    int arr[] = { 2, 3, 4, 10, 40 }; </span>
+<span>    int n = sizeof(arr) / sizeof(arr[0]); </span>
+<span>    int x = 10; </span>
+<span>    int result = binarySearch(arr, 0, n - 1, x); </span>
+<span>    (result == -1) ? printf("The element is not present in array") </span>
+<span>                   : printf("The element is present at index %d", </span>
+<span>                            result); </span>
+<span>    return 0; </span>
+<span>}</span>
+</pre>
+<p><strong>输出:</strong></p>
+<p><span>元素出现在索引3处。</span></p>
+<ul>
+<li><span>二分搜索法的迭代实现</span></li>
+</ul>
+<p>注意:-该程序不允许您输入元素，因为列表已经在其中实现。这个程序简单地演示了C语言中二分搜索法程序的工作方式！</p>
+<pre><span>#include </span>
+<span>int binarySearch(int arr[], int l, int r, int x) </span>
+<span>{ </span>
+<span>    while (l &lt;= r) { </span>
+<span>        int m = l + (r - l) / 2; </span>
+<span>        if (arr[m] == x) </span>
+<span>            return m; </span>
+<span>        if (arr[m] &lt; x) </span>
+<span>            l = m + 1; </span>
+<span>        else</span>
+<span>            r = m - 1; </span>
+<span>    } </span><span> </span>
+<span>    return -1; </span>
+<span>} </span><span>  </span>
+<span>int main(void) </span>
+<span>{ </span>
+<span>    int arr[] = { 2, 3, 4, 10, 40 }; </span>
+<span>    int n = sizeof(arr) / sizeof(arr[0]); </span>
+<span>    int x = 10; </span>
+<span>    int result = binarySearch(arr, 0, n - 1, x); </span>
+<span>    (result == -1) ? printf("The element is not present"</span>
+<span>                            " in array") </span>
+<span>                   : printf("The element is present at "</span>
+<span>                            "index %d", </span>
+<span>                            result); </span>
+<span>    return 0; </span>
+<span>} </span>
+</pre>
+<p><strong>输出:</strong></p>
+<p><span>元素出现在索引3处。</span></p>
+<p><span>推荐课程</span></p>
+<p> </p>
+<h3 id="time-complexities-of-the-binary-search-algorithm">二分搜索法算法的时间复杂度</h3>
+<p>假设T(N)是一组N个元素的二分搜索法的时间复杂度。然后，</p>
+<p><span> T(N) = T(N/2) + O(1)(通过递推关系)</span> <span> - (i) </span></p>
+<p><span>现在，应用马斯特斯定理计算递归关系的运行时间复杂度，即</span></p>
+<p><span>T(N)= aT(N/b)+f(N)</span><span>-(ii)</span></p>
+<p><span>比较等式(ii)和(I)，我们得到，</span></p>
+<p><span> a = 1，b = 2 </span></p>
+<p><span>因此，log (a基数b) = 1 = c </span> <span> - (iii) </span></p>
+<p><span>现在，f(n)= n^c log^k(n)//k = 0</span><span>-(iv)</span></p>
+<p><span>利用等式(ii)中的(iii)和(iv)，我们得到，</span></p>
+<p><span>t(n)= o(n^c log^(k+1)n)= o(log(n))</span><span>-(v)</span></p>
+
+<p>对于二分搜索法来说，这是最坏情况下的时间复杂度。现在，进行唯一比较的最佳情况是。因此，N = 1。所以，我们得到，</p>
+<p><span>O(log(1))= O(1)</span><span>(as log(1)= 1)</span></p>
+<p><span>因此，不同情况下二分搜索法的时间复杂度为:</span></p>
+<p><strong>最佳情况</strong></p>
+<p><span> O(1) </span></p>
+<p><strong>最坏情况</strong></p>
+<p><span> O(对数n) </span></p>
+<p><span> <a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fdatastructurescncpp%2F" target="_blank" rel="noopener">掌握数据结构&amp;使用C和C++ </a>算法</span></p>
+<h3 id="pros-and-cons-of-binary-search-in-c"><strong>二分搜索法在C中的利弊</strong></h3>
+<p><strong>优点:</strong></p>
+<ul>
+<li><span>一个相当简单的算法基于</span> <a href="https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm#Divide_and_conquer" target="_blank" rel="noopener"> <span>分而治之的方法</span> </a></li>
+<li>与线性搜索相比要快得多。线性搜索需要对平均和最坏情况进行N/2和N次比较。二分搜索法仅仅需要分别针对平均和最坏情况的总共log2 (N)和log  <span> 2 </span> <span> (N)的比较。简而言之，线性搜索平均需要对一组百万个元素进行500，000次比较。另一方面，二分搜索法只需要20次比较。</span></li>
+<li><span>通常作为已经实现的库例程可用</span></li>
+</ul>
+<p><strong>缺点:</strong></p>
+
+<ul>
+<li><span>比线性搜索复杂</span></li>
+<li><span>如果列表不支持随机访问，效率损失很大</span></li>
+<li><span>仅适用于已排序并保持排序的列表</span></li>
+</ul>
+<p><strong>程序完成！</strong></p>
+
+<p>在c #中实现二分搜索法并没有唯一权威的方法。因此，可能性是无限的。文章中提到的几个例子只是许多例子中的一部分。</p>
+<p>理解二分搜索法是如何工作的不仅对掌握C语言很重要，对掌握其他编程语言也很重要。</p>
+<p>你知道用C语言编写二分搜索法的其他有趣/有效的方法吗？通过下面的专用评论窗口与社区分享。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

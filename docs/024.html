@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Difference between Structure and Union in C Language</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>C语言中结构和联合的区别</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/difference-between-structure-and-union#0001-01-01">https://hackr.io/blog/difference-between-structure-and-union#0001-01-01</a></blockquote><div><div class="content">
+										<p>在C/C++中，结构和联合是两种用户定义的数据类型。在这篇博文中，我们将试图理解它们是如何工作的，以及它们之间到底有什么不同。</p>
+<h2 id="what-is-structure-struct"><strong>什么是结构？(结构)</strong></h2>
+<p>Struct是一种用户定义的数据类型，用于存储可能属于不同数据类型的数据组合。为了进一步解释，考虑如何在<a href="https://hackr.io/blog/difference-between-c-and-cplusplus"> C/C++ </a>中存储一个学生的信息，这里需要存储以下参数:</p>
+<ul>
+<li><span>名称</span></li>
+<li><span>类</span></li>
+<li><span>电话号码</span></li>
+<li><span>电子邮件地址</span></li>
+</ul>
+<p><span>一种方法是将它存储在4个不同的数组中:</span> <code> name[], class[], phone[], email[]</code>。基本上，<code>name[i] </code> <span>会代表第I个</span> <span>第</span> <span>个学生的名字。<code>class[i]</code> </span> <span>将代表该班级对应的学生。<code>phone[i]</code> </span> <span>代表电话号码，<code>email[i]</code> </span> <span>代表我</span><span/><span>学生的电子邮件地址。</span></p>
+<p>这种方法的优点是它是最容易想到的方法。缺点是用这种方式管理一个学生相当困难。这里，我们只有四个参数。想象一下，我们有400个参数与一个学生相关联。人们根本无法管理400个阵列。这就是结构发挥作用的地方。</p>
+
+<p><strong>定义结构</strong></p>
+<p><span>通过struct，我们可以定义单个学生的结构如下:</span></p>
+<pre>struct Student {
+ string name;
+ int class;
+ string phone;
+ string email;
+}
+</pre>
+<p><span>然后我们可以简单地将学生数组定义为:<code>Student students[10]</code> </span> <span>。</span></p>
+<p>上面的结构完美地捕捉到了一个学生的细节。这种实现的一些优点如下:</p>
+<ul>
+<li>某个学生的所有变量都打包在一起，这样就干净多了。</li>
+<li>特定学生的参数都是按顺序存储在计算机内存中的。这大大提高了学生数据的缓存效率。</li>
+</ul>
+<h2 id="what-is-union"><strong>什么是联合？</strong></h2>
+<p>假设我们正在对生活在我们社会中的各种人进行调查。作为调查的一部分，我们的目的是记录不同人的身高(毫米)和体重(公斤)。高度可能是1700毫米左右。重量可能是74.23公斤。身高总是一个整数值(以毫米为单位),而体重可以是分数。这里的问题是，对一些人来说，我们只有身高数据。对于其他人，我们只有体重数据。存储这种数据的明显方法是创建一个结构。</p>
+<pre>struct Person {
+ int height;
+ double weight;
+}
+</pre>
+<p>这里的问题是我们只有每个人的身高或体重。但是，我们正在为两者分配空间。这导致了内存的浪费。如果我们可以只存储那些身高可用的人的身高，只存储那些我们有体重值的人的体重，那会怎么样？这将使事情简单得多，也节省内存。这就是工会的帮助所在。</p>
+
+<pre>union Person {
+ int height;
+ double weight;
+}
+</pre>
+<p><span>现在，我们可以轻松地存储一个人的详细信息如下:</span></p>
+<pre>union Person person1 = ;
+union Person person2 = {.weight=74.23};
+</pre>
+<p>当我们创建person1对象时，空间只分配给高度。没有为重量分配空间。类似地，当我们创建person2对象时，空间只分配给重量。没有为高度分配空间。这里，根据架构的不同，我们在第一个和第二个对象上都节省了4 - 8个字节。想象一下，如果我们有十亿人的数据，我们将能够节省多少字节？</p>
+<p><span>让我们来看看代码</span></p>
+<p>  </p>
+<p><span>该代码的输出如下:</span></p>
+<p>  </p>
+<p><span>注意，在第一种情况下，person1_union和person2_union的大小都是8个字节。这是因为联合需要存储最大数据类型的大小作为它的一部分。例如，如果一个union存储一个字符和一个double值，它的大小将是double值的大小，因为即使它存储一个字符，也应该为double值分配空间。</span></p>
+<p>这里最棒的是我们已经实现的大小节省——实际上是struct大小的一半。想象一下，如果我们为地球上的每个人存储这样的数据，我们将节省几千兆字节的存储空间/成本。</p>
+<h2 id="difference-between-structure-and-union"><strong>结构和联合的区别</strong></h2>
+<p><span>让我们以表格的形式总结一下我们对联合和结构的理解，以突出结构和联合<span> : </span>之间的</span>差异</p>
+<table>
+<thead>
+<tr>
+<th>结构体</th>
+<th>联盟</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>用于存储各种数据类型，这些数据类型在聚合时表示用户定义的数据类型。</td>
+<td>用于存储许多可用数据类型中的一种。</td>
+</tr>
+<tr>
+<td>它为每个内部参数占用空间。</td>
+<td>占用的空间相当于最大尺寸的参数。</td>
+</tr>
+<tr>
+<td>所有成员在任一时间点都存储一些值。</td>
+<td>在任何特定的实例中，只有一个成员存储值。</td>
+</tr>
+</tbody>
+</table>
+<p><span> <a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.2121018&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fdatastructurescncpp%2F" target="_blank" rel="noopener">掌握数据结构&amp;使用C和C++ </a>算法</span></p>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>这就是结构和联合的主要区别。这两个是数据结构的类型。这两种是用户定义的数据类型，包含不同数据类型的变量。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

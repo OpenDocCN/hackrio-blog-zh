@@ -1,0 +1,229 @@
+<html>
+<head>
+<title>NoSQL vs SQL in 2023: Comparison, Features, Applications</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年的NoSQL与SQL:比较、特性、应用</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/nosql-vs-sql#0001-01-01">https://hackr.io/blog/nosql-vs-sql#0001-01-01</a></blockquote><div><div class="content">
+										<p>决定是使用基于SQL的数据库还是基于NoSQL的数据库是在任何项目的规划阶段要做出的最重要的决定之一。</p>
+<p>两种数据管理系统都有各自的应用领域和优缺点。在继续解释SQL和NoSQL数据库管理系统之间的8个主要区别之前，让我们先简要介绍一下这两个竞争者。</p>
+<h2 id="what-is-sql"><strong>什么是SQL？</strong></h2>
+<p>SQL代表结构化查询语言。它是一种查询语言，专门用于处理关系数据库中的数据。这些数据库被称为关系数据库，因为它们依赖于关系，而关系实际上是表。</p>
+<p>通过关系，SQL或关系数据库管理系统能够存储数据，并通过数据集中出现的公共特征来匹配数据。</p>
+
+<p>SQL用于创建和检查关系数据库中的对象。它还用于创建数据以及该数据的模式。</p>
+<p>Ingres、Microsoft Access、Microsoft SQL Server、MySQL、Oracle Database、PostgreSQL和Sybase是SQL数据库管理系统的一些著名例子。</p>
+<h2 id="what-is-nosql">什么是NoSQL？</h2>
+<p>与SQL数据库不同，NoSQL数据库不需要固定的模式。此外，它不一定强制表之间的关系。非关系数据库由JSON文档组成。这些都是可以立即阅读的完整实体。</p>
+<p>NoSQL数据库是非关系数据库，它提供高性能并利用各种数据模型。这种数据库因其易用性、高可用性和强大的灵活性而受到青睐。因此，它们弥补了处理大数据的有利可图的选择。</p>
+<p>Amazon Dynamo DB、Apache Cassandra、Bigtable、CloudDB、Couchbase、MarkLogic、<a href="https://www.scylladb.com/learn/nosql/" target="_blank" rel="noopener"> Scylla </a>和MongoDB是NoSQL数据库管理系统中最受欢迎的例子。</p>
+<h3 id="nosql-vs-sql-the-face-off"><strong> NoSQL vs SQL:对决</strong></h3>
+<p>在NoSQL和SQL之间做出选择时，必须记住这8个区别:</p>
+
+<h4 id="community-and-support"><strong>社区和支持</strong></h4>
+<p>SQL和NoSQL数据管理方法的出现相隔了20多年的时间。</p>
+<p>到目前为止，SQL已经引人注目了40多年。因此，它已经成熟，产生了一个庞大的社区，随时可以提供帮助和合作。</p>
+<p>聊天部分和专门的论坛在多个web资源中自愿提供，供SQL专家与SQL社区的其他成员分享他们的知识。</p>
+<p>大约在21世纪初，NoSQL被介绍给大众。尽管NoSQL正经历着快速增长，但要赶上它最主要的竞争对手还有很长的路要走。对NoSQL的支持和社区扩展仍然有限。</p>
+<h4 id="hierarchical-data-storage"><strong>分级数据存储</strong></h4>
+<p>分层数据模型是一种需要将数据组织成树状结构的模型。数据以记录的形式存储，这些记录通过链接相互连接。记录将包含哪些字段取决于记录的类型。</p>
+<p>在分层数据库模型中，每个子记录必须只有一个父记录。但是，一个父记录可以有多个子记录。为了从分层数据库中检索数据，需要从根节点开始遍历整个树。</p>
+<p>尽管可以通过SQL数据库存储分层数据，但通常不希望这样做。另一方面，NoSQL数据库为在分层数据库模型中存储数据提供了一个很好的选择。</p>
+<h4 id="language"><strong>语言</strong></h4>
+<p>NoSQL和SQL数据库的一个主要区别是语言。SQL数据库依赖于结构化查询语言来定义和操作数据。一方面，它使基于SQL的数据库具有高度的通用性，但另一方面，它也有同样的局限性。</p>
+<p>在用户开始使用关系数据库之前，有必要使用预定义的模式来确定数据的结构。用户数据必须遵循相同的结构。因此，它涉及一个精心策划的方法和仔细执行。</p>
+<p>NoSQL数据库为非结构化数据提供了动态模式。可以用多种方式存储数据，包括面向列、面向文档、基于图形以及作为键值对。</p>
+<p>与关系数据库不同，非关系数据库提供了极大的灵活性，即使不经过仔细的规划和定义结构，也能创建文档。用户可以随着时间的推移添加字段，并改变不同数据库的语法。</p>
+<p>由于非关系数据库中的每个文档都可以有自己独特的结构，因此用户(或组织)可以享受很大程度的自由。</p>
+<h4 id="scalability"><strong>可扩展性</strong></h4>
+<p>NoSQL和SQL可以通过它们的可伸缩性来进一步区分。典型的SQL数据库是垂直可伸缩的。这仅仅意味着，通过增加CPU、RAM和SSD等组件，可以增加单台服务器的负载。</p>
+<p>相比之下，任何典型的NoSQL数据库都是水平可伸缩的。这意味着这种数据库只需向数据库中添加额外的服务器就可以处理流量的增加。</p>
+<p>与SQL数据库不同，NoSQL数据库能够增加大小和功能。这使得它们成为大型复杂数据集以及不断发展的数据集的理想选择。</p>
+<h4 id="structure"><strong>结构</strong></h4>
+<p>NoSQL数据库可以采用多种结构形式。它们是图形数据库、基于列的数据库、基于文档的数据库和键值对数据库。与NoSQL数据库相比，SQL数据库是严格基于表的。</p>
+<p>由于其基于表的特性，SQL数据库是要求多行事务的应用程序的理想选择。这种应用程序的例子包括最初为关系结构开发的会计系统和遗留系统。</p>
+<h4 id="normalization"><strong>归一化</strong></h4>
+<p>为了防止数据库中的数据重复，使用了<a href="https://hackr.io/blog/dbms-normalization">规范化</a>。该技术确保相同的数据不会被存储两次。自从数据库出现以来，数据的重复一直是一个重要的问题。因此，在SQL场景中，规范化是一个非常严格的约束。</p>
+<p>提交连接操作以便将存储在多个表中的一些记录汇集到一个逻辑单元中，这显然需要时间和资源。此外，规范化技术需要额外的开销来创建、维护和更新索引文件。</p>
+<p>与SQL相反，NoSQL数据库不需要规范化。那些赞成避免规范化的人提出的论点是，在20世纪70年代，由于昂贵的存储空间和内存，出现了消除数据库中冗余数据的技术。</p>
+<p><a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.2162940&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Flearn-nosql-databases-complete-mongodb-bootcamp-2019%2F" target="_blank" rel="noopener">了解NoSQL数据库-完成MongoDB训练营2023 </a></p>
+<p>然而，内存和存储空间的价格在21世纪已经大幅下降，并随着时间的推移继续下降。因此，NoSQL强调，某种程度的数据冗余并不那么重要，因为现在内存和磁盘空间都很便宜。</p>
+<p>NoSQL的支持者还表示，除了使编码更容易之外，即使只是在某些情况下，保留数据冗余甚至可以提供更快的数据检索。</p>
+<h4 id="properties-followed"><strong>属性如下</strong></h4>
+<p>所有SQL数据库都遵循ACID(原子性、一致性、隔离性和持久性)属性。每一个都简要说明如下:</p>
+<ul>
+<li><strong><em>A</em></strong>to micity——保证每笔交易都被视为一个单一的、不可分割的单位。这仅仅意味着事务要么完全成功，要么完全失败。因此，没有中间状态。</li>
+<li><strong> <em> C </em> </strong>一致性——确保任何事务将数据库从一种有效状态转换到另一种有效状态。简单地说，添加到数据库中的任何数据都需要遵守所有定义的规则。</li>
+<li><strong><em>I</em></strong>solation——该属性确保事务的同时执行会导致数据库处于与逐个执行事务时相同的状态。</li>
+<li><strong> <em> D </em> </strong>可用性——一旦事务被提交，它将继续保持这种状态，即使遇到系统故障。这由耐用性来保证。</li>
+</ul>
+<p>与SQL数据库不同，NoSQL数据库遵循<a href="https://en.wikipedia.org/wiki/CAP_theorem" target="_blank" rel="noopener"> CAP定理</a>，其中CAP代表一致性、可用性和分区容忍度。虽然一致性与前面描述的相同，但其他两个属性简要说明如下:</p>
+<ul>
+<li>可用性——保证每个请求都能得到响应，不管结果是成功还是失败。</li>
+<li>分区容差——确保即使节点之间的网络延迟或丢弃了大量消息，系统也能继续运行。</li>
+</ul>
+<p><strong><a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.3585196&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fpython-for-data-science-and-machine-learning-bootcamp-d%2F" target="_blank" rel="noopener">Python for Data Science and Machine Learning boot camp</a>T3】</strong></p>
+
+<h3 id="nosql-or-sql-which-one-to-pick-and-when">NoSQL和SQL——选择哪一个，何时选择？</h3>
+<p>为了在NoSQL和SQL之间做出正确的选择，了解企业期望数据库管理系统为他们实现什么是至关重要的。尽管如此，以下是NoSQL和SQL实现的一些理想场景。</p>
+<p>在以下情况下，SQL是首选:</p>
+<ul>
+<li>可以使用预定义的结构和模式集</li>
+<li>数据集中的所有数据需要严格一致</li>
+<li>分析行为相关和定制的会话</li>
+<li>开发自定义仪表板</li>
+<li>执行连接操作和复杂查询</li>
+<li>需要进行多行交易</li>
+</ul>
+<p>在以下情况下，NoSQL是最佳选择:</p>
+<ul>
+<li>酸性不是必需的</li>
+<li>实现约束和验证逻辑不是强制性的</li>
+<li>需要分析大型可变数据集</li>
+<li>从分布式来源记录数据</li>
+<li>需要更灵活的模式</li>
+<li>存储临时数据</li>
+<li>没有明确的模式定义</li>
+</ul>
+<h2 id="nosql-vs-sql-head-to-head-comparison"><strong> NoSQL与SQL:势均力敌的对比</strong></h2>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>参数</strong></p>
+</td>
+<td>
+<p><strong> NoSQL </strong></p>
+</td>
+<td>
+<p><strong> SQL </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>类型</strong></p>
+</td>
+<td>
+<p>非关系或分布式数据库</p>
+</td>
+<td>
+<p>关系数据库</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>数据类型</strong></p>
+</td>
+<td>
+<p>结构化和非结构化</p>
+</td>
+<td>
+<p>结构化的</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>结构</strong></p>
+</td>
+<td>
+<p>键值对</p>
+<p>基于文档的</p>
+<p>图形数据库</p>
+<p>宽栏商店</p>
+</td>
+<td>
+<p>表格，即ro和列</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>模式</strong></p>
+</td>
+<td>
+<p>灵活的</p>
+</td>
+<td>
+<p>严格的</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>可扩展性</strong></p>
+</td>
+<td>
+<p>水平的</p>
+</td>
+<td>
+<p>垂直的</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>属性跟随</strong></p>
+</td>
+<td>
+<p>CAP定理</p>
+</td>
+<td>
+<p>酸</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>加入</strong></p>
+</td>
+<td>
+<p>不需要</p>
+</td>
+<td>
+<p>需要</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>数据到对象的映射</strong></p>
+</td>
+<td>
+<p>大多数NoSQL数据库不需要ORM</p>
+</td>
+<td>
+<p>需要ORM</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>分级数据存储</strong></p>
+</td>
+<td>
+<p>最适合</p>
+</td>
+<td>
+<p>不理想</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>例子</strong></p>
+</td>
+<td>
+<p>MongoDB，GraphQL，HBase，Neo4j，Cassandra等。</p>
+</td>
+<td>
+<p>MySQL、PostgreSQL、Oracle、MS-SQL Server等。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary"><strong>总结</strong></h2>
+<p>不管组织的主要意图是什么，选择正确的数据库管理系统是非常重要的。NoSQL数据库发展迅速，并被证明是IT行业的一次创新变革。因此，它们在当前的数据库场景中变得至关重要。</p>
+<p>另一方面，我们有SQL数据库，40多年来它已经证明了自己的价值。此外，它们需要已经确立了很长时间的定义明确的标准。在一个巨大的社区的支持下，SQL数据库的协作机会是巨大的。</p>
+<p>SQL和NoSQL数据库都有自己独特的优势。因此，通过对需求和预期解决方案的适当研究，有可能做出正确的DBMS选择。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

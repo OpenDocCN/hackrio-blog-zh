@@ -1,0 +1,203 @@
+<html>
+<head>
+<title>Difference Between float vs double Data Types [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>float与double数据类型之间的差异[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/float-vs-double#0001-01-01">https://hackr.io/blog/float-vs-double#0001-01-01</a></blockquote><div><div class="content">
+										<p>Float和double是<a href="https://hackr.io/blog/what-is-programming-language">编程语言</a>使用的原始数据类型，用于存储浮点实数(十进制数),如10.923455、433.45554598等。本文将向您详细介绍float和double数据类型之间的区别。</p>
+<h2 id="float-vs-double-difference-you-should-know">Float vs Double:你应该知道的区别</h2>
+<p>在计算世界中，数字数据可以用两种方式表示——定点和浮点运算。定点数据就是我们所说的带有某种比例因子的整数。例如，3.14将是314，缩放因子为100，或者2.3456可以舍入到2.345，以实现固定的位数。这种方法损害了结果的准确性，并不适用于所有情况。</p>
+<p>因此，使用浮点表示进行高精度计算更容易也更准确(我们将在下一节中看到)。</p>
+<p><img class="aligncenter size-full wp-image-4173" src="../Images/a5ca2ae11b395883e75d5ec14015ecd9.png" alt="Floating Point Numbers" data-original-src="https://hackr.io/blog/uploads/images/1570190916Gw1mxBJELo.jpg"/></p>
+
+<p>如果你想从算术的角度来阅读关于浮点数的内容，你可以阅读这篇<a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic" target="_blank" rel="noopener">维基百科文章</a>。在这篇博客中，我们重点介绍了编程语言如何使用这些浮点数来获得精度值和范围。</p>
+<h3 id="why-use-floating-point-data"><strong>为什么要用浮点数据？</strong></h3>
+<h4 id="mixed-precision">混合精度</h4>
+<p>在混合精度中，单精度值可用于复杂计算。你可以把它看作是准确性和记忆效率的权衡。通过结合float16(半精度)和float32(单精度)，应用程序可以提高应用程序性能和数据传输速度。半精度是由微软和Nvidia定义的，以节省空间和浮点计算的复杂性。</p>
+<p>但是，并不总是这样。</p>
+<h4 id="arbitrary-precision">任意精度</h4>
+<p>我们使用浮点和整数数学进行精确计算，计算结果仅受系统可用内存量的限制。这种类型的计算称为任意或无限精度计算。任意精度的一个最重要的应用是公钥密码学，在这种情况下，使用具有数百位数字(指数)的数字进行计算是常见的。</p>
+<p>另一个类似的精度类型是<a href="https://en.wikipedia.org/wiki/Computer_algebra" target="_blank" rel="noopener">符号计算</a>，我们使用符号的精确值(如PI)进行复杂计算。</p>
+<p><img class="aligncenter wp-image-4174 size-full" src="../Images/1c05a81e5fe3e56cea77c6262c7b0255.png" alt="IEE Formats" data-original-src="https://hackr.io/blog/uploads/images/1570190916RWbXuW0wd2.jpg"/></p>
+
+<h3 id="float-and-double"><strong>浮动双</strong></h3>
+<p>Double比float更精确，可以存储64位，<em> double是float可以存储的位数的</em>。</p>
+<p>Double更精确，对于存储大数，我们更喜欢double而不是float。比如存储一个公司CEO的年薪，double会是更准确的选择。所有三角函数如sin，cos，tan，数学函数如sqrt都返回双精度值。然而，加倍是有代价的。除非我们确实需要精度达到小数点后15或16位，否则在大多数应用中我们可以坚持使用浮点数，因为double更昂贵。存储一个变量大约需要8个字节。我们将“F”或“F”附加到数字上，以表明它是浮点类型，如果失败，它将被视为双精度类型。</p>
+<p>下表给出了浮点和双精度的内存要求和范围</p>
+<table>
+<tbody>
+<tr>
+<td>浮点型</td>
+<td>内存需求</td>
+<td>范围</td>
+</tr>
+<tr>
+<td>浮动</td>
+<td>4字节</td>
+<td>3.40282347E+38F，即6-7位有效数字</td>
+</tr>
+<tr>
+<td>两倍</td>
+<td>8字节</td>
+<td>1.79769313486231570E+308，即15-16位有效数字</td>
+</tr>
+</tbody>
+</table>
+<p>在所有编程语言中，Float和double的功能都是一样的。例如，在Java中，对于不涉及实际数字的操作，两者都会抛出NumberFormatException。请注意，编译器不会检测到此异常。</p>
+<pre>String sname = "DR";
+<strong>float</strong> fname = Float.<strong><em>parseFloat</em></strong>(sname);
+System.<em>out</em>.println(fname/num1); // Leads to NumberFormatException at runtime
+Dividing float and double by zero will give an output of ‘Infinity’ in Java.
+<strong>double</strong> num2 = 344.55555555;
+System.<em>out</em>.println(num2/0);
+</pre>
+<p>这不会导致错误，但是是无效操作(n an)。点击了解更多关于NaN <a href="https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.2.3" target="_blank" rel="noopener">的信息。</a></p>
+<p><strong> <em>我们会在哪里使用精度值？</em>T3】</strong></p>
+<p>几乎无处不在！</p>
+<p>如果你处理少量数据——比如平均分数，三角形面积等……默认情况下使用double。但是，如果您处理大量涉及高精度的数字，并且任何舍入都可能改变结果，如三角学、人类头发的宽度、神经网络、电子自旋、位置坐标等，了解浮点型和双精度型之间的差异是很重要的。虽然Java鼓励你使用double，但是在像C这样的语言中，你可以灵活地使用任何你想要的。</p>
+<p>一个典型的java声明应该是这样的</p>
+<pre><strong>float</strong> number1 = (<strong>float</strong>) 12.211111111111;
+</pre>
+<p>现在，如果你不进行类型转换，你的代码将不能在Java中编译。当你这样做的时候，在打印数字的同时，你只会得到小数点后的6位数字。</p>
+<p>考虑一个简单的两个数相乘的程序——用c写的1.42222*234.56433。</p>
+<p>这可能是原子质量或重力之类的任何东西，必须保持所有有效数字的完整性！</p>
+<pre>float num1 = 1.42222*234.56433;
+double num2 = 1.42222*234.56433;
+printf("%f", num1);
+printf("%.10f", num2);
+</pre>
+<p>num1返回值333.602081，而声明为double的num2返回333.6020814126，精确到10位，如printf语句中所述。我们也可以将一个float打印成double，反之亦然，这完全取决于我们如何编写printf语句。写%f将去掉一些有效的数字，而当我们指定数字的数目时，直到那个数字的整个值将被打印出来。要打印指数形式的值，应该使用“%e”。</p>
+<p>在Java中，正如我们前面看到的，只有当我们typecast为(float)时，值才会被打印出来。默认情况下，Java将所有高精度十进制值视为double。</p>
+<pre><strong>float</strong> values;
+<strong>double</strong> doubes;
+values = (<strong>float</strong>) (1.42222*234.56433);
+doubes = 1.42222*234.56433;
+System.<em>out</em>.println(values);
+System.<em>out</em>.println(doubes);
+</pre>
+<p>将分别产生333.60208和333.6020814126。</p>
+<p><strong>逻辑比较</strong></p>
+<p>我们使用操作符 =和&gt;来比较float和double值。对于整数，我们可以使用！=和=但是这里我们不这样做，因为后面的运算符不太精确。</p>
+<p>显然，当使用float时，精确的比较是不可能的，因为精度只有5-6位。这些数字中的任何差异都不会被捕获。</p>
+<pre>float number1 = (float) 3.1434343;
+float number2 = (float) 3.1434343333;
+ if(number1 == number2)
+ System.<em>out</em>.println("equal");
+ else
+ System.<em>out</em>.println("not equal");
+
+double number3 = 3.1434343;
+double number4 = 3.1434343333;
+ if(number3 == number4)
+ System.<em>out</em>.println("equal");
+ else
+ System.<em>out</em>.println("not equal");
+</pre>
+<p>你认为输出会是什么？</p>
+<p>你可能已经猜到了——第一个会给出“相等”，而第二个会给出“不相等”。</p>
+<p>为了避免每次用float写数字时的类型转换，我们可以在数字后面加上f。举个例子，</p>
+<pre>float number1 = 3.1434343<strong>f</strong>;
+</pre>
+<h3 id="big-decimal"><strong>大小数</strong></h3>
+<p>。NET和Java也有比double精度更高的Decimal/BigDecimal类。对于金融和银行应用程序等更精确的计算，使用十进制是因为它可以进一步减少舍入误差。</p>
+<h3 id="long-double"><strong>长双</strong></h3>
+<p>一些编程语言，如C，使用长double，比double更精确。查看C 的不同<a href="https://hackr.io/blog/data-types-in-c">数据类型。</a></p>
+<h3 id="division-with-float-and-double"><strong>浮点和双精度除法</strong></h3>
+<p>与乘法或加法一样，除法将给出更精确的两位数。考虑这个简单的例子</p>
+<pre><strong>float</strong> number1 = 3.1434343f;
+<strong>double</strong> number2 = 3.1434343;
+<strong>float</strong> divide = 22/7f;
+// first let us print the result as double
+<strong>double</strong> result1 = number1/divide;
+/* the same result but now it is a float value,
+note the difference in significant digits */
+<strong>float</strong> result3 = number1/divide;
+// the double value
+<strong>double</strong> result2 = number2/divide;
+System.<em>out</em>.println(result1); // <strong>1.0001837</strong>015151978
+System.<em>out</em>.println(result3); // <strong>1.0001837</strong>
+System.<em>out</em>.println(result2); // 1.000183662587488
+</pre>
+<p>当分母大于分子，并且结果是小分数时，如-</p>
+<pre><strong>float</strong> pie = 22/7f;
+<strong>float</strong> pieby4096 = pie/4096;
+<strong>double</strong> dpie = 22/7d;
+<strong>double</strong> dpieby4096 = dpie/4096;
+System.<em>out</em>.println("Float Pie is - " + pie);
+System.<em>out</em>.println("Double pie is - " + dpie);
+System.<em>out</em>.println("Float Pie divided by 4096 - " + pieby4096);
+System.<em>out</em>.println("Double Pie divided by 4096 - " + dpieby4096);
+<strong>double</strong> pieby4096usingfloatpie = pie/4096;
+System.<em>out</em>.println("Float Pie divided by 4096 with result as double - " + pieby4096usingfloatpie);
+</pre>
+<p>查看结果–</p>
+
+<pre>Float Pie is - 3.142857
+Double pie is - 3.142857142857143
+Float Pie divided by 4096 - 7.672991E-4
+Double Pie divided by 4096 - 7.<strong>672991071428571E</strong>-4
+Float Pie divided by 4096 with result as double - 7.<strong>672990905120969E</strong>-4
+</pre>
+<p>注意最后3个结果。我们选择用来划分数字的饼图对结果的有效数字产生了影响。这正是我们所说的精度！</p>
+<h3 id="concatenation-with-string"><strong>用字符串串联</strong></h3>
+<p>在Java中，可以使用+运算符将字符串与double和float连接起来。</p>
+<pre>String str = "test";
+float flo = 23.2f;
+String concat = str + flo;
+double dou = 3.45555555;
+concat += dou;
+System.<em>out</em>.println(concat); // result will be test23.23.45555555</pre>
+<h3 id="float-vs-double-head-to-head-comparison"><strong> Float vs Double:头对头比较</strong></h3>
+<p>既然我们知道了什么是浮点型和双精度型，那么创建一个差异表来快速参考和总结就很好了。</p>
+<table>
+<tbody>
+<tr>
+<td><strong>浮动</strong></td>
+<td><strong> Double </strong></td>
+</tr>
+<tr>
+<td>单精度值</td>
+<td>双精度值</td>
+</tr>
+<tr>
+<td>最多可存储7位有效数字</td>
+<td>最多存储15位有效数字</td>
+</tr>
+<tr>
+<td>占用4个字节的内存(32位IEEE 754)</td>
+<td>占用8个字节的内存(64位IEEE 754)</td>
+</tr>
+<tr>
+<td>如果超过7位数，数值四舍五入</td>
+<td>7-15位数字按原样存储</td>
+</tr>
+<tr>
+<td>With Java, one needs to typecast to declare float –
+<p>float fnum = 2.344f</p>
+<p>或者</p>
+<p>float fnum = (float) 2.344;</p>
+</td>
+<td>Double is the default decimal point type for Java.
+<p>双dnum = 2.344</p>
+</td>
+</tr>
+<tr>
+<td>如果不需要很高的精度，程序只需要存储大量的十进制数，那么float是一种经济有效的存储数据的方法，可以节省内存。</td>
+<td>Double更贵，占用空间更大，在需要更高精度时更有效。例如，货币兑换，财务报告和交易，科学计算等…</td>
+</tr>
+</tbody>
+</table>
+<p><span> <a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.2121018&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fdatastructurescncpp%2F" target="_blank" rel="noopener">掌握数据结构&amp;使用C和C++ </a>算法</span></p>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>这就是Double vs Float的完全区别；虽然从float到double和double到float的类型转换是完全允许和有效的，但在代码中应该小心地完成。如果转换太频繁，精度可能会降低，并且您会失去使用double的全部目的。</p>
+<p>在开发的初始阶段，决定并定义您是希望使用float还是double，并在整个应用程序中保持不变。了解特定数据如何存储在数据库中也是一个好主意。如果你的应用程序需要高性能，使用float，因为对于大数据集，double会使你的程序变慢。如果您的数据需要更高的精度，请使用double。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

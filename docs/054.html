@@ -1,0 +1,550 @@
+<html>
+<head>
+<title>Top React Interview Questions and Answers in 2023 [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年Top React面试问答[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/react-interview-questions#0001-01-01">https://hackr.io/blog/react-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>React是当今JavaScript前端web开发行业不可或缺的一部分。对于那些希望在前端使用JS的人来说，拥有足够的React知识是必要的。</p>
+<p>React是领先的JavaScript框架之一，并且可能会继续保持下去。虽然被认为是一个前端框架，但React实际上是一个前端库。事实上，React作为一个web开发框架的想法非常好，它已经成为领先的<a href="https://hackr.io/blog/web-development-frameworks" target="_blank" rel="noopener"> web开发框架</a>之一。</p>
+<p>在这里，我们来看看一些常见的React面试问题和答案。</p>
+<h2 id="top-react-interview-questions-and-answers"><strong> Top React面试问答</strong></h2>
+<p>拥有React的理论和实践知识是很重要的，因此才有了这些面试问题。React技术面试问题和React高级面试问题很好地结合在一起。</p>
+
+<h4 id="toc-1-what-is-react-what-are-some-of-its-main-features"><strong> 1。什么是反应？它的一些主要特征是什么？</strong></h4>
+<p>React是脸书在2011年开发的一个前端JavaScript库。它增强了应用程序的性能，同时允许在客户端和服务器端工作。</p>
+<p>使用React编写UI测试用例很简单，也很容易与Angular、Meteor和其他流行的JS框架集成。React的一些主要特性如下:</p>
+<ul>
+<li>非常适合开发复杂的交互式web和移动UI。</li>
+<li>遵循基于组件的方法，促进可重用的UI组件。</li>
+<li>拥有出色的社区支持。</li>
+<li>使用虚拟DOM而不是真实DOM。</li>
+<li>依赖于服务器端呈现。</li>
+<li>支持单向数据流或数据绑定。</li>
+</ul>
+<h3 id="toc-2-what-is-a-state-and-how-is-it-used"><strong> 2。什么是状态，如何使用状态？</strong></h3>
+<p>状态是React组件的数据源。它们是负责确定组件行为和渲染的对象。因此，它们必须尽可能简单。您可以使用语法this.state()来访问状态</p>
+<p>状态是可变的，并创建动态和交互式的组件。状态的使用可以通过下面的代码片段来可视化:</p>
+<pre class="language-javascript"><code>classAppextendsReact.Component {
+
+constructor() {
+
+super();
+
+this.state={
+
+foo: 'bar'
+
+}
+
+}</code></pre>
+<h3 id="toc-3-why-do-we-use-render-in-react"><strong> 3。为什么我们要在React中使用render()。</strong></h3>
+<p>在React中，每个组件都必须有一个render()函数。它返回一个React元素，这实际上是原生DOM组件的表示。</p>
+<p>当需要呈现多个HTML元素时，我们将它们放在一个封闭标签中。render()函数需要在每次被调用时返回相同的结果，也就是说，它需要保持纯净。</p>
+
+<h3 id="toc-4-draw-a-diagram-showing-how-data-flows-through-redux"><strong> 4。画一个图表，显示数据如何通过Redux流动。</strong></h3>
+<p><strong><img src="../Images/999b9333bd0da57db766bf8a2fe5a1e3.png" alt="diagram showing how data flows through Redux." data-original-src="https://hackr.io/blog/media/q4.png"/>T2】</strong></p>
+
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Freact-the-complete-guide-incl-redux%2F" target="_blank" rel="noopener"> React -完整指南(包括钩子、React路由器、Redux) </a></p>
+<h3 id="toc-5-what-are-the-major-differences-between-the-syntax-in-es5-and-es6"><strong> 5。ES5和ES6中语法的主要区别是什么？</strong></h3>
+<p>从ES5到ES6，语法发生了巨大的变化。ECMAScript的两个版本之间的重要区别是:</p>
+<ul>
+<li><strong>Require vs . Import:</strong>ES5中使用的Require现在替换为Import . var React = Require(' React ')；//现在替换为<br/>从‘React’导入React；//在ES6中</li>
+<li><strong> export vs. Exports: </strong>现在用Export代替Exports，Export默认组件；//替换<br/>模块，exports = Component；//在ES6中</li>
+<li><strong>组件和功能:</strong>组件和功能的使用也从ES5变成了ES6。</li>
+</ul>
+<p><strong>在ES5中:</strong></p>
+<pre class="language-javascript"><code>var MyComponent = React.createClass({
+
+render: function() {
+
+return
+
+Hello World!
+
+;
+
+}
+
+});</code></pre>
+<p><strong>在ES6: </strong></p>
+<pre class="language-javascript"><code>classMyComponentextendsReact.Component {
+
+render() {
+
+return
+
+Hello World!
+
+;
+
+}
+
+}</code></pre>
+<ul>
+<li>道具:使用道具的规则也从ES5变成了ES6</li>
+</ul>
+<p><strong>在ES5中:</strong></p>
+<pre class="language-javascript"><code>var App = React.createClass({
+
+propTypes: { name: React.PropTypes.string },
+
+render: function() {
+
+return
+
+Hello, !
+
+;
+
+}
+
+});</code></pre>
+<p><strong>在ES6: </strong></p>
+<pre class="language-javascript"><code>classAppextendsReact.Component {
+
+render() {
+
+return
+
+Hello, !
+
+;
+
+}
+
+}</code></pre>
+<ul>
+<li><strong>状态:</strong>ES6的使用状态也被调整了。</li>
+</ul>
+<p><strong>在ES5中:</strong></p>
+<pre class="language-javascript"><code>var App = React.createClass({
+
+getInitialState: function() {
+
+return { name: 'world' };
+
+},
+
+render: function() {
+
+return
+
+Hello, !
+
+;
+
+}
+
+});</code></pre>
+<p><strong>在ES6: </strong></p>
+<pre class="language-javascript"><code>classAppextendsReact.Component {
+
+constructor() {
+
+super();
+
+this.state = { name: 'world' };
+
+}
+
+render() {
+
+return
+
+Hello, !
+
+;
+
+}
+
+}</code></pre>
+<h3 id="toc-6-what-is-the-virtual-dom-and-how-does-it-work"><strong> 6。什么是虚拟DOM，它是如何工作的？</strong></h3>
+<p>虚拟DOM是一个轻量级JS对象。它只是真实DOM的一个副本。虚拟DOM是一个节点树，它列出了各种元素、它们的属性以及作为对象和它们的属性的内容。</p>
+<p>React中的render()函数负责从React组件创建一个节点树。然后，响应于由于用户或系统做出的各种动作而导致的数据模型中的突变，更新该树。</p>
+<p>虚拟DOM通过三个简单的步骤运行:</p>
+<ul>
+<li><strong>步骤1: </strong>一旦底层数据发生变化，整个UI就会以虚拟DOM表示重新呈现。</li>
+<li><strong>步骤2: </strong>计算先前的DOM表示和新的DOM表示之间的差异(作为底层数据变化的结果)。</li>
+<li><strong>第三步:</strong>计算成功完成后，实际的DOM只根据被改变的内容进行更新。</li>
+</ul>
+<h3 id="toc-7-how-does-the-real-dom-differ-from-the-virtual-dom">7 .<strong>。真实的DOM和虚拟的DOM有什么不同？</strong></h3>
+<ul>
+<li><strong> DOM操纵:</strong>真正的DOM在DOM操纵上是很贵的。相反，虚拟DOM是廉价的。</li>
+<li><strong>元素更新:</strong>真正的DOM在元素更新时会创建一个新的DOM。虚拟DOM不会，而是更新JSX。</li>
+<li><strong>内存浪费:</strong>真实的DOM造成了大量的内存浪费，而虚拟DOM则没有内存浪费。</li>
+<li><strong>更新速度:</strong>真实DOM更新慢但虚拟DOM更新快。</li>
+<li><strong>更新HTML: </strong>真实DOM可以直接更新HTML，虚拟DOM不能直接更新HTML。</li>
+</ul>
+<h3 id="toc-8-what-are-the-lifecycle-methods-of-react-components"><strong> 8。React组件的生命周期方法有哪些？</strong></h3>
+<ul>
+<li><strong>componentidmount():</strong>在第一次渲染后在客户端执行。</li>
+<li><strong> componentDidUpdate(): </strong>在DOM中进行渲染后立即调用。</li>
+<li><strong> componentWillMount(): </strong>在客户端和服务器端渲染开始之前立即执行。</li>
+<li><strong>componentWillReceiveProps():</strong>当从父类接收到属性时，在调用另一个渲染之前调用。</li>
+<li><strong> componentWillUnmount(): </strong>用于清理内存空间。在组件从DOM中卸载后立即调用。</li>
+<li><strong> componentWillUpdate(): </strong>在DOM呈现之前立即调用。</li>
+<li><strong> shouldComponentUpdate(): </strong>返回真或假。尽管默认情况下为false，但如果组件需要更新，则需要设置为返回true。</li>
+</ul>
+<h3 id="toc-9-explain-jsx-with-a-code-example-why-can-t-browsers-read-it"><strong> 9。用一个代码例子解释JSX。为什么浏览器读不出来？</strong></h3>
+<p>JSX是JavaScript XML的缩写。它利用JavaScript的表现力使HTML代码易于理解。JSX文件在提高应用程序性能的同时，使应用程序更加健壮。JSX的一个例子是:</p>
+<pre class="language-javascript"><code>render(){
+
+return(
+
+React learning made better by Hackr.io!!
+
+);
+
+}</code></pre>
+<p>JSX不是一个普通的JS对象。浏览器不能读取JSX是因为浏览器只能读取普通的JS对象。</p>
+<p>为了使web浏览器能够读取JSX文件，需要将它转换成一个常规的JavaScript对象。为此，JSX变形金刚，像<a href="https://babeljs.io/" target="_blank" rel="noopener">巴别塔</a>被使用。</p>
+<h3 id="toc-10-write-code-to-demonstrate-embedding-two-or-more-components-into-one">10。编写代码来演示将两个或更多组件嵌入到一个组件中。</h3>
+<pre class="language-javascript"><code>classMyComponentextendsReact.Component{
+
+render(){
+
+return(
+
+Hello
+
+);
+
+}
+
+}
+
+classHeaderextendsReact.Component{
+
+render(){
+
+return
+
+Header Component
+
+};
+
+}
+
+ReactDOM.render(
+
+, document.getElementById('content')
+
+);</code></pre>
+<h3 id="toc-11-with-an-example-explain-how-to-modularize-code-in-react"><strong> <br/> 11。用一个例子，解释如何在React中模块化代码。</strong></h3>
+<p>为了模块化React中的代码，使用了导出和导入属性。它们有助于在不同的文件中清楚地编写组件:</p>
+<pre class="language-javascript"><code>exportdefaultclassChildComponentextendsReact.Component {
+
+render() {
+
+return(
+
+This is a child component
+
+);
+
+}
+
+}
+
+import ChildComponent from'./childcomponent.js';
+
+classParentComponentextendsReact.Component {
+
+render() {
+
+return(
+
+);
+
+}
+
+}</code></pre>
+<h3 id="toc-12-how-does-the-react-router-differ-from-conventional-routing"><strong> <br/> 12。React路由器与传统路由有何不同？</strong></h3>
+<ul>
+<li><strong>URL的变化:</strong>HTTP请求被发送到服务器，用于以常规路由接收相应的HTML页面。React routing仅在历史属性发生变化时才这样做。</li>
+<li><strong>导航:</strong>在传统的路由中，用户实际上为每个单独的视图在不同的网页之间导航。在React routing中，用户感觉像是在浏览不同的网页，而实际上并不是这样。</li>
+<li><strong> Pages: </strong>在React路由中只涉及一个HTML页面，但是在传统路由中，每个视图对应一个新文件。</li>
+</ul>
+<h3 id="toc-13-how-does-the-state-differ-from-props">13。状态和道具有什么区别？</h3>
+<ul>
+<li>子组件内部的更改可以通过props实现，但不能通过state实现。</li>
+<li>组件内部的改变不能用道具来实现，但是可以用状态来实现。</li>
+<li>Props允许父组件改变值，state不允许。</li>
+</ul>
+<h3 id="toc-14-how-do-you-distinguish-redux-from-flux"><strong> 14。如何区分Redux和Flux？<br/> </strong></h3>
+<ul>
+<li><strong>组件:</strong> React组件订阅flux中的存储，而在redux中，容器组件使用connect</li>
+<li><strong>调度器:</strong>redux中没有调度器。另一方面，flux有一个单独的调度程序</li>
+<li><strong>商店数量:</strong>虽然flux有多家商店，但redux只有一家商店</li>
+<li><strong>状态:</strong>对于flux是可变的，但是对于redux是不可变的</li>
+<li><strong>存储:</strong>流入，存储包含状态以及变化逻辑。与此相反，redux中的存储与更改逻辑是分开的</li>
+<li><strong>店铺类型:</strong>flux中的所有店铺都是断开的、平坦的。redux不是这种情况，在redux中，只有一个带有层次化归约器的存储</li>
+</ul>
+<h3 id="toc-15-how-would-you-create-a-form-in-react">15。你如何在React中创建一个表单？</h3>
+<p>React表单与HTML表单相同。但是，状态包含在React中组件的state属性中，并且只能通过setState()方法更新。</p>
+<p>因此，React表单中的元素不能直接更新它们的状态。他们的提交由JS函数处理，该函数可以完全访问用户输入到表单中的数据。</p>
+<p>以下代码演示了如何在React中创建表单:</p>
+<pre class="language-javascript"><code>handleSubmit(event) {
+
+alert('A name was submitted: ' + this.state.value);
+
+event.preventDefault();
+
+}
+
+render() {
+
+return (
+
+Name:
+
+);
+
+}</code></pre>
+<p><strong> <br/> 16。使用Redux有什么好处？</strong></p>
+<ul>
+<li>更好的代码组织 : Redux在如何组织代码方面非常精确。这导致了对任何开发团队都可行的一致的代码</li>
+<li>开发人员工具:这些工具允许开发人员实时跟踪从动作到状态变化的一切。</li>
+<li><strong>易测试</strong> : Redux代码主要由隔离的、纯的、小的函数组成。这使得测试更加容易。</li>
+<li><strong>大型社区</strong> : Redux背靠庞大的社区。它为一个不断增长和完善的具有即用型应用程序的库做出了贡献。</li>
+<li>可维护性:由于可预测的结果和严格的结构，代码更容易维护。</li>
+<li><strong>输出可预测性</strong>:将当前状态与动作以及应用程序的其他部分同步不会引起混淆，因为只有一个<a href="https://stackoverflow.com/questions/47182888/what-does-the-single-source-of-truth-mean" target="_blank" rel="noopener">单一的事实来源</a>，即商店。</li>
+<li><strong>服务器端渲染</strong>:你只需要把在服务器端创建的store传递给客户端。除了对初始渲染有用之外，它还提供了更好的用户体验，因为它优化了应用程序的性能。</li>
+</ul>
+<h3 id="toc-17-what-is-a-prop"><strong> 17。什么是道具？</strong></h3>
+<p>Prop是React中Properties的缩写。这些只读组件需要保持不变，即保持纯净。在整个应用程序中，道具从父组件传递到子组件。</p>
+<p><img src="../Images/ef9c1c75df85d514f28ded1ee17b7f51.png" alt="prop" data-original-src="https://hackr.io/blog/media/q-17.png"/></p>
+<p>为了保持单向数据流，子组件被限制向其父组件发回道具。这也有助于呈现动态生成的数据。</p>
+<h3 id="toc-18-where-would-you-put-ajax-calls-in-your-react-code">18。在React代码中，应该把AJAX调用放在哪里？</h3>
+<p>React可以使用任何AJAX库，比如Axios、jQuery AJAX以及内置的浏览器window.fetch。</p>
+<p>带有AJAX调用的数据需要添加到componentDidMount()生命周期方法中。这样，一旦检索到数据，就可以使用setState()方法更新组件。</p>
+<h3 id="toc-19-write-sample-code-to-update-the-state-of-a-component-in-react"><strong> 19。编写示例代码来更新React中组件的状态。</strong></h3>
+<p>React中组件的状态用this.setState()更新，如下面的代码示例所示:</p>
+
+<pre class="language-javascript"><code>classMyComponentextendsReact.Component {
+
+constructor() {
+
+super();
+
+this.state = {
+
+name: 'Akhil',
+
+id: '101'
+
+}
+
+}
+
+render()
+
+{
+
+setTimeout(()=&gt;)},2000)
+
+return (
+
+Hello
+
+Your Id is
+
+);
+
+}
+
+}
+
+ReactDOM.render(
+
+, document.getElementById('content')
+
+);</code></pre>
+<h3 id="toc-20-what-is-your-take-on-the-statement-in-react-everything-is-a-component"><strong> <br/> 20。你对“在React中，一切都是组件”这句话有什么看法？</strong></h3>
+<p>React应用程序UI的构建块称为组件。使用React创建的任何应用程序UI都可以分成许多独立的、可重用的小部分，称为组件。</p>
+<p>React使每个组件相互独立。因此，在应用程序UI的其余部分上呈现组件没有任何影响。</p>
+<h3 id="toc-21-what-are-the-most-distinct-features-of-react"><strong> 21。React最鲜明的特点是什么？</strong></h3>
+<p>React最显著的特点是:</p>
+<ul>
+<li>它使用虚拟DOM代替真实DOM。</li>
+<li>服务器端渲染。</li>
+<li>数据的单向流动。</li>
+<li>数据绑定。</li>
+</ul>
+<h3 id="toc-22-what-are-the-advantages-of-react"><strong> 22。React的优势是什么？</strong></h3>
+<p>React有几个优点，包括:</p>
+<ul>
+<li>改进的应用程序性能。</li>
+<li>可用于客户端和服务器端呈现。</li>
+<li>增加JSX代码的可读性。</li>
+<li>易于与其他框架集成，包括Angular、Meteor等。</li>
+<li>使用React可以使UI更加直观。</li>
+</ul>
+<h3 id="toc-23-are-there-any-limitations-to-react"><strong> 23。反应有什么限制吗？</strong></h3>
+<p>反应有几个限制，包括:</p>
+<ul>
+<li>它充当一个库，而不是一个框架。</li>
+<li>图书馆的内容非常庞大，要花相当多的时间才能理解。</li>
+<li>这对新手来说很难理解。</li>
+<li>当应用内联模板和JSX时，编码过程变得更加复杂。</li>
+</ul>
+<h3 id="toc-24-can-browsers-read-jsx"><strong> 24。浏览器能读懂JSX吗？</strong></h3>
+<p>不，浏览器不能读取JSX，因为它不是一个普通的JavaScript对象。</p>
+<h3 id="toc-25-what-are-the-differences-between-react-and-angular"><strong> 25。React和Angular有什么区别？</strong></h3>
+<p>React和Angular 之间有几个<a href="https://hackr.io/blog/angular-vs-react">差异，例如:</a></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>功能</strong></p>
+</td>
+<td>
+<p><strong>反应</strong></p>
+</td>
+<td>
+<p><strong>角度</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>架构</strong></p>
+</td>
+<td>
+<p>仅支持MVC的视图。</p>
+</td>
+<td>
+<p>支持完整的MVC视图。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>渲染</strong></p>
+</td>
+<td>
+<p>客户端和服务器端呈现。</p>
+</td>
+<td>
+<p>客户端渲染。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>家</strong></p>
+</td>
+<td>
+<p>使用虚拟DOM。</p>
+</td>
+<td>
+<p>使用真正的DOM。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>数据绑定</strong></p>
+</td>
+<td>
+<p>单向数据绑定。</p>
+</td>
+<td>
+<p>双向数据绑定。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>调试</strong></p>
+</td>
+<td>
+<p>编译时调试。</p>
+</td>
+<td>
+<p>运行时调试。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>开发者</strong></p>
+</td>
+<td>
+<p>由脸书开发。</p>
+</td>
+<td>
+<p>由谷歌开发。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toc-26-what-is-the-relation-between-react-and-its-components"><strong> 26。React和它的组件有什么关系？</strong></h3>
+<p>React及其组件密切相关。React的组件充当UI的React应用程序的构建块。将整个UI分割成小的、独立的、可重用的部分有助于创建React应用程序的UI。</p>
+<h3 id="toc-27-what-are-states-in-react"><strong> 27。React中的状态是什么？</strong></h3>
+<p>React中的状态充当数据源，并且保持简单，以便决定组件呈现和行为的对象变得可变。</p>
+<h3 id="toc-28-can-the-parent-component-change-value-in-states-and-props"><strong> 28。父组件可以改变状态和道具的值吗？</strong></h3>
+<p>父组件可以更改props中的值，但不能更改状态中的值。</p>
+
+<h3 id="toc-29-can-changes-be-made-inside-the-component"><strong> 29。可以在组件内部进行更改吗？</strong></h3>
+<p>可以在状态内部进行更改，但不能在道具中进行更改。</p>
+
+<h3 id="toc-30-can-we-make-changes-inside-child-components">三十岁。我们可以在子组件内部进行修改吗？</h3>
+<p>是的，我们可以在props的子组件内部进行修改，但是不能在states的情况下进行修改。</p>
+<h3 id="toc-31-what-is-a-stateful-component">31。什么是有状态组件？</h3>
+<p>有状态组件在内存中存储更改。它具有改变状态的权限，并且包含关于过去、当前和未来变化的重要信息。</p>
+<h3 id="toc-32-how-is-a-stateless-component-different-from-a-stateful-component">32。无状态组件和有状态组件有什么不同？</h3>
+<p>无状态组件计算组件的内部状态，但无权更改状态。没有关于过去、现在或未来的知识，但是从有状态组件接收道具，这些道具被视为回调函数。</p>
+<h3 id="toc-33-what-are-synthetic-events-in-react">33。React中的合成事件是什么？</h3>
+<p>React中的合成事件是React中的对象，充当浏览器本机事件的跨浏览器包装器。主要目的是在API上组合不同的浏览器，以便事件显示不同的属性。</p>
+<h3 id="toc-34-what-are-refs-in-react">34。React中的refs是什么？</h3>
+<p>Refs代表参考反应。它帮助存储对特定react元素或组件的引用，这些元素或组件可以由组件呈现配置函数返回。</p>
+<h3 id="toc-35-when-are-refs-mostly-used">35。什么时候引用最多？</h3>
+<p>引用主要用于以下情况:</p>
+<ul>
+<li>当需要管理焦点时，选择文本或应用媒体回放。</li>
+<li>启动命令式动画。</li>
+<li>加入第三方DOM库。</li>
+</ul>
+<h3 id="toc-36-can-we-modularize-code-in-react-how">36。React中可以模块化代码吗？怎么会？</h3>
+<p>是的，我们可以在React中模块化代码。这可以通过使用导出和导入属性来完成。</p>
+<h3 id="toc-37-what-are-the-controlled-components-in-react">37。React中的受控组件有哪些？</h3>
+<p>React中的受控组件是那些可以保持其状态的组件。数据由它们的父组件控制，它们使用props考虑当前值，然后使用回调通知更改。</p>
+<h3 id="toc-38-how-are-uncontrolled-components-different-from-controlled-components">38。非受控组件与受控组件有何不同？</h3>
+<p>不受控制的组件保持它们的状态，它们的数据由DOM控制。在非受控组件中使用Refs来获取它们的当前值，而不是在受控组件中使用props。</p>
+<h3 id="toc-39-what-is-hoc">39。什么是HOC？</h3>
+<p>HOC代表高阶分量。这是重用组件逻辑的一种高级方法，它将另一个组件包装在一起。</p>
+
+<p><img src="../Images/a1bcc2e6d76d3df2e637c39806f3ad73.png" alt="HOC" data-original-src="https://hackr.io/blog/media/q39.png"/></p>
+
+<h3 id="toc-40-what-are-the-benefits-of-hoc">40。HOC有什么好处？</h3>
+<p>特设有几个好处，包括:</p>
+<ul>
+<li>可重用代码。</li>
+<li>逻辑和引导抽象的应用。</li>
+<li>提供了很高的黑客设施。</li>
+<li>支持状态抽象和操作。</li>
+<li>道具操作。</li>
+</ul>
+<h3 id="toc-41-what-are-pure-components">41。什么是纯组件？</h3>
+<p>纯组件是简单且易于编写的组件。它们可以很容易地替换任何组件作为呈现器()。</p>
+<h3 id="toc-42-what-are-reducers"><strong> 42。什么是减速器？</strong></h3>
+<p>Reducers是纯函数，它清楚地说明了当执行某些操作时，应用程序的状态是如何变化的。这样，它会考虑先前的状态和动作来创建新的状态。</p>
+<h3 id="toc-43-what-is-a-store-in-redux"><strong> 43。Redux的店铺是什么？</strong></h3>
+<p>store是一个JavaScript对象，它可以保存应用程序状态、访问它们以及应用调度操作和注册侦听器。</p>
+<h3 id="toc-44-why-do-we-need-a-router"><strong> 44。我们为什么需要路由器？</strong></h3>
+<p>我们在React中需要一个路由器，这样每当用户键入一个特定的URL时，我们就可以定义多个路由。这样，当URL与路由器内部定义的路径匹配时，就可以应用特定的路由器。</p>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>这总结了我们列出的最常见的面试问题和答案。除了扎实的技术知识，你还需要清晰自信地展示自己。如果你还想了解更多关于React的知识，请查看这些<a href="https://hackr.io/tutorials/learn-react?ref=blog"> React教程</a>和<a href="https://hackr.io/blog/react-courses">最佳React课程</a>。</p>
+<p>更多编程问答也可以在书中找到，<a href="https://geni.us/MmRP" target="_blank" rel="noopener">破解编码面试:189个编程问答</a>。祝你好运！</p>
+<h2 id="frequently-asked-questions"><strong>常见问题解答</strong></h2>
+<h4 id="toc-1-what-can-i-expect-in-a-react-interview"><strong> 1。在React面试中我能期待什么？</strong></h4>
+<p>在面试中，你可能会被问到理论和React编码的问题。让你记下你的基本知识，并复习这里的问题，以了解通常被问到的问题。</p>
+<h4 id="toc-2-what-should-i-study-for-a-react-interview"><strong> 2。React面试应该学什么？</strong></h4>
+<p>从简单的概念到代码实现，你都应该学习。关注组件、状态、Redux、props之类的东西——基本上就是你在React JS面试问题列表中看到的东西。</p>
+<h4 id="toc-3-how-do-you-prepare-for-a-react-interview"><strong> 3。你如何准备React面试？</strong></h4>
+<p>通过确保你有你的基本原则和练习来准备React面试。看视频教程，看书也有帮助。请记住，React编码面试问题也将在那里，所以不要吝啬这些。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

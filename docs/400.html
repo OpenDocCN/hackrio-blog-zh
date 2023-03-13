@@ -1,0 +1,226 @@
+<html>
+<head>
+<title>How to learn JQuery in 2023 - [A Step-by-Step Beginner's Guide]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年如何学习JQuery【循序渐进的初学者指南】</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/how-to-learn-jquery#0001-01-01">https://hackr.io/blog/how-to-learn-jquery#0001-01-01</a></blockquote><div><div class="content">
+										<h2 id="introduction"><strong>简介</strong></h2>
+<p><strong> JQuery </strong>是一个JavaScript库。它快速、丰富、易学，是一个“多写少做”的库。在JQuery的帮助下，您可以将多行用JS编写的代码包装成函数，只需一小段代码就可以调用这些函数。它简化了许多复杂的任务，比如DOM操作、事件处理、动画、HTML文档遍历和AJAX。定义完善且易于使用的JQuery API可以在许多web浏览器上运行，并使JavaScript编程变得非常容易。此外，JQuery的插件可以执行几乎所有的任务，这些任务在用普通JavaScript执行时需要大量的代码。</p>
+<h2 id="why-should-you-learn-jquery"><strong>为什么要学习JQuery？</strong></h2>
+<p>目前，成千上万的开发人员都加入了JQuery的行列，为什么他们不能呢？JQuery解决了跨浏览器问题、互操作性问题和标准化问题。它创建了一个抽象层，负责所有的工作区。让我们先睹为快，看看为什么JQuery在企业级如此受欢迎。</p>
+<ul>
+<li>它促进了简单性:任何进入JavaScript世界的人都会发现学习JQuery非常直观而且非常容易。它有一个简单的语法和开放的编码标准，允许你创建伟大的网站。</li>
+<li><strong>即使JS被禁用，它也会显示:</strong>如果Adobe Flash没有安装在任何浏览器上，可能会出现许多渲染问题。因此，开发者不得不花费大量时间为那些缺乏flash插件的浏览器编码。但是有了JQuery，他们再也不用这么做了。</li>
+<li><strong>它可以创建动画应用:</strong>就像Flash一样，JQuery使用o、HTML、CSS、JS和AJAX的组合，让您可以实现非常好看的效果。因此，您不必单独雇用一名Flash开发人员。</li>
+<li>页面加载速度更快:页面加载速度慢的话，会降低你的网站在搜索引擎中的表现和排名。实现更快加载时间的最佳方式是采用需要很少代码行的编码实践，并且仍然可以实现期望的结果。JQuery为您提供了仅在需要时加载标签的选项，从而提高了速度。</li>
+<li>它是SEO友好的:有大量的插件可以帮助你为搜索引擎优化JQuery代码片段。您可以使用简单的无序列表嵌入所有元素，这是提高SEO排名的良好健康的做法。</li>
+</ul>
+<p>不用说，有很多理由让你在下一个<a href="https://hackr.io/blog/best-web-development-projects"> web开发项目</a>中采用JQuery。第一，免费，好用；它通过向客户端推送内容来减少等待时间；它比flash小，播放起来更流畅。此外，它可以在任何地方工作，消除了兼容性问题，并且学习曲线较低。最重要的是，它是SEO友好的和CSS兼容的。</p>
+<p>虽然由于ReactJs和AngularJs获得了巨大的人气，JQuery的使用在过去确实已经显著下降，但是，它仍然被认为是遗留技术，受到许多人的青睐。</p>
+
+<p><em>资料来源:https://insights.stackoverflow.com/trends?tags = jquery % 2c angular % 2c angular js % 2c reactjs % 2c vue . js</em></p>
+<p>JQuery确实不可能重回它的显赫地位。但是，它会因为它的遗产而继续存在。这背后的主要原因是Bootstrap仍然在几乎所有的代码片段中使用JQuery。因此，如果您是bootstrap的粉丝，您也必须学习JQuery。</p>
+<p>而且从工作角度来说，除了Vue、React、Angular等现代框架之外。，在你的投资组合中有JavaScript和JQuery总是好的。当你申请web开发角色，甚至是前端开发者一个人的时候，他们期望你对JS、JQuery、AJAX有一个基本的了解。话虽如此，JQuery还是有自己的用处。从企业级电子商务应用程序到简单流畅的登录页面，它仍然被用于许多项目中。如果你不擅长CSS的话，对快速原型甚至动画还是有好处的。它可能已经过时，但肯定不会消亡。</p>
+<h2 id="prerequisites"><strong>先决条件</strong></h2>
+<p>在开始使用JQuery之前，您需要对以下主题有更深入的了解。</p>
+<ul>
+<li>你应该知道并使用过<a href="https://hackr.io/blog/css-cheat-sheet"> CSS </a>和<a href="https://hackr.io/blog/html-cheat-sheet"> HTML </a>的基础知识。你应该有创建一个简单网站的实践经验，并理解CSS中的选择器，如类、id和伪元素。</li>
+<li>你也应该有一个基本的理解，并且已经学习了编程的基础知识。不具备高级的JavaScript知识<a href="https://hackr.io/blog/how-to-learn-javascript-quickly">也可以开始使用JQuery。不过，强烈建议您熟悉对象、变量、数据类型等基础知识。</a></li>
+<li>您还应该了解DOM操作，因为JQuery主要用于操作HTML DOM元素。</li>
+</ul>
+<h2 id="how-to-install-jquery"><strong>如何安装JQuery？</strong></h2>
+<p>主要有两种方法可以将JQuery嵌入到网页中。请注意，JQuery只是一个JavaScript文件，您需要将它与HTML文件链接起来。您可以:</p>
+<ul>
+<li>要么从官方网页下载JQuery库。</li>
+<li>或者，您可以通过CDN链接到该文件。一个<strong>内容交付网络</strong>或<strong> CDN </strong>是一组多个服务器，它们组合起来根据用户的地理位置向用户交付网络内容。通过CDN链接到JQuery文件比在自己的服务器上托管它速度更快，加载效率更高。</li>
+</ul>
+<p> </p>
+
+<h4 id="downloading-a-copy-of-jquery"><strong>下载JQuery的副本</strong></h4>
+<p>有两个版本的JQuery文件可供下载。</p>
+<ul>
+<li><strong>生产版</strong>，压缩缩小后用于直播网站。</li>
+<li><strong>开发版本</strong>，主要用于测试和开发，因为它是可读和未压缩的。</li>
+</ul>
+<p>请访问<a href="https://jquery.com/download/"> JQuery </a>网站下载。</p>
+<p>下载之后，您可以在HTML文件的head部分中使用<script>标记来引用它。&lt;/root&gt;</script></p>
+<pre class="p1">&lt;head&gt;<br/>&lt;script src="jquery-3.5.1.min.js"&gt;<br/>&lt;/script&gt;<br/>&lt;/head&gt;</pre>
+<p> </p>
+<h4 id="using-google-cdn"><strong>使用谷歌CDN </strong></h4>
+<p>您可以将Google CDN用于JQuery库，只需将源代码嵌入脚本标记中。</p>
+<p>请注意，您应该始终在结束body标记之前链接到JQuery CDN，然后是您在项目中使用的定制JavaScript文件。</p>
+<p><code>&lt;!doctype html&gt;<br/>&lt;html lang="en"&gt;<br/>&lt;head&gt;<br/>  &lt;title&gt;Welcome to Hackr.io&lt;/title&gt;<br/>  &lt;link rel="stylesheet" href="css/style.css"&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"&gt;&lt;/script&gt;<br/>&lt;script src="js/scripts.js"&gt;&lt;/script&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;</code></p>
+<p><strong> <br/> IDE(集成开发环境)</strong></p>
+<p>为了充分利用JQuery，您必须使用真正理解JQuery真正功能的ide。有大量的ide为JQuery提供了巨大的支持和插件。但是要选择正确的，能够帮助你遵循编码的最佳实践，在错误时给出提示，具有自动完成特性等等。使用ide比使用文本编辑器更容易，因为ide可以帮助你自动生成标准代码。他们帮助你编译。它们包含有用的插件，并且允许你无缝地导入库。让我们来看看一些流行的ide，它们可以用来处理JQuery文件。</p>
+<h4 id="visual-studio-code-visual-studio-is-hands-down-the-most-popular-ide-not-only-for-javascript-and-jquery-but-for-all-the-popular-programming-languages-it-supports-syntax-highlighting-has-an-auto-complete-feature-backed-up-by-intellisense-provides-smart-completion-function-definitions-tons-of-plugins-etc-you-can-easily-use-extensions-to-add-new-languages-install-debuggers-themes-etc-all-the-important-features-are-already-baked-in-and-provide-immense-support-in-managing-the-files"><a href="https://code.visualstudio.com/"> <strong> Visual Studio代码:</strong> </a> <strong> </strong> Visual Studio无疑是最流行的IDE，不仅适用于JavaScript和JQuery，也适用于所有流行的编程语言。它支持语法高亮显示，具有由智能感知支持的自动完成特性(提供智能完成)，函数定义，大量插件等。您可以轻松地使用扩展来添加新语言、安装调试器、主题等。所有重要的特性都已经嵌入，并为管理文件提供了巨大的支持。</h4>
+<h4 id="sublime-text-it-s-a-sophisticated-next-generation-text-editor-with-a-slick-ui-extraordinary-features-and-top-notch-performance-it-utilizes-a-customized-toolkit-that-is-created-to-achieve-speed-and-elegance-some-features-that-users-love-include-goto-anything-to-open-files-with-few-keystrokes-goto-definition-to-generate-a-project-wise-index-multiple-selections-command-palette-powerful-api-and-package-ecosystem-easily-customizable-split-editing-instant-project-switching-and-is-available-across-all-platforms"><a href="https://www.sublimetext.com/"> <strong>崇高的文本:</strong> </a> <strong> </strong>它是一个成熟的下一代文本编辑器，具有流畅的用户界面、非凡的功能和一流的性能。它利用了一个定制的工具包，旨在实现速度和优雅。一些用户喜欢的功能包括- GoTo anything以几个按键打开文件，GoTo definition以生成项目级索引，多重选择，命令调色板，强大的API和软件包生态系统，易于定制，分割编辑，即时项目切换，可用于所有平台。</h4>
+<h4 id="atom-atom-text-editor-is-developed-by-github-and-is-highly-customizable-allowing-you-to-install-packages-easily-to-optimize-atom-for-javascript-coding-install-the-javascript-package-being-open-source-it-is-hackable-to-the-core-it-has-popular-features-such-as-platform-independent-editing-utilities-to-manage-packages-intelligent-code-auto-complete-a-browser-to-browse-file-systems-more-than-one-panes-thousands-of-packages-elegant-and-beautiful-themes-and-is-highly-customizable"><a href="https://atom.io/"><strong>Atom:</strong></a><strong/>Atom文本编辑器由GitHub开发，高度可定制，让你轻松安装包。要针对JavaScript编码优化Atom，请安装JavaScript包。由于是开源的，它的核心是可以被黑客攻击的。它具有一些流行的特性，如独立于平台的编辑、管理包的实用程序、智能代码自动完成、浏览文件系统的浏览器、多个窗格、数千个包、优雅漂亮的主题，并且是高度可定制的。</h4>
+<h2 id="online-compiler"><strong>在线编译器</strong></h2>
+<p>如果你不想在你的系统中经历下载和安装ide的麻烦，你总是可以使用在浏览器上运行的在线编译器。它们和其他桌面ide一样有用，但是相对来说不太容易定制。Tutorialspoint是一款免费、快速、安全的在线编译器，用于开发JavaScript和JQuery脚本。</p>
+<h2 id="how-to-learn-jquery"><strong>如何学习JQuery？</strong></h2>
+<p>JQuery简单易学，几个小时就能学会。然而，在开始使用JQuery之前，我们总是建议您具备HTML、CSS和JavaScript的基础知识。JQuery只是一个JS库。简单来说，它有4个基本用途。其中包括:</p>
+<ul>
+<li>它使得JavaScript代码非常短。它只用2行代码就能完成JavaScript用6-7行代码就能完成的事情。</li>
+<li>它可以在几行代码内执行复杂的任务，如DOM操作。</li>
+<li>与普通的JavaScript相比，使用JQuery进行事件处理是小菜一碟。</li>
+<li>它使得AJAX调用非常简单。</li>
+</ul>
+<p>从初学者的角度来看，最好是尝试一下，比如测试JQuery提供的各种功能及其性能，而不是学习理论。让我们来看看可以立即开始使用JQuery的4个步骤。</p>
+<h4 id="step-1-adding-a-jquery-library"><strong>第一步。添加JQuery库</strong></h4>
+<p>之前，我们已经讨论了如何在HTML文件中使用JQuery库。有两种方法可以做到这一点——要么直接从网站下载JQuery JavaScript文件，并使用Script标记包含它，要么可以使用像Google这样的CDN来引用这个库。</p>
+<p>使用CDN是一个更好的选择，因为它比下载文件并将其托管在我们自己的服务器上加载更快。此外，它还减少了项目中的文件数量。</p>
+<h4 id="step-2-event-handling-with-jquery"><strong>第二步。用JQuery处理事件。</strong></h4>
+<p>你可以很容易地编程事件，如按钮点击，鼠标进入，焦点，按键等。，在JQuery的帮助下。例如，在下面的代码中，当单击一个按钮时，它会显示一条警告消息。</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><button id="alertButton">点击此处生成预警</button></p>
+<p><script type="text/javascript" src="JS/jquery.min.js"/><br/>&lt;script type = " text/JavaScript "&gt;<br/>$(文档)。ready(function(){<br/>$(" # alert button ")。点击(function (e) { <br/> alert("这是对按钮的提醒")<br/>})；<br/>})；<br/>&lt;/脚本&gt;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>在上面的代码中，按钮click事件被放置在函数内部。这告诉服务器首先完全加载页面；之后，单击按钮时会调用一个函数，显示警告消息。</p>
+<h4 id="step-3-dom-manipulation-using-jquery"><strong>第三步。使用JQuery的DOM操作。</strong></h4>
+<p>使用JavaScript进行DOM操作是一项艰巨的任务。然而，JQuery使它变得轻而易举。我们举个简单的例子。</p>
+<p>假设单选按钮中显示了5个状态的列表。当一个人选择了正确的美国首都，它会显示一个“正确的”信息。当他选择了错误的状态，它显示“错误”的信息。我们可以通过添加一个带有单选按钮的点击事件来实现这一点。</p>
+<p><span>&lt;ul style = " list-style:none "&gt;<br/>&lt;李&gt; &lt;输入type="radio " value = " Alaska " name = " RDO "&gt;Alaska&lt;/李&gt; <br/> &lt;李&gt; &lt;输入type = " radio " value = " Buffalo " name = " RDO "&gt;Buffalo&lt;/李<br/> &lt;李&gt; &lt;输入type = " radio "</span></p>
+<p><script type="text/javascript" src="JS/jquery.min.js"/><br/>&lt;script type = " text/JavaScript "&gt;<br/>$(文档)。ready(function(){<br/>$(" input[type = ' radio ']")。点击(函数(e) { <br/> if($(this)。val()=="DC") <br/> $(此)。父级()。append('&lt;p style = " margin:0；左填充:10px颜色:红色；”&gt;右&lt;/p&gt;’)；<br/> else <br/> $(这个)。父级()。append('&lt;p style = " margin:0；左填充:10px颜色:红色；”&gt;错&lt;/p&gt;’)；<br/>})；<br/>})；<br/>&lt;/脚本&gt;</p>
+<p>在上面的例子中，我们检查被点击的单选按钮的值，并将其与正确答案进行比较。然后，我们找到按钮clicked的父列表标签，并添加一个段落标签，其中包含一些CSS和适当的文本。</p>
+<h4 id="step-4-jquery-ajax"><strong>第四步。JQuery AJAX。</strong></h4>
+<p>使用JQuery，我们可以通过AJAX请求轻松调用服务器端函数，并将返回的数据显示到HTML页面。我们甚至可以使用AJAX查询数据库，使用部分回发查询JQuery。</p>
+<p>上面提到的四个步骤足以让你开始使用JQuery。一旦您有了这些步骤的实践经验，您就可以向前迈进一步，学习如何优化代码以获得更好的性能。</p>
+<h2 id="jquery-course-and-tutorials-free-and-paid"><strong> JQuery课程和教程(免费和付费)</strong></h2>
+
+<p><a href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=996030.4141252&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Ffull-jquery-course%2F" rel="nofollow"><img src="../Images/6c53ab57df6d010dec19b0dd81ff0c14.png" border="0" data-original-src="https://img-c.udemycdn.com/course/480x270/4141252_fd32.jpg"/></a>T3】</p>
+<p>通过本课程，你将学习如何创建优雅的、反应灵敏的、动态的、能与专业网站竞争的网站。它将帮助你把对主题的理解从初学者提升到高级/专家水平。您可以学习重要的主题，如动画和效果、事件处理、DOM操作、验证等。</p>
+
+<h4 id="key-points"><strong> </strong> <strong>要点:</strong></h4>
+<ul>
+<li>话题从头开始。</li>
+<li>你将学会在你的网站上添加漂亮的效果和动画。</li>
+<li>您可以添加快速反馈和表单验证。</li>
+<li>您将学习如何使用AJAX，通过像TheMovieDB和Flickr这样的API动态地添加内容。</li>
+<li>您将处理用户事件，如点击鼠标按钮、滚动、按键盘上的键等。</li>
+<li>您将学习操作网页的外观和任何元素的内容。</li>
+</ul>
+<p><strong>时长:</strong> 51场讲座</p>
+<p><strong>持续时间:</strong> 6h 4m</p>
+<p><strong>评级:</strong> 4.6</p>
+
+<p>这门课程由密歇根大学提供，由Coursera为您带来。您将从JS语言及其遵循的面向对象模式开始。然后，您将了解JQuery库，并执行浏览器内操作、DOM和事件处理。您还将了解JSON在服务器和浏览器中的代码之间交换数据。</p>
+<h4 id="key-points-1"><strong> </strong> <strong>要点:</strong></h4>
+<ul>
+<li>JS和PHP的快速概述。</li>
+<li>随时随地执行浏览器内操作。</li>
+<li>带测验和实验的动手范例。</li>
+<li>灵活的截止日期。</li>
+<li>分级作业。</li>
+<li>证书。</li>
+</ul>
+<p><strong>时长:</strong> 4周4个疗程</p>
+<p><strong>时长:</strong> 26小时约<br/> <strong>评分:</strong> 4.6</p>
+
+<p>作为初学者，这是最好的入门课程。开始学习JQuery课程不需要了解任何先决条件。它会给你一个坚实的基础，你会获得足够的信心继续前进到高级认证。</p>
+<h4 id="key-points-2"><strong> </strong> <strong>要点:</strong></h4>
+<ul>
+<li>不需要任何先决条件。</li>
+<li>每个概念的示例代码。</li>
+<li>你将构建可以用来增强你的投资组合的项目。</li>
+<li>JQuery简介、效果和鼠标事件的测验。</li>
+<li>您将学习JQuery定位、链接和方法，</li>
+<li>您将学习如何将动画附加到HTML标签上。</li>
+<li>您将学习如何处理用户事件和使用样式方法。</li>
+<li>你可以掌握DOM操作。</li>
+</ul>
+<p><strong>时间:</strong> 3周(大约)</p>
+<p><strong>持续时间:</strong> 9小时。</p>
+<p><strong>评分:</strong> 4.5分满分5分。</p>
+
+
+<p>这是你能在任何地方找到的最好的免费JQuery资源之一。它包含了一系列的文本教程，每个概念都有很好的解释。你将以最详细的方式学习每一个概念。另外，他们提供了W3schools jQuery认证。</p>
+
+<h4 id="key-points-3"><strong>要点:</strong></h4>
+<ul>
+<li>首先介绍基本的介绍和语法，然后介绍选择器和事件。<strong> </strong></li>
+<li>您将学习隐藏/显示、淡化、滑动、停止、回调等效果。</li>
+<li>您将获得使用JQuery操作HTML的知识。</li>
+<li>您将学习如何遍历祖先、兄弟、后代等元素。</li>
+<li>您将学习如何用JQuery处理AJAX请求。</li>
+</ul>
+<p><strong>时长:</strong> 2周(大约)</p>
+<p><strong>持续时间:</strong>自定进度。</p>
+<p><strong>评级:</strong> NA</p>
+<h2 id="jquery-official-documentation"><strong> JQuery官方文档</strong></h2>
+<p>可以通过官方<a href="https://api.jquery.com/"> JQuery API文档</a>了解JQuery API。你会对所有发布的版本有更好的理解。它包含了关于所有方法、函数、触发器、事件等的丰富信息。，可以与JQuery一起使用来操作HTML。你将学习属性、回调、CSS效果、浏览器事件、文档加载、表单、DOM操作、选择器、遍历等。，都是通过详细易懂的例子。</p>
+<h2 id="jquery-projects"><strong> Jquery项目</strong></h2>
+<p>学习JQuery的最好方法是立即开始构建项目。一旦你开始做一个项目，你会学到很多新的特性、技巧和有用的资源。一旦有了理论知识，就可以从自己感兴趣的初学者项目入手，玩起来。你必须从一个有趣的项目开始，并在整个项目中坚持下去。</p>
+<p>如果你试图找到替代的和更好的方法来完成一项任务，而不是已经提到的方法，你会学得更好。这将让你扩大视野，思考超越现有的事物。</p>
+<p>看一看JQuery上的一些顶级初级项目。</p>
+
+<p>您可以从创建一个简单的蛇游戏开始，在这个游戏中您控制一条蛇，目标是通过正确的路线让蛇吃水果。这条蛇每吃一次水果就会长得更大更长。你必须防止蛇咬自己，一旦它这么做了，你的游戏就结束了。你可以使用多种动画，障碍和新功能。</p>
+
+<p>Lightbox是一个JS库，通过填充屏幕来帮助你显示图像。这是最著名的JQuery插件之一。您可以利用JQuery构建自己的定制灯箱，模仿按钮上的灯箱，等等。</p>
+
+<p>这是一个很常见的项目，并且使用JQuery你也可以建一个。您可以利用AJAX执行表单验证，添加弱密码警报，添加功能使其更具吸引力，添加动画、工具提示等。</p>
+
+
+<p>您可以使用JQuery创建一个简单的页面滑块，新页面滑入其中而不是刷新。这是一个取悦新访客的好方法，因为它让网页有趣又好看。这是一种真实而吸引人的方式来吸引更多的用户。</p>
+
+<ul>
+<li><h3 id="interesting-opening-animations"> <strong>趣味开场动画</strong> </h3></li>
+</ul>
+<p>您可以使用JQuery制作很酷的动画。你可以利用这个特性为你的网站主页制作有趣且有利可图的开场动画。浏览一下这个网站，了解JQuery能帮你实现什么。</p>
+<h2 id="certifications"><strong>认证</strong></h2>
+<p>虽然有许多<a href="https://hackr.io/tutorials/learn-jquery"> JQuery课程和教程</a>可供初学者使用，但是一旦你了解了概念并获得了足够的经验，你就可以进一步尝试一些高级证书。证书会给你的简历增色不少，让你在众多申请相同工作的候选人中占据上风。</p>
+<p>JQuery可获得的认证并不多。然而，你可以用下面列出的证书来测试你的知识。</p>
+
+<p>CancanIT提供这种认证，它在更深的层次上测试你的技能和理解。它有两个部分-理论和实践。理论考试，20题(单项和多项选择题均可)，每题1.5分钟。接下来是实践任务，你将被要求完成一个现实生活中的任务，你将被分配45分钟。</p>
+<p>它涵盖了元素选择器、通用框架、元素事件、Ajax调用、DOM操作、动画和效果等元素。</p>
+<p>认证费用在120美元左右。</p>
+
+<p>Mindmajix提供这种认证和培训，以培养您使用JQuery构建交互式网站、动画等所需的技能。你将能够掌握基本原理并从事实时项目。</p>
+<p>课程持续时间为30小时，由讲师授课。你将获得大约20小时的实验课程、认证，甚至工作协助。</p>
+<p>您有三种培训选择——自定进度学习、在线实时培训和企业培训。</p>
+<h2 id="jquery-interview-questions"><strong> JQuery面试问题</strong></h2>
+<p>一旦你精通了JQuery，就到了大日子了。你现在必须把你所有的知识和准备都集中起来，以优异的成绩通过面试。在参加面试之前，你必须复习所有重要的概念，包括理论和实践。这将帮助你获得自信，并激发出你最好的一面。让我们讨论几个在JQuery面试中经常被问到的问题，这些问题也很有可能出现在你的面试中。</p>
+
+<p>查看一下<a href="https://hackr.io/blog/jquery-interview-questions">50大JQuery面试问题</a>,你可以用它们来准备甚至轻松解决最难的面试。</p>
+<h2 id="top-tips"><strong>顶部提示</strong></h2>
+<p>如果你非常认真地想走上JS或JQuery开发人员的职业道路，你肯定需要花一些时间来找出最合适的途径，以便快速彻底地掌握它。关注所有不必要的障碍是很重要的，这样你就不会分心，找到学习JQuery的最佳方法。这里列出了一些在使用JQuery的过程中必须采用的技巧。</p>
+<ul>
+<li>提示1——试着报名参加网上的顶级实践课程。</li>
+<li>技巧2——确保你对JavaScript、HTML和CSS有透彻的了解。</li>
+<li>技巧3——你可以寻找<a href="https://hackr.io/blog/jquery-cheat-sheet-part-1">备忘单来快速学习JQuery </a>。</li>
+<li>技巧4——确保你清楚地理解id和类之间的区别以及它们的用例。</li>
+<li>技巧5——你应该知道缓存选择器以及如何使用它们。</li>
+<li>技巧6——了解属性和特性之间的区别。</li>
+<li>技巧7——在开发者社区寻求帮助。</li>
+<li>技巧8——使用最新版本的JQuery，并时刻关注最新的更新。</li>
+<li>技巧9——利用JQuery插件。</li>
+<li>技巧10——经常与其他JQuery开发人员联系。</li>
+</ul>
+<p><strong>结束</strong></p>
+<h2 id="wrapping-up">总而言之，在本分步指南中，我们已经涵盖了以下主题。</h2>
+<p>我们从一个简单的介绍开始，描述了JQuery以及如何利用它来让您的开发体验无缝化。然后，我们讨论了为什么您应该学习JQuery，并指出它的优点和用例。我们讨论了为什么它的受欢迎程度正在逐渐下降，但它仍然被用来创建动态web应用程序。</p>
+<ul>
+<li>然后我们继续讨论学习JQuery需要哪些先决条件。我们讨论了学习HTML、CSS和JavaScript如何帮助您更好地理解JQuery。我们看到了在脚本中使用JQuery的两种不同方式。</li>
+<li>在那之后，我们讨论了一些流行的ide，您可以使用它们来增强使用JQuery的体验，并利用它们来安装有用的插件。我们还讨论了如何使用在线编译器，而不是下载独立的ide。</li>
+<li>之后，我们讨论了4个简单易行的步骤，您可以采用它们来快速彻底地学习JQuery。我们看到了它们中每一个的例子和样本代码。我们讨论了JQuery如何在实现相同JavaScript功能的同时显著减少代码行数。</li>
+<li>接下来，我们讨论了一些流行的免费和付费JQuery课程和教程，这些课程和教程将帮助您获得JQuery的实践经验，并建立您的投资组合。我们讨论了一些很酷的项目，您可以通过这些项目更好地理解这些主题，并使用JQuery。我们也看到了如何使用JQuery官方文档。</li>
+<li>我们讨论了JQuery中的认证如何帮助你获得相对于其他候选人的优势，并在参加工作面试时给你信心。我们在JQuery上讨论了一些重要的面试问题，以帮助你在面试前做最后的准备。</li>
+<li>最后，我们讨论了一些重要的提示，您需要采用这些提示来确保您遵循正确的方向，并以更好的方式学习JQuery。</li>
+<li>我们当然希望您喜欢我们的分步指南，它将帮助您以现代方式学习JQuery。本指南一定会帮助您找到正确的资源，采用正确的方法，并在进入企业世界之前获得关于JQuery的深入知识和经验。</li>
+</ul>
+<p>请在下面的评论中告诉我你对这篇文章的反馈。</p>
+<p>Let me know your feedback about this article in the comments below.</p>
+
+									</div>
+
+									</div>    
+</body>
+</html>

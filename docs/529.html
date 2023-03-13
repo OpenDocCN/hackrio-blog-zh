@@ -1,0 +1,1583 @@
+<html>
+<head>
+<title>PowerShell Cheat Sheet: Commands, Operators, and More for 2023</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>PowerShell备忘单:2023年的命令、操作符和更多内容</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/powershell-cheat-sheet#0001-01-01">https://hackr.io/blog/powershell-cheat-sheet#0001-01-01</a></blockquote><div><div class="content">
+										<p>PowerShell是一个有用的Windows命令行语言版本，可以帮助您无缝地执行和自动化系统上的关键任务。但是，如何在Windows系统上执行这些任务并充分利用PowerShell呢？</p>
+<p>别担心，我们已经编制了一份PowerShell备忘单，记录了PowerShell语法和所有PowerShell命令，以帮助您优化PowerShell，甚至为工作面试做准备。</p>
+<p><strong>在这里 </strong>下载我们的PowerShell备忘单PDF <a href="https://drive.google.com/file/d/1QC3smpXOio0O6XvXEIw7TXhOw5zZOZJf/view?usp=sharing" target="_blank" rel="noopener">。</a></p>
+<h2 id="powershell-cheat-sheet"><strong> PowerShell备忘单</strong></h2>
+<p>我们先来快速介绍一下Windows 10 PowerShell命令。</p>
+
+<h3 id="powershell-basics"><strong> PowerShell基础知识</strong></h3>
+<p>PowerShell是一个跨平台且常用的任务自动化解决方案，它结合了命令行Shell、脚本语言和配置管理框架的强大功能。您可以在Windows、Linux和macOS操作系统上运行PowerShell。与其他只接受和返回数据的外壳不同，PowerShell接受并返回数据。NET对象。</p>
+<p>这种外壳具有以下特性。</p>
+<ul>
+<li>健壮的<strong>命令行历史</strong></li>
+<li>丰富的<strong>功能</strong>，如制表符补全和命令预测</li>
+<li><strong>命令和参数</strong>别名</li>
+<li>用于<strong>改变命令的管道</strong></li>
+<li><strong>控制台内帮助系统</strong>，如Unix手册页</li>
+</ul>
+<p>考虑到任何脚本语言的特性，您可以使用PowerShell来自动化系统管理过程和任务。它允许您在CI/CD环境中构建、测试和部署解决方案。</p>
+<p>PowerShell构建在。NET公共语言运行库(CLR)，这意味着所有的输入和输出都是。NET对象。您不必解析文本输出来从中检索信息。</p>
+<p>PowerShell脚本语言具有以下特性。</p>
+<ul>
+<li><strong>函数、类、对象和模块</strong></li>
+<li><strong>简易格式化系统</strong>，提供清晰的输出，增强可读性</li>
+<li><strong>内置支持</strong>不同的数据格式，如CSV、JSON和XML</li>
+<li><strong>类型系统</strong>用于创建动态类型</li>
+</ul>
+<p>现在，让我们进入一些有用的PowerShell命令。</p>
+
+<p><a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.1768672&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fwindows-powershell-training%2F" target="_blank" rel="noopener">Windows PowerShell 5.1简介</a></p>
+<h3 id="powershell-commands-cheat-sheet"><strong> PowerShell命令备忘单</strong></h3>
+<h4 id="cmdlets"><strong>cmdlet</strong></h4>
+<p>Cmdlets是PowerShell的内部命令。这些cmdlets将向管道返回一个或多个对象，在管道的末端，我们在下表中提到对象的一些属性，以查看它们在屏幕上显示的值。</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>命令</strong></p>
+</td>
+<td>
+<p><strong>描述</strong></p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-Help</code></pre></td>
+<td>
+<p>此命令允许您获得PowerShell的支持。</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-PSdrive</code></pre></td>
+<td>
+<p>这个命令提供了一个可用的PSDrives列表，例如c、env、hklm、hkcu、alias等。</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-ChildItem</code></pre></td>
+<td>
+<p>在任何注册表中，子项都是当前项的子项。要获得所需的详细信息，可以使用下面的命令。</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-ChildItem -recurse</code></pre></td>
+<td>
+<p>运行此命令以递归方式列出当前PSdrive、文件夹或注册表项的所有子项。</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-ChildItem -rec -force</code></pre></td>
+<td>
+<p>使用此命令包括隐藏的文件夹(目录)。</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>(Get-ChildItem).name or Get-ChildItem -name</code></pre></td>
+<td>
+<p>运行这些命令中的任何一个来获取当前文件夹中的列表文件和目录名。</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>(Get-ChildItem).count </code></pre></td>
+<td>
+<p>使用此命令获取Get-Children返回的对象集合中的条目数。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="psdrives"><strong> PSdrives </strong></h4>
+<p>PSdrives是组合在一起的实体的集合，因此它们可以作为文件系统驱动器来访问。“PSprovider”进行这种分组。</p>
+<p>默认情况下，PS会话可以访问多个PS驱动器，包括c:，env:，alias:，和HKLM:，其中c:是指通常的Windows c驱动器；env:是Windows环境变量的空间；alias:是cmdlet别名的集合；HKLM是注册表中的一个蜂巢。</p>
+<p>任何PS会话都将进入用户的主文件夹。如果要从PS会话切换到另一个PSdrive并从该驱动器中检索信息，请考虑以下命令:</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>命令</strong></p>
+</td>
+<td>
+<p><strong>描述</strong></p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Switching to env-</code></pre></td>
+<td>
+<p>提示字符将变为“ENV:\ &gt;”。通过运行以下命令设置-Location env:</p>
+<p> </p>
+<pre class="language-csharp"><code>Set-Location env-</code></pre>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Env:\&gt; Get-Childitem</code></pre></td>
+<td>
+<p>这个命令将获取所有的环境变量。</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Env:\&gt; Get-Childitem userprofile</code></pre></td>
+<td>
+<p>使用此命令获取“userprofile”的环境变量</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Env:\&gt; Set-Location alias:</code></pre></td>
+<td>
+<p>运行以下命令，将提示字符更改为“Alias”</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Alias:\&gt; Get-Childitem</code></pre></td>
+<td>
+<p>运行此命令获取所有别名的所有子代。</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Alias:\&gt; Set-Location C:\</code></pre></td>
+<td>
+<p>使用此命令再次获得“C:/&gt;”提示符，回到默认驱动器。</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>C:\Users\user_name&gt;$alias:ls</code></pre></td>
+<td>
+<p>运行此命令以查找别名“ls”代表什么。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="pipelines"><strong>管道</strong></h4>
+<p>Cmdlets使用管道传递对象，而不是像Unix一样传递字符流。管道字符是| (ASCII 124)，后跟一个命令，用于处理通过管道传递的输出。管道由以下三个阶段组成。</p>
+<pre class="language-csharp"><code>Get-ChildItem *.txt | Where-Object length -lt 1000 | Sort-Object length</code></pre>
+<p>下表重点介绍了一些基本的管道命令:</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>命令</strong></p>
+</td>
+<td>
+<p><strong>描述</strong></p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>(Get-Item /Users/praashibansal/Desktop).lastwritetime.year</code></pre></td>
+<td>
+<p>轻松地将“lastwritetime.year”属性的值设置为当前日期和时间，而不会影响文件的内容。</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>(Get-ChildItem data.txt.rtf -name).name # -&gt; null</code></pre></td>
+<td>
+<p>提供空结果</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>"data.txt.rtf" | Rename-Item -NewName "data_new.txt.rtf"</code></pre></td>
+<td>
+<p>将旧文件名和文件扩展名更改为新文件名和文件扩展名</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-ChildItem data.txt | Rename-Item -new {$_.name}</code></pre></td>
+<td>
+<p>调用自动变量的简单重命名命令</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-ChildItem data.txt.rtf -name | Rename-Item -new {$_.name}</code></pre></td>
+<td>
+<p>如果管道对象$_没有成员属性(名称)，您将收到一个错误，作为参数$_。名称为空</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-ChildItem | Select-Object basename | Sort-Object *</code></pre></td>
+<td>
+<p>显示当前文件夹中所有文件的名称列表，按字母顺序排序。</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Move-Item *.txt subdirectory</code></pre></td>
+<td>
+<p>将所有文件移动到文件夹子目录中</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-ChildItem *.txt | Move-Item ..\</code></pre></td>
+<td>
+<p>给出移动项目缺少输入的错误消息</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="alias"><strong>别名</strong></h4>
+<p>Cmdlets有几个别名。下表重点介绍了几个别名及其描述:</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>命令</strong></p>
+</td>
+<td>
+<p><strong>描述</strong></p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Add-Content</code></pre></td>
+<td>
+<p>将值追加到文件中</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-Content</code></pre></td>
+<td>
+<p>在数组中查找文件内容</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Set-Location</code></pre></td>
+<td>
+<p>更改文件夹、密钥或PS驱动器</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Clear-Host</code></pre></td>
+<td>
+<p>清除控制台</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Remove-Item</code></pre></td>
+<td>
+<p>删除文件</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-ChildItem -Path .\</code></pre></td>
+<td>
+<p>列出文件夹、项或PSDrive子项</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Write-Output</code></pre></td>
+<td>
+<p>将数组发送到控制台、管道，或将它重定向到文件</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Foreach-Object</code></pre></td>
+<td>
+<p>遍历管道中的每个对象</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Format-Table</code></pre></td>
+<td>
+<p>用每列中每个对象的选定特性格式化表格</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Format-List</code></pre></td>
+<td>
+<p>按名称格式化流程属性</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-Alias</code></pre></td>
+<td>
+<p>提供Cmdlet别名</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-Command</code></pre></td>
+<td>
+<p>仅提供当前会话中的命令</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-Member</code></pre></td>
+<td>
+<p>检索所有对象成员</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-ItemProperty .\data.txt | Format-List</code></pre></td>
+<td>
+<p>提供指定项目的属性</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-ItemPropertyValue -Path '.\data.txt' -Name LastWriteTime</code></pre></td>
+<td>
+<p>使用name参数时给出指定属性的当前值</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-Variable m*</code></pre></td>
+<td>
+<p>查找会话变量名和会话</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>New-Item -Path .\ -Name "testfile1.txt" -ItemType "file" -Value "This is a text string."</code></pre></td>
+<td>
+<p>创建新的文件、目录、符号链接、注册表项或注册表项</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-Process</code></pre></td>
+<td>
+<p>给出所有正在运行的进程的完整列表</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Get-Location</code></pre></td>
+<td>
+<p>提供当前目录或注册表项的位置</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Rename-Item -Path “old_name” -NewName “new_name”</code></pre></td>
+<td>
+<p>用新名称重命名旧项目名称</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Remove-Item .\testfile1.txt</code></pre></td>
+<td>
+<p>移除指定的目录、文件或注册表项</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Remove-Variable </code></pre></td>
+<td>
+<p>移除指定的变量</p>
+</td>
+</tr>
+<tr>
+<td><pre class="language-csharp"><code>Start-Sleep</code></pre></td>
+<td>
+<p>将活动暂停一段指定的时间</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="operators"><strong>操作员</strong></h3>
+
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>操作员</strong></p>
+</td>
+<td>
+<p><strong>描述</strong></p>
+</td>
+<td>
+<p><strong>例子</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>将整数相加；连锁的</p>
+</td>
+<td>
+<p>6 + 2</p>
+</td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<p>字符串、数组和哈希表。</p>
+</td>
+<td>
+<p>"文件"+"名称"</p>
+<p>@(1，“一”)+ @(2.0，“二”)</p>
+<p>@{"one" = 1} + @{"two" = 2}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>+</p>
+</td>
+<td>
+<p>用一个物体做一个数字</p>
+</td>
+<td>
+<p>123</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>从一个值中减去另一个值</p>
+</td>
+<td>
+<p>6 - 2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>计算相反的数字</p>
+</td>
+<td>
+<p>- -6</p>
+</td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td>
+<p>(获取日期)。添加天数(-1)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>*</p>
+</td>
+<td>
+<p>将数字相乘或复制字符串和数组指定的次数</p>
+</td>
+<td>
+<p>6 * 2</p>
+</td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td>
+<p>@("!") * 4</p>
+</td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td>
+<p>"!" * 3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>/</p>
+</td>
+<td>
+<p>将两个值相除</p>
+</td>
+<td>
+<p>6 / 2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>%</p>
+</td>
+<td>
+<p>模数-返回除法运算的余数</p>
+</td>
+<td>
+<p>7 % 2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-乐队</p>
+</td>
+<td>
+<p>按位AND</p>
+</td>
+<td>
+<p>5波段3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-不知道</p>
+</td>
+<td>
+<p>按位非</p>
+</td>
+<td>
+<p>-bnot 5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-博尔</p>
+</td>
+<td>
+<p>按位或</p>
+</td>
+<td>
+<p>5位bor 0x03</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-bxor</p>
+</td>
+<td>
+<p>按位异或</p>
+</td>
+<td>
+<p>5-异或3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-嘘</p>
+</td>
+<td>
+<p>向左移位</p>
+</td>
+<td>
+<p>102 -shl 2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-shr</p>
+</td>
+<td>
+<p>向右移位</p>
+</td>
+<td>
+<p>102 -shr 2</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>优先级</strong></p>
+</td>
+<td>
+<p><strong>操作员</strong></p>
+</td>
+<td>
+<p><strong>描述</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>一</p>
+</td>
+<td>
+<p>()</p>
+</td>
+<td>
+<p>圆括号</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>对于负数或一元运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>*, /, %</p>
+</td>
+<td>
+<p>用于乘法和除法</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>+,-</p>
+</td>
+<td>
+<p>用于加法和减法</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>5</p>
+</td>
+<td>
+<p>-band、-bnot、-bor、-bxor、-shr和-shl</p>
+</td>
+<td>
+<p>对于位运算</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>操作员</strong></p>
+</td>
+<td>
+<p><strong>描述</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>=</p>
+</td>
+<td>
+<p>将变量值设置为指定值</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>+=</p>
+</td>
+<td>
+<p>将变量值增加指定值或将指定值追加到现有值中</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-=</p>
+</td>
+<td>
+<p>将变量值减少指定的值</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>*=</p>
+</td>
+<td>
+<p>将变量值乘以指定值，或将指定值追加到现有值</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>/=</p>
+</td>
+<td>
+<p>将变量值除以指定值</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>%=</p>
+</td>
+<td>
+<p>将变量值除以指定值，然后将余数(模数)赋给该变量。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>#错误！</p>
+</td>
+<td>
+<p>将变量值、可赋值属性或数组元素增加1。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>--</p>
+</td>
+<td>
+<p>将变量值、可赋值属性或数组元素减1。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>类型</strong></p>
+</td>
+<td>
+<p><strong>操作员</strong></p>
+</td>
+<td>
+<p><strong>对比测试</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>平等</p>
+</td>
+<td>
+<p>-情商</p>
+</td>
+<td>
+<p>等于</p>
+</td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<p>-东北</p>
+</td>
+<td>
+<p>不等于</p>
+</td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<p>-gt</p>
+</td>
+<td>
+<p>大于</p>
+</td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<p>-葛</p>
+</td>
+<td>
+<p>大于或等于</p>
+</td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<p>-中尉</p>
+</td>
+<td>
+<p>不到</p>
+</td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<p>表示器具名称:bridle ｜ thimble</p>
+</td>
+<td>
+<p>小于或等于</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>相称的</p>
+</td>
+<td>
+<p>表示“像…的”</p>
+</td>
+<td>
+<p>字符串匹配通配符模式</p>
+</td>
+</tr>
+<tr>
+<td>-notlike</td>
+<td>
+<p>字符串与通配符模式不匹配</p>
+</td>
+<td>
+<p>-匹配</p>
+</td>
+</tr>
+<tr>
+<td>字符串匹配正则表达式模式</td>
+<td>
+<p>-不匹配</p>
+</td>
+<td>
+<p>字符串与正则表达式模式不匹配</p>
+</td>
+</tr>
+<tr>
+<td>更换</td>
+<td>
+<p>-更换</p>
+</td>
+<td>
+<p>替换匹配正则表达式模式的字符串</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>包含</p>
+</td>
+<td>
+<p>-包含</p>
+</td>
+<td>
+<p>集合包含一个值</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-不包含</p>
+</td>
+<td>
+<p>集合不包含值</p>
+</td>
+<td>
+<p>构成有机化合物、药品、蛋白质等的名称</p>
+</td>
+</tr>
+<tr>
+<td>值在集合中</td>
+<td>
+<p>-notin</p>
+</td>
+<td>
+<p>值不在集合中</p>
+</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>
+<p>-是</p>
+</td>
+<td>
+<p>两个对象属于同一类型</p>
+</td>
+</tr>
+<tr>
+<td>-不是吗</td>
+<td>
+<p>对象不属于同一类型</p>
+</td>
+<td>
+<p><strong>操作员</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>描述</strong></p>
+</td>
+<td>
+<p><strong>例子</strong></p>
+</td>
+<td>
+<p>表示“对象”:　analysand</p>
+</td>
+</tr>
+<tr>
+<td>逻辑与。当两个陈述都为真时为真。</td>
+<td>
+<p>(1-等式1)和(1-等式2)</p>
+</td>
+<td>
+<p>objects are not the same type</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr>
+<td>
+<p>错误的</p>
+</td>
+<td>
+<p>表示“…人”</p>
+</td>
+<td>
+<p>逻辑或。当任一陈述为真时为真。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>(1-等式1)-或(1-等式2)</p>
+</td>
+<td>
+<p>真实的</p>
+</td>
+<td>
+<p>-异或</p>
+<p>逻辑异或。当只有一个陈述为真时为真。</p>
+<p>(1-等式1)-异或(2-等式2)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>错误的</p>
+</td>
+<td>
+<p>-不是</p>
+</td>
+<td>
+<p>逻辑上不是。否定后面的语句。</p>
+<p>-非(1-等式1)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>弗雷塞</p>
+</td>
+<td>
+<p>！</p>
+</td>
+<td>
+<p>与-不相同</p>
+<p>！(1 -eq 1)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>错误的</p>
+</td>
+<td>
+<p><strong>操作员</strong></p>
+</td>
+<td>
+<p><strong>描述</strong></p>
+<p><strong>语法</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>&gt;</p>
+</td>
+<td>
+<p>将指定的流发送到文件</p>
+</td>
+<td>
+<p>n &gt;</p>
+<p>&gt;&gt;</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr>
+<td>
+<p>将指定的流追加到文件中</p>
+</td>
+<td>
+<p>n &gt; &gt;</p>
+</td>
+<td>
+<p>&gt;&amp;1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>将指定的流重定向到成功流</p>
+</td>
+<td>
+<p>n&gt;&amp;1</p>
+</td>
+<td>
+<p><strong>操作员</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>描述</strong></p>
+</td>
+<td>
+<p><strong>例子</strong></p>
+</td>
+<td>
+<p>-不是吗</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>当输入不是</p>
+</td>
+<td>
+<p>specified.NET类型。</p>
+</td>
+<td>
+<p>(get-date) -isNot [DateTime]</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr>
+<td>
+<p>错误的</p>
+</td>
+<td>
+<p>-作为</p>
+</td>
+<td>
+<p>将输入转换为指定的。网络类型。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>"5/7/07" -as [DateTime]</p>
+</td>
+<td>
+<p>2007年5月7日星期一00:00:00</p>
+<p><strong>其他一些操作者</strong></p>
+</td>
+<td>
+<p><strong>操作员</strong></p>
+<p><strong>描述</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>()分组运算符</p>
+</td>
+<td>
+<p>允许您在表达式中覆盖运算符优先级</p>
+</td>
+<td>
+<p>&amp;()子表达式运算符</p>
+<p>给出一个或多个语句的结果</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="some-other-operators">@()数组子表达式运算符</h4>
+<table>
+<tbody>
+<tr>
+<td>
+<p>以数组形式返回一个或多个语句的结果。</p>
+</td>
+<td>
+<p>&amp;后台操作员</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Powershell作业中的此命令执行&amp;之前的管道。</p>
+</td>
+<td>
+<p>[] Cast运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>将对象转换为特定类型。</p>
+</td>
+<td>
+<p><strong>正则表达式</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>正则表达式是一种模式，用于匹配包含文字字符、运算符和其他结构的文本。默认情况下，PowerShell正则表达式不区分大小写。</p>
+</td>
+<td>
+<p><strong>方法</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>区分大小写</strong></p>
+</td>
+<td>
+<p>选择字符串</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>用例敏感开关</p>
+</td>
+<td>
+<p>交换语句</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="regular-expressions">使用区分大小写选项</h3>
+<p>经营者</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p>以“c”为前缀(-cmatch、-csplit或-creplace)</p>
+</td>
+<td>
+<p>正则表达式可以是文字字符或字符串。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src="../Images/acbe249fb2fe6ff418d0c6bf0ccb7208.png" alt="" data-original-src="https://hackr.io/blog/media/character-literals-min.png"/></p>
+</td>
+<td>
+<p>这些允许您一次匹配任意数量的字符，而[^character组]只匹配不在该组中的字符。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src="../Images/c578c36a4f419a3ba502d14070d6c965.png" alt="" data-original-src="https://hackr.io/blog/media/character-groups-min.png"/></p>
+</td>
+<td>
+<p>模式也可以是一系列字符。字符可以是字母[A-Z]，数字[0-9]，甚至是基于ASCII的[ -~](所有可打印字符)。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src="../Images/ff311dd52f88379788ad011d3b11fe3f.png" alt="" data-original-src="https://hackr.io/blog/media/character-range-min.png"/></p>
+</td>
+<td>
+<p>\d字符类将匹配任何十进制数字。相反，\D将匹配任何非十进制数字。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="../Images/5b047797420e175a6ca0771ba9368dad.png" alt="" data-original-src="https://hackr.io/blog/media/numbers-min.png"/></p>
+<p>\w字符类将匹配任何单词字符[a-zA-z0-9]。要匹配任何非单词字符，请使用\W。</p>
+
+<p><img src="../Images/bc4e7717d2fab67467a25bce44ebec6c.png" alt="" data-original-src="https://hackr.io/blog/media/word-character-min.png"/></p>
+<p>句号(。)是正则表达式中的通配符。它将匹配除换行符(\n)以外的任何字符。</p>
+
+<p><img src="../Images/d8a763779e9ee6cfccc7215e44d4dd31.png" alt="" data-original-src="https://hackr.io/blog/media/wildcard-min.png"/></p>
+<p>使用\s字符类匹配空格。使用\S匹配任何非空白字符，也可以使用原义空格字符“”。</p>
+
+<p><img src="../Images/15fb7c3a44a070c191158cb0752ccabe.png" alt="" data-original-src="https://hackr.io/blog/media/whitespace-min.png"/></p>
+<p>反斜杠(\)用于转义字符，这样正则表达式引擎就不会解析它们。</p>
+
+<p>下列字符是保留字符:[]()。\^$|?*+{}.</p>
+<p><img src="../Images/aa4be8df1734369f580665a1d7e70955.png" alt="" data-original-src="https://hackr.io/blog/media/escaping-characters-min.png"/></p>
+
+<p><h4 id="substitution-in-regular-expression"> <strong>正则表达式中的替换。</strong>T3】</h4></p>
+<p><strong>正则表达式中的替换。</strong></p>
+
+<p>带有-replace运算符的正则表达式允许您使用捕获的文本动态替换文本。</p>
+<p><input/>-替换<original>、<substitute/></original></p>
+
+<p><strong><img src="../Images/5d430754be17ea4a00f181a3a960dd8e.png" alt="" data-original-src="https://hackr.io/blog/media/substitution-in-regular-expression-min.png"/>T2】</strong></p>
+<p><strong>流量控制</strong></p>
+<p>ForEach-Object是一个cmdlet，它允许您遍历管道中的项目，例如使用PowerShell一行程序。ForEach-Object将通过管道传输对象。</p>
+
+<ul>
+<li>尽管Get-Command的模块参数接受多个字符串值，但它仅通过使用属性名的管道输入或参数输入来接受这些值。</li>
+</ul>
+<p>当指定的条件为真时,“for”循环迭代。</p>
+<p>例如:</p>
+<h3 id=""><em><img src="../Images/660a28a645781b2e4c6c279ac542e503.png" alt="" data-original-src="https://hackr.io/blog/media/for-min.png"/>T2】</em></h3>
+<h3 id="flow-control">PowerShell中有两个不同的“do”循环。当指定条件为假时，执行<em>直到</em>运行。</h3>
+
+<p><strong>例1: </strong></p>
+<p><img src="../Images/5914d9bb24ef67981c12a6e318fe4519.png" alt="" data-original-src="https://hackr.io/blog/media/do-example-1-min.png"/></p>
+<p><strong>例2: </strong></p>
+<pre class="language-csharp"><code>$ComputerName = 'DC01', 'WEB01'
+
+foreach ($Computer in $ComputerName) {
+
+Get-ADComputer -Identity $Computer
+
+}</code></pre>
+
+<p><em><img src="../Images/88c8ef83cf9706ffa01d9334b5d79806.png" alt="" data-original-src="https://hackr.io/blog/media/do-example-2-min.png"/>T2】</em></p>
+<p>与Do While循环类似，只要指定的条件为真，While循环就会运行。然而，不同之处在于While循环在运行任何代码之前评估循环顶部的条件。因此，如果条件的计算结果为false，它就不会运行。</p>
+<pre class="language-csharp"><code>for ($i = 1; $i -lt 5; $i++) {
+
+Write-Output "Sleeping for $i seconds"
+
+Start-Sleep -Seconds $i
+
+}</code></pre>
+<p>例如:</p>
+
+<p><img src="../Images/a2e980a3a4c67db94da21c0c7db46872.png" alt="" data-original-src="https://hackr.io/blog/media/while-min.png"/></p>
+<p><strong>变量</strong></p>
+
+<pre class="language-csharp"><code>$number = Get-Random -Minimum 1 -Maximum 10
+
+do {
+
+$guess = Read-Host -Prompt "What's your guess?"
+
+if ($guess -lt $number) {
+
+Write-Output 'Too low!'
+
+}
+
+elseif ($guess -gt $number) {
+
+Write-Output 'Too high!'
+
+}
+
+}
+
+until ($guess -eq $number)</code></pre>
+<p>PowerShell允许您存储所有类型的值。例如，它可以存储命令结果和命令表达式元素，如名称、路径和设置。以下是PowerShell的一些不同变量。</p>
+
+<p><strong>用户创建的变量:</strong>由用户创建和维护。您在PowerShell命令行中创建的变量将一直存在，直到PowerShell窗口打开。当您关闭PowerShell窗口时，这些变量将被删除。如果要保存变量，需要将其添加到PowerShell配置文件中。您可以创建变量并用三种不同的作用域来声明它们:全局、脚本或局部。</p>
+<pre class="language-csharp"><code>$number = Get-Random -Minimum 1 -Maximum 10
+
+do {
+
+$guess = Read-Host -Prompt "What's your guess?"
+
+if ($guess -lt $number) {
+
+Write-Output 'Too low!'
+
+} elseif ($guess -gt $number) {
+
+Write-Output 'Too high!'
+
+}
+
+}
+
+while ($guess -ne $number)</code></pre>
+<p><strong>自动变量:</strong>这些变量存储PowerShell的状态，由PowerShell创建。只有PowerShell可以根据需要更改它们的值以保持准确性。用户不能改变这些变量的值。例如，$PSHOME变量将存储PowerShell安装目录的路径。</p>
+
+<p><strong>偏好变量:</strong>这些变量存储用户对PowerShell的偏好，由PowerShell创建。这些变量由默认值填充，可以由用户更改。例如，$MaximumHistoryCount变量指定会话历史中的最大条目数。</p>
+<p>要创建一个新的变量，您需要使用赋值语句并为变量赋值。在使用变量之前，不需要声明变量。所有变量的默认值都是$null。</p>
+<pre class="language-csharp"><code>$date = Get-Date -Date 'November 22'
+
+while ($date.DayOfWeek -ne 'Thursday') {
+
+$date = $date.AddDays(1)
+
+}
+
+Write-Output $date</code></pre>
+<p>例如:</p>
+<h3 id="variables"><img src="../Images/401841dcbeb75474e27f01f86cbc67e2.png" alt="" data-original-src="https://hackr.io/blog/media/variables-min.png"/></h3>
+<p><strong>功能</strong></p>
+<ul>
+<li>使用一个Pascal大小写名称和一个认可的动词和一个单数名词来命名一个函数。您可以通过运行Get-Verb获得批准的动词列表:</li>
+</ul>
+<ul>
+<li><strong>获取动词|排序对象属性动词</strong></li>
+<li><strong><img src="../Images/01471c1d706e51c080d433a456236979.png" alt="" data-original-src="https://hackr.io/blog/media/function-min.png"/>T2】</strong></li>
+</ul>
+<p><strong>创建一个简单的函数</strong></p>
+<p>使用function关键字后跟函数名来创建一个简单的函数。然后，使用一个左右花括号。该函数将执行那些花括号中包含的代码。</p>
+<pre class="language-csharp"><code>$MyVariable = 1, 2, 3
+
+$MyVariable</code></pre>
+<p>例如:</p>
+<h3 id="function"><img src="../Images/fd290dd69d8314e2cb39a372ac65ee3f.png" alt="" data-original-src="https://hackr.io/blog/media/creating-a-simple-function-min.png"/></h3>
+
+<p><strong>使用模块</strong></p>
+
+<p>模块是包含PowerShell成员的包，例如cmdlets、提供程序、函数、工作流、变量和别名。您可以在PowerShell脚本和/或编译的DLL中实现包成员。首次在已安装的模块中运行任何命令时，PowerShell会自动导入模块。您可以在模块中使用命令，而无需设置或配置文件配置。</p>
+
+<p>要使用任何模块，您需要首先安装它们。然后，找到模块附带的命令并使用它们。</p>
+<ul>
+<li>如果您以文件夹的形式获得一个模块，请在PowerShell命令行上使用它之前安装它。有些模块是预装的。您可以使用以下命令为当前用户创建模块目录:</li>
+</ul>
+<p><img src="../Images/1915a50efc0fdc7f151b952c74bc580b.png" alt="" data-original-src="https://hackr.io/blog/media/working-with-modules-min.png"/></p>
+<p>将整个模块文件夹复制到模块目录中。您可以使用任何方法复制文件夹，包括Windows资源管理器、Cmd.exe和PowerShell。</p>
+<pre class="language-csharp"><code>function Get-Version {
+
+$PSVersionTable.PSVersion
+
+}</code></pre>
+<p><strong>查找已安装的模块</strong></p>
+<h3 id="working-with-modules">运行以下命令，查找安装在默认模块位置(非导入)的模块。</h3>
+<p><img src="../Images/2d63fec4418bd53201b234cc2a56219e.png" alt="" data-original-src="https://hackr.io/blog/media/finding-the-installed-modules-min.png"/></p>
+
+<p><strong>在模块中查找命令</strong></p>
+
+<p>运行以下命令来查找模块的命令:</p>
+<pre class="language-csharp"><code>New-Item -Type Directory -Path $HOME\Documents\PowerShell\Modules</code></pre>
+<p><img src="../Images/effed41a1ee38d7e22c07533deed8aff.png" alt="" data-original-src="https://hackr.io/blog/media/finding-commands-in-a-module-min.png"/></p>
+<p>使用正确的模块名称运行以下命令:</p>
+<ul>
+<li>您可以使用正确的模块名称运行以下命令:</li>
+</ul>
+<p><strong>查看默认模块位置</strong></p>
+<pre class="language-csharp"><code>Get-Module -ListAvailable</code></pre>
+<p>使用以下命令查看默认模块位置:</p>
+<ul>
+<li><strong>添加默认模块位置</strong></li>
+</ul>
+<p>您可以使用以下命令格式:</p>
+<pre class="language-csharp"><code>Get-Command -Module &lt;module-name&gt;
+
+Get-Command -Module Microsoft.PowerShell.Archive</code></pre>
+<p><strong>在Linux或MacOS上添加默认模块位置</strong></p>
+
+<p>仅在Linux或macOS上，使用以下命令执行与上面相同的命令:</p>
+<pre class="language-csharp"><code>Import-Module &lt;module-name&gt;</code></pre>
+
+<p><strong>哈希表</strong></p>
+<pre class="language-csharp"><code>Remove-Module &lt;module-name&gt;</code></pre>
+<ul>
+<li>哈希表是一种复杂的数据结构，以键值对的形式存储数据。我们也将哈希表称为字典或关联数组。要理解哈希表，请考虑一系列IP地址和相应的计算机名称。哈希以键-值对的形式存储这些数据，其中IP地址指的是键，计算机名指的是它们对应的值。</li>
+</ul>
+<p>哈希表语法如下:</p>
+<pre class="language-csharp"><code>$Env:PSModulePath</code></pre>
+<ul>
+<li>有序字典的语法如下:</li>
+</ul>
+<p>如果要创建哈希表，请按照下列步骤操作:</p>
+<pre class="language-csharp"><code>$Env:PSModulePath = $Env:PSModulePath + ";&lt;path&gt;"</code></pre>
+<ul>
+<li>哈希表以at符号(@)开始，并用花括号({})括起来。</li>
+</ul>
+<p>哈希表应该包含至少一个键值对，因此，在创建哈希表后输入数据。</p>
+<pre class="language-csharp"><code>$Env:PSModulePath += ":&lt;path&gt;"</code></pre>
+<h3 id="hash-tables">使用等号(=)将键与其值分开。</h3>
+<p>用分号(；)分隔哈希表中的键/值对；).</p>
+<p>用引号将键之间的空格括起来。值必须是有效的PowerShell表达式。另外，用引号将字符串括起来，即使它们之间没有空格。</p>
+<pre><strong>@{ &lt;name&gt; = &lt;value&gt;; [&lt;name&gt; = &lt;value&gt; ] ...}</strong></pre>
+<p>将哈希表保存为变量，以便有效地管理它。</p>
+<pre><strong>[ordered]@{ &lt;name&gt; = &lt;value&gt;; [&lt;name&gt; = &lt;value&gt; ] ...}</strong></pre>
+
+<p>将有序哈希表赋给变量时，将[ordered]属性放在@符号之前。如果将它放在变量名之前，该命令将失败。</p>
+<ul>
+<li>例如:</li>
+<li><img src="../Images/66ae92d933cf0e2384a5214e57f6ef9c.png" alt="" data-original-src="https://hackr.io/blog/media/creating-hash-tables-min.png"/></li>
+<li><strong>添加和删除键和值</strong></li>
+<li>要向哈希表添加键和值，请使用以下命令格式:</li>
+<li><strong>$ hash["&lt;key&gt;"]= "&lt;value&gt;"</strong></li>
+<li>例如，您可以使用以下语句格式将值为“Now”的“Time”键添加到哈希表中:</li>
+<li>或者</li>
+</ul>
+<p>或者，您可以使用以下语句格式删除密钥:</p>
+<pre class="language-csharp"><code>$hash = @{}
+
+$hash = @{ Number = 1; Shape = "Square"; Color = "Blue"}
+
+[hashtable]$hash = [ordered]@{
+
+Number = 1; Shape = "Square"; Color = "Blue"}
+
+$hash</code></pre>
+<p><strong>异步事件处理</strong></p>
+<ul>
+<li>这些cmdlets允许您注册和注销事件订阅，并列出现有订阅。您还可以列出未决事件，并根据需要处理或删除它们。</li>
+</ul>
+<p>PowerShell事件cmdlets</p>
+<p><strong>事件Cmdlet名称</strong></p>
+<p><strong>描述</strong></p>
+<pre class="language-csharp"><code>$hash["Time"] = "Now"</code></pre>
+<p>注册对象事件</p>
+<pre class="language-csharp"><code>$hash.Add("Time", "Now")</code></pre>
+<p>此cmdlet为生成的事件注册事件订阅。网络对象</p>
+<pre class="language-csharp"><code>$hash.Remove("Time")</code></pre>
+<h3 id="asynchronous-event-handling">注册-WmiEvent</h3>
+<p>为WMI对象生成的事件注册事件订阅</p>
+<p>注册引擎事件</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p>为PowerShell自身生成的事件注册事件订阅</p>
+</td>
+<td>
+<p>获取事件订阅者</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>获取会话中已注册事件订阅的列表</p>
+</td>
+<td>
+<p>注销-事件</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>移除一个或多个已注册的事件订阅</p>
+</td>
+<td>
+<p>等待事件</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>等待事件发生。此cmdlet可以等待特定事件或任何事件。它还允许指定超时，限制等待事件的时间。默认是永远等待。</p>
+</td>
+<td>
+<p>获取事件</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>从事件队列中获取挂起的未处理事件</p>
+</td>
+<td>
+<p>移除-事件</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>从事件队列中移除挂起的事件</p>
+</td>
+<td>
+<p>新事件</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>在脚本中调用此cmdlet，以允许脚本将其自己的事件添加到事件队列中</p>
+</td>
+<td>
+<p><strong>结论</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>底线？PowerShell备忘单是与PowerShell语法和命令相关的所有内容的一站式商店。在这个Windows PowerShell命令备忘单中，我们讨论了所有的基础知识，甚至可以帮助初学者浏览PowerShell。</p>
+</td>
+<td>
+<p>像任何其他编程语言一样，您可以使用变量和操作符，创建别名和函数，甚至维护流控制。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>如果您正在为即将到来的面试做准备，请将PowerShell 5.0备忘单放在手边，以便快速参考简单的示例。</p>
+</td>
+<td>
+<p>有兴趣使用Windows命令行扩展您的知识吗？</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a class="btn btn-primary btn-call-to-action " href="https://hackr.io/blog/windows-cli-cheat-sheet" target="_blank" rel="noopener">查看我们的Windows命令行备忘单</a></p>
+</td>
+<td>
+<p><strong>常见问题解答</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion"><strong> 1。如何获取PowerShell命令列表？</strong></h2>
+<p>您可以使用get-命令。</p>
+<p><img src="../Images/25dd21f07b6172132d84cda73f9ec876.png" alt="" data-original-src="https://hackr.io/blog/media/how-do-i-get-a-list-of-powershell-commands-min.png"/></p>
+<p><strong> 2。PowerShell命令有多少个？</strong></p>
+<p>PowerShell中有超过200个命令。</p>
+<p><strong> 3。初学者如何学习PowerShell？</strong></p>
+<h2 id="frequently-asked-questions">你可以考虑使用微软的PowerShell入门指南。它包括简单的语言和简单的例子，以增强您的理解。</h2>
+<h4 id="toc-1-how-do-i-get-a-list-of-powershell-commands"><strong> 4。Windows PowerShell和命令提示符一样吗？</strong></h4>
+<p>下表强调了PowerShell和命令提示符之间的主要区别:</p>
+<p><strong> PowerShell </strong></p>
+<h4 id="toc-2-how-many-powershell-commands-are-there"><strong>命令提示符</strong></h4>
+<p>2006年推出</p>
+<h4 id="toc-3-how-do-i-learn-powershell-for-beginners">1981年推出</h4>
+<p>适用于批处理命令和PowerShell cmdlets</p>
+<h4 id="toc-4-is-windows-powershell-the-same-as-command-prompt">仅适用于批处理命令</h4>
+<p>允许您为cmdlets或脚本创建别名</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p>不支持创建命令别名</p>
+</td>
+<td>
+<p>允许您将cmdlet的输出传递给其他cmdlet</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>不允许您将一个命令的输出传递给其他命令</p>
+</td>
+<td>
+<p>输出是对象的形式</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>输出只是文本</p>
+</td>
+<td>
+<p>可以在脚本中执行一系列cmdlets</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>要求一个命令在另一个命令之前完成</p>
+</td>
+<td>
+<p>有编程库，因为它是建立在。net框架。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>没有编程库</p>
+</td>
+<td>
+<p>与WMI无缝集成</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>WMI互动需要外部插件</p>
+</td>
+<td>
+<p>支持Linux系统</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>不支持Linux系统</p>
+</td>
+<td>
+<p>运行所有程序类型</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>仅运行控制台类型的程序</p>
+</td>
+<td>
+<p><strong> 5。如何让命令提示符代替PowerShell成为默认？</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>打开设置&gt;个性化&gt;任务栏。现在，把菜单中的“用Windows PowerShell替换命令提示符”当我右击开始按钮，或者按Windows键+X”选项为“关”。</p>
+</td>
+<td>
+<p><strong>人也在读:</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Supports Linux systems</p>
+</td>
+<td>
+<p>Doesn’t support Linux systems</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Runs all program types</p>
+</td>
+<td>
+<p>Only runs console type programs</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-5-how-can-i-make-command-prompt-default-instead-of-powershell"><strong>5. How Can I Make Command Prompt Default Instead of PowerShell?</strong></h4>
+<p>Open Settings &gt; Personalization &gt; Taskbar. Now, turn the “Replace Command Prompt with Windows PowerShell'' in the menu when I right-click the Start button, or press Windows key+X” option to “Off”.</p>
+<p><strong>People are also reading:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

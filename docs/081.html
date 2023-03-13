@@ -1,0 +1,241 @@
+<html>
+<head>
+<title>50 Top Linux Interview Questions and Answers in 2023 [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年50大Linux面试问答[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/linux-interview-questions#0001-01-01">https://hackr.io/blog/linux-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>Linux不仅仅是一个操作系统。相反，它是一个庞大的基于Linux内核的免费开源软件操作系统家族。</p>
+<p>系统安全和Linux管理密切相关。因此，当面试一份基于安全性的工作时，你会遇到Linux问题。</p>
+<h2 id="top-linux-interview-questions-and-answers">热门Linux面试问题和答案</h2>
+<p>在这里，我们收集了一份关于Linux面试问题和答案的列表，如果你的潜在工作机会以任何方式包含了Linux，你必须知道。</p>
+<h4 id="question-can-you-tell-us-about-the-basic-components-of-linux"><strong>问题</strong> : <strong>你能告诉我们Linux的基本组件吗？</strong></h4>
+<p><strong>回答</strong>:像任何其他典型的操作系统一样，Linux有一个应用程序、GUI、内核和外壳。使用Linux作为操作系统的主要优势在于它是开源的和高度可定制的，这使得它对于经验丰富的专业人员和新手来说都是同样理想的。</p>
+
+<h4 id="question-please-draw-a-comparison-between-bash-and-dos"><strong>问题</strong> : <strong>请对BASH和DOS做一个比较。</strong></h4>
+<p><strong>回答</strong> : DOS代表磁盘操作系统，BASH是Bourne Again Shell的缩写。一个<a href="https://en.wikipedia.org/wiki/Shell_(computing)" target="_blank" rel="noopener">外壳</a>仅仅是一个用户界面，用于访问操作系统提供的服务。它可以使用CLI和/或GUI。</p>
+<p>以下是DOS和BASH之间的显著区别:</p>
+<ol>
+<li><strong>区分大小写–</strong>DOS命令不区分大小写，但BASH命令区分大小写。</li>
+<li>使用/和\ -在BASH中，/充当目录分隔符，\充当转义符。DOS中/的作用是作为命令参数分隔符，并充当目录分隔符。</li>
+<li><strong>命名约定—</strong>DOS遵循的命名约定是，文件必须有一个8字符的文件名，后跟一个点和3字符的扩展名。BASH没有可用的命名约定。</li>
+</ol>
+<h4 id="question-how-will-you-check-out-how-much-memory-linux-is-using"><strong>问题</strong> : <strong>你如何检查Linux使用了多少内存？</strong></h4>
+<p><strong>回答</strong>:在命令shell中，使用concatenate命令:</p>
+<pre>cat /proc/meminfo</pre>
+<p>这将产生如下输出:</p>
+<pre>Mem: “some number in bytes”</pre>
+<h4 id="question-please-explain-symbolic-links-in-linux"><strong>问题</strong> : <strong>请解释一下Linux中的符号链接。</strong></h4>
+<p><strong>回答</strong>:符号链接指向Linux中的目录、文件、程序。它们允许即时访问它们所指向的对象，而无需遍历整个路径。因此，符号链接就像Windows中的快捷方式。</p>
+<h4 id="question-can-you-tell-us-about-the-various-kinds-of-permission-under-linux-also-explain-how-to-change-permissions"><strong>问题</strong> : <strong>你能告诉我们Linux下的各种许可吗？另外，解释如何更改权限。</strong></h4>
+<p><strong>回答【Linux下有三种权限:</strong></p>
+
+<ul>
+<li><strong>Read—</strong>允许用户读取文件或列出目录</li>
+<li><strong>Write—</strong>允许用户写入文件或向目录中添加新文件</li>
+<li><strong>执行–</strong>允许用户运行文件或查找目录中的特定文件</li>
+</ul>
+<p>系统管理员或文件或目录的所有者可以使用chmod命令向其他人授予权限。接下来是指定权限的接收者，接下来是授予还是拒绝权限，然后是权限的类型，最后是文件的名称。</p>
+<p>一般语法是这样的:</p>
+<pre>chmod permissionreceiver+typeofpermissions file</pre>
+<p>权限接收者可以是a代表所有人，g代表组，o代表其他人，u代表用户。Typeofpermissions可以是r代表读，w代表写，x代表执行。例如，一个命令:</p>
+<pre>chmod go+rwx DemoFile.TXT</pre>
+<p>将授予group和其他人对名为DemoFile的文件的读取、写入和执行权限。</p>
+<h4 id="question-please-explain-the-virtual-desktop-and-how-to-share-a-program-across-different-virtual-desktops-under-linux"><strong>问题</strong> : <strong>请解释一下虚拟桌面，以及如何在Linux下跨不同的虚拟桌面共享程序。</strong></h4>
+<p><strong>回答</strong>:简单来说，虚拟桌面是最小化和最大化不同窗口的替代方案。虚拟桌面允许在具有不同程序窗口的桌面之间移动，而不是最小化或恢复不同的程序。</p>
+<p>很多时候，需要在不同的虚拟桌面上共享一个程序。为此，只需转到程序窗口的左上角，单击图钉状的图标。它将锁定应用程序，使其可以跨所有虚拟桌面访问。</p>
+<h4 id="question-what-do-you-understand-by-daemons"><strong>问题</strong> : <strong>你所理解的守护进程是什么？</strong></h4>
+<p><strong>回答</strong>:守护进程是扩展基本操作系统功能的一种方式。换句话说，守护进程是提供操作系统中可能没有的几个功能的服务。</p>
+<p>守护进程的主要任务是主动监听服务请求，同时对它们进行处理。一旦完成服务，守护进程就会断开连接，等待进一步的请求。</p>
+<h4 id="question-please-explain-the-various-modes-when-using-the-vi-editor"><strong>问题</strong> : <strong>请解释使用vi编辑器时的各种模式。</strong></h4>
+<p><strong>回答</strong>:VI编辑器提供3种模式:</p>
+<ul>
+<li>命令模式–这是用户启动的模式</li>
+<li>编辑模式–该模式允许进行文本编辑</li>
+<li>Ex模式–该模式允许与vi交互，允许执行指令来处理文件</li>
+</ul>
+<h4 id="question-what-are-the-contents-of-usr-local"><strong>问题</strong>:<strong>/usr/local的内容是什么？</strong></h4>
+<p><strong>回答</strong>:/ usr/local目录包含本地安装的文件。当文件存储在某个网络上时，目录是非常重要的。此外，该目录用于存储从某个源安装的软件包或没有正式发布的软件。</p>
+<h4 id="question-tell-us-how-you-will-execute-more-than-one-command-or-program-from-a-single-command-line-entry"><strong>问题</strong> : <strong>告诉我们你将如何从一个命令行入口执行多个命令或程序。</strong></h4>
+<p><strong>回答</strong> : Linux允许在一行中组合几个命令。每个命令由分号(:)分隔。按照指定命令的顺序，从左到右执行。</p>
+<h4 id="question-what-do-you-mean-by-hard-links-in-linux"><strong>问题</strong>:<strong>Linux中的硬链接是什么意思？</strong></h4>
+<p><strong>回答</strong>:Linux中的硬链接直接指向磁盘上存在的物理文件。它与路径名无关。这只是意味着，如果文件被重命名或移动到其他位置，链接将不会中断，仍然像以前一样工作。</p>
+<h4 id="question-please-explain-case-sensitivity-issues-in-linux"><strong>问题</strong> : <strong>请解释一下Linux中的区分大小写问题。</strong></h4>
+<p><strong>回答</strong>:有时候在Linux中输入同一个命令会产生不同的输出。这通常归因于区分大小写。因为Linux是区分大小写的，所以以前产生所需输出的命令在再次执行时可能不会产生同样的结果。</p>
+<p>例如，ls命令负责列出目录中的所有文件。但是，输入lS、Ls或LS将显示错误。此外，如果有一个名为LS的程序，那么输入LS命令将执行它，而不是列出目录中的所有文件。</p>
+<h4 id="question-can-you-tell-what-does-a-nameless-directory-represents-in-linux"><strong>问题</strong> : <strong>你能说出一个无名目录在Linux中代表什么吗？</strong></h4>
+<p><strong>答案</strong>:空目录名作为Linux文件系统的无名库。它作为系统中所有其他设备、目录、驱动器和文件的附件。</p>
+<h4 id="question-can-you-draw-the-linux-architecture-answer"><strong>问题</strong> : <strong>你会画Linux架构吗？</strong> <br/> <strong>答案</strong> : <img class="aligncenter size-full wp-image-2786" src="../Images/6d0c8acc87d8df2700171f6ca0643f94.png" alt="Linux Architecture" data-original-src="https://hackr.io/blog/uploads/images/1570190913MSgT8YbbVl.jpg"/></h4>
+<h4 id="question-please-explain-how-to-enable-curl-on-ubuntu-lamp-stack-and-root-logging-in-ubuntu"><strong>问题</strong> : <strong>请解释一下如何在Ubuntu灯栈上启用curl和在Ubuntu中启用root logging？</strong></h4>
+<p><strong>回答</strong>:要在Ubuntu灯堆上启用curl:</p>
+<ol>
+<li>安装libcurl</li>
+<li>使用命令:sudo/etc/init。d /apache2重启服务apache2重启</li>
+</ol>
+<p>要在Ubuntu中启用root日志记录，请使用以下命令:</p>
+<pre>#sudo sh-c 'echo "greater-show-manual-login=true" &gt;&gt;/etc/lightdm/lightdm.conf'</pre>
+<h4 id="question-how-will-you-append-one-file-to-another-in-linux"><strong>问题</strong> : <strong>在Linux下，你如何将一个文件附加到另一个文件上？</strong></h4>
+<p><strong>回答</strong>:命令:</p>
+<pre>cat file1 &gt; file2</pre>
+<p>在Linux中追加两个文件。您可以使用命令追加尽可能多的文件。例如，要追加三个文件，即文件1、文件2和文件3，我们可以使用命令:</p>
+<pre>cat file1 &gt; file2 &gt; file3</pre>
+<p>在Linux中，将一个文件附加到另一个文件的另一种方法是使用命令:</p>
+<pre>cat file2&gt;&gt;file1</pre>
+<p>&gt;&gt;操作符追加命名文件的输出。</p>
+<h4 id="question-what-command-would-you-use-for-editing-searching-and-replacing-text-in-linux"><strong>问题</strong> : <strong>在Linux中，你会使用什么命令来编辑、搜索和替换文本？</strong></h4>
+<p><strong>回答</strong>:</p>
+<p><strong>编辑:</strong></p>
+<p>您可以使用cd命令，后跟您需要用来编辑文件的文本编辑器的名称，如vi。</p>
+<p><strong>搜索:</strong></p>
+<p>您可以使用以下命令在Linux中搜索文件:</p>
+
+<pre>find –iname “filename”</pre>
+<p>在Linux中，要搜索和打印文件中的文本，可以使用grep命令。</p>
+<p><strong>替换:</strong></p>
+<p>这个过程涉及到使用流编辑器(sed)。您需要使用以下命令:</p>
+<pre>sed -i 's/old-text/new-text/g' input.txt</pre>
+<p>输入需要替换旧文本的文本和需要添加的新文本。</p>
+<h4 id="question-what-do-you-understand-by-swap-space-in-linux"><strong>问题</strong> : <strong>你对Linux中交换空间的理解是什么？</strong></h4>
+<p><strong>回答</strong>:当RAM没有足够的内存来容纳当前正在执行的所有程序时，交换空间就开始发挥作用。交换空间是Linux操作系统用来临时保存并发运行的程序的一些内存空间。</p>
+<h4 id="question-please-explain-how-you-will-run-a-linux-program-in-the-background-together-with-starting-the-linux-server"><strong>问题</strong> : <strong>请解释你将如何在后台运行一个Linux程序，同时启动Linux服务器。</strong></h4>
+<p><strong>回答</strong>:需要先使用nohup命令。它将停止接收NOHUP信号的进程。终止将使您退出被调用的程序。然后启动Linux服务器，输入Linux程序的名称，后跟&amp;符号，在后台运行该进程。</p>
+<h4 id="question-can-you-explain-how-to-remotely-login-with-ssh"><strong>问题</strong> : <strong>你能解释一下如何用SSH远程登录吗？</strong></h4>
+<p><strong>回答</strong>:虽然有许多方法可以访问远程计算机，但是使用SSH(安全外壳)协议是普遍的首选。该协议利用公钥加密认证方法来保护主机之间的通信。</p>
+<p>要使用SSH命令，用户需要通过输入服务器的IP地址来定义服务器。如果192.168.100.22是需要SSH访问的系统的IP地址，则输入命令:</p>
+<p>ssh 192</p>
+<p>此外，您可以将显式用户名指定为:</p>
+
+<p>ssh someusername@192.168.100.22</p>
+
+<p>SSH允许数据压缩以及通过X11发送图形命令。正确配置后，SSH协议提供了一条安全线路，能够保护自己免受DNS欺骗和<a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack" target="_blank" rel="noopener">中间人攻击</a>。</p>
+<h4 id="question-please-explain-the-checking-for-rootkit-infections-in-linux"><strong>问题</strong> : <strong>请解释一下Linux中对Rootkit感染的检查。</strong></h4>
+<p><strong>回答</strong>:Rootkit是一种高级形式的恶意软件，会产生一系列安全问题，并且在许多情况下不会被普通的防病毒程序检测到。因此，需要使用先进的反间谍工具来检查Linux中的Rootkit感染。其中一个就是<a href="https://en.wikipedia.org/wiki/Rkhunter" target="_blank" rel="noopener"> rkhunter </a>。</p>
+<p>Rkhunter可以按照发行版软件包管理的说明从软件仓库安装。Debian和Ubuntu用户可以使用(sudo) apt-get install rkhunter命令，而基于Red Hat的发行版可以使用dnf或yum命令。</p>
+<p>其他几个值得注意的用于检查Linux中rootkit感染的安全工具是:</p>
+<ul>
+<li>chroot kit . chroot kit . chroot kit . chroot kit . chroot kit . chroot kit . chroot kit . chroot kit . chroot kit . chroot kit . chroot kit . chroot kit</li>
+<li>我在呼唤</li>
+<li>LMD(检测到Linux恶意软件)</li>
+<li>琳妮丝</li>
+</ul>
+<h4 id="question-define-linux"><strong>问题:定义Linux？</strong></h4>
+<p><strong>答案:</strong> <span> Linux是基于UNIX的操作系统。它可以在英特尔、惠普、IBM、摩托罗拉、SPARC和MIPS制造的各种平台上运行。Linux的吉祥物是Tux Paint的一只企鹅。</span></p>
+<h4 id="question-is-there-any-difference-between-unix-and-linux"><strong>问题:UNIX和LINUX有什么区别吗？</strong></h4>
+<p><strong>答案:</strong><span>UNIX和LINUX有巨大的区别。UNIX是贝尔实验室开发其商业版本的专有操作系统。另一方面，LINUX是面向大众的完全免费的开源操作系统。</span></p>
+<h4 id="question-define-the-linux-kernel"><strong>问题:定义LINUX内核？</strong></h4>
+<p><strong>答案:</strong> <span> LINUX内核是对能够为用户管理不同硬件资源的底层系统软件的统称。它有助于为用户级交互提供一个界面。</span></p>
+<h4 id="question-what-is-lilo-in-linux"><strong>问题:LINUX中的LILO是什么？</strong></h4>
+<p><strong>答案:</strong> <span> LILO是LINUX中给bootload起的名字。它的功能是将LINUX操作系统加载到主内存中，以便启动操作系统。</span></p>
+<h4 id="question-what-are-the-advantages-of-an-open-source">问:开源的优势是什么？</h4>
+<p><strong>回答:</strong> <span>开源有各种各样的优势，其中包括:</span></p>
+<ol>
+<li>它有助于将带有源代码的软件免费分发给用户。</li>
+<li>它支持用户添加新功能、调试和纠正源代码中的错误。</li>
+<li>它有助于重新发布新的、改进的源代码，并免费提供给其他用户。</li>
+</ol>
+<h4 id="question-what-are-the-differences-between-the-bash-and-dos-commands">问:BASH和DOS命令之间有什么区别？</h4>
+<p><strong>回答:</strong><span>BASH和DOS命令有几个不同之处，包括:</span></p>
+
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>痛击</strong></p>
+</td>
+<td>
+<p><strong> DOS </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>它区分大小写。</p>
+</td>
+<td>
+<p>不区分大小写。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>字符充当目录分隔符和转义符。</p>
+</td>
+<td>
+<p>它还可以作为命令参数分隔符和目录分隔符。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>它不遵循惯例。</p>
+</td>
+<td>
+<p><span>它遵循命名文件的惯例，文件名为八个字符，扩展名为一个点和三个字符。</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="question-what-are-the-advantages-of-the-gnu-project"><strong>问题:GNU项目有什么优势？</strong></h4>
+<p><strong>回答:</strong><span>GNU项目是一个自由软件，它提供了如下各种优势。</span></p>
+
+<ol>
+<li>它提供了为任何目的运行程序的自由。</li>
+<li>它有助于根据用户需要学习和修改程序。</li>
+<li>它允许向人们重新分发软件的拷贝。</li>
+<li>它有助于改进软件。</li>
+<li>它支持向公众发布软件。</li>
+</ol>
+<h4 id="question-what-is-a-root-account"><strong>问题:什么是Root账户？</strong></h4>
+<p><strong>答:</strong><span>Root帐户是系统管理员帐户，有助于对系统进行完全控制。它有助于创建和维护各种用户帐户，从而为每个帐户分配不同种类的权限。默认情况下，只要安装了LINUX，就会出现这种情况。</span></p>
+<h4 id="question-what-is-the-full-form-of-cli-and-gui"><strong>问题:CLI和GUI的完整形式是什么？</strong></h4>
+<p><strong>答案:</strong> <span> CLI代表命令行界面，GUI代表图形用户界面。</span></p>
+<h4 id="question-explain-cli"><strong>问题:解释CLI？</strong></h4>
+<p>答: <span> CLI是一种界面，它允许用户键入各种声明性命令，这些命令旨在指示计算机执行其特定功能。它为用户提供了更大的灵活性。</span></p>
+<h4 id="question-explain-gui"><strong>问题:解释GUI？</strong></h4>
+<p><strong>答:</strong> <span>图形用户界面有助于利用图像和图标，使用户可以点击和操纵与计算机交流的方式。它有助于消除对类型命令的依赖，并支持图形元素表示以与系统交互。</span></p>
+<h4 id="question-how-can-we-open-a-command-prompt-in-linux"><strong>问题:如何在LINUX中打开命令提示符？</strong></h4>
+<p><strong>答案:</strong> <span>我们可以通过按Ctrl+Alt+F1来打开发出命令时的命令提示符。它将有助于提供命令行界面(CLI ),可以根据需要运行命令。</span></p>
+<h4 id="question-can-we-find-how-much-memory-linux-is-using">问题:我们能发现LINUX使用了多少内存吗？</h4>
+<p><strong>回答:</strong> <span>是的，我们可以发现LINUX使用了多少内存。这可以通过应用命令shell来完成，即通过应用cat/proc/meminfo来执行“Concatenate”命令。这将有助于显示内存使用情况。结果以Mem:12345678等形式出现。这个结果就是LINUX必须提供给你的可用内存。</span></p>
+<h4 id="question-what-is-the-size-of-a-swap-partition-in-linux"><strong>问题:LINUX中交换分区的大小是多少？</strong></h4>
+<p><strong>回答:</strong><span>LINUX中交换分区的大小是系统可用物理内存的两倍。但是，最小大小是安装的内存量。</span></p>
+<h4 id="question-how-does-ctrl-alt-del-key-combination-work-in-linux"><strong>问题:LINUX中Ctrl+Alt+Del组合键如何工作？</strong></h4>
+<p><strong>答案:</strong><span>Ctrl+Alt+Del组合键在LINUX下工作，就像在Windows下工作一样。这个组合键有助于重启系统。但是，在LINUX中，重启之前不会显示确认消息，重启会立即发生。</span></p>
+<h4 id="question-how-can-we-refer-to-the-parallel-ports-in-linux"><strong>问题:如何引用LINUX中的并口？</strong></h4>
+<p><strong>答:</strong> <span>并口包括打印机、扫描仪以及其他各种连接到计算机系统的电子设备。在Linux中，这些并行端口对于LPT1称为/dev/lp0，对于LPT2称为/dev/lp1，依此类推。</span></p>
+<h4 id="question-how-are-drives-represented-in-linux">问题:在LINUX中，驱动器是如何表示的？</h4>
+<p><strong>答:</strong> <span>软盘驱动器、硬盘驱动器和其他驱动器不在驱动器号中表示，而是用不同的名称表示，如/dev/fd0或fd1表示软盘驱动器1和2。对于硬盘，它被称为/dev/hda或hdb或hdc等。</span></p>
+<h4 id="question-what-is-a-pwd-command-in-linux"><strong>问题:LINUX中的pwd命令是什么？</strong></h4>
+<p><strong>回答:</strong> <span> pwd代表<strong>打印工作目录</strong>。该命令用于打印工作目录。</span></p>
+<h4 id="question-are-there-any-environmental-variables-in-linux"><strong>问题:LINUX中有环境变量吗？</strong></h4>
+<p><strong>答案:</strong> <span>是的，LINUX中有各种各样的环境变量，其中就包括shell函数，也就是我们常说的全局shell变量。</span></p>
+<h4 id="question-define-redirection-in-linux"><strong>问题:在LINUX中定义重定向？</strong></h4>
+<p><strong>答案:</strong><span>LINUX中的重定向是将数据从一个输出定向到另一个输出的过程。它可以用作另一个流程的直接输入，以获得所需的输出。</span></p>
+<h4 id="question-define-the-grep-command"><strong>问题:定义Grep命令？</strong></h4>
+<p><strong>答:</strong> <span> Grep命令用作搜索命令，以便可以启动基于特定模式的搜索。它有助于使用命令行附带的各种选项和参数，以便获得所需的文件输出。</span></p>
+<h4 id="question-can-we-terminate-an-ongoing-process-in-linux">问:我们能在LINUX中终止一个正在进行的进程吗？</h4>
+<p><strong>答:</strong> <span>是的，我们可以在LINUX中通过使用<strong> <span> Kill命令、</span> </strong>来终止一个正在进行的进程，然后使用pid来终止特定的进程。可以使用Kill 0来终止所有进程。</span></p>
+
+<p><strong>回答:</strong> <span>是的，我们可以通过在实际的注释文本前键入#符号，在命令行提示中插入注释。因此，shell将忽略所写的内容，并显示注释。</span></p>
+<h4 id="question-how-can-we-apply-command-grouping-in-linux"><strong>问题:如何在LINUX中应用命令分组？</strong></h4>
+<p><strong>答案:</strong> <span>在LINUX中可以通过给分组命令加上括号来应用命令分组。</span></p>
+<h4 id="question-can-we-uninstall-the-libraries-in-linux"><strong>问题:我们可以卸载LINUX中的库吗？</strong></h4>
+<p><strong>回答:</strong> <span>是的，我们可以使用命令sudo apt-get remove library_name卸载LINUX中的库。</span></p>
+<h4 id="question-how-will-you-setup-password-aging-in-linux"><strong>问题</strong> : <strong>你将如何在Linux中设置密码老化？</strong></h4>
+<p><strong>回答</strong>:chage命令允许Linux中的系统管理员强制密码老化。该命令用于更改强制密码重置的间隔天数。/etc/login.defs文件负责处理系统范围的配置。可以对其进行编辑:</p>
+<ul>
+<li>PASS _ MAX _ DAYS–定义密码可以使用的最大天数。</li>
+<li>PASS _ MIN _ DAYS–定义密码更改之间允许的最小天数。</li>
+<li>PASS _ WARN _ AGE–定义密码过期前发出警告的天数。</li>
+</ul>
+<h2 id="summary"><strong>总结</strong></h2>
+<p>这就完成了重要的Linux面试问题列表。我希望这些问题能帮助你理清即将到来的Linux面试。</p>
+<p>如果你想在面试前做更深入的准备，<a href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https://www.udemy.com/course/linux-technical-interview-questions-and-answers/" target="_blank" rel="nofollow noopener"> Linux技术面试问题</a>是udemy上一门评价很高的课程。</p>
+<p>还有一本笔记本可以用来复习所有基本的Linux命令，与<a href="https://geni.us/8Ttyo" target="_blank" rel="nofollow noopener"> Linux面试</a>相关。</p>
+<p>查看一些最好的Linux系统管理教程。你期待的哪些问题没有列在清单上？有给出错误答案的吗？请通过下面的评论窗口告诉我们。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

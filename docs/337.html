@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>What is Docker? A Deep Dive into Docker Container</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Docker是什么？深入了解Docker容器</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/what-is-docker#0001-01-01">https://hackr.io/blog/what-is-docker#0001-01-01</a></blockquote><div><div class="content">
+										<p>容器变得越来越受欢迎。这导致了基于容器化的工具的出现，最著名的是Docker和Kubernetes。</p>
+<p>前者是一个用于开发容器的免费开源工具(以及一套PaaS产品),而后者是一个开源的容器编排系统，提供了一种自动化管理、扩展和部署应用程序的方法。</p>
+<p>在这篇文章中，我们将重点关注Docker。容器可以理解为标准化的可执行组件，它将应用程序源代码与所有必需的操作系统库和依赖项打包在一起，以便在某些环境中运行应用程序。</p>
+<p>在深入研究Docker之前，让我们先了解一下集装箱化的概念。</p>
+
+<h2 id="what-is-containerization">什么是集装箱化？</h2>
+<p>在计算科学中，容器被定义为包含关于应用程序及其所有依赖项的代码的包。</p>
+<p>这带来了几个好处，比如快速执行和增强的可靠性。然而，最大的好处来自于平台独立性和改进的可访问性。</p>
+<p><span>容器几乎可以在任何平台上使用，不用太担心硬件配置。对于解决由来已久的平台依赖性问题来说，这是一个巨大的飞跃。</span></p>
+<p>容器映像是可执行的、轻量级的、独立的包。它们包括运行应用程序所需的一切:代码、运行时环境、设置、系统工具和库。它们在运行时成为容器。</p>
+<p>例如，Docker容器图像一旦开始在Docker引擎上运行，就变成了容器。不考虑基础设施，容器化的软件应用程序运行相同。容器将应用程序与环境隔离开来，以确保它们统一执行。</p>
+<p>机器虚拟化允许多个虚拟机共享一台硬件服务器的资源。类似地，几个应用程序组件使用称为虚拟化的过程共享一个操作系统内核实例的资源。在容器的情况下，这是在操作系统级完成的。</p>
+
+<h3 id="containers-vs-virtual-machines"><strong>容器vs虚拟机</strong></h3>
+<p>与虚拟机一样，容器可以经济高效地扩展，独立运行，并且易于处置。然而，操作系统级的额外抽象层带来了更多的好处。这些是:</p>
+<ul>
+<li><strong>更高的开发效率:</strong> <span> <strong> </strong>与虚拟机相比，容器的部署、供应和重启更加简单快捷。因此，它们是使用</span> <a href="https://en.wikipedia.org/wiki/Continuous_integration"> <span> CI(持续集成)</span> </a> <span>和CD(持续交付)管道的更好选择。对于基于敏捷和DevOps的过程，它们也是更好的选择。</span></li>
+<li><strong>更轻量:</strong> <span> <strong> </strong>容器只包含流程及其相关的依赖项。另一方面，虚拟机有一个额外的操作系统实例。因此，对于相同的应用程序进程，容器比其虚拟机对手的容器更轻。</span></li>
+<li><strong>卓越的资源利用率:</strong> <span>像虚拟机一样，容器允许在同一硬件上多次运行一个应用程序进程的多个副本。然而，它们更节省资源。</span></li>
+</ul>
+<h2 id="what-is-docker-the-gold-standard-of-containerization"><strong>Docker是什么？-集装箱化的黄金标准</strong></h2>
+<p>Docker是Docker公司的一个容器化平台。通过利用操作系统级虚拟化，它允许开发人员将应用程序打包到容器中。Docker有助于构建、部署、运行、更新和管理容器。</p>
+<p>集装箱化工具的特点是简单的命令和省力的自动化，在使用集装箱时节省了大量的精力和时间。尽管Docker是免费使用的开源软件，但它也有商业版本。</p>
+<p>尽管集装箱运输自70年代就已出现，但它只是在最近才变得如此普遍。Docker公司推广这一技术功不可没。</p>
+<p>Linux容器，或称LXC，于2008年在Linux内核中实现。这为一个Linux实例启用了虚拟化。虽然Docker的早期版本使用LXC，但它能够开发出超越LXC的独特集装箱化技术。</p>
+<p><span>因此，期待学习集装箱化时，学习码头工人 </span> <span>有利于</span> <span> <a href="https://hackr.io/tutorials/learn-docker">。Docker的受欢迎程度可以很容易地通过今天Docker和containers可以互换使用的事实来衡量。</a></span></p>
+<h2 id="why-docker"><strong>为什么是Docker？</strong></h2>
+<p>当需要使用容器时，有几个令人信服的理由说明为什么应该使用Docker。最重要的是:</p>
+<ul>
+<li><strong>自动创建容器:</strong><span>Docker根据应用源代码，自动构建相关的容器。</span></li>
+</ul>
+<ul>
+<ul>
+<li><strong>行业标准的创建者:</strong> <span> Docker，负责创建和设定集装箱的行业标准。</span></li>
+<li><strong>粒度更新:</strong> <span>每个Docker容器只有一个进程。这允许相关应用保持运行，即使当它的一部分，即进程，正在接收更新或经历修复。</span></li>
+</ul>
+</ul>
+<ul>
+<li><strong>Docker图像的海量存储库:</strong><span>Docker的用户可以免费访问一个开源注册表，该注册表存储了数万张用户提交的Docker容器图像。</span></li>
+</ul>
+<ul>
+<ul>
+<li>轻量级<span>——Docker容器共享一台机器的操作系统内核，因此，不像虚拟机那样，每个应用程序都需要一个操作系统映像。这将提高服务器效率，并降低服务器和许可费用。</span></li>
+</ul>
+</ul>
+<ul>
+<li><strong>最安全</strong><span>——容器内的应用程序是安全的。Docker提供了最强大的默认隔离功能。</span></li>
+</ul>
+<ul>
+<ul>
+<li><strong>便携:</strong> <span> Docker集装箱可以在任何地方使用。它们可以在任何云、桌面或移动环境中运行，无需任何修改。</span></li>
+</ul>
+</ul>
+<ul>
+<li><strong>高级版本:</strong> <span> Docker能够:</span></li>
+</ul>
+<ul>
+<ul>
+<ul>
+<li><span>回滚到以前版本的容器映像。</span></li>
+<li>跟踪Docker容器映像的版本是如何构建的以及是谁构建的。</li>
+<li><span>跟踪Docker容器图像的版本。</span></li>
+<li><span>仅上传Docker容器映像的现有版本和最新版本之间的差异。</span></li>
+</ul>
+</ul>
+<li><strong>新容器的模板:</strong> <span> Docker允许使用现有的Docker容器作为基础映像，即用于开发新容器的模板。</span></li>
+</ul>
+<p><span> <a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fdocker-kubernetes-the-practical-guide%2F" target="_blank" rel="noopener"> Docker &amp; Kubernetes:实用指南【2023年版】</a>T3】</span></p>
+<h2 id="docker-glossary"><strong> Docker词汇表</strong></h2>
+<p><span> Docker涉及很多专业术语和概念。为了充分理解Docker的概念，我们需要理解它们。以下是各种Docker术语的简要说明:</span></p>
+<h3 id="toc-1-docker-container"><strong> 1。码头集装箱</strong></h3>
+<p>Docker容器映像的运行实例是Docker容器。与容器映像不同，Docker容器是瞬时的、实时的，并且具有可执行的内容。</p>
+<p>关于Docker容器的条件和设置由管理员管理。这使得用户与相同的交互成为可能。</p>
+<h3 id="toc-2-docker-container-image"><strong> 2。Docker容器图像</strong></h3>
+<p>Docker容器映像将可执行的应用程序源代码与所有的依赖项打包在一起，例如运行“包含的”应用程序所必需的工具和库。它是一个只读实体。</p>
+<p>一旦Docker映像开始运行，它就成为容器的一个实例。同一Docker容器可以有一个或多个实例同时运行。</p>
+<p>虽然从虚无中开发一个Docker映像很容易，但是从一个基础映像中创建一个要容易得多。甚至可以用一个基础映像创建多个Docker映像。在这种情况下，所有生成的Docker图像将共享其堆栈的几个特征。</p>
+<p>这种易于开发的特性促使许多开发人员从开源/公共Docker库(如Docker Hub)中提取基础映像。这些库被称为Docker注册表。</p>
+<p>通常，一个Docker图像填充几层。每一层对应于开发人员进行更改的时间。因此，顶层对应于对Docker容器映像所做的最新更改。</p>
+<p>的确，这是一个非常有用的功能，可以在不愉快的情况下回滚到Docker映像的先前版本，包括失败或者事情没有按照预期的方式发展。此外，也有可能在其他项目中使用它们。谈一石二鸟。</p>
+<p>当Docker映像运行时，即形成Docker容器时，形成的最顶层被称为容器层。对容器所做的所有更改都保存在容器层中，并且只在容器的生命周期内存在，即直到它运行。</p>
+<p>由于上述原因，从单个基础映像运行多个容器实例可以提高整体效率。</p>
+<h3 id="toc-3-dockerfile"><strong> 3。DockerFile </strong></h3>
+<p><span/><span>Docker file</span><span>是一个纯文本文件，包含构建Docker容器映像的指令。每个Docker容器都有一个</span> <span> DockerFile </span> <span>。它自动化了创建Docker映像的整个过程。</span></p>
+<p>Docker引擎负责组装Docker容器映像。相关的 <span> DockerFile </span> <span>有所有的命令和特定的序列，帮助Docker引擎建立Docker容器映像。</span></p>
+<h3 id="toc-4-docker-hub"><strong> 4 .码头枢纽〔t1〕</strong></h3>
+<p>Docker Hub自称是最大的容器图片社区和图书馆，是Docker图片的最高储存库。回购的提交通常由:</p>
+<ul>
+<li><span>商业软件厂商</span></li>
+<li><span>开源项目团队</span></li>
+<li><span>个人开发者</span></li>
+</ul>
+<p>公共存储库还包含经Docker可信注册中心认证的Docker容器映像。由于它是一个公共的Docker库，用户可以随时随意地拉或推图片。</p>
+<p><span> <a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.2074534&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fdocker-certified-associate%2F" target="_blank" rel="noopener"> Docker认证助理:硕士课程【2023版】</a> </span></p>
+<h2 id="docker-components"><strong> Docker组件</strong></h2>
+<p><span>码头工人SaaS有三个组成部分:</span></p>
+<h3 id="toc-1-docker-objects"><strong> 1。Docker对象</strong></h3>
+<p>为了在Docker中组装应用程序，使用了Docker对象。Docker对象主要有三类:</p>
+
+<ul>
+<li>Docker容器: <span>这些是运行应用程序的标准化隔离环境。Docker API或CLI负责管理Docker容器。</span></li>
+</ul>
+<ul>
+<li><strong> Docker图片:</strong> <span>用于构建Docker容器的只读模板。使用Docker映像来运输和存储应用程序。</span></li>
+<li><strong> Docker服务:</strong> <span>允许跨多个Docker守护进程扩展Docker容器。一组通过Docker API进行通信的协作Docker守护进程被称为</span> <span>群</span> <span>。</span></li>
+</ul>
+<h3 id="toc-2-docker-registries"><strong> 2。码头登记处</strong></h3>
+<p>Docker映像的存储库称为Docker注册表。这些可以是公共的(任何人都可以访问)，也可以是私有的(只有授权的人才能访问)。默认注册中心Docker Hub和Docker Cloud是两个领先的公共Docker注册中心。</p>
+<p>Docker客户端连接到Docker注册表，以获取(下载)或推送(上传)Docker映像。也可以使用Docker注册表创建基于事件的通知。</p>
+<h3 id="toc-3-the-docker-daemon"><strong> 3 .码头守护程式</strong></h3>
+<p>被称为<span/><span>的Docker守护进程是一个持久进程。它负责管理Docker容器和处理容器对象。它还监听通过Docker引擎API发送的请求。</span></p>
+<p>用户和Docker守护进程之间的间隙是使用Docker客户端程序来实现的。它被标记为Docker  <span>并带有命令行界面。</span></p>
+<h2 id="docker-compose"><strong>坞站组成</strong></h2>
+<p>Docker Compose是一款帮助定义和运行多容器应用的工具。它创建YAML文件，允许只使用一个命令部署和运行容器。这些还指定了相关应用程序中包含的服务。</p>
+<p><span/><span>docker-compose . yml</span><span>文件有助于定义应用程序的服务，还包括配置选项。Docker Compose适用于管理由驻留在几个容器中的进程构建的应用程序的架构，所有这些进程都存在于一个主机上。它允许:</span></p>
+<ul>
+<li><span>定义持久存储卷，</span></li>
+<li><span>记录和配置服务依赖关系，以及</span></li>
+<li><span>指定基节点。</span></li>
+</ul>
+<p><span/><span>docker-compose CLI</span><span>使用户能够同时在几个容器上运行命令。这些命令通常包括:</span></p>
+<ul>
+<li><span>建筑图像</span></li>
+<li><span>缩放容器</span></li>
+<li><span>运行容器</span></li>
+</ul>
+<p>在Docker Compose中，图像处理和用户交互选项等命令是不相关的。这是因为这些命令只对一个容器有效。</p>
+<h2 id="deployment-and-orchestration"><strong>部署和协调</strong></h2>
+<p>当只有几个容器运行时，Docker引擎足以管理一个应用程序。不需要额外工具。然而，当部署有数千甚至更多的容器和数百个服务时，就需要额外的工具。</p>
+<p>在这样的场景中，需要一个编排工具。两个最流行的工具是Docker自己的Docker Swarm和管理多容器环境的最佳工具Kubernetes。</p>
+
+
+<p>Docker Swarm为Docker容器提供本地集群功能，将多个Docker引擎合并为一个虚拟Docker引擎。群体模式集成在Docker引擎中。 <span> docker swarm CLI </span> <span>为一系列任务提供支持，包括:</span></p>
+
+<ul>
+<li><span>创建发现令牌，</span></li>
+<li><span>运行Swarm容器，以及</span></li>
+<li><span>列出集群中的各个节点。</span></li>
+</ul>
+<p>为了管理集群，即协作Docker守护进程的集合，Docker利用了Raft一致性算法。它声明当大多数群节点同意更新时，执行更新。</p>
+
+<p>Kubernetes是一个开源的容器编排系统，可以自动化管理、扩展、路由等。集装箱。虽然最初是由科技巨头谷歌开发的，但它的进一步发展掌握在CNCF(云计算原生计算基金会)手中。</p>
+<p>尽管有Docker Swarm，但Kubernetes是管理基于Docker容器化的多容器环境的最佳选择。开发者更喜欢一前一后地使用 <a href="https://hackr.io/blog/kubernetes-vs-docker#the-synergy-among-docker-and-kubernetes"> <span> Kubernetes和</span></a><span>Docker。Docker桌面以其Kubernetes发行版为特色。</span></p>
+<p>在Docker-Kubernetes系统中，Docker是打包和发布应用程序的工具，而Kubernetes是部署和扩展应用程序的工具。</p>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p><span>总结了这篇详细的文章。本质上，它是利用操作系统级虚拟化的最流行的容器化工具。集装箱化正成为最热门的IT技术之一。随着它的持续增长，对Docker的需求也在增长。</span></p>
+<p>你认为集装箱化技术怎么样？值得你花时间吗？请通过下面的评论让我们知道。你认为你了解多克吗？用这些顶级 <a href="https://hackr.io/blog/docker-interview-questions"> <span> Docker面试题</span> </a> <span>来考核你的知识。</span></p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

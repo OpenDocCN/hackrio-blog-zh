@@ -1,0 +1,224 @@
+<html>
+<head>
+<title>Hadoop vs Spark: A Head to Head Comparison in 2023</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Hadoop vs Spark:2023年势均力敌</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/hadoop-vs-spark#0001-01-01">https://hackr.io/blog/hadoop-vs-spark#0001-01-01</a></blockquote><div><div class="content">
+										<p>您是否想知道对大数据使用哪个框架？这种Hadoop与Spark的比较将使您清楚哪个最适合您的需求。</p>
+<p>互联网导致了海量数据的不断产生，这就是众所周知的大数据。这些结构化和非结构化形式的数据是从社交网络、物联网(IoT)和传统交易业务等主要来源生成的。</p>
+<p>分布式计算促进了大数据的新一代数据管理，是硬件和软件技术的革命性创新。分布式数据处理有助于存储、处理和访问这种高速、大容量和多种多样的数据。</p>
+<p>随着分布式计算在大数据生态系统中占据主导地位，两个强大的产品Apache Hadoop和<a href="https://spark.apache.org/" target="_blank" rel="noopener">Spark</a>-变得非常重要。有了Hadoop和Spark，大数据管理专业人员的生活变得轻松多了。但是为什么和如何？</p>
+
+<p>我们先来看看Hadoop和Spark是什么，Hadoop和Spark的关键区别，在头对头的比较中哪个更好。</p>
+<h2 id="hadoop-vs-spark-head-to-head-comparison">Hadoop与Spark:面对面的比较</h2>
+<p>下面的表格总结了Hadoop和Spark之间的差异，以及一些相似之处。</p>
+<table>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p>特征</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Hadoop</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>火花</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>开放源码</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>是</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>是</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>容错</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>是</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>是</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>数据集成</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>是</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>是</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>速度</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>低性能</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>更高的性能(快100倍)</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>易用性</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>冗长的代码，缓慢的开发周期</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>更快的开发周期</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>应用</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>成批数据处理</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>实时和批量数据处理</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>潜伏</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>高的</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>低的</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>开发者社区支持</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>是</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>是</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>费用</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>降低总拥有成本</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>更高的总拥有成本</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>内存消耗</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>基于磁盘的</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>基于RAM的</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-is-the-hadoop-framework">什么是Hadoop框架？</h2>
+<p>Apache Hadoop软件库是一个框架，用于使用简单的编程模型跨计算机集群分布式处理大型数据集。它旨在从一台服务器扩展到数千台机器，每台机器都提供本地计算和存储。</p>
+<p>该框架本身不是依赖硬件来提供高可用性，而是设计用于检测和处理应用层的故障。简单来说，Hadoop在一个计算机集群之上提供了一个高度分布式的处理服务。</p>
+<p><img src="../Images/cf252544b0d485233de405225c93bdfe.png" alt="Hadoop Framework" data-original-src="https://hackr.io/blog/media/apache-hadoop-framework.png"/></p>
+<p>以下是主要的<a href="https://hackr.io/blog/hadoop-ecosystem-components" target="_blank" rel="noopener"> Hadoop组件</a>:</p>
+
+<ul>
+<li>Hadoop Common:支持其他Hadoop模块的公共工具</li>
+<li>Hadoop分布式文件系统(HDFS):Hadoop应用程序使用的主要数据存储。它是一个分布式文件系统，提供对应用程序数据的高吞吐量访问。</li>
+<li>Hadoop YARN:作业调度和集群资源管理框架</li>
+<li>Hadoop MapReduce:基于YARN的大数据集并行处理系统</li>
+<li>Hadoop Ozone:Hadoop的对象存储</li>
+<li>Hadoop潜水艇:Hadoop的机器学习引擎</li>
+</ul>
+<h2 id="what-is-the-spark-framework">什么是Spark框架？</h2>
+<p>Apache Spark是一个通用的分布式数据处理框架，其核心引擎适用于各种计算环境。在Spark核心之上，有SQL、机器学习、图形计算和流处理的库，它们可以在一个应用程序中一起使用。弹性分布式数据集(RDD)是Spark的基本数据结构。</p>
+<p><img src="../Images/1395cc0bb70dd2923ddc8735b3048f12.png" alt="What is the Spark Framework" data-original-src="https://hackr.io/blog/media/what-is-the-spark-framework.png"/></p>
+<p><a href="https://hackr.io/blog/best-programming-languages-to-learn">Spark支持的编程语言</a>包括Java、Python、Scala和r，应用程序开发人员和数据科学家将Spark集成到他们的应用程序中，以快速查询、分析和转换大规模数据。Spark最常见的任务包括跨大型数据集的ETL和SQL批处理作业，处理来自传感器、物联网或金融系统的流数据，以及机器学习任务。</p>
+<p>两者都来自Apache产品架。那么是什么为Apache Spark铺平了道路呢？Apache Hadoop MapReduce是一个极其著名且广泛使用的执行引擎。然而，用户一直抱怨Hadoop MapReduce的高延迟问题，指出这些实时应用程序的批处理模式响应在处理和分析数据时很慢。</p>
+<p>这导致了Spark，一个比Hadoop MapReduce更强大、更灵活的后继系统。</p>
+<p>Spark可以运行在Hadoop、Apache Mesos、Kubernetes上，可以独立运行，也可以运行在云中。它可以访问各种数据源，包括HDFS、Alluxio、Apache Cassandra、Apache HBase、Apache Hive和数百个其他数据源</p>
+<h3 id="is-hadoop-better-than-spark">Hadoop比Spark好吗？</h3>
+<p>这两者协同工作，因此Hadoop是否优于Spark的问题有些悬而未决。大多数时候，Spark会在Hadoop集群上运行。</p>
+<p>但是，在某些情况下，您可能希望明确地选择一个而不是另一个。例如，如果内存不足或只是一个较旧的集群，您可能希望选择Hadoop。</p>
+<h3 id="are-spark-and-hadoop-the-same">Spark和Hadoop是一样的吗？</h3>
+<p>不，它们不是，尽管它们都是大数据框架，尽管Spark属于Hadoop。</p>
+<p>Hadoop允许您通过跨计算机集群的分布式计算来管理大数据。Spark帮助您处理这些计算机上的数据。</p>
+<h3 id="is-spark-replacing-hadoop">Spark是否正在取代Hadoop？</h3>
+<p>不，但Spark在行业中找到了更多的用途，因为它取代了Hadoop的MapReduce功能。Spark运行在Hadoop之上，两者都有特定的目的，它们以各自的成功程度实现不同的目标。</p>
+<h3 id="why-is-spark-faster-than-hadoop">为什么Spark比Hadoop快？</h3>
+<p>Spark在内存上理论上快100倍，在磁盘上快10倍。它比Hadoop的MapReduce更快，因为它在RAM中进行处理，减少了读写操作。</p>
+<h3 id="is-hadoop-required-for-spark">Spark需要Hadoop吗？</h3>
+<p>Sparkdocumentation说Spark可以在没有Hadoop的情况下运行。您可以在没有任何资源管理器的情况下以独立模式运行它。但是如果你想在一个多节点系统中运行，你需要一个像YARN或Mesos这样的资源管理器和一个像HDFS或S3这样的分布式文件系统。</p>
+<h2 id="hadoop-vs-spark-which-is-better">Hadoop vs Spark:哪个更好？</h2>
+<p>现在我们知道了Hadoop和Spark的基本原理，让我们来看看哪个在各个方面优于另一个。</p>
+<h3 id="toc-1-open-source-tie">1.开源- Tie</h3>
+<p>Hadoop和Spark都是Apache产品，都是可靠的可扩展分布式计算的开源软件。</p>
+<h3 id="toc-2-fault-tolerance-tie">2.容错- Tie</h3>
+<p>故障是指失败，Hadoop和Spark都是容错的。即使集群中的一个节点出现故障，Hadoop系统也能正常运行。容错主要通过使用数据复制和心跳消息来实现。rdd是Apache Spark的构建块，并且在其中提供容错。</p>
+<h3 id="toc-3-data-integration-tie">3.数据集成- Tie</h3>
+<p>企业中不同系统产生的数据很少足够清晰或一致，无法简单方便地组合起来进行报告或分析。提取、转换和加载(ETL)过程通常用于从不同的系统中提取数据，对其进行清理和标准化，然后将其加载到单独的系统中进行分析。</p>
+<p>Spark和Hadoop都用来降低这个ETL过程所需的成本和时间。</p>
+<h3 id="toc-4-speed-spark-wins">4.速度火花获胜</h3>
+<p>Spark运行工作负载的速度比Hadoop快100倍。Apache Spark使用最先进的DAG调度程序、查询优化器和物理执行引擎，为批处理和流数据实现了高性能。Spark是为速度而设计的，既可以在内存中运行，也可以在磁盘上运行。</p>
+<p>一个经典的速度对比是，Data bricks团队能够在十分之一的机器上仅用23分钟处理存储在固态驱动器上的100数据。前一名获胜者使用Hadoop和不同的集群配置花费了72分钟。</p>
+<p>但是，如果Spark在带有其他共享服务的YARN上运行，性能可能会下降，并导致RAM开销内存泄漏。出于这个原因，如果用户有批处理的用例，Hadoop被认为是一个更高效的系统。</p>
+<h3 id="toc-5-ease-of-use-spark-wins">5.易用性- Spark胜出</h3>
+<p>Hadoop MapReduce代码相对较长。在Spark中，你可以用Java、Scala、Python、R和SQL快速编写应用。Spark提供了80多种高级操作符，可以轻松构建并行应用程序，您可以从Scala、Python、R和SQL shells中交互使用它。</p>
+<p>Spark的功能可以通过一组丰富的API来访问，所有这些API都是专为快速轻松地与大规模数据交互而设计的。这些API都有很好的文档和结构，使得数据科学家和应用程序开发人员可以直接快速地将Spark投入使用。</p>
+<h3 id="toc-6-general-usage-spark-wins">6.一般用法- Spark Wins</h3>
+<p>在Hadoop MapReduce的情况下，只能处理一批存储的数据。但是使用Spark，也可以通过Spark流实时修改数据。</p>
+<p>借助Spark Streaming，您可以通过各种软件功能传递数据——例如，在收集数据时执行数据分析。开发人员还可以利用Apache Spark进行图形处理，它可以映射各种实体(如人和对象)之间的数据关系。组织可以利用Spark和预定义的<a href="https://hackr.io/blog/best-machine-learning-libraries">机器学习库</a>，以便可以对存储在不同Hadoop集群中的数据执行机器学习。</p>
+<p>Spark支持一系列库，包括SQL和DataFrames、用于机器学习的MLlib、GraphX和Spark Streaming。您可以在同一个应用程序中无缝地组合这些库。</p>
+
+<h3 id="toc-7-latency-spark-wins">7.延迟-火花胜出</h3>
+<p>Hadoop是一个没有交互模式的高延迟计算框架，而Spark是一个可以交互处理数据的低延迟框架。</p>
+<h3 id="toc-8-support-tie">8.支撑结</h3>
+<p>由于是开源的，Hadoop和Spark都有大量的支持。Apache Spark社区是一个大型的、活跃的国际性社区。</p>
+<p>越来越多的商业提供商，包括Databricks、IBM和所有主要的Hadoop供应商，为基于Spark的解决方案提供全面的支持。</p>
+<p>提供大数据Hadoop解决方案的顶级供应商有Cloudera、Hortonworks、Amazon Web Services Elastic MapReduce、Microsoft、MapR和IBM InfoSphere Insights。</p>
+<h3 id="toc-9-costs-hadoop-wins">9.成本Hadoop胜出</h3>
+<p>Hadoop和Spark都是Apache开源项目，所以它们是免费的。唯一增加的成本是与基础设施相关的成本。这两种产品都设计成可以在低TCO(总拥有成本)的商用硬件上运行。然而，Spark的成本仍然较高。</p>
+<h3 id="toc-10-memory-consumption-tie">10.内存消耗- Tie</h3>
+<p>Hadoop中的存储和处理是基于磁盘的，Hadoop使用标准的内存量。对于Hadoop，我们需要大量的磁盘空间以及更快的磁盘。Hadoop还需要多个系统来分配磁盘I/O。</p>
+<p>由于Apache Spark的内存处理，它需要大量的内存。由于多个RAM单元相对昂贵，火花系统导致更高的成本。</p>
+<p>换句话说，Spark可能更快，但会产生更高的成本。这就是权衡。</p>
+<p><a class="btn btn-primary btn-call-to-action btn-block" href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.996228&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-ultimate-hands-on-hadoop-tame-your-big-data%2F" target="_blank" rel="noopener">Hadoop的终极实践:驯服您的大数据！</a></p>
+<h2 id="hadoop-and-spark-are-both-essential-for-big-data">Hadoop和Spark对于大数据都至关重要</h2>
+<p>那么，Spark和Hadoop哪个更好呢？</p>
+
+<p>事实是，Hadoop和Spark并不相互排斥，可以协同工作。没有Spark，Hadoop中的实时和更快的数据处理是不可能的，而后者不需要Hadoop集群来工作。</p>
+
+<p>另一方面，Spark没有用于分布式存储的文件系统，但它可以读取和处理来自其他文件系统的数据，例如HDFS。然而，在Hadoop (HDFS + YARN)上运行Spark有很多优势，但这不是强制性的。</p>
+<p>当前的趋势和来自用户反馈的报告支持内存技术，这意味着Apache Spark通常是首选。</p>
+<p>然而，这并不是非黑即白的，你会选择一个而不是另一个。如果你要学习大数据框架，你会想两者都学。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

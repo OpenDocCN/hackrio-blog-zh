@@ -1,0 +1,1392 @@
+<html>
+<head>
+<title>Download R Markdown Cheat Sheet PDF for Quick References</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>下载R Markdown备忘单PDF快速参考</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/r-markdown-cheat-sheet#0001-01-01">https://hackr.io/blog/r-markdown-cheat-sheet#0001-01-01</a></blockquote><div><div class="content">
+										<p>一些公司需要简单有效的方法在单个文档中容纳文本和代码。Ener R markdown —一种文件格式，帮助您在R编程语言中使用项目符号、链接、字体等来组织文本。虽然开始的文本是普通的，但是你可以把它们转换成HTML，pdf，Word等等。</p>
+<p>由于越来越受欢迎和对这类文件的高度依赖，更多的R Markdown工作正在涌现。但是在你申请之前你需要了解格式。练习时，您可能需要查找常见的R Markdown命令——R Markdown语言备忘单不是很方便吗？</p>
+<p>为了帮助你，我们策划了这个R markdown备忘单，包括工作流程、R markdown语法安装、格式等等。您将能够从头开始创建一个文档或表示，并将默认的R markdown文档转换成其他有价值的指南。</p>
+<p><a href="https://drive.google.com/file/d/1aPYHMFyMFuzlhcxa5xt4InQVQhtnOvF6/view?usp=sharing" target="_blank" rel="noopener">点击此处</a>下载我们免费的R Markdown备忘单PDF。</p>
+
+<h2 id="what-is-r-markdown">什么是R Markdown？</h2>
+<p>在我们深入研究markdown语法备忘单之前，让我们先用r markdown基础知识建立一个基础。R Markdown是一个开源工具，帮助团队在r中创建可重复的报告。您可以将所有代码、结果、图表和文本保存在一个文件中。</p>
+<p>R Markdown对那些对你的分析结果感兴趣的人很有用，但对你的代码不感兴趣。R Markdown通常用于<a href="https://hackr.io/blog/what-is-data-analysis-methods-techniques-tools">数据分析</a>和数据科学，在这些领域中，您希望与其他人进行互动，并将结果传达给决策者。</p>
+<p>R Markdown允许您将作品导出为多种格式，如PDF、Microsoft Word、幻灯片或HTML文档，以便在网站上使用。这里，我们在markdown语言备忘单中使用RStudio集成环境来创建R Markdown。让我们开始吧。</p>
+<h2 id="download-r-markdown-cheat-sheet-pdf"><strong>下载R Markdown备忘单PDF </strong></h2>
+<h3 id="installing-r-markdown"><strong>安装R降价</strong></h3>
+<p>R markdown是一个易于安装和使用的开源工具。您所需要的只是从您的终端点击以下命令:</p>
+<pre class="language-r"><code>install.packages("rmarkdown")</code></pre>
+<p>安装R Markdown后，使用RStudio打开一个新的R Markdown文件。为此，请转到文件&gt;新建文件&gt; R Markdown。你可以看到所有的R Markdown文件名都有一个文件扩展名。Rmd”。</p>
+<h3 id="r-markdown-workflow"><strong> R降价工作流程</strong></h3>
+<ul>
+<li>打开新的。文件中的Rmd文件新文件R降价。使用打开的向导用模板预填充文件。</li>
+<li>通过编辑模板编写文档。</li>
+<li>编织文档以创建报告；使用针织按钮或render()进行针织。</li>
+<li>在IDE窗口中预览输出。</li>
+<li>发布(可选)到web服务器。</li>
+<li>在R Markdown控制台中检查构建日志。</li>
+<li>使用旁边保存的输出文件。中矢状直径之比</li>
+</ul>
+<h3 id="default-output-format"><strong>默认输出格式</strong></h3>
+<p>在RStudio中打开一个新的R Markdown文件后，您会看到一个弹出窗口来选择格式:</p>
+
+<p><img title="" src="../Images/aed64f7ea5c08e2798ca72e4cd580b41.png" alt="Select a format pop-up window" data-original-src="https://hackr.io/blog/media/default-output-format-min.png"/></p>
+<p>您将看到一个添加标题、作者和默认输出格式的选项。选择正确的选项后，单击确定。然后，你会得到一个新的窗口，解释更多关于R Markdown文件。</p>
+<p>一种可用的默认输出格式是HTML，它有助于您在web浏览器中轻松查看创建的文件。对于这个备忘单，我们使用默认的HTML设置——一种比PDF或其他格式更快的替代方式。接近完成时，您可以将输出更改为您喜欢的格式，并进行最后的更改。</p>
+<p>您在上面的弹出窗口中为文档指定的标题不是文件名。导航到文件&gt;另存为..命名并保存文档。</p>
+<h3 id="r-markdown-document-format"><strong> R降价文件格式</strong></h3>
+<p>选择文档的输出格式后，您会在RStudio面板中看到一个R Markdown文档。与空白的R脚本不同。Rmd文档带有一些格式。</p>
+<p><img title="" src="../Images/dd90816fe03d6a786cad9551acfaac79.png" alt="R markdown screenshot displaying YAML header, code chunk, body text, and other fields." data-original-src="https://hackr.io/blog/media/r-markdown-document-format-min.png"/></p>
+<p>R Markdown文档包含以下关键部分。</p>
+<ul>
+<li><strong> Header </strong>:以(-)破折号为界，用户在这里提及所有细节，如标题、名称、日期和文档类型。如果您已经在前一个窗口中填写了详细信息，它们将自动填充到文档中。</li>
+<li><strong>正文</strong>:以“##”开头。这一部分将呈现为文本，但将创建一个PDF，并由用户应用格式。</li>
+<li><strong>代码块</strong>:以“``”为界，指定将在文档中运行以创建PDF的代码。</li>
+<li><strong>生成图</strong>的代码:不包括，因为指定了参数echo=FALSE。这是一个块选项。</li>
+</ul>
+<p>现在文档已经准备好生成输出了。但为此，您需要编织代码和文本来查看预览格式规范。要编织您的文档，请点击RStudio中的“编织”按钮。这将生成HTML文档。您也可以使用此快捷方式来编织文档:</p>
+<p><strong>Mac上的Command + shift + K或者Linux和Windows上的Ctrl + Shift + K。</strong></p>
+<p><img title="" src="../Images/c2940fbcb952b2c10e8658bcdec45674.png" alt="Knit document function image" data-original-src="https://hackr.io/blog/media/command-shift-k-for-mac-or-ctrl-shift-k-on-linux-and-windows.png"/></p>
+<p>在上面的右窗格中，您可以预览HTML格式的文档。默认”。Rmd”文件附带了格式化R Markdown文档的指导。</p>
+<p>在这里，我们将把这个文档保存为RMarkdown_Guide.Rmd。标题“R Markdown Guide”在YAML页眉中。</p>
+<p>但是，如果您在没有RStudio的情况下使用R Markdown，您可以使用函数rmarkdown::render()来编译您的文档。只需在引号中提供文档的名称作为函数参数:</p>
+<pre class="language-r"><code>`rmarkdown::render("RMarkdown_Guide.Rmd")`</code></pre>
+
+<p>R Markdown文件是用Markdown(一种格式化语法)编写的纯文本文件。如果你仔细观察默认”。Rmd”文件，您将在文档中看到两个部分，R Markdown和Including Plots。这些是二级标题。现在，我们将通过输入以下内容来创建一个名为“文本格式基础”的新的二级标题:</p>
+<pre class="language-r"><code>## Text Formatting Basics.</code></pre>
+<p>现在，接下来是第三层的标题，称为<em>标题</em>:</p>
+<pre class="language-r"><code>## Text Formatting Basics
+
+### Headers</code></pre>
+<p>现在，我们将为第一、第二和第三级标题创建语法要求，以显示标题生成代码:</p>
+<pre class="language-r"><code># First Level Header
+
+## Second Level Header
+
+### Third Level Header</code></pre>
+<p>在输出中用空行分隔每一行代码。并且在相邻的不同格式元素(如节标题和正文)之间至少要有一个空行。一旦进行了更改，您将在文档中看到以下输出。</p>
+<p><img title="" src="../Images/eda812c640a4c5811f0aabe553af1eb9.png" alt="Text formatting basics and headers" data-original-src="https://hackr.io/blog/media/section-headers-min.png"/>您可以看到第二级和第三级标题呈现时的不同，以及使用#、##或###创建标题的语法。如果您不希望标头在最终输出中呈现为标头，则必须将代码用反斜杠括起来:</p>
+<pre class="language-r"><code>`# First Level Header`</code></pre>
+<h3 id="bulleted-and-numbered-lists"><strong>项目符号和编号列表</strong></h3>
+<p>现在，我们将创建一个新的第三级标题，称为项目符号和编号列表。</p>
+<p><strong>在您的代码中键入以下内容:</strong></p>
+<pre class="language-r"><code>* List element 1
+
+* List element 2
+
+* List element 3  
+
+* List item 3a  
+
+* List item 3b</code></pre>
+<p>要创建无序列表项，请使用像*、-和+这样的字符。</p>
+<p><strong>语法:</strong> <br/> 1。编号列表1 <br/> 1。编号列表2 <br/> 1。编号列表3。</p>
+<p>数字是自动递增的，所以我们必须输入1。这使得添加和删除项目变得容易，因为您不必重新编号。您还可以组合有序列表和无序列表。按tab键两次以缩进未排序的项目符号:</p>
+<pre class="language-r"><code>1. Numbered list 1
+
+1. Numbered list 2  
+
+* Item 1  
+
+* Item 2</code></pre>
+<p>在下面的示例中，您可以看到并排格式视图:</p>
+<p><img title="" src="../Images/9d92f65ae538ed3784fa0eacd6ebf1f7.png" alt="Bulleted list and formatting view" data-original-src="https://hackr.io/blog/media/bulleted-and-numbered-lists-min.png"/></p>
+<h3 id="text-formatting"><strong>文本格式</strong></h3>
+<p>让我们创建一个新的第三级标题，称为文本格式:</p>
+
+<p><em> *使文本倾斜，如*this*或_this_。</em></p>
+<p><em> *使文本加粗，如**this**或__this__。</em></p>
+<p><em> *使用“反斜线”作为代码。</em> <br/> <em> *将字符换行到代字号中的下标(` ~ `)。例如，` H~2~O '呈现为H~2~O. </em> <br/> <em> *在carets (`^`)中将字符换行到上标，如下所示:`R^2^`呈现为R^2^.</em></p>
+<p>呈现代码后，您将获得以下输出:</p>
+<p><img title="" src="../Images/2b31a5b80ad431c5666412c47121a851.png" alt="text formatting output" data-original-src="https://hackr.io/blog/media/text-formatting-min.png"/></p>
+<h3 id="links"><strong>链接</strong></h3>
+<p>有了R Markdown，你可以简单地将你的文本与不同类型的网站和图片链接起来。使用下面的代码链接。</p>
+<pre class="language-r"><code>Direct inline links: &lt;https://rmarkdown.rstudio.com/&gt;.
+
+Phrase links: RStudio's [R Markdown page](https://rmarkdown.rstudio.com/).
+
+![R Markdown image](https://www.dataquest.io/wp-content/uploads/2020/06/r-markdown-1536x976.jpg)</code></pre>
+<p>渲染后，您将获得以下HTML格式的输出:</p>
+<p><img title="" src="../Images/4f8f98b1ee5c64290d05ec77b02b0447.png" alt="HTML rendering of links" data-original-src="https://hackr.io/blog/media/links-min.png"/></p>
+<h3 id="code-chunks"><strong>代码块</strong></h3>
+<p>要向R文档添加新代码，请使用代码块部分。有几种方法可以添加新代码，例如。</p>
+<ul>
+<li>Mac上的Command + Option + I，或者Linux和Windows上的Ctrl + Alt + I。</li>
+<li>工具栏中的“插入”下拉图标，选择r</li>
+</ul>
+<p>使用下面的快捷方式来节省时间:</p>
+
+<ul>
+<li><strong>缓存</strong> -缓存未来编织的结果(默认为假)</li>
+<li><strong> cache.path </strong> -保存缓存结果的目录(default = "cache/")</li>
+<li><strong>要编织的子文件</strong>然后包含(默认值=空)</li>
+<li><strong>折叠</strong> -将所有输出折叠成单个块(默认为假)</li>
+<li><strong>注释</strong> -每行结果的前缀(默认= '## ')</li>
+<li><strong> dependson </strong> -缓存的块依赖性(默认为空)</li>
+<li><strong> echo </strong> -在输出文件中显示代码(默认为真)</li>
+<li><strong>引擎</strong> -块中使用的代码语言(默认= 'R ')</li>
+<li><strong>错误</strong> -在doc中显示错误消息(TRUE)或当错误发生时停止渲染(FALSE)(默认为FALSE)</li>
+<li><strong> eval </strong> -分块运行代码(默认值= TRUE)</li>
+<li><strong>消息</strong> -显示文档中的代码消息(默认为真)</li>
+<li><strong>结果(默认= '标记')' asis' </strong> -传递结果'隐藏'--不显示结果'保持'--将所有结果放在所有代码下面</li>
+<li><strong>整理</strong> -用于显示的整理代码(默认=假)</li>
+<li><strong>警告</strong> -在文档中显示代码警告(默认值=真)</li>
+<li><strong>fig . align</strong>-‘左’、‘右’或‘中间’(默认=‘默认’)</li>
+<li><strong> fig.cap </strong> -字符串形式的图标题(默认为空)</li>
+<li><strong>图高、图宽</strong> -以英寸为单位的绘图尺寸高亮显示-高亮显示源代码(默认值=真)</li>
+<li><strong>包含</strong> -运行后在文档中包含块(默认为真)</li>
+</ul>
+<h3 id="parameters"><strong>参数</strong></h3>
+<p>您可以轻松地将参数添加到文档中，以便在不同的输入中重复使用(例如，数据、值等)。).例如，您可以<strong>在标题中创建和设置参数</strong>作为参数的子值:</p>
+
+<pre class="language-r"><code>--- params:
+
+n: 100 d:
+
+!r Sys.Date()
+
+—</code></pre>
+
+<p>将代码中的参数值作为params$调用。例如- <em>今天的日期是` r params$d` </em></p>
+
+<p>使用Knit with parameters或render()的params参数设置值:</p>
+<pre class="language-r"><code>render("doc.Rmd", params = list(n = 1, d = as.Date("2015-01-01"))</code></pre>
+<h3 id="render"><strong>渲染</strong></h3>
+<p>可以在命令行使用rmarkdown::render()进行渲染/编织。以下是一些您可以使用的参数:</p>
+<ul>
+<li><strong>输入文件</strong>渲染输出格式</li>
+<li><strong> output_options </strong>:渲染选项列表(如YAML)</li>
+<li><strong>输出文件输出目录</strong></li>
+<li><strong>参数</strong>:要使用的参数列表</li>
+<li>环境:评估代码块的环境</li>
+<li><strong>输入文件的编码</strong></li>
+</ul>
+<h3 id="interactive-documents"><strong>互动文档</strong></h3>
+<p>通过以下步骤将您的报告转换为交互式文档:</p>
+<ul>
+<li>将runtime: shiny添加到YAML头中。</li>
+</ul>
+<pre class="language-r"><code>--- title: "Line graph" output: html_document runtime: shiny ---</code></pre>
+<ul>
+<li><strong>调用闪亮的输入函数嵌入输入对象。</strong></li>
+</ul>
+<pre class="language-r"><code>--- title: "Line graph" output: html_document runtime: shiny --- Choose a time series: ```{r echo = FALSE} selectInput("data", "", c("co2", "lh")) ``` See a plot: ```{r echo = FALSE} renderPlot({ d &lt;- get(input$data) plot(d) }) ```</code></pre>
+<ul>
+<li><strong>调用Shiny渲染函数嵌入反应输出。</strong></li>
+<li><strong>用rmarkdown::run渲染或者在RStudio IDE中点击运行文档</strong></li>
+</ul>
+<p><img title="" src="../Images/dbc67b621d05d4d6d21a41e494e7bafe.png" alt="Line graph image" data-original-src="https://hackr.io/blog/media/interactive-documents-min.png"/></p>
+<h3 id="how-to-run-a-code"><strong>如何运行代码</strong></h3>
+<p>使用R Markdown，您将获得运行新代码的不同选项。转到工具栏。在“运行”选项下，您将看到您的选项:</p>
+<p><img title="" src="../Images/1ccdf7a7d7a0b8a0a459f9ff48b9af64.png" alt="Run options in toolbar" data-original-src="https://hackr.io/blog/media/how-to-run-a-code-min.png"/></p>
+<p>记住，在运行任何新代码之前，通过在Mac上按Command + Shift + F10，或者在Linux和Windows上按Control + Shift + F10来重新启动R会话。以下是一些其他有用的快捷方式:</p>
+<ul>
+<li><strong>运行当前块上面的所有块</strong>:Mac上Command + Option + P，或者Linux和Windows上Ctrl + Alt + P。</li>
+<li><strong>运行当前组块</strong>:Mac上Command + Option + C或者Command + Shift + Enter。在Linux和Windows上，使用Ctrl + Alt + C或Ctrl + Shift + Enter</li>
+<li><strong>运行下一个组块</strong>:Mac上的Command + Option + N，或者Linux和Windows上的Ctrl + Alt + N。</li>
+<li><strong>运行所有组块</strong>:Mac上Command + Option + R或Command + A + Enter。在Linux和Windows上，使用Ctrl + Alt + R或Ctrl + A + Enter来运行所有块。</li>
+</ul>
+<pre class="language-r"><code>&gt; install.packages("Dataquest")</code></pre>
+<h3 id="control-behavior-with-code-chunk-options"><strong>用代码块选项控制行为</strong></h3>
+<p>您可以完全自由地控制您的代码块，包括它们的评估和表示。您可以使用这些选项从头开始创建演示文稿和有价值的报告。您可以包括代码、绘图、表格，甚至图像。例如，您可以提到一个指定最终结果的图，而不包括代码。</p>
+<ul>
+<li><strong> echo </strong> = FALSE:如果您不想在输出中显示您的代码，而是运行代码并生成所有输出、绘图、警告和消息，您可以使用此选项。</li>
+<li><strong> eval </strong> = FALSE:可以使用这个选项来显示代码，但是不进行计算。</li>
+<li><strong>fig . show</strong>=“hide”:该选项用于隐藏图形。</li>
+<li><strong> include </strong> = FALSE:该选项将允许代码运行，但禁止所有输出。这对设置代码很有用。</li>
+<li><strong> message </strong> = FALSE:该选项将阻止软件包在加载时打印消息。这也会抑制函数生成的消息。</li>
+<li><strong>结果</strong> =“隐藏”:该选项将隐藏打印输出。</li>
+<li><strong>警告</strong> =假:该选项将阻止软件包和函数显示警告。</li>
+</ul>
+<h3 id="inline-code"><strong>内联代码</strong></h3>
+<p>您可以使用内嵌代码将R代码直接嵌入到R Markdown文档中。这对于在文本中包含关于数据的特定信息是非常理想的。</p>
+
+<p>例如:</p>
+
+<p>使用带r的内联代码，然后在反勾号内添加特定的评估代码。这里，我们总结了内置于r的cars数据集中的行数和列数。</p>
+<pre class="language-r"><code>## Inline Code
+
+The `cars` dataset contains `r nrow(cars)` rows and `r ncol(cars)` columns.</code></pre>
+<p><img title="" src="../Images/a6b689b8adb3b2ecdb2c3c8c02b24598.png" alt="side-by-side view of R Markdown and HTML output for inline code" data-original-src="https://hackr.io/blog/media/inline-code-min.png"/></p>
+<p>假设您想对数据集做一个小的更改，或者更改行数和列数。在这种情况下，重新运行代码以获得准确的结果——这是一个比浏览几个文档以检查在哪里更新结果并手动更改结果容易得多的解决方案。</p>
+<p>底线？R Markdown节省时间，提高质量，并确保报告的准确性。</p>
+<h3 id="navigating-sections-and-code-chunks"><strong>导航部分和代码块</strong></h3>
+<p>随着代码长度的增加，复杂性也在增加。要浏览冗长的代码，请谨慎而有目的地命名代码块。例如:</p>
+<pre class="language-r"><code>{r my_boring_chunk_name}.</code></pre>
+<p>命名块后，它们将出现在R Markdown窗口窗格底部的导航器中。您可以使用它们通过名称轻松识别地块。您还可以轻松地在文档的其他部分使用代码，因为此导航器允许您快速跳转到文档的另一部分。</p>
+<p><img title="" src="../Images/6b290a3c6516137e046d2f659de0670c.png" alt="R Markdown guide navigator" data-original-src="https://hackr.io/blog/media/navigating-sections-and-code-chunks-min.png"/></p>
+<h3 id="table-formatting"><strong>表格格式</strong></h3>
+<p>在R Markdown中，您将看到默认情况下控制台中显示的表格。为了提高美观并对表格进行修改，可以使用函数knitr::kable():</p>
+<pre class="language-r"><code>knitr::kable(head(cars), caption = "The First Few Rows of the Cars Dataset")</code></pre>
+<p>下面是渲染后的输出:</p>
+<p><img title="" src="../Images/53ab549579667835f7faed78c9e23611.png" alt="rendered output for text formatting in R Markdown" data-original-src="https://hackr.io/blog/media/table-formatting-min.png"/></p>
+<h3 id="output-format-options"><strong>输出格式选项</strong></h3>
+<p>所有格式选项通常在YAML头中指定。单个R Markdown文档能够支持不同的输出格式。如上所述，与PDF相比，HTML格式的渲染速度更快。为了预览HTML格式的文档，但最终会将文档输出为PDF格式，您需要注释掉PDF规范，直到需要为止:</p>
+<pre class="language-r"><code>--- title: "R Markdown Guide"
+
+author: "Dataquest"
+
+date: "7/8/2020"
+
+output: html_document
+
+# output: pdf_document
+
+# output: ioslides_presentation ---</code></pre>
+<h3 id="presentations"><strong>演示文稿</strong></h3>
+<p>R Markdown有一个R Markdown包，它支持几种显示类型。其他一些有用的R包包括<a href="https://bookdown.org/yihui/rmarkdown/revealjs.html" target="_blank" rel="noopener"> revealjs，</a>扩展了R的降价功能。以下是R Markdown内置的一些演示格式:</p>
+<ul>
+<li>html _文档</li>
+<li>pdf _文档pdf(需要特克斯)</li>
+<li>word_document。docx)</li>
+<li>odt_document打开文档文本</li>
+<li>rtf_document富文本格式</li>
+<li>md _文档降价</li>
+<li>github_document Github兼容降价</li>
+<li>io slides _ presentation io slides HTML幻灯片</li>
+<li>slidy_presentation slidy HTML幻灯片</li>
+<li>投影仪_演示文稿投影仪pdf幻灯片(需要Tex)</li>
+</ul>
+<p>现在，让我们将R Markdown文档转换成一个ioslides演示文稿(HTML)。这对于交付带有屏幕共享的远程演示很有用，输出为:ioslides_presentation。</p>
+<pre class="language-r"><code>--- title: "R Markdown Guide"
+
+author: "Dataquest"
+
+date: "7/8/2020"
+
+# output: html_document
+
+# output: pdf_document
+
+output: ioslides_presentation
+
+---</code></pre>
+<p>我们已经“注释掉”了HTML和PDF格式选项，因此在编译文档时不会考虑它们。</p>
+<p>每当我们编织时，R Markdown指南和HTML演示文稿会与每个二级标题一起出现，以标记新幻灯片的开始。除了我们的“文本格式基础”部分有几个第三级标题部分之外，这一部分工作得很好。</p>
+<p><img title="" src="../Images/b5ea8225a55eff4d8b17f5b2ca08b445.png" alt="Text formatting basics with headers, bullets, and numbered lists example" data-original-src="https://hackr.io/blog/media/presentations-min.png"/></p>
+<p>为了避免手动换行，您需要根据需要在每个第三级标题前插入***符号:</p>
+<pre class="language-r"><code>## Text Formatting Basics
+
+### Headers`# First Level Header``## Second Level Header``### Third Level Header`***
+
+### Bulleted or Numbered Lists
+
+* List element 1
+
+* List element 2
+
+* List element 3  
+
+* List element 3a  
+
+* List element 3b</code></pre>
+<p>下面是生成的输出:<img title="" src="../Images/caca1b098c03418a0947cc1b0531d22b.png" alt="Avoiding manual breaks output" data-original-src="https://hackr.io/blog/media/heres-the-generated-output-min.png"/></p>
+<h3 id="adding-a-table-of-contents"><strong>添加目录</strong></h3>
+<p>在所有的网站开发中，为了便于导航，目录是很重要的。你所要做的就是在你的YAML头中添加一行代码，toc: true:</p>
+<p><em>输出:</em><em>T3】</em></p>
+<pre class="language-r"><code>html_document:
+
+  toc: true</code></pre>
+<p>确保在html_document后面添加:!</p>
+<h3 id="how-to-create-a-reusable-template"><strong>如何创建可重用模板</strong></h3>
+<ol>
+<li>用inst/rmarkdown/templates目录创建一个新包。</li>
+<li>在目录中，放置一个包含:template.yaml(见下文)skeleton的文件夹。Rmd(模板内容)任何支持文件。</li>
+<li>安装软件包。</li>
+<li>在向导中的文件中访问模板新建文件R Markdown template.yaml。</li>
+</ol>
+<h3 id="reproducible-reports-with-rstudio-cloud"><strong>使用RStudio云生成可再现的报告</strong></h3>
+<p>您可以在名为RStudio Cloud的RStudio桌面云版本上应用所有内容。RStudio Cloud允许您在R Markdown中生成报告和演示文稿，而无需安装该软件。你所需要的只是一个网络浏览器。</p>
+<p>RStudio Cloud中的工作被组织到类似于桌面版本的项目中，但RStudio Cloud要求您为每个项目指定R版本。</p>
+<p>云允许您与同事安全地共享项目，并确保每次有人访问项目时，工作环境都是完全可复制的。</p>
+<p>可以看到，RStudio云布局类似于RStudio桌面。</p>
+<p><img title="" src="../Images/e77afc5d381635c355a453356457dee0.png" alt="R Studio Cloud layout" data-original-src="https://hackr.io/blog/media/reproducible-reports-with-rstudio-cloud-min.png"/></p>
+<p>当您第一次在RStudio Cloud中打开一个新的R Markdown文档时，该程序会提示您安装所需的软件包:</p>
+<p><img title="" src="../Images/029d7894320d4c27052e16db9265e94d.png" alt="Prompt in R Studio cloud asking to install packages" data-original-src="https://hackr.io/blog/media/new-r-markdown-document-in-rstudio-cloud-min.png"/></p>
+<p>安装所需的包——然后，您就可以创建和编织R Markdown文档了。</p>
+<h3 id="package-development"><strong>包装开发</strong></h3>
+<p>下面是创建新包的简单步骤。</p>
+<ul>
+<li>安装两个包来创建新的包。</li>
+</ul>
+<pre class="language-r"><code>&gt; install.packages("roxygen2")
+&gt; install.packages("devtools")
+</code></pre>
+<ul>
+<li>在RStudio中打开文件并选择新建项目。</li>
+</ul>
+<p><img title="" src="../Images/b675c27649aee626fa869a2319581a47.png" alt="package development" data-original-src="https://hackr.io/blog/media/package-development-min.png"/></p>
+<ul>
+<li>根据需要选择一个新目录，并指定R Package:</li>
+</ul>
+<p><img title="" src="../Images/5d418333f6c7e326324feead1594d006.png" alt="specify R Package" data-original-src="https://hackr.io/blog/media/select-a-new-directory-as-desired-and-specify-r-package.png"/></p>
+
+<p><img title="" src="../Images/0846eba02c8a13eee0417bd3f9bcbd27.png" alt="name your package" data-original-src="https://hackr.io/blog/media/name-your-package-min.png"/></p>
+<ul>
+<li>转到RStudio中的Files选项卡，您应该会看到几个文件，如下所示:</li>
+</ul>
+<p><img title="" src="../Images/bbc65de035d59c5dfeba034e32b24e85.png" alt="Serveral files" data-original-src="https://hackr.io/blog/media/go-to-your-files-tab-in-rstudio-and-you-should-see-several-files-populated-like-this-min.png"/></p>
+<ul>
+<li>我们将把包的R函数放在R文件夹下。点击描述并相应填写，然后保存。</li>
+</ul>
+<p><img title="" src="../Images/f799c2f238e34f873963850cfc0e89f9.png" alt="r functions" data-original-src="https://hackr.io/blog/media/r-functions-under-the-r-folder.png"/></p>
+<ul>
+<li><strong>标题</strong>:你的包标题</li>
+<li><strong>描述</strong>:简要描述</li>
+<li><strong> Param </strong>:该功能的参数；争论</li>
+<li><strong>返回</strong>:返回的值</li>
+<li><strong>示例</strong>:功能使用示例</li>
+<li><strong>导出</strong>:所需功能</li>
+</ul>
+<p>现在，转到构建工具:</p>
+<p><img title="" src="../Images/77254f98eb3d7f9c50b84a9bfc28743d.png" alt="Build tools page" data-original-src="https://hackr.io/blog/media/build-tools-min.png"/>点击使用Roxygen生成文档的复选标记。你可能想从hello开始重命名你的函数。r到相关的东西。现在，通过单击Build-Clean and Rebuild构建您的包。搜索您的包，它应该会出现:</p>
+<p><img title="" src="../Images/131cb62091caea1acd56984eb8cda855.png" alt="Package display " data-original-src="https://hackr.io/blog/media/search-for-your-package.png"/></p>
+<h3 id="version-control"><strong>版本控制</strong></h3>
+<p>我们有两个版本控制选项。基于现有文件夹创建项目，或者基于新的空文件夹从头开始创建项目。</p>
+<p><strong> 1。现有工作</strong></p>
+<p>从向导中选择现有目录:</p>
+<p><img title="" src="../Images/7578d6c08f9a820dbe5da5a61d50fe16.png" alt="Existing directory option in the Wizard" data-original-src="https://hackr.io/blog/media/version-control.png"/></p>
+<p>浏览到包含数据的主文件夹，并启用版本控制。转到工具菜单-&gt;版本控制-&gt;项目集:</p>
+<p><img title="" src="../Images/e261fee0dae16730778643015f84d365.png" alt="Version control option in the drop-down menu" data-original-src="https://hackr.io/blog/media/project-set-min.png"/></p>
+<p>这将打开一个新窗口。通过从下拉菜单中选择Git来更改“无”设置:</p>
+<p><img title="" src="../Images/d8dcccde6319233eba4599cc87e35d80.png" alt="None to Git option in the drop-down menu" data-original-src="https://hackr.io/blog/media/choosing-git-from-the-drop-down-min.png"/></p>
+<p>单击确定。在接下来的两个弹出窗口中回答“是”,重启RStudio并在项目中启用git。</p>
+<p><strong> 2。新作</strong></p>
+<p>从RStudio IDE窗口的右上角选择“新建项目”,创建一个新的RStudio项目。选择新目录:</p>
+<p><img title="" src="../Images/f0e0f99514358dd08ecc19ad6447fe12.png" alt="Create project window with &quot;new directory&quot; option selected" data-original-src="https://hackr.io/blog/media/new-work-min.png"/></p>
+<p>选择空项目:</p>
+<p><img title="" src="../Images/7a6da0d8374b2315d9f1d2cb1224a542.png" alt="New project window with &quot;empty project&quot; selected" data-original-src="https://hackr.io/blog/media/choose-empty-project-min.png"/></p>
+<p>命名您的文件夹，然后浏览它在您的驱动器上的位置。最后，在单击“创建项目”之前，选中“创建git存储库”</p>
+<p><img title="" src="../Images/c0365ffb872d9c064fe5c24604d1bd0f.png" alt="Directory name and create a project fields under &quot;New Project&quot;" data-original-src="https://hackr.io/blog/media/create-a-git-repository-min.png"/></p>
+<p><strong> 3。使用Git </strong></p>
+<p>启用git后，您应该会在界面上看到“环境”和“历史”选项卡旁边的“Git”选项卡。</p>
+<p><img title="" src="../Images/1fa2e6ea2ba902bccdc1987977327f28.png" alt="Git tab" data-original-src="https://hackr.io/blog/media/using-git.png"/></p>
+<p>的。gitignore文件由RStudio自动生成。它列出了所有我们不想跟踪的文件格式，这里特别是来自R和RStudio的临时文件。您可以编辑这个文档，添加任何不想让Git跟踪的文件。</p>
+<h4 id="staging">脚手架</h4>
+<p>要指定要跟踪的文件(即分段文件)，请选中文件名前面的框。这相当于git add命令:</p>
+<p><img title="" src="../Images/2cb93433a55268417ed71d7d076cf75e.png" alt="Staging window" data-original-src="https://hackr.io/blog/media/staging.png"/></p>
+<h4 id=""><strong>提交</strong></h4>
+<h4 id="committing">现在，您可以进行第一次提交了。通过单击“提交”按钮(在您的文件名上方)，为跟踪的文件拍摄当前工作状态的快照。这相当于git commit命令。应该会弹出一个新窗口:</h4>
+<p><img title="" src="../Images/7b27883e1bdfb3b4f961aa93d3d51b02.png" alt="Commit window" data-original-src="https://hackr.io/blog/media/committing.png"/></p>
+<p><strong>拉动</strong></p>
+<h4 id="pulling">提交更改后，通过点击pull按钮从GitHub获取最新的存储库版本。如果你在多次用户调整中遇到任何冲突，不要担心。Git将引导您完成修复冲突的必要步骤(参见3-git-advanced了解更多信息)。这相当于git pull命令。</h4>
+<p><strong>按下</strong></p>
+<h4 id="pushing">一旦你完成了拉的过程，你就可以点击按钮将你的修改上传到GitHub，并与他人分享你的作品。这相当于git push命令。</h4>
+<p><strong>可视化编辑器</strong></p>
+<h3 id="visual-editor"><img title="" src="../Images/1a4e1a3b834120f7007b96cd2dccc157.png" alt="Visual editor image" data-original-src="https://hackr.io/blog/media/visual-editor-min.png"/></h3>
+<p><strong>分享项目</strong></p>
+<h3 id="sharing-projects">转到文件&gt;新建项目。</h3>
+<p>RStudio保存与项目相关的呼叫历史、工作空间和工作目录。当您重新打开项目时，它会重新加载每个文件。</p>
+<p><img title="" src="../Images/3e90a930e46bc245735fab752476454d.png" alt="Share project item in drop-down menu" data-original-src="https://hackr.io/blog/media/sharing-projects-min.png"/></p>
+<p><strong>运行远程作业</strong></p>
+<h3 id="running-remote-jobs">您可以通过Job Launcher在远程集群(Kubernetes/Slurm)上运行R。<img title="" src="../Images/3614b7a6a2757c3fd26bddc723370660.png" alt="Job launcher" data-original-src="https://hackr.io/blog/media/running-remote-jobs-min.png"/></h3>
+<p><strong>键盘快捷键</strong></p>
+<h3 id="keyboard-shortcuts"><strong>描述</strong></h3>
+<table>
+<tbody>
+<tr>
+<td><strong> Windows &amp; Linux </strong></td>
+<td><strong> Mac </strong></td>
+<td>将光标移动到控制台</td>
+</tr>
+<tr>
+<td>Ctrl+2</td>
+<td>Ctrl+2</td>
+<td>清除控制台</td>
+</tr>
+<tr>
+<td>Ctrl+L</td>
+<td>Ctrl+L</td>
+<td>将光标移动到行首</td>
+</tr>
+<tr>
+<td>主页</td>
+<td>cmd+向左</td>
+<td>将光标移动到行尾</td>
+</tr>
+<tr>
+<td>结束</td>
+<td>cmd+右</td>
+<td>导航命令历史</td>
+</tr>
+<tr>
+<td>向上/向下</td>
+<td>向上/向下</td>
+<td>弹出命令历史</td>
+</tr>
+<tr>
+<td>ctrl+向上</td>
+<td>cmd+向上</td>
+<td>中断当前正在执行的命令</td>
+</tr>
+<tr>
+<td>转义字符</td>
+<td>转义字符</td>
+<td>更改工作目录</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+H</td>
+<td>Ctrl+Shift+H</td>
+<td><strong>描述</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<td><strong> Windows &amp; Linux </strong></td>
+<td><strong> Mac </strong></td>
+<td>转到文件/功能</td>
+</tr>
+<tr>
+<td>Ctrl+。[句号]</td>
+<td>Ctrl+。[句号]</td>
+<td>将光标移动到源代码编辑器</td>
+</tr>
+<tr>
+<td>Ctrl+1</td>
+<td>Ctrl+1</td>
+<td>切换文档大纲</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+O</td>
+<td>Cmd+Shift+O</td>
+<td>切换可视化编辑器</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+F4</td>
+<td>Cmd+Shift+F4</td>
+<td>新文档(Chrome/Windows除外)</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+N</td>
+<td>Cmd+Shift+N</td>
+<td>新文档(仅限Chrome)</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Shift+N</td>
+<td>Cmd+Shift+Alt+N</td>
+<td>打开文档</td>
+</tr>
+<tr>
+<td>Ctrl+O</td>
+<td>Cmd+O</td>
+<td>保存活动文档</td>
+</tr>
+<tr>
+<td>Ctrl+S</td>
+<td>Cmd+S</td>
+<td>保存所有文档</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+S</td>
+<td>cmd+选项+S</td>
+<td>关闭活动文档(Chrome除外)</td>
+</tr>
+<tr>
+<td>Ctrl+W组合键</td>
+<td>Cmd+W</td>
+<td>关闭活动文档(仅限Chrome)</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+W</td>
+<td>cmd+选项+W</td>
+<td>关闭所有打开的文档</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+W</td>
+<td>Cmd+Shift+W</td>
+<td>关闭其他文档</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Alt+W</td>
+<td>Cmd+Option+Shift+W</td>
+<td>预览HTML(降价和HTML)</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+K</td>
+<td>Cmd+Shift+K</td>
+<td>编织文档(编织者)</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+K</td>
+<td>Cmd+Shift+K</td>
+<td>编译笔记本</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+K</td>
+<td>Cmd+Shift+K</td>
+<td>编译PDF (TeX和Sweave)</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+K</td>
+<td>Cmd+Shift+K</td>
+<td>插入块(sweep和Knitr)</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+I</td>
+<td>Cmd+Option+I</td>
+<td>插入代码部分</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+R</td>
+<td>Cmd+Shift+R</td>
+<td>运行当前行/选择</td>
+</tr>
+<tr>
+<td>Ctrl+Enter</td>
+<td>cmd+回车</td>
+<td>运行当前行/选择(保留光标位置)</td>
+</tr>
+<tr>
+<td>Alt+Enter</td>
+<td>选项+返回</td>
+<td>重新运行以前的区域</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+P</td>
+<td>Cmd+Alt+P</td>
+<td>运行当前文档</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+R</td>
+<td>Cmd+Option+R</td>
+<td>从文档开头运行到当前行</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+B</td>
+<td>cmd+选项+B</td>
+<td>从当前行运行到文档结尾</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+E</td>
+<td>cmd+选项+E</td>
+<td>运行当前函数定义</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+F</td>
+<td>cmd+选项+F</td>
+<td>运行当前代码段</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+T</td>
+<td>Cmd+Option+T</td>
+<td>运行以前的Sweave/Rmd代码</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Alt+P</td>
+<td>Cmd+Shift+Option+P</td>
+<td>运行当前Sweave/Rmd块</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+C</td>
+<td>cmd+期权+C</td>
+<td>运行下一个Sweave/Rmd块</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+N</td>
+<td>cmd+选项+N</td>
+<td>源文件</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+G</td>
+<td>Ctrl+Option+G</td>
+<td>获取当前文档</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+S</td>
+<td>Cmd+Shift+S</td>
+<td>获取当前文档(带回显)</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Enter</td>
+<td>Cmd+Shift+Return</td>
+<td>将当前行/选择发送到终端</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Enter</td>
+<td>cmd+选项+回车</td>
+<td>折叠选定内容</td>
+</tr>
+<tr>
+<td>Alt+L</td>
+<td>cmd+选项+L</td>
+<td>展开选定内容</td>
+</tr>
+<tr>
+<td>Shift+Alt+L</td>
+<td>Cmd+Shift+Option+L</td>
+<td>全部折叠</td>
+</tr>
+<tr>
+<td>Alt+O</td>
+<td>cmd+选项+O</td>
+<td>全部展开</td>
+</tr>
+<tr>
+<td>Shift+Alt+O</td>
+<td>Cmd+Shift+Option+O</td>
+<td>转到线</td>
+</tr>
+<tr>
+<td>Shift+Alt+G</td>
+<td>Cmd+Shift+Option+G</td>
+<td>跳转到</td>
+</tr>
+<tr>
+<td>Shift+Alt+J</td>
+<td>cmd+Shift+选项+J</td>
+<td>展开选择</td>
+</tr>
+<tr>
+<td>ctrl+Shift+向上</td>
+<td>Ctrl+Option+Shift+Up</td>
+<td>缩小选择</td>
+</tr>
+<tr>
+<td>ctrl+Shift+向下</td>
+<td>Ctrl+Option+Shift+Down</td>
+<td>下一部分</td>
+</tr>
+<tr>
+<td>Ctrl+PgDn</td>
+<td>Cmd+PgDn</td>
+<td>以前部分</td>
+</tr>
+<tr>
+<td>Ctrl+PgUp</td>
+<td>Cmd+PgUp</td>
+<td>分成几行</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+A</td>
+<td>Ctrl+Option+A</td>
+<td>从开始处编辑行</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Shift+A</td>
+<td>Ctrl+Shift+Option+A</td>
+<td>切换到选项卡</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+。[句号]</td>
+<td>Ctrl+Shift+。[句号]</td>
+<td>上一个选项卡</td>
+</tr>
+<tr>
+<td>Ctrl+F11</td>
+<td>Ctrl+F11</td>
+<td>上一个选项卡(桌面)</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Tab</td>
+<td>Ctrl+Shift+Tab</td>
+<td>下一个选项卡</td>
+</tr>
+<tr>
+<td>Ctrl+F12</td>
+<td>Ctrl+F12</td>
+<td>下一个选项卡(桌面)</td>
+</tr>
+<tr>
+<td>Ctrl+Tab</td>
+<td>Ctrl+Tab</td>
+<td>第一个选项卡</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+F11</td>
+<td>Ctrl+Shift+F11</td>
+<td>最后一个标签</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+F12</td>
+<td>Ctrl+Shift+F12</td>
+<td>向后导航</td>
+</tr>
+<tr>
+<td>Ctrl+F9</td>
+<td>Cmd+F9</td>
+<td>向前导航</td>
+</tr>
+<tr>
+<td>Ctrl+F10</td>
+<td>Cmd+F10</td>
+<td>从选择中提取函数</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+X</td>
+<td>cmd+选项+X</td>
+<td>从选择中提取变量</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+V</td>
+<td>cmd+选项+V</td>
+<td>再凹线</td>
+</tr>
+<tr>
+<td>Ctrl+I</td>
+<td>Cmd+I</td>
+<td>注释/取消注释当前行/选择</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+C</td>
+<td>Cmd+Shift+C</td>
+<td>重排注释</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+/</td>
+<td>Cmd+Shift+/</td>
+<td>重新格式化选择</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+A</td>
+<td>Cmd+Shift+A</td>
+<td>显示诊断</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Alt+D</td>
+<td>Cmd+Shift+Option+D</td>
+<td>调换字母</td>
+</tr>
+<tr>
+<td>没有捷径</td>
+<td>Ctrl+T</td>
+<td>向上/向下移动线条</td>
+</tr>
+<tr>
+<td>alt+向上/向下</td>
+<td>选项+向上/向下</td>
+<td>向上/向下复制行</td>
+</tr>
+<tr>
+<td>shift+Alt+向上/向下</td>
+<td>cmd+Option+向上/向下</td>
+<td>跳转到匹配的括号/括号</td>
+</tr>
+<tr>
+<td>Ctrl+P</td>
+<td>Ctrl+P</td>
+<td>扩展到匹配的括号/括号</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Alt+E</td>
+<td>Ctrl+Shift+E</td>
+<td>在当前光标上方添加光标</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Up</td>
+<td>ctrl+Option+向上</td>
+<td>在当前光标下方添加光标</td>
+</tr>
+<tr>
+<td>ctrl+Alt+向下</td>
+<td>ctrl+Option+向下</td>
+<td>向上移动活动光标</td>
+</tr>
+<tr>
+<td>ctrl+Alt+Shift+向上</td>
+<td>Ctrl+Option+Shift+Up</td>
+<td>向下移动活动光标</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Shift+Down</td>
+<td>Ctrl+Option+Shift+Down</td>
+<td>查找和替换</td>
+</tr>
+<tr>
+<td>Ctrl+F</td>
+<td>Cmd+F</td>
+<td>查找下一个</td>
+</tr>
+<tr>
+<td>Win: F3，Linux: Ctrl+G</td>
+<td>Cmd+G</td>
+<td>查找上一个</td>
+</tr>
+<tr>
+<td>Win: Shift+F3，Linux: Ctrl+Shift+G</td>
+<td>Cmd+Shift+G</td>
+<td>使用选择进行查找</td>
+</tr>
+<tr>
+<td>Ctrl+F3</td>
+<td>Cmd+E</td>
+<td>替换和查找</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+J</td>
+<td>Cmd+Shift+J</td>
+<td>在文件中查找</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+F</td>
+<td>Cmd+Shift+F</td>
+<td>检查拼写</td>
+</tr>
+<tr>
+<td>F7</td>
+<td>F7</td>
+<td>重命名范围内的符号</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Shift+M</td>
+<td>Cmd+Option+Shift+M</td>
+<td>插入Roxygen骨架</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Shift+R</td>
+<td>Cmd+Option+Shift+R</td>
+<td><strong>编辑(控制台和信号源)</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="editing-console-and-source"><strong>描述</strong></h4>
+<table>
+<tbody>
+<tr>
+<td><strong> Windows &amp; Linux </strong></td>
+<td><strong> Mac </strong></td>
+<td>Undo</td>
+</tr>
+<tr>
+<td>Ctrl+Z</td>
+<td>Cmd+Z</td>
+<td>重做</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Z</td>
+<td>Cmd+Shift+Z</td>
+<td>切口</td>
+</tr>
+<tr>
+<td>Ctrl+X</td>
+<td>Cmd+X</td>
+<td>复制</td>
+</tr>
+<tr>
+<td>Ctrl+C</td>
+<td>Cmd+C</td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td>Ctrl+V</td>
+<td>Cmd+V</td>
+<td>全选</td>
+</tr>
+<tr>
+<td>Ctrl+A</td>
+<td>Cmd+A</td>
+<td>跳转到Word</td>
+</tr>
+<tr>
+<td>ctrl+左/右</td>
+<td>选项+左/右</td>
+<td>跳到开始/结束</td>
+</tr>
+<tr>
+<td>Ctrl+Home/End或Ctrl+Up/Down</td>
+<td>Cmd+Home/End或Cmd+Up/Down</td>
+<td>删除行</td>
+</tr>
+<tr>
+<td>Ctrl+D</td>
+<td>Cmd+D</td>
+<td>挑选</td>
+</tr>
+<tr>
+<td>shift+[箭头]</td>
+<td>shift+[箭头]</td>
+<td>选择世界</td>
+</tr>
+<tr>
+<td>ctrl+Shift+左/右</td>
+<td>option+Shift+左/右</td>
+<td>选择到行首</td>
+</tr>
+<tr>
+<td>alt+Shift+向左</td>
+<td>cmd+Shift+向左</td>
+<td>选择到行尾</td>
+</tr>
+<tr>
+<td>alt+Shift+右移</td>
+<td>cmd+Shift+右移</td>
+<td>选择向上/向下翻页</td>
+</tr>
+<tr>
+<td>shift+向上翻页/向下翻页</td>
+<td>shift+向上/向下翻页</td>
+<td>选择开始/结束</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Home/End或Shift+Alt+向上/向下</td>
+<td>cmd+Shift+向上/向下</td>
+<td>向左删除单词</td>
+</tr>
+<tr>
+<td>ctrl+退格键</td>
+<td>Option+退格键或Ctrl+Option+退格键</td>
+<td>向右删除单词</td>
+</tr>
+<tr>
+<td>没有捷径</td>
+<td>选项+删除</td>
+<td>删除到行尾</td>
+</tr>
+<tr>
+<td>没有捷径</td>
+<td>Ctrl+K</td>
+<td>删除到行首</td>
+</tr>
+<tr>
+<td>没有捷径</td>
+<td>option+退格键</td>
+<td>缩进</td>
+</tr>
+<tr>
+<td>制表符(在行首)</td>
+<td>制表符(在行首)</td>
+<td>升级</td>
+</tr>
+<tr>
+<td>Shift+Tab</td>
+<td>Shift+Tab</td>
+<td>将线向上拉至光标处</td>
+</tr>
+<tr>
+<td>Ctrl+U</td>
+<td>Ctrl+U</td>
+<td>拉动光标后的线条</td>
+</tr>
+<tr>
+<td>Ctrl+K</td>
+<td>Ctrl+K</td>
+<td>插入当前插入的文本</td>
+</tr>
+<tr>
+<td>Ctrl+Y</td>
+<td>Ctrl+Y</td>
+<td>插入赋值运算符</td>
+</tr>
+<tr>
+<td>Alt+-</td>
+<td>选项+-</td>
+<td>插入管道运算符</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+M</td>
+<td>Cmd+Shift+M</td>
+<td>在光标处显示功能帮助</td>
+</tr>
+<tr>
+<td>子一代</td>
+<td>子一代</td>
+<td>在光标处显示函数的源代码</td>
+</tr>
+<tr>
+<td>第二子代</td>
+<td>第二子代</td>
+<td>在光标处查找符号的用法(C++)</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+U</td>
+<td>Cmd+Option+U</td>
+<td><strong>完成(控制台和源)</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="completions-console-and-source"><strong>描述</strong></h4>
+<table>
+<tbody>
+<tr>
+<td><strong> Windows &amp; Linux </strong></td>
+<td><strong> Mac </strong></td>
+<td>尝试完成</td>
+</tr>
+<tr>
+<td>Tab或Ctrl+空格键</td>
+<td>制表符或Cmd+空格</td>
+<td>导航候选人</td>
+</tr>
+<tr>
+<td>向上/向下</td>
+<td>向上/向下</td>
+<td>接受选定的候选人</td>
+</tr>
+<tr>
+<td>Enter、Tab或Right</td>
+<td>Enter、Tab或Right</td>
+<td>消除完成弹出窗口</td>
+</tr>
+<tr>
+<td>转义字符</td>
+<td>转义字符</td>
+<td><strong>视图</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="views"><strong>描述</strong></h4>
+<table>
+<tbody>
+<tr>
+<td><strong> Windows &amp; Linux </strong></td>
+<td><strong> Mac </strong></td>
+<td>将焦点移到源代码编辑器</td>
+</tr>
+<tr>
+<td>Ctrl+1</td>
+<td>Ctrl+1</td>
+<td>缩放源编辑器</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+1</td>
+<td>Ctrl+Shift+1</td>
+<td>添加源列</td>
+</tr>
+<tr>
+<td>Ctrl+F7</td>
+<td>Cmd+F7</td>
+<td>将焦点移到控制台</td>
+</tr>
+<tr>
+<td>Ctrl+2</td>
+<td>Ctrl+2</td>
+<td>变焦控制台</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+2</td>
+<td>Ctrl+Shift+2</td>
+<td>移动焦点以帮助</td>
+</tr>
+<tr>
+<td>Ctrl+3</td>
+<td>Ctrl+3</td>
+<td>缩放帮助</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+3</td>
+<td>Ctrl+Shift+3</td>
+<td>将焦点移动到终端</td>
+</tr>
+<tr>
+<td>Alt+Shift+M</td>
+<td>Shift+Option+M</td>
+<td>显示历史记录</td>
+</tr>
+<tr>
+<td>Ctrl+4</td>
+<td>Ctrl+4</td>
+<td>缩放历史</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+4</td>
+<td>Ctrl+Shift+4</td>
+<td>显示文件</td>
+</tr>
+<tr>
+<td>Ctrl+5</td>
+<td>Ctrl+5</td>
+<td>缩放文件</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+5</td>
+<td>Ctrl+Shift+5</td>
+<td>显示绘图</td>
+</tr>
+<tr>
+<td>Ctrl+6</td>
+<td>Ctrl+6</td>
+<td>缩放图</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+6</td>
+<td>Ctrl+Shift+6</td>
+<td>显示包</td>
+</tr>
+<tr>
+<td>Ctrl+7</td>
+<td>Ctrl+7</td>
+<td>缩放包</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+7</td>
+<td>Ctrl+Shift+7</td>
+<td>显示环境</td>
+</tr>
+<tr>
+<td>Ctrl+8</td>
+<td>Ctrl+8</td>
+<td>缩放环境</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+8</td>
+<td>Ctrl+Shift+8</td>
+<td>显示查看器</td>
+</tr>
+<tr>
+<td>Ctrl+9</td>
+<td>Ctrl+9</td>
+<td>缩放查看器</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+9</td>
+<td>Ctrl+Shift+9</td>
+<td>显示Git/SVN</td>
+</tr>
+<tr>
+<td>Ctrl+F1</td>
+<td>Cmd+F1</td>
+<td>缩放Git/SVN</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+F1</td>
+<td>Ctrl+Shift+F1</td>
+<td>显示版本</td>
+</tr>
+<tr>
+<td>Ctrl+F2</td>
+<td>Cmd+F2</td>
+<td>缩放构建</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+F2</td>
+<td>Ctrl+Shift+F2</td>
+<td>显示连接</td>
+</tr>
+<tr>
+<td>Ctrl+F5</td>
+<td>没有捷径</td>
+<td>缩放连接</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+F5</td>
+<td>Ctrl+Shift+F5</td>
+<td>显示在文件中查找的结果</td>
+</tr>
+<tr>
+<td>Ctrl+F6</td>
+<td>Cmd+F6</td>
+<td>缩放教程</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+F6</td>
+<td>Ctrl+Shift+F6</td>
+<td>同步编辑器和PDF预览</td>
+</tr>
+<tr>
+<td>Ctrl+F8</td>
+<td>Cmd+F8</td>
+<td>全局选项</td>
+</tr>
+<tr>
+<td>没有捷径</td>
+<td>Cmd+，[逗号] (Chrome，桌面)，Option+Cmd+，[逗号] (Safari，Firefox)</td>
+<td>项目选项</td>
+</tr>
+<tr>
+<td>没有捷径</td>
+<td>Shift+Cmd+，[逗号]</td>
+<td><strong>建造</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="build"><strong>描述</strong></h4>
+<table>
+<tbody>
+<tr>
+<td><strong> Windows &amp; Linux </strong></td>
+<td><strong> Mac </strong></td>
+<td>构建并重新加载</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+B</td>
+<td>Cmd+Shift+B</td>
+<td>全部加载(开发工具)</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+L</td>
+<td>Cmd+Shift+L</td>
+<td>测试包(桌面)</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+T</td>
+<td>Cmd+Shift+T</td>
+<td>测试包(Web)</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+F7</td>
+<td>cmd+选项+F7</td>
+<td>检查包裹</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+E</td>
+<td>Cmd+Shift+E</td>
+<td>文档包</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+D</td>
+<td>Cmd+Shift+D</td>
+<td><strong>调试</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="debug"><strong>描述</strong></h4>
+<table>
+<tbody>
+<tr>
+<td><strong> Windows &amp; Linux </strong></td>
+<td><strong> Mac </strong></td>
+<td>切换断点</td>
+</tr>
+<tr>
+<td>Shift+F9</td>
+<td>Shift+F9</td>
+<td>执行下一行</td>
+</tr>
+<tr>
+<td>F10</td>
+<td>F10</td>
+<td>步入正轨</td>
+</tr>
+<tr>
+<td>Shift+F4</td>
+<td>Shift+F4</td>
+<td>完成功能/循环</td>
+</tr>
+<tr>
+<td>Shift+F7</td>
+<td>Shift+F7</td>
+<td>继续</td>
+</tr>
+<tr>
+<td>Shift+F5</td>
+<td>Shift+F5</td>
+<td>停止调试</td>
+</tr>
+<tr>
+<td>Shift+F8</td>
+<td>Shift+F8</td>
+<td><strong>图</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="plots"><strong>描述</strong></h4>
+<table>
+<tbody>
+<tr>
+<td><strong> Windows &amp; Linux </strong></td>
+<td><strong> Mac </strong></td>
+<td>以前的情节</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+F11</td>
+<td>cmd+选项+F11</td>
+<td>下一个情节</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+F12</td>
+<td>cmd+选项+F12</td>
+<td><strong>去/SVN </strong>去</td>
+</tr>
+</tbody>
+</table>
+<h4 id="git-svn"><strong>描述</strong></h4>
+<table>
+<tbody>
+<tr>
+<td><strong> Windows &amp; Linux </strong></td>
+<td><strong> Mac </strong></td>
+<td>差异活动源文档</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+D</td>
+<td>Ctrl+Option+D</td>
+<td>提交更改</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+M</td>
+<td>Ctrl+Option+M</td>
+<td>滚动差异视图</td>
+</tr>
+<tr>
+<td>ctrl+向上/向下</td>
+<td>ctrl+向上/向下</td>
+<td>登台/退场(Git)</td>
+</tr>
+<tr>
+<td>空格键</td>
+<td>空格键</td>
+<td>暂存/取消暂存并移至下一个(Git)</td>
+</tr>
+<tr>
+<td>进入</td>
+<td>返回</td>
+<td><strong>会话</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="session"><strong>描述</strong></h4>
+<table>
+<tbody>
+<tr>
+<td><strong> Windows &amp; Linux </strong></td>
+<td><strong> Mac </strong></td>
+<td>退出会话(仅桌面)</td>
+</tr>
+<tr>
+<td>Ctrl+Q</td>
+<td>Cmd+Q</td>
+<td>重新启动R会话</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+F10</td>
+<td>Cmd+Shift+F10</td>
+<td><strong>终端</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="terminal"><strong>描述</strong></h4>
+<table>
+<tbody>
+<tr>
+<td><strong> Windows &amp; Linux </strong></td>
+<td><strong> Mac </strong></td>
+<td>新终端</td>
+</tr>
+<tr>
+<td>Alt+Shift+R</td>
+<td>Shift+Option+R</td>
+<td>将焦点移动到终端</td>
+</tr>
+<tr>
+<td>Alt+Shift+M</td>
+<td>Shift+Option+M</td>
+<td>前一个终端</td>
+</tr>
+<tr>
+<td>Alt+Shift+F11</td>
+<td>Shift+Option+F11</td>
+<td>下一个终端</td>
+</tr>
+<tr>
+<td>Alt+Shift+F12</td>
+<td>Shift+Option+F12</td>
+<td><strong>结论</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion">R降价(。Rmd)文件是你研究的记录。它包含科学家复制您的工作所需的代码，以及帮助读者理解文档的重要细节。这个R Markdown备忘单有帮助吗？请在评论中告诉我们。如果你有兴趣学习更多关于R编程语言的知识，今天就来探索一下顶级的R教程吧。</h2>
+<p>通过本课程，您的R Markdown Reporting会更好！</p>
+<p><a href="https://datacamp.pxf.io/OR3ZAn" target="_blank" rel="noopener"><img src="../Images/eb399121395190c42a91372b6ae1f808.png" alt="reporting for R markdown" data-original-src="https://hackr.io/blog/media/reprting-for-r-markdown.png"/>T2】</a></p>
+<p><strong>人也在读:</strong></p>
+<p><strong>People are also reading:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

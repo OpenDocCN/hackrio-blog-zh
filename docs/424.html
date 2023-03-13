@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>What is API Testing? Understanding API and How It Works</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>什么是API测试？了解API及其工作原理</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/what-is-api-testing#0001-01-01">https://hackr.io/blog/what-is-api-testing#0001-01-01</a></blockquote><div><div class="content">
+										<p>您是否正在尝试找出如何执行API测试？也许你想开始做，但不确定从哪里开始？不要烦恼。从不同类型的API测试方法到API测试工具，您将在本文中了解到关于API测试的所有知识。</p>
+<p>但是在我们开始之前，首先要做的是:</p>
+<h2 id="what-is-an-api">什么是API？</h2>
+<p>API或应用程序编程接口就像是两个独立系统之间的中间人。它的主要工作是将用户的响应传递给系统，并将系统的响应返回给用户。</p>
+<p>例如，<a href="https://www.procurementexpress.com/" target="_blank" rel="noopener"> ProcurementExpress </a> (PE)有一个API允许它与Xero无缝连接。API也为PE和Xero的用户定义了数据格式。这样，两个平台可以相互交换数据。那是怎么发生的？API有一套算法，告诉PE和Xero如何互相对话。很酷，对吧？</p>
+
+<p>简而言之，API有一个接口，允许你提出一个特定的“请求”来处理信息。它还允许你使用像<a href="https://hackr.io/blog/json-vs-xml"> JSON </a>这样的编程语言。</p>
+<p><img src="../Images/97ffb1c3b5fd14ed4992e2888a379a20.png" alt="how an api works" data-original-src="https://hackr.io/blog/media/how-an-api-works.png"/></p>
+<h2 id="what-is-api-testing">什么是API测试？</h2>
+<p>像编程中的任何事情一样，用户在使用API之前必须对其进行测试。因此，我们称测试过程为“API测试”如果你不确定什么是软件测试，<a href="https://hackr.io/blog/what-is-software-testing">看看我们的软件测试指南</a>。</p>
+<p>开发人员执行API测试，以确认它符合所有条件。它们包括用户友好性、可靠性、性能和安全性。此外，API测试暴露了不一致性、错误和任何其他与性能相关的问题。</p>
+<p>通常，所有应用程序都有三个独立的层:</p>
+<ul>
+<li aria-level="1">用户界面层</li>
+<li aria-level="1">应用程序用户界面</li>
+<li aria-level="1">软件架构层，这是您执行API测试的地方</li>
+</ul>
+<h2 id="why-is-api-testing-crucial">为什么API测试至关重要？</h2>
+<p>云应用的兴起增加了API和API测试的使用。企业和个人使用的大多数应用程序都依赖于互连的API。因此，API测试是至关重要的，原因如下:</p>
+
+<ul>
+<li aria-level="1">API测试增强了应用程序的性能。</li>
+<li aria-level="1">API测试允许您通过XML和JSON交换数据。</li>
+<li aria-level="1">您可以使用API测试来检查应用程序的核心功能，识别小错误，并检查系统的强度。</li>
+<li aria-level="1">您可以使用API的特性来创建具有高测试覆盖率的自动化测试。这也包括正面和负面的案例。</li>
+<li aria-level="1">API测试节省了您的时间。例如，仅仅通过进行API测试，您就可以节省八个小时。相比之下，如果你只做<a href="https://hackr.io/blog/types-of-software-testing"> UI测试</a>，你将会花费无数的时间。</li>
+<li aria-level="1">执行API测试的一个主要优势是您可以在早期捕捉错误。</li>
+<li aria-level="1">您不必等待开发来构建您的API测试。另外，您可以开发它们来与您的测试用例兼容。</li>
+</ul>
+<h2 id="how-to-approach-api-testing"><strong>如何进行API测试</strong></h2>
+<p>您需要遵循特定的步骤来完成API测试过程。自然，这将有助于在定义好目标的情况下开始API测试。或者至少对API的工作原理有透彻的理解。</p>
+<p>在进行API测试之前要考虑的一些问题是:</p>
+<ul>
+<li aria-level="1">我将遵循什么程序？</li>
+<li aria-level="1">我将使用哪些工具进行测试？</li>
+<li aria-level="1">在测试API之前，我应该做的第一件事是什么？</li>
+<li aria-level="1">每次不成功的测试都会出现哪条错误消息？</li>
+<li aria-level="1">每个成功的请求都会出现哪条消息？</li>
+</ul>
+<p>一旦掌握了上述问题的答案，就可以使用7个API测试中的一个了。</p>
+<h2 id="types-of-api-tests"><strong>API测试的类型</strong></h2>
+<p><strong>验证测试</strong>:在这种测试中，你会用到一些基本问题。您可以使用的资格确认问题示例包括:</p>
+<ul>
+<li aria-level="1">我们是否正确地构建了产品？</li>
+<li aria-level="1">我们使用的API对于解决问题是否足够有效？</li>
+<li aria-level="1">我们遇到过任何重大的编码障碍吗？如果是的话，这些绊脚石是什么，我们将如何消除它们？</li>
+<li aria-level="1">我们是否有一些冗长的代码需要花费时间来修复，并且会将API推向错误的方向？</li>
+<li aria-level="1">最重要的是，API是否准确地存储了数据？</li>
+</ul>
+<ol>
+<li><strong>功能测试:</strong>这个测试将确保API执行它需要做的事情。你是怎么做到的？通过分析代码库中的特定函数。这将确保API准确地处理错误。</li>
+<li><strong>负载测试</strong>:这种API测试决定了一个API可以处理多少个请求。在大多数情况下，您将在每个代码库之后使用负载测试。你的目标是确认API在压力下是否能正常工作。</li>
+<li><strong>可靠性测试:</strong>该测试帮助您在所有平台上开发一致的结果。</li>
+<li><strong>安全性测试:</strong>假设你要测试一个API的安全性。你到底从哪里开始？你开始检查你的API的渗透水平。在那里，您确认授权检查和用户权限管理。</li>
+<li><strong>渗透测试</strong>:您将在安全测试之后进行渗透测试。为什么？因为您必须从外部角度分析攻击媒介。一个例子是当你使用渗透测试来针对整个API。</li>
+<li><strong>模糊测试</strong>:您将使用这个测试来测试系统的负面行为。例如，当您试图强制数据崩溃或溢出时。</li>
+</ol>
+<h2 id="the-benefits-of-api-testing"><strong>API测试的好处</strong></h2>
+<p>使用API测试有很多好处——让我们来看看其中的一些:</p>
+
+
+
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fapi-and-web-service-introduction%2F" target="_blank" rel="noopener"> API和Web服务介绍</a></p>
+<h2 id="how-to-perform-api-testing"><strong>如何进行API测试</strong></h2>
+<p>按照以下步骤执行API测试:</p>
+<ul>
+<li aria-level="1">记录所有的API测试要求。这将帮助你计划你的API测试。问问你自己:我们将使用API做什么？我们的应用程序有工作流吗？如果没有，为什么？哪些应用可以与我们的系统集成？</li>
+<li aria-level="1"><strong>建立测试环境。</strong>一旦您记录了您的测试需求，看看您的测试环境。您所有的数据库和服务器应用程序都符合标准吗？看看是否还有任何需要执行的配置，并立即执行！</li>
+<li aria-level="1"><strong>整合应用数据。</strong>接下来，将您的应用程序数据与API测试放在一起，以确保一切正常。请记住，您的API特性在任何配置下都应该表现良好。</li>
+<li aria-level="1">决定API测试的类型。一旦您集成了您的应用程序数据，您需要决定您将使用哪种API测试。我们已经在上面强调了一些不同类型的API测试。</li>
+<li aria-level="1"><strong>考虑文本执行和报告</strong>。如果您想正确地执行API测试，就不能忽略文本和报告。最简单的方法是创建测试用例。想一想普通用户在请求API时可能面临的场景。测试这些场景并提出一份报告。</li>
+</ul>
+
+<p>考虑使用下面的<a href="https://hackr.io/blog/best-api-testing-tools"> API测试工具</a>中的一个来像专家一样执行你的API测试。</p>
+
+<p><img src="../Images/2d0b89caa77abc3af7f1eef4e8e4f9e6.png" alt="postman api" data-original-src="https://hackr.io/blog/media/postman-api.png"/></p>
+<p>当Postman首次推向市场时，它是一个谷歌Chrome插件。今天，你可以使用Postman来测试任何API。有趣的是，Mac和Windows用户也可以使用它。您可以使用Postman来自动化测试、执行调试和运行请求。</p>
+<p><strong>特性</strong></p>
+<ul>
+<li aria-level="1">Postman接口允许你提取web API数据。</li>
+<li aria-level="1">您可以使用它来编写布尔测试。</li>
+<li aria-level="1">它带有内置工具、集合和工作区。</li>
+<li aria-level="1">Postman支持各种格式，包括RAML和Swagger。</li>
+</ul>
+<p><strong>定价</strong></p>
+<p>虽然你可以免费使用它，但额外的功能要花12美元。</p>
+
+<p><img src="../Images/79f298b590433b74530f9bd8342dca38.png" alt="SoapUI’s API" data-original-src="https://hackr.io/blog/media/soapui-s-api.png"/></p>
+<p>您可以使用这个漂亮的工具来运行web服务和API测试。它的好处是提供了免费套餐和固定套餐。开发者可以使用它的免费包来授权用户访问完整的源代码。</p>
+<p><strong>特性</strong></p>
+<ul>
+<li aria-level="1">它允许您重用安全扫描和功能测试用例的负载测试。</li>
+</ul>
+<ul>
+<li aria-level="1">它具有点击和拖放功能，可以简单快速地创建测试。</li>
+</ul>
+<ul>
+<li aria-level="1">它支持异步测试。</li>
+</ul>
+<ul>
+<li aria-level="1">它具有数据驱动的测试功能。</li>
+</ul>
+<ul>
+<li aria-level="1">它允许你合成数据生成。</li>
+</ul>
+<p><strong>定价</strong></p>
+<p>你可以免费使用它。然而，如果你希望享受其他福利，费用从每年640€开始。</p>
+
+<p><img src="../Images/b7a8e022901d47d65053dc813607b4e4.png" alt="APIGEE Google " data-original-src="https://hackr.io/blog/media/apigee-google-api.png"/></p>
+<p>Apigee是你应该考虑的另一个API测试工具，由Google提供。这是一个跨云API测试工具，拥有无数的特性。您可以用它来测量和测试API性能。</p>
+<p><strong>特性</strong></p>
+<ul>
+<li aria-level="1">Apigee具有跟踪错误率、API流量和响应时间的功能。</li>
+<li aria-level="1">借助“OpenAPI规范”及其在云中的部署，您可以使用它来创建代理。</li>
+<li aria-level="1">它与包含大量数据的API兼容。</li>
+</ul>
+<p><strong>定价</strong></p>
+<p>你可以免费使用Apigee。</p>
+
+
+<p><img src="../Images/6153f97364ee28eb9f91c17d5d15f4d9.png" alt="karate api" data-original-src="https://hackr.io/blog/media/karate-dsl-api.png"/></p>
+<p>你熟悉空手道DSL吗？如果你不是，你应该试一试。使用这个很酷的API测试工具，您可以做很多事情，从为基于API的BDD测试创建场景到为场景创建定义。</p>
+<p><strong>特性</strong></p>
+<ul>
+<li aria-level="1">空手道DSL对WebSocket有基于同步能力的支持。</li>
+</ul>
+<ul>
+<li aria-level="1">它允许编写测试，即使是对技术恐惧的人。</li>
+</ul>
+<ul>
+<li aria-level="1">它支持多线程并行执行和配置升级或切换。</li>
+</ul>
+<p><strong>定价</strong></p>
+<p>空手道DSL有开源定价，这意味着它对任何开发者都是可用的。</p>
+<h2 id="last-thoughts">最后的想法</h2>
+<p>每个企业在某个时间点都需要集成。没有API测试，集成是不可能无缝的。如今，大多数公司都使用API集成平台，如<a href="https://zapier.com/" target="_blank" rel="noopener"> Zapier </a>，它允许你与其他尖端技术集成。</p>
+<p>对于任何想要正确执行API测试的开发人员来说，解决基础问题非常重要。因此，花时间让自己熟悉执行API测试的所有技巧和工具。还可以考虑参加一个课程，通过深入了解API知识来提升自己。</p>
+
+									</div>
+
+									</div>    
+</body>
+</html>

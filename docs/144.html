@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Upload WatchOS app on App Store</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>在App Store上传WatchOS应用</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/upload-watchos-app-on-app-store#0001-01-01">https://hackr.io/blog/upload-watchos-app-on-app-store#0001-01-01</a></blockquote><div><div class="content">
+										<p>Apple Watch / watchOS -“人与科技关系的新篇章”<br/> Apple watch让你的应用体验离用户更近了一步。Apple watch使用watchKit框架，让你可以为Apple watch创建应用程序，并将其与你的原生应用程序相链接。<br/>在本文中，你将学习如何在App store上传你的第一款WatchOS应用。这需要一个工作的WatchOS应用程序，如果你没有任何项目，请阅读这篇文章:<a href="https://www.raywenderlich.com/287-watchos-4-tutorial-part-1-getting-started" rel="nofollow" target="_blank">你的第一个WatchOS应用程序，并建立一个。</a></p>
+<h2 id="upload-watchos-app-on-app-store">在App Store上传WatchOS应用</h2>
+<h3 id="requirements">要求</h3>
+<ol>
+<li>你需要一个开发者账户。<a href="https://developer.apple.com/" target="_blank">登录或者买一个</a>。</li>
+<li>包含3个目标应用程序的Xcode项目:iOS应用程序、WatchOS应用程序和Watchkit扩展应用程序。</li>
+</ol>
+<h3 id="steps">步伐</h3>
+
+<p><img class="aligncenter size-full wp-image-3761" src="../Images/8f998a666487bd3629382816984168b9.png" alt="Step 1" data-original-src="https://hackr.io/blog/uploads/images/1570190915DsBiiBq34m.jpg"/></p>
+<ul>
+<li>点击我的应用程序，在那里创建一个新的应用程序。</li>
+</ul>
+<p><img class="aligncenter size-full wp-image-3762" src="../Images/8d7edda7527ebec649d4cb3cc1cd77ff.png" alt="Step 2" data-original-src="https://hackr.io/blog/uploads/images/15701909155arYojhNEe.jpg"/></p>
+<ul>
+<li>创建一个新的iOS应用程序，选择相应的应用程序ID，并将其复制到SKU</li>
+</ul>
+<p><img class="aligncenter size-full wp-image-3763" src="../Images/b1d748aa4d77e99b55aea3f9a8c5c458.png" alt="Step 3" data-original-src="https://hackr.io/blog/uploads/images/1570190915tPhR9Ea6AO.jpg"/></p>
+
+<ul>
+<li>现在在Xcode中打开你的项目，从文件选择器中选择app，进入常规设置，使用开发团队对App进行签名。</li>
+<li>选择监视应用程序，并确保构建标识符遵循该模式。watchkitapp</li>
+</ul>
+<p><img class="aligncenter size-full wp-image-3764" src="../Images/011d9297030adde859ace9c1d445b79c.png" alt="Step 5" data-original-src="https://hackr.io/blog/uploads/images/15701909156SDJJQO2j2.jpg"/></p>
+<ul>
+<li>遵循watchkit扩展应用程序的步骤4，并确保构建标识符遵循模式. watchkitapp.watchkitextension</li>
+</ul>
+<p><img class="aligncenter size-full wp-image-3765" src="../Images/612d50861f3e27a9101103780138f228.png" alt="Step 6" data-original-src="https://hackr.io/blog/uploads/images/15701909154Zk7x6XWdc.jpg"/></p>
+<h3 id="upload-app-to-app-store">将应用上传到App store</h3>
+<p>若要在App store上上传新应用程序</p>
+<ul>
+<li>选择iOS应用和归档应用。</li>
+<li>在管理器窗口中，选择您的应用程序，然后选择上传应用程序</li>
+</ul>
+<p><img class="aligncenter size-large wp-image-3766" src="../Images/9aa20e39998ff0781a0a3fa8ebdec51c.png" alt="Step 2 App Store" data-original-src="https://hackr.io/blog/uploads/images/1570190915k4ugIjtI12.jpg"/></p>
+<ul>
+<li>随后按照说明操作，你会在App Store Connect中看到你的应用在试飞中上传</li>
+</ul>
+<p><img class="aligncenter size-full wp-image-3767" src="../Images/0eaa3987226736355a3b2660896383ba.png" alt="Step 3 App Store" data-original-src="https://hackr.io/blog/uploads/images/1570190915LbFQXYJL1y.jpg"/></p>
+<ul>
+<li>要单独更新手表</li>
+<li>从Xcode中选择Watchkit app only</li>
+</ul>
+<p><img class="aligncenter size-full wp-image-3768" src="../Images/ca59c197bb85795e73f2b801b1f56b21.png" alt="WatchOs Step 1" data-original-src="https://hackr.io/blog/uploads/images/1570190915t8H1rGv5tA.jpg"/></p>
+
+<ul>
+<li>增加内部版本号和版本号</li>
+<li>之后按照上面的步骤。</li>
+</ul>
+<h3 id="test-watchos-app">测试手表应用程序</h3>
+<ul>
+<li>从App Store connect添加测试人员</li>
+</ul>
+<p><img class="aligncenter size-full wp-image-3769" src="../Images/b9f2a8980a50702c5c4256c9f17dc494.png" alt="App Store Connect" data-original-src="https://hackr.io/blog/uploads/images/1570190915P7wIkzP81q.jpg"/></p>
+<ul>
+<li>在iPhone中打开试飞应用程序</li>
+<li>在iPhone上安装应用程序之后，你会看到一个切换按钮，将应用程序安装在iWatch上</li>
+</ul>
+<h3 id="conclusion">结论</h3>
+<p>现在你可以通过TestFlight在手表上运行你的应用了。WWDC19发生了，公布了watchOS6和SwiftUI。有了它，你不需要为手表应用程序安装iOS应用程序，它现在有一个专用的应用程序商店，这意味着现在你可以为Apple Watch创建独立的应用程序。现在你可以使用SwiftUI制作iOS应用、watchOS应用、tvOS应用和iPadOS应用。<a href="https://github.com/squareboat/swiftUI-sample-project" target="_blank" rel="noopener">这里是iOS的SwiftUI示例项目的示例代码</a>。第一个使用SwiftUI的watchOS应用程序的博客即将推出。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

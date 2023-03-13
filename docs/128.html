@@ -1,0 +1,357 @@
+<html>
+<head>
+<title>JSON vs XML in 2023: Comparing Features and Examples</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年的JSON与XML:比较特性和示例</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/json-vs-xml#0001-01-01">https://hackr.io/blog/json-vs-xml#0001-01-01</a></blockquote><div><div class="content">
+										<p>JSON和XML已经存在了几十年，尽管XML更老一些。开发人员已经广泛地使用了这两种技术，并且每种技术都有自己独特的特性。</p>
+<p>在这里，我们将解释JSON和XML之间的区别，同时也讨论两者实际上是什么，以及它们各自的优缺点。如果你想要简短的答案，你可以看看下面的汇总表；我们以后再讨论细节。</p>
+<p> </p>
+<h2 id="json-vs-xml-summarized"><strong> JSON vs XML:总结</strong></h2>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>功能</strong></p>
+</td>
+<td>
+<p><strong> XML </strong></p>
+</td>
+<td>
+<p><strong> JSON </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>语言</p>
+</td>
+<td>
+<p>XML是一种标记语言，而不是编程语言，它有标记来定义元素。</p>
+</td>
+<td>
+<p>JSON只是用JavaScript编写的一种格式。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>数据存储</p>
+</td>
+<td>
+<p>XML数据存储为树形结构。示例:</p>
+<pre class="language-xml"><code>2001
+
+ Varsha
+
+
+
+
+ 2002
+
+ Akash</code></pre>
+</td>
+<td>
+<p>数据像一个带有键值对的映射一样存储。示例:</p>
+<pre class="language-json"><code>{“employees”: [
+
+ {"id":"2001", “name":"Varsha"}, 
+
+ {"id":"2002", "name":"Akash"}
+
+]}</code></pre>
+</td>
+</tr>
+<tr>
+<td>
+<p>处理</p>
+</td>
+<td>
+<p>可以处理和格式化文档和对象</p>
+</td>
+<td>
+<p>不进行任何处理或计算</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>速度</p>
+</td>
+<td>
+<p>解析庞大而缓慢，导致数据传输速度变慢</p>
+</td>
+<td>
+<p>非常快，因为文件非常小，JavaScript引擎解析更快，因此数据传输更快</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>名称空间支持</p>
+</td>
+<td>
+<p>支持名称空间、注释和元数据</p>
+</td>
+<td>
+<p>没有提供名称空间、添加注释或编写元数据</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>文档大小</p>
+</td>
+<td>
+<p>文档体积庞大，对于大文件，标签结构使得阅读起来庞大而复杂。</p>
+</td>
+<td>
+<p>紧凑易读，没有多余或空的标签或数据，使文件看起来简单。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>阵列支持</p>
+</td>
+<td>
+<p>不直接支持数组。为了能够使用数组，必须为每个项目添加标签。</p>
+</td>
+<td>
+<p>支持数组</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>数据类型支持</p>
+</td>
+<td>
+<p>支持许多复杂的数据类型，包括图表、图像和其他非原始数据类型。</p>
+</td>
+<td>
+<p>JSON只支持字符串、数字、数组、布尔值和对象。对象只能包含基元类型。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>UTF支持</p>
+</td>
+<td>
+<p>XML支持UTF-8和UTF-16编码。</p>
+</td>
+<td>
+<p>JSON支持UTF和ASCII编码。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>安全性</p>
+</td>
+<td>
+<p>XML结构容易受到一些攻击，因为默认情况下启用了外部实体扩展和DTD验证。当这些被禁用时，XML解析器更安全。</p>
+</td>
+<td>
+<p>JSON解析几乎在任何时候都是安全的，除非使用JSONP，这会导致跨站点请求伪造(CSRF)攻击。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>数据处理</p>
+</td>
+<td>
+<p>虽然AJAX中的X代表XML，但是由于XML中的标签，大量的带宽被不必要的消耗，使得AJAX请求很慢。</p>
+</td>
+<td>
+<p>由于在JSON中数据是串行处理的，所以结合AJAX使用它可以确保更快的处理，因此是更好的选择。使用eval()方法可以很容易地操作数据。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id=""><strong>什么是XML？</strong></h3>
+<h3 id="what-is-xml"><strong><img src="../Images/d97fbe62a66b02d3ab709c7b0ffddee0.png" alt="" data-original-src="https://hackr.io/blog/media/what-is-xml-min.png"/>T2】</strong></h3>
+<p>XML(可扩展标记语言)是数据交换的默认选择，因为几乎每种语言都有一个解析器。它是SGML的一个应用程序，由一个11人的工作组编写。它的初稿于1996年8月至11月在Sun Microsystems发布，第一个版本的XML于1998年2月发布。</p>
+
+<p>从XML中获取特定数据很容易，而且有一些模式可以验证XML。XML在当今的在线世界中被广泛使用——银行服务、在线零售店、集成工业系统等等。</p>
+<p><strong>优点</strong></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>缺点</strong></p>
+</td>
+<td>
+<p>使用XSLT处理器基于处理逻辑创建交互式网页、存储内容数据并将其呈现给用户。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>XML需要处理应用程序。</p>
+</td>
+<td>
+<p>XML简化了平台变更过程。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>XML语法有时会令人困惑，因为它与其他替代方法相似。</p>
+</td>
+<td>
+<p>在XML的帮助下，不同平台之间的数据交换很快完成。因此，它使得文档可以跨系统和应用程序进行传输。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>不支持内部数据类型。</p>
+</td>
+<td>
+<p>规定以可重用和可移植的格式定义元数据。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>XML语法是多余的。</p>
+</td>
+<td>
+<p>更准确的网络搜索结果，因为数据存储在标签内。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="https://click.linksynergy.com/deeplink?id=Qouy7GhEEFU&amp;mid=39197&amp;murl=https://www.udemy.com/course/learn-xml-crash-course/" target="_blank" rel="noopener"><img src="../Images/066df6eca4c6d6d54b4df0c4ebd57276.png" alt="" data-original-src="https://hackr.io/blog/media/xml-crash-course.png"/>T2】</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-1"><strong>JSON是什么？</strong></h3>
+<h3 id="what-is-json"><strong><img src="../Images/b58456f9e95e6568fbcd22c9d42cb6c9.png" alt="" data-original-src="https://hackr.io/blog/media/what-is-json-min.jpg"/>T2】</strong></h3>
+<p>JSON (JavaScript Object Notation)数据格式最初是由道格拉斯·克洛克福特在2001年3月规定的。其官方网站于2002年推出，到2005年，雅虎开始在JSON中提供网络服务。到2013年，它很快成为ECMA的国际标准。最新的JSON格式标准发布于2017年。</p>
+<p>JSON是XML进行数据传输的一个更好的选择，它需要更少的编码，具有更小的尺寸，使得处理和传输数据更快。虽然它是用<a href="https://hackr.io/tutorials/learn-javascript?ref=blog-post"> JavaScript </a>编写的，但它是独立于语言的。然而，它没有XML所具有的任何强大的验证和模式相关特性。那么，是什么让JSON如此受欢迎呢？</p>
+<p>随着REST APIs相对于SOAP/WSDL模型的流行，JSON在API代码和web服务编程方面获得了发展势头。它是基于文本的、轻量级的，并且具有易于解析的数据格式，不需要额外的代码来进行解析。</p>
+<p>因此，JSON有助于更快的数据交换和web服务结果。所以对于只需要返回大量数据并显示这些数据的web服务，理想的选择是JSON。</p>
+
+<p><strong>优点</strong></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>缺点</strong></p>
+</td>
+<td>
+<p>JSON API提供了一个高级外观，从而简化了常用的用例。‬ ‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>由于没有名称空间支持，JSON的可扩展性很差。</p>
+</td>
+<td>
+<p>JSON非常快，因为它消耗很少的内存空间，适合大型对象图或系统。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>有限的开发工具支持。</p>
+</td>
+<td>
+<p>JSON库是开源的，每个人都可以免费使用。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>它提供了对形式语法定义的支持。</p>
+</td>
+<td>
+<p>Jackson API为许多要序列化的对象提供了默认映射。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>创建清晰、兼容且易于阅读的JSON结果。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>JSON库不需要任何其他库来处理。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>支持所有浏览器。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="https://click.linksynergy.com/deeplink?id=Qouy7GhEEFU&amp;mid=39197&amp;murl=https://www.udemy.com/course/json-training-a-javascript-object-notation-course/" target="_blank" rel="noopener"><img src="../Images/eb98e4cc0df330f23536a7db9713ec3a.png" alt="" data-original-src="https://hackr.io/blog/media/intro-to-json.png"/>T2】</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-2"><strong>XML vs JSON的结构</strong></h3>
+<h3 id="structure-of-xml-vs-json">下面的例子说明了XML和JSON在结构上的不同</h3>
+<p><strong> XML </strong></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong> JSON </strong></p>
+</td>
+<td>
+<p><pre class="language-xml"><code>01   Adam   Cloud computing &lt;/technology &gt;  Development</code></pre></p>
+</td>
+</tr>
+<tr>
+<td> </td>
+<td>
+<pre class="language-json"><code>{
+
+"employees": 
+
+ [
+
+{
+
+"id": "01",
+
+"name": "Adam",
+
+"technology": "Cloud computing",
+
+"title": "Engineer",
+
+"team": "Development"
+
+}
+
+}</code></pre>
+<p>正如我们所看到的，标签结构无疑增加了一些复杂性，而JSON格式看起来就像读取一个简单的文本！此外，随着Node.js等基于JavaScript的框架越来越流行，获取JSON格式的数据使得将数据加载到对象树变得容易。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>JSON战胜XML的另一个例子是当您想将数据从web应用程序导出到数据库时。JSON是这种转换的完美文件格式，因为每种编程语言都能够解析JSON——一种真正开放的标准和可互操作的格式！</p>
+<p>随着云计算和API的出现，JSON在未来将发挥更大的作用，现在对数据的适当存储和传输的需求非常大，并且在未来可能会进一步增长。</p>
+<p><a href="https://click.linksynergy.com/deeplink?id=Qouy7GhEEFU&amp;mid=39197&amp;murl=https://www.udemy.com/course/api-documentation-1-json-and-xml/" target="_blank" rel="noopener"><img src="../Images/39bf4391ded98fc8e37e00bc48d998b6.png" alt="" data-original-src="https://hackr.io/blog/media/json-and-xml.png"/>T2】</a></p>
+<h2 id="-3">【JSON和XML的区别简而言之</h2>
+<h2 id="the-difference-between-json-and-xml-in-a-nutshell"><strong><img src="../Images/cc5c636633bf81d8c9d5911bde415085.png" alt="" data-original-src="https://hackr.io/blog/media/the-difference-between-json-and-xml-in-a-nutshell-min.jpg"/>T2】</strong></h2>
+<p>XML(可扩展标记语言)已经存在了30多年，它是每个web应用程序不可或缺的一部分。无论是配置文件、映射文档还是模式定义，XML都为数据提供了清晰的结构，并有助于变量的动态配置和加载，从而简化了数据交换。</p>
+<p>JSON以一种简洁且易于理解的映射格式(键/值对)存储所有数据。人们将数据建模或直接映射到域对象的便利性作为JSON优于XML的主要优势——这使得它更容易预测和理解结构。请记住，不是每个人都同意这一点。</p>
+<p>首先，JSON只是一种数据格式，而XML是一种标记语言。实际上，您可以通过XPath进行查询并获得答案。类似地，元数据、属性和名称空间也可以添加到XML中。此外，XML以及XSL、XSD、XQuery等。这是一个强大的组合。这些重要的特性仍然使XML成为值得选择的东西。</p>
+<p><strong>无论如何，如果一个项目需要文档标记和元数据信息，最好使用XML。否则，对于更有组织的数据交换，JSON可能是您的首选。</strong></p>
+<p> </p>
+<p><span> <strong> XML还是JSON？</strong>T3】</span></p>
+<p>JSON和XML关注的目的有些相似，但是选择取决于细节。底线是，如果您有简单的数据交换，而不考虑语义和验证，那么就使用JSON。然而，即使使用JSON，学习XML和相关技术也是必不可少的，不仅仅是数据交换和快速处理。JSON要想与XML的能力相提并论还有很长的路要走，但是它有自己的便利之处。</p>
+<p> </p>
+<h2 id="-4"><strong>常见问题解答</strong></h2>
+<h2 id="frequently-asked-questions">XML和JSON哪个更好？</h2>
+<h3 id="which-is-better-xml-or-json">这个问题没有直接的答案，因为两者都有自己的用例。这取决于你的目的是什么。如果想要简单的数据交换，JSON更好。</h3>
+<p><strong>XML和JSON有什么不同？</strong></p>
+<h3 id="how-is-xml-different-from-json">XML允许你创建定制的化妆语言，并且有很多特性。JSON是一种数据交换格式，为数据编码提供了规范。</h3>
+<p><strong>什么时候应该使用JSON？</strong></p>
+<h3 id="when-should-i-use-json">当您创建与浏览器或移动应用程序通信的软件时，应该使用JSON。它是为交换数据而设计的。</h3>
+<p><strong>JSON比XML快吗？</strong></p>
+<h3 id="is-json-faster-than-xml">是的，JSON比XML快，因为它是轻量级的。JSON解析器不太复杂，占用的内存也较少。</h3>
+<p><strong>人也在读:</strong></p>
+<p><strong>People are also reading:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

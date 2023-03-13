@@ -1,0 +1,596 @@
+<html>
+<head>
+<title>50+ Top MongoDB Interview Questions and Answers For 2023</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年50+热门MongoDB面试问答</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/mongodb-interview-questions#0001-01-01">https://hackr.io/blog/mongodb-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>MongoDB是一个基于文档的数据库程序，由10gen software于2007年开发，现在称为MongoDB Inc. MongoDB使用类似JSON的文档和可选模式，是一个NoSQL数据库程序。</p>
+<p>这些年来，MongoDB越来越受欢迎，尽管它仍然落后于MySQL和其他公司。它对以文档为中心的数据很有好处，许多开发人员都想在某种程度上了解它。对于某些角色，将测试您的MongoDB知识。</p>
+<p>这里我们列出了排名靠前的MongoDB面试问答，分为基础题和高级题。</p>
+<h2 id="top-mongodb-interview-questions-and-answers"><strong>热门MongoDB面试问答</strong></h2>
+<h3 id="mongodb-basic-interview-questions"><strong> MongoDB基础面试问题</strong></h3>
+<h4 id="toc-1-what-is-mongo-shell"><strong> 1。什么是Mongo shell？</strong></h4>
+<p>Mongo shell是MongoDB的JavaScript接口，可用于查询和更新数据。它是交互式的，也可用于执行管理操作。</p>
+
+<h4 id="toc-2-how-does-mongodb-store-data"><strong> 2。MongoDB如何存储数据？</strong></h4>
+<p>由于是基于文档的，MongoDB以BSON或二进制JavaScript对象符号存储文档，这是JSON的二进制编码格式。</p>
+<h4 id="toc-3-what-type-of-nosql-database-is-mongodb"><strong> 3。MongoDB是什么类型的NoSQL数据库？</strong></h4>
+<p>它是一个文档数据库，包含具有键值对、键数组对和嵌套文档的文档。</p>
+<h4 id="toc-4-list-out-the-important-features-of-mongodb"><strong> 4。列出MongoDB的重要特性。</strong></h4>
+<p>MongoDB的一些重要特性是:</p>
+<ul>
+<li>使用无模式数据库</li>
+<li>没有复杂的连接</li>
+<li>由于工作集(内存)的存在，访问数据的速度更快</li>
+<li>聚合、分片和复制等特性使其易于使用</li>
+<li>跨平台和基于文档</li>
+<li>自动故障转移和高可用性</li>
+</ul>
+<h4 id="toc-5-what-are-the-data-models-in-mongodb"><strong> 5。MongoDB中的数据模型有哪些？</strong></h4>
+<p>数据建模依赖于文档的结构。在MongoDB中，这可以通过两种方式实现:</p>
+<ul>
+<li>嵌入到单个文档结构中的相关数据(嵌入式数据模型)</li>
+<li>通过从一个文档到另一个文档的引用，存储数据之间的关系(<a href="https://hackr.io/blog/dbms-normalization">规范化数据模型)</a></li>
+</ul>
+<h4 id="toc-6-mongodb-is-called-a-schema-less-database-if-yes-how-do-you-create-the-schema-in-mongodb"><strong> 6。MongoDB被称为无模式数据库。如果是，如何在MongoDB中创建模式？</strong></h4>
+<p>更正确的说法是，MongoDB具有动态类型的模式，因为它依赖于JSON，这是一种无模式的数据结构。要创建模式，请创建并插入文档。插入文档后，将在数据库中创建相应的集合。</p>
+<h4 id="toc-7-what-is-a-namespace">7 .<strong>。什么是名称空间？</strong></h4>
+<p>名称空间是数据库名称和集合名称的串联。</p>
+
+<p>示例:students.the subject是集合，其中students是数据库和主题。</p>
+<h4 id="toc-8-how-do-you-perform-crud-operations-in-mongodb"><strong> 8。如何在MongoDB中执行CRUD操作？</strong></h4>
+<ul>
+<li><strong>C</strong>–Create:db . collection . insert()；</li>
+<li><strong>R</strong>–Read:db . collection . find()；</li>
+<li><strong>U</strong>–Update:db . collection . Update()；</li>
+<li><strong>D</strong>–Delete:db . collection . remove({ " field name ":" value " })；</li>
+</ul>
+<h4 id="toc-9-how-are-constraints-managed-in-mongodb"><strong> 9。在MongoDB中约束是如何管理的？</strong></h4>
+<p>从MongoDB 3.2开始，您可以在集合上添加一个文档验证器。也可以使用db . collection . create index({ " key ":1 }，)创建唯一索引；</p>
+<h4 id="toc-10-what-is-bson">10。什么是BSON？</h4>
+<p>BSON或二进制JSON是JSON的二进制编码格式。它扩展了JSON，提供了更多的数据类型和字段。</p>
+<h4 id="toc-11-how-does-mongodb-handle-indexing"><strong> 11。MongoDB如何处理索引？</strong></h4>
+<p>索引是使用ensureIndex()方法完成的。语法是:</p>
+<pre class="language-sql"><code>db.COLLECTION_NAME.ensureIndex()</code></pre>
+<h4 id="toc-12-name-the-default-index-created-for-a-new-collection"><strong> 12。命名为新集合创建的默认索引。</strong></h4>
+<p>为新集合创建的默认索引是_id</p>
+<h4 id="toc-13-what-is-sharding-in-mongodb">13。MongoDB中的分片是什么？</h4>
+<p><strong><img src="../Images/ba6a69006fd34d262550e8f5d316e469.png" alt="" data-original-src="https://hackr.io/blog/media/what-is-sharding-in-mongodb-min.png"/>T2】</strong></p>
+<p>MongoDB使用分片来满足数据增长，这意味着跨各种机器对数据记录进行排序。每个碎片都是一个副本集。</p>
+<h4 id="toc-14-name-the-two-storage-engines-using-mongodb"><strong> 14。使用MongoDB命名两个存储引擎？</strong></h4>
+<p>MMAPv1和WiredTiger是MongoDB使用的两个存储引擎。</p>
+<h4 id="toc-15-how-do-you-create-and-drop-a-collection-in-mongodb">15。如何在MongoDB中创建和删除集合？</h4>
+<ul>
+<li><strong>创建集合:</strong>db . Create collection()；</li>
+<li><strong> Drop集合:</strong>db . collection . Drop()；</li>
+</ul>
+<h4 id="toc-16-how-can-you-store-images-videos-and-other-large-files-in-mongodb">16。如何在MongoDB中存储图像、视频和其他大文件？</h4>
+<p>大型文件使用GridFS规范存储在MongoDB中。</p>
+<h4 id="toc-17-in-what-ways-is-mongodb-better-than-mysql"><strong> 17。MongoDB在哪些方面优于MySQL？</strong></h4>
+<p>MongoDB有一个灵活的数据模型，其中的模式可以根据业务需求进行扩展。此外，MongoDB更快，可以处理更多的数据类型，以便更好地管理实时应用程序。</p>
+<p>18。列出集合中所有索引的命令是什么？</p>
+<p>命令是db . collection . getindexes()；</p>
+<h4 id="toc-19-how-does-mongodb-perform-text-search"><strong> 19。MongoDB如何执行文本搜索？</strong></h4>
+<p>可以使用文本索引进行文本搜索。这里有一个例子:</p>
+<pre class="language-sql"><code>db.collection_name.ensureIndex();</code></pre>
+<h4 id="toc-20-what-is-the-default-interval-to-write-updates-to-the-disk">20。将更新写入磁盘的默认时间间隔是多少？</h4>
+<p>默认时间间隔是60秒。</p>
+<h4 id="toc-21-list-some-of-the-data-types-supported-by-mongodb"><strong> 21。列出一些MongoDB支持的数据类型。</strong></h4>
+<p>一些数据类型是数字、字符串、数组、二进制数据、布尔值、日期、正则表达式、ObjectId等。</p>
+<h4 id="toc-22-how-can-applications-access-real-time-data-changes"><strong> 22。应用程序如何访问实时数据变化？</strong></h4>
+<p>应用程序可以使用更改流访问实时数据更改，更改流充当所有收集操作(如插入、删除和更新)的订阅者。</p>
+<h4 id="toc-23-what-are-the-commands-to-create-a-backup-of-the-data-and-restore-the-data"><strong> 23。创建数据备份和恢复数据的命令是什么？</strong></h4>
+<ul>
+<li>mongodump用于创建备份。</li>
+<li>mongorestore [backup_path]用于恢复数据。</li>
+</ul>
+<h4 id="toc-24-does-mongodb-support-foreign-key-constraints"><strong> 24。MongoDB支持外键约束吗？</strong></h4>
+<p>不，MongoDB不支持外键约束。由于文档结构的原因，MongoDB提供了定义关系的灵活方式。</p>
+<h3 id="mongodb-advanced-interview-questions"><strong> MongoDB高级面试问题</strong></h3>
+<h4 id="toc-25-what-is-a-covered-query-and-why-is-it-important"><strong> 25。什么是覆盖查询，为什么它很重要？</strong></h4>
+<p>在覆盖查询中，查询中使用的所有字段都创建了索引。返回的结果也应该是索引的一部分。正因为如此，MongoDB在不实际查看文档内部的情况下获取结果，从而节省了时间并提高了效率。</p>
+<h4 id="toc-26-what-are-the-differences-between-mysql-and-mongodb"><strong> 26。MySQL和MongoDB有什么区别？</strong></h4>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong> MySQL </strong>的实现</p>
+</td>
+<td>
+<p><strong> MongoDB </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>用C和C++写的</p>
+</td>
+<td>
+<p>用C++和JavaScript写的</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>遵循RDBMS数据库结构</p>
+</td>
+<td>
+<p>基于文档的结构</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>垂直缩放</p>
+</td>
+<td>
+<p>水平和垂直缩放</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>严格定义的数据结构，模式是严格的，应该在开始时定义</p>
+</td>
+<td>
+<p>复杂文档的动态灵活模式创建</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>使用结构化查询语言</p>
+</td>
+<td>
+<p>使用非结构化查询语言</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>使用联接来链接两个或多个表中的数据</p>
+</td>
+<td>
+<p>JOIN没有对等词</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>对于包含非结构化数据的大型数据库，性能很慢</p>
+</td>
+<td>
+<p>高效处理大型非结构化数据</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>相对不太适合基于云的环境</p>
+</td>
+<td>
+<p>基于云的服务的最佳选择</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-27-what-is-objectid-how-is-it-structured"><strong> 27。什么是ObjectId？它是如何构成的？</strong></h4>
+<p>ObjectId是一个类，它是MongoDB中文档的默认主键。它位于插入文档的_id字段中。它是使用默认算法生成的12字节BSON类型。其结构是:</p>
+<ul>
+<li>一个4字节的值，表示自Unix纪元以来的秒数</li>
+<li>3字节机器id</li>
+<li>2字节的进程id</li>
+<li>以随机数开始的3字节计数器</li>
+</ul>
+<h4 id="toc-28-what-is-replication-and-what-are-the-primary-and-secondary-replica-sets"><strong> 28。什么是复制，什么是主副本集和辅助副本集？</strong></h4>
+<p><strong><img src="../Images/82f4cb791ea37f59426ce26f34c79b0e.png" alt="" data-original-src="https://hackr.io/blog/media/what-is-replication-and-what-are-the-primary-and-secondary-replica-sets-min.png"/>T2】</strong></p>
+<p>复制意味着跨多台服务器同步数据。它提高了数据可用性。如果一台服务器丢失，其他服务器中的数据仍然完好无损。</p>
+<ul>
+<li><strong>主副本集:</strong> MongoDB只将数据写入主副本集。</li>
+<li><strong>辅助副本集:</strong>辅助或从属节点只能接受读取。它们从原始细胞复制而来。</li>
+</ul>
+<h4 id="toc-29-what-is-journaling-and-how-does-it-work"><strong> 29。什么是日志，它是如何工作的？</strong></h4>
+<p>MongoDB通过使用为每次写入创建的磁盘日志来确保数据完整性。在服务器崩溃的情况下，日志可用于跟踪未写入磁盘或数据文件的写入。</p>
+<h4 id="toc-30-compare-couchdb-and-mongodb">三十岁。比较一下CouchDB和MongoDB。</h4>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong> CouchDB </strong></p>
+</td>
+<td>
+<p><strong> MongoDB </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>数据模型是面向文档的，即JSON</p>
+</td>
+<td>
+<p>使用BSON，它是JSON的扩展</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>使用HTTP/REST进行查询</p>
+</td>
+<td>
+<p>通过TCP/IP使用标准协议</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>数据库有文档</p>
+</td>
+<td>
+<p>数据库包含集合，集合包含文档</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>用Erlang写的</p>
+</td>
+<td>
+<p>用C++写的</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>使用范围查询和映射/缩减</p>
+</td>
+<td>
+<p>使用基于对象的查询语言和map/reduce</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-31-what-are-the-different-index-types-in-mongodb">31。MongoDB中有哪些不同的索引类型？</h4>
+<ul>
+<li><strong>默认值:</strong>这是MongoDB创建的_id</li>
+<li><strong>单个字段:用于对单个字段进行索引和排序</strong></li>
+<li><strong>复合:</strong>用于多个字段</li>
+<li><strong>多键:</strong>用于索引数组数据</li>
+<li><strong>散列:</strong>索引字段值的散列</li>
+<li><strong>地理空间:</strong>查询地理空间(位置)数据</li>
+</ul>
+<h4 id="toc-32-what-is-an-acid-transaction-does-mongodb-support-it">32。什么是ACID交易？MongoDB支持吗？</h4>
+<p>酸代表原子性、一致性、隔离性和持久性。事务管理器确保这些属性得到处理。MongoDB版支持ACID。</p>
+<h4 id="toc-33-explain-the-role-of-the-profiler">33。解释剖析器的作用。</h4>
+<p>分析器是一个内置的工具，它可以找出速度慢且占用大量资源的查询，并提供查询级别的洞察。您可以用它来分析查询。探查器将所有数据存储在system.profile集合中。</p>
+<h4 id="toc-34-how-does-mongodb-handle-transactions-and-locks">34。MongoDB如何处理事务和锁？</h4>
+<p>MongoDB使用多粒度锁定来锁定全局、数据库或集合级别的操作。由存储引擎来实现并发级别。例如，在WiredTiger中，它位于文档级别。对于读取，有一个共享锁定模式，而对于写入，有一个独占锁定模式。</p>
+<h4 id="toc-35-explain-aggregation-in-mongodb">35。解释MongoDB中的聚合。</h4>
+<p>聚合对来自不同文档的值进行分组，并对数据执行操作以返回单个结果。MongoDB执行聚合的方式有三种:</p>
+
+<ul>
+<li>聚合管道</li>
+<li>地图缩小功能</li>
+<li>单一目的聚集方法</li>
+</ul>
+<h4 id="toc-36-state-the-difference-between-the-find-and-limit-methods">36。说明find()和limit()方法之间的区别。</h4>
+<p>find():只显示选定的数据，而不是文档的所有数据。例如，如果您的文档有4个字段，但您只想显示一个，则将必填字段设置为1，其他字段设置为0。</p>
+<pre class="language-sql"><code>db.COLLECTION_NAME.find({},);</code></pre>
+<p>limit(): limit函数限制提取的记录数。例如，如果您有7个文档，但只想显示集合中的前4个文档，请使用limit。语法–</p>
+<pre class="language-sql"><code>db.COLLECTION_NAME.find().limit(NUMBER);</code></pre>
+<h4 id="toc-37-how-does-concurrency-affect-the-primary-replica-set">37。并发如何影响主副本集？</h4>
+<p>当集合更改被写入主数据库时，MongoDB会将相同的内容写入本地数据库中的一个特殊集合，该集合称为主数据库的oplog。因此，集合的数据库和本地数据库都被锁定。</p>
+<h4 id="toc-38-give-an-example-of-insert-delete-and-update-statements-in-mongodb">38。举一个MongoDB中insert，delete，update语句的例子。</h4>
+<table>
+<tbody>
+<tr>
+<td>
+<p>插入</p>
+</td>
+<td><pre class="language-sql"><code>db.books.insert({   _id: ObjectId(7df74fd8902c),   title: 'All about MongoDB',    description: 'Everything you need to know about MongoDB',   by: 'Author1',   url: 'http://www.blogsuthor1.com'  })</code></pre></td>
+</tr>
+<tr>
+<td>
+<p>删除</p>
+</td>
+<td>
+<p>删除特定文档-</p>
+<pre class="language-sql"><code>db.books.remove({'title':'All about MongoDB'})</code></pre>
+<p>移除所有文件-</p>
+<pre class="language-sql"><code>db.books.remove();</code></pre>
+</td>
+</tr>
+<tr>
+<td>
+<p>更新</p>
+</td>
+<td>
+<p>要更新现有文档的值-</p>
+<pre class="language-sql"><code>db.books.update({'title':'All 
+
+about MongoDB'},{$set:{'title':'MongoDB for dummies'}})</code></pre>
+<p>用新文档替换现有文档</p>
+<p>一个基于ObjectId–</p>
+<pre class="language-sql"><code>db.books.save(
+
+ {
+
+"_id" : ObjectId(5983548781331adf45ec5), "title":"MongoDB for dummies",
+
+"by":"Author2"
+
+ }
+
+)</code></pre>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-39-what-are-capped-collections">39。什么是封顶集合？</h4>
+<p>上限集合是固定大小的集合，根据插入顺序插入和检索数据。如果集合的空间已满，最早的记录将被集合中的新文档覆盖。</p>
+<h4 id="toc-40-explain-the-purpose-of-the-map-reduce-command">40。解释map-reduce命令的用途。</h4>
+<p>Map-reduce是一种执行聚合的方法。</p>
+<ul>
+<li>Map函数发出指定的键值对。</li>
+<li>Reduce函数组合键值对并返回聚合结果。</li>
+</ul>
+<p>语法:</p>
+<pre class="language-sql"><code>db.collection.mapReduce( 
+
+function() {emit(key,value);}, 
+
+function(key, values) {return aggregatedResult}, { out: collection } 
+
+&lt;/pre.
+
+ )</code></pre>
+<h4 id="toc-41-what-are-the-differences-between-mongodb-and-cassandra">41。MongoDB和Cassandra有什么区别？</h4>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>特性</strong></p>
+</td>
+<td>
+<p><strong> MongoDB </strong></p>
+</td>
+<td>
+<p>卡桑德拉</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>数据的结构</strong></p>
+</td>
+<td>
+<p>当没有清晰的数据结构时，即数据是结构化和非结构化的混合时，使用的最佳数据库</p>
+</td>
+<td>
+<p>适用于非结构化和结构化数据，尤其是当数据库预计会动态增长时</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>数据模型</strong></p>
+</td>
+<td>
+<p>有一个丰富而富于表现力的数据模型，它是面向数据的。任何数据结构都可以很容易地表示。</p>
+</td>
+<td>
+<p>表格中的行和列的传统模型。每一列都是特定的类型，这使得结构有组织。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>主节点数量</strong></p>
+</td>
+<td>
+<p>集群中只有一个主节点，它控制许多从节点。</p>
+</td>
+<td>
+<p>集群中有许多主节点。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>二级指标</strong></p>
+</td>
+<td>
+<p>索引任何属性都很容易，因为二级索引是一级结构。</p>
+</td>
+<td>
+<p>辅助索引仅限于单个列，灵活性较差。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>可扩展性</strong></p>
+</td>
+<td>
+<p>对于要写入从节点的数据，它必须通过单个主节点，因此可伸缩性不是很好。</p>
+</td>
+<td>
+<p>因为有许多主节点，所以数据存在于多个节点中。因此，可扩展性相对较好。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>聚合框架</strong></p>
+</td>
+<td>
+<p>内置聚合框架</p>
+</td>
+<td>
+<p>没有内置的聚合框架</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-42-what-are-indexes-in-mongodb"><strong> 42。MongoDB中的索引是什么？</strong></h4>
+<p>在MongoDB中，索引有助于高效地执行查询。索引是特殊的数据结构，以易于遍历的形式存储部分集合。默认情况下，在创建集合时，MongoDB会在_id字段上创建一个永久的惟一索引。它可以防止数据库中出现重复的文档。</p>
+<h4 id="toc-43-what-is-a-storage-engine-in-mongodb"><strong> 43。MongoDB中的存储引擎是什么？</strong></h4>
+<p><strong><img src="../Images/166cb31bb1366008027e243d19ca2f7d.png" alt="" data-original-src="https://hackr.io/blog/media/what-is-a-storage-engine-in-mongodb-min.png"/>T2】</strong></p>
+<p>存储引擎是数据库的一个组件，它管理数据在内存和磁盘中的存储方式。MongoDB支持多个存储引擎，这有助于提高不同工作负载的性能。默认的存储引擎是WiredTiger (MongoDB3.2)，它非常适合大多数工作负载。</p>
+<h4 id="toc-44-explain-the-working-mechanism-of-journaling-work-in-mongodb"><strong> 44。解释一下MongoDB中日志工作的工作机制？</strong></h4>
+<p>当MongoDB意外退出时，日志记录用于恢复最后一个检查点之后的信息。存储引擎(WiredTiger)为发起写操作的每个客户端创建一个日志记录。</p>
+
+<p>如果有更新，单个日志记录将记录更新操作和索引修改。日志记录使用内存缓冲存储。日志文件存储在MongoDB创建的“Journal”目录下。</p>
+
+<h4 id="toc-45-is-it-possible-to-configure-the-cache-size-for-mmapv1"><strong> 45。可以配置MMAPv1的缓存大小吗？</strong></h4>
+<p>无法为MMAPv1配置缓存大小。MongoDB通过内存映射文件自动使用所有空闲内存。</p>
+<h4 id="toc-46-what-is-gridfs"><strong> 46。什么是GridFS？</strong></h4>
+<p>GridFS存储和检索大型文件，如图像、音频和视频文件等。虽然存储文件的限制是16MB，但是GridFS可以存储比这个更大的文件。GridFS将文件分成块，并将每个块存储为不同的文档，最大大小为255k。它使用两个集合fs.chunks和fs.files分别存储块和元数据。</p>
+<h4 id="toc-47-is-it-possible-to-run-multiple-javascript-operations-in-a-mongodb-instance"><strong> 47。有可能在一个MongoDB实例中运行多个Javascript操作吗？</strong></h4>
+<p>是的，我们可以在一个MongoDB实例中运行多个JS操作。通过mongo shell实例，我们可以指定要在服务器上运行的JavaScript文件的名称。该文件可以包含任意数量的JS操作。</p>
+<h4 id="toc-48-is-mongodb-the-best-nosql-database-if-yes-why"><strong> 48。MongoDB是最好的NoSQL数据库吗？如果是，为什么？</strong></h4>
+<p>MongoDB是最适合数据分析和web应用程序开发的NoSQL数据库。它帮助开发人员和数据科学家从存储的数据中获得洞察力，不像Hadoop需要专家分析数据。</p>
+<p>MongoDB允许高效的数据操作和管理功能。对多种Javascript操作的支持和基于JavaScript的MEAN stack增加了MongoDB的受欢迎程度。用于构建管道的水平扩展和聚合框架的分片使得MongoDB快速高效，因此是最好的数据库。</p>
+<h4 id="toc-49-explain-the-process-of-transaction-locking-in-mongodb">49。解释一下MongoDB中事务/锁的流程？</h4>
+<p>MongoDB支持读写锁的多粒度锁定。</p>
+<p>MongoDB中可能有三种类型的锁定机制:</p>
+<ul>
+<li>全球一级</li>
+<li>数据库级别</li>
+<li>收集级别</li>
+</ul>
+<p>实现也依赖于单个存储引擎。有四种锁定模式:</p>
+<ul>
+<li>r(共享锁)，</li>
+<li>w(独占锁)，</li>
+<li>r(意向共享锁)，</li>
+<li>w(意向排他锁)。</li>
+</ul>
+<p>要了解更多信息，请访问:</p>
+<p><a class="btn btn-primary btn-call-to-action " href="https://docs.mongodb.com/manual/core/transactions/index.html" target="_blank" rel="noopener">官方文档页面。</a></p>
+
+<h4 id="toc-50-explain-how-mongodb-is-different-from-rdbms">50。解释一下MongoDB和RDBMS有什么不同？</h4>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>参数</strong></p>
+</td>
+<td>
+<p><strong> RDBMS </strong></p>
+</td>
+<td>
+<p><strong> MongoDB </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>定义</strong></p>
+</td>
+<td>
+<p>这是一个关系数据库管理系统</p>
+</td>
+<td>
+<p>它是一个非关系数据库管理系统</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>工作</strong></p>
+</td>
+<td>
+<p>处理使用行和列的表之间的关系</p>
+</td>
+<td>
+<p>使用文档和字段的面向文档的系统</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>分级数据存储</strong></p>
+</td>
+<td>
+<p>难以存储分层数据</p>
+</td>
+<td>
+<p>存储分层数据的内置配置</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>可扩展性</strong></p>
+</td>
+<td>
+<p>垂直可扩展</p>
+</td>
+<td>
+<p>纵向和横向可扩展</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>性能</strong></p>
+</td>
+<td>
+<p>性能随着RAM容量的增加而提高</p>
+</td>
+<td>
+<p>性能随着处理器数量的增加而提高</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>模式</strong></p>
+</td>
+<td>
+<p>必须预先决定和设计模式；对模式的改变是困难的</p>
+</td>
+<td>
+<p>模式的动态创建和管理使设计更加灵活</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>支持加入</strong></p>
+</td>
+<td>
+<p>支持复杂连接</p>
+</td>
+<td>
+<p>不支持连接</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>查询语言</strong></p>
+</td>
+<td>
+<p>使用SQL查询数据库</p>
+</td>
+<td>
+<p>BSON用于数据库查询</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>支持Javascript </strong></p>
+</td>
+<td>
+<p>不支持基于JavaScript的客户端查询数据库</p>
+</td>
+<td>
+<p>为基于Javascript的客户端查询数据库做准备</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-51-explain-the-procedure-of-starting-the-mongodb-server-instance">51。解释启动MongoDB服务器/实例的过程。</h4>
+<p>要启动MongoDB实例，请执行以下步骤:</p>
+
+<ul>
+<li>首先，打开命令提示符并运行mongod.exe。</li>
+<li>或者，您可以移动到MongoDB的安装路径，例如，“C: MongoDB”</li>
+<li>导航到bin文件夹，找到mongod.exe并双击它执行。</li>
+<li>也可以导航到需要的文件夹，例如“C: MongoDB/bin”，输入mongo通过shell连接MongoDB。</li>
+</ul>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>你现在知道了一些面试中最常见的MongoDB问题。这应该有助于您为下一个角色做好准备，甚至有助于您对MongoDB有一个大致的了解。</p>
+<p>如果你正在寻找更多基于非SQL数据库的面试问题，这里有一个很棒的课程:<a href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fmongodb-interview-questions-answers%2F&amp;u1=blog%2Fmongodb-interview-questions_amcid-2Iz2BOrbzrVepFOEME6Ix" target="_blank" rel="noopener"> MongoDB面试问答</a>。这里有一个关于数据结构和基本编程语言的一般编程问题的很棒的课程:<a href="https://www.packtpub.com/application-development/cracking-it-architect-interview" target="_blank" rel="noopener">破解IT架构师面试</a>。</p>
+<p>当然，你还可以学习更多的东西，所以不要回避学习课程。始终实践理论，并在网上寻找更多的资源。</p>
+<h2 id="frequently-asked-questions"><strong>常见问题解答</strong></h2>
+<h4 id="toc-1-what-are-the-interview-questions-for-mongodb"><strong> 1。MongoDB的面试问题有哪些？</strong></h4>
+<p>MongoDB上有几种你可能会面临的面试问题。上面的列表很好地涵盖了其中的许多问题。</p>
+<h4 id="toc-2-why-is-mongodb-not-chosen-for-a-32-bit-system"><strong> 2。为什么32位系统不选择MongoDB？</strong></h4>
+<p>MongoDB不支持32位系统，因为这些系统的RAM使用量限制为2GB。这个限制对于在生产中运行某些东西是不够的。</p>
+<p><strong> 3。MongoDB需要大量内存吗？</strong></p>
+<p>是的，MongoDB确实需要大量RAM，因为出于性能原因，它将数据保存在缓存中。每100，000项资产需要大约1 GB的RAM。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

@@ -1,0 +1,208 @@
+<html>
+<head>
+<title>What is Selenium? Getting started with Selenium Automation</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>硒是什么？Selenium自动化入门</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/what-is-selenium#0001-01-01">https://hackr.io/blog/what-is-selenium#0001-01-01</a></blockquote><div><div class="content">
+										<p>Selenium自动化测试在测试人员中变得非常流行，因为它提供了各种优势。当我们谈到自动化测试时，首先想到的往往是我们最喜欢的自动化测试工具。然而，它以其简单性、可用性和易用性赢得了许多测试人员和开发人员的心。随着它在2004年的出现，Selenium使自动化测试人员的生活变得更加容易，并且现在是许多自动化测试人员最喜欢的工具。因此，不再拖延，让我们了解什么是Selenium测试，以及它如何帮助自动化测试。</p>
+<h2 id="what-is-selenium">硒是什么？</h2>
+<p>Selenium是ThoughtWorks的Jason Huggins为了测试他们的内部时间和费用应用程序而发明的，它引入了一个名为“JavaScriptTestRunner”的基本工具。现在，作为一个开源的可移植自动化测试框架，它已经在软件测试人员和开发人员中流行起来。它能够使用特定的浏览器绑定来自动化浏览器，从而自动化web应用程序以进行测试。这是一套为不同目的设计的四个工具。让我们详细了解Selenium及其提供的不同工具。</p>
+
+<p>它有4个主要组件，采用不同的自动化测试方法，这种方法作为Selenium工具套件很受欢迎。每个软件测试人员或开发人员根据组织的测试需求选择工具。</p>
+<p><img class="aligncenter size-full wp-image-2797" src="../Images/950e8965c5f33c4c85985864056616ee.png" alt="Selenium Suite Tools" data-original-src="https://hackr.io/blog/uploads/images/1570190913CH1VmDhvFc.jpg"/></p>
+
+<h3 id="selenium-rc-remote-control">硒遥控(遥控)</h3>
+<p>Selenium Core是这套工具中的第一个工具。然而，由于<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" target="_blank" rel="noopener"> <strong>同源策略</strong> </a>，它有一些与跨域测试相关的问题，因此被弃用。因此，为了克服硒遥控器(硒钢筋混凝土)推出后，硒核心。RC原来是跨域问题的辅助。RC有一个HTTP代理服务器，有助于欺骗浏览器，使其相信正在测试的Selenium core和Web app来自同一个域，从而消除了跨域问题。</p>
+<p>Selenium RC分为两个部分，有助于克服跨域问题:</p>
+<ol>
+<li>Selenium远程服务器</li>
+<li>Selenium远程客户端</li>
+</ol>
+<p>但是RC的主要问题是执行测试所花费的时间。因为Selenium服务器使用HTTP请求进行通信，所以这更加耗时。因为这个限制，RC现在也不怎么用了。</p>
+<h3 id="selenium-ide">硒IDE</h3>
+<p>Selenium IDE，以前称为Selenium recorder，是一个用于记录、编辑、调试和重放功能测试的工具。Selenium IDE是作为对Chrome浏览器的扩展和T2火狐浏览器的插件实现的。使用Selenium IDE插件，您可以用任何受支持的编程语言(如Ruby、Java、PHP、Javascript等)记录和导出测试。</p>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fselenium-ide%2F" target="_blank" rel="noopener">硒IDE </a></p>
+<h3 id="selenium-grid">硒栅</h3>
+<p>Selenium网格基于中心节点架构。使用Selenium Grid，您可以跨不同的浏览器运行并行测试会话。Hub控制在不同节点上运行的Selenium脚本(OS内的特定浏览器)和在不同节点上运行的测试脚本可以用任何编程语言编写。</p>
+
+<p>Selenium Grid与RC一起用于测试远程机器上的多个测试。现在，由于人们发现Webdriver比RC更好，因此网格可以同时使用Webdriver和RC。</p>
+<h3 id="selenium-webdriver">Selenium Webdriver</h3>
+<p>Selenium Webdriver是Selenium RC的增强版，也是使用最多的工具。它通过客户端API接受命令，并将它们发送到浏览器。简而言之，Selenium Webdriver是一个特定于浏览器的驱动程序，有助于访问和启动不同的浏览器。它提供了一个编写和运行自动化脚本的接口。每个浏览器都有不同的驱动程序来运行测试。</p>
+<ul>
+<li>Mozilla Firefox使用Firefox驱动程序(Gecko驱动程序)</li>
+<li>谷歌Chrome使用Chrome驱动程序</li>
+<li>Internet Explorer使用Internet Explorer驱动程序</li>
+<li>Opera使用Opera驱动程序</li>
+<li>Safari使用Safari驱动程序和</li>
+<li>用于模拟使用无头浏览器HtmlUnit的浏览器的HTM单元驱动程序</li>
+</ul>
+<h3 id="selenium-client-api">Selenium客户端API</h3>
+<p>它是这套工具中的最新工具。使用Selenium客户端API，您可以用各种编程语言编写测试脚本，而不是用Selenese编写测试脚本。Selenium客户端API可用于Java、JavaScript、C#、Ruby和Python。这些脚本可以使用预定义的命令和客户端API函数与Selenium通信。</p>
+<h2 id="why-selenium-for-automation-testing">为什么选择Selenium进行自动化测试？</h2>
+<p>既然我们现在已经熟悉了Selenium及其工具套件，那么让我们来看看Selenium的各种好处，这些好处使它作为自动化测试工具脱颖而出:</p>
+<ol>
+<li><strong>开源工具:</strong>因为它是开源工具，所以它不需要任何许可成本，这使它比其他自动化测试工具更胜一筹。</li>
+<li><strong>满足各种需求的工具:</strong>如前所述，Selenium有一套工具，因此它能满足用户的各种需求。您可以使用各种工具，如WebDriver、Grid、IDE来满足您的不同需求。</li>
+<li><strong>支持所有主要语言:</strong>自动化测试工具的测试人员或开发人员面临的主要挑战是对语言的支持。因为selenium支持所有主流语言，如Java、JavaScript、Python、Ruby、C sharp、Perl、.Net和PHP，测试人员更容易使用。</li>
+<li><strong>浏览器和操作系统支持:</strong> Selenium支持不同的浏览器，如Chrome、Firefox、Opera、Internet Explorer、Edge和Safari，以及不同的操作系统，如Windows、Linux、Mac。这使得它可以灵活使用。</li>
+<li><strong>社区支持:</strong> Selenium有一个活跃的开放社区，可以帮助您解决相关的问题和疑问。这使得它成为您自动化测试工具的最佳选择。</li>
+</ol>
+<p>下面是Selenium与其他可用工具的快速对照表:</p>
+<table>
+<tbody>
+<tr>
+<td><strong>特性</strong></td>
+<td><strong>硒</strong></td>
+<td><strong> QTP </strong></td>
+<td><strong> RFT </strong></td>
+</tr>
+<tr>
+<td><strong>开源</strong></td>
+<td>是</td>
+<td>不</td>
+<td>不</td>
+</tr>
+<tr>
+<td><strong>支持</strong></td>
+<td>开源社区</td>
+<td>专门支持</td>
+<td>专门支持</td>
+</tr>
+<tr>
+<td><strong>所需的编码技能</strong></td>
+<td>是</td>
+<td>不</td>
+<td>不</td>
+</tr>
+<tr>
+<td><strong>操作系统支持</strong></td>
+<td>Windows、Linux、Mac</td>
+<td>Windows操作系统</td>
+<td>Windows操作系统</td>
+</tr>
+<tr>
+<td><strong>支持的语言</strong></td>
+<td>Java，JavaScript，Python，Ruby，Perl，。升C调</td>
+<td>VB脚本</td>
+<td>Java和C夏普</td>
+</tr>
+</tbody>
+</table>
+<h2 id="selenium-webdriver-and-its-architecture">Selenium Webdriver及其架构</h2>
+<p>因为Selenium WebDriver是最常用的工具，所以我们将使用它来执行Selenium测试用例。为了在非常简单的层面上理解完整的过程，Selenium WebDriver架构包括:</p>
+<p><img class="aligncenter size-full wp-image-2796" src="../Images/8f59b1b981e047f2d60bc613de6fff6c.png" alt="Architecture of WebDriver" data-original-src="https://hackr.io/blog/uploads/images/1570190913jNpNFWPthx.jpg"/></p>
+<p>基本上，<a href="https://hackr.io/tutorial/selenium-webdriver-with-java-basics-to-advanced" target="_blank" rel="noopener"> Selenium web驱动程序</a>工作在三层:浏览器驱动程序、远程驱动程序和语言绑定。</p>
+<p>WebDriver架构的核心组件:-</p>
+<ul>
+<li><strong> Selenium客户端库/语言绑定</strong></li>
+</ul>
+<p>Selenium绑定/客户端库由开发人员创建，以支持多种编程语言。例如，如果您想在Python中使用浏览器驱动程序，请使用Python绑定。可以在<a href="http://www.seleniumhq.org/download/#client-drivers" target="_blank" rel="noopener">官网下载所有绑定。</a></p>
+
+<p>JavaScript对象表示法用作数据传输协议，将数据从服务器发送到web上的客户端。使用JSON，用数组和对象支持这样的数据结构来读写数据是非常容易的。这个有线协议提供了一个传输机制，并使用HTTP上的<a href="http://www.json.org" target="_blank" rel="noopener"> JSON </a>定义了一个<a href="http://www.google.com?q=RESTful+web+service" target="_blank" rel="noopener"> RESTful web服务</a>。</p>
+
+<p>对于Selenium绑定，每个web浏览器都有特定的浏览器驱动程序。浏览器驱动程序接受来自服务器的命令，并将其发送到浏览器，而不会丢失浏览器功能的任何内部逻辑。浏览器驱动程序也特定于编程语言，如Ruby、C#、Java等，用于web自动化。</p>
+<p>以下是我们使用Webdriver运行任何测试脚本时的步骤:</p>
+<ol>
+<li>为每个Selenium命令生成HTTP请求，并发送给浏览器驱动程序。</li>
+<li>特定的浏览器驱动程序通过HTTP服务器接收HTTP请求。</li>
+<li>HTTP服务器发送在浏览器上执行功能的所有步骤。</li>
+<li>测试执行报告被发送回服务器，HTTP服务器将它发送给自动化脚本。</li>
+</ol>
+
+<p>Selenium Webdriver支持所有主流浏览器，如Google Chrome、Mozilla Firefox、Internet Explorer和Safari浏览器。</p>
+<h2 id="setting-up-selenium-on-your-local-machine">在本地机器上设置Selenium</h2>
+<p>让我们了解如何在本地机器上配置Selenium并在本地浏览器上运行测试的步骤。</p>
+<ol>
+<li>安装代码编辑器或IDE(比如<a href="https://www.eclipse.org/downloads/" target="_blank" rel="noopener"> Eclipse </a>或<a href="https://www.jetbrains.com/idea/download/" target="_blank" rel="noopener"> IntelliJ </a></li>
+</ol>
+<p>注意:我们将使用IntelliJ代码编辑器来编写自动化脚本。</p>
+<ol>
+<li>在您的本地系统中下载并安装<a href="https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html" target="_blank" rel="noopener"> Java运行时环境</a>。</li>
+<li>下载<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" target="_blank" rel="noopener"> Java开发工具包</a></li>
+<li>下载并安装所有<a href="https://www.seleniumhq.org/download/" target="_blank" rel="noopener"> Java Selenium文件</a> ( <strong> Selenium服务器单机</strong>)</li>
+<li>安装特定于浏览器的驱动程序(在这篇博客中，我们将在Chrome上执行自动化，因此在这种情况下，<a href="http://chromedriver.chromium.org/downloads" target="_blank" rel="noopener"> Chrome驱动程序</a>)</li>
+</ol>
+<h2 id="sample-selenium-script-for-web-automation">用于Web自动化的Selenium脚本示例</h2>
+<p>下面是一个自动化脚本示例，可以在本地chrome浏览器上运行该脚本来自动化测试过程。因为我们使用IntelliJ作为我们的代码编辑器，所以我们将用IntelliJ编写同样的代码。</p>
+<p><strong>样本脚本</strong></p>
+<pre>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class TestSelenium {
+public static void main(String[] args){
+System.setProperty("webdriver.chrome.driver","C:\\Users\\Admin\\Desktop\\LT Automation\\chromedriver_win32\\chromedriver.exe");
+WebDriver driver= new ChromeDriver();
+driver.get("<a href="https://hackr.io/?ref=blog-post" target="_blank" rel="noopener">https://hackr.io/</a>");
+try {
+WebElement signup = driver.findElement(By.xpath("//*[@id="navbarCollapse"]/ul/li[2]/a"));
+signup.click();
+WebElement login= driver.findElement(By.xpath("//*[@id="modalSignUp"]/div/div/div/div/div[4]/p/a"));
+login.click();
+String windowHandle = driver.getWindowHandle();
+WebElement TextBox = driver.findElement(By.xpath("//*[@id="login-modal-form"]/div[1]/div/input"));
+TextBox.sendKeys("sample-email@lambdatest.com");
+WebElement Password = driver.findElement(By.xpath("//*[@id="login-modal-form"]/div[2]/div/input"));
+Password.sendKeys("sample-password");
+WebElement proceed = driver.findElement(By.xpath("//*[@id="login-modal-form"]/div[4]/button"));
+proceed.click();
+}
+catch (Exception e) {
+System.out.println(e.getMessage());
+}
+}
+}
+</pre>
+<p>这段代码将启动一个网站(这里是<a href="https://hackr.io/?ref=blog-post" target="_blank" rel="noopener">https://hackr.io/</a>)，找到“注册/登录”元素，点击注册/登录按钮，然后通过找到“登录”进入登录页面。之后，将输入登录页面的凭据，并单击登录按钮，重定向到Hackr.io主页。</p>
+<h2 id="online-selenium-grid">在线硒网格</h2>
+<p>在本地机器上运行Selenium的主要挑战是本地机器上的浏览器数量有限。由于您只能在本地机器上安装一个版本的特定浏览器，因此如果需要测试该浏览器的降级或升级版本，您需要升级或降级您本地机器上已经安装的浏览器。此外，您可以在系统中只安装特定数量的浏览器。因此，如果需要的话，跨所有浏览器和操作系统进行测试几乎是不可能的。因此，在线硒网格可以有所帮助。</p>
+<p>借助云上的在线selenium网格，您可以测试所有浏览器、浏览器版本、操作系统和分辨率的跨浏览器兼容性。提供selenium grid-like LambdaTest、SauceLabs、BrowserStack的在线平台可以帮助你在各种浏览器-操作系统组合的云网格上进行跨浏览器测试。</p>
+<h2 id="common-selenium-command-and-operations">通用Selenium命令和操作</h2>
+<p>在编写自动化脚本时，您将使用许多重复的命令并执行各种操作。让我们快速看一下Selenium自动化测试中最常见和最常用的命令。</p>
+<p><strong>页面访问:- </strong>首先要做的是访问一个网页，开始自动化测试。</p>
+<pre>driver.get("<a href="https://hackr.io/?ref=blog-post" target="_blank" rel="noopener">https://hackr.io/</a>");
+</pre>
+<p><strong>找到一个元素:- </strong>找到元素并将其自动化。</p>
+<pre>// find just one, the first one Selenium finds
+WebElement element = driver.findElement(locator);
+// find all instances of the element on the page
+List elements = driver.findElements(locator);
+</pre>
+<p><strong>对元素的操作:- </strong>对找到的元素进行操作。</p>
+<pre>// chain actions together
+driver.findElement(locator).click();
+// store the element and then click it</pre>
+<pre>WebElement element = driver.findElement(locator);
+element.click();
+</pre>
+<p><strong>多元素命令:- </strong>点击、提交、清除、输入等常用命令。</p>
+
+<pre>element.click(); // clicks an element
+element.submit(); // submits a form
+element.clear(); // clears an input field of its text
+element.sendKeys("input text"); // types text into an input field
+</pre>
+<p><strong>问题命令:- </strong>检查元素的条件。</p>
+<pre>element.isDisplayed(); // is it visible to the human eye?
+element.isEnabled(); // can it be selected?
+element.isSelected(); // is it selected?
+</pre>
+<p><strong>获取信息:- </strong>获取元素信息的命令。</p>
+<pre>// directly from an element
+element.getText();
+// by attribute name
+element.getAttribute("href");
+</pre>
+<h2 id="to-sum-up">综上</h2>
+<p>Selenium是最好的自动化测试工具之一，可用于自动化网络浏览器交互。您可以通过用Selenium支持的任何首选语言编写代码来执行自动化测试，并且可以轻松地运行自动化脚本来自动化应用程序或流程的测试。它的易用性使它不同于其他工具，在在线网格的帮助下，你甚至可以在多个浏览器上并行运行你的测试。那么，你还在等什么？写一个漂亮的自动化脚本，测试你的网站！如果你有任何问题，请在下面的评论区告诉我们。</p>
+<p>测试愉快！</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

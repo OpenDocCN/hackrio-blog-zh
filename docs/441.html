@@ -1,0 +1,549 @@
+<html>
+<head>
+<title>50 Top Laravel Interview Questions and Answers in 2023</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年50大Laravel面试问答</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/top-laravel-interview-questions-and-answers#0001-01-01">https://hackr.io/blog/top-laravel-interview-questions-and-answers#0001-01-01</a></blockquote><div><div class="content">
+										<p>Laravel是一个开源的PHP web框架，用于开发响应式web应用。它由Taylor Otwell创建，遵循模型-视图-控制器(MVC)架构设计模式。它也是一个在麻省理工学院许可下的免费网络框架。</p>
+<p>今天，<a href="https://hackr.io/blog/laravel-cheat-sheet">拉勒维尔开发商</a>需求量很大。然而，要成为一名PHP或Laravel开发人员，你必须具备大量的知识和经验，包括:</p>
+<ul>
+<li aria-level="1"><span>使用Laravel框架的实践经验</span></li>
+<li aria-level="1"><span>计算机科学或任何其他相关课程的学士学位</span></li>
+<li aria-level="1"><span>扎实的面向对象PHP知识和Laravel 5 <a href="https://hackr.io/blog/best-php-frameworks"> PHP框架</a>T3】</span></li>
+<li aria-level="1"><span>精通SQL模式设计、REST API设计和坚实的原则</span></li>
+<li aria-level="1"><span> <span>软件测试、MySQL评测、查询优化知识</span> </span></li>
+</ul>
+<p>这篇文章探讨了常见的面试问题和答案。它既包括初学者的基本问题，也包括更复杂的问题。如果你的目标是参加Laravel的面试并取得好成绩，下面的问题和答案肯定会有所帮助。</p>
+<p>让我们开始吧。</p>
+
+<p> </p>
+<h2 id="laravel-interview-questions"><span> <strong> Laravel面试问题</strong> </span></h2>
+<p> </p>
+<h3 id="toc-1-what-is-laravel"><strong> 1。什么是Laravel？</strong></h3>
+<p>Laravel是一个开源的新一代PHPweb<a href="https://hackr.io/blog/best-php-frameworks">框架，由Taylor Otwell于2011年开发。它是专门为开发基于web的应用程序而设计的，遵循MVC模型，适合创建简单、优雅、结构良好的应用程序。它目前的稳定版本是2020年9月8日发布的版本8。</a></p>
+<p>Laravel附带了一个名为Lumen的框架，它构建在Laravel组件之上，是创建基于Laravel的微服务应用程序的完美选择。</p>
+<p><img src="../Images/55b6b5df12bbb5f529e558a262f22afd.png" alt="laravel framework" data-original-src="https://hackr.io/blog/media/laravel-framework-min.jpg"/></p>
+<h3 id="toc-2-what-are-the-pros-and-cons-of-laravel"><strong> 2。Laravel有哪些利弊？</strong></h3>
+<p>以下是Laravel框架的优点和缺点。</p>
+
+<p><strong>Laravel的优点:</strong></p>
+<ul>
+<li aria-level="1"><span>为了管理项目依赖关系，Laravel使用了Composer，允许开发人员提及包名、版本和可以在项目中使用的预建功能，从而加快了应用程序的开发速度</span></li>
+<li aria-level="1">它带有一个易于学习和理解的刀片模板引擎。这在使用PHP/HTML语言时很有用。通过Laravel进行的Web开发允许以布局形式编写普通的PHP代码，从而有助于改进复杂任务的执行。</li>
+<li aria-level="1"><span>你可以通过<a href="https://laracasts.com/browse/frameworks" target="_blank" rel="noopener"> Laracast </a>学习Laravel，它提供免费和付费视频，简单易学</span></li>
+<li aria-level="1">Laravel有一个名为口才的对象关系映射器，帮助实现活动记录模式并与关系数据库交互。它作为一个包提供给Laravel。</li>
+<li aria-level="1"><span> Laravel有一个名为Artisan support的内置命令行工具，用户可以快速轻松地执行重复性任务</span></li>
+<li aria-level="1"><span>在Laravel模式的帮助下，开发人员可以通过编写简单的迁移脚本来创建数据库表和添加所需的列</span></li>
+<li aria-level="1"><span>它具有反向路由功能，使您的应用更加灵活</span></li>
+</ul>
+<p><span> </span></p>
+<p><strong>拉勒维尔的缺点:</strong></p>
+<ul>
+<li aria-level="1"><span>将遗留系统迁移到Laravel具有挑战性</span></li>
+<li aria-level="1">它附带了大量文档，对于初学者来说可能难以理解</li>
+<li aria-level="1"><span>升级不顺利</span></li>
+</ul>
+<p><span> </span></p>
+<h3 id="toc-3-what-are-events-in-laravel"><strong> 3。拉勒维尔有什么活动？</strong></h3>
+<p>事件是由程序识别和处理的动作。这些事件基于观察者-订阅者模式。Laravel中的所有事件都存储在app/Events目录中，列表存储在app/listeners目录中。事件可以将应用程序的各个方面解耦为单个事件，这能够处理多个侦听器。</p>
+<p><span> </span></p>
+<h3 id="toc-4-what-is-validation-in-laravel"><strong> 4。什么是Laravel中的验证？</strong></h3>
+<p>在Laravel中，ValidatesRequests是类用来验证用户输入的特征。为了存储数据，我们通常使用在Laravel路由中定义的create或store方法和get方法。</p>
+<p><span>可以在Illuminate\Http\Request对象中获取Laravel validate方法。如果规则中没有错误，并且成功通过，代码将按预期执行。但是如果验证失败，代码将不会运行，用户将得到HTTP请求的错误响应。</span></p>
+<p><span>下面是如何在Laravel中定义验证规则的示例:</span></p>
+<pre class="language-php"><code>/**
+* Store a post.
+*
+* @param  Request $request
+* @return Response
+*/
+public function store(Request $request)
+{
+  $validatedData = $request-&gt;validate([
+      'title' =&gt; 'required|unique:posts|max:255',
+      'body' =&gt; 'required',
+  ]);
+}</code></pre>
+<p>在上面的代码中，标题和正文是必填字段。验证规则是连续的，因此如果任何验证失败，将不会检查进一步的验证。<br/> </p>
+<p> </p>
+<h3 id="toc-5-how-do-you-install-laravel-via-composer"><strong> 5。如何通过composer安装Laravel？</strong></h3>
+<p>作曲者以依赖关系管理器的身份出现。如果您的系统上没有安装，您可以使用 <a href="https://getcomposer.org/download/"> <span>这个链接</span> </a> <span>来安装。</span></p>
+<p>在您的系统上成功安装了composer之后，您需要为您的Laravel项目创建一个项目目录。稍后，您需要导航到您创建Laravel目录的路径，并运行以下命令:</p>
+<pre class="language-php"><code>composer create-project laravel/laravel --prefer-dist</code></pre>
+<p>这个命令将帮助在当前目录下安装Laravel。如果您想启动Laravel，运行下面的命令。</p>
+<pre class="language-php"><code>php artisan serve </code></pre>
+<p>Laravel将在开发服务器上开始。现在，在浏览器上运行<a href="http://localhost:8000/"><span>http://localhost:8000/</span></a><span>。安装Laravel的服务器要求如下。</span></p>
+<p><span> </span></p>
+<ul>
+<li aria-level="1"><span> PHP &gt; = 7.1.3。</span></li>
+<li aria-level="1"><span> OpenSSL PHP扩展</span></li>
+<li aria-level="1"><span> PDO PHP扩展</span></li>
+<li aria-level="1"><span> Mbstring PHP扩展</span></li>
+<li aria-level="1"><span>令牌化器PHP扩展</span></li>
+<li aria-level="1"><span> XML PHP扩展</span></li>
+<li aria-level="1"><span> Ctype PHP扩展</span></li>
+<li aria-level="1"><span> JSON PHP扩展</span></li>
+</ul>
+<p><span> </span></p>
+<h3 id="toc-6-what-is-a-php-artisan-in-laravel"><strong> 6。什么是Laravel的PHP工匠？</strong></h3>
+<p>PHP artisan是Laravel中的一个命令行工具，它提供了各种有用的命令，可以帮助快速、轻松地创建应用程序。默认情况下，您将获得每个重要任务的命令，如数据库播种、迁移、配置缓存和许多其他任务。</p>
+<p>以下是一些重要的PHP artisan命令:</p>
+<p><span> </span></p>
+<ul>
+<li aria-level="1"><span> php artisan make:控制器</span> <span>:用于创建控制器文件</span></li>
+<li aria-level="1"><span> php artisan make:model </span> <span>:用于制作模型文件</span></li>
+<li aria-level="1"><span> php artisan make:迁移</span> <span>:用于制作迁移文件</span></li>
+<li aria-level="1"><span> php匠制作:播种器</span> <span>:用于制作播种器文件</span></li>
+<li aria-level="1"><span> php工匠制作:工厂</span> <span>:用于制作工厂文件</span></li>
+<li aria-level="1"><span>PHP artisan make:Policy</span><span>:用于制作策略文件</span></li>
+<li aria-level="1"><span> php工匠制作:命令</span> <span>:用于制作新工匠命令</span></li>
+</ul>
+<p><span> </span></p>
+<h3 id="toc-7-what-is-middleware-in-laravel"><strong> 7。Laravel中的中间件是什么？</strong></h3>
+<p>中间件提供了一种机制，帮助过滤传入应用程序的HTTP请求。用认证来解释基本的中间件。如果用户没有通过身份验证，他们将被重定向到登录页面，如果用户通过身份验证，他们将被允许进行进一步的处理。在中间件的帮助下，所有这些都是可能的。</p>
+<p><span> Laravel有一个</span><span>PHP artisan make:middleware&lt;middleware _ name&gt;</span><span>命令，帮助在你的应用内定义新的中间件。默认情况下，中间件将存储在app/Http/Middleware目录中。</span></p>
+<p><span>如果您想为每个HTTP请求运行中间件，请在app/Http/Kernel.php类的＄middleware属性中列出中间件类。如果您想专门分配中间件，请在app/Http/kernel . PHP class $ routemidleware属性的键-值对中分配它。</span></p>
+<p><span> </span></p>
+<h3 id="toc-8-what-template-is-used-by-the-laravel-engine"><strong> 8。Laravel引擎用的是什么模板？</strong></h3>
+<p>Laravel自带Blade模板引擎，帮助用户在视图中使用普通PHP代码，然后编译并缓存该视图，直到下一次修改。您可以在resources/views目录中获得与刀片视图相关的文件，扩展名为. blade.php. </p>
+
+<p><span>下面是刀片文件的一个例子。</span></p>
+<pre class="language-php"><code>&lt;!-- /resources/views/alert.blade.php --&gt;
+&lt;div class="alert alert-danger"&gt;
+  {{ $slot }}
+&lt;/div&gt;</code></pre>
+<p>在变量$slot中，您可以指定任何想要的值来注入组件。</p>
+<p><span>组件将如下所示:</span></p>
+<pre class="language-php"><code>@component('alert')
+  &lt;strong&gt;Whoops!&lt;/strong&gt; Something went wrong!
+@endcomponent</code></pre>
+<p>@component在这里是刀片指令。<strong><br/>T2】</strong></p>
+<p><strong> </strong></p>
+<h3 id="toc-9-explain-csrf-protection-and-csrf-token-in-laravel"><strong> 9。解释CSRF保护和拉勒维尔的CSRF令牌。</strong></h3>
+<p>CSRF被定义为跨站点伪造攻击，这是一种恶意利用，通过验证的用户运行未经授权的命令。在这种情况下，Laravel将为每个活跃用户的会话自动生成CSRF令牌。这个令牌将验证向应用程序发出未授权请求的已验证用户。</p>
+<pre class="language-php"><code>&lt;form method="POST" action="/profile"&gt;
+  @csrf
+  ...
+&lt;/form&gt;</code></pre>
+<p>假设您正在为您的应用程序创建一个HTML表单。确保在表单中包含一个隐藏的CSRF令牌字段，这样中间件将检查并验证该字段。VerifyCsrfToken中间件包含在web中间件组中。您可以使用@csrf blade指令在应用程序的表单上生成令牌字段。</p>
+<p>如果您使用的是JS驱动的应用程序，JS HTTP库会自动将CSRF令牌附加到每个HTTP请求上。</p>
+<p><strong> </strong></p>
+<h3 id="toc-10-explain-the-laravel-facade">10。解释一下Laravel的门面。</h3>
+<p>Laravel facade为应用程序的服务容器中可用的类提供了一个静态接口。在Laravel中，所有的外观都存储在Illuminate\Support\Facades名称空间中。您可以在不需要注入的情况下轻松实现facade，从而允许您在同一个类中使用多个facade。它有一个表达性的语法，确保比传统的静态类的方法更高的灵活性。</p>
+
+<p><span>入口外观将看起来像:</span></p>
+
+<pre class="language-php"><code>use Illuminate\Support\Facades\Cache;
+Route::get('/cache', function () {
+  return Cache::get('key');
+});</code></pre>
+<p> </p>
+<h3 id="toc-11-what-is-eloquent-in-laravel"><strong> 11。拉勒维尔的雄辩是什么？</strong></h3>
+<p>在继续讨论雄辩的概念之前，理解什么是ORM(对象关系映射)是很重要的。ORM是一种编程方法，可以帮助用户在关系数据库和面向对象编程语言之间转换数据。您可以将其称为对象关系映射器。</p>
+<p>雄辩是Laravel中常用的一种ORM，允许用户高效地使用数据库。每个数据库都有一个与表交互的特定模型。</p>
+<p><span>口才有以下几种关系:</span></p>
+<ul>
+<li aria-level="1"><span>一对一</span></li>
+<li aria-level="1"><span>多对一</span></li>
+<li aria-level="1"><span>一对多</span></li>
+<li aria-level="1"><span>多对多</span></li>
+<li aria-level="1"><span>有一个到</span></li>
+<li aria-level="1"><span> Has_many到</span></li>
+</ul>
+<p><strong> 12。Laravel框架的优点是什么？</strong></p>
+<h3 id="toc-12-what-are-the-advantages-of-the-laravel-framework"><span>以下是使用Laravel框架的优势:</span></h3>
+<p><span>免费</span></p>
+<p><span>有助于应用程序的简单配置</span></p>
+<ul>
+<li aria-level="1"><span>该框架基于MVC模式</span></li>
+<li aria-level="1"><span>提供广泛的模块和库，帮助开发人员加快开发过程</span></li>
+<li aria-level="1"><span>确保高性能并简化布线过程</span></li>
+<li aria-level="1"><span>提供了一个雄辩的ORM，允许你处理各种数据库相关的任务</span></li>
+<li aria-level="1"><span>支持单元测试的内置设施</span></li>
+<li aria-level="1"><span>拥有强大的社区支持</span></li>
+<li aria-level="1"> </li>
+<li aria-level="1">13。Laravel框架有什么特点？</li>
+</ul>
+<p>以下是Laravel框架的重要特征:</p>
+<h3 id="toc-13-what-are-the-features-of-the-laravel-framework"><span>为处理数据库相关任务提供了雄辩的ORM</span></h3>
+<p><span>附带一个查询生成器</span></p>
+<ul>
+<li aria-level="1"><span>为反向布线提供了一个简单的过程</span></li>
+<li aria-level="1"><span>提供类自动加载，并附带Restful控制器</span></li>
+<li aria-level="1"><span>自带刀片模板引擎</span></li>
+<li aria-level="1"><span>您可以选择惰性收集</span></li>
+<li aria-level="1"><span>单元测试更容易</span></li>
+<li aria-level="1"><span>提供数据库播种并支持轻松迁移</span></li>
+<li aria-level="1"> </li>
+<li aria-level="1"><strong> 14。Laravel最新版本包含哪些功能？</strong></li>
+</ul>
+<p>Laravel的最新稳定版本是Laravel 8。下面是Laravel 8的一些好的特性:</p>
+
+<h3 id="toc-14-what-are-the-features-included-in-the-latest-version-of-laravel">拉勒维尔急流</h3>
+<p><span>车型目录</span></p>
+
+<ul>
+<li aria-level="1"><span>模型工厂类</span></li>
+<li aria-level="1"><span>迁移挤压</span></li>
+<li aria-level="1"><span>时间测试助手</span></li>
+<li aria-level="1"><span>动叶片组件</span></li>
+<li aria-level="1"><span>限速改进</span></li>
+<li aria-level="1"> </li>
+<li aria-level="1">15。如何检查Laravel的安装版本？</li>
+</ul>
+<p><span>首先，打开命令行终端，导航到项目目录。接下来，执行以下任何命令来检查Laravel的安装版本。</span></p>
+<h3 id="toc-15-how-can-you-check-the-installed-version-of-laravel"><span>或</span></h3>
+<p>16。Laravel项目的项目结构是怎样的？</p>
+<p><span>这是任何Laravel项目的目录结构:</span></p>
+<pre class="language-php"><code>php artisan --version</code></pre>
+<p><strong> app文件夹:</strong> <span>包含一个应用的源代码，由五个子文件夹组成，分别是控制台文件夹、异常文件夹、Http文件夹、模型文件夹、提供者文件夹。这些子文件夹进一步包含异常处理程序、控制器、中间件、服务提供者和模型。</span></p>
+<pre class="language-php"><code>php artisan -v</code></pre>
+<p> </p>
+<h3 id="toc-16-what-is-the-project-structure-of-a-laravel-project"><em> <span> <strong>注意:</strong>在Laravel 7中，你没有任何名为Models的文件夹。所有模型文件都存在于app文件夹中，而不是app/Models文件夹中。</span> </em></h3>
+<p> </p>
+<ul>
+<li aria-level="1"><strong>引导文件夹:</strong> <span>包含引导文件</span></li>
+</ul>
+<p><strong> config文件夹:</strong> <span>包含配置文件</span></p>
+<p><strong>数据库文件夹:</strong> <span>包括数据库相关文件和三个子文件夹，即工厂文件夹、迁移文件夹、种子文件夹和。gitignore文件。这些子文件夹进一步存储大量数据、数据库迁移和种子。</span></p>
+<p><strong>公共文件夹:</strong> <span>有初始化应用程序所需的文件</span></p>
+<ul>
+<li aria-level="1"><strong> resources文件夹:</strong> <span>包含HTML、CSS和JavaScript的文件。它包含四个子文件夹，即CSS文件夹、js文件夹、lang文件夹和views文件夹。</span></li>
+<li aria-level="1"><strong>路线文件夹:</strong> <span>包含路线定义</span></li>
+<li aria-level="1"><strong>存储文件夹:</strong> <span>由缓存文件、会话文件等组成</span></li>
+<li aria-level="1"><strong> tests文件夹:</strong> <span>包含测试文件，就像单元测试文件一样。</span></li>
+<li aria-level="1"><strong>厂商文件夹:</strong> <span>包含所有的composer依赖包</span></li>
+<li aria-level="1"><strong>。env文件:</strong> <span>包含环境变量</span></li>
+<li aria-level="1"><strong> composer.json文件:</strong> <span>包含依赖关系</span></li>
+<li aria-level="1"><strong> package.json文件:</strong> <span>该文件用于应用的前端，类似于composer.json文件</span></li>
+<li aria-level="1"> </li>
+<li aria-level="1"><strong> 17。Laravel中的bundles是什么？</strong></li>
+<li aria-level="1">Laravel中的包用于增加应用程序的功能。您也可以将包称为包含配置、路由、迁移、视图等的包。</li>
+<li aria-level="1"> </li>
+</ul>
+<p>18。什么是路由？</p>
+<h3 id="toc-17-what-are-bundles-in-laravel"><span>路由是一种接受输入请求并将其发送到控制器内相关功能的技术。Laravel中有两种类型的路由文件，如下所述:</span></h3>
+<p><span>routes文件夹中的web.php文件</span></p>
+<p><span>routes文件夹中的api.php文件</span></p>
+<h3 id="toc-18-what-is-routing"> </h3>
+<p><strong> 19。如何在拉勒维尔创建一条路线？</strong></p>
+<ul>
+<li aria-level="1"><span>如果您想在Laravel中创建一条路线，使用控制器或直接将代码添加到路线中。下面是一个例子，帮助您通过直接添加代码来创建路线。</span></li>
+<li aria-level="1"><span>示例:替换routes/web.php文件中的代码，并添加以下代码段。</span></li>
+</ul>
+<p>在浏览器中运行项目，您将看到“欢迎！”作为输出。</p>
+<h3 id="toc-19-how-can-you-create-a-route-in-laravel">20。什么是Laravel中的认证？</h3>
+<p>在Laravel中，认证是验证应用程序用户的过程。您可以通过识别用户的用户名和密码来实现这一点。此外，您可以使用另一个参数进行身份验证。如果提供的凭证正确，则用户通过了身份验证；否则，用户未经身份验证。</p>
+<p>Laravel在认证过程中使用保安和提供商。守卫将指定如何为每个请求验证用户，而提供者将指定如何从持久存储中检索用户。</p>
+<pre class="language-php"><code>&lt;?php
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+return "Welcome!";
+});</code></pre>
+<p> </p>
+<h3 id="toc-20-what-is-authentication-in-laravel"><strong> 21。Laravel中GET和POST方法有什么区别？</strong></h3>
+<p>下面是Laravel中GET和POST方法的一些主要区别:</p>
+<p><strong>获取方法</strong></p>
+<p><strong>发布方法</strong></p>
+<h3 id="toc-21-what-is-the-difference-between-get-and-post-methods-in-laravel">此方法将从特定资源请求数据。</h3>
+<p>它会将数据发送到服务器。</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><span>它将包括URL中的参数。</span></p>
+</td>
+<td>
+<p><span>它将包括正文中的参数。</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span>URL将显示数据。</span></p>
+</td>
+<td>
+<p><span>URL不会显示数据。</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>此方法将只允许ASCII字符。</p>
+</td>
+<td>
+<p>该方法允许ASCII字符和二进制数据。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>您只能将有限的数据用于GET方法。</p>
+</td>
+<td>
+<p>使用的数据没有限制。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span>您可以在浏览器历史记录中查看请求。</span></p>
+</td>
+<td>
+<p><span>您无法在浏览器历史记录中查看请求。</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>您可以将GET请求加入书签。</p>
+</td>
+<td>
+<p>您不能将发布请求加入书签。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span>可以缓存。</span></p>
+</td>
+<td>
+<p><span>它不能被缓存。</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>与POST方法相比，它不太安全。</p>
+</td>
+<td>
+<p>与GET方法相比，它是高度安全的。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>您不能用它来发送敏感数据，如密码。</p>
+</td>
+<td>
+<p>您可以用它来发送敏感数据，如密码。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p><span>以下是Laravel中发送邮件的一些常用工具:</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span>邮件陷阱</span></p>
+</td>
+<td>
+<p><span>气枪</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span> Mailchimp </span></p>
+
+<p><span>顶杆</span></p>
+<ul>
+<li aria-level="1"><span>亚马逊简易电子邮件服务(SES) </span></li>
+<li aria-level="1"><span> Swiftmailer </span></li>
+<li aria-level="1"><span>邮戳</span></li>
+<li aria-level="1"><strong> 23。解释Laravel中的反向路由。</strong></li>
+<li aria-level="1"><span>反向路由是根据名称或符号以及路由声明生成URL的过程。在反向路由的帮助下，应用程序变得更加灵活，并提供了更好的接口，这使得编写代码更加容易。</span></li>
+<li aria-level="1"><strong>例如:</strong> <span> </span></li>
+<li aria-level="1"> </li>
+</ul>
+<p><strong> <br/> 24。Laravel有哪些服务商？</strong></p>
+<h3 id="toc-23-explain-reverse-routing-in-laravel">Laravel的服务提供商扮演着核心角色，帮助配置所有应用和核心服务。它们是帮助维护类依赖性和执行注入的健壮工具。它还为Laravel提供了在Laravel的服务容器中绑定各种组件的指令。</h3>
+<p><span>为了生成服务提供者，使用下面的artisan命令:</span></p>
+<p><span>Laravel中的每个服务提供商都会扩展Illuminate \ Support \ ServiceProviderclass，并附带以下两个功能:</span></p>
+<pre class="language-php"><code>Route:: get('list', 'blog@list');
+
+{{ HTML::link_to_action('blog@list') }}</code></pre>
+<p><strong> 25。拉勒维尔的宅地是什么？</strong></p>
+<p>这是一个预先打包的官方虚拟机，允许开发者使用所有必要的工具来开发Laravel。它附带了Ubuntu、Gulp、Bower和其他基本的开发工具，允许开发全面的基于web的应用程序。它将为开发人员提供一个开发环境，而无需在您的机器上安装PHP、web服务器或其他与服务器相关的软件。</p>
+<p> </p>
+<p><strong> 26。为什么Laravel比其他PHP框架更受青睐？</strong></p>
+<pre class="language-php"><code>php artisan make: provider ClientsServiceProvider  </code></pre>
+<p><span>以下是相比其他PHP框架更喜欢Laravel的原因:</span></p>
+
+<h3 id="toc-25-what-is-a-homestead-in-laravel"><span>与其他选项相比，Laravel允许快速设置和定制</span></h3>
+<p><span>附带多个文件系统。</span></p>
+<p><span>提供预装套餐，如Laravel交际花、Laravel收银员、Laravel护照等。</span></p>
+<h3 id="toc-26-why-is-laravel-preferred-over-other-php-frameworks"><span>内置认证系统</span></h3>
+<p><span>为处理数据库相关操作提供了雄辩的表单</span></p>
+<ul>
+<li aria-level="1"> </li>
+<li aria-level="1"><strong> 27。Laravel中的dd()是什么？</strong></li>
+<li aria-level="1">Laravel提供了dd()函数，允许用户将变量的内容转储到浏览器中，然后停止进一步脚本的执行。dd代表转储和终止，它首先转储一个变量或对象并终止(终止)脚本的执行。如果您愿意，可以很容易地将这个函数隔离在一个可重用的函数文件或类中。</li>
+<li aria-level="1"><span> </span></li>
+<li aria-level="1"><strong> 28。拉勒维尔的产量是多少？</strong></li>
+<li aria-level="1"><span><span>Offers an “Artisan” command-line tool for running various commands for carrying out various functions in Laravel</span></span>
+<p>Laravel提供@yield来定义布局中的一个部分，从子页面获取内容，并提交给母版页。因此，每当您使用Laravel执行刀片文件时，它首先会检查您是否扩展了主布局。如果是这样，它将移动到主布局并开始获取@sections。</p>
+</li>
+</ul>
+<h3 id="toc-27-what-is-dd-in-laravel"><span> </span></h3>
+<p><strong> 29。Laravel中的请求是什么？</strong></p>
+<p>在Laravel中，请求被用来与传入的HTTP请求进行交互，还有会话、cookies，甚至文件，如果它们与请求一起提交的话。类Illuminate\Http\Request负责Laravel中的请求。</p>
+<h3 id="toc-28-what-is-yield-in-laravel">无论何时你向Laravel路由提交任何请求，它都会转到控制器方法，在依赖注入的帮助下，该请求的对象将在控制器方法中可用。您可以对请求执行各种操作，例如验证和授权。</h3>
+<p>您甚至可以创建一个请求验证类来存储验证规则和相关的错误消息。考虑下面的例子:</p>
+<p> </p>
+<h3 id="toc-29-what-are-requests-in-laravel"><span> <strong> 30。服务提供者类中的注册和引导方法是什么？</strong>T3】</span></h3>
+<p><span>在服务提供者类中，register方法用于将类或服务绑定到服务控制器。您不能使用它来访问应用程序中的任何其他功能或任何类，因为您想要访问的服务可能还没有加载到容器中。</span></p>
+<p>服务提供者类中的引导方法有助于运行容器中包含的所有依赖项，并且您可以访问引导方法中的功能。</p>
+<p><span> </span></p>
+<pre class="language-php"><code>/**
+* Store a new blog post.
+*
+* @param  \Illuminate\Http\Request  $request
+* @return \Illuminate\Http\Response
+*/
+public function store(Request $request)
+{
+    $validated = $request-&gt;validate([
+        'title' =&gt; 'required|unique:posts|max:255',
+        'body' =&gt; 'required',
+    ]);
+
+    // The blog post is valid...
+}</code></pre>
+<p>31。Laravel中的依赖注入是什么？</p>
+<p>Laravel的服务控制器帮助解决所有控制器中的所有依赖关系。因此，您可以很容易地在控制器方法或构造函数中对依赖关系进行类型提示。方法中的依赖将被解析并注入到方法中，这种注入将解析被称为依赖注入的类。</p>
+<p><span> </span></p>
+<p>32。你怎么能关闭CSRF保护一个特定的路线在拉韦？</p>
+<p><span>如果您想关闭Laravel中特定路由的CSRF保护，您需要在</span><strong>app/Http/Middleware/verifycrsftoken . PHP文件</strong> <span>中添加以下几行。</span></p>
+<h3 id="toc-31-what-is-dependency-injection-in-laravel"><span> <strong> <br/> 33。你如何更新Laravel？</strong> <br/> </span></h3>
+<p> </p>
+<p><span>如果您想将Laravel框架更新到最新版本，您需要打开composer.json文件，并对Laravel框架的版本进行所需的更改，使其成为最新版本。执行以下命令更新laravel框架:</span></p>
+<h3 id="toc-32-how-can-you-turn-off-the-csrf-protection-for-a-specific-route-in-laravel"><span> </span></h3>
+<p>34。Laravel中的闭包是什么？</p>
+<pre class="language-php"><code>//add an array of Routes to skip CSRF check
+private $exceptUrls = ['controller/route1', 'controller/route2'];
+//modify this function
+public function handle($request, Closure $next) {
+//add this condition foreach($this-&gt;exceptUrls as $route) {
+if ($request-&gt;is($route)) {
+  return $next($request);
+}
+}
+return parent::handle($request, $next);
+}</code></pre>
+<p><span>闭包是Laravel中用作回调函数的匿名方法，你也可以把它作为函数中的参数。</span></p>
+<h3 id="">通过改变handle()方法中的闭包函数调用，可以很容易地将参数传递给闭包。借助闭包，您可以访问变量范围之外的变量。</h3>
+<p><span>例子</span></p>
+<pre class="language-php"><code>composer update</code></pre>
+<p><span>可以给handle()方法添加闭包参数，现在可以调用handle()方法，将一个服务作为参数传递。</span></p>
+<h3 id="toc-34-what-are-closures-in-laravel"><span> </span></h3>
+<p>35。Laravel中的with()是什么？</p>
+<p><span>在Laravel中，with()函数用于急切加载。您可以在第一个命令后使用with()方法，而不是使用两个或多个单独的查询从数据库中获取数据。您将获得更好的用户体验，因为您不必等待更长时间来从数据库获取数据。</span></p>
+<p><span> </span></p>
+<pre class="language-php"><code>function handle(Closure $closure) { 
+    $closure(); 
+} 
+handle(function(){ 
+echo "Hello"'; 
+});   </code></pre>
+<p><span> <strong> 36。Laravel中的软删除是什么？</strong>T3】</span></p>
+<p>在Laravel中，软删除是一个帮助软删除模型而不是从数据库中实际删除它们的特性。如果希望对模型启用软删除，需要在模型中提及软删除属性，如下图:</p>
+<h3 id="toc-35-what-is-with-in-laravel"><span> </span></h3>
+<p><em> <span>使用</span> </em> <strong>照亮\数据库\雄辩\软删除；</strong></p>
+<p><span>你可以用这个</span></p>
+<h3 id="toc-36-what-is-soft-delete-in-laravel"><span>使用</span> <span> </span> <strong>软删除；</strong> <em> <span>在我们的模型属性中。</span>T9】</em></h3>
+<p><span>在使用delete()查询之后，如果记录没有从数据库中删除，则在记录上设置deleted_at时间戳。</span></p>
+<p><span> </span></p>
+<p>37。什么是Laravel中的存储库模式？</p>
+<p>在存储库模式的帮助下，你可以在不知道一个对象是如何存在的情况下使用它。它充当数据层的抽象，这意味着不需要知道数据是如何持久存储的。因此，业务逻辑依赖于存储库来获取正确的数据。简而言之，它用于分离应用程序中的数据访问层和业务逻辑。</p>
+<p><span> </span></p>
+<p>38。Laravel中的singleton设计模式是什么？</p>
+<p>在Laravel中，单例设计模式是一种类呈现自身的单个实例的模式。这样，您可以将一个类的实例的创建限制为一个对象。只要系统中需要该类的单个实例，就可以使用它。如果您正确地实现了它，第一个调用将实例化该对象，其余的调用将返回到同一个实例化的对象。</p>
+<h3 id="toc-37-what-is-a-repository-pattern-in-laravel"><span> </span></h3>
+<p>39。拉勒维尔的观点是什么？</p>
+<p>Laravel中的视图由应用程序所需的HTML代码组成。此外，我们可以将Laravel中的视图定义为一种方法，将控制器逻辑和域逻辑从表示层中分离出来。resources文件夹包含视图，其路径是resources/views。</p>
+<h3 id="toc-38-what-is-the-singleton-design-pattern-in-laravel"><strong>例如:</strong> <span> </span></h3>
+<p><span> <strong> <br/> 40。什么是Laravel中的方法欺骗？</strong> </span></p>
+<p>通常，HTML表单不支持上传、修补或删除操作。因此，如果您想从HTML表单中调用这些操作，您需要通过向该表单添加hidden _method字段来定义它们的路径。因此，用_method字段发送的值将被用作HTTP请求方法，如下所示: <span> </span></p>
+<h3 id="toc-39-what-are-views-in-laravel"><span>为了生成_method输入，需要使用@method Blade指令，比如:<br/> </span></h3>
+<p>在Laravel中，这被称为方法欺骗。<br/> </p>
+<p><span> </span></p>
+<pre class="language-php"><code>&lt;html&gt;
+&lt;body&gt;
+  &lt;h1&gt;Best Interview Question&lt;h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3 id="toc-40-what-is-method-spoofing-in-laravel">41。拉勒维尔的廷克是什么？</h3>
+<p>在Laravel中，tinker是一个强大的REPL工具，用于在交互式shell中使用命令行与Laravel应用程序进行交互。它附带了5.4的发布版本，解压在一个单独的包中。</p>
+<pre class="language-php"><code>&lt;form action="/foo/bar" method="POST"&gt;
+&lt;input type="hidden" name="_method" value="PUT"&gt;
+&lt;input type="hidden" name="_token" value="{{ csrf_token() }}"&gt;
+&lt;/form&gt;</code></pre>
+<p><span>要安装Tinker，运行以下命令:</span></p>
+<pre class="language-php"><code>&lt;form action="/foo/bar" method="POST"&gt;
+@method('PUT')
+@csrf
+&lt;/form&gt;</code></pre>
+<p><span>执行Tinker，执行以下命令:</span></p>
+<p><span> </span></p>
+<h3 id="toc-41-what-is-tinker-in-laravel"><strong> 42。如何清除Laravel中的缓存？</strong></h3>
+<p><span>要清除Laravel中的缓存，按相同的顺序运行以下命令:</span></p>
+<p><span> <strong> <br/> 43。拉勒维尔的REPL是什么？</strong> </span></p>
+<pre class="language-php"><code>composer require laravel/tinker</code></pre>
+<p>REPL代表读取-评估-打印循环。它是一个交互式shell，接受单个用户输入，处理它，并将结果返回给客户端。</p>
+<pre class="language-php"><code>php artisan tinker</code></pre>
+<p><span> </span></p>
+<h3 id="toc-42-how-do-you-clear-cache-in-laravel"><strong> 44。Laravel中的updateOrinsert()方法有什么用？</strong></h3>
+<p><span>该方法用于在条件匹配时更新数据库中的现有记录，或者在没有匹配记录时创建记录。它将返回布尔值。</span></p>
+<pre class="language-php"><code>php artisan config:clear
+php artisan cache:clear
+composer dump-autoload
+php artisan view:clear
+php artisan route:clear</code></pre>
+<p><span>您可以使用以下语法:</span></p>
+<p><span> </span></p>
+<p><strong> 45。如何在Laravel中更改默认的数据库类型？</strong></p>
+<h3 id="toc-44-what-is-the-use-of-the-updateorinsert-method-in-laravel"><span>为此，您需要更新config/database.php文件中的以下内容。可以选择MySQL数据库。</span></h3>
+<p><span> </span></p>
+<p><strong> 46。你如何在拉弗尔停止一个Artisan服务器？</strong></p>
+<pre class="language-php"><code>DB::table('blogs')-&gt;updateOrInsert([Conditions],[fields with value]);</code></pre>
+<p><span>您可以分三步停止Artisan服务器，如下:</span></p>
+<h3 id="toc-45-how-do-you-change-the-default-database-type-in-laravel"><span>首先，同时按Ctrl + Shift + ESC。定位php系统走匠，用合适的点击- &gt;杀死进程将其杀死。</span></h3>
+<p><span>稍后，重新打开命令行并再次启动服务器</span></p>
+<pre class="language-php"><code>'default' =&gt; env('DB_CONNECTION', 'mysql')</code></pre>
+<p><span>你可以通过Ctrl + C </span>发送杀死标志来杀死这个方式</p>
+<h3 id="toc-46-how-do-you-stop-an-artisan-server-in-laravel"><span> </span></h3>
+<p><strong> 47。如何在Laravel中生成应用程序密钥？</strong></p>
+<ul>
+<li aria-level="1"><span>运行以下命令在Laravel中生成应用程序密钥:</span></li>
+<li aria-level="1"><span> </span></li>
+<li aria-level="1"><strong> 48。如何在Auth中延长登录到期时间？</strong></li>
+</ul>
+<p><span>如果您想延长登录到期时间，请对config\session.php文件进行必要的更改。您需要更新变量“生命线”的值，也可以根据您的要求更新变量。</span></p>
+<h3 id="toc-47-how-do-you-generate-the-application-key-in-laravel"><span> </span></h3>
+<p>49。如何回滚Laravel中的最后一次迁移？</p>
+<pre class="language-php"><code>php artisan key:generate</code></pre>
+<p><span>您可以运行以下artisan命令来回滚Laravel中的最后一次迁移:</span></p>
+<h3 id="toc-48-how-can-you-extend-the-login-expiration-time-in-auth"><span> </span></h3>
+<p>50。如何检查当前的路线名称？</p>
+<p><span>您可以使用以下方法查看当前路线名称:</span></p>
+<h3 id="toc-49-how-do-you-roll-back-the-last-migration-in-laravel">Laravel是所有PHP web开发者中最常用的web框架之一。Laravel 7版和Laravel 8版有中度差异；但是，其他功能仍然相同。</h3>
+<p>这些简单的面试问题会让你做好准备。</p>
+<pre class="language-php"><code>php artisan migrate:rollback --step=1</code></pre>
+<p>Laravel框架借助路由、控制器、中间件、视图、刀片模板和雄辩模型等特性，帮助开发人员无缝地创建响应迅速、可靠的基于web的应用程序。</p>
+<h3 id="toc-50-how-do-you-check-the-current-route-name">如果你的目标是成为一名Laravel或PHP开发人员并参加面试，这篇文章会帮助你做好准备。祝你好运！</h3>
+<p> </p>
+<pre class="language-php"><code>request()-&gt;route()-&gt;getName()</code></pre>
+<p><strong>对初学者学习Laravel感兴趣？检查本课程！</strong></p>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.2275171&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fphp-laravel-for-beginner-from-zero-fly-to-the-heaven%2F" target="_blank" rel="nofollow noopener">从零飞到打造Laravel CMS！</a></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Interested in learning Laravel for beginners? Check this course!</strong></p>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/link?id=jU79Zysihs4&amp;offerid=1045023.2275171&amp;type=2&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fphp-laravel-for-beginner-from-zero-fly-to-the-heaven%2F" target="_blank" rel="nofollow noopener">From zero fly to build Laravel CMS!</a></p>
+<p> </p>
+<p> </p>
+
+									</div>
+
+									</div>    
+</body>
+</html>

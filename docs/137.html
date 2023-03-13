@@ -1,0 +1,215 @@
+<html>
+<head>
+<title>URI vs URL: Comparison, Features &amp; Applications [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>URI与网址:比较，特点和应用[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/url-vs-uri#0001-01-01">https://hackr.io/blog/url-vs-uri#0001-01-01</a></blockquote><div><div class="content">
+										<p>我们每天都在使用许多网址。有时我们输入它们，而有时，我们只是被另一个重定向到一个URL。有趣的是，我们大多数人都认为http://google.com或http://facebook.com只是网址，但只有少数人知道我们也可以称它们为<em> URI。</em></p>
+<p>许多第一次听说URI vs URL的人可能会很困惑，因为他们试图区分两者。那么这两者到底有什么区别，你又怎么区分呢？</p>
+<h2 id="what-s-a-uri">什么是URI？</h2>
+<p>URI代表统一资源标识符。它可能是名称、定位器或两者都是。URI可以包含URL和URN。然而，当URI只是一个名字，这意味着它不是一个网址。</p>
+<p>URI以相同的顺序包含方案、授权、路径、查询和片段。我们使用的一些最常见的URI方案有HTTP、https、ftp、ldap、mailto、telnet、gopher、news等</p>
+
+<p>通用URI语法遵循IEFTs RFC 3986。</p>
+<p>语法是–</p>
+<pre class="language-http"><code>URI = scheme ":" hier-part [ "?" query ] [ "#" fragment ]</code></pre>
+<p>在我给你举一些例子之前，我想知道它为什么被称为“制服”会很好。为什么不仅仅是资源标识符？</p>
+<p>一致性不仅允许在相同的上下文中使用不同的资源标识符，还允许跨资源标识符的通用约定的统一语义表示。这也意味着更容易引入新的资源id，而不会干扰现有的资源id。</p>
+<p>现在来看例子——</p>
+<p>https://hackr.io/blog——这是我们所知的典型的URI，我们称之为URL。</p>
+
+<p>这个怎么样？</p>
+<p>电话:+1-816-345-1212</p>
+<p>以上是URI，但不是网址。它标识一个资源。资源可以是任何东西。它不必总是web服务。它可以是一幅图像、一个文档或几个资源的集合。</p>
+<h3 id="examples-of-uris"><strong>URIs的例子</strong></h3>
+<ol>
+<li>mailto:support@examplewebsite.com</li>
+<li>电话:+1-816-345-1212</li>
+<li>ldap://[2007:db5::2]/c=GB？objectClass？一个</li>
+<li>远程登录://192.0.2.16:80/</li>
+</ol>
+<h3 id="important-reasons-to-use-uri"><strong>使用URI的重要原因</strong></h3>
+<p>如果你想知道为什么你应该使用URIs，这里有几个原因可以帮助回答你的问题:</p>
+<ul>
+<li>我们所知的URI对我们当前的语义网至关重要，因为它有助于防止歧义</li>
+<li>URI使用统一的格式搜索资源或文件的名称<em>和位置</em></li>
+<li>URI可以提供一些方法，其他系统可以通过这些方法访问internet或网络上的资源；因此，点对点或P2P文件共享软件，如BitTorrent和网络浏览器使用URI来查找下载文件</li>
+</ul>
+<ul>
+<li>URI允许您在不影响任何旧文件的情况下定义新的文件类型</li>
+</ul>
+<p> </p>
+<h2 id="what-s-a-url">什么是网址？</h2>
+<p>URL代表统一资源定位器。</p>
+<p>永远记住——URI可以包含一个URL，但是URL只指定一个资源的地址。顾名思义，就是一个‘定位器’。因此，URI比URL更宽泛。</p>
+<p>URL包含以下信息:</p>
+<ul>
+<li>用于访问资源的协议——HTTP:https:FTP:等等</li>
+<li>使用IP地址或域名的服务器位置，例如，hackr.io是域名。http://198.152.1。1–这里使用资源的IP地址(198.152.1.1)来定位资源</li>
+<li>服务器上的端口号。例如http://localhost:8080，其中8080是端口。不强制提及端口。</li>
+<li>服务器目录结构中的确切位置。例如，如果用户想去网站的博客部分，http://hackr.io/blog就是确切的位置。</li>
+<li>可选的片段标识符。例如，<a href="https://www.google.com/search?ei=ARDsXO-1EL7az7sPvbWigAo&amp;q=URL" target="_blank" rel="noopener">https://www.google.com/search?ei=ARDsXO-1EL7az7sPvbWigAo&amp;q=URL</a>其中q = URL是用户键入的查询字符串。</li>
+</ul>
+<h3 id="examples-of-urls"><strong>网址示例</strong></h3>
+<ol>
+<li><a href="https://google.com" target="_blank" rel="noopener">https://google.com</a></li>
+<li><a href="https://www.google.com" target="_blank" rel="noopener">https://www.google.com</a></li>
+<li><a href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/URL</a></li>
+<li><a href="https://hackr.io/">https://hackr.io/</a></li>
+</ol>
+<h3 id="important-reasons-to-use-urls"><strong>使用URL的重要原因</strong></h3>
+<p>如果你想知道为什么应该使用URL，下面的理由会有所帮助:</p>
+<ul>
+<li>写在URL中的信息允许你点击一下就可以从一个网站切换到另一个网站(或者从一个网页切换到另一个网页)</li>
+<li>URL明确地告诉你如何访问资源</li>
+<li>URL遵循一种清晰易记的固定格式</li>
+<li>URL使得在页面和目录之间导航更加容易</li>
+<li>单击任何超链接文本或在任何浏览器中键入URL都会使您的web浏览器向web服务器发送下载文件的请求</li>
+<li>URL可以用作在web上找到的任何唯一资源的地址。它可以用于网站和页面、文件、图像、视频、web应用程序等等</li>
+<li>URL，也称为网站的域名，通常是网站最重要的部分之一。使用以TLD或顶级域名结尾的简单单词或短语，如。com，。网，。org，还有。edu可以让人们更容易找到网站，从而增加流量</li>
+</ul>
+<p><img src="../Images/ac069001b0480251bd2fdbdeb8e10ccc.png" alt="" data-original-src="https://hackr.io/blog/media/important-reasons-to-use-urls-min.png"/></p>
+<p> </p>
+<h2 id="what-s-a-urn">什么是骨灰盒？</h2>
+<p>一个URN，或者一个<strong>U</strong>N form<strong>R</strong>e source<strong>N</strong>ame，标识了互联网上的一个资源(通过名字)。URL使用网络地址，如域、目录和文件名，而URN使用独立于协议和位置的常规单词。</p>
+<p>URN是持久的(意味着它永远不会改变),并且提供了更高层次的抽象。它需要一个解析服务，很像DNS系统，将一个名字转换成一个真实的地址。</p>
+<p>在URI和URL的争论中，骨灰盒有点被搁置了。你会看到人们使用术语URI或网址，但你很难发现人们在日常生活中使用骨灰盒。</p>
+<p> </p>
+<h2 id="all-urls-are-uris-but-not-all-uris-are-urls"><strong>所有的网址都是URIs的，但并不是所有的URIs都是网址</strong></h2>
+<p>事实上，URI是URL和URN的组合。因此，我们可以有把握地得出结论，所有的网址都是URIs。然而，反之则不然。</p>
+<p>所有的URL都是URIs，而不是相反的主要原因是，URI可以是资源的名称或位置，而URL只是位置。</p>
+<p>理解这一点的一个快速的真实例子是:</p>
+<p>约翰，你的名字是骨灰盒。你的地址，比如坎特街34号，就是网址。用你的名字<strong>或地址</strong>你可以被识别为一个独特的人。这个独特的身份就是URI。</p>
+<p>虽然您的姓名可以是您的唯一标识符(URI)，但它不能是URL，因为您的姓名不能帮助您找到您的位置。换句话说，URI(URN)不是URL。</p>
+<p> </p>
+<h2 id="how-to-identify-whether-something-is-uri-vs-url"><strong>如何鉴别某物是否是URI vs网址</strong></h2>
+<p>如果你想知道某个东西是URI还是URL，你应该总是把它标记为URI，因为所有的URL都是URIs。</p>
+<p>然而，如果你还在挠头，想知道“URL和URI有什么区别？，“您可以在下面看到它们的主要区别:</p>
+<ul>
+<li><strong>URI包含URL和URN </strong>，它们分别标识资源的位置和名称。URI也可以只是一个URL或者只是一个URN，允许它仍然只标识资源的名称或位置。</li>
+<li>该URL属于URI的一个子集。它只标识<strong>一个资源的位置</strong>。</li>
+<li>您可以使用URI在XML、HTML和其他文件中查找资源。</li>
+<li>您只能使用URL来定位和访问特定的网站或页面。</li>
+<li>所有的网址也是URIs。并非所有的URIs都是URL。</li>
+</ul>
+<p> </p>
+<h3 id="head-to-head-comparison-uri-vs-url"><strong>势均力敌的对比:URI vs网址</strong></h3>
+<p>让我们做一些并排的比较，以便我们到目前为止讨论的任何内容都得到加强，并且您不会再对错误地使用URI和URL感到困惑！</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong> URI </strong></p>
+</td>
+<td>
+<p><strong>网址</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>通过名称、位置或两者来标识资源</p>
+</td>
+<td>
+<p>资源的定位器</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>URL的超集</p>
+</td>
+<td>
+<p>URI的类型</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>语法–</p>
+<pre class="language-http"><code>scheme:[//authority]path[?query][#fragment]</code></pre>
+<p>在哪里</p>
+<pre class="language-http"><code>authority = [userinfo@]host[:port]</code></pre>
+</td>
+<td>
+<p>语法–</p>
+<pre class="language-http"><code>[protocol]://www.[domain_name]:[port 80]/[path or exaction resource location]?[query]#[fragment]</code></pre>
+</td>
+</tr>
+<tr>
+<td>
+<p>该方案可以是任何内容，如协议、名称或规格等</p>
+</td>
+<td>
+<p>该方案总是像HTTP，https，ftp，LDAP等协议…</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>URI的主要目的是标识资源，并使用位置或名称将其与其他资源区分开来</p>
+</td>
+<td>
+<p>主要目的是获取资源的地址或位置</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>示例–联系人:+1 883-345-1111，</p>
+<p>瓮:国际标准书号:1234567890</p>
+</td>
+<td>
+<p>示例—<a href="https://hackr.io/blog">https://hackr.io/blog</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>在HTML、XML和标记库文件(如XSLT和JSTL)中使用，用于标识资源和二进制文件。</p>
+</td>
+<td>
+<p>URL仅用于查找网页</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id=""> </h2>
+<h2 id="java-api-differences"><strong> Java API差异</strong></h2>
+<p>我们在Java中实例化URI和URL对象的方式有一些不同。URI有一个特定的构造函数来分别给出语法的所有部分，而URL没有。在这种情况下，URL-URI的区别在于URL有打开远程连接的方法，以获取所指向资源的内容。</p>
+
+<p> </p>
+<h2 id="uri-vs-url-which-one-should-you-use">URI vs网址:你应该使用哪一个？</h2>
+<p>当人们不再问“什么是URI vs网址？”并开始争论哪个更好，人们开始互相纠正并坚持自己的观点是正确的，这并不罕见。</p>
+<p>但是哪个才是真正正确的呢？你应该使用URI还是网址？</p>
+<p>答案是——嗯，这要看情况。都是讨论话题的问题。如果人们谈论的是像hackr.io或google.com这样的普通网站(有域名)，你最好使用URL。这背后的原因是，当有人提到一个域时，它暗示了HTTP协议。因此，它是一个URL。</p>
+<p>在大多数情况下，特异性是最好的。使用URL是因为它更具体(尽管你仍然可以把hackr.io或google.com称为URI)。</p>
+<p>例如，如果你正在与某人交谈，他们问他们可以从哪里开始学习编程，你可以告诉他们可以尝试资源网站。或者，你可以具体说一下URL Hackr.io，这是一个编程资源网站。给他们提供网址可以让他们更容易找到他们要找的东西。</p>
+<p>最后，您可以使用URI，因为它在技术上是正确的，但是如果您想更具体一些(在大多数情况下您可能希望如此)，您可能最好使用URL。</p>
+<p><strong>结论</strong></p>
+<h2 id="conclusion">虽然越来越多的人每天都知道并使用术语URL，但是你也可以在一般的上下文中使用URI，因为它是一个更广泛的术语。</h2>
+<p>URL和URN都是特定且有限的。URI和URL之间的区别非常微妙，只有当URI只指定名称时才会出现。说到位置，URI和网址是一样的。</p>
+<p>我希望这篇探索URI和URL的文章能帮助你更好地理解它们的相似之处和细微差别。希望，你现在知道什么时候使用网址或URI！</p>
+
+<p>准备找工作？用这些示例 <a href="https://hackr.io/blog/web-services-interview-questions"> <strong>网络服务面试问题</strong> </a> <strong>为你的面试做准备。</strong></p>
+
+<p><strong>人也在读:</strong></p>
+<p><strong>常见问题解答</strong></p>
+
+<h2 id="frequently-asked-questions"><strong> 1。URI和网址一样吗？</strong></h2>
+<h4 id="1-is-uri-the-same-as-url">所有的网址都是URIs的。这是因为URI由URN或URL组成，或者两者都有。然而，并不是所有的URI都是URL。</h4>
+<p><strong> 2。举例说明URL和URI的区别？</strong></p>
+<h4 id="2-what-is-the-difference-between-url-and-uri-with-example">URL是资源的定位器。另一方面，URI可以通过名称、位置或两者来标识资源。</h4>
+<p>例如URI: ldap://[2007:db5::2]/c=GB？objectClass？一个</p>
+<ul>
+<li>示例URL:http://google.com</li>
+<li><strong> 3。域名是URI吗？</strong></li>
+</ul>
+<h4 id="3-is-a-domain-name-a-uri">可以的。域名(例如，google.com)是URL的一部分，有助于在互联网上定位网站。例如，只需在浏览器中输入google.com，你就会进入谷歌网站，有效地定位资源。</h4>
+<p><strong> 4。URI是API吗？</strong></p>
+<h4 id="4-is-uri-an-api">不一定。URI和REST API之间可能有些混淆。如果你想知道更多，你可以在StackOverflow上看到这个<a href="https://stackoverflow.com/questions/7550795/how-does-a-rest-api-differ-from-uri#:~:text=A%20URI%20is%20used%20to,operations%20on%20a%20web%20service.&amp;text=e.g." target="_blank" rel="noopener">线程</a>。</h4>
+<p><strong> 5。我如何改变我的网址到URI？</strong></p>
+<h4 id="5-how-do-i-change-my-url-to-uri">如果你想了解更多关于把你的网址改成URI的信息，这个教程可以告诉你如何用Java来做这件事。</h4>
+<p>If you’d like to learn more about changing your URL to URI, this <a href="https://www.geeksforgeeks.org/url-touri-method-in-java-with-examples/#:~:text=The%20getURI()%20function%20of,if%20converted%20to%20URI%20format.&amp;text=Parameter%3A%20This%20method%20do%20not%20accept%20any%20parameter." target="_blank" rel="noopener">tutorial</a> can show you how to do it in Java.</p>
+
+									</div>
+
+									</div>    
+</body>
+</html>

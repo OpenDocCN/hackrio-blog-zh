@@ -1,0 +1,299 @@
+<html>
+<head>
+<title>50 Best Hadoop Interview Questions and Answers in 2023 [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年50个最佳Hadoop面试问答[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/best-hadoop-interview-questions#0001-01-01">https://hackr.io/blog/best-hadoop-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>Apache Hadoop是最受欢迎的生产大数据的开源项目之一。它是一项强大的技术，允许组织和个人以高效的方式从大量数据(尤其是非结构化数据)中挖掘出意义，同时保持成本效益。</p>
+<p>IT部门中与大数据相关的几个职位要求对Apache Hadoop有很好的理解。</p>
+<h2 id="top-hadoop-interview-questions-and-answers">热门Hadoop面试问题和答案</h2>
+<p>如果你正在准备这样的面试，这里有一些最好的Hadoop面试问题，可以帮助你做同样的准备，或者评估你到目前为止的进步:</p>
+<h4 id="question-what-is-hadoop-name-its-components"><strong>问题:什么是Hadoop？说出它的组成部分。</strong></h4>
+<p><strong>回答</strong> : Apache Hadoop是一个开源软件框架，提供大量工具和服务来存储和处理大数据。决策者利用Hadoop来分析大数据，并做出合适的业务决策。Hadoop具有以下组件:</p>
+
+<ul>
+<li>处理框架</li>
+<ul>
+<li>故事</li>
+<li>资源管理器</li>
+<li>节点管理器</li>
+</ul>
+<li>存储单元</li>
+
+</ul>
+<h4 id="question-compare-relational-database-management-systems-with-hdfs-hadoop-distributed-file-system"><strong>问题:C </strong> <strong>比较关系数据库管理系统和HDFS (Hadoop分布式文件系统)？</strong></h4>
+<p><strong>回答</strong>:以下是HDFS和RDBMS的各种区别:</p>
+<ul>
+<li><strong>数据存储</strong> -在RDBMS中，数据的模式总是已知的，并且只存储结构化数据。相反，Hadoop可以存储结构化、半结构化甚至非结构化的数据。</li>
+<li><strong>处理能力</strong>-RDBMS几乎没有处理能力。另一方面，Hadoop允许处理跨Hadoop集群并行分布的数据。</li>
+<li>模式方法——HDFS和RDBMS的另一个主要区别是模式方法。RDBMS遵循传统的写模式方法，即在加载数据之前验证模式，而HDFS遵循现代的读模式方法。</li>
+<li><strong>读/写速度</strong>-RDBMS中的读取速度很快，因为模式是已知的。Hadoop有助于加快写入速度，因为在HDFS写入过程中没有模式验证。</li>
+<li><strong>定价</strong> -大多数RDBMSs都是付费软件。相反，Hadoop是一个开源框架，有一个广泛的社区和大量的附加软件，如工具和库。</li>
+<li><strong>理想用途</strong>-RDBMS的使用仅限于OLTP系统。然而，Hadoop可以用于数据发现、分析、<a href="https://hackr.io/blog/olap-vs-oltp"> OLAP系统</a>等。</li>
+</ul>
+<h4 id="question-please-explain-hdfs-and-yarn"><strong>问题:</strong> <strong>请解释一下HDFS和纱？</strong></h4>
+<p><strong>回答</strong> : HDFS或Hadoop分布式文件系统是Apache Hadoop的存储单元。按照主/从拓扑结构，HDFS在分布式环境中将多种形式的数据存储为数据块。它有两个组成部分:</p>
+<ol>
+<li><strong> NameNode </strong> <strong> </strong> -它是维护与存储的数据块相关的元数据的主节点。</li>
+<li><strong> DataNodes </strong> -在HDFS中存储数据的从节点。所有DataNodes都由NameNode管理。</li>
+</ol>
+<p>另一个资源协商者或YARN是在Hadoop 2中引入的Apache Hadoop的处理框架。它负责管理资源，并为流程提供执行环境。纱线由两部分组成:</p>
+<ol>
+<li><strong>resource manager</strong>——接收处理请求，然后将请求部分地传递给相关的节点管理器。还根据应用程序的需求为其分配资源。</li>
+<li><strong>node manager</strong>——安装在每个DataNode上，负责执行任务。</li>
+</ol>
+<h4 id="question-explain-the-various-hadoop-daemons"><strong>问题:E </strong> <strong>解释各种Hadoop守护进程？</strong></h4>
+<p><strong>回答</strong>:一个Hadoop集群中共有6个Hadoop守护进程:</p>
+<ol>
+<li><strong>NameNode</strong><strong/>——这是存储Hadoop集群所有目录和文件元数据的主节点。包含有关块及其在群集中的位置的信息。</li>
+<li><strong> DataNode(s) </strong> -存储实际数据的从节点。数量上的倍数。</li>
+<li><strong>二级NameNode </strong> -定期将更改-编辑日志-与NameNode中的FsImage合并。由次命名节点存储在永久存储器中的修改后的FsImage可以用在涉及命名节点故障的场景中。</li>
+<li><strong> ResourceManager </strong> -负责管理资源以及调度运行在YARN上的应用程序。</li>
+<li><strong>节点管理器</strong> -负责:</li>
+<ol>
+<li>启动应用程序的容器</li>
+<li>监控前述的资源使用情况</li>
+<li>向ResourceManager报告其状态和监视细节</li>
+</ol>
+<li><strong> JobHistoryServer </strong> -在应用程序主服务器终止后维护有关MapReduce作业的信息</li>
+</ol>
+<p>NameNode、DataNode和辅助NameNode是HDFS守护程序，而ResourceManager和NodeManager是YARN守护程序。</p>
+<h3 id="recommended-course">推荐课程</h3>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-ultimate-hands-on-hadoop-tame-your-big-data%2F" target="_blank" rel="noopener">Hadoop的终极实践:驯服您的大数据！</a></p>
+
+<h4 id="question-briefly-explain-hadoop-architecture"><strong>问题:</strong> <strong>简单解释一下</strong> <strong> Hadoop架构</strong> <strong>？</strong></h4>
+<p><strong>回答</strong> : <a href="https://hackr.io/blog/hadoop-architecture"> Apache Hadoop架构</a>，又名Hadoop分布式文件系统或HDFS遵循主/从架构。这里，一个集群包含一个NameNode或主节点，所有剩余的节点都是DataNodes或从节点。</p>
+<p>NameNode包含有关存储数据的信息，即元数据，而DataNodes是数据在Hadoop集群中的实际存储位置。</p>
+<h4 id="question-what-are-the-differences-between-hdfs-and-nas-network-attached-storage"><strong>问题:</strong><strong>HDFS和NAS(网络附加存储)有什么区别？</strong></h4>
+<p><strong>回答</strong>:以下是HDFS和NAS的重要区别点:</p>
+<p><strong> 1。定义</strong></p>
+<p>网络附加存储是连接到某个计算机网络的文件级计算机数据存储服务器。简单地说，NAS可以是一些提供存储和访问数据文件服务的软件或硬件。</p>
+<p>另一方面，Hadoop分布式文件系统是一种通过商用硬件存储数据的分布式文件系统。</p>
+<p><strong> 2。数据存储</strong></p>
+<p>虽然数据存储在NAS的专用硬件上，但HDFS以数据块的形式存储数据，这些数据块分布在组成Hadoop集群的所有机器上。</p>
+<p><strong> 3。设计</strong></p>
+<p>HDFS的设计便于使用MapReduce范式。这里，计算转移到数据上。NAS与MapReduce范式不兼容，因为这里的数据是与计算实际发生的地方分开存储的。</p>
+<p><strong> 4。成本</strong></p>
+<p>由于HDFS使用商用硬件，与NAS所需的昂贵的专用高端存储设备相比，使用HDFS是一种经济高效的解决方案。</p>
+<h4 id="question-what-is-the-major-difference-between-hadoop-1-and-2"><strong>问题:</strong><strong>Hadoop 1和2的主要区别是什么？</strong></h4>
+<p><strong>回答</strong> : Hadoop最初发布于2006年4月。第一个成熟的Hadoop版本，Hadoop 1.0.0于2011年12月发布，Hadoop 2.0.0于2013年10月发布。Hadoop 2添加了YARN作为Hadoop 1中MapReduce引擎(MRv1)的替代。</p>
+<p>中央资源管理器YARN支持在Hadoop中运行多个应用，同时所有应用共享一个公共资源。Hadoop 2使用Mr v2——一种独特的分布式应用程序——在YARN之上执行MapReduce框架。</p>
+<h4 id="question-please-compare-hadoop-2-and-3"><strong>问题:</strong> <strong>请比较一下Hadoop 2和3？</strong></h4>
+<p><strong>答案</strong> : Hadoop 3发布于2017年12月13日。以下是Hadoop 2.x.x和Hadoop 3.x.x版本之间的重要区别:</p>
+<p><strong> 1。故障点</strong></p>
+<p>在Hadoop 2中，NameNode是单点故障。这给实现高可用性带来了很大的问题。Hadoop 3通过引入主动和被动命名节点解决了这个问题。当主动NameNode出现故障时，被动NameNode之一可以接管控制权。</p>
+<p><strong> 2。应用开发</strong></p>
+<p>Hadoop 3中的容器工作原理是Docker。它有助于减少应用程序开发所需的总时间。</p>
+<p><strong> 3。<a href="https://en.wikipedia.org/wiki/Erasure_code" target="_blank" rel="noopener">擦除编码</a> </strong></p>
+<p>Hadoop 3中擦除编码的实施降低了存储开销。</p>
+<p><strong> 4。GPU硬件使用情况</strong></p>
+<p>在Hadoop 2中，无法在集群上执行DL(深度学习)算法。这是Hadoop 3中的附加功能，可以在Hadoop集群中使用GPU硬件。</p>
+<h4 id="question-briefly-explain-active-and-passive-namenodes"><strong>问题:</strong> <strong>简单解释主动和被动NameNodes。</strong></h4>
+<p><strong>回答</strong>:主动NameNode工作运行在一个集群中。被动NameNode具有与主动NameNode相似的数据。仅当出现故障时，它才替换活动的NameNode。因此，它的目的是实现高度的可用性。</p>
+<h4 id="question-why-datanodes-are-frequently-added-or-removed-from-a-hadoop-cluster"><strong>问题:</strong> <strong>为什么频繁地在Hadoop集群中添加或删除DataNodes？</strong></h4>
+<p><strong>回答</strong>:频繁添加(试运行)和/或移除(退役)数据节点有两个原因:</p>
+<ol>
+<li>利用商用硬件</li>
+<li>扩展，即适应数据量的快速增长</li>
+</ol>
+<h4 id="question-what-will-happen-if-two-users-try-to-access-the-same-file-in-hdfs"><strong>问题:</strong> <strong>如果两个用户试图在HDFS访问同一个文件会发生什么？</strong></h4>
+<p><strong>回答</strong>:NameNode收到打开文件的请求后，将租约授予第一个用户。当另一个用户尝试这样做时，NameNode会注意到租约已经被授予，然后会拒绝访问请求。</p>
+
+<h4 id="question-please-explain-how-namenode-manages-datanode-failures"><strong>问题:</strong> <strong>请解释NameNode如何管理DataNode故障？</strong></h4>
+<p><strong>回答</strong>:NameNode从Hadoop集群中的每个DataNodes接收到一个周期性的心跳消息，暗示其正常运行。当DataNode未能发送心跳消息时，NameNode会在一段时间后将其标记为dead。</p>
+<h4 id="question-what-do-you-understand-by-checkpointing"><strong>问题:</strong> <strong>你对检查点有什么理解？</strong></h4>
+<p><strong>回答</strong>:由二级NameNode执行，检查点减少NameNode启动时间。本质上，这个过程包括将FsImage与编辑日志结合起来，并将两者压缩成一个新的FsImage。</p>
+<p>检查点允许NameNode直接从FsImage加载最终的内存状态。</p>
+<h4 id="question-please-explain-how-fault-tolerance-is-achieved-in-hdfs"><strong>问题:</strong> <strong>请解释一下HDFS是如何实现容错的？</strong></h4>
+<p><strong>答</strong>:为了实现容错，HDFS有一种叫做复制因子的东西。它是NameNode将一个DataNode的数据复制到其他一些DataNode的次数。</p>
+<p>默认情况下，复制因子为3，即NameNode存储单个DataNode上存储的数据的3个额外副本。在DataNode失败的情况下，NameNode从这些副本之一复制数据，从而使数据随时可用。</p>
+<h4 id="question-how-does-apache-hadoop-differ-from-apache-spark"><strong>问题:</strong><strong>Apache Hadoop与Apache Spark有何不同？</strong></h4>
+<p><strong>回答</strong>:有几种强大的集群计算框架可以应对大数据挑战。当优先考虑高效处理批处理时，Apache Hadoop是分析大数据的合适解决方案。</p>
+<p>然而，当优先级是有效地处理实时数据时，我们就有了Apache Spark。与Hadoop不同，Spark是一个能够交互处理数据的低延迟计算框架。</p>
+<p>虽然Apache Hadoop和Apache Spark都是流行的集群计算框架。然而，这并不意味着两者完全相同。实际上，两者都迎合了大数据的不同分析需求。以下是两者之间的各种差异:</p>
+<ul>
+<li><strong>引擎类型</strong> -虽然Hadoop只是一个基本的数据处理引擎，但Spark是一个专门的<a href="https://hackr.io/tutorials/learn-apache-spark?ref=blog-post">数据分析</a>引擎。</li>
+<li><strong>面向</strong> - Hadoop旨在处理海量数据的批处理。另一方面，Spark的目的是处理实时事件(如社交媒体)产生的实时数据。</li>
+<li><strong>延迟</strong> -在计算中，延迟表示给出数据传输指令的时间和数据传输实际开始的时间之间的差异。Hadoop是一个高延迟计算框架，而Spark是一个低延迟计算框架。</li>
+<li><strong>数据处理</strong> - Spark交互处理数据，Hadoop不能。在Hadoop中，数据以批处理模式处理。</li>
+<li><strong>复杂性/易用性</strong> - Spark由于采用了抽象模型而更易于使用。用户可以很容易地用高水平的操作员处理数据。Hadoop的MapReduce模型很复杂。</li>
+<li><strong>作业调度器</strong> <strong>需求</strong> - Spark特性内存计算。与Hadoop不同，Spark不需要外部作业调度程序。</li>
+<li><strong>安全级别</strong>——Hadoop和Spark都是安全的。但是，虽然Spark只是受到保护，但Hadoop却受到了严密保护。</li>
+<li><strong>成本</strong> -由于MapReduce模型提供了一种更便宜的策略，Hadoop与Spark相比成本更低，而Spark由于拥有内存计算解决方案而成本更高。</li>
+</ul>
+<p>更多关于这个的？查看这个深入的<a href="https://hackr.io/blog/hadoop-vs-spark"> Hadoop与Spark </a>对比。</p>
+<h4 id="question-what-are-the-five-v-s-of-big-data"><strong>问题:</strong> <strong>大数据的五个V是什么？</strong></h4>
+<p><strong>回答</strong>:大数据的五个V是价值、多样性、速度、准确性、体量。每一种解释如下:</p>
+
+<ul>
+<li>价值——除非处理大数据能够产生改善业务流程或收入的结果，否则它毫无用处。价值是指大数据带来的生产力。</li>
+<li>多样性——指数据类型的异构性。大数据有多种格式，如音频文件、CSV和视频。这些格式代表了大数据的多样性。</li>
+<li>速度——指大数据增长的速度。</li>
+<li>准确性——指由于数据的不一致和不完整，数据的可用性受到怀疑或不确定。</li>
+<li>卷—指大数据量，通常以EB和Pb为单位。</li>
+</ul>
+<h4 id="question-what-is-the-ideal-storage-for-namenode-and-datanodes"><strong>问题:</strong><strong>NameNode和DataNodes的理想存储是什么？</strong></h4>
+<p><strong>回答</strong>:处理大数据需要大量存储空间来存储海量数据。因此，商用硬件，如PC和笔记本电脑，是DataNodes的理想选择。</p>
+
+<p>由于NameNode是存储Hadoop集群中所有数据块的元数据的主节点，因此它需要较高的内存空间，即RAM。所以，对于NameNode来说，一台具有良好RAM的高端机器是理想的。</p>
+<h4 id="question-please-explain-the-namenode-recovery-process"><strong>问题:</strong> <strong>请解释一下NameNode的恢复过程？</strong></h4>
+<p><strong>答</strong>:NameNode恢复过程包括以下两个步骤:</p>
+<ul>
+<li>步骤1 -使用文件系统元数据副本(即FsImage)启动新的NameNode。</li>
+<li>步骤2 -配置DataNodes和客户机，使它们能够识别新的NameNode。</li>
+</ul>
+<p>一旦新的NameNode完成加载最后一个检查点FsImage并从DataNodes收到足够的块报告，它将开始为客户端提供服务。</p>
+<h4 id="question-why-shouldn-t-we-use-hdfs-for-storing-a-lot-of-small-size-files"><strong>问题:</strong> <strong>为什么我们不应该使用HDFS来存储大量小文件？</strong></h4>
+<p><strong>回答</strong> : HDFS更适合在单个文件中存储海量数据，而不是在多个文件中存储少量数据。</p>
+<p>如果您使用HDFS存储大量小文件，那么这些文件的元数据与所有这些文件中的完整数据相比将非常重要。因此，这将不必要地需要更多的内存，使整个过程效率低下。</p>
+<h4 id="question-what-are-the-default-block-sizes-in-hadoop-1-2-and-3-how-can-we-change-it"><strong>问题:</strong><strong>Hadoop 1、2、3中默认的块大小是多少？怎么才能改变呢？</strong></h4>
+<p><strong>回答</strong>:Hadoop 1中默认的块大小是64MB，Hadoop 2和Hadoop 3中同样是128MB。为了根据要求设置块的大小，使用hdfs-site.xml文件中的dfs.block.size参数。</p>
+<h4 id="question-how-can-we-check-whether-the-hadoop-daemons-are-running-or-not"><strong>问题:</strong> <strong>我们如何检查Hadoop守护进程是否正在运行？</strong></h4>
+<p><strong>回答</strong>:为了检查Hadoop守护进程是否在运行，我们使用jps (Java虚拟机进程状态工具)命令。它显示了所有正在运行的Hadoop守护进程的列表。</p>
+<h4 id="question-what-is-rack-awareness-in-hadoop"><strong>问题:</strong><strong>Hadoop中什么是机架感知？</strong></h4>
+<p><strong>答</strong>:NameNode作出决定的算法，一般来说，决定如何放置块和副本，具体来说，称为机架感知。NameNode根据机架定义做出决定，目的是最小化同一机架中的数据节点之间的网络流量。</p>
+<p>Hadoop集群的默认复制因子是3。这意味着对于每个数据块，将有三个拷贝可用。两个副本将存在于一个机架中，另一个存在于另一个机架中。它被称为副本放置策略。</p>
+<h4 id="question-please-explain-speculative-execution-in-hadoop"><strong>问题:</strong> <strong>请解释一下Hadoop中的推测执行？</strong></h4>
+<p><strong>答</strong>:当发现一个节点执行任务的速度较慢时，主节点会在其他节点上执行同一任务的另一个实例。在这两个任务中，第一个完成的任务被接受，而另一个被杀死。这在Hadoop中称为推测执行。</p>
+
+<h4 id="question-please-explain-the-difference-between-hdfs-block-and-an-input-split"><strong>问题:</strong> <strong>请解释一下HDFS块和输入拆分的区别？</strong></h4>
+<p><strong>回答</strong>:HDFS数据块是Hadoop集群中存储数据的物理分区。相反，输入拆分是相同的逻辑划分。</p>
+
+<p>HDFS将存储的数据划分为块以便以高效的方式存储，而MapReduce将数据划分为输入拆分，并将其分配给mapper函数以供进一步处理。</p>
+<h4 id="question-what-are-the-various-modes-in-which-apache-hadoop-run"><strong>问题:</strong><strong>Apache Hadoop运行的各种模式有哪些？</strong></h4>
+<p><strong>回答</strong> : Apache Hadoop运行在三种模式下:</p>
+<ol>
+<li><strong>独立/本地模式- </strong>这是Hadoop中的默认模式。在这种模式下，所有Hadoop组件都作为一个Java进程运行，并使用本地文件系统。</li>
+<li><strong>伪分布式模式- </strong>单节点Hadoop部署在伪分布式模式下运行。在这种模式下，所有Hadoop服务都在单个计算节点上执行。</li>
+<li><strong>完全分布式模式- </strong>在完全分布式模式下，Hadoop主服务和从服务分别在不同的节点上运行。</li>
+</ol>
+<h4 id="question-how-will-you-restart-namenode-or-all-the-hadoop-daemons"><strong>问题:</strong> <strong>你将如何重启NameNode或者所有的Hadoop守护进程？</strong></h4>
+<p><strong>回答</strong>:重启NameNode:</p>
+<ul>
+<li>步骤1 -首先，输入/sbin/Hadoop-daemon . sh stop namenode命令来停止NameNode。</li>
+<li>步骤2 -现在，输入/sbin/Hadoop-daemon . sh start namenode命令来启动NameNode。</li>
+</ul>
+<p>要重新启动所有Hadoop守护进程:</p>
+<ul>
+<li>步骤1 -要停止所有Hadoop守护进程，请使用/sbin/stop-all.sh命令。</li>
+<li>步骤2 -要再次启动所有Hadoop守护进程，请使用/sbin/start-all.sh命令。</li>
+</ul>
+<h4 id="question-define-mapreduce-what-is-the-syntax-for-running-a-mapreduce-program"><strong>问题:</strong> <strong>定义MapReduce。运行MapReduce程序的语法是什么？</strong></h4>
+<p><strong>答</strong> : MapReduce是一种编程模型，也是一种关联实现，用于在Hadoop集群上用并行分布式算法生成大数据集。MapReduce程序包括:</p>
+<ol>
+<li><strong>映射过程- </strong>执行过滤和<a href="https://medium.com/hackr-io/what-are-different-types-of-sorting-used-in-c-programming-compsmag-aa5a36ca0fde">排序</a></li>
+<li><strong>归约方法- </strong>执行汇总操作</li>
+</ol>
+<p>运行MapReduce程序的语法是:</p>
+<pre>hadoop_jar_file.jar/input_path/output_path</pre>
+<h4 id="question-enumerate-the-various-configuration-parameters-that-need-to-be-specified-in-a-mapreduce-program"><strong>问题:</strong> <strong>列举一个MapReduce程序中需要指定的各种配置参数？</strong></h4>
+<p><strong>答</strong>:以下是用户在MapReduce程序中需要指定的各种配置参数:</p>
+<ul>
+<li>数据的输入格式</li>
+<li>分布式文件系统中作业的输入位置</li>
+<li>分布式文件系统中作业的输出位置</li>
+<li>数据的输出格式</li>
+<li>包含地图函数的类</li>
+<li>包含reduce函数的类</li>
+<li>包含映射器、缩减器和驱动程序类的JAR文件</li>
+</ul>
+<h4 id="question-why-it-is-not-possible-to-perform-aggregation-in-mapper-why-do-we-need-reducer-for-the-same"><strong>问题:</strong> <strong>为什么不能在映射器中执行聚合？为什么我们同样需要减速器？</strong></h4>
+<p><strong>答</strong>:以下是无法在mapper中执行聚合的各种原因:</p>
+<ul>
+<li>聚合需要所有映射器函数的输出，这可能无法在映射阶段收集，因为映射器可能运行在不同于包含数据块的机器上。</li>
+<li>没有排序就无法进行聚合，而且聚合也不会发生在mapper函数中。</li>
+<li>尝试在映射器上聚合数据，然后需要在所有映射器功能之间进行通信。由于不同的映射器功能可能在不同的机器上运行，因此需要高网络带宽，这可能会导致<a href="https://en.wikipedia.org/wiki/Bottleneck_(network)" target="_blank" rel="noopener">网络瓶颈</a>。</li>
+</ul>
+<p>分类只发生在reducer端，我们需要reducer函数来完成聚合。</p>
+<h4 id="question-why-do-we-need-recordreader-in-hadoop-where-is-it-defined"><strong>问题:</strong> <strong>为什么我们在Hadoop中需要RecordReader？在哪里定义的？</strong></h4>
+<p><strong>答</strong>:输入拆分是任务的一部分，对其访问方式没有任何描述。RecordReader类负责从数据源加载数据，并将其转换为适合Mapper任务读取的K，V(键，值)对。输入格式定义了RecordReader的一个实例。</p>
+<p>问:请解释一下MapReduce框架中的分布式缓存？</p>
+<p><strong>答</strong>:分布式缓存是MapReduce框架提供的一个实用工具，用于缓存应用程序所需的文件。一旦用户缓存了某个作业的文件，Hadoop框架就会在运行map/reduce任务的所有数据节点上提供该文件。缓存文件可以作为映射器或缩减器作业中的本地文件进行访问。</p>
+<h4 id="question-does-the-mapreduce-programming-model-allows-reducers-to-communicate-with-one-another"><strong>问题:</strong><strong>MapReduce编程模型允许reducers相互通信吗？</strong></h4>
+<p><strong>回答</strong>:reducer在MapReduce框架中是孤立运行的。没有办法建立彼此之间的通信。</p>
+<h4 id="question-please-explain-a-mapreduce-partitioner"><strong>问题:</strong> <strong>请解释一下MapReduce的划分器？</strong></h4>
+<p><strong>答</strong>:MapReduce分割器有助于将地图输出均匀地分布在各个减速器上。这是通过确保一个键的所有值都进入同一个reducer来实现的。</p>
+<p>MapReduce分区器通过确定哪个缩减器负责特定的键，将映射器输出重定向到缩减器。</p>
+<h4 id="question-can-you-explain-the-steps-to-write-a-custom-partitioner-in-apache-hadoop"><strong>问题:</strong> <strong>能否解释一下用Apache Hadoop编写自定义分区器的步骤？</strong></h4>
+<p><strong>回答</strong>:下面是在Hadoop中编写自定义分区器的一步一步的过程:</p>
+<ul>
+<li>步骤1 -创建一个新类来扩展Partitioner类</li>
+<li>步骤2 -接下来，在MapReduce中运行的包装类中覆盖getPartition方法</li>
+<li>步骤3 -现在，您可以将自定义分区器作为配置文件添加到作业中，或者使用Set Partitioner方法。</li>
+</ul>
+<h4 id="question-what-do-you-understand-by-combiner-in-hadoop"><strong>问题:</strong> <strong>你对Hadoop中的合并器有什么理解？</strong></h4>
+<p><strong>答</strong>:合并器通过减少发送给reducers的数据来提高MapReduce框架的效率。组合器是一个小型的归约器，负责执行局部归约任务。</p>
+<p>组合器从特定节点上的映射器接收输入，并将输出发送给缩减器。</p>
+<h4 id="question-can-you-explain-sequencefileinputformat"><strong>问题:</strong> <strong>能否解释一下SequenceFileInputFormat？</strong></h4>
+<p><strong>答</strong>:序列文件是数据从一个MapReduce作业传递到另一个作业的有效中间表示。它们可以作为其他MapReduce任务的输出生成。</p>
+<p>SequenceFileInputFormat是一种压缩的二进制文件格式，针对在一个MapReduce作业的输出和其他MapReduce作业的输入之间传递数据进行了优化。这是一种用于在序列文件中读取的输入格式。</p>
+<h4 id="question-list-some-of-the-most-notable-applications-of-apache-hadoop"><strong>问题:</strong> <strong>列举一些Apache Hadoop最值得注意的应用？</strong></h4>
+<p><strong>回答</strong> : Apache Hadoop是一个开源平台，用于实现大量数据的可扩展和分布式计算。它为分析结构化、半结构化和非结构化数据提供了一种快速、高效且经济高效的方法。以下是Apache Hadoop的一些最佳使用案例:</p>
+<ul>
+<li>实时分析客户数据</li>
+<li>存档电子邮件</li>
+<li>捕获和分析点击流、社交媒体、交易和视频数据</li>
+<li>内容管理</li>
+<li>欺诈检测和防范</li>
+<li>交通管理</li>
+<li>让非结构化数据变得有意义</li>
+<li>管理社交媒体平台上的内容和媒体</li>
+<li>科学研究</li>
+<li>流式处理</li>
+</ul>
+<h4 id="question-what-are-the-benefits-of-using-distributed-cache"><strong>问题:</strong> <strong>使用分布式缓存有什么好处？</strong></h4>
+<p><strong>回答</strong>:使用分布式缓存有以下好处:</p>
+<ol>
+<li>它可以分发任何内容，从简单的只读文本文件到复杂的文件，如档案。</li>
+<li>它跟踪缓存文件的修改时间戳。</li>
+</ol>
+<h4 id="question-what-is-a-backup-node-and-a-checkpoint-namenode"><strong>问题:</strong> <strong>什么是备份节点和检查点命名节点？</strong></h4>
+<p><strong>回答</strong>:检查点NameNode每隔一段时间为命名空间创建检查点。它通过下载FsImage、编辑文件并将其合并到本地目录中来实现。合并后，新的FsImage被上传到NameNode。它具有与NameNode相同的目录结构。</p>
+<p>备份节点在功能上类似于检查点命名节点。尽管它维护文件系统名称空间的最新内存副本，但它不需要定期记录变化。简而言之，备份节点将内存中的当前状态保存到映像文件中，以便创建新的检查点。</p>
+<h4 id="question-what-are-the-common-input-formats-in-apache-hadoop"><strong>问题:</strong><strong>Apache Hadoop中常见的输入格式有哪些？</strong></h4>
+<p><strong>回答</strong> : Apache Hadoop有三种常见的输入格式:</p>
+<ol>
+<li><strong>键值输入格式</strong> -适用于纯文本文件，其中文件被分成若干行</li>
+<li><strong>顺序文件输入格式</strong> -用于顺序读取文件</li>
+<li><strong>文本输入格式</strong>——这是Hadoop中的默认输入格式</li>
+</ol>
+<h4 id="question-explain-the-core-methods-of-a-reducer"><strong>问题:</strong> <strong>解释一下减速器的核心方法？</strong></h4>
+<p><strong>答</strong>:减速器有三种核心方法，解释如下:</p>
+<ol>
+<li><strong> cleanup() </strong> -仅在任务结束时使用一次，用于清理临时文件。</li>
+<li><strong> reduce() </strong> -对于相关的简化任务，每个键总是调用一次。</li>
+<li><strong> setup() </strong> -用于配置各种参数，如分布式缓存、输入数据大小等。</li>
+</ol>
+<h4 id="question-please-explain-the-role-of-a-jobtracker-in-hadoop"><strong>问题:</strong> <strong>请解释一下JobTracker在Hadoop中的作用？</strong></h4>
+<p><strong>答</strong>:Hadoop集群中的一个JobTracker负责:</p>
+<ul>
+<li>资源管理，即管理任务跟踪器</li>
+<li>任务生命周期管理，即跟踪任务进度和任务容错能力</li>
+<li>跟踪资源可用性</li>
+</ul>
+<h4 id="question-how-is-the-map-side-join-different-from-the-reduce-side-join"><strong>问题:</strong> <strong>映射端连接和缩减端连接有什么不同？</strong></h4>
+<p><strong>回答</strong>:地图端连接需要严格的结构。当数据到达地图且输入数据集必须结构化时，执行此操作。Reduce-side连接更简单，因为不要求对输入数据集进行结构化。Reduce端连接比Map端连接效率低，因为它需要经过排序和洗牌阶段。</p>
+<h4 id="question-do-you-know-how-to-debug-hadoop-code"><strong>问题:</strong> <strong>你知道如何调试Hadoop代码吗？</strong></h4>
+<p><strong>回答</strong>:从检查当前正在运行的MapReduce作业列表开始。此后，检查是否有一个或多个孤立作业正在运行。如果有，则需要确定RM日志的位置。这可以通过以下方式完成:</p>
+<ul>
+<li>步骤1 -使用ps -ef | grep -I ResourceManager命令在结果中查找日志目录。找出作业ID，并检查孤立作业是否有错误消息。</li>
+<li>步骤2 -使用RM日志来识别与孤立作业相关的任务执行中涉及的工作节点。</li>
+<li>步骤3 -登录到受影响的节点并运行以下代码:</li>
+</ul>
+<pre>ps -ef | grep -iNodeManager</pre>
+<ul>
+<li>步骤4 -检查节点管理器日志。大多数错误来自每个MapReduce作业的用户级日志。</li>
+</ul>
+<h2 id="conclusion">结论</h2>
+<p>这总结了我们的顶级Hadoop面试问题列表。希望这些对你准备即将到来的面试或检查你学习Hadoop的进度有所帮助。另外，不要忘记查看这些最好的Hadoop教程来<a href="https://hackr.io/tutorials/learn-hadoop-big-data?ref=blog-post" target="_blank" rel="noopener">学习Hadoop </a>。</p>
+<p>准备Apache Spark面试？看看这些<a href="https://hackr.io/blog/apache-spark-interview-questions" target="_blank" rel="noopener">重要的星火面试问题</a>。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

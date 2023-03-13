@@ -1,0 +1,214 @@
+<html>
+<head>
+<title>The Difference Between Python 'is' vs '==' Operator [Easy Guide]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Python 'is' vs '== '运算符的区别[简易指南]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/python-is-vs-equality-operator#0001-01-01">https://hackr.io/blog/python-is-vs-equality-operator#0001-01-01</a></blockquote><div><div class="content">
+										<p><a href="https://www.python.org/" target="_blank" rel="noopener"> <span> Python </span> </a> <span>是一种通用的、高级的、解释型的</span> <a href="https://hackr.io/blog/what-is-programming-language"> <span>编程语言</span> </a> <span>。Gan Guido Rossum设计了这种语言，并于1991年发布了Python 0.9.0。Python以其代码可读性和简单的语法而闻名，它使用简单的英文关键字，并消除了分号和花括号的使用。</span></p>
+<p>有几个场景会要求你比较代码中的两个对象。此外，在Python中，比较对象和变量是一项常见的任务。Python提供了两种不同的方法来比较对象和变量。第一个是相等运算符(==)，第二个是(is)运算符。</p>
+<p><span>本文将带您了解Python“is”和“==”之间的主要区别，以及它们的例子。此外，它还分别讨论了“is”和“== ”,以便更好地理解。</span></p>
+<h2 id="what-is-the-is-keyword"><strong>什么是“是”关键词？</strong></h2>
+<p><span>“is”关键字用于验证两个变量是否属于同一个对象。如果两个变量属于同一个对象，则返回TRUE，否则返回FALSE。</span></p>
+
+<p><span>比如我们有两个变量“a”和“b”，两个变量的值都是“4”，如下图。如果我们在两个变量上使用“is”操作符，并且它们具有相同的值，那么它必须返回true。</span></p>
+<p><span>在Python中，具有相同值的变量在内存中都被赋予相同的对象ID。这里有一个“是”关键字如何工作的例子:</span></p>
+<p><strong>例子</strong> <span> : </span></p>
+<pre class="language-python"><code>a = 4
+b = 4
+print(a is b)
+print(id(a))
+print(id(b))</code></pre>
+<p><strong>输出:</strong></p>
+<pre class="language-python"><code>True
+1644840201
+1642650272</code></pre>
+<p>“is”操作符只有在变量被赋值时才能正常工作。考虑另一个例子，我们有两个空列表，如下所示。在Python中，两个不同的列表将引用两个具有不同内存位置的不同对象，这使得两个列表是不同的。</p>
+<p><strong>举例:</strong></p>
+
+<pre class="language-python"><code>l1 = []
+l2 = []
+print(l1 is l2)
+print(id(l1))
+print(id(l2))</code></pre>
+<p><strong>输出:</strong></p>
+<pre class="language-python"><code>False
+2286738320968
+2241222725312</code></pre>
+<p>您可以看到上面的输出显示了两个列表(l1和l2)变量的不同值，即使它们是空列表。因此，输出是假的。为了克服这种混乱，我们跳到(==)操作符。</p>
+<h2 id="what-is-the-operator"><strong>什么是“==”运算符？</strong></h2>
+<p><span>Python中有一个比较运算符(==)，用来衡量两个对象的Python相等性。它也称为相等运算符(==)。</span></p>
+<p>在上面的例子中，我们使用(is)运算符比较了两个空列表，但没有得到预期的结果。我们现在将尝试使用(==)操作符:的例子</p>
+<p><strong>举例:</strong></p>
+<pre class="language-python"><code>list1= []
+list2 = []
+print(list1 == list2)</code></pre>
+<p><strong>输出:</strong></p>
+<pre class="language-python"><code>True</code></pre>
+<p>(==)运算符将返回真值，因为它在比较时会考虑对象id。</p>
+<h2 id="the-difference-between-python-is-vs-operator"><strong>Python”的区别是“vs”= =“运算符</strong></h2>
+<p><span>这里python "==" vs "的主要区别是:"</span></p>
+<p><strong>“is”关键字</strong> <span>用于比较变量和字符串是否指向同一个对象。如果两个变量(var1和var2)引用同一个对象，它们将具有相同的ID。</span></p>
+<p><strong>“= =”运算符</strong> <span>将比较两个变量，无论它们的值是否指向同一个对象。</span></p>
+<p><span>两个运算符都用于比较；但是，他们的</span> <strong>目的</strong> <span>不同。因此，它们用于不同的场景。</span></p>
+<p>在Python中，一切都是对象，并被分配了一些内存。</p>
+<ul>
+<li aria-level="1"><strong>恒等运算符:</strong> <span> <span>“是”和“不是”关键字称为恒等运算符，根据对象的恒等来比较对象。</span> </span></li>
+<li aria-level="1"><strong>等号运算符:</strong> <span>【与】==【与】！= "被称为相等运算符，它根据对象的值来比较对象。它将调用运算符左侧对象的_eq_()类方法，并检查是否相等。</span></li>
+</ul>
+<p><strong>例如:</strong></p>
+<pre class="language-python"><code>a is None</code></pre>
+<p>在这种情况下，解释器将只对其身份进行比较，不能被否决。这意味着它将检查“a”是否只引用None对象。</p>
+<p><span>但是用下面的例子:</span></p>
+<pre class="language-python"><code>a == None</code></pre>
+<p>“==”操作符将调用class a._eq_()方法，根据解释器的不同，该方法可能会有不同的工作方式，并提供不同的结果。</p>
+<p><strong>举例:</strong></p>
+<pre class="language-python"><code>class B:
+ def __eq__(self, other):
+ return True
+a = B()
+print(var_a == 1)
+print(var_a == None)
+print(var_a is None)</code></pre>
+<p><strong>输出:</strong></p>
+<pre class="language-python"><code>True
+True
+False</code></pre>
+<p>Python解释器会将较小的数字存放在固定的内存位置。这意味着解释器只会证实这些值一次。每当对象被引用时，它将引用它的内存地址。这些数字的范围可能因您的解释器而异(-5到+256)。</p>
+<h3 id="working-with-small-integers-example"><strong>处理小整数(示例)</strong></h3>
+<p><strong>举例:</strong></p>
+<pre class="language-python"><code>var_a = 256
+var_b = 256
+print(id(var_a))
+print(id(var_b))</code></pre>
+<p><strong>输出</strong>:</p>
+<pre class="language-python"><code>140733843347264
+140733843347264</code></pre>
+<p>由于实习，我们得到了256相同的内存位置。</p>
+<p><span>但是如果我们使用大于范围的整数，那么输出可能会有变化。</span></p>
+<p><strong>例如:</strong></p>
+<pre class="language-python"><code>var_a = 257
+var_b = 257
+print(id(var_a))
+print(id(var_b))</code></pre>
+<p><strong>输出:</strong></p>
+<pre class="language-python"><code>1407339734472
+1947175682672</code></pre>
+<p>在下面的例子中，我们使用“var_a”来保存一个列表，而“var_b”是一个值为“a”的变量。这里，“var_a”和“var_b”都是指内存中的同一个对象。可以使用“id”功能来查看。两个变量将有相同的id，因此，a是b返回真。</p>
+
+<pre class="language-python"><code>var_a = [1, 2, 3]
+var_b = var_a​</code></pre>
+<pre class="language-python"><code>id(var_a)</code></pre>
+<p><span>输出:</span></p>
+<pre class="language-python"><code>140545546785872</code></pre>
+<p><span> id(var_b) </span></p>
+<p><span>输出:</span></p>
+<pre class="language-python"><code>140545546785872</code></pre>
+<pre class="language-python"><code>Var_a is var_b</code></pre>
+<p><span>输出:</span></p>
+<pre class="language-python"><code>True</code></pre>
+<pre class="language-python"><code>var_a == var_b</code></pre>
+<p><span>输出:</span></p>
+<pre class="language-python"><code>True</code></pre>
+<p>现在，我们将使用slice操作符创建一个var_a变量的副本。它将在存储器内创建一个具有新地址的新对象；因此，它将有一个新的ID。</p>
+<pre class="language-python"><code>var_c = var_a[:]</code></pre>
+<pre class="language-python"><code>id(var_a)</code></pre>
+<p><span>输出:</span></p>
+<p><span>输出:</span></p>
+<pre class="language-python"><code>140545546785872</code></pre>
+<pre class="language-python"><code>id(var_c)</code></pre>
+<p><span>输出:</span></p>
+<pre class="language-python"><code>140549878587008</code></pre>
+<p><span>输出:</span></p>
+
+<pre class="language-python"><code>var_a is var_c</code></pre>
+<p><span>tu var _ a和var_c都是指内存中不同的对象。</span></p>
+
+<pre class="language-python"><code>False</code></pre>
+<pre class="language-python"><code>var_a == var_c</code></pre>
+<p>推荐Python课程</p>
+<pre class="language-python"><code>True</code></pre>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcomplete-python-bootcamp%2F" target="_blank" rel="noopener">用Python完成从零到英雄的Python boot camp</a></p>
+<p> </p>
+<h3 id="recommend-python-course">“Python”是“vs”= =“运算符:头对头比较</h3>
+<p><strong>参数</strong></p>
+<p><strong>是</strong></p>
+<h2 id="python-is-vs-operator-head-to-head-comparison"><strong> == </strong></h2>
+<table>
+<tbody>
+<tr>
+<td>
+<p>它比较什么</p>
+</td>
+<td>
+<p>检查两个对象是否相同</p>
+</td>
+<td>
+<p>检查两个对象的值是否相同</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>比较</p>
+</td>
+<td>
+<p>比较变量和字符串</p>
+</td>
+<td>
+<p>仅比较变量</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>操作员类型</p>
+</td>
+<td>
+<p>恒等运算符</p>
+</td>
+<td>
+<p>等式运算符</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>结论</strong></p>
+</td>
+<td>
+<p>我们希望这篇文章能帮助你理解如何使用Python == vs is。这两个运算符有不同的用法，但主要用于比较。“is”关键字被称为identity操作符，它将检查这两个对象是否相同。相反，Python中的==作为一个相等运算符来判断它们是否相等。python == vs是</p>
+</td>
+<td>
+<p><span>现在你知道了什么是vs == is，Python学习等着你。有兴趣扩展您的Python知识吗？</span>查看我们的<a href="https://hackr.io/blog/how-to-learn-python"> Python学习指南</a>。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion">查看这些最好的Python课程！</h2>
+<p>了解为什么数百万人求助于Udemy的现实世界专家来学习Python。通过动手练习和测验，按照自己的进度学习</p>
+<p><a href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Ftopic%2Fpython%2F" target="_blank" rel="noopener"><img src="../Images/e7681be8b9efba1931e5d7a666a947e0.png" alt="best python courses udemy" data-original-src="https://hackr.io/blog/media/python-course-banner-1-min.png"/>T2】</a></p>
+<p><strong>常见问题解答</strong></p>
+<p><strong> 1。==和Is有区别吗？</strong></p>
+<p>(==)运算符是一个相等运算符，用于比较两个对象，以确定它们是否相等。另一方面，Python的“is”操作符是一个标识操作符，它根据对象的标识来比较对象。</p>
+
+<h2 id="frequently-asked-questions"><strong> 2。Python中的‘Is’关键字是什么？</strong></h2>
+<h4 id="1-is-there-a-difference-between-and-is">“是”和“不是”关键字被称为恒等运算符，用于检查对象是否完全相同。</h4>
+<p><strong> 3。Python中==是什么意思？</strong></p>
+
+<h4 id="2-what-is-the-is-keyword-in-python">你可以使用这个运算符来比较两个对象的值，以确定它们是否相等。在Python中，它也被称为相等运算符。</h4>
+<p><strong> 4。相等运算符和恒等运算符有什么区别？</strong></p>
+<h4 id="3-what-does-mean-in-python"><span>“is”关键字用于比较变量和字符串是否指向同一个对象。如果两个变量(var1和var2)引用同一个对象，它们将具有相同的ID。但是，“==”运算符将比较两个变量的值。</span></h4>
+<p><strong> 5。用Python怎么写等号？</strong></p>
+<h4 id="4-what-is-the-difference-between-equality-and-identity-operators">我们可以使用(==)操作符在Python中写“等于”。</h4>
+<p><strong> 6。Python中的=和==有什么区别？</strong></p>
+<h4 id="5-how-do-you-write-equal-in-python"><span>“=”为变量赋值，而“==”验证两个不同变量的Python相等性。</span></h4>
+<p><strong>相关阅读:</strong></p>
+<h4 id="6-what-is-the-difference-between-and-in-python"><strong>6. What is the Difference Between = and == in Python?</strong></h4>
+<p><span>“=” assigns a value to a variable, while “==” verifies the Python equality of two different variables. </span></p>
+<p><strong>Related reading:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>

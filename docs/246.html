@@ -1,0 +1,501 @@
+<html>
+<head>
+<title>Download C# Cheat Sheet PDF for Your Quick Reference</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>下载C#备忘单PDF供您快速参考</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/c-sharp-cheat-sheet#0001-01-01">https://hackr.io/blog/c-sharp-cheat-sheet#0001-01-01</a></blockquote><div><tbody>
+<tr>
+<td>
+<p><strong>属性</strong></p>
+</td>
+<td>
+<p><strong>描述</strong></p>
+</td>
+<td>
+<p><strong>例子</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-check-if-an-array-has-fixed-size-or-not/" target="_blank" rel="noopener"> <strong>是固定大小的</strong> </a></p>
+</td>
+<td>
+<p>检查数组是否有固定的大小。</p>
+</td>
+<td>
+<p>string[]arr val = new string[]{ " stud 1 "，" stud2 "，" stud 3 " }；</p>
+<p>阿尔瓦尔。IsFixedSize</p>
+<p><a href="https://www.geeksforgeeks.org/c-check-if-an-array-is-read-only-or-not/" target="_blank" rel="noopener"> <strong>是只读的</strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>检查数组是否是只读的。</p>
+</td>
+<td>
+<p>IsReadOnly设置：</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-check-if-an-array-is-synchronized-thread-safe-or-not/" target="_blank" rel="noopener"> <strong>被同步</strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>检查对数组的访问是否同步(线程安全)。</p>
+</td>
+<td>
+<p>阿尔瓦尔。is同步；</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/how-to-find-the-length-of-an-array-in-c/" target="_blank" rel="noopener"> <strong>长度</strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>获取数组所有维度中的元素总数。</p>
+</td>
+<td>
+<p>阿尔瓦尔。长度；</p>
+</td>
+<td>
+<p><strong>长</strong>长</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>64位整数长度</p>
+</td>
+<td>
+<p>阿瓦勒。长长度；</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/how-to-find-the-rank-of-an-array-in-c/" target="_blank" rel="noopener"> <strong>排名</strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>获取数组的秩(维数)。例如，一维数组返回1，二维数组返回2，依此类推。</p>
+</td>
+<td>
+<p>阿尔瓦尔。排名；</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/how-to-get-synchronize-access-to-the-array-in-c-sharp/" target="_blank" rel="noopener"><strong/></a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>获取用于同步数组访问的对象</p>
+</td>
+<td>
+<p>阿尔瓦尔。SyncRoot</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-array-asreadonlyt-method/" target="_blank" rel="noopener"> <strong> AsReadOnly() </strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>返回指定数组的只读包装。</p>
+</td>
+<td>
+<p>数组。AsReadOnly(arr val)；</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/how-to-use-array-binarysearch-method-in-c-sharp-set-1/" target="_blank" rel="noopener"><strong/></a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>使用<a href="https://hackr.io/blog/binary-search-in-c">二分搜索法</a>算法在一维排序数组中搜索一个值。</p>
+</td>
+<td>
+<p>数组。BinarySearch(arrVal，obj)；其中obj是要搜索的对象。</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-array-clear-method/" target="_blank" rel="noopener"><strong/></a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>将数组中的元素范围设置为每种元素类型的默认值。</p>
+</td>
+<td>
+<p>数组。Clear(arrVal，0，2)；</p>
+</td>
+<td>
+<p>如果arrVal是一个整数数组，那么在执行Clear()后，位置0到2的元素将被设置为零。</p>
+<p><strong>克隆()</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>创建数组的浅表副本。</p>
+</td>
+<td>
+<p>数组。克隆(arr val)；</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-array-constrainedcopy-method/" target="_blank" rel="noopener"><strong/></a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>从指定的源索引处开始复制数组中的一系列元素，并将其粘贴到从指定的目标索引处开始的另一个数组中。保证如果复制没有完全成功，所有更改都将被撤消。</p>
+</td>
+<td>
+<p>数组。ConstrainedCopy(srcArr，0，destArr，3，5)；</p>
+</td>
+<td>
+<p>其中srcArr是源数组，</p>
+<p>0是复制应该开始的起始索引，</p>
+<p>destArr是目标数组，</p>
+<p>3是复制应该在目标数组中开始的位置，</p>
+<p>5是要复制的元素数</p>
+<p><a href="https://www.geeksforgeeks.org/c-converting-an-array-of-one-type-to-an-array-of-another-type/" target="_blank" rel="noopener"><strong/></a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>将一种数据类型的数组转换为另一种数据类型的数组。</p>
+</td>
+<td>
+<p>conArr =数组。ConvertAll(arrVal，新转换器<dtype1 dtype2="">(方法))；</dtype1></p>
+</td>
+<td>
+<p><strong>复制()</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>将一个数组中的一系列元素复制到另一个数组，并根据需要执行类型转换和装箱。</p>
+</td>
+<td>
+<p>数组。Copy(srcArr，destArr，2)；</p>
+</td>
+<td>
+<p>将前两个元素从srcArr复制到destArr</p>
+<p><strong> CopyTo() </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>将当前一维数组的所有元素复制到指定的一维数组中。</p>
+</td>
+<td>
+<p>数组。CopyTo(destArr，4)；</p>
+</td>
+<td>
+<p>复制从索引4开始</p>
+<p><strong> CreateInstance() </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>初始化Array类的新实例。</p>
+</td>
+<td>
+<p>数组。CreateInstance(typeof(String)，长度)；</p>
+</td>
+<td>
+<p><strong>空()</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>返回一个空数组。</p>
+</td>
+<td>
+<p>阿尔瓦尔。空()</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-check-if-an-array-object-is-equal-to-another-array-object/" target="_blank" rel="noopener"> <strong>等于()</strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>确定指定的对象是否等于当前对象。</p>
+</td>
+<td>
+<p>阿尔瓦尔。等于(arr val 2)；</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-check-if-an-array-contain-the-elements-that-match-the-specified-conditions/" target="_blank" rel="noopener"> <strong>存在()</strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>确定指定数组是否包含与指定谓词定义的条件相匹配的元素。</p>
+</td>
+<td>
+<p>数组。存在(srcArr，"<elementname>")；</elementname></p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-array-find-method/" target="_blank" rel="noopener"> <strong>找到()</strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>搜索与指定谓词定义的条件相匹配的元素，并返回整个数组中的第一个匹配项。</p>
+</td>
+<td>
+<p>数组。Find(arrVal，<matching pattern="">)；</matching></p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-array-findall-method/" target="_blank" rel="noopener"> <strong> FindAll() </strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>检索与指定谓词定义的条件匹配的所有元素。</p>
+</td>
+<td>
+<p>数组。FindAll(arrVal，<matching pattern="">)；</matching></p>
+</td>
+<td>
+<p><strong> FindIndex() </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>搜索与指定谓词定义的条件匹配的元素，并返回数组或数组的一部分中第一个匹配项的从零开始的索引。</p>
+</td>
+<td>
+<p>数组。FindIndex(arrVal，<matching pattern="">)；</matching></p>
+</td>
+<td>
+<p><strong> FindLast() </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>搜索与指定谓词定义的条件相匹配的元素，并返回整个数组中最后一个匹配项。</p>
+</td>
+<td>
+<p>数组。FindLast(arrVal，<matching pattern="">)；</matching></p>
+</td>
+<td>
+<p><strong> FindLastIndex() </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>搜索与指定谓词定义的条件匹配的元素，并返回数组或数组的一部分中最后一个匹配项的从零开始的索引。</p>
+</td>
+<td>
+<p>数组。FindLastIndex(arrVal，<matching pattern="">)；</matching></p>
+</td>
+<td>
+<p><strong> ForEach() </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>循环遍历数组的每个元素并执行指定的操作</p>
+</td>
+<td>
+<p>数组。ForEach(数组，动作)</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-array-getenumerator-method/" target="_blank" rel="noopener"><strong>【get分子()</strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>返回数组的IEnumerator。</p>
+</td>
+<td>
+<p>阿尔瓦尔。GetEnumerator()</p>
+</td>
+<td>
+<p><strong> GetHashCode() </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>默认哈希函数。</p>
+</td>
+<td>
+<p>阿尔瓦尔。GetHashCode()</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-total-number-of-elements-present-in-an-array/" target="_blank" rel="noopener"> <strong> GetLength() </strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>获取一个32位整数，表示数组的指定维度中的元素数。</p>
+</td>
+<td>
+<p>阿尔瓦尔。GetLength(i)其中I是一个整数</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/total-number-of-elements-in-a-specified-dimension-of-an-array-in-c/" target="_blank" rel="noopener"><strong/></a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>获取一个64位整数，表示数组的指定维度中的元素数。</p>
+</td>
+<td>
+<p>阿尔瓦尔。GetLongLength(i ),其中I是整数</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-finding-the-index-of-first-element-in-the-array/" target="_blank" rel="noopener"><strong>【get power bound()</strong></a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>获取数组中指定维度的第一个元素的索引。</p>
+</td>
+<td>
+<p>阿尔瓦尔。GetLowerBound(i ),其中I是整数</p>
+</td>
+<td>
+<p>gettype()</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>获取当前实例的类型。</p>
+</td>
+<td>
+<p>阿尔瓦尔。GetType()</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-finding-the-index-of-last-element-in-the-array/" target="_blank" rel="noopener"> <strong> GetUpperBound() </strong> </a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>获取数组中指定维度的最后一个元素的索引。</p>
+</td>
+<td>
+<p>阿尔瓦尔。GetUpperBound(i ),其中I是整数</p>
+</td>
+<td>
+<p><strong> GetValue() </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>获取当前数组中指定元素的值。</p>
+</td>
+<td>
+<p><strong> IndexOf() </strong></p>
+</td>
+<td>搜索指定的对象，并返回它在一维数组或数组中某个元素范围内的第一个匹配项的索引。</td>
+</tr>
+<tr>
+<td>
+<p>arrVal.IndexOf(object)</p>
+</td>
+<td>
+<p><strong> Initialize() </strong></p>
+</td>
+<td>
+<p>通过调用值类型的默认构造函数来初始化值类型数组的每个元素。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/array-lastindexof-method-in-c-sharp-set-1/" target="_blank" rel="noopener"> <strong> LastIndexOf() </strong> </a></p>
+</td>
+<td>返回一维数组或数组的一部分中某个值的最后一个匹配项的索引。</td>
+</tr>
+<tr>
+<td>
+<p>arrVal.LastIndexOf(i)</p>
+</td>
+<td>
+<p><strong>memberwisecolone()</strong></p>
+</td>
+<td>
+<p>创建当前对象的浅表副本。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-how-to-change-the-size-of-one-dimensional-array/" target="_blank" rel="noopener"> <strong> Resize() </strong> </a></p>
+</td>
+<td>将一维数组的元素数更改为指定的新大小。</td>
+</tr>
+<tr>
+<td>
+<p>数组。调整大小(ref arrVal，len-2)；</p>
+</td>
+<td>
+<p>其中len是数组的原始长度</p>
+</td>
+<td>
+<p><strong>反转()</strong></p>
+<p>反转一维数组或部分数组中元素的顺序。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>阿尔瓦尔。反向()</p>
+</td>
+<td>
+<p><strong> SetValue() </strong></p>
+</td>
+<td>
+<p>将当前数组中的指定元素设置为指定值。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Array.SetValue(arrVal[i])</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/how-to-sort-an-array-in-c-sharp-array-sort-method-set-1/" target="_blank" rel="noopener"> <strong>排序()</strong> </a></p>
+</td>
+<td>
+<p>对一维数组中的元素进行排序。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>数组。排序(数组)</p>
+</td>
+<td>
+<p><strong> ToString() </strong></p>
+</td>
+<td>
+<p>返回一个表示当前对象的字符串。<br/>(从对象继承)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>阿尔瓦尔。ToString()</p>
+</td>
+<td>
+<p><a href="https://www.geeksforgeeks.org/c-array-trueforall-method/" target="_blank" rel="noopener"><strong/></a></p>
+</td>
+<td>
+<p>确定数组中的每个元素是否与指定谓词定义的条件匹配。</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>数组。TrueForAll(arrVal，<matching pattern="">)</matching></p>
+</td>
+<td>
+<p>Determines whether every element in the array matches the conditions defined by the specified predicate.</p>
+</td>
+<td>
+<p>Array.TrueForAll(arrVal, &lt;matching pattern&gt;)</p>
+</td>
+</tr>
+</tbody>
+</div>    
+</body>
+</html>

@@ -1,0 +1,1025 @@
+<html>
+<head>
+<title>75+ Top SQL Interview Questions and Answers in 2023 [Updated]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>2023年75+热门SQL面试问答[更新]</h1>
+<blockquote>原文：<a href="https://hackr.io/blog/top-sql-interview-questions#0001-01-01">https://hackr.io/blog/top-sql-interview-questions#0001-01-01</a></blockquote><div><div class="content">
+										<p>如果你正在准备SQL面试，你必须确保你准备好处理各种各样的问题，从基本的到高级的SQL面试问题。一点点准备可以大大增强你对下一次数据库开发人员工作面试的信心。</p>
+<p>这里的一组常见SQL面试问题涵盖了所有SQL功能，分为初级、中级和高级难度三个部分。如果你想复习一下，你可能想看看为你推荐的SQL教程。</p>
+<p>但是在我们进入这些SQL server面试问题之前，让我们先来看看一些关于SQL和相关面试的一般性问题。</p>
+<h2 id="how-do-i-prepare-for-the-sql-interview">我该如何准备SQL面试？</h2>
+<p>就像你准备其他面试一样，尽管你可能会发现自己在SQL面试中更注重理论。一定要了解命令，以及流程和决策背后的理论。动手学习和阅读相结合是准备SQL面试的最佳方式。</p>
+
+<h2 id="what-do-i-need-to-know-for-the-sql-interview">对于SQL面试，我需要知道些什么？</h2>
+<p>您需要了解一些关于如何操作数据库的基本概念和命令。本质上，你必须证明你能在实际环境中完成你需要的功能。幸运的是，这里列出的SQL面试问题和答案涵盖了你需要知道的一切。</p>
+<h2 id="how-can-i-practice-sql"><strong>怎样才能练好SQL？</strong></h2>
+<p>练习SQL的最好方法是下载数据库软件并开始使用它。这意味着创建一个表，输入数据，然后修改它。在软件中查找各种SQL命令并执行它们。当然，不要忘记阅读SQL查询面试问题。</p>
+<h2 id="top-sql-interview-questions-and-answers">SQL面试常见问题和答案</h2>
+<h3 id="basic-sql-interview-questions"><strong>基本SQL面试问题</strong></h3>
+<p>下一节介绍基本概念，下一节重点介绍中级和高级SQL问题。</p>
+<h4 id="toc-1-what-are-the-5-basic-sql-commands"><strong> 1。5个基本的SQL命令是什么？</strong></h4>
+<p>5个基本的SQL命令是ALTER、UPDATE、DELETE、INSERT和CREATE。当然，还有更多的命令，有些更微妙，但前面提到的是基本的。</p>
+<h4 id="toc-2-what-is-the-difference-between-dbms-and-rdbms"><strong> 2。DBMS和RDBMS有什么区别？</strong></h4>
+<p>数据库管理系统(DBMS)是一个帮助你建立和维护数据库的软件应用程序。关系数据库管理系统(RDBMS)是DBMS的一个子集，它基于DBMS的关系模型。</p>
+<h4 id="toc-3-can-we-embed-pl-sql-in-sql-justify-your-answers"><strong> 3。可以在SQL中嵌入Pl/SQL吗？证明你的答案。</strong></h4>
+<p>PL/SQL是一种过程化语言，里面有一条或多条SQL语句，所以SQL可以嵌入到一个PL/SQL块中；但是，PL/SQL不能嵌入到SQL中，因为SQL一次只执行一个查询。</p>
+
+<pre class="language-sql"><code>DECLARE                            /* this is a PL/SQL block */
+
+  qty_on_hand  NUMBER(5);         
+
+BEGIN
+
+  SELECT quantity INTO qty_on_hand FROM inventory     /* this is the SQL statement embedded in the PL/SQL block   */
+
+    WHERE product = 'TENNIS RACKET';
+
+ END;</code></pre>
+<h4 id="toc-4-what-do-you-mean-by-data-manipulation-language-dml"><strong> 4。你说的数据操作语言(DML)是什么意思？</strong></h4>
+<p><a href="https://en.wikipedia.org/wiki/Data_manipulation_language" target="_blank" rel="noopener">数据操作语言</a> (DML)包括最常用的SQL语句来存储、修改、删除和检索数据。它们是选择、更新、插入和删除。</p>
+<pre class="language-sql"><code>DECLARE                            /* this is a PL/SQL block */
+
+  qty_on_hand  NUMBER(5);         
+
+BEGIN
+
+  SELECT quantity INTO qty_on_hand FROM inventory     /* this is the SQL statement embedded in the PL/SQL block   */
+
+    WHERE product = 'TENNIS RACKET';
+
+ END;</code></pre>
+<h4 id="toc-5-what-is-a-join-in-sql-what-are-the-types-of-joins"><strong> 5。什么是SQL中的连接？连接的类型有哪些？</strong></h4>
+<p>联接用于根据字段之间的关系查询多个表中的数据。</p>
+<p>有四种类型的连接:</p>
+<p><strong>内部连接</strong></p>
+<p>当表之间至少有一个匹配行时，将返回行。</p>
+<pre class="language-sql"><code>select first_name, last_name, order_date, order_amount
+
+from customers c
+
+inner join orders o
+
+on c.customer_id = o.customer_id</code></pre>
+<p>/*客户和订单是两个表。将显示customer表中customer_id匹配的两个表中的数据</p>
+<p>订单表中的customer_id。*/</p>
+<p><strong>右连接</strong></p>
+<p>Right join返回右表中的所有行以及表之间共享的行。如果左表中没有匹配的行，它仍将返回右表中的所有行。</p>
+<pre class="language-sql"><code>select first_name, last_name, order_date, order_amount
+
+from customers c
+
+left join orders o
+
+on c.customer_id = o.customer_id</code></pre>
+<p>/*客户和订单是两个表。Orders表中的所有行都与Customers表中的匹配行一起返回(如果有的话*/</p>
+<p><strong>左连接</strong></p>
+<p>Left join返回左表中的所有行以及表之间共享的行。如果右表中没有匹配的行，它仍将返回左表中的所有行。</p>
+<pre class="language-sql"><code>select first_name, last_name, order_date, order_amount
+
+from customers c
+
+left join orders o
+
+on c.customer_id = o.customer_id</code></pre>
+<p>/*客户和订单是两个表。customers表中的所有行都与orders表中的匹配行一起返回(如果有的话*/</p>
+<p><strong>完全加入</strong></p>
+<p>当任何一个表中有匹配的行时，完全联接将返回行。这意味着它返回左侧表中的所有行和右侧表中的所有行。</p>
+<pre class="language-sql"><code>select first_name, last_name, order_date, order_amount
+
+from customers c
+
+full join orders o
+
+on c.customer_id = o.customer_id</code></pre>
+<p>/*客户和订单是两个表。将返回订单表和客户表中的所有行*/</p>
+<h4 id="toc-6-what-is-the-difference-between-the-char-and-varchar2-datatype-in-sql"><strong> 6。SQL中的CHAR和VARCHAR2数据类型有什么区别？</strong></h4>
+<p>CHAR用于存储固定长度的字符串，VARCHAR2用于存储可变长度的字符串。</p>
+<p>例如，假设您将字符串“Database”存储在CHAR(20)字段和VARCHAR2(20)字段中。</p>
+<p>CHAR字段将<strong>使用</strong> 22个<strong>字节</strong> (2个<strong>字节</strong> <strong>为</strong> <strong>前导</strong> <strong>长度</strong>)。</p>
+<p>VARCHAR2 <strong>字段</strong>将<strong>使用</strong> 10个<strong>字节</strong> <strong>仅</strong> (8个<strong>为</strong>字符串，2个<strong>字节</strong> <strong>为</strong> <strong>前导</strong> <strong>长度</strong>)。</p>
+<h4 id="toc-7-explain-sql-constraints"><strong> 7。解释SQL约束。</strong></h4>
+<p>约束用于指定表中数据类型的规则。它们可以在创建和修改表时指定。以下是SQL中的约束条件:</p>
+<ul>
+<li><strong> NOT NULL: </strong>限制将空值插入到列中</li>
+<li><strong> CHECK: </strong>验证字段中的所有值是否满足条件</li>
+<li><strong>默认值:</strong>如果没有为字段指定值，则自动分配默认值</li>
+<li><strong>唯一:</strong>确保字段中插入的值是唯一的</li>
+<li><strong>索引:</strong>索引字段，提供更快的记录检索</li>
+<li><strong>主键:</strong>唯一标识表中的每条记录</li>
+<li><strong>外键:</strong>确保另一个表中记录的参照完整性</li>
+</ul>
+<h4 id="toc-8-what-is-a-primary-key-a-foreign-key-and-a-unique-key"><strong> 8。什么是主键、外键和唯一键？</strong></h4>
+<p><strong>主键</strong></p>
+<p><img src="../Images/8c8d21f9fc867ac64225b5620ac02222.png" alt="primary-key" data-original-src="https://hackr.io/blog/uploads/images/primary-key.png"/></p>
+<p>主键是表中唯一标识一行的字段。它不能为空</p>
+<p><strong>外键</strong></p>
+<p><img src="../Images/3b2fe3810b3f0641cce44b4d90a20e0c.png" alt="“foreign-key&quot;" data-original-src="https://hackr.io/blog/uploads/images/foreign-key.png"/></p>
+
+<p>外键是一个表中的字段，它是另一个表中的主键。通过引用一个表的外键和另一个表的主键，在两个表之间创建关系。</p>
+<p>在下面的示例中，salary表中的employee_id_ref是外键。</p>
+<p><strong>唯一键</strong></p>
+<p>唯一键唯一标识表中的记录。一个表上可以定义许多唯一的键约束。</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p>员工标识</p>
+</td>
+<td>
+<p>员工姓名</p>
+</td>
+<td>
+<p>政府ID</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>222</p>
+</td>
+<td>
+<p>（英、瑞）哈里（人名）</p>
+</td>
+<td>
+<p>111-203-987</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>333</p>
+</td>
+<td>
+<p>斯蒂芬</p>
+</td>
+<td>
+<p>789-456-123</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>444</p>
+</td>
+<td>
+<p>局域网</p>
+</td>
+<td>
+<p>745-562-321</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>在上表中，Emp_id是主键，而Government_id是唯一键。您可能希望每个雇员的政府标识都是唯一的。由于数据属于政府，您可能不希望它成为主键。</p>
+<p><a class="btn btn-primary btn-call-to-action " href="https://click.linksynergy.com/deeplink?id=jU79Zysihs4&amp;mid=39197&amp;murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-complete-sql-bootcamp%2F" target="_blank" rel="noopener">完整的SQL Bootcamp 2023:从零到英雄</a></p>
+<h4 id="toc-9-what-is-a-trigger"><strong> 9。什么是触发器？</strong></h4>
+<p>触发器是存储的程序，当INSERT、DELETE和UPDATE (DML)语句等事件发生时，会自动执行这些程序。还可以调用触发器来响应数据定义语句(DDL)和数据库操作，例如服务器错误、登录。</p>
+<pre class="language-sql"><code>create trigger dbtrigger  
+
+on database  
+
+for 
+
+create_table,alter_table,drop_table 
+
+as 
+
+print'you can not create ,drop and alter table in this database'  
+
+rollback;
+
+create trigger emptrigger  
+
+on emp  
+
+for 
+
+insert,update,delete 
+
+as 
+
+print'you can not insert,update and delete this table i'  
+
+rollback;</code></pre>
+<h4 id="toc-10-what-is-the-difference-between-sql-and-mysql">10。SQL和MySQL有什么区别？</h4>
+<p>SQL是一种用于访问DBMS的结构化查询语言，而MYSQL是一种开源的关系DBMS。后者在关系模型上操作，允许用更高级的方法处理数据。</p>
+<h4 id="toc-11-what-is-a-null-value-field"><strong> 11。什么是空值字段？</strong></h4>
+<p>空值是没有值的字段。</p>
+
+<h4 id="toc-12-what-are-acid-properties-in-a-transaction"><strong> 12。事务中的ACID属性是什么？</strong></h4>
+<p>为了保持数据库“前后”事务的一致性，需要遵循某些属性。它们是:</p>
+
+<ul>
+<li><strong>原子性:</strong>事务必须完全发生，不能中途退出</li>
+<li><strong>一致性:</strong>这维护了完整性约束，以确保有效数据进入数据库</li>
+<li><strong>隔离:</strong>控制并发</li>
+<li><strong>持久性:</strong>事务一旦提交，就保持提交状态</li>
+</ul>
+<h4 id="toc-13-what-is-dateadd-in-sql">13。SQL中的Dateadd是什么？</h4>
+<p>Dateadd是一个函数，用于向日期的指定部分添加一个数字，并返回修改后的日期。语法是DATEADD(日期部分，值，输入日期)。</p>
+
+<p>日期部分可以采用以下任何形式:</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p>日期_部分</p>
+</td>
+<td>
+<p>缩写</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>年</p>
+</td>
+<td>
+<p>yy，yyyy</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>四分之一</p>
+</td>
+<td>
+<p>qq，q</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>月</p>
+</td>
+<td>
+<p>嗯，嗯</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>一年一天</p>
+</td>
+<td>
+<p>dy，y</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>一天</p>
+</td>
+<td>
+<p>dd，d</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>周</p>
+</td>
+<td>
+<p>周，周</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>小时</p>
+</td>
+<td>
+<p>倍硬</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>分钟</p>
+</td>
+<td>
+<p>米，n</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>第二</p>
+</td>
+<td>
+<p>ss，s</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>毫秒</p>
+</td>
+<td>
+<p>女士</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>微秒</p>
+</td>
+<td>
+<p>计算机科学硕士</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>十亿分之一秒</p>
+</td>
+<td>
+<p>纳秒</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-14-what-is-savepoint-in-transaction-control"><strong> 14。事务控制中的保存点是什么？</strong></h4>
+<p>保存点是事务中的一个点，此时您可以将事务回滚到某个点，而无需回滚整个事务。</p>
+<pre class="language-sql"><code>SQL&gt; SAVEPOINT A
+
+SQL&gt; INSERT INTO TEST VALUES (1,'Savepoint A');</code></pre>
+<p>插入1行。</p>
+<pre class="language-sql"><code>SQL&gt; SAVEPOINT B
+
+SQL&gt; INSERT INTO TEST VALUES (2,'Savepoint B');</code></pre>
+<p>插入1行。</p>
+<pre class="language-sql"><code>SQL&gt; ROLLBACK TO B;</code></pre>
+<p>回滚完成。</p>
+<pre class="language-sql"><code>SQL&gt; SELECT * FROM TEST;
+
+ID MSG
+
+-------- -----------
+
+1  Savepoint A</code></pre>
+<h4 id="toc-15-what-is-a-natural-join">15。什么是自然连接？</h4>
+<pre class="language-sql"><code>SELECT * FROM COUNTRIES NATURAL JOIN CITIES
+
+
+SELECT * FROM COUNTRIES JOIN CITIES
+
+    USING (COUNTRY, COUNTRY_ISO_CODE)</code></pre>
+<p>默认情况下，自然联接是一种内部联接，它基于被联接的两个表中的公共列创建隐式联接:</p>
+<p>自然联接可以是内部联接、左外部联接或右外部联接。默认值是内部联接。</p>
+<p>如果表COUNTRY和city有两个名为COUNTRY和COUNTRY_ISO_CODE的公共列，则以下两个SELECT语句是等效的:</p>
+<h4 id="toc-16-what-is-a-cross-join">16。什么是交叉连接？</h4>
+<p><img src="../Images/55a30d21f56a1e6edc43c3ef317abab0.png" alt="table 1" data-original-src="https://hackr.io/blog/media/table-1.png"/></p>
+<p>在SQL交叉连接中，两个表中每一行的组合都包含在结果集中。这也称为跨产品联接。</p>
+
+<p>例如，如果表A有10行，表B有20行，如果SQL语句中有一个NOWHERE子句，则结果集将有10 * 20 = 200行。</p>
+
+<h4 id="toc-17-what-are-the-subsets-of-sql"><strong> 17。SQL的子集是什么？</strong></h4>
+<p>以下是SQL的子集</p>
+<ol>
+<li><strong> DDL(数据定义语言)</strong>:包括SQL命令，如创建、更改和删除</li>
+<li><strong> DML(数据操作语言):</strong>访问和操作数据，包括插入和更新命令</li>
+<li><strong> DCL(数据控制语言):</strong>控制对数据库的访问。使用GRANT和REVOKE等命令。</li>
+</ol>
+<h4 id="toc-18-what-are-scalar-functions-in-sql">18。SQL中的标量函数是什么？</h4>
+<p>标量函数用于根据输入值返回单个值。标量函数如下:</p>
+<ul>
+<li><strong> UCASE(): </strong>将指定字段转换为大写</li>
+</ul>
+<pre class="language-sql"><code>SELECT UCASE("SQL Tutorial is FUN!") AS UppercaseText;
+
+UppercaseText
+
+SQL TUTORIAL IS FUN!</code></pre>
+<ul>
+<li><strong> LCASE(): </strong>将指定字段转换为小写</li>
+</ul>
+<h4 id="toc-19-what-is-a-cursor-and-when-do-you-use-it"><strong> 19。什么是光标，你什么时候使用它？</strong></h4>
+<p><img src="../Images/ad6bc46a35840b84cd381755b0b9a9c7.png" alt="“Cursor&quot;" data-original-src="https://hackr.io/blog/uploads/images/what-is-a-cursor.png"/></p>
+<p>游标是一种数据库对象，用于通过在结果集中逐行遍历来操作数据。当需要从结果集中一次一行地检索数据，以及需要一次一行地更新记录时，可以使用游标。</p>
+<pre class="language-sql"><code>   DECLARE @CustomerId INT
+
+        ,@Name VARCHAR(100)
+
+         ,@Country VARCHAR(100)
+
+     --DECLARE AND SET COUNTER.
+
+     DECLARE @Counter INT
+
+     SET @Counter = 1
+
+     --DECLARE THE CURSOR FOR A QUERY.
+
+     DECLARE PrintCustomers CURSOR READ_ONLY
+
+     FOR
+
+     SELECT CustomerId, Name, Country
+
+      FROM Customers
+
+     --OPEN CURSOR.
+
+      OPEN PrintCustomers
+
+     --FETCH THE RECORD INTO THE VARIABLES.
+
+     FETCH NEXT FROM PrintCustomers INTO
+
+      @CustomerId, @Name, @Country
+
+     --LOOP UNTIL RECORDS ARE AVAILABLE.
+
+     WHILE @@FETCH_STATUS = 0
+
+     BEGIN
+
+        IF @Counter = 1
+
+        BEGIN
+
+                       PRINT 'CustomerID' + CHAR(9) + 'Name' + CHAR(9) + CHAR(9) + CHAR(9) + 'Country'
+
+                       PRINT '------------------------------------'
+
+        END
+
+         --PRINT CURRENT RECORD.        PRINT CAST(@CustomerId AS VARCHAR(10)) + CHAR(9) + CHAR(9) + CHAR(9) + @Name + CHAR(9) + @Country
+
+        --INCREMENT COUNTER.
+
+        SET @Counter = @Counter + 1
+
+        --FETCH THE NEXT RECORD INTO THE VARIABLES.
+
+        FETCH NEXT FROM PrintCustomers INTO
+
+        @CustomerId, @Name, @Country
+
+      END
+
+     --CLOSE THE CURSOR.
+
+     CLOSE PrintCustomers
+
+      DEALLOCATE PrintCustomers</code></pre>
+<h4 id="toc-20-what-is-a-set-based-solution">20。什么是基于集合的解决方案？</h4>
+<p>游标对单个行进行操作，在集合的情况下，它对数据的结果集进行操作，该结果集可以是表/视图或两者的连接。结果集是SQL查询的输出。</p>
+<h4 id="toc-21-what-is-a-forward-cursor"><strong> 21。什么是向前光标？</strong></h4>
+<p>前向游标支持从结果集中从头到尾提取行。您不能转到结果集中的上一行。</p>
+<h4 id="toc-22-state-one-situation-where-set-based-solutions-are-better-than-cursor-based-solutions"><strong> 22。陈述一个基于集合的解决方案优于基于光标的解决方案的情况。</strong></h4>
+<p>当您处理结果集时，基于集的解决方案可以提供更好的性能，而不是一次处理一行。它们简明扼要，可读性更强。</p>
+<h4 id="toc-23-what-is-normalization-and-what-are-the-normal-forms"><strong> 23。什么是正常化，正常的形式有哪些？</strong></h4>
+<p><a href="https://hackr.io/blog/dbms-normalization">规范化</a>是数据库设计中最大限度减少数据冗余和依赖性的过程。数据库被分成两个或更多的表，并定义了它们之间的关系。</p>
+<p><strong>第一范式</strong></p>
+<p>每个记录在表中都是唯一的，由主键或组合键标识。</p>
+<p>StudiD名称电话号码</p>
+<p>-----------------------</p>
+<p>约翰一书9176612 . 56666666666</p>
+<p>2苏西9176645789</p>
+<p>3吉姆9176696325</p>
+<p>在上表中，字段“phonenum”是一个多值属性，因此它不在1NF中。</p>
+<p>由于没有多值属性，下表采用1NF格式。</p>
+<p>StudiD名称电话号码</p>
+<p>------------------</p>
+<p>约翰一书9176612345</p>
+<p>约翰一书9176645698</p>
+<p>2苏西9176645789</p>
+<p>3吉姆9176696325</p>
+<p><strong>第二范式</strong></p>
+<p>该表必须采用第一范式，并且应该有一个列作为主键。2NF试图减少存储在内存中的冗余数据。为了将上面的表转换成2NF，我们将该表分成两个表:</p>
+<p>StudiD名称/*学生表*/</p>
+<ol>
+<li>约翰</li>
+</ol>
+<p>2苏希</p>
+<ol start="3">
+<li>吉姆(人名)</li>
+</ol>
+<p>StudiD phone num/* student phone number表格*/</p>
+<p>------------------</p>
+<p>1 9176612345</p>
+<p>1 9176645698</p>
+<p>2 9176645789</p>
+<p>3 9176696325</p>
+<p><strong>第三范式</strong></p>
+<p>该表必须采用第二范式，并且必须没有传递函数依赖关系，即一个非键列不能依赖于同一表中的另一个非键列。</p>
+<p>考虑EMPLOYEE_DETAIL表:该表不是第三范式，因为字段emp_state和emp_city依赖于emp_zip，而不是依赖于主键emp_id。</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p>员工标识</p>
+</td>
+<td>
+<p>员工姓名</p>
+</td>
+<td>
+<p>EMP_ZIP</p>
+</td>
+<td>
+<p>员工状态</p>
+</td>
+<td>
+<p>员工_城市</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>222</p>
+</td>
+<td>
+<p>（英、瑞）哈里（人名）</p>
+</td>
+<td>
+<p>201010</p>
+</td>
+<td>
+<p>计算机化X线体层照相术</p>
+</td>
+<td>
+<p>蒙罗</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>333</p>
+</td>
+<td>
+<p>斯蒂芬</p>
+</td>
+<td>
+<p>02228</p>
+</td>
+<td>
+<p>谢谢</p>
+</td>
+<td>
+<p>达拉斯</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>444</p>
+</td>
+<td>
+<p>局域网</p>
+</td>
+<td>
+<p>060007</p>
+</td>
+<td>
+<p>伊利诺伊</p>
+</td>
+<td>
+<p>芝加哥</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>上面的表被分成两个表，现在这些表是第三范式。</p>
+<p><strong>员工表:</strong></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p>员工标识</p>
+</td>
+<td>
+<p>员工姓名</p>
+</td>
+<td>
+<p>EMP_ZIP</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>222</p>
+</td>
+<td>
+<p>（英、瑞）哈里（人名）</p>
+</td>
+<td>
+<p>201010</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>333</p>
+</td>
+<td>
+<p>斯蒂芬</p>
+</td>
+<td>
+<p>02228</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>444</p>
+</td>
+<td>
+<p>局域网</p>
+</td>
+<td>
+<p>060007</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>员工_ZIP表:</strong></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p>EMP_ZIP</p>
+</td>
+<td>
+<p>员工状态</p>
+</td>
+<td>
+<p>员工_城市</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>201010</p>
+</td>
+<td>
+<p>计算机化X线体层照相术</p>
+</td>
+<td>
+<p>蒙罗</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>02228</p>
+</td>
+<td>
+<p>谢谢</p>
+</td>
+<td>
+<p>达拉斯</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>060007</p>
+</td>
+<td>
+<p>伊利诺伊</p>
+</td>
+<td>
+<p>芝加哥</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-24-what-is-denormalization-and-when-do-you-use-it"><strong> 24。什么是反规格化，什么时候用？</strong></h4>
+<p>反规范化是一种用于提高性能的技术，因此表设计允许您避免带有冗余数据的复杂连接。如果应用程序涉及大量读取操作，则以牺牲写入操作性能为代价来使用反规范化。</p>
+<h4 id="toc-25-what-are-clustered-indexes-and-non-clustered-indexes"><strong> 25。</strong> <strong>什么是聚集索引和非聚集索引？</strong></h4>
+<p>一个表只能有一个聚集索引。在这种类型的索引中，它根据键值对表进行重新排序，并按照这个顺序存储它们。</p>
+<p>非聚集索引没有表中数据的物理顺序；它有一个逻辑顺序。</p>
+<pre class="language-sql"><code>CREATE CLUSTERED INDEX IX_tblStudent_Gender_Score
+
+ON student(gender ASC, total_score DESC)</code></pre>
+<p>上面的脚本在学生表上创建了一个名为“IX_tblStudent_Gender_Score”的聚集索引。该索引是在“性别”和“总分”列上创建的。在多个列上创建的索引称为“复合索引”。</p>
+<p>非聚集索引不对表中的物理数据进行排序。非聚集索引存储在一个地方，表数据存储在另一个地方。这允许每个表有多个非聚集索引。</p>
+<pre class="language-sql"><code>CREATE NONCLUSTERED INDEX IX_tblStudent_Name
+
+ON student(name ASC)</code></pre>
+<p>上面的脚本在student表的“name”列上创建了一个非聚集索引——该索引按名称升序排序。表数据和索引将存储在不同的地方。</p>
+<h4 id="toc-26-what-is-t-sql"><strong> 26。什么是T-SQL？</strong></h4>
+<p>它是由Sybase开发、微软使用的SQL(结构化查询语言)的扩展。</p>
+<h4 id="toc-27-what-are-system-functions-offer-an-example"><strong> 27。什么是系统功能？举个例子。</strong></h4>
+<p>系统函数是在数据库服务器上执行的操作，并相应地返回值。示例@@ERROR -如果前面的Transact-SQL语句没有遇到错误，则返回0。否则，它返回一个错误号。</p>
+<p>@@ERROR -如果前面的Transact-SQL语句没有遇到<strong>错误，则返回0 <strong>。</strong></strong></p>
+<h4 id="toc-28-what-is-a-transaction-log"><strong> 28。什么是事务日志？</strong></h4>
+<p><img src="../Images/0baedafc318be875707f0c77e1f54946.png" alt="“Transaction" data-original-src="https://hackr.io/blog/uploads/images/transaction-log.png"/></p>
+<p>日志是一个审计跟踪文件，其中存储了DBMS执行的操作的历史记录。</p>
+<h4 id="toc-29-how-do-you-maintain-database-integrity-when-deletions-from-one-table-automatically-cause-deletions-in-another"><strong> 29。当一个表中的删除自动导致另一个表中的删除时，如何维护数据库的完整性？</strong></h4>
+<p>ON DELETE CASCADE是在父表中发生删除时使用的命令，它会自动删除所有子记录，并且父表中的外键会引用子表。</p>
+<pre class="language-sql"><code>CREATE TABLE products
+
+( product_id INT PRIMARY KEY,
+
+ product_name VARCHAR(50) NOT NULL,
+
+ category VARCHAR(25)
+
+);
+
+CREATE TABLE inventory
+
+( inventory_id INT PRIMARY KEY,
+
+ product_id INT NOT NULL,
+
+ quantity INT,
+
+ min_level INT,
+
+ max_level INT,
+
+ CONSTRAINT fk_inv_product_id
+
+   FOREIGN KEY (product_id)
+
+   REFERENCES products (product_id)
+
+   ON DELETE CASCADE
+
+);</code></pre>
+<p>Products表是父表，inventory表是子表。如果从父表中删除了一个productid，则该productid的所有库存记录都将从子表中删除</p>
+<h4 id="toc-30-can-we-use-truncate-with-a-where-clause">三十岁。我们可以在WHERE子句中使用TRUNCATE吗？</h4>
+<p>不，我们不能在WHERE子句中使用TRUNCATE。</p>
+<h4 id="toc-31-define-commit">31。定义提交。</h4>
+<p>当在事务中使用COMMIT时，所做的所有更改都将永久写入数据库。</p>
+<pre class="language-sql"><code>BEGIN TRANSACTION;  
+
+DELETE FROM HumanResources.JobCandidate 
+
+   WHERE JobCandidateID = 13;   
+
+COMMIT TRANSACTION;  </code></pre>
+<p>以上示例删除了SQL server中的一个求职者。</p>
+<h4 id="toc-32-what-does-check-constraint-do">32。检查约束是做什么的？</h4>
+<p>Check约束限制了可以进入数据库表中某一列的值。它被用作完整性约束检查。</p>
+<p>当创建“Persons”表时，下面的SQL在“Age”列上创建一个检查约束。检查约束确保您不能有任何18岁以下的人:</p>
+<p>下面的语法在MySQL中。</p>
+<pre class="language-sql"><code>CREATE TABLE Persons (
+
+ID int NOT NULL,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Age int,
+    CHECK (Age&gt;=18)
+
+);</code></pre>
+<h4 id="toc-33-what-is-a-schema">33。什么是模式？</h4>
+<p><img src="../Images/b2a6a93f135e54aba84888b8dd9e146a.png" alt="“Schema&quot;" data-original-src="https://hackr.io/blog/uploads/images/schema.png"/></p>
+<p>模式是数据库中特定用户/所有者的数据库对象的集合。对象可以是表、视图、索引等。</p>
+<h4 id="toc-34-how-can-you-create-an-empty-table-from-an-existing-table">34。如何从现有的表中创建一个空表？</h4>
+<pre class="language-sql"><code>CREATE TABLE NEW_TABLE_NAME AS SELECT [column1, column2 ……column]
+
+FROM EXISTING_TABLE_NAME [WHERE ]</code></pre>
+<h4 id="toc-35-what-is-a-composite-key">35。什么是组合键？</h4>
+<p>当使用多个列来定义主键时，就称为组合键。以下是在MySQL中创建组合键的SQL语法:</p>
+<pre class="language-sql"><code>CREATE TABLE SAMPLE_TABLE  
+(COL1 integer,  
+COL2 varchar(30),  
+COL3 varchar(50),  
+PRIMARY KEY (COL1, COL2));  </code></pre>
+<h4 id="toc-36-how-do-you-sort-records-in-a-table">36。如何对表格中的记录进行排序？</h4>
+<p>ORDER BY子句用于对表中的记录进行排序。</p>
+<pre class="language-sql"><code>SELECT * FROM Emp ORDER BY salary; </code></pre>
+<p>默认情况下，记录按升序返回。</p>
+<h4 id="toc-37-what-is-a-shared-lock">37。什么是共享锁？</h4>
+<p>当两个事务被授予对同一数据的读访问权限时，它们就获得了一个共享锁。这使得能够读取相同的数据，并且直到共享锁被释放，数据才被更新。</p>
+<h4 id="toc-38-what-is-a-deadlock">38。什么是死锁？</h4>
+<p><img src="../Images/2dd012cb3e26af07185568b28a97c3ea.png" alt="What is a deadlock" data-original-src="https://hackr.io/blog/media/what-is-a-deadlock.png"/></p>
+<p>死锁是指两个或多个事务无限期地等待对方释放锁的情况。</p>
+<p>以下是死锁情况的一个示例:</p>
+<h4 id="toc-39-what-is-lock-escalation">39。什么是锁升级？</h4>
+<p>锁升级是将行锁或页锁转换为表锁的过程。它是SQL Server等<a href="https://en.wikipedia.org/wiki/Relational_database" target="_blank" rel="noopener"> RDBMS </a>动态使用的优化技术。</p>
+<h4 id="toc-40-what-is-sql-injection">40。什么是SQL注入？</h4>
+<p>SQL注入是一种代码注入技术，用于破解数据驱动的应用程序。</p>
+<h4 id="toc-41-what-are-views-and-why-are-they-used">41。什么是视图，为什么使用它们？</h4>
+<p>SQL视图是从一个或多个表创建的虚拟表。视图是数据的子集；因此，它可以限制表中数据的公开程度。</p>
+<p>以下SQL创建了一个显示所有巴西客户的视图:</p>
+<pre class="language-sql"><code>CREATE VIEW Brazil_Customers_view AS
+SELECT CustomerName, ContactName
+FROM Customers
+WHERE Country = "Brazil";</code></pre>
+<p>您可以按如下方式查询上面的视图:</p>
+<pre class="language-sql"><code>SELECT * FROM Brazil_Customers_view;</code></pre>
+<h4 id="toc-42-how-do-we-avoid-getting-duplicate-entries-in-a-query"><strong> 42。我们如何避免在查询中得到重复的条目？</strong></h4>
+<p>Select DISTINCT用于使用查询从表中获取不同的数据。</p>
+<p>以下SQL语句仅从“Customers”表的“Country”列中选择不同的值:</p>
+<pre class="language-sql"><code>SELECT DISTINCT Country FROM Customers;</code></pre>
+<h4 id="toc-43-give-an-example-of-a-comparison-operator-in-sql"><strong> 43。举一个SQL中比较运算符的例子。</strong></h4>
+<p>等于写成=用于比较数据值</p>
+<h4 id="toc-44-what-is-a-subquery"><strong> 44。什么是子查询？</strong></h4>
+<p>子查询是嵌套在更大查询中的SQL查询。</p>
+<pre class="language-sql"><code>SELECT
+   employee_id, first_name, last_name
+FROM
+   employees
+WHERE
+   department_id IN (SELECT 
+           department_id
+       FROM
+           departments
+       WHERE
+           location_id = 1700)
+ORDER BY first_name , last_name;</code></pre>
+<p>括号中的查询称为子查询。它也称为内部查询或内部选择。包含子查询的查询称为外部查询或外部选择。</p>
+
+<p>非相关子查询是一个独立的查询，子查询的输出在主查询中被替换。</p>
+<h3 id="advanced-sql-interview-questions-and-answers"><strong>高级SQL面试问答</strong></h3>
+<h4 id="toc-46-what-is-a-system-privilege"><strong> 46。什么是系统特权？</strong></h4>
+<p>这时，用户(通常是DBA)有权对数据库模式对象执行特定的操作，比如创建表空间。</p>
+<p>以下是可以授予用户的系统权限示例:</p>
+<ul>
+<li>CREATE TABLE允许被授权者在被授权者的方案中创建表</li>
+<li>CREATE USER允许被授权者在数据库中创建用户</li>
+<li>创建会话允许被授权者连接到Oracle数据库来创建用户会话</li>
+</ul>
+<h4 id="toc-47-what-are-object-privileges"><strong> 47。什么是对象特权？</strong></h4>
+<p>对象级权限是授予数据库用户帐户或角色对数据库对象执行某些操作的权限。这些对象权限包括SELECT、INSERT、UPDATE、DELETE、ALTER、INDEX on tables等。</p>
+<p>以下示例是可以授予用户的对象权限:</p>
+<ul>
+<li>在hr.employees上选择myuser</li>
+<li>向我的用户插入hr.employees</li>
+</ul>
+<h4 id="toc-48-what-does-the-bcp-command-do"><strong> 48。BCP指挥部是做什么的？</strong></h4>
+<p>BCP(批量复制)是一个实用程序或工具，可以将数据从表中导出/导入到文件中，反之亦然。</p>
+<h4 id="toc-49-what-does-the-variance-function-do"><strong> 49。方差函数有什么作用？</strong></h4>
+<p>此函数返回一组数字的方差:</p>
+<pre class="language-sql"><code>CREATE TABLE EMP (EMPNO NUMBER(4) NOT NULL,
+
+                 ENAME VARCHAR2(10),
+                 JOB VARCHAR2(9),
+                 SAL NUMBER(7, 2),
+                 DEPTNO NUMBER(2));
+
+INSERT INTO EMP VALUES (1, 'SMITH', 'CLERK',     800, 20);
+INSERT INTO EMP VALUES (2, 'ALLEN', 'SALESMAN', 1600,    30);
+INSERT INTO EMP VALUES (3, 'WARD',  'SALESMAN', 1250, 30);
+INSERT INTO EMP VALUES (4, 'JONES', 'MANAGER',  2975, 20);
+INSERT INTO EMP VALUES (5, 'MARTIN','SALESMAN', 1250,    30);
+INSERT INTO EMP VALUES (6, 'BLAKE', 'MANAGER',  2850, 30);
+INSERT INTO EMP VALUES (7, 'CLARK', 'MANAGER',  2850, 10);
+INSERT INTO EMP VALUES (8, 'SCOTT', 'ANALYST',  3000, 20);
+INSERT INTO EMP VALUES (9, 'KING',  'PRESIDENT',3000, 10);
+INSERT INTO EMP VALUES (10,'TURNER','SALESMAN', 1500,    30);
+INSERT INTO EMP VALUES (11,'ADAMS', 'CLERK',    1500, 20);
+
+SQL&gt; SELECT VARIANCE(sal)
+
+ 2  FROM emp;
+
+VARIANCE(SAL)
+
+-------------
+
+   759056.818</code></pre>
+<h4 id="toc-50-what-is-the-role-of-grant-and-revoke-commands">50。授权和撤销命令的作用是什么？</h4>
+<p>GRANT命令启用数据库对象上的特权，REVOKE命令删除这些特权。它们是DCL命令。</p>
+<pre class="language-sql"><code>GRANT CREATE ANY TABLE TO username
+GRANT sysdba TO username
+GRANT DROP ANY TABLE TO username
+REVOKE CREATE TABLE FROM username</code></pre>
+<h4 id="toc-51-what-is-a-union-operator">51。什么是联合运算符？</h4>
+<p>UNION运算符通过删除重复行来组合两个或多个SELECT语句的结果。SELECT语句中的列和数据类型必须相同。</p>
+<pre class="language-sql"><code>SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers
+ORDER BY City;</code></pre>
+<h4 id="toc-52-where-are-stored-procedures-stored-and-can-we-call-one-inside-another"><strong> 52。存储过程存储在哪里，我们可以在其中调用一个吗？</strong></h4>
+<p><a href="https://hackr.io/blog/stored-procedures">存储过程</a>存储在数据库的数据字典中。</p>
+<p>是的，我们可以从一个存储过程调用另一个存储过程。例如，过程2是被称为过程1的过程。过程1和过程2都可以在其中实现业务逻辑。</p>
+<pre class="language-sql"><code>Create PROCEDURE Procedure1
+AS BEGIN
+Exec Procedure2
+END</code></pre>
+<h4 id="toc-53-does-the-data-stored-in-the-stored-procedure-increase-access-time-or-execution-time">53。存储在存储过程中的数据会增加访问时间或执行时间吗？</h4>
+<p>存储在存储过程中的数据比存储在SQL数据库中的数据检索起来要快得多。数据可以预编译并存储在存储过程中。这缩短了查询和编译之间的时间间隔，因为数据已经过预编译并存储在过程中。过程可能返回值，也可能不返回值。</p>
+<h4 id="toc-54-can-a-view-be-active-if-the-base-table-is-dropped">54。如果删除了基表，视图还可以是活动的吗？</h4>
+<p>不，如果父表被删除，视图不能是活动的。</p>
+<h4 id="toc-55-what-is-a-one-many-relationship-in-sql"><strong> 55。SQL中的一对多关系是什么？</strong></h4>
+<p><img src="../Images/f1129a1b16dbc59596d5b3ce1c371583.png" alt="“One" data-original-src="https://hackr.io/blog/uploads/images/one-to-many-relationship.png"/></p>
+<p>在一对多关系中，一个表中的记录可以与另一个表中的许多记录关联或相关。</p>
+<h4 id="toc-56-distinguish-between-a-table-and-a-field-in-sql">56。区分SQL中的表和字段。</h4>
+<p>以列和行的形式组织的数据集合指的是表。表中的列数指的是字段。</p>
+<p><strong>表:</strong>员工_详细信息</p>
+<p><strong>字段:</strong>员工标识，员工姓名，员工部门，员工薪资</p>
+<h4 id="toc-57-what-is-data-integrity"><strong> 57。什么是数据完整性？</strong></h4>
+<p>数据完整性定义了存储在数据库中的数据的准确性、一致性和可靠性。</p>
+<p>有四种数据完整性:</p>
+<ol>
+<li>行完整性</li>
+<li>色谱柱完整性</li>
+<li>参照完整性</li>
+<li>用户定义的完整性</li>
+</ol>
+<h4 id="toc-58-what-are-entities-and-relationships"><strong> 58。什么是实体和关系？</strong></h4>
+<ul>
+<li><strong>实体:</strong>一个人，一个地方，或者任何现实世界中可以用表格来表示的东西，叫做实体。一个例子是雇员表，它表示组织中雇员的详细信息。</li>
+</ul>
+<ul>
+<li><strong>关系:</strong>关系定义了实体之间共享的依赖关系。例如，雇员姓名、ID、薪水可能属于相同或不同的表。</li>
+</ul>
+<h4 id="toc-59-how-do-truncate-and-delete-differ">59。截断和删除有何不同？</h4>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>删除</strong></p>
+</td>
+<td>
+<p><strong>截断</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DML命令</p>
+</td>
+<td>
+<p>DDL命令</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>可以用在哪里</p>
+</td>
+<td>
+<p>无法使用WHERE</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>从表格中删除一行</p>
+</td>
+<td>
+<p>从表中删除所有行</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>可能回滚</p>
+</td>
+<td>
+<p>不回滚</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toc-60-what-is-the-difference-between-null-zero-and-blank-space">60。null、零和空格之间的区别是什么？</h4>
+<p>NULL是指未知、不可用、不适用或未分配的值。零是数字，空格被视为字符。</p>
+<h4 id="toc-61-which-function-is-used-to-return-the-remainder-in-a-division-operator-in-sql">61。在SQL中，哪个函数用于返回除法运算符中的余数？</h4>
+<p>MOD函数返回除法运算的余数。</p>
+<h4 id="toc-62-what-are-case-manipulation-functions">62。什么是案例操作功能？</h4>
+<p>大小写操作函数将表中的现有数据转换为小写、大写或混合大小写字符。</p>
+<h4 id="toc-63-what-are-the-different-case-manipulation-functions-in-sql">63。SQL中有哪些不同的大小写操作函数？</h4>
+<ol>
+<li><strong> LOWER: </strong>将所有字符转换成小写</li>
+<li><strong>大写:</strong>将所有字符转换成大写</li>
+<li><strong> INITCAP: </strong>将每个单词的首字母转换成大写</li>
+</ol>
+<h4 id="toc-64-what-are-the-different-character-manipulation-functions"><strong> 64。有哪些不同的角色操纵功能？</strong></h4>
+<ul>
+<li><strong> CONCAT: </strong>连接两个或多个字符串值</li>
+<li>提取特定长度的字符串</li>
+<li><strong> LENGTH: </strong>返回字符串的长度</li>
+<li><strong> INSTR: </strong>返回特定字符的位置</li>
+<li><strong> LPAD: </strong>右对齐值的左侧字符值的填充</li>
+<li><strong> RPAD: </strong>左对齐值的右侧字符值的填充</li>
+<li><strong> TRIM: </strong>从开头和/或结尾删除已定义的字符</li>
+<li><strong>替换:</strong>用另一个字符序列替换一个特定的字符序列</li>
+</ul>
+<h4 id="toc-65-define-inconsistent-dependency">65。定义不一致的依赖关系。</h4>
+<p>由于路径可能中断或丢失，访问数据的难度定义了不一致的依赖性。不一致的依赖关系使用户能够在错误的不同表中搜索数据，这将导致输出错误。</p>
+<h4 id="toc-66-what-are-group-functions-why-do-we-need-them">66。什么是组函数？我们为什么需要它们？</h4>
+<p>组函数处理一组行，并为每个组返回一个结果。普遍使用的组函数是AVG，最大，最小，总和，方差，计数</p>
+<h4 id="toc-67-distinguish-between-between-and-in-conditional-operators"><strong> 67。区分条件运算符中的和。</strong></h4>
+<p>BETWEEN根据值的范围显示行。IN检查特定值集中包含的值。</p>
+<p><strong>举例:</strong></p>
+<pre class="language-sql"><code>SELECT * FROM Students where ROLL_NO BETWEEN 10 AND 50;
+SELECT * FROM students where ROLL_NO IN (8,15,25);</code></pre>
+<h4 id="toc-68-what-is-the-merge-statement">68。什么是MERGE语句？</h4>
+<p>该语句支持条件更新或向表中插入内容。如果行存在，它将更新该行；如果不存在，它将插入该行。</p>
+<h4 id="toc-69-explain-the-recursive-stored-procedure">69。解释递归存储过程。</h4>
+<p>在到达某个边界条件之前一直调用自身的存储过程是递归存储过程。它使程序员可以任意次数地使用一组代码。</p>
+<h4 id="toc-70-how-can-dynamic-sql-be-executed">70。如何执行动态SQL？</h4>
+<p>它可以通过以下方式执行:</p>
+<ul>
+<li>通过执行带参数的查询。</li>
+<li>通过使用EXEC</li>
+<li>通过使用sp_executesql</li>
+</ul>
+<h4 id="toc-71-what-is-the-stored-procedure">71。什么是存储过程？</h4>
+<p>它是一个由许多访问数据库系统的SQL语句组成的函数。几个SQL语句被合并到一个存储过程中，并在需要时随时随地执行。</p>
+<h4 id="toc-72-what-is-auto-increment">72。什么是自动增量？</h4>
+<p>该关键字允许每当向表中插入新记录时生成一个新的唯一编号。它可以用在我们需要主键的任何地方。</p>
+<h4 id="toc-73-what-is-a-data-warehouse">73。什么是数据仓库？</h4>
+<p>来自多个信息源的数据存储在一个称为数据仓库的中央存储库中。数据仓库有称为数据集市的数据子集。存储的数据被转换并用于在线挖掘和处理。</p>
+<h4 id="toc-74-what-are-user-defined-functions">74。什么是用户自定义函数？</h4>
+<p>为在需要时使用特定逻辑而编写的函数是用户定义函数。它通过避免再次编写相同的逻辑来避免冗余。</p>
+<h4 id="toc-75-what-is-the-alias-command">75。什么是别名命令？</h4>
+<p>此命令为表或列提供另一个名称。它可以用在SQL查询的WHERE子句中，使用<strong>作为</strong>关键字。</p>
+<p><strong>举例:</strong></p>
+<pre class="language-sql"><code>SELECT S.StudentID, E.Result from student S, Exam as E where S.StudentID = E.StudentID</code></pre>
+<p>s和E分别是学生表和考试表的别名。</p>
+<h4 id="toc-76-what-is-collation">76。什么是校对？</h4>
+<p>归类被定义为确定如何存储和比较数据的一组规则。</p>
+<h4 id="toc-77-mention-the-different-types-of-collation-sensitivity"><strong> 77。提及不同类型的校对敏感度。</strong></h4>
+<p>以下是区分排序规则的类型:</p>
+
+<h4 id="toc-78-what-are-stuff-and-replace-functions">78。什么是填充和替换函数？</h4>
+<p><strong> STUFF: </strong>覆盖现有字符或将一个字符串插入另一个字符串。语法是:</p>
+<pre class="language-sql"><code>STUFF(string_expression,start, length, replacement_characters)</code></pre>
+<p><strong>替换:</strong>替换所有出现的现有字符。语法是:</p>
+<pre class="language-sql"><code>REPLACE (string_expression, search_string, replacement_string)</code></pre>
+<h2 id="start-preparing-with-these-sql-interview-questions"><strong>开始准备这些SQL面试问题</strong></h2>
+<p>在这份SQL面试问题清单的帮助下，你将有更好的机会获得数据库管理员和SQL开发人员职位的面试机会。</p>
+<p>它甚至有助于获得SQL server认证。你也可以使用《10分钟内完成<a href="https://geni.us/xqyw"> SQL，Sam自学</a>书来帮助准备。</p>
+<p><a class="btn btn-primary btn-call-to-action " href="https://drive.google.com/file/d/1Hv7gWSYt-f2uCQBaFg3ZB-zGNw6pU3T1/view?usp=sharing" target="_blank" rel="noopener"> SQL面试问题/答案PDF </a></p>
+<p>祝你好运！别忘了，除了阅读面试用的SQL问题，你还得动手练习。</p>
+<p><strong>人也在读:</strong></p>
+
+
+									</div>
+
+									</div>    
+</body>
+</html>
